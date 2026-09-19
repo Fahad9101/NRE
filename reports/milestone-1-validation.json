@@ -1,0 +1,72 @@
+{
+  "milestone": 1,
+  "engineering_state": "LOCAL_VALIDATED",
+  "historical_acceptance": "BLOCKED",
+  "minimum_required": {
+    "eligible_events": 100,
+    "issuers": 25
+  },
+  "verified_real_reaction_events": 0,
+  "verified_real_reaction_issuers": 0,
+  "local_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 50,
+    "failed": 0
+  },
+  "live_universe": {
+    "counts": {
+      "nasdaqlisted.txt": 5623,
+      "otherlisted.txt": 7635
+    },
+    "historical_membership_established": false,
+    "observations": [
+      {
+        "raw_file": "b27c880b9495665f2da9505ce5665de8dfed08b97679217d73faeb98b9a45de1.raw",
+        "retrieved_at": "2026-09-19T17:04:09.560442Z",
+        "sha256": "b27c880b9495665f2da9505ce5665de8dfed08b97679217d73faeb98b9a45de1",
+        "size": 349031,
+        "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt"
+      },
+      {
+        "raw_file": "10e431be1032c06767abeb1f77a8221dfd458561146ca1562abe9ae812754f2d.raw",
+        "retrieved_at": "2026-09-19T17:04:20.778784Z",
+        "sha256": "10e431be1032c06767abeb1f77a8221dfd458561146ca1562abe9ae812754f2d",
+        "size": 541678,
+        "url": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt"
+      }
+    ],
+    "state": "CURRENT_DIRECTORY_ONLY"
+  },
+  "sec_probe": {
+    "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+    "status": "HTTP_403",
+    "attempt_date": "2026-09-19",
+    "bypass_attempted": false
+  },
+  "market_data": {
+    "alpaca_credentials_present": false,
+    "paid_provider_used": false,
+    "adapter": "reviewed offline JSON bundle",
+    "real_price_input_available": false
+  },
+  "synthetic_fixture": {
+    "events": 1,
+    "purpose": "deterministic correctness tests only",
+    "counts_towards_historical_acceptance": false,
+    "snapshot_id": "18f8d9814f25e735060a775bc9465d936bb755261aa947baa6b3f0a4fc2d82fa"
+  },
+  "open_gates": [
+    "SEC/issuer source access and first-public timestamp review",
+    "Permitted regular-session historical prices and corporate-action review",
+    "Frozen-window candidate census and point-in-time identity coverage",
+    "100 eligible events across 25 issuers",
+    "Two independent spot checks per included timing class"
+  ],
+  "scope_protection": {
+    "IEE_modified": false,
+    "SOE_modified": false,
+    "BOE_modified": false,
+    "Milestone_2_started": false
+  },
+  "remote_ci": "Consult GitHub Actions for the exact published commit; not a static claim of success."
+}

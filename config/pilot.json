@@ -1,0 +1,14 @@
+{
+  "protocol_version": "m1-pilot-v1",
+  "event_window_start": "2026-01-05",
+  "event_window_end": "2026-03-31",
+  "price_window_end": "2026-04-30",
+  "discovery": "All Item 2.02 8-K candidates in the supplied SEC submission snapshots; record every exclusion",
+  "universe": "Contemporaneously evidenced US common shares on NASDAQ, NYSE or NYSE American",
+  "minimum_eligible_events": 100,
+  "minimum_unique_issuers": 25,
+  "selection": "Enumerate before reading returns; no performance-based sampling",
+  "availability_mode": "historical_reconstruction",
+  "scope": "Daily regular-session previous-close-anchored labels only; intraday events quarantined",
+  "acceptance": "Engineering coverage target, not evidence of predictive power"
+}

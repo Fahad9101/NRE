@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nre-research"
+version = "0.1.0"
+description = "Auditable earnings event-to-reaction datasets; no prediction or execution"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+nre = "nre.cli:main"
+
+[tool.setuptools]
+packages = ["nre"]
+
+[tool.setuptools.package-data]
+nre = ["*.json", "*.sql"]

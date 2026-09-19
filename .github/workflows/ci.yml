@@ -1,0 +1,24 @@
+name: NRE Milestone 1
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit, integration, schema, leakage and replay tests
+        run: python -m unittest discover -s tests -v
+      - name: Synthetic end-to-end CLI smoke test
+        run: python -m nre build tests/fixtures/synthetic_bundle.json --output /tmp/nre-ci
+      - name: Import and compile check
+        run: python -m compileall -q nre
