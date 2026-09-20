@@ -1,0 +1,64 @@
+{
+  "stage": "M1 exploratory source intake; not the frozen acceptance cohort",
+  "obtained_at": "2026-09-20T03:51:54.380080+00:00",
+  "provider": "Alpha Vantage public documented IBM demo",
+  "source_url": "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&outputsize=full&apikey=demo",
+  "documentation_url": "https://www.alphavantage.co/documentation/",
+  "terms_url": "https://www.alphavantage.co/terms_of_service/",
+  "use_scope": "Private individual research/testing only; no public data redistribution or commercial use authorized",
+  "raw_sha256": "6d53269ec7e89988f208e9a9ab132f9d7946ccd92e6c138a61d4bd25a4e68be4",
+  "total_bars": 6761,
+  "first_date": "1999-11-01",
+  "last_date": "2026-09-18",
+  "pilot_bars": 82,
+  "pilot_expected_sessions": 82,
+  "pilot_missing_sessions": [],
+  "ohlcv_checks": "passed",
+  "session_scope_verification": "pending",
+  "corporate_action_review": "pending",
+  "eligible_acceptance_events": 0,
+  "release_candidates": [
+    {
+      "ticker": "AAPL",
+      "event_date": "2026-01-29",
+      "source_url": "https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/",
+      "source_file": "apple_release.html",
+      "first_public_verified": false,
+      "precision": "date",
+      "note": "Source date only; modification timestamp is later and not release time.",
+      "raw_sha256": "e1729d3f105b618a841401f1f17c1c39ba9c271e5f3180f7a2e34e50eecbcd49",
+      "bytes": 139901
+    },
+    {
+      "ticker": "MSFT",
+      "event_date": "2026-01-28",
+      "source_url": "https://www.microsoft.com/en-us/Investor/earnings/FY-2026-Q2/press-release-webcast",
+      "source_file": "microsoft_release.html",
+      "first_public_verified": false,
+      "precision": "date",
+      "note": "Conference-call time is not first-public release time.",
+      "raw_sha256": "41ff8b51ed702ffb6bfb8a26fbac5016542a390bda01912f9ae02234c828d8ed",
+      "bytes": 574823
+    },
+    {
+      "ticker": "IBM",
+      "event_date": "2026-01-28",
+      "source_url": "https://newsroom.ibm.com/2026-01-28-IBM-RELEASES-FOURTH-QUARTER-RESULTS",
+      "source_file": null,
+      "first_public_verified": false,
+      "precision": "date",
+      "note": "Official release read through web retrieval; direct HTML download timed out."
+    }
+  ],
+  "limitations": [
+    "Demo provides IBM, not a 25-issuer cohort",
+    "Events selected for source accessibility, not part of preregistered acceptance census",
+    "Release timestamp precision and contemporaneous identity review pending",
+    "No multi-issuer provider credentials currently configured"
+  ],
+  "provider_probe_failures": {
+    "financial_datasets": "Existing connector returned zero balance; no purchase attempted",
+    "stooq": "Public download page returned browser-verification challenge; no bypass attempted",
+    "sec": "Previously recorded HTTP 403; issuer sources assessed instead"
+  }
+}

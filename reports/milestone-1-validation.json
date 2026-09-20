@@ -47,7 +47,9 @@
     "alpaca_credentials_present": false,
     "paid_provider_used": false,
     "adapter": "reviewed offline JSON bundle",
-    "real_price_input_available": false
+    "real_price_input_available": true,
+    "real_price_input_scope": "IBM public demo only; preliminary 82 pilot-window bars, not accepted cohort",
+    "live_access_report": "reports/real-data-intake.json"
   },
   "synthetic_fixture": {
     "events": 1,
