@@ -71,6 +71,52 @@ class FilingScreenTests(unittest.TestCase):
             ["older.json"],
         )
 
+    def test_one_year_sec_guarantee_covers_sparse_recent_history(self):
+        document = {
+            "filings": {
+                "recent": {"filingDate": ["2026-09-01", "2026-04-01"]},
+                "files": [
+                    {"name": "older.json", "filingFrom": "2020-01-01", "filingTo": "2025-06-30"},
+                ],
+            }
+        }
+        self.assertEqual(
+            relevant_history_files(
+                document,
+                "2026-01-05",
+                "2026-09-20T18:50:00Z",
+            ),
+            [],
+        )
+
+    def test_no_continuations_means_recent_is_complete_history(self):
+        document = {
+            "filings": {
+                "recent": {"filingDate": ["2026-09-01", "2026-04-01"]},
+                "files": [],
+            }
+        }
+        self.assertEqual(
+            relevant_history_files(document, "2020-01-01"),
+            [],
+        )
+
+    def test_old_screen_with_noncovering_continuations_fails_closed(self):
+        document = {
+            "filings": {
+                "recent": {"filingDate": ["2026-09-01", "2026-04-01"]},
+                "files": [
+                    {"name": "old.json", "filingFrom": "2018-01-01", "filingTo": "2019-12-31"},
+                ],
+            }
+        }
+        with self.assertRaises(DataError):
+            relevant_history_files(
+                document,
+                "2020-06-01",
+                "2026-09-20T18:50:00Z",
+            )
+
     def test_item_202_screen_includes_amendments_and_buffer(self):
         rows = [
             {"candidate_id": "a", "filing_date": "2026-01-05", "items": ["2.02"], "form": "8-K"},
