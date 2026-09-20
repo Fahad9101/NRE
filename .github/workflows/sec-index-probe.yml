@@ -1,0 +1,65 @@
+name: NRE M1 SEC Historical Index Probe
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sec-index-probe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe Q1 2026 SEC historical master index through free relay
+        env:
+          SEC_USER_AGENT: NRE-M1 research contact https://github.com/Fahad9101/NRE
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import tempfile
+          from pathlib import Path
+          from nre.ingestion import SecRelayClient
+
+          root = Path(tempfile.mkdtemp(prefix="nre-index-probe-"))
+          client = SecRelayClient(__import__("os").environ["SEC_USER_AGENT"])
+
+          directory_url = "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR1/"
+          directory, dmeta = client.fetch(directory_url, root)
+          dtext = directory.decode("utf-8", errors="strict")
+          names = sorted(set(re.findall(r"master\.(2026\d{4})\.idx", dtext)))
+          print(json.dumps({
+              "directory_source": directory_url,
+              "directory_representation": dmeta["source_representation"],
+              "daily_master_files_found": len(names),
+              "first_master": names[0] if names else None,
+              "last_master": names[-1] if names else None,
+          }, sort_keys=True))
+          assert "20260105" in names, names[:10]
+
+          master_url = "https://www.sec.gov/Archives/edgar/daily-index/2026/QTR1/master.20260105.idx"
+          body, meta = client.fetch(master_url, root)
+          text = body.decode("utf-8", errors="strict")
+          header = "CIK|Company Name|Form Type|Date Filed|Filename"
+          assert header in text
+          rows = [
+              line for line in text.splitlines()
+              if re.match(r"^\d+\|.*\|8-K(?:/A)?\|2026-01-05\|", line)
+          ]
+          print(json.dumps({
+              "master_source": master_url,
+              "representation": meta["source_representation"],
+              "payload_sha256": meta["sha256"],
+              "transport_sha256": meta.get("transport_sha256"),
+              "item_8k_rows_on_2026_01_05": len(rows),
+              "sample_rows": rows[:3],
+          }, sort_keys=True))
+          assert rows
+          PY
