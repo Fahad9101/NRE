@@ -1,1 +1,58 @@
-{"accepted_for_labels":false,"blockers":["REGULAR_SESSION_VOLUME_UNVERIFIED","ADJUSTMENT_UNVERIFIED","CORPORATE_ACTION_REVIEW_REQUIRED","HISTORICAL_IDENTITY_REVIEW_REQUIRED","PROVIDER_RIGHTS_REVIEW_REQUIRED","PAGINATION_METADATA_UNAVAILABLE"],"coverage":{"IBM":{"expected":82,"missing_sessions":[],"received":82,"zero_volume_sessions":[]}},"hash_basis":"canonical decoded connector payload","note":"Calendar coverage is not proof of trade completeness or historical availability.","payload_sha256":"79d0265b3980c8f0666a243ffece34fb22f4c23eb35102c1d08daa675e3fc97b","record_count":82,"request":{"asof":"2026-01-28","currency":null,"days":5,"end":"2026-04-30","feed":"sip","hours":0,"limit":1000,"minutes":30,"sort":"asc","start":"2026-01-02","symbols":["IBM"],"timeframe":"1Day","tz":"America/New_York"},"retrieved_at":"2026-09-20T07:05:49.068Z","state":"STAGED_REVIEW_REQUIRED"}
+{
+  "accepted_for_labels": false,
+  "blockers": [
+    "REGULAR_SESSION_VOLUME_UNVERIFIED",
+    "ADJUSTMENT_CONNECTOR_SEMANTICS_UNVERIFIED",
+    "CORPORATE_ACTION_REVIEW_REQUIRED",
+    "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+    "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+    "PAGINATION_METADATA_UNAVAILABLE"
+  ],
+  "coverage": {
+    "IBM": {
+      "expected": 82,
+      "missing_sessions": [],
+      "received": 82,
+      "zero_volume_sessions": []
+    }
+  },
+  "hash_basis": "canonical decoded connector payload",
+  "note": "Calendar coverage and documented daily-OHLC aggregation improve the review, but do not certify core-session volume, connector adjustment semantics, provider rights, corporate actions, or historical identity.",
+  "payload_sha256": "79d0265b3980c8f0666a243ffece34fb22f4c23eb35102c1d08daa675e3fc97b",
+  "record_count": 82,
+  "request": {
+    "asof": "2026-01-28",
+    "currency": null,
+    "days": 5,
+    "end": "2026-04-30",
+    "feed": "sip",
+    "hours": 0,
+    "limit": 1000,
+    "minutes": 30,
+    "sort": "asc",
+    "start": "2026-01-02",
+    "symbols": [
+      "IBM"
+    ],
+    "timeframe": "1Day",
+    "tz": "America/New_York"
+  },
+  "retrieved_at": "2026-09-20T07:05:49.068Z",
+  "state": "STAGED_REVIEW_REQUIRED",
+  "provider_documentation_review": {
+    "reviewed_on": "2026-09-20",
+    "historical_bars_url": "https://docs.alpaca.markets/us/reference/stockbars",
+    "market_data_faq_url": "https://docs.alpaca.markets/us/docs/market-data-faq",
+    "findings": {
+      "sip_scope": "SIP is consolidated US-exchange trade/quote data.",
+      "historical_sip_access": "Historical SIP older than the recent-data restriction can be queried without a paid subscription, subject to authenticated access.",
+      "daily_ohlc_semantics": "Alpaca's published aggregation table says extended-hours trade conditions do not update daily OHLC, although they can update daily volume.",
+      "daily_volume_semantics": "Daily volume can include extended-hours eligible trades and is not certified as core-session-only volume.",
+      "adjustment_api_default": "Historical bars API documents adjustment=raw by default.",
+      "adjustment_connector_limitation": "The ChatGPT Alpaca connector request/response does not expose an adjustment parameter or echo an adjustment value, so NRE cannot independently attest the connector's adjustment setting.",
+      "pagination_api": "The API exposes next_page_token and applies limit to total records, not per symbol.",
+      "pagination_connector_limitation": "The connector response does not expose next_page_token. Calendar reconciliation found all 328 expected symbol-session daily bars in the four-symbol exploratory request, but transport-level pagination metadata remains unavailable.",
+      "asof_semantics": "The API documents asof for historical symbol mapping."
+    }
+  }
+}
