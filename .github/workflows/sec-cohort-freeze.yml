@@ -17,6 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Authoritative freeze runs only from the current committed spec/code boundary.
   freeze:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
