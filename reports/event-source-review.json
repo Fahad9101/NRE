@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-20",
+  "status": "PARTIAL_SOURCE_EVIDENCE",
+  "frozen_cohort": false,
+  "accepted_events": 0,
+  "sources": [
+    {
+      "source_id": "ibm-prnewswire-20260128",
+      "url": "https://www.prnewswire.com/news-releases/ibm-releases-fourth-quarter-results-302673165.html",
+      "retrieval_method": "web_extracted_page",
+      "raw_bytes_archived": false,
+      "evidence_excerpt": "Jan 28, 2026, 16:08 ET",
+      "timestamp_role": "wire_publication",
+      "precision": "minute",
+      "displayed_minute_start_utc": "2026-01-28T21:08:00Z",
+      "timezone_interpretation": "America/New_York",
+      "first_public_verified": false,
+      "note": "Displayed minute start is not an exact-second publication timestamp. Earliest dissemination across channels has not been established."
+    },
+    {
+      "source_id": "aapl-sec-index-0000320193-26-000005",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/0000320193-26-000005-index.html",
+      "retrieval_method": "web_extracted_page",
+      "raw_bytes_archived": false,
+      "accession": "0000320193-26-000005",
+      "cik": "0000320193",
+      "form": "8-K",
+      "filing_date": "2026-01-29",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "evidence_excerpt": "Accepted 2026-01-29 16:30:33",
+      "timestamp_role": "sec_acceptance",
+      "acceptance_time_displayed": "2026-01-29 16:30:33",
+      "first_public_verified": false,
+      "note": "Acceptance is a separate observation, not a verified press-release time."
+    },
+    {
+      "source_id": "aapl-sec-primary-0000320193-26-000005",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm",
+      "retrieval_method": "web_extracted_page",
+      "raw_bytes_archived": false,
+      "security_evidence": {
+        "ticker": "AAPL",
+        "security_type": "common_stock",
+        "exchange": "NASDAQ",
+        "filing_date": "2026-01-29"
+      },
+      "historical_identity_fully_verified": false,
+      "note": "Contemporaneous filing supports security type and listing. It does not establish when this identity evidence was available relative to first news publication."
+    }
+  ],
+  "discovery_limitations": [
+    "SEC submissions JSON unavailable through web retrieval; previously recorded direct HTTP 403 remains unresolved.",
+    "Individual SEC filing pages are accessible through web retrieval, but isolated search results are not a complete Item 2.02 census.",
+    "IBM issuer page direct HTML request timed out; wire page supplied a publication minute.",
+    "Search results for further issuer filings were mostly irrelevant and were discarded.",
+    "No source hashes are asserted for provider raw bytes not acquired."
+  ],
+  "required_input": {
+    "format": "Original SEC submissions JSON files, including referenced historical continuation files",
+    "coverage": "A declared issuer set with sufficient January 5–March 31 2026 Item 2.02 candidates for the 100-event / 25-issuer acceptance target",
+    "provenance": "Preserve source URLs, actual download times, original filenames and issuer-selection rationale",
+    "selection": "Freeze complete candidate membership before acquiring further outcome prices; retain all exclusions. Exploratory observations must be disclosed."
+  }
+}

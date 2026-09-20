@@ -1,5 +1,7 @@
 # Real-data acquisition status
 
+Latest event-source review: [discovery status](EVENT-DISCOVERY-STATUS.md) and `reports/event-source-review.json` record IBM's wire-publication minute, Apple's Item 2.02 accession and SEC acceptance time, and contemporaneous AAPL listing evidence. These observations improve source coverage but do not verify earliest publication or establish a complete frozen cohort. Original SEC submissions exports remain the concrete missing input for discovery under the current protocol.
+
 On 2026-09-20, the acquisition search obtained the publicly documented Alpha Vantage IBM daily-history demo. This is an actual provider response, not a synthetic fixture. It contains 6,761 daily rows from 1999-11-01 through 2026-09-18. All 82 expected sessions from 2026-01-02 through 2026-04-30 are present, and numeric OHLCV consistency checks passed. Receipt time and response hash are in `reports/real-data-intake.json`.
 
 The provider's documented demonstration endpoint is available without creating an account or buying credits. Its general full-history service is premium; a working IBM demo does not imply free arbitrary-symbol access. The terms support private individual research/testing; no public raw-data redistribution or commercial license is asserted. Accordingly the data was retained privately as `NRE-IBM-Historical-Prices.json`, not committed to this public repository. The report records the source URL, hash, coverage, terms URL and validation limitations.
