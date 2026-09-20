@@ -40,6 +40,7 @@ def parser():
     f.add_argument("--spec", required=True)
     f.add_argument("--protocol", required=True)
     f.add_argument("--output", required=True)
+    f.add_argument("--frame")
     return p
 
 
@@ -63,7 +64,8 @@ def main(argv=None):
             spec = json.loads(Path(args.spec).read_text())
             protocol = json.loads(Path(args.protocol).read_text())
             user_agent = os.environ.get("SEC_USER_AGENT", "")
-            _, _, result = freeze_sec_cohort(spec, protocol, args.output, user_agent)
+            frame = json.loads(Path(args.frame).read_text()) if args.frame else None
+            _, _, result = freeze_sec_cohort(spec, protocol, args.output, user_agent, frame=frame)
             print(canonical(result).decode())
             return 0 if result["state"] == "FROZEN_CANDIDATE_MEMBERSHIP" else 2
         elif args.command == "audit-cohort":
