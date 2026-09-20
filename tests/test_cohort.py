@@ -4,6 +4,7 @@ import unittest
 from nre.cohort import (
     deterministic_issuer_sample,
     exchange_issuers,
+    historical_issuer_pool,
     relevant_history_files,
     screen_item_202,
 )
@@ -44,6 +45,116 @@ class CohortSelectionTests(unittest.TestCase):
         rows = exchange_issuers(self.directory, ["Nasdaq"])
         with self.assertRaises(DataError):
             deterministic_issuer_sample(rows, 20, "seed")
+
+
+class HistoricalFrameTests(unittest.TestCase):
+    def spec(self):
+        return {
+            "filing_screen_start": "2026-01-05",
+            "filing_screen_end": "2026-04-02",
+            "issuer_pool_max": 2,
+            "deterministic_seed": "historical-seed",
+            "exclude_ciks": ["0000000002"],
+            "historical_frame": {
+                "dataset": "mirror",
+                "parquet_filename": "0033.parquet",
+                "parquet_url": "https://example.test/0033.parquet",
+                "parquet_sha256": "a" * 64,
+                "parquet_listing_sha256": "b" * 64,
+                "allowed_forms": ["8-K", "8-K/A"],
+                "allowed_canonical_sources": [
+                    "https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
+                    "https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx",
+                ],
+            },
+        }
+
+    def frame(self):
+        source = {
+            "dataset": "mirror",
+            "parquet_filename": "0033.parquet",
+            "parquet_url": "https://example.test/0033.parquet",
+            "parquet_sha256": "a" * 64,
+            "parquet_listing_sha256": "b" * 64,
+        }
+        rows = [
+            {
+                "cik": "1", "company_name": "Alpha", "form_type": "8-K",
+                "date_filed": "2026-01-05",
+                "filename": "edgar/data/1/0000000001-26-000001.txt",
+                "src": "https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
+            },
+            {
+                "cik": "1", "company_name": "Alpha Corp", "form_type": "8-K/A",
+                "date_filed": "2026-02-01",
+                "filename": "edgar/data/1/0000000001-26-000002.txt",
+                "src": "https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
+            },
+            {
+                "cik": "2", "company_name": "Excluded", "form_type": "8-K",
+                "date_filed": "2026-02-02",
+                "filename": "edgar/data/2/0000000002-26-000001.txt",
+                "src": "https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
+            },
+            {
+                "cik": "3", "company_name": "Gamma", "form_type": "8-K",
+                "date_filed": "2026-03-31",
+                "filename": "edgar/data/3/0000000003-26-000001.txt",
+                "src": "https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
+            },
+            {
+                "cik": "4", "company_name": "Delta", "form_type": "8-K",
+                "date_filed": "2026-04-02",
+                "filename": "edgar/data/4/0000000004-26-000001.txt",
+                "src": "https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx",
+            },
+        ]
+        return {
+            "schema_version": 1,
+            "source": source,
+            "filing_screen_start": "2026-01-05",
+            "filing_screen_end": "2026-04-02",
+            "rows": rows,
+        }
+
+    def test_historical_pool_is_deterministic_and_excludes_preexplored(self):
+        first = historical_issuer_pool(self.frame(), self.spec())
+        second = historical_issuer_pool(self.frame(), self.spec())
+        self.assertEqual(first, second)
+        self.assertEqual(len(first), 2)
+        self.assertNotIn("0000000002", [x["cik"] for x in first])
+        self.assertTrue(all(len(x["selection_key"]) == 64 for x in first))
+
+    def test_historical_pool_groups_aliases_and_accessions(self):
+        spec = self.spec()
+        spec["issuer_pool_max"] = 3
+        pool = historical_issuer_pool(self.frame(), spec)
+        alpha = next(x for x in pool if x["cik"] == "0000000001")
+        self.assertEqual(alpha["historical_names"], ["Alpha", "Alpha Corp"])
+        self.assertEqual(
+            alpha["historical_accessions"],
+            ["0000000001-26-000001", "0000000001-26-000002"],
+        )
+
+    def test_historical_pool_rejects_wrong_pinned_source(self):
+        frame = self.frame()
+        frame["source"]["parquet_sha256"] = "c" * 64
+        with self.assertRaises(DataError):
+            historical_issuer_pool(frame, self.spec())
+
+    def test_historical_pool_rejects_filename_cik_mismatch(self):
+        frame = self.frame()
+        frame["rows"][0]["filename"] = "edgar/data/99/0000000001-26-000001.txt"
+        with self.assertRaises(DataError):
+            historical_issuer_pool(frame, self.spec())
+
+    def test_historical_pool_rejects_conflicting_duplicate_accession(self):
+        frame = self.frame()
+        duplicate = dict(frame["rows"][0])
+        duplicate["company_name"] = "Different Name"
+        frame["rows"].append(duplicate)
+        with self.assertRaises(DataError):
+            historical_issuer_pool(frame, self.spec())
 
 
 class FilingScreenTests(unittest.TestCase):
