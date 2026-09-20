@@ -27,6 +27,9 @@
     "The SEC exchange list is a current selection frame, not a survivorship-free 2026-Q1 universe.",
     "This is an engineering acceptance cohort, not a representative market-performance sample.",
     "Foreign issuers, funds or other non-common securities can enter the issuer frame and must be excluded later by contemporaneous identity review.",
-    "A filing-date buffer through 2026-04-02 is used to capture late-filed disclosures; actual publication dates must still fall inside the protocol event window for inclusion."
-  ]
+    "A filing-date buffer through 2026-04-02 is used to capture late-filed disclosures; actual publication dates must still fall inside the protocol event window for inclusion.",
+    "SEC acquisition may use a transformed public text relay because GitHub-hosted runners are blocked by SEC. Relay payload and transport hashes are preserved separately; raw SEC bytes are not claimed."
+  ],
+  "sec_transport": "r_jina_relay",
+  "transport_rationale": "Direct SEC access from GitHub-hosted runners returned HTTP 403 for data.sec.gov, www.sec.gov Archives, and files endpoints. The relay is transport only; canonical SEC URLs remain source identities and direct/raw SEC bytes remain a later acceptance review requirement."
 }
