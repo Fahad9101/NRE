@@ -1,5 +1,13 @@
 # Event discovery evidence and current block
 
+## Apple upload imported
+
+On 2026-09-20 the user supplied Apple's submissions JSON inside a Markdown code fence. Removing that fence produced valid JSON with 1,001 filing rows from July 24, 2015 through September 17, 2026. All columns have equal length. The existing `discover-sec` command produced 105 8-K/8-K-A records: 45 earnings candidates, 58 non-Item-2.02 records and two amendments requiring review across the full supplied history. See `reports/apple-submissions-import.json` and `reports/apple-eight-k-ledger.json`.
+
+Within the pilot filing-date window, the January 29 earnings filing is the only Item 2.02 candidate; the February 24 filing reports voting results and is recorded as non-Item-2.02. This is a filing-date screen, not a completed release-date census. Original source-download time and first-public release time remain unverified. Zero events are accepted.
+
+The referenced continuation file ends July 22, 2015, so it does not overlap the 2026 pilot. Full-history completeness remains false, while the requested pilot dates are present in the supplied recent-history range. There is no need to request that old continuation to investigate this pilot. Apple is now imported; the remaining discovery input is submissions data for additional issuers. The original upload is retained separately and its hash is recorded; it has not been represented as a direct SEC download by NRE.
+
 The source review on 2026-09-20 established three useful observations, recorded in `reports/event-source-review.json`:
 
 - IBM's issuer-distributed [wire release](https://www.prnewswire.com/news-releases/ibm-releases-fourth-quarter-results-302673165.html) displays January 28, 2026 at 16:08 ET. This improves date-only evidence to a publication minute. It does not prove an exact second or earliest publication across channels.

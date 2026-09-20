@@ -1,0 +1,1464 @@
+{
+  "candidates": [
+    {
+      "acceptance_at": "2026-09-01T20:30:35.000Z",
+      "candidate_id": "0001140361-26-035325",
+      "cik": "0000320193",
+      "filing_date": "2026-09-01",
+      "first_public_verified": false,
+      "form": "8-K/A",
+      "items": [
+        "5.02"
+      ],
+      "state": "AMENDMENT_REVIEW",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126035325/ef20081427_8ka.htm"
+    },
+    {
+      "acceptance_at": "2026-07-30T20:30:28.000Z",
+      "candidate_id": "0000320193-26-000018",
+      "cik": "0000320193",
+      "filing_date": "2026-07-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
+    },
+    {
+      "acceptance_at": "2026-04-30T20:30:41.000Z",
+      "candidate_id": "0000320193-26-000011",
+      "cik": "0000320193",
+      "filing_date": "2026-04-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+    },
+    {
+      "acceptance_at": "2026-04-20T21:29:51.000Z",
+      "candidate_id": "0001140361-26-015711",
+      "cik": "0000320193",
+      "filing_date": "2026-04-20",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126015711/ef20071035_8k.htm"
+    },
+    {
+      "acceptance_at": "2026-02-24T21:55:58.000Z",
+      "candidate_id": "0001140361-26-006577",
+      "cik": "0000320193",
+      "filing_date": "2026-02-24",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm"
+    },
+    {
+      "acceptance_at": "2026-01-29T21:30:33.000Z",
+      "candidate_id": "0000320193-26-000005",
+      "cik": "0000320193",
+      "filing_date": "2026-01-29",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm"
+    },
+    {
+      "acceptance_at": "2026-01-02T21:30:52.000Z",
+      "candidate_id": "0001140361-26-000199",
+      "cik": "0000320193",
+      "filing_date": "2026-01-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126000199/ef20060722_8k.htm"
+    },
+    {
+      "acceptance_at": "2025-12-05T21:31:42.000Z",
+      "candidate_id": "0001140361-25-044561",
+      "cik": "0000320193",
+      "filing_date": "2025-12-05",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125044561/ef20060722_8k.htm"
+    },
+    {
+      "acceptance_at": "2025-10-30T20:30:35.000Z",
+      "candidate_id": "0000320193-25-000077",
+      "cik": "0000320193",
+      "filing_date": "2025-10-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/aapl-20251030.htm"
+    },
+    {
+      "acceptance_at": "2025-07-31T20:30:25.000Z",
+      "candidate_id": "0000320193-25-000071",
+      "cik": "0000320193",
+      "filing_date": "2025-07-31",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000071/aapl-20250731.htm"
+    },
+    {
+      "acceptance_at": "2025-07-25T20:30:49.000Z",
+      "candidate_id": "0001140361-25-027340",
+      "cik": "0000320193",
+      "filing_date": "2025-07-25",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125027340/ef20052355_8k.htm"
+    },
+    {
+      "acceptance_at": "2025-07-09T01:18:13.000Z",
+      "candidate_id": "0001140361-25-025275",
+      "cik": "0000320193",
+      "filing_date": "2025-07-09",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125025275/ef20051741_8k.htm"
+    },
+    {
+      "acceptance_at": "2025-05-12T20:30:28.000Z",
+      "candidate_id": "0001140361-25-018400",
+      "cik": "0000320193",
+      "filing_date": "2025-05-12",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125018400/ef20048691_8k.htm"
+    },
+    {
+      "acceptance_at": "2025-05-01T20:30:21.000Z",
+      "candidate_id": "0000320193-25-000055",
+      "cik": "0000320193",
+      "filing_date": "2025-05-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000055/aapl-20250501.htm"
+    },
+    {
+      "acceptance_at": "2025-02-25T21:47:19.000Z",
+      "candidate_id": "0001140361-25-005876",
+      "cik": "0000320193",
+      "filing_date": "2025-02-25",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125005876/ef20044022_8k.htm"
+    },
+    {
+      "acceptance_at": "2025-01-30T21:30:23.000Z",
+      "candidate_id": "0000320193-25-000007",
+      "cik": "0000320193",
+      "filing_date": "2025-01-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000007/aapl-20250130.htm"
+    },
+    {
+      "acceptance_at": "2025-01-03T21:30:56.000Z",
+      "candidate_id": "0001140361-25-000228",
+      "cik": "0000320193",
+      "filing_date": "2025-01-03",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125000228/ef20040370_8k.htm"
+    },
+    {
+      "acceptance_at": "2024-10-31T20:30:25.000Z",
+      "candidate_id": "0000320193-24-000120",
+      "cik": "0000320193",
+      "filing_date": "2024-10-31",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000120/aapl-20241031.htm"
+    },
+    {
+      "acceptance_at": "2024-09-10T13:06:34.000Z",
+      "candidate_id": "0001140361-24-040659",
+      "cik": "0000320193",
+      "filing_date": "2024-09-10",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "7.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124040659/ef20035718_8k.htm"
+    },
+    {
+      "acceptance_at": "2024-08-26T21:20:33.000Z",
+      "candidate_id": "0001140361-24-038601",
+      "cik": "0000320193",
+      "filing_date": "2024-08-26",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038601/ny20033611x3_8k.htm"
+    },
+    {
+      "acceptance_at": "2024-08-23T20:30:44.000Z",
+      "candidate_id": "0001140361-24-038403",
+      "cik": "0000320193",
+      "filing_date": "2024-08-23",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.03",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124038403/ny20033611x2_8k.htm"
+    },
+    {
+      "acceptance_at": "2024-08-01T20:30:26.000Z",
+      "candidate_id": "0000320193-24-000080",
+      "cik": "0000320193",
+      "filing_date": "2024-08-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000080/aapl-20240801.htm"
+    },
+    {
+      "acceptance_at": "2024-05-03T20:35:42.000Z",
+      "candidate_id": "0001140361-24-024352",
+      "cik": "0000320193",
+      "filing_date": "2024-05-03",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "7.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124024352/ef20028273_8k.htm"
+    },
+    {
+      "acceptance_at": "2024-05-02T20:30:34.000Z",
+      "candidate_id": "0000320193-24-000067",
+      "cik": "0000320193",
+      "filing_date": "2024-05-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000067/aapl-20240502.htm"
+    },
+    {
+      "acceptance_at": "2024-02-28T22:09:05.000Z",
+      "candidate_id": "0001140361-24-010155",
+      "cik": "0000320193",
+      "filing_date": "2024-02-28",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036124010155/ny20022580x1_8k.htm"
+    },
+    {
+      "acceptance_at": "2024-02-01T21:30:30.000Z",
+      "candidate_id": "0000320193-24-000005",
+      "cik": "0000320193",
+      "filing_date": "2024-02-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000005/aapl-20240201.htm"
+    },
+    {
+      "acceptance_at": "2023-11-02T20:30:32.000Z",
+      "candidate_id": "0000320193-23-000104",
+      "cik": "0000320193",
+      "filing_date": "2023-11-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000104/aapl-20231102.htm"
+    },
+    {
+      "acceptance_at": "2023-08-03T20:30:21.000Z",
+      "candidate_id": "0000320193-23-000075",
+      "cik": "0000320193",
+      "filing_date": "2023-08-03",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000075/aapl-20230803.htm"
+    },
+    {
+      "acceptance_at": "2023-05-10T20:31:27.000Z",
+      "candidate_id": "0001140361-23-023909",
+      "cik": "0000320193",
+      "filing_date": "2023-05-10",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036123023909/ny20007635x4_8k.htm"
+    },
+    {
+      "acceptance_at": "2023-05-04T20:30:43.000Z",
+      "candidate_id": "0000320193-23-000063",
+      "cik": "0000320193",
+      "filing_date": "2023-05-04",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000063/aapl-20230504.htm"
+    },
+    {
+      "acceptance_at": "2023-03-10T21:30:52.000Z",
+      "candidate_id": "0001140361-23-011192",
+      "cik": "0000320193",
+      "filing_date": "2023-03-10",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036123011192/brhc10049413_8k.htm"
+    },
+    {
+      "acceptance_at": "2023-02-02T21:30:33.000Z",
+      "candidate_id": "0000320193-23-000005",
+      "cik": "0000320193",
+      "filing_date": "2023-02-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000005/aapl-20230202.htm"
+    },
+    {
+      "acceptance_at": "2022-11-07T11:27:07.000Z",
+      "candidate_id": "0001193125-22-278435",
+      "cik": "0000320193",
+      "filing_date": "2022-11-07",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "7.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312522278435/d400465d8k.htm"
+    },
+    {
+      "acceptance_at": "2022-10-27T20:30:22.000Z",
+      "candidate_id": "0000320193-22-000107",
+      "cik": "0000320193",
+      "filing_date": "2022-10-27",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000107/aapl-20221027.htm"
+    },
+    {
+      "acceptance_at": "2022-08-19T20:31:06.000Z",
+      "candidate_id": "0001193125-22-225365",
+      "cik": "0000320193",
+      "filing_date": "2022-08-19",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02",
+        "5.03",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312522225365/d366128d8k.htm"
+    },
+    {
+      "acceptance_at": "2022-08-08T20:32:16.000Z",
+      "candidate_id": "0001193125-22-214914",
+      "cik": "0000320193",
+      "filing_date": "2022-08-08",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312522214914/d297151d8k.htm"
+    },
+    {
+      "acceptance_at": "2022-07-28T20:31:44.000Z",
+      "candidate_id": "0000320193-22-000069",
+      "cik": "0000320193",
+      "filing_date": "2022-07-28",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000069/aapl-20220728.htm"
+    },
+    {
+      "acceptance_at": "2022-04-28T20:32:12.000Z",
+      "candidate_id": "0000320193-22-000058",
+      "cik": "0000320193",
+      "filing_date": "2022-04-28",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000058/aapl-20220428.htm"
+    },
+    {
+      "acceptance_at": "2022-03-04T21:35:09.000Z",
+      "candidate_id": "0001193125-22-066169",
+      "cik": "0000320193",
+      "filing_date": "2022-03-04",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02",
+        "5.07",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312522066169/d294699d8k.htm"
+    },
+    {
+      "acceptance_at": "2022-01-27T21:30:36.000Z",
+      "candidate_id": "0000320193-22-000006",
+      "cik": "0000320193",
+      "filing_date": "2022-01-27",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000006/aapl-20220127.htm"
+    },
+    {
+      "acceptance_at": "2021-11-12T21:31:14.000Z",
+      "candidate_id": "0001193125-21-328151",
+      "cik": "0000320193",
+      "filing_date": "2021-11-12",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02",
+        "5.03",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312521328151/d259993d8k.htm"
+    },
+    {
+      "acceptance_at": "2021-10-28T20:30:23.000Z",
+      "candidate_id": "0000320193-21-000104",
+      "cik": "0000320193",
+      "filing_date": "2021-10-28",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000104/aapl-20211028.htm"
+    },
+    {
+      "acceptance_at": "2021-08-05T20:31:44.000Z",
+      "candidate_id": "0001193125-21-237787",
+      "cik": "0000320193",
+      "filing_date": "2021-08-05",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312521237787/d199884d8k.htm"
+    },
+    {
+      "acceptance_at": "2021-07-27T20:35:44.000Z",
+      "candidate_id": "0000320193-21-000063",
+      "cik": "0000320193",
+      "filing_date": "2021-07-27",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000063/aapl-20210727.htm"
+    },
+    {
+      "acceptance_at": "2021-04-28T20:30:33.000Z",
+      "candidate_id": "0000320193-21-000055",
+      "cik": "0000320193",
+      "filing_date": "2021-04-28",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000055/aapl-20210428.htm"
+    },
+    {
+      "acceptance_at": "2021-02-24T21:31:21.000Z",
+      "candidate_id": "0001193125-21-054710",
+      "cik": "0000320193",
+      "filing_date": "2021-02-24",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312521054710/d101693d8k.htm"
+    },
+    {
+      "acceptance_at": "2021-02-08T21:31:03.000Z",
+      "candidate_id": "0001193125-21-032394",
+      "cik": "0000320193",
+      "filing_date": "2021-02-08",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312521032394/d70217d8k.htm"
+    },
+    {
+      "acceptance_at": "2021-01-27T21:30:35.000Z",
+      "candidate_id": "0000320193-21-000009",
+      "cik": "0000320193",
+      "filing_date": "2021-01-27",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000009/aapl-20210127.htm"
+    },
+    {
+      "acceptance_at": "2021-01-05T21:32:16.000Z",
+      "candidate_id": "0001193125-21-001982",
+      "cik": "0000320193",
+      "filing_date": "2021-01-05",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312521001982/d29637d8k.htm"
+    },
+    {
+      "acceptance_at": "2020-10-29T20:30:32.000Z",
+      "candidate_id": "0000320193-20-000094",
+      "cik": "0000320193",
+      "filing_date": "2020-10-29",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000094/aapl-20201029.htm"
+    },
+    {
+      "acceptance_at": "2020-08-20T20:30:57.000Z",
+      "candidate_id": "0001193125-20-225672",
+      "cik": "0000320193",
+      "filing_date": "2020-08-20",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312520225672/d937363d8k.htm"
+    },
+    {
+      "acceptance_at": "2020-08-07T21:20:23.000Z",
+      "candidate_id": "0001193125-20-213158",
+      "cik": "0000320193",
+      "filing_date": "2020-08-07",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.03",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312520213158/d49399d8k.htm"
+    },
+    {
+      "acceptance_at": "2020-07-30T22:55:04.000Z",
+      "candidate_id": "0000320193-20-000060",
+      "cik": "0000320193",
+      "filing_date": "2020-07-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000060/aapl-20200730.htm"
+    },
+    {
+      "acceptance_at": "2020-05-11T20:31:15.000Z",
+      "candidate_id": "0001193125-20-139112",
+      "cik": "0000320193",
+      "filing_date": "2020-05-11",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312520139112/d926511d8k.htm"
+    },
+    {
+      "acceptance_at": "2020-04-30T20:30:41.000Z",
+      "candidate_id": "0000320193-20-000050",
+      "cik": "0000320193",
+      "filing_date": "2020-04-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000050/a8-kq220203282020.htm"
+    },
+    {
+      "acceptance_at": "2020-02-27T11:14:21.000Z",
+      "candidate_id": "0001193125-20-050884",
+      "cik": "0000320193",
+      "filing_date": "2020-02-27",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312520050884/d865740d8k.htm"
+    },
+    {
+      "acceptance_at": "2020-02-18T11:24:57.000Z",
+      "candidate_id": "0001193125-20-039203",
+      "cik": "0000320193",
+      "filing_date": "2020-02-18",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "7.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312520039203/d845033d8k.htm"
+    },
+    {
+      "acceptance_at": "2020-01-28T21:30:40.000Z",
+      "candidate_id": "0000320193-20-000008",
+      "cik": "0000320193",
+      "filing_date": "2020-01-28",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019320000008/a8-kq1202012282019.htm"
+    },
+    {
+      "acceptance_at": "2019-11-15T11:02:24.000Z",
+      "candidate_id": "0001193125-19-292676",
+      "cik": "0000320193",
+      "filing_date": "2019-11-15",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312519292676/d828969d8k.htm"
+    },
+    {
+      "acceptance_at": "2019-10-30T20:30:40.000Z",
+      "candidate_id": "0000320193-19-000117",
+      "cik": "0000320193",
+      "filing_date": "2019-10-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000117/a8-kq420199282019.htm"
+    },
+    {
+      "acceptance_at": "2019-09-13T21:15:36.000Z",
+      "candidate_id": "0000320193-19-000093",
+      "cik": "0000320193",
+      "filing_date": "2019-09-13",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000093/a8-kseptember201991019.htm"
+    },
+    {
+      "acceptance_at": "2019-09-11T20:21:21.000Z",
+      "candidate_id": "0001193125-19-242975",
+      "cik": "0000320193",
+      "filing_date": "2019-09-11",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312519242975/d777124d8k.htm"
+    },
+    {
+      "acceptance_at": "2019-07-30T20:30:36.000Z",
+      "candidate_id": "0000320193-19-000073",
+      "cik": "0000320193",
+      "filing_date": "2019-07-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000073/a8-kq320196292019.htm"
+    },
+    {
+      "acceptance_at": "2019-04-30T20:30:16.000Z",
+      "candidate_id": "0000320193-19-000063",
+      "cik": "0000320193",
+      "filing_date": "2019-04-30",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000063/a8-kq220193302019.htm"
+    },
+    {
+      "acceptance_at": "2019-03-04T21:32:18.000Z",
+      "candidate_id": "0000320193-19-000032",
+      "cik": "0000320193",
+      "filing_date": "2019-03-04",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000032/copyofreference8-kform8xkq.htm"
+    },
+    {
+      "acceptance_at": "2019-02-06T13:00:34.000Z",
+      "candidate_id": "0000320193-19-000026",
+      "cik": "0000320193",
+      "filing_date": "2019-02-06",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000026/a8-kfebruary2019252019.htm"
+    },
+    {
+      "acceptance_at": "2019-01-29T21:30:18.000Z",
+      "candidate_id": "0000320193-19-000007",
+      "cik": "0000320193",
+      "filing_date": "2019-01-29",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000007/a8-kq1201912292018.htm"
+    },
+    {
+      "acceptance_at": "2019-01-02T21:30:03.000Z",
+      "candidate_id": "0000320193-19-000002",
+      "cik": "0000320193",
+      "filing_date": "2019-01-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019319000002/a8-kjanuary2019122019.htm"
+    },
+    {
+      "acceptance_at": "2018-11-01T20:30:21.000Z",
+      "candidate_id": "0000320193-18-000142",
+      "cik": "0000320193",
+      "filing_date": "2018-11-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019318000142/a8-kq420189292018.htm"
+    },
+    {
+      "acceptance_at": "2018-07-31T20:30:20.000Z",
+      "candidate_id": "0000320193-18-000098",
+      "cik": "0000320193",
+      "filing_date": "2018-07-31",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019318000098/a8-kq320186302018.htm"
+    },
+    {
+      "acceptance_at": "2018-05-08T01:31:32.000Z",
+      "candidate_id": "0001193125-18-154948",
+      "cik": "0000320193",
+      "filing_date": "2018-05-08",
+      "first_public_verified": false,
+      "form": "8-K/A",
+      "items": [
+        "8.01"
+      ],
+      "state": "AMENDMENT_REVIEW",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312518154948/d563832d8ka.htm"
+    },
+    {
+      "acceptance_at": "2018-05-07T20:30:56.000Z",
+      "candidate_id": "0001193125-18-154515",
+      "cik": "0000320193",
+      "filing_date": "2018-05-07",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312518154515/d563832d8k.htm"
+    },
+    {
+      "acceptance_at": "2018-05-01T20:30:17.000Z",
+      "candidate_id": "0000320193-18-000067",
+      "cik": "0000320193",
+      "filing_date": "2018-05-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019318000067/a8-kq220183312018.htm"
+    },
+    {
+      "acceptance_at": "2018-02-14T21:54:21.000Z",
+      "candidate_id": "0001193125-18-045761",
+      "cik": "0000320193",
+      "filing_date": "2018-02-14",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312518045761/d374908d8k.htm"
+    },
+    {
+      "acceptance_at": "2018-02-01T21:30:17.000Z",
+      "candidate_id": "0000320193-18-000005",
+      "cik": "0000320193",
+      "filing_date": "2018-02-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019318000005/a8-kq1201812302017.htm"
+    },
+    {
+      "acceptance_at": "2017-11-13T21:44:57.000Z",
+      "candidate_id": "0001193125-17-341015",
+      "cik": "0000320193",
+      "filing_date": "2017-11-13",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517341015/d478060d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-11-02T20:30:16.000Z",
+      "candidate_id": "0000320193-17-000067",
+      "cik": "0000320193",
+      "filing_date": "2017-11-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019317000067/a8-kq420179302017.htm"
+    },
+    {
+      "acceptance_at": "2017-10-12T20:31:33.000Z",
+      "candidate_id": "0001193125-17-308859",
+      "cik": "0000320193",
+      "filing_date": "2017-10-12",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517308859/d386231d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-09-12T20:45:59.000Z",
+      "candidate_id": "0001193125-17-282809",
+      "cik": "0000320193",
+      "filing_date": "2017-09-12",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517282809/d434478d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-08-18T20:30:58.000Z",
+      "candidate_id": "0001193125-17-262261",
+      "cik": "0000320193",
+      "filing_date": "2017-08-18",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517262261/d593893d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-08-01T20:30:15.000Z",
+      "candidate_id": "0000320193-17-000006",
+      "cik": "0000320193",
+      "filing_date": "2017-08-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019317000006/a8-kq32017712017.htm"
+    },
+    {
+      "acceptance_at": "2017-06-20T20:36:33.000Z",
+      "candidate_id": "0001193125-17-208226",
+      "cik": "0000320193",
+      "filing_date": "2017-06-20",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517208226/d413980d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-05-24T21:19:03.000Z",
+      "candidate_id": "0001193125-17-181867",
+      "cik": "0000320193",
+      "filing_date": "2017-05-24",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517181867/d583637d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-05-11T20:56:33.000Z",
+      "candidate_id": "0001193125-17-167400",
+      "cik": "0000320193",
+      "filing_date": "2017-05-11",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517167400/d388721d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-05-02T20:31:37.000Z",
+      "candidate_id": "0001628280-17-004663",
+      "cik": "0000320193",
+      "filing_date": "2017-05-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000162828017004663/a8-kq22017412017.htm"
+    },
+    {
+      "acceptance_at": "2017-03-03T21:36:03.000Z",
+      "candidate_id": "0001193125-17-069853",
+      "cik": "0000320193",
+      "filing_date": "2017-03-03",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517069853/d348450d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-03-01T14:00:56.000Z",
+      "candidate_id": "0001193125-17-064019",
+      "cik": "0000320193",
+      "filing_date": "2017-03-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517064019/d342218d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-02-09T22:02:03.000Z",
+      "candidate_id": "0001193125-17-036283",
+      "cik": "0000320193",
+      "filing_date": "2017-02-09",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312517036283/d340350d8k.htm"
+    },
+    {
+      "acceptance_at": "2017-01-31T21:31:02.000Z",
+      "candidate_id": "0001628280-17-000663",
+      "cik": "0000320193",
+      "filing_date": "2017-01-31",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000162828017000663/a8-kq1201712312016.htm"
+    },
+    {
+      "acceptance_at": "2016-12-15T21:54:42.000Z",
+      "candidate_id": "0001628280-16-022047",
+      "cik": "0000320193",
+      "filing_date": "2016-12-15",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.03",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000162828016022047/form8-k121316.htm"
+    },
+    {
+      "acceptance_at": "2016-10-25T20:32:39.000Z",
+      "candidate_id": "0001628280-16-020258",
+      "cik": "0000320193",
+      "filing_date": "2016-10-25",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000162828016020258/a8-kq420169242016.htm"
+    },
+    {
+      "acceptance_at": "2016-08-04T21:26:33.000Z",
+      "candidate_id": "0001193125-16-672044",
+      "cik": "0000320193",
+      "filing_date": "2016-08-04",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516672044/d234980d8k.htm"
+    },
+    {
+      "acceptance_at": "2016-07-26T20:30:55.000Z",
+      "candidate_id": "0001628280-16-017762",
+      "cik": "0000320193",
+      "filing_date": "2016-07-26",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000162828016017762/a8-kq320166252016.htm"
+    },
+    {
+      "acceptance_at": "2016-06-22T20:31:03.000Z",
+      "candidate_id": "0001193125-16-628957",
+      "cik": "0000320193",
+      "filing_date": "2016-06-22",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516628957/d209946d8k.htm"
+    },
+    {
+      "acceptance_at": "2016-04-26T20:31:09.000Z",
+      "candidate_id": "0001193125-16-556520",
+      "cik": "0000320193",
+      "filing_date": "2016-04-26",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516556520/d325078d8k.htm"
+    },
+    {
+      "acceptance_at": "2016-03-24T20:13:11.000Z",
+      "candidate_id": "0001193125-16-516891",
+      "cik": "0000320193",
+      "filing_date": "2016-03-24",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516516891/d161597d8k.htm"
+    },
+    {
+      "acceptance_at": "2016-03-01T21:32:05.000Z",
+      "candidate_id": "0001193125-16-488223",
+      "cik": "0000320193",
+      "filing_date": "2016-03-01",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02",
+        "5.07",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516488223/d150918d8k.htm"
+    },
+    {
+      "acceptance_at": "2016-02-23T21:13:37.000Z",
+      "candidate_id": "0001193125-16-473562",
+      "cik": "0000320193",
+      "filing_date": "2016-02-23",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516473562/d143184d8k.htm"
+    },
+    {
+      "acceptance_at": "2016-01-26T21:31:06.000Z",
+      "candidate_id": "0001193125-16-438421",
+      "cik": "0000320193",
+      "filing_date": "2016-01-26",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312516438421/d22806d8k.htm"
+    },
+    {
+      "acceptance_at": "2015-12-22T21:33:05.000Z",
+      "candidate_id": "0001193125-15-410853",
+      "cik": "0000320193",
+      "filing_date": "2015-12-22",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.03",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312515410853/d55543d8k.htm"
+    },
+    {
+      "acceptance_at": "2015-12-17T21:30:59.000Z",
+      "candidate_id": "0001193125-15-406279",
+      "cik": "0000320193",
+      "filing_date": "2015-12-17",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312515406279/d107635d8k.htm"
+    },
+    {
+      "acceptance_at": "2015-10-27T20:30:36.000Z",
+      "candidate_id": "0001193125-15-354756",
+      "cik": "0000320193",
+      "filing_date": "2015-10-27",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312515354756/d74332d8k.htm"
+    },
+    {
+      "acceptance_at": "2015-10-02T20:30:10.000Z",
+      "candidate_id": "0001193125-15-336615",
+      "cik": "0000320193",
+      "filing_date": "2015-10-02",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.02"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312515336615/d10101d8k.htm"
+    },
+    {
+      "acceptance_at": "2015-09-17T20:31:39.000Z",
+      "candidate_id": "0001193125-15-322466",
+      "cik": "0000320193",
+      "filing_date": "2015-09-17",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312515322466/d31615d8k.htm"
+    },
+    {
+      "acceptance_at": "2015-07-31T20:35:41.000Z",
+      "candidate_id": "0001193125-15-273023",
+      "cik": "0000320193",
+      "filing_date": "2015-07-31",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "8.01",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312515273023/d12789d8k.htm"
+    }
+  ],
+  "continuation_files": [
+    {
+      "filingCount": 1247,
+      "filingFrom": "1994-01-26",
+      "filingTo": "2015-07-22",
+      "name": "CIK0000320193-submissions-001.json"
+    }
+  ],
+  "historical_coverage_complete": false
+}

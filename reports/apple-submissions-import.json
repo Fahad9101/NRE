@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "imported_on": "2026-09-20",
+  "source_url": "https://data.sec.gov/submissions/CIK0000320193.json",
+  "acquisition": "user supplied JSON in Markdown code fence",
+  "source_download_time": null,
+  "attachment_sha256": "5b6edb8af0fd9cb0840e2d09026f48e4aa63579dc18d59c90d48f23c7e504df5",
+  "extracted_json_sha256": "21995788784b0bc55218499c45c6fc1878378176024c615170f97e1b65044fd4",
+  "transform": "removed outer Markdown fence only",
+  "cik": "0000320193",
+  "issuer": "Apple Inc.",
+  "filing_rows": 1001,
+  "filing_date_min": "2015-07-24",
+  "filing_date_max": "2026-09-17",
+  "eight_k_rows": 105,
+  "states_all_history": {
+    "AMENDMENT_REVIEW": 2,
+    "EARNINGS_CANDIDATE": 45,
+    "NOT_ITEM_2_02": 58
+  },
+  "continuation_files": [
+    {
+      "filingCount": 1247,
+      "filingFrom": "1994-01-26",
+      "filingTo": "2015-07-22",
+      "name": "CIK0000320193-submissions-001.json"
+    }
+  ],
+  "continuation_overlaps_pilot": false,
+  "all_history_complete": false,
+  "pilot_window_present_in_supplied_recent_history": true,
+  "pilot_filing_rows": [
+    {
+      "acceptance_at": "2026-02-24T21:55:58.000Z",
+      "candidate_id": "0001140361-26-006577",
+      "cik": "0000320193",
+      "filing_date": "2026-02-24",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm"
+    },
+    {
+      "acceptance_at": "2026-01-29T21:30:33.000Z",
+      "candidate_id": "0000320193-26-000005",
+      "cik": "0000320193",
+      "filing_date": "2026-01-29",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm"
+    }
+  ],
+  "frozen_cohort": false,
+  "accepted_events": 0,
+  "limitations": [
+    "User-supplied snapshot; original download time and byte identity against SEC are unverified.",
+    "Filing-date screening is not a release-date census; boundary and late filings require review.",
+    "Current ticker metadata does not establish historical identity availability.",
+    "This single issuer does not satisfy the pilot sample target.",
+    "SEC acceptance timestamps do not establish first-public release times."
+  ]
+}
