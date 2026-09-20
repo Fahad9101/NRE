@@ -1,3 +1,4 @@
+import json
 import unittest
 
 from nre.cohort import (
@@ -7,6 +8,7 @@ from nre.cohort import (
     screen_item_202,
 )
 from nre.core import DataError
+from nre.ingestion import SecRelayClient
 
 
 class CohortSelectionTests(unittest.TestCase):
@@ -78,6 +80,34 @@ class FilingScreenTests(unittest.TestCase):
         ]
         result = screen_item_202(rows, "2026-01-05", "2026-04-02")
         self.assertEqual([r["candidate_id"] for r in result], ["a", "b"])
+
+
+class SecRelayTests(unittest.TestCase):
+    def test_json_relay_extracts_one_json_value(self):
+        body = (
+            b'Title: Example\n\nURL Source: http://data.sec.gov/submissions/CIK0000000001.json\n\n'
+            b'Markdown Content:\n{"fields":["cik"],"data":[[1]]}\nrelay trailing prose'
+        )
+        payload, representation = SecRelayClient.payload(
+            body, "https://data.sec.gov/submissions/CIK0000000001.json"
+        )
+        self.assertEqual(representation, "relay_json_extract")
+        self.assertEqual(json.loads(payload), {"data": [[1]], "fields": ["cik"]})
+
+    def test_html_relay_preserves_transformed_markdown(self):
+        body = (
+            b'Title: filing\n\nURL Source: http://www.sec.gov/Archives/example.htm\n\n'
+            b'Markdown Content:\nAccepted 2026-01-05 16:01:00\nItem 2.02'
+        )
+        payload, representation = SecRelayClient.payload(
+            body, "https://www.sec.gov/Archives/example.htm"
+        )
+        self.assertEqual(representation, "relay_markdown")
+        self.assertIn(b"Item 2.02", payload)
+
+    def test_relay_refuses_non_sec_source(self):
+        with self.assertRaises(DataError):
+            SecRelayClient.relay_url("https://example.com/file.json")
 
 
 if __name__ == "__main__":
