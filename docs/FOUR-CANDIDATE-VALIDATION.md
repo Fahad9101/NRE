@@ -1,5 +1,11 @@
 # Four-candidate validation
 
+## Timestamp interval correction
+
+The subsequent interval replay is in `reports/four-candidate-interval-replay.json`. The initial implementation rejected all minute-precision times, which was stricter than the approved contract's interval-based design. The builder now preserves a minute as `[start, next minute)` and requires the complete interval to have one session classification. Availability uses the next-minute boundary; identity must be valid throughout. First-public evidence, provider requirements and cohort thresholds are unchanged. Date-only timestamps remain quarantined. Seconds are not invented.
+
+The four original review inputs were replayed without changing their evidence or verification flags. IBM's reason is now `FIRST_PUBLIC_TIME_UNVERIFIED`, as is Microsoft's. Apple and NVIDIA remain `AMBIGUOUS_PUBLICATION_TIME`. All four still have empty labels and zero accepted outcomes. The earlier report below remains a historical record of the pre-correction run; its snapshot requires that earlier code version for an exact replay.
+
 The four uploaded issuers were reviewed on 2026-09-20. `reports/four-candidate-review.json` records the actual intake audit, provisional corporate-action windows and pipeline quarantine results. No candidate passed acceptance, and no predictive performance was measured.
 
 | Issuer | Publication evidence | Pipeline reason |

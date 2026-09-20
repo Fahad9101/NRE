@@ -11,7 +11,7 @@ from decimal import Decimal
 from pathlib import Path
 from zoneinfo import TZPATH
 from .calendar import Calendar
-from .core import DataError, asof, canonical, digest, iso, number, timestamp, unique
+from .core import DataError, asof, canonical, digest, iso, number, publication_bounds, timestamp, unique
 
 
 def validate(bundle, calendar):
@@ -52,11 +52,11 @@ def validate(bundle, calendar):
         timestamp(event["cutoff"])
         if timestamp(event["cutoff"]) > cutoff:
             raise DataError("event cutoff after dataset as_of")
-        if event["precision"] == "second":
-            timestamp(event["published_at"])
+        if event["precision"] in {"second", "minute"}:
+            publication_bounds(event)
         if type(event["first_public_verified"]) is not bool:
             raise DataError("first-public verification must be boolean")
-        if event["first_public_verified"] and event["precision"] == "second":
+        if event["first_public_verified"] and event["precision"] in {"second", "minute"}:
             evidence = event.get("timestamp_evidence")
             if not evidence or evidence not in sources[event["source_id"]]["text"]:
                 raise DataError("timestamp evidence missing from source")
@@ -103,15 +103,19 @@ def event_outcome(event, bundle, calendar, sources, securities, providers):
         result["reasons"].append(reason)
         return result
 
-    if event["precision"] != "second":
+    if event["precision"] not in {"second", "minute"}:
         return stop("AMBIGUOUS_PUBLICATION_TIME")
+    pub, pub_last, pub_available = publication_bounds(event)
+    cut = timestamp(event["cutoff"])
+    if event["precision"] == "minute":
+        result["publication_interval"] = {"start_inclusive": iso(pub),
+                                          "end_exclusive": iso(pub_available)}
     if not event["first_public_verified"]:
         return stop("FIRST_PUBLIC_TIME_UNVERIFIED")
-    pub, cut = timestamp(event["published_at"]), timestamp(event["cutoff"])
     src = sources[event["source_id"]]
-    available = pub
+    available = pub_available
     if bundle["availability_mode"] == "forward_observed":
-        available = max(pub, timestamp(src["first_seen_at"]))
+        available = max(pub_available, timestamp(src["first_seen_at"]))
     if available > cut:
         return stop("NEWS_NOT_AVAILABLE_AT_CUTOFF")
     security = securities[event["security_id"]]
@@ -122,10 +126,12 @@ def event_outcome(event, bundle, calendar, sources, securities, providers):
         identity_available = max(identity_available, timestamp(sources[security["source_id"]]["first_seen_at"]))
     if identity_available > pub or timestamp(security["valid_from"]) > pub:
         return stop("IDENTITY_NOT_KNOWN_AT_RELEASE")
-    if security.get("valid_to") and pub >= timestamp(security["valid_to"]):
+    if security.get("valid_to") and pub_last >= timestamp(security["valid_to"]):
         return stop("IDENTITY_EXPIRED")
     try:
         session, timing = calendar.classify(event["published_at"])
+        if calendar.classify(iso(pub_last)) != (session, timing):
+            return stop("PUBLICATION_INTERVAL_CROSSES_SESSION_BOUNDARY")
         result.update(reaction_session=session, release_timing=timing)
         if timing in {"regular", "bell_ambiguous"}:
             return stop("INTRADAY_OR_BELL_REQUIRES_FINER_DATA")

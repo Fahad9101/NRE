@@ -1,5 +1,7 @@
 # Milestone 1 — earnings event dataset
 
+Minute-precision publication timestamps are supported as intervals: encode the minute start with a timezone offset and `precision: "minute"`. The builder retains the exclusive upper bound, requires the full interval before the decision cutoff and checks session and identity validity throughout. First-public verification and source evidence remain mandatory. This does not automatically admit minute-level wire timestamps. Date-only and market-boundary-ambiguous releases remain quarantined. See `reports/four-candidate-interval-replay.json` for the real-event replay.
+
 ## Current state
 
 The engineering foundation is implemented. **Historical-data acceptance is not complete.** Tests use explicitly synthetic sources and prices, not trading evidence. No model, ranking, reaction fingerprint, analogue engine, investment score, brokerage integration or downstream modification is included.

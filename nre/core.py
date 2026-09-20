@@ -2,7 +2,7 @@
 import hashlib
 import json
 import math
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 
 class DataError(ValueError):
@@ -32,6 +32,24 @@ def timestamp(value):
 
 def iso(value):
     return value.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def publication_bounds(event):
+    """Return earliest, latest possible instant, and conservative availability.
+
+    Minute timestamps denote [minute start, next minute), not exact seconds.
+    Availability uses the exclusive upper bound; second timestamps stay points.
+    """
+    precision = event["precision"]
+    if precision not in {"second", "minute"}:
+        raise DataError("unsupported publication precision")
+    start = timestamp(event["published_at"])
+    if precision == "second":
+        return start, start, start
+    if start.second or start.microsecond:
+        raise DataError("minute publication must be aligned to minute start")
+    end = start + timedelta(minutes=1)
+    return start, end - timedelta(microseconds=1), end
 
 
 def number(value, positive=False):

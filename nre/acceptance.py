@@ -59,7 +59,7 @@ def audit_cohort(bundle, protocol, ledger, review):
     unsupported_identities = []
     for event_id, event in events.items():
         row = outcomes[event_id]
-        if event["precision"] == "second":
+        if event["precision"] in {"second", "minute"}:
             day = timestamp(event["published_at"]).astimezone(ZoneInfo("America/New_York")).date()
             if start <= day <= end:
                 in_window.append(event_id)
