@@ -82,29 +82,70 @@ def deterministic_issuer_sample(issuers, sample_size, seed, exclude_ciks=()):
     return eligible[:sample_size]
 
 
-def relevant_history_files(document, screen_start):
-    """Return continuation files needed only when recent submissions do not reach screen_start."""
+def _one_year_before(day):
+    try:
+        return day.replace(year=day.year - 1)
+    except ValueError:
+        # Feb. 29 -> Feb. 28 of the prior year.
+        return day.replace(year=day.year - 1, day=28)
+
+
+def relevant_history_files(document, screen_start, retrieved_at=None):
+    """Return continuation files required for the requested filing screen.
+
+    SEC documents that the main submissions JSON contains at least one year of
+    filing history or 1,000 filings, whichever is more. When the screen start is
+    inside that guaranteed one-year window, absence of an earlier filing in the
+    recent array is evidence of no filing, not missing coverage.
+
+    For older screens, continuation metadata is followed conservatively.
+    """
     start = _date(screen_start)
     filings = document.get("filings", {})
     recent = filings.get("recent", {})
     dates = recent.get("filingDate")
-    if not isinstance(dates, list) or not dates:
+    if not isinstance(dates, list):
         raise DataError("SEC submissions missing recent filing dates")
-    parsed = [_date(x) for x in dates]
-    if min(parsed) <= start:
+
+    if retrieved_at is not None:
+        try:
+            retrieved_day = datetime.fromisoformat(str(retrieved_at).replace("Z", "+00:00")).date()
+        except ValueError as exc:
+            raise DataError("invalid SEC retrieval timestamp") from exc
+        if start >= _one_year_before(retrieved_day):
+            return []
+
+    if dates:
+        parsed = [_date(x) for x in dates]
+        if min(parsed) <= start:
+            return []
+
+    files = filings.get("files", [])
+    if not isinstance(files, list):
+        raise DataError("SEC continuation metadata malformed")
+    if not files:
+        # No continuation files means the main submissions object is the complete
+        # filing history exposed for this filer.
         return []
 
     needed = []
-    for item in filings.get("files", []):
+    newest_history_end = None
+    for item in files:
         if not isinstance(item, dict) or not all(k in item for k in ("name", "filingFrom", "filingTo")):
             raise DataError("SEC continuation metadata incomplete")
         low, high = _date(item["filingFrom"]), _date(item["filingTo"])
+        newest_history_end = high if newest_history_end is None or high > newest_history_end else newest_history_end
         if low <= start <= high or high >= start:
             needed.append(item)
-    if not needed:
-        raise DataError("SEC submissions do not cover filing screen start")
-    needed.sort(key=lambda x: x["name"])
-    return needed
+
+    if needed:
+        needed.sort(key=lambda x: x["name"])
+        return needed
+
+    # When all declared continuation files end before the screen and the screen
+    # is older than the SEC one-year guarantee, the source cannot prove that the
+    # interval is complete without another census source.
+    raise DataError("SEC submissions do not prove filing-screen coverage")
 
 
 def screen_item_202(candidates, screen_start, screen_end):
@@ -177,7 +218,11 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
 
         ledgers = [sec_candidates(document, cik)]
         observations = [submissions_meta]
-        for history in relevant_history_files(document, spec["filing_screen_start"]):
+        for history in relevant_history_files(
+            document,
+            spec["filing_screen_start"],
+            submissions_meta["retrieved_at"],
+        ):
             name = history["name"]
             if Path(name).name != name or not name.endswith(".json"):
                 raise DataError("unsafe SEC continuation filename")
