@@ -10,7 +10,7 @@ Official Apple and Microsoft release HTML files were downloaded and hashed. Appl
 
 Other tested routes: the existing Financial Datasets connector returned an insufficient-credit response (zero balance); nothing was purchased. Stooq's public download page returned a browser-verification challenge; no bypass was attempted. SEC's previously recorded 403 remains a separate source-access limitation. Official issuer releases offer a legitimate alternate source of news, subject to first-public timestamp review.
 
-For broader price coverage, an authorized account or permitted export is still necessary. The user's existing Alpaca account is a candidate: its documentation describes a free Basic plan with limited real-time coverage and historical data, but credentials and actual feed entitlement have not been supplied or verified in this workspace. Configuring access is not evidence that the ensuing data passes NRE validation.
+Update on 2026-09-20: the existing Alpaca connector is available and authenticated. Both historical IEX and SIP probes succeeded. An explicit SIP request for IBM returned all 82 sessions from January 2 through April 30, matching the provider calendar and passing OHLCV consistency checks. See [Alpaca access](ALPACA-ACCESS.md), `config/alpaca.json` and `reports/alpaca-access.json`. Credentials remain connector-managed; standalone CLI and GitHub Actions access are not configured. Session semantics, adjustment behavior, pagination, source rights and the event acceptance reviews remain pending. Successful access does not establish dataset acceptance or live SIP entitlement.
 
 References:
 

@@ -1,0 +1,40 @@
+{
+  "checked_on": "2026-09-20",
+  "status": "CONNECTED_HISTORICAL_ACCESS_VERIFIED",
+  "transport": "chatgpt_alpaca_connector",
+  "credentials_handled_by": "existing_connector",
+  "github_actions_credentials_configured": false,
+  "request": {
+    "symbols": [
+      "IBM"
+    ],
+    "days": 5,
+    "hours": 0,
+    "minutes": 30,
+    "timeframe": "1Day",
+    "limit": 1000,
+    "start": "2026-01-02",
+    "end": "2026-04-30",
+    "sort": "asc",
+    "feed": "sip",
+    "currency": null,
+    "asof": "2026-01-28",
+    "tz": "America/New_York"
+  },
+  "records": 82,
+  "calendar_sessions": 82,
+  "missing_sessions": [],
+  "unexpected_sessions": [],
+  "unique_sessions": 82,
+  "ohlcv_consistent": true,
+  "iex_probe": "passed_3_rows",
+  "sip_probe": "passed_82_rows",
+  "scope": "exploratory_access_probe_not_frozen_cohort",
+  "accepted_events": 0,
+  "limitations": [
+    "No live SIP entitlement asserted.",
+    "Connector response did not expose adjustment or pagination metadata; adapter semantics remain unverified.",
+    "Regular-session label suitability, corporate actions, historical identities and redistribution rights remain under review.",
+    "No standalone CLI or GitHub Actions authentication configured."
+  ]
+}

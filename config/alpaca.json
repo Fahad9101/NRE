@@ -1,0 +1,14 @@
+{
+  "provider": "alpaca",
+  "transport": "chatgpt_alpaca_connector",
+  "mode": "historical_research",
+  "feed": "sip",
+  "allow_feed_fallback": false,
+  "timeframe": "1Day",
+  "sort": "asc",
+  "timezone": "America/New_York",
+  "symbol_asof_policy": "explicit_reviewed_event_date",
+  "credentials": "connector_managed",
+  "runtime_integration": "operator_recipe_not_consumed_by_cli",
+  "acceptance_enabled": false
+}
