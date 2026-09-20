@@ -18,13 +18,16 @@ Within the pilot filing-date window, the January 29 earnings filing is the only 
 
 The referenced continuation file ends July 22, 2015, so it does not overlap the 2026 pilot. Full-history completeness remains false, while the requested pilot dates are present in the supplied recent-history range. There is no need to request that old continuation to investigate this pilot. Apple is now imported; the remaining discovery input is submissions data for additional issuers. The original upload is retained separately and its hash is recorded; it has not been represented as a direct SEC download by NRE.
 
-The source review on 2026-09-20 established three useful observations, recorded in `reports/event-source-review.json`:
+The source review on 2026-09-20 now records minute-level distribution evidence for all four exploratory earnings candidates in `reports/event-source-review.json`:
 
-- IBM's issuer-distributed [wire release](https://www.prnewswire.com/news-releases/ibm-releases-fourth-quarter-results-302673165.html) displays January 28, 2026 at 16:08 ET. This improves date-only evidence to a publication minute. It does not prove an exact second or earliest publication across channels.
-- Apple's [filing index](https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/0000320193-26-000005-index.html) confirms accession 0000320193-26-000005, Item 2.02 and acceptance at 16:30:33 on January 29. Filing acceptance stays separate from release time.
-- Apple's [primary filing](https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm) identifies AAPL common shares listed on Nasdaq. Availability before first-public news still needs review.
+- IBM's issuer-distributed [PR Newswire release](https://www.prnewswire.com/news-releases/ibm-releases-fourth-quarter-results-302673165.html) displays January 28, 2026 at 16:08 ET.
+- Microsoft's issuer-attributed [PR Newswire notice](https://www.prnewswire.com/news-releases/microsoft-earnings-press-release-available-on-investor-relations-website-302673166.html) displays January 28, 2026 at 16:05 ET and states that the results were available on Microsoft's Investor Relations site.
+- Nasdaq's [Business Wire syndication of Apple's release](https://www.nasdaq.com/press-release/apple-reports-first-quarter-results-2026-01-29) displays January 29, 2026 at 4:30pm EST.
+- NVIDIA's [GlobeNewswire release](https://www.globenewswire.com/news-release/2026/02/25/3245078/0/en/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026.html) displays February 25, 2026 at 16:31 ET.
+- Apple's [filing index](https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/0000320193-26-000005-index.html) separately confirms SEC acceptance at 16:30:33 on January 29; filing acceptance is not substituted for publication time.
+- Apple's [primary filing](https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm) supports contemporaneous AAPL common-stock/Nasdaq identity evidence.
 
-These are exploratory source records, not the frozen acceptance ledger. The current builder requires second-precision verified first-public timestamps. No seconds were invented, no acceptance time was substituted for release time, and no event was promoted. Raw source bytes were not acquired for these pages; the report makes no raw-byte checksum claim.
+These are exploratory source records, not the frozen acceptance ledger. The current builder accepts second-precision points or minute-precision publication intervals. The displayed wire/syndication minutes therefore improve timestamp precision without inventing seconds. None is yet marked `first_public_verified:true`: competing-channel review and archival/provenance requirements still have to establish that the displayed time is an acceptable first-public observation. No event was promoted.
 
 ## Input needed to complete discovery
 
