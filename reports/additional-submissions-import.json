@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "imported_on": "2026-09-20",
+  "acquisition": "user supplied JSON in Markdown code fences",
+  "issuers": [
+    {
+      "cik": "0000789019",
+      "issuer": "MICROSOFT CORP",
+      "source_url": "https://data.sec.gov/submissions/CIK0000789019.json",
+      "attachment_sha256": "90020c8b0c6e7374a6788e136b1d1ab2fea3f0d7c93c85931f0d5a429547edd2",
+      "extracted_json_sha256": "551ff75d16e89942b05b48835f3548be1276d59159bf86f009468b99542a94b9",
+      "source_download_time": null,
+      "filing_rows": 1002,
+      "filing_date_min": "2020-08-07",
+      "filing_date_max": "2026-09-17",
+      "eight_k_rows": 57,
+      "states_all_history": {
+        "NOT_ITEM_2_02": 32,
+        "EARNINGS_CANDIDATE": 24,
+        "AMENDMENT_REVIEW": 1
+      },
+      "continuation_files": [
+        {
+          "name": "CIK0000789019-submissions-001.json",
+          "filingCount": 2002,
+          "filingFrom": "2008-08-13",
+          "filingTo": "2020-08-05"
+        },
+        {
+          "name": "CIK0000789019-submissions-002.json",
+          "filingCount": 1521,
+          "filingFrom": "1994-02-14",
+          "filingTo": "2008-08-11"
+        }
+      ],
+      "continuation_overlaps_pilot": false,
+      "all_history_complete": false,
+      "pilot_filing_rows": [
+        {
+          "candidate_id": "0001193125-26-027198",
+          "cik": "0000789019",
+          "form": "8-K",
+          "filing_date": "2026-01-28",
+          "items": [
+            "2.02",
+            "9.01"
+          ],
+          "acceptance_at": "2026-01-28T21:04:38.000Z",
+          "state": "EARNINGS_CANDIDATE",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm"
+        }
+      ],
+      "primary_filing_review": {
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm",
+        "retrieval": "web extracted page on 2026-09-20",
+        "raw_bytes_archived": false,
+        "earnings_release_date_confirmed": "2026-01-28",
+        "security_label": "MSFT common stock / Nasdaq",
+        "first_public_time_verified": false,
+        "identity_available_before_news_verified": false
+      }
+    },
+    {
+      "cik": "0000051143",
+      "issuer": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "source_url": "https://data.sec.gov/submissions/CIK0000051143.json",
+      "attachment_sha256": "2f836f7835514867c7a992354e8446201d4a606480a736e390cb1c418da7f01d",
+      "extracted_json_sha256": "0d698f754c7aa7f9373bc90b65d73d801e018ad176b6ffb5e4ec0f6d18fa984f",
+      "source_download_time": null,
+      "filing_rows": 1002,
+      "filing_date_min": "2020-01-16",
+      "filing_date_max": "2026-08-28",
+      "eight_k_rows": 119,
+      "states_all_history": {
+        "NOT_ITEM_2_02": 88,
+        "EARNINGS_CANDIDATE": 30,
+        "AMENDMENT_REVIEW": 1
+      },
+      "continuation_files": [
+        {
+          "name": "CIK0000051143-submissions-001.json",
+          "filingCount": 2005,
+          "filingFrom": "2012-07-02",
+          "filingTo": "2020-01-14"
+        },
+        {
+          "name": "CIK0000051143-submissions-002.json",
+          "filingCount": 2010,
+          "filingFrom": "2006-11-16",
+          "filingTo": "2012-06-30"
+        },
+        {
+          "name": "CIK0000051143-submissions-003.json",
+          "filingCount": 2030,
+          "filingFrom": "2003-10-01",
+          "filingTo": "2006-11-14"
+        },
+        {
+          "name": "CIK0000051143-submissions-004.json",
+          "filingCount": 620,
+          "filingFrom": "1994-03-10",
+          "filingTo": "2003-09-29"
+        }
+      ],
+      "continuation_overlaps_pilot": false,
+      "all_history_complete": false,
+      "pilot_filing_rows": [
+        {
+          "candidate_id": "0000051143-26-000015",
+          "cik": "0000051143",
+          "form": "8-K",
+          "filing_date": "2026-03-03",
+          "items": [
+            "5.03",
+            "9.01"
+          ],
+          "acceptance_at": "2026-03-03T21:19:31.000Z",
+          "state": "NOT_ITEM_2_02",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000015/ibm-20260301.htm"
+        },
+        {
+          "candidate_id": "0001104659-26-009343",
+          "cik": "0000051143",
+          "form": "8-K",
+          "filing_date": "2026-02-02",
+          "items": [
+            "9.01"
+          ],
+          "acceptance_at": "2026-02-02T22:25:19.000Z",
+          "state": "NOT_ITEM_2_02",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926009343/tm264790d2_8k.htm"
+        },
+        {
+          "candidate_id": "0000051143-26-000006",
+          "cik": "0000051143",
+          "form": "8-K",
+          "filing_date": "2026-01-30",
+          "items": [
+            "5.02",
+            "9.01"
+          ],
+          "acceptance_at": "2026-01-30T21:32:05.000Z",
+          "state": "NOT_ITEM_2_02",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000006/ibm-20260127.htm"
+        },
+        {
+          "candidate_id": "0000051143-26-000004",
+          "cik": "0000051143",
+          "form": "8-K",
+          "filing_date": "2026-01-28",
+          "items": [
+            "2.02",
+            "9.01"
+          ],
+          "acceptance_at": "2026-01-28T21:10:27.000Z",
+          "state": "EARNINGS_CANDIDATE",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000004/ibm-20260128.htm"
+        }
+      ],
+      "primary_filing_review": {
+        "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000004/ibm-20260128.htm",
+        "retrieval": "web extracted page on 2026-09-20",
+        "raw_bytes_archived": false,
+        "earnings_release_date_confirmed": "2026-01-28",
+        "security_label": "IBM capital stock / NYSE and NYSE Texas",
+        "first_public_time_verified": false,
+        "identity_available_before_news_verified": false
+      }
+    },
+    {
+      "cik": "0001045810",
+      "issuer": "NVIDIA CORP",
+      "source_url": "https://data.sec.gov/submissions/CIK0001045810.json",
+      "attachment_sha256": "69e13744600d78ed0fc9d1b4719d502233d017047416b1c427e6650c3b38e283",
+      "extracted_json_sha256": "7f9d5135fdb5e9f14e68cb109632c54ceafedef50e8e4946b13ec4b2c397801f",
+      "source_download_time": null,
+      "filing_rows": 1000,
+      "filing_date_min": "2020-08-19",
+      "filing_date_max": "2026-09-18",
+      "eight_k_rows": 62,
+      "states_all_history": {
+        "NOT_ITEM_2_02": 36,
+        "EARNINGS_CANDIDATE": 26
+      },
+      "continuation_files": [
+        {
+          "name": "CIK0001045810-submissions-001.json",
+          "filingCount": 1484,
+          "filingFrom": "1998-03-06",
+          "filingTo": "2020-08-17"
+        }
+      ],
+      "continuation_overlaps_pilot": false,
+      "all_history_complete": false,
+      "pilot_filing_rows": [
+        {
+          "candidate_id": "0001045810-26-000024",
+          "cik": "0001045810",
+          "form": "8-K",
+          "filing_date": "2026-03-06",
+          "items": [
+            "5.02",
+            "9.01"
+          ],
+          "acceptance_at": "2026-03-06T21:11:25.000Z",
+          "state": "NOT_ITEM_2_02",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000024/nvda-20260302.htm"
+        },
+        {
+          "candidate_id": "0001045810-26-000019",
+          "cik": "0001045810",
+          "form": "8-K",
+          "filing_date": "2026-02-25",
+          "items": [
+            "2.02",
+            "9.01"
+          ],
+          "acceptance_at": "2026-02-25T21:31:25.000Z",
+          "state": "EARNINGS_CANDIDATE",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm"
+        },
+        {
+          "candidate_id": "0001045810-26-000003",
+          "cik": "0001045810",
+          "form": "8-K",
+          "filing_date": "2026-01-23",
+          "items": [
+            "5.02"
+          ],
+          "acceptance_at": "2026-01-23T22:01:33.000Z",
+          "state": "NOT_ITEM_2_02",
+          "first_public_verified": false,
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000003/nvda-20260120.htm"
+        }
+      ],
+      "primary_filing_review": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm",
+        "retrieval": "web extracted page on 2026-09-20",
+        "raw_bytes_archived": false,
+        "earnings_release_date_confirmed": "2026-02-25",
+        "security_label": "NVDA common stock / Nasdaq Global Select Market",
+        "first_public_time_verified": false,
+        "identity_available_before_news_verified": false
+      }
+    }
+  ],
+  "accepted_events": 0,
+  "frozen_cohort": false,
+  "limitations": [
+    "Original source download times and direct SEC byte identity remain unverified.",
+    "Filing-date screening is not a complete release-date census; late and boundary filings require review.",
+    "Current ticker metadata does not prove historical identity availability.",
+    "No first-public release times are certified.",
+    "This batch was selected for source access; it is not the frozen acceptance cohort."
+  ]
+}

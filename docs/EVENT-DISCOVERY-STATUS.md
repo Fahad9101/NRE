@@ -1,5 +1,13 @@
 # Event discovery evidence and current block
 
+## Three additional uploads imported
+
+Microsoft, IBM and NVIDIA uploads were parsed on 2026-09-20: 1,002, 1,002 and 1,000 filing records respectively. The full supplied histories contain 238 8-K/8-K-A records, preserved in `reports/additional-eight-k-ledger.json`. Source hashes, date ranges and continuation metadata are in `reports/additional-submissions-import.json`. All referenced history files end before 2026; none overlap this pilot.
+
+The three new Item 2.02 candidates have release dates January 28 (Microsoft and IBM) and February 25 (NVIDIA), corroborated by their linked primary filings. Those filings also provide contemporaneous security-listing evidence, but not proof of identity availability before first news publication. Acceptance times remain distinct from release times. IBM's previously observed 16:08 ET wire minute precedes its 21:10:27 UTC SEC acceptance; this reinforces why acceptance cannot substitute for first-public timing.
+
+Across the four uploaded issuers, 4,005 filing records yield ten 8-K records in the pilot filing-date window: four earnings candidates and six non-Item-2.02 records. The combined screen is `reports/discovery-progress.json`. Zero events are accepted. This remains an exploratory source-access batch; it has not been represented as a frozen or representative cohort. More issuer coverage and release-time evidence are still required.
+
 ## Apple upload imported
 
 On 2026-09-20 the user supplied Apple's submissions JSON inside a Markdown code fence. Removing that fence produced valid JSON with 1,001 filing rows from July 24, 2015 through September 17, 2026. All columns have equal length. The existing `discover-sec` command produced 105 8-K/8-K-A records: 45 earnings candidates, 58 non-Item-2.02 records and two amendments requiring review across the full supplied history. See `reports/apple-submissions-import.json` and `reports/apple-eight-k-ledger.json`.

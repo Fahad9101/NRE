@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "as_of_date": "2026-09-20",
+  "status": "DISCOVERY_IN_PROGRESS",
+  "frozen": false,
+  "issuer_count": 4,
+  "filing_rows_imported": 4005,
+  "pilot_eight_k_rows": 10,
+  "pilot_earnings_candidates": 4,
+  "accepted_events": 0,
+  "pilot_filing_date_screen": [
+    {
+      "acceptance_at": "2026-02-24T21:55:58.000Z",
+      "candidate_id": "0001140361-26-006577",
+      "cik": "0000320193",
+      "filing_date": "2026-02-24",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "5.07",
+        "9.01"
+      ],
+      "state": "NOT_ITEM_2_02",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm"
+    },
+    {
+      "acceptance_at": "2026-01-29T21:30:33.000Z",
+      "candidate_id": "0000320193-26-000005",
+      "cik": "0000320193",
+      "filing_date": "2026-01-29",
+      "first_public_verified": false,
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "state": "EARNINGS_CANDIDATE",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm"
+    },
+    {
+      "candidate_id": "0001193125-26-027198",
+      "cik": "0000789019",
+      "form": "8-K",
+      "filing_date": "2026-01-28",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "acceptance_at": "2026-01-28T21:04:38.000Z",
+      "state": "EARNINGS_CANDIDATE",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm"
+    },
+    {
+      "candidate_id": "0000051143-26-000015",
+      "cik": "0000051143",
+      "form": "8-K",
+      "filing_date": "2026-03-03",
+      "items": [
+        "5.03",
+        "9.01"
+      ],
+      "acceptance_at": "2026-03-03T21:19:31.000Z",
+      "state": "NOT_ITEM_2_02",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000015/ibm-20260301.htm"
+    },
+    {
+      "candidate_id": "0001104659-26-009343",
+      "cik": "0000051143",
+      "form": "8-K",
+      "filing_date": "2026-02-02",
+      "items": [
+        "9.01"
+      ],
+      "acceptance_at": "2026-02-02T22:25:19.000Z",
+      "state": "NOT_ITEM_2_02",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926009343/tm264790d2_8k.htm"
+    },
+    {
+      "candidate_id": "0000051143-26-000006",
+      "cik": "0000051143",
+      "form": "8-K",
+      "filing_date": "2026-01-30",
+      "items": [
+        "5.02",
+        "9.01"
+      ],
+      "acceptance_at": "2026-01-30T21:32:05.000Z",
+      "state": "NOT_ITEM_2_02",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000006/ibm-20260127.htm"
+    },
+    {
+      "candidate_id": "0000051143-26-000004",
+      "cik": "0000051143",
+      "form": "8-K",
+      "filing_date": "2026-01-28",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "acceptance_at": "2026-01-28T21:10:27.000Z",
+      "state": "EARNINGS_CANDIDATE",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000004/ibm-20260128.htm"
+    },
+    {
+      "candidate_id": "0001045810-26-000024",
+      "cik": "0001045810",
+      "form": "8-K",
+      "filing_date": "2026-03-06",
+      "items": [
+        "5.02",
+        "9.01"
+      ],
+      "acceptance_at": "2026-03-06T21:11:25.000Z",
+      "state": "NOT_ITEM_2_02",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000024/nvda-20260302.htm"
+    },
+    {
+      "candidate_id": "0001045810-26-000019",
+      "cik": "0001045810",
+      "form": "8-K",
+      "filing_date": "2026-02-25",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "acceptance_at": "2026-02-25T21:31:25.000Z",
+      "state": "EARNINGS_CANDIDATE",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm"
+    },
+    {
+      "candidate_id": "0001045810-26-000003",
+      "cik": "0001045810",
+      "form": "8-K",
+      "filing_date": "2026-01-23",
+      "items": [
+        "5.02"
+      ],
+      "acceptance_at": "2026-01-23T22:01:33.000Z",
+      "state": "NOT_ITEM_2_02",
+      "first_public_verified": false,
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000003/nvda-20260120.htm"
+    }
+  ],
+  "remaining": [
+    "Expand issuer discovery before freezing candidate membership.",
+    "Review release-date boundary and late filings.",
+    "Verify first-public timing and historical identity availability.",
+    "Resolve provider/session/action reviews and independent spot checks."
+  ],
+  "note": "Exploratory filing-date screen; neither a frozen cohort nor a complete release-date census."
+}
