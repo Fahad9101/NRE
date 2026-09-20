@@ -11,28 +11,77 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Discover SEC-index mirror parquet files
+      - name: Install probe-only parquet reader
+        run: python -m pip install --disable-pip-version-check duckdb
+      - name: Query 2026 SEC-index mirror parquet
         run: |
           python - <<'PY'
+          import hashlib
           import json
           import urllib.parse
           import urllib.request
+          from pathlib import Path
+          import duckdb
 
           dataset = "DenyTranDFW/SEC_Master_Index_Files_Lists"
-          url = "https://datasets-server.huggingface.co/parquet?" + urllib.parse.urlencode({"dataset": dataset})
-          with urllib.request.urlopen(url, timeout=60) as response:
-              doc = json.loads(response.read())
-          files = doc.get("parquet_files", [])
+          api = "https://datasets-server.huggingface.co/parquet?" + urllib.parse.urlencode({"dataset": dataset})
+          with urllib.request.urlopen(api, timeout=60) as response:
+              listing_bytes = response.read()
+          listing = json.loads(listing_bytes)
+          files = listing["parquet_files"]
+          assert len(files) == 34
+          last = files[-1]
+          assert last["filename"] == "0033.parquet", last
+
+          path = Path("/tmp/sec-master-index-2026.parquet")
+          req = urllib.request.Request(last["url"], headers={"User-Agent":"NRE-M1/1.0"})
+          with urllib.request.urlopen(req, timeout=120) as response:
+              raw = response.read()
+          path.write_bytes(raw)
+
+          con = duckdb.connect()
+          schema = con.execute("DESCRIBE SELECT * FROM read_parquet(?)", [str(path)]).fetchall()
+          bounds = con.execute(
+              "SELECT min(date_filed), max(date_filed), min(yr), max(yr), count(*) FROM read_parquet(?)",
+              [str(path)],
+          ).fetchone()
+          rows = con.execute(
+              """
+              SELECT cik, company_name, form_type, date_filed, filename, yr, qtr, src
+              FROM read_parquet(?)
+              WHERE form_type IN ('8-K','8-K/A')
+                AND date_filed >= '2026-01-05'
+                AND date_filed <= '2026-03-31'
+              ORDER BY date_filed, cik, filename
+              """,
+              [str(path)],
+          ).fetchall()
+          unique_ciks = len({str(r[0]) for r in rows})
+          source_values = sorted({str(r[7]) for r in rows})
+
           print(json.dumps({
-              "parquet_file_count": len(files),
-              "sample": files[:5],
+              "duckdb_version": duckdb.__version__,
+              "parquet_filename": last["filename"],
+              "parquet_url": last["url"],
+              "parquet_sha256": hashlib.sha256(raw).hexdigest(),
+              "parquet_size": len(raw),
+              "listing_sha256": hashlib.sha256(listing_bytes).hexdigest(),
+              "schema": schema,
+              "bounds": [str(x) for x in bounds],
+              "q1_8k_rows": len(rows),
+              "q1_unique_ciks": unique_ciks,
+              "source_values": source_values,
+              "sample": [list(map(str, r)) for r in rows[:5]],
           }, sort_keys=True))
-          assert files
-          assert all(x.get("config") == "default" and x.get("split") == "train" for x in files)
+
+          assert rows
+          assert unique_ciks >= 25
+          assert source_values == ["https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx"]
+          assert "2026" in str(bounds[2]) and "2026" in str(bounds[3])
           PY
