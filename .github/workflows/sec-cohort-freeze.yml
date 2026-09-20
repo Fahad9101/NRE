@@ -17,11 +17,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Authoritative freeze runs only from the current committed spec/code boundary.
   freeze:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,40 +30,145 @@ jobs:
       - name: Re-run offline validation before network acquisition
         run: python -m unittest discover -s tests -v
 
-      - name: Freeze deterministic SEC candidate membership
+      - name: Install acquisition-only parquet reader
+        run: python -m pip install --disable-pip-version-check duckdb==1.5.5
+
+      - name: Build pinned historical SEC filer frame
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import urllib.parse
+          import urllib.request
+          from pathlib import Path
+          import duckdb
+
+          spec = json.loads(Path("config/sec-cohort-spec.json").read_text())
+          hf = spec["historical_frame"]
+          listing_url = "https://datasets-server.huggingface.co/parquet?" + urllib.parse.urlencode(
+              {"dataset": hf["dataset"]}
+          )
+          with urllib.request.urlopen(listing_url, timeout=60) as response:
+              listing_bytes = response.read()
+          listing_sha = hashlib.sha256(listing_bytes).hexdigest()
+          assert listing_sha == hf["parquet_listing_sha256"], (listing_sha, hf["parquet_listing_sha256"])
+          listing = json.loads(listing_bytes)
+          matches = [
+              x for x in listing["parquet_files"]
+              if x["config"] == "default"
+              and x["split"] == "train"
+              and x["filename"] == hf["parquet_filename"]
+          ]
+          assert len(matches) == 1, matches
+          parquet_meta = matches[0]
+          assert parquet_meta["url"] == hf["parquet_url"], parquet_meta
+
+          req = urllib.request.Request(hf["parquet_url"], headers={"User-Agent": "NRE-M1/1.0"})
+          with urllib.request.urlopen(req, timeout=120) as response:
+              raw = response.read()
+          parquet_sha = hashlib.sha256(raw).hexdigest()
+          assert parquet_sha == hf["parquet_sha256"], (parquet_sha, hf["parquet_sha256"])
+          parquet_path = Path("/tmp/nre-sec-master-2026.parquet")
+          parquet_path.write_bytes(raw)
+
+          con = duckdb.connect()
+          start = spec["filing_screen_start"]
+          end = spec["filing_screen_end"]
+          forms = tuple(hf["allowed_forms"])
+          query = """
+              SELECT cik, company_name, form_type, date_filed, filename, src
+              FROM read_parquet(?)
+              WHERE form_type IN (?, ?)
+                AND date_filed >= ?
+                AND date_filed <= ?
+              ORDER BY date_filed, cik, filename
+          """
+          result = con.execute(
+              query,
+              [str(parquet_path), forms[0], forms[1], start, end],
+          ).fetchall()
+          allowed_sources = set(hf["allowed_canonical_sources"])
+          rows = []
+          for cik, company, form, filed, filename, src in result:
+              assert str(src) in allowed_sources, src
+              rows.append({
+                  "cik": str(cik),
+                  "company_name": str(company),
+                  "form_type": str(form),
+                  "date_filed": str(filed),
+                  "filename": str(filename),
+                  "src": str(src),
+              })
+          assert rows
+          frame = {
+              "schema_version": 1,
+              "source": {
+                  "dataset": hf["dataset"],
+                  "parquet_filename": hf["parquet_filename"],
+                  "parquet_url": hf["parquet_url"],
+                  "parquet_sha256": parquet_sha,
+                  "parquet_listing_sha256": listing_sha,
+                  "mirror_provider": hf["mirror_provider"],
+              },
+              "filing_screen_start": start,
+              "filing_screen_end": end,
+              "rows": rows,
+          }
+          frame_bytes = json.dumps(frame, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
+          Path("/tmp/nre-historical-frame.json").write_bytes(frame_bytes)
+          print(json.dumps({
+              "frame_rows": len(rows),
+              "unique_ciks": len({r["cik"] for r in rows}),
+              "frame_sha256": hashlib.sha256(frame_bytes).hexdigest(),
+              "parquet_sha256": parquet_sha,
+              "listing_sha256": listing_sha,
+              "source_values": sorted({r["src"] for r in rows}),
+          }, sort_keys=True))
+          PY
+
+      - name: Freeze deterministic historical candidate membership
         env:
           SEC_USER_AGENT: NRE-M1 research contact https://github.com/Fahad9101/NRE
         run: |
           rm -rf /tmp/nre-sec-freeze
-          python -m nre freeze-sec-cohort \
-            --spec config/sec-cohort-spec.json \
-            --protocol config/pilot.json \
-            --output /tmp/nre-sec-freeze
+          python -m nre freeze-sec-cohort             --spec config/sec-cohort-spec.json             --protocol config/pilot.json             --frame /tmp/nre-historical-frame.json             --output /tmp/nre-sec-freeze
 
-      - name: Verify freeze boundary
+      - name: Verify source-side freeze boundary
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          report = json.loads(Path('/tmp/nre-sec-freeze/discovery-report.json').read_text())
-          ledger = json.loads(Path('/tmp/nre-sec-freeze/candidate-ledger.json').read_text())
-          assert report['state'] == 'FROZEN_CANDIDATE_MEMBERSHIP', report
-          assert report['price_data_accessed_by_this_workflow'] is False
-          assert report['candidate_count'] >= 100
-          assert ledger['frozen_at'] == report['frozen_at']
-          assert len(ledger['candidates']) == report['candidate_count']
+          spec = json.loads(Path("config/sec-cohort-spec.json").read_text())
+          report = json.loads(Path("/tmp/nre-sec-freeze/discovery-report.json").read_text())
+          ledger = json.loads(Path("/tmp/nre-sec-freeze/candidate-ledger.json").read_text())
+          cohort = json.loads(Path("/tmp/nre-sec-freeze/issuer-cohort.json").read_text())
+          assert report["state"] == "FROZEN_CANDIDATE_MEMBERSHIP", report
+          assert report["price_data_accessed_by_this_workflow"] is False
+          assert report["candidate_count"] >= spec["freeze_min_item_2_02_candidates"]
+          assert report["issuers_with_item_2_02_candidates"] >= spec["freeze_min_item_2_02_issuers"]
+          assert report["processed_issuers"] <= spec["issuer_pool_max"]
+          assert report["stop_boundary"] % spec["issuer_batch_size"] == 0
+          assert ledger["frozen_at"] == report["frozen_at"] == cohort["frozen_at"]
+          assert len(ledger["candidates"]) == report["candidate_count"]
+          assert ledger["historical_frame_sha256"] == cohort["historical_frame_sha256"]
           print(json.dumps({
-              'state': report['state'],
-              'selected_issuers': report['selected_issuers'],
-              'issuers_with_item_2_02_candidates': report['issuers_with_item_2_02_candidates'],
-              'candidate_count': report['candidate_count'],
-              'membership_sha256': report['membership_sha256'],
-              'frozen_at': report['frozen_at'],
+              "state": report["state"],
+              "processed_issuers": report["processed_issuers"],
+              "stop_boundary": report["stop_boundary"],
+              "candidate_count": report["candidate_count"],
+              "candidate_issuers": report["issuers_with_item_2_02_candidates"],
+              "reconciled_issuers": report["reconciled_issuers"],
+              "reconciliation_review_issuers": report["issuers_requiring_frame_reconciliation_review"],
+              "membership_sha256": report["membership_sha256"],
+              "historical_frame_sha256": report["historical_frame_sha256"],
+              "frozen_at": report["frozen_at"],
           }, sort_keys=True))
           PY
 
-      - name: Publish frozen metadata only
+      - name: Publish frozen metadata only from unchanged source SHA
         run: |
+          git fetch origin main
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
           cp /tmp/nre-sec-freeze/issuer-cohort.json config/m1-frozen-issuer-cohort.json
           cp /tmp/nre-sec-freeze/candidate-ledger.json config/m1-frozen-candidate-ledger.json
           cp /tmp/nre-sec-freeze/discovery-report.json reports/m1-sec-cohort-freeze.json
@@ -72,13 +176,16 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add config/m1-frozen-issuer-cohort.json config/m1-frozen-candidate-ledger.json reports/m1-sec-cohort-freeze.json
           git diff --cached --quiet && exit 0
-          git commit -m "data: freeze clean Milestone 1 SEC cohort"
-          git push
+          git commit -m "data: freeze historical Milestone 1 SEC cohort"
+          git push origin HEAD:main
 
-      - name: Preserve raw SEC acquisition as temporary audit artifact
+      - name: Preserve acquisition inputs as audit artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nre-m1-sec-freeze-raw
-          path: /tmp/nre-sec-freeze/raw
+          name: nre-m1-historical-sec-freeze-audit
+          path: |
+            /tmp/nre-historical-frame.json
+            /tmp/nre-sec-master-2026.parquet
+            /tmp/nre-sec-freeze/raw
           if-no-files-found: error
           retention-days: 30
