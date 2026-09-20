@@ -1,0 +1,79 @@
+name: NRE M1 SEC Cohort Freeze
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sec-cohort-freeze.yml'
+      - 'config/sec-cohort-spec.json'
+      - 'nre/cohort.py'
+      - 'nre/ingestion.py'
+      - 'nre/cli.py'
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Re-run offline validation before network acquisition
+        run: python -m unittest discover -s tests -v
+
+      - name: Freeze deterministic SEC candidate membership
+        env:
+          SEC_USER_AGENT: NRE-M1 research contact https://github.com/Fahad9101/NRE
+        run: |
+          rm -rf /tmp/nre-sec-freeze
+          python -m nre freeze-sec-cohort \
+            --spec config/sec-cohort-spec.json \
+            --protocol config/pilot.json \
+            --output /tmp/nre-sec-freeze
+
+      - name: Verify freeze boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('/tmp/nre-sec-freeze/discovery-report.json').read_text())
+          ledger = json.loads(Path('/tmp/nre-sec-freeze/candidate-ledger.json').read_text())
+          assert report['state'] == 'FROZEN_CANDIDATE_MEMBERSHIP', report
+          assert report['price_data_accessed_by_this_workflow'] is False
+          assert report['candidate_count'] >= 100
+          assert ledger['frozen_at'] == report['frozen_at']
+          assert len(ledger['candidates']) == report['candidate_count']
+          print(json.dumps({
+              'state': report['state'],
+              'selected_issuers': report['selected_issuers'],
+              'issuers_with_item_2_02_candidates': report['issuers_with_item_2_02_candidates'],
+              'candidate_count': report['candidate_count'],
+              'membership_sha256': report['membership_sha256'],
+              'frozen_at': report['frozen_at'],
+          }, sort_keys=True))
+          PY
+
+      - name: Publish frozen metadata only
+        run: |
+          cp /tmp/nre-sec-freeze/issuer-cohort.json config/m1-frozen-issuer-cohort.json
+          cp /tmp/nre-sec-freeze/candidate-ledger.json config/m1-frozen-candidate-ledger.json
+          cp /tmp/nre-sec-freeze/discovery-report.json reports/m1-sec-cohort-freeze.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/m1-frozen-issuer-cohort.json config/m1-frozen-candidate-ledger.json reports/m1-sec-cohort-freeze.json
+          git diff --cached --quiet && exit 0
+          git commit -m "data: freeze clean Milestone 1 SEC cohort"
+          git push
+
+      - name: Preserve raw SEC acquisition as temporary audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nre-m1-sec-freeze-raw
+          path: /tmp/nre-sec-freeze/raw
+          if-no-files-found: error
+          retention-days: 30
