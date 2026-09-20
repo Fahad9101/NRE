@@ -16,6 +16,108 @@ class SourceUnavailable(RuntimeError):
     pass
 
 
+class SecRelayClient:
+    """Read-only transport for public SEC URLs through r.jina.ai.
+
+    The relay representation is never described as raw SEC bytes. Both the full
+    relay response and extracted payload are hashed and archived, while the
+    canonical SEC URL remains the source identity.
+    """
+    def __init__(self, user_agent, timeout=45):
+        if not user_agent or not ("@" in user_agent or "https://" in user_agent):
+            raise DataError("identifiable User-Agent with contact required")
+        self.user_agent, self.timeout, self.last = user_agent, timeout, 0.0
+
+    @staticmethod
+    def relay_url(url):
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme != "https" or parsed.hostname not in {"data.sec.gov", "www.sec.gov"}:
+            raise DataError("SEC relay accepts canonical SEC HTTPS URLs only")
+        path = urllib.parse.urlunparse(("http", parsed.netloc, parsed.path, "", parsed.query, ""))
+        return "https://r.jina.ai/" + path
+
+    @staticmethod
+    def payload(body, canonical_url):
+        try:
+            text = body.decode("utf-8-sig")
+        except UnicodeDecodeError as exc:
+            raise DataError("SEC relay response is not UTF-8") from exc
+        marker = "Markdown Content:"
+        if marker not in text:
+            raise DataError("SEC relay response missing Markdown Content marker")
+        payload = text.split(marker, 1)[1].lstrip("\r\n ")
+        lower_path = urllib.parse.urlparse(canonical_url).path.lower()
+        if lower_path.endswith(".json"):
+            # Relay JSON is normally emitted directly after the marker. Decode
+            # one complete JSON value so relay prose/fences cannot contaminate it.
+            start = min((i for i in (payload.find("{"), payload.find("[")) if i >= 0), default=-1)
+            if start < 0:
+                raise DataError("SEC relay JSON payload missing JSON value")
+            try:
+                value, _ = json.JSONDecoder().raw_decode(payload[start:])
+            except json.JSONDecodeError as exc:
+                raise DataError("SEC relay JSON payload invalid") from exc
+            return canonical(value), "relay_json_extract"
+        return payload.encode("utf-8"), "relay_markdown"
+
+    def fetch(self, url, output):
+        transport_url = self.relay_url(url)
+        for attempt in range(3):
+            time.sleep(max(0, 0.25 - (time.monotonic() - self.last)))
+            self.last = time.monotonic()
+            try:
+                request = urllib.request.Request(
+                    transport_url,
+                    headers={"User-Agent": self.user_agent, "Accept": "text/plain"},
+                )
+                with urllib.request.urlopen(request, timeout=self.timeout) as response:
+                    relay_body = response.read(20_000_001)
+                    if len(relay_body) > 20_000_000:
+                        raise SourceUnavailable("relay response too large")
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code in {429, 500, 502, 503, 504} and attempt < 2:
+                    time.sleep(2 ** attempt)
+                    continue
+                raise SourceUnavailable("RELAY_HTTP_" + str(exc.code)) from exc
+            except (OSError, TimeoutError) as exc:
+                if attempt < 2:
+                    time.sleep(2 ** attempt)
+                    continue
+                raise SourceUnavailable("RELAY_" + type(exc).__name__) from exc
+
+        payload, representation = self.payload(relay_body, url)
+        root = Path(output)
+        root.mkdir(parents=True, exist_ok=True)
+        relay_sha = digest(relay_body)
+        payload_sha = digest(payload)
+        relay_path = root / (relay_sha + ".relay.raw")
+        payload_path = root / (payload_sha + ".payload")
+        if relay_path.exists() and relay_path.read_bytes() != relay_body:
+            raise DataError("relay raw object collision")
+        if payload_path.exists() and payload_path.read_bytes() != payload:
+            raise DataError("relay payload collision")
+        relay_path.write_bytes(relay_body)
+        payload_path.write_bytes(payload)
+        metadata = {
+            "url": url,
+            "canonical_url": url,
+            "transport": "r.jina.ai",
+            "transport_url": transport_url,
+            "transport_sha256": relay_sha,
+            "sha256": payload_sha,
+            "size": len(payload),
+            "transport_size": len(relay_body),
+            "retrieved_at": iso(datetime.now(timezone.utc)),
+            "raw_file": relay_path.name,
+            "payload_file": payload_path.name,
+            "source_representation": representation,
+            "raw_sec_bytes_archived": False,
+        }
+        (root / (digest(canonical(metadata)) + ".json")).write_bytes(canonical(metadata))
+        return payload, metadata
+
+
 class PublicClient:
     """Serial client, at most 4 requests/sec; no auth bypass or retry on 403."""
     def __init__(self, user_agent, timeout=20):
