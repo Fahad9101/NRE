@@ -201,13 +201,26 @@ def sec_candidates(document, cik):
                  "ITEMS_UNAVAILABLE" if items is None else
                  "EARNINGS_CANDIDATE" if "2.02" in item_set else "NOT_ITEM_2_02")
         primary = rows["primaryDocument"][i]
-        if not re.fullmatch(r"[A-Za-z0-9_.-]+", primary):
-            raise DataError("invalid primary document path")
+        accession_dir = accession.replace("-", "")
+        index_url = f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_dir}/{accession}-index.html"
+        parts = primary.split("/") if isinstance(primary, str) else []
+        safe_primary = bool(parts) and not str(primary).startswith("/") and all(
+            part and part not in {".", ".."} and re.fullmatch(r"[A-Za-z0-9_.-]+", part)
+            for part in parts
+        )
+        primary_url = (
+            f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_dir}/{primary}"
+            if safe_primary else None
+        )
         result.append({"candidate_id": accession, "cik": str(cik).zfill(10), "form": form,
                        "filing_date": rows["filingDate"][i], "items": sorted(item_set),
                        "acceptance_at": rows.get("acceptanceDateTime", [None] * size)[i],
                        "state": state, "first_public_verified": False,
-                       "url": f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession.replace('-', '')}/{primary}"})
+                       "primary_document_raw": primary,
+                       "primary_document_state": "PARSED_SAFE" if safe_primary else "REVIEW_REQUIRED",
+                       "primary_url": primary_url,
+                       "filing_index_url": index_url,
+                       "url": primary_url or index_url})
     return {"candidates": result, "continuation_files": filings.get("files", []),
             "historical_coverage_complete": not bool(filings.get("files"))}
 
