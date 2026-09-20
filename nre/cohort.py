@@ -200,22 +200,22 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
 
         issuer_candidate_ids = []
         for row in screened:
-            primary_body, primary_meta = client.fetch(row["url"], raw_root)
-            primary_text = _decode_sec_text(primary_body)
-            source_text_sha = digest(primary_text.encode("utf-8"))
+            # Freeze from the submissions representation before any outcome-price
+            # acquisition. Primary filing/release evidence is a post-freeze review
+            # requirement and is deliberately not fetched here.
             all_candidates.append({
                 "candidate_id": row["candidate_id"],
-                "source_sha256": source_text_sha,
+                "source_sha256": submissions_meta["sha256"],
                 "cik": cik,
                 "filing_date": row["filing_date"],
                 "form": row["form"],
                 "items": row["items"],
                 "primary_url": row["url"],
-                "primary_source_sha256": primary_meta["sha256"],
-                "primary_source_representation": primary_meta.get("source_representation", "raw"),
-                "primary_transport_sha256": primary_meta.get("transport_sha256"),
+                "primary_source_sha256": None,
+                "primary_review_state": "REQUIRED_POST_FREEZE",
                 "discovery_submission_sha256": submissions_meta["sha256"],
                 "discovery_submission_representation": submissions_meta.get("source_representation", "raw"),
+                "discovery_transport_sha256": submissions_meta.get("transport_sha256"),
             })
             issuer_candidate_ids.append(row["candidate_id"])
 
@@ -278,7 +278,7 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
         "sec_transport": transport,
         "raw_sec_bytes_archived": selection_meta.get("raw_sec_bytes_archived", True),
         "limitations": spec.get("limitations", []) + [
-            "Item 2.02 membership is frozen before price acquisition, but publication-time eligibility, duplicate economic-event review, contemporaneous security identity and price-provider acceptance remain unresolved.",
+            "Item 2.02 membership is frozen before price acquisition. Primary filing/release archival, publication-time eligibility, duplicate economic-event review, contemporaneous security identity and price-provider acceptance remain unresolved.",
             "Raw network objects are not intended for the public repository; preserve the workflow artifact or refetch immutable SEC primary filings and verify hashes before final acceptance.",
         ],
     }
