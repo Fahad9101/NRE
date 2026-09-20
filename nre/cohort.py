@@ -3,11 +3,16 @@
 This module discovers filing candidates only. It never imports market prices.
 """
 import json
+import re
 from datetime import date, datetime, timezone
 from pathlib import Path
 
 from .core import DataError, canonical, digest, iso
 from .ingestion import PublicClient, SecRelayClient, sec_candidates
+
+
+_ACCESSION = re.compile(r"\d{10}-\d{2}-\d{6}")
+_MASTER_FILENAME = re.compile(r"edgar/data/(\d+)/(\d{10}-\d{2}-\d{6})\.txt")
 
 
 def _date(value):
@@ -18,7 +23,7 @@ def _date(value):
 
 
 def exchange_issuers(document, allowed_exchanges):
-    """Return unique SEC issuers with at least one ticker on an allowed exchange."""
+    """Legacy exploratory current-directory frame; not used by the v2 pilot."""
     fields = document.get("fields")
     data = document.get("data")
     if not isinstance(fields, list) or not isinstance(data, list):
@@ -45,7 +50,6 @@ def exchange_issuers(document, allowed_exchanges):
             raise DataError("invalid SEC issuer row")
         cik = str(int(cik_raw)).zfill(10)
         item = grouped.setdefault(cik, {"cik": cik, "name": name, "tickers": set(), "exchanges": set()})
-        # The same CIK can have several listed classes. Preserve them instead of inflating issuer count.
         item["tickers"].add(ticker)
         item["exchanges"].add(exchange)
         if name < item["name"]:
@@ -82,24 +86,129 @@ def deterministic_issuer_sample(issuers, sample_size, seed, exclude_ciks=()):
     return eligible[:sample_size]
 
 
+def historical_issuer_pool(frame, spec):
+    """Build a deterministic issuer pool from a pinned historical SEC-index mirror.
+
+    The mirror is discovery transport only. It never proves security eligibility,
+    Item 2.02 status, or source truth; those are reconciled downstream.
+    """
+    if not isinstance(frame, dict) or frame.get("schema_version") != 1:
+        raise DataError("unsupported historical frame")
+    hf = spec.get("historical_frame", {})
+    source = frame.get("source", {})
+    expected = {
+        "dataset": hf.get("dataset"),
+        "parquet_filename": hf.get("parquet_filename"),
+        "parquet_url": hf.get("parquet_url"),
+        "parquet_sha256": hf.get("parquet_sha256"),
+        "parquet_listing_sha256": hf.get("parquet_listing_sha256"),
+    }
+    if any(source.get(k) != v for k, v in expected.items()):
+        raise DataError("historical frame source does not match preregistered artifact")
+    if frame.get("filing_screen_start") != spec.get("filing_screen_start") or frame.get("filing_screen_end") != spec.get("filing_screen_end"):
+        raise DataError("historical frame filing screen mismatch")
+
+    rows = frame.get("rows")
+    if not isinstance(rows, list) or not rows:
+        raise DataError("historical frame rows required")
+    allowed_forms = set(hf.get("allowed_forms", []))
+    allowed_sources = set(hf.get("allowed_canonical_sources", []))
+    if not allowed_forms or not allowed_sources:
+        raise DataError("historical frame allowed forms/sources required")
+    start, end = _date(spec["filing_screen_start"]), _date(spec["filing_screen_end"])
+
+    grouped = {}
+    seen_filing = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            raise DataError("historical frame row must be object")
+        required = ("cik", "company_name", "form_type", "date_filed", "filename", "src")
+        if any(k not in row for k in required):
+            raise DataError("historical frame row missing field")
+        form = str(row["form_type"])
+        if form not in allowed_forms:
+            raise DataError("unexpected form in historical frame")
+        filed = _date(str(row["date_filed"]))
+        if not start <= filed <= end:
+            raise DataError("historical frame row outside filing screen")
+        src = str(row["src"])
+        if src not in allowed_sources:
+            raise DataError("historical frame canonical source not preregistered")
+        cik_raw = str(row["cik"]).strip()
+        if not cik_raw.isdigit() or int(cik_raw) <= 0:
+            raise DataError("invalid historical frame CIK")
+        cik = str(int(cik_raw)).zfill(10)
+        filename = str(row["filename"])
+        match = _MASTER_FILENAME.fullmatch(filename)
+        if not match or int(match.group(1)) != int(cik):
+            raise DataError("historical master filename/CIK mismatch")
+        accession = match.group(2)
+        if not _ACCESSION.fullmatch(accession):
+            raise DataError("invalid historical accession")
+        fingerprint = (cik, accession)
+        normalized = {
+            "cik": cik,
+            "company_name": str(row["company_name"]).strip(),
+            "form_type": form,
+            "date_filed": filed.isoformat(),
+            "filename": filename,
+            "src": src,
+            "accession": accession,
+        }
+        old = seen_filing.get(fingerprint)
+        if old is not None and old != normalized:
+            raise DataError("conflicting historical master-index accession")
+        seen_filing[fingerprint] = normalized
+
+    for normalized in seen_filing.values():
+        cik = normalized["cik"]
+        item = grouped.setdefault(cik, {
+            "cik": cik,
+            "historical_names": set(),
+            "historical_accessions": set(),
+            "historical_filing_rows": [],
+        })
+        if normalized["company_name"]:
+            item["historical_names"].add(normalized["company_name"])
+        item["historical_accessions"].add(normalized["accession"])
+        item["historical_filing_rows"].append({
+            k: normalized[k] for k in ("accession", "form_type", "date_filed", "filename", "src")
+        })
+
+    issuers = []
+    for cik, item in grouped.items():
+        names = sorted(item["historical_names"])
+        filings = sorted(item["historical_filing_rows"], key=lambda x: (x["date_filed"], x["accession"]))
+        issuers.append({
+            "cik": cik,
+            "name": names[0] if names else "",
+            "historical_names": names,
+            "historical_accessions": sorted(item["historical_accessions"]),
+            "historical_filing_rows": filings,
+            "historical_8k_count": len(filings),
+        })
+
+    max_issuers = spec.get("issuer_pool_max")
+    if type(max_issuers) is not int or max_issuers < 1:
+        raise DataError("positive issuer_pool_max required")
+    selected = deterministic_issuer_sample(
+        issuers,
+        max_issuers,
+        spec.get("deterministic_seed"),
+        spec.get("exclude_ciks", []),
+    )
+    return selected
+
+
 def _one_year_before(day):
     try:
         return day.replace(year=day.year - 1)
     except ValueError:
-        # Feb. 29 -> Feb. 28 of the prior year.
         return day.replace(year=day.year - 1, day=28)
 
 
 def relevant_history_files(document, screen_start, retrieved_at=None):
-    """Return continuation files required for the requested filing screen.
-
-    SEC documents that the main submissions JSON contains at least one year of
-    filing history or 1,000 filings, whichever is more. When the screen start is
-    inside that guaranteed one-year window, absence of an earlier filing in the
-    recent array is evidence of no filing, not missing coverage.
-
-    For older screens, continuation metadata is followed conservatively.
-    """
+    """Return continuation files required for the requested filing screen."""
     start = _date(screen_start)
     filings = document.get("filings", {})
     recent = filings.get("recent", {})
@@ -124,27 +233,19 @@ def relevant_history_files(document, screen_start, retrieved_at=None):
     if not isinstance(files, list):
         raise DataError("SEC continuation metadata malformed")
     if not files:
-        # No continuation files means the main submissions object is the complete
-        # filing history exposed for this filer.
         return []
 
     needed = []
-    newest_history_end = None
     for item in files:
         if not isinstance(item, dict) or not all(k in item for k in ("name", "filingFrom", "filingTo")):
             raise DataError("SEC continuation metadata incomplete")
         low, high = _date(item["filingFrom"]), _date(item["filingTo"])
-        newest_history_end = high if newest_history_end is None or high > newest_history_end else newest_history_end
         if low <= start <= high or high >= start:
             needed.append(item)
 
     if needed:
         needed.sort(key=lambda x: x["name"])
         return needed
-
-    # When all declared continuation files end before the screen and the screen
-    # is older than the SEC one-year guarantee, the source cannot prove that the
-    # interval is complete without another census source.
     raise DataError("SEC submissions do not prove filing-screen coverage")
 
 
@@ -160,54 +261,56 @@ def screen_item_202(candidates, screen_start, screen_end):
     return sorted(rows, key=lambda x: (x["filing_date"], x["candidate_id"]))
 
 
-def _decode_sec_text(body):
-    try:
-        return body.decode("utf-8-sig")
-    except UnicodeDecodeError as exc:
-        raise DataError("SEC primary filing is not UTF-8 decodable") from exc
+def screen_all_8k(candidates, screen_start, screen_end):
+    start, end = _date(screen_start), _date(screen_end)
+    rows = []
+    for row in candidates:
+        day = _date(row["filing_date"])
+        if start <= day <= end:
+            rows.append(row)
+    return sorted(rows, key=lambda x: (x["filing_date"], x["candidate_id"]))
 
 
-def freeze_sec_cohort(spec, protocol, output, user_agent):
-    """Fetch, enumerate and freeze a clean SEC filing candidate cohort.
+def _client(spec, user_agent):
+    transport = spec.get("sec_transport", "direct")
+    if transport == "direct":
+        return PublicClient(user_agent), transport
+    if transport == "r_jina_relay":
+        return SecRelayClient(user_agent), transport
+    raise DataError("unsupported SEC cohort transport")
 
-    No market-price endpoint is called here. Raw network objects stay under output/raw;
-    callers may preserve them as a private workflow artifact rather than committing them.
-    """
-    if spec.get("schema_version") != 1:
-        raise DataError("unsupported SEC cohort spec")
+
+def freeze_sec_cohort(spec, protocol, output, user_agent, frame=None):
+    """Fetch, enumerate and freeze a clean source-side filing candidate cohort."""
+    if spec.get("schema_version") != 2 or spec.get("selection_mode") != "historical_sec_master_mirror":
+        raise DataError("historical cohort spec version 2 required")
     protocol_sha = digest(canonical(protocol))
     if spec.get("protocol_sha256") != protocol_sha:
         raise DataError("cohort spec protocol hash mismatch")
     if spec.get("event_window_start") != protocol.get("event_window_start") or spec.get("event_window_end") != protocol.get("event_window_end"):
         raise DataError("cohort spec event window differs from pilot protocol")
+    if frame is None:
+        raise DataError("historical issuer frame required")
+
+    batch_size = spec.get("issuer_batch_size")
+    target_candidates = spec.get("freeze_min_item_2_02_candidates")
+    target_issuers = spec.get("freeze_min_item_2_02_issuers")
+    for value, name in ((batch_size, "issuer_batch_size"), (target_candidates, "candidate target"), (target_issuers, "issuer target")):
+        if type(value) is not int or value < 1:
+            raise DataError("positive " + name + " required")
 
     root = Path(output)
     raw_root = root / "raw"
     root.mkdir(parents=True, exist_ok=True)
-    transport = spec.get("sec_transport", "direct")
-    if transport == "direct":
-        client = PublicClient(user_agent)
-    elif transport == "r_jina_relay":
-        client = SecRelayClient(user_agent)
-    else:
-        raise DataError("unsupported SEC cohort transport")
-
-    selection_raw, selection_meta = client.fetch(spec["selection_source_url"], raw_root)
-    try:
-        selection_document = json.loads(selection_raw)
-    except json.JSONDecodeError as exc:
-        raise DataError("invalid SEC exchange directory JSON") from exc
-    issuers = exchange_issuers(selection_document, spec["allowed_exchanges"])
-    selected = deterministic_issuer_sample(
-        issuers,
-        spec["sample_size"],
-        spec["deterministic_seed"],
-        spec.get("exclude_ciks", []),
-    )
+    client, transport = _client(spec, user_agent)
+    selected_pool = historical_issuer_pool(frame, spec)
+    frame_sha = digest(canonical(frame))
 
     all_candidates = []
     issuer_results = []
-    for issuer in selected:
+    stopped = False
+    stop_boundary = None
+    for position, issuer in enumerate(selected_pool, start=1):
         cik = issuer["cik"]
         submissions_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
         body, submissions_meta = client.fetch(submissions_url, raw_root)
@@ -241,13 +344,17 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
                 if old is not None and old != row:
                     raise DataError("conflicting SEC accession across source files")
                 merged[row["candidate_id"]] = row
-        screened = screen_item_202(list(merged.values()), spec["filing_screen_start"], spec["filing_screen_end"])
 
+        window_rows = screen_all_8k(list(merged.values()), spec["filing_screen_start"], spec["filing_screen_end"])
+        sec_accessions = {r["candidate_id"] for r in window_rows}
+        historical_accessions = set(issuer["historical_accessions"])
+        missing_in_submissions = sorted(historical_accessions - sec_accessions)
+        extra_in_submissions = sorted(sec_accessions - historical_accessions)
+        reconciliation_state = "MATCHED" if not missing_in_submissions and not extra_in_submissions else "REVIEW_REQUIRED"
+
+        screened = screen_item_202(window_rows, spec["filing_screen_start"], spec["filing_screen_end"])
         issuer_candidate_ids = []
         for row in screened:
-            # Freeze from the submissions representation before any outcome-price
-            # acquisition. Primary filing/release evidence is a post-freeze review
-            # requirement and is deliberately not fetched here.
             all_candidates.append({
                 "candidate_id": row["candidate_id"],
                 "source_sha256": submissions_meta["sha256"],
@@ -258,6 +365,7 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
                 "primary_url": row["url"],
                 "primary_source_sha256": None,
                 "primary_review_state": "REQUIRED_POST_FREEZE",
+                "historical_frame_reconciliation": reconciliation_state,
                 "discovery_submission_sha256": submissions_meta["sha256"],
                 "discovery_submission_representation": submissions_meta.get("source_representation", "raw"),
                 "discovery_transport_sha256": submissions_meta.get("transport_sha256"),
@@ -266,14 +374,24 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
 
         issuer_results.append({
             **issuer,
+            "selection_position": position,
             "submissions_url": submissions_url,
             "submissions_sha256": submissions_meta["sha256"],
             "observations": len(observations),
+            "historical_frame_reconciliation": reconciliation_state,
+            "missing_historical_accessions_in_submissions": missing_in_submissions,
+            "extra_submissions_accessions_vs_historical_frame": extra_in_submissions,
             "item_2_02_candidates": len(issuer_candidate_ids),
             "candidate_ids": issuer_candidate_ids,
         })
 
-    # SEC accessions should be globally unique. Duplicate discovery is a hard failure.
+        if position % batch_size == 0:
+            candidate_issuers = sum(1 for x in issuer_results if x["item_2_02_candidates"])
+            if len(all_candidates) >= target_candidates and candidate_issuers >= target_issuers:
+                stopped = True
+                stop_boundary = position
+                break
+
     ids = [x["candidate_id"] for x in all_candidates]
     if len(ids) != len(set(ids)):
         raise DataError("duplicate accession in frozen candidate membership")
@@ -281,20 +399,22 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
     frozen_at = iso(datetime.now(timezone.utc))
     membership = [{"candidate_id": x["candidate_id"], "source_sha256": x["source_sha256"]} for x in all_candidates]
     membership_sha = digest(canonical(membership))
+    candidate_issuers = sum(1 for x in issuer_results if x["item_2_02_candidates"])
+    reconciled_issuers = sum(1 for x in issuer_results if x["historical_frame_reconciliation"] == "MATCHED")
 
     issuer_cohort = {
-        "schema_version": 1,
+        "schema_version": 2,
         "frozen_at": frozen_at,
-        "selection_source_url": spec["selection_source_url"],
-        "selection_source_sha256": selection_meta["sha256"],
-        "selection_source_retrieved_at": selection_meta["retrieved_at"],
-        "selection_source_representation": selection_meta.get("source_representation", "raw"),
-        "selection_transport": selection_meta.get("transport", "direct"),
-        "selection_transport_sha256": selection_meta.get("transport_sha256"),
-        "raw_sec_bytes_archived": selection_meta.get("raw_sec_bytes_archived", True),
+        "selection_mode": spec["selection_mode"],
         "selection_method": spec["selection_method"],
         "deterministic_seed": spec["deterministic_seed"],
-        "sample_size": spec["sample_size"],
+        "historical_frame_sha256": frame_sha,
+        "historical_frame_source": frame["source"],
+        "issuer_pool_max": spec["issuer_pool_max"],
+        "issuer_batch_size": batch_size,
+        "processed_issuers": len(issuer_results),
+        "stop_boundary": stop_boundary,
+        "source_side_thresholds_met": stopped,
         "excluded_preexplored_ciks": spec.get("exclude_ciks", []),
         "issuers": issuer_results,
     }
@@ -302,29 +422,38 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
         "protocol_sha256": protocol_sha,
         "frozen_at": frozen_at,
         "membership_sha256": membership_sha,
+        "historical_frame_sha256": frame_sha,
         "candidates": all_candidates,
     }
-    issuers_with_candidates = sum(1 for x in issuer_results if x["item_2_02_candidates"])
+    state = "FROZEN_CANDIDATE_MEMBERSHIP" if stopped else "FROZEN_UNDERSIZED"
     report = {
-        "schema_version": 1,
-        "state": "FROZEN_CANDIDATE_MEMBERSHIP" if len(all_candidates) >= protocol["minimum_eligible_events"] else "FROZEN_UNDERSIZED",
+        "schema_version": 2,
+        "state": state,
         "frozen_at": frozen_at,
         "price_data_accessed_by_this_workflow": False,
-        "selected_issuers": len(selected),
-        "issuers_with_item_2_02_candidates": issuers_with_candidates,
+        "selection_mode": spec["selection_mode"],
+        "historical_frame_sha256": frame_sha,
+        "historical_frame_parquet_sha256": frame["source"]["parquet_sha256"],
+        "processed_issuers": len(issuer_results),
+        "issuer_pool_max": len(selected_pool),
+        "stop_boundary": stop_boundary,
         "candidate_count": len(all_candidates),
+        "issuers_with_item_2_02_candidates": candidate_issuers,
+        "reconciled_issuers": reconciled_issuers,
+        "issuers_requiring_frame_reconciliation_review": len(issuer_results) - reconciled_issuers,
+        "freeze_min_item_2_02_candidates": target_candidates,
+        "freeze_min_item_2_02_issuers": target_issuers,
         "minimum_eligible_events_target": protocol["minimum_eligible_events"],
         "minimum_unique_issuers_target": protocol["minimum_unique_issuers"],
         "membership_sha256": membership_sha,
-        "selection_source_sha256": selection_meta["sha256"],
         "filing_screen": [spec["filing_screen_start"], spec["filing_screen_end"]],
         "event_window": [spec["event_window_start"], spec["event_window_end"]],
         "accepted_events": 0,
         "sec_transport": transport,
-        "raw_sec_bytes_archived": selection_meta.get("raw_sec_bytes_archived", True),
         "limitations": spec.get("limitations", []) + [
-            "Item 2.02 membership is frozen before price acquisition. Primary filing/release archival, publication-time eligibility, duplicate economic-event review, contemporaneous security identity and price-provider acceptance remain unresolved.",
-            "Raw network objects are not intended for the public repository; preserve the workflow artifact or refetch immutable SEC primary filings and verify hashes before final acceptance.",
+            "Historical-frame mirror rows define discovery order only; SEC submissions are the candidate source.",
+            "Primary filing/release archival, first-public timing, common-stock/exchange identity, provider rights and corporate-action review remain unresolved.",
+            "No clean-cohort market prices were accessed by this workflow.",
         ],
     }
 
