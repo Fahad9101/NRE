@@ -10,7 +10,7 @@
   "verified_real_reaction_issuers": 0,
   "local_tests": {
     "command": "python -m unittest discover -s tests -v",
-    "passed": 50,
+    "passed": 64,
     "failed": 0
   },
   "live_universe": {
@@ -40,7 +40,7 @@
   "sec_probe": {
     "url": "https://data.sec.gov/submissions/CIK0000320193.json",
     "status": "HTTP_403",
-    "attempt_date": "2026-09-19",
+    "attempt_date": "2026-09-20",
     "bypass_attempted": false
   },
   "market_data": {
@@ -52,8 +52,7 @@
   "synthetic_fixture": {
     "events": 1,
     "purpose": "deterministic correctness tests only",
-    "counts_towards_historical_acceptance": false,
-    "snapshot_id": "18f8d9814f25e735060a775bc9465d936bb755261aa947baa6b3f0a4fc2d82fa"
+    "counts_towards_historical_acceptance": false
   },
   "open_gates": [
     "SEC/issuer source access and first-public timestamp review",
@@ -68,5 +67,8 @@
     "BOE_modified": false,
     "Milestone_2_started": false
   },
-  "remote_ci": "Consult GitHub Actions for the exact published commit; not a static claim of success."
+  "remote_ci": "Consult GitHub Actions for the exact published commit; not a static claim of success.",
+  "resume_date": "2026-09-20",
+  "cohort_gate_report": "reports/milestone-1-cohort-gates.json",
+  "cohort_gate_command": "python -m nre audit-cohort reports/milestone-1-input-inventory.json --protocol config/pilot.json --ledger config/candidate-ledger.template.json --review config/acceptance-review.template.json --output reports/milestone-1-cohort-gates.json"
 }

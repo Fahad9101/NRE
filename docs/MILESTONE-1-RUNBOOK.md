@@ -78,6 +78,20 @@ Snapshots and downloaded data are ignored by Git. Publish only permitted metadat
 
 ## Validation and remaining acceptance work
 
+### Executable cohort audit
+
+```bash
+python -m nre audit-cohort reviewed-bundle.json --protocol config/pilot.json --ledger frozen-candidates.json --review evidence-review.json --output cohort-audit.json
+```
+
+Start with `config/candidate-ledger.template.json` and `config/acceptance-review.template.json`. Empty templates deliberately fail. Do not populate a review claim without its evidence. Candidate rows require `candidate_id`, archived `source_sha256`, and either `disposition:included` plus `event_id`, or `disposition:excluded` plus a reason. The frozen membership hash is the SHA256 of canonical JSON for the candidate-ID-sorted list of `{candidate_id,source_sha256}` objects; freeze it before inspecting prices. The protocol hash is SHA256 of canonical `config/pilot.json`. The audit checks these declarations for consistency; it cannot independently authenticate when a hash or review was created.
+
+Real events must declare `category:earnings` and `subtype:results`; issuer counts use normalized nonzero SEC CIKs, so renamed companies and multiple share classes cannot inflate the issuer count. Eligible counts require complete 20-session labels within the frozen price window. Event-window dates use New York time. Every event must reconcile to exactly one included candidate. Two distinct events per included timing class must each have two named independent reviewers and evidence references in `spot_checks`.
+
+The command returns exit code 2 when blocked and lists all failed gates. Even if structural checks pass, it returns `STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED` with `milestone_accepted:false`; source truth, permission and independent review require actual evidence sign-off. This distinction prevents a user-entered boolean from becoming a certificate of data validity.
+
+`reports/milestone-1-cohort-gates.json` is the audit of the current **empty real-input inventory**, not a market sample. It is reproducible from `reports/milestone-1-input-inventory.json` and the two empty templates above. Zero real events remain available; synthetic test success cannot satisfy this gate.
+
 Automated validation covers time/session rules, schema constraints, source checksums, duplicate economic clusters, corporate-action and price quality, missing horizons, explicit unknowns, future-information exclusion, database integrity, snapshot tampering and deterministic replay. CI runs offline tests on Python 3.12 and 3.13 plus the synthetic CLI build.
 
 Before historical acceptance, obtain permitted archived SEC/issuer documents and raw regular-session prices, enumerate the frozen-window cohort without selecting on outcomes, reconcile every candidate into mapped/excluded/quarantined states, review security history and source timing, meet the 100-event/25-issuer target, and complete two independent spot checks for each timing class used. Store signed-off review evidence and coverage/exclusion counts. The program intentionally reports `NOT_EVALUATED` for a real input bundle; passing schema checks is not an automatic acceptance certificate.

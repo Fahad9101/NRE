@@ -26,6 +26,12 @@ def parser():
     s.add_argument("--include-history", action="store_true")
     u = sub.add_parser("fetch-universe")
     u.add_argument("--output", required=True)
+    a = sub.add_parser("audit-cohort")
+    a.add_argument("input")
+    a.add_argument("--protocol", required=True)
+    a.add_argument("--ledger", required=True)
+    a.add_argument("--review", required=True)
+    a.add_argument("--output", required=True)
     return p
 
 
@@ -38,7 +44,15 @@ def save_json(path, value):
 def main(argv=None):
     args = parser().parse_args(argv)
     try:
-        if args.command == "build":
+        if args.command == "audit-cohort":
+            from .acceptance import audit_cohort
+            inputs = [json.loads(Path(p).read_text()) for p in
+                      (args.input, args.protocol, args.ledger, args.review)]
+            result = audit_cohort(*inputs)
+            save_json(args.output, result)
+            print(canonical(result).decode())
+            return 2 if result["failed_gates"] else 0
+        elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)
             print(canonical({"snapshot": str(path), "report": report}).decode())
         elif args.command in {"verify", "replay"}:
