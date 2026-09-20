@@ -47,6 +47,9 @@ jobs:
           relay_urls = [
               "https://r.jina.ai/http://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
               "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001652044.json",
+              "https://r.jina.ai/http://www.sec.gov/files/company_tickers_exchange.json",
+              "https://r.jina.ai/http://www.sec.gov/Archives/edgar/data/320193/000032019326000005/0000320193-26-000005-index.html",
+              "https://r.jina.ai/http://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm",
           ]
           for url in relay_urls:
               try:
