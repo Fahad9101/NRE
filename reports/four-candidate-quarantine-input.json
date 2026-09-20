@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "as_of": "2026-09-20T13:19:12Z",
+  "availability_mode": "historical_reconstruction",
+  "sources": [
+    {
+      "source_id": "AAPL-release-review",
+      "url": "https://www.apple.com/newsroom/2026/01/apple-reports-first-quarter-results/",
+      "text": "Review note: issuer page provides a release date; earliest release time is unverified.",
+      "first_seen_at": "2026-09-20T13:19:12Z",
+      "retrieved_at": "2026-09-20T13:19:12Z",
+      "source_kind": "analyst_review_note"
+    },
+    {
+      "source_id": "MSFT-release-review",
+      "url": "https://news.microsoft.com/source/2026/01/28/microsoft-cloud-and-ai-strength-drives-second-quarter-results/",
+      "text": "Review note: article:published_time is 2026-01-28T21:08:16+00:00. This is later than SEC acceptance at 21:04:38 UTC, so it cannot establish earliest publication.",
+      "first_seen_at": "2026-09-20T13:19:12Z",
+      "retrieved_at": "2026-09-20T13:19:12Z",
+      "source_kind": "analyst_review_note"
+    },
+    {
+      "source_id": "IBM-release-review",
+      "url": "https://www.prnewswire.com/news-releases/ibm-releases-fourth-quarter-results-302673165.html",
+      "text": "Review note: wire page displays Jan 28, 2026, 16:08 ET. Seconds and earliest dissemination are unverified.",
+      "first_seen_at": "2026-09-20T13:19:12Z",
+      "retrieved_at": "2026-09-20T13:19:12Z",
+      "source_kind": "analyst_review_note"
+    },
+    {
+      "source_id": "NVDA-release-review",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+      "text": "Review note: issuer page provides February 25, 2026; earliest release time is unverified.",
+      "first_seen_at": "2026-09-20T13:19:12Z",
+      "retrieved_at": "2026-09-20T13:19:12Z",
+      "source_kind": "analyst_review_note"
+    }
+  ],
+  "securities": [
+    {
+      "security_id": "AAPL",
+      "company_id": "0000320193",
+      "cik": "0000320193",
+      "ticker": "AAPL",
+      "exchange": "NASDAQ",
+      "security_type": "common_stock",
+      "source_id": "AAPL-release-review",
+      "valid_from": "2026-01-29T00:00:00Z",
+      "valid_to": null,
+      "available_at": "2026-09-20T13:19:12Z",
+      "identity_review_required": true
+    },
+    {
+      "security_id": "MSFT",
+      "company_id": "0000789019",
+      "cik": "0000789019",
+      "ticker": "MSFT",
+      "exchange": "NASDAQ",
+      "security_type": "common_stock",
+      "source_id": "MSFT-release-review",
+      "valid_from": "2026-01-28T00:00:00Z",
+      "valid_to": null,
+      "available_at": "2026-09-20T13:19:12Z",
+      "identity_review_required": true
+    },
+    {
+      "security_id": "IBM",
+      "company_id": "0000051143",
+      "cik": "0000051143",
+      "ticker": "IBM",
+      "exchange": "NYSE",
+      "security_type": "common_stock",
+      "source_id": "IBM-release-review",
+      "valid_from": "2026-01-28T00:00:00Z",
+      "valid_to": null,
+      "available_at": "2026-09-20T13:19:12Z",
+      "identity_review_required": true
+    },
+    {
+      "security_id": "NVDA",
+      "company_id": "0001045810",
+      "cik": "0001045810",
+      "ticker": "NVDA",
+      "exchange": "NASDAQ",
+      "security_type": "common_stock",
+      "source_id": "NVDA-release-review",
+      "valid_from": "2026-02-25T00:00:00Z",
+      "valid_to": null,
+      "available_at": "2026-09-20T13:19:12Z",
+      "identity_review_required": true
+    }
+  ],
+  "providers": [],
+  "events": [
+    {
+      "event_id": "0000320193-26-000005",
+      "cluster_id": "0000320193-26-000005",
+      "security_id": "AAPL",
+      "source_id": "AAPL-release-review",
+      "published_at": "2026-01-29",
+      "precision": "date",
+      "first_public_verified": false,
+      "cutoff": "2026-01-29T21:30:33.000Z",
+      "category": "earnings",
+      "subtype": "results",
+      "cutoff_role": "filing_acceptance_reference_not_verified_decision_time"
+    },
+    {
+      "event_id": "0001193125-26-027198",
+      "cluster_id": "0001193125-26-027198",
+      "security_id": "MSFT",
+      "source_id": "MSFT-release-review",
+      "published_at": "2026-01-28T21:08:16Z",
+      "precision": "second",
+      "first_public_verified": false,
+      "cutoff": "2026-01-28T21:04:38.000Z",
+      "category": "earnings",
+      "subtype": "results",
+      "cutoff_role": "filing_acceptance_reference_not_verified_decision_time"
+    },
+    {
+      "event_id": "0000051143-26-000004",
+      "cluster_id": "0000051143-26-000004",
+      "security_id": "IBM",
+      "source_id": "IBM-release-review",
+      "published_at": "2026-01-28T21:08:00Z",
+      "precision": "minute",
+      "first_public_verified": false,
+      "cutoff": "2026-01-28T21:10:27.000Z",
+      "category": "earnings",
+      "subtype": "results",
+      "cutoff_role": "filing_acceptance_reference_not_verified_decision_time"
+    },
+    {
+      "event_id": "0001045810-26-000019",
+      "cluster_id": "0001045810-26-000019",
+      "security_id": "NVDA",
+      "source_id": "NVDA-release-review",
+      "published_at": "2026-02-25",
+      "precision": "date",
+      "first_public_verified": false,
+      "cutoff": "2026-02-25T21:31:25.000Z",
+      "category": "earnings",
+      "subtype": "results",
+      "cutoff_role": "filing_acceptance_reference_not_verified_decision_time"
+    }
+  ],
+  "prices": [],
+  "corporate_actions": []
+}

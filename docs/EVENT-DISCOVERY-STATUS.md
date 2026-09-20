@@ -1,5 +1,7 @@
 # Event discovery evidence and current block
 
+The four imported candidates have now undergone [source and price validation](FOUR-CANDIDATE-VALIDATION.md). All four remain quarantined; the pipeline results and additional intake blockers are recorded in `reports/four-candidate-review.json`. This supersedes any implication that only additional issuer uploads are needed to finish validation.
+
 ## Three additional uploads imported
 
 Microsoft, IBM and NVIDIA uploads were parsed on 2026-09-20: 1,002, 1,002 and 1,000 filing records respectively. The full supplied histories contain 238 8-K/8-K-A records, preserved in `reports/additional-eight-k-ledger.json`. Source hashes, date ranges and continuation metadata are in `reports/additional-submissions-import.json`. All referenced history files end before 2026; none overlap this pilot.

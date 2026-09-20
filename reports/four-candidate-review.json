@@ -1,0 +1,333 @@
+{
+  "reviewed_at": "2026-09-20T13:19:12Z",
+  "scope": "four exploratory candidates; not frozen cohort",
+  "accepted_events": 0,
+  "price_audit": {
+    "state": "STAGED_REVIEW_REQUIRED",
+    "accepted_for_labels": false,
+    "retrieved_at": "2026-09-20T13:19:12Z",
+    "payload_sha256": "2c9ef5d824c4d0c477ed9d7115254c90e4107c9b86fa934639c7c7245f911610",
+    "hash_basis": "canonical decoded connector payload",
+    "request": {
+      "symbols": [
+        "AAPL",
+        "MSFT",
+        "IBM",
+        "NVDA"
+      ],
+      "days": 5,
+      "hours": 0,
+      "minutes": 30,
+      "timeframe": "1Day",
+      "limit": 1000,
+      "start": "2026-01-02",
+      "end": "2026-04-30",
+      "sort": "asc",
+      "feed": "sip",
+      "currency": null,
+      "asof": "2026-01-28",
+      "tz": "America/New_York"
+    },
+    "record_count": 328,
+    "coverage": {
+      "AAPL": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "MSFT": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "IBM": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "NVDA": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      }
+    },
+    "blockers": [
+      "REGULAR_SESSION_VOLUME_UNVERIFIED",
+      "ADJUSTMENT_UNVERIFIED",
+      "CORPORATE_ACTION_REVIEW_REQUIRED",
+      "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+      "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+      "PAGINATION_METADATA_UNAVAILABLE"
+    ],
+    "note": "Calendar coverage is not proof of trade completeness or historical availability."
+  },
+  "event_reviews": [
+    {
+      "symbol": "AAPL",
+      "event_id": "0000320193-26-000005",
+      "publication_precision": "date",
+      "first_public_verified": false,
+      "price_coverage": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "conditional_reaction_session": "2026-01-30",
+      "condition": "If first-public release was after the close on the stated release date.",
+      "conditional_windows": {
+        "1": {
+          "end": "2026-01-30",
+          "dividend_ex_dates": []
+        },
+        "2": {
+          "end": "2026-02-02",
+          "dividend_ex_dates": []
+        },
+        "5": {
+          "end": "2026-02-05",
+          "dividend_ex_dates": []
+        },
+        "10": {
+          "end": "2026-02-12",
+          "dividend_ex_dates": [
+            "2026-02-09"
+          ]
+        },
+        "20": {
+          "end": "2026-02-27",
+          "dividend_ex_dates": [
+            "2026-02-09"
+          ]
+        }
+      },
+      "additional_blockers": [
+        "REGULAR_SESSION_VOLUME_UNVERIFIED",
+        "ADJUSTMENT_UNVERIFIED",
+        "CORPORATE_ACTION_REVIEW_REQUIRED",
+        "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+        "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+        "PAGINATION_METADATA_UNAVAILABLE"
+      ],
+      "raw_prices_admitted_to_label_builder": false
+    },
+    {
+      "symbol": "MSFT",
+      "event_id": "0001193125-26-027198",
+      "publication_precision": "second",
+      "first_public_verified": false,
+      "price_coverage": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "conditional_reaction_session": "2026-01-29",
+      "condition": "If first-public release was after the close on the stated release date.",
+      "conditional_windows": {
+        "1": {
+          "end": "2026-01-29",
+          "dividend_ex_dates": []
+        },
+        "2": {
+          "end": "2026-01-30",
+          "dividend_ex_dates": []
+        },
+        "5": {
+          "end": "2026-02-04",
+          "dividend_ex_dates": []
+        },
+        "10": {
+          "end": "2026-02-11",
+          "dividend_ex_dates": []
+        },
+        "20": {
+          "end": "2026-02-26",
+          "dividend_ex_dates": [
+            "2026-02-19"
+          ]
+        }
+      },
+      "additional_blockers": [
+        "REGULAR_SESSION_VOLUME_UNVERIFIED",
+        "ADJUSTMENT_UNVERIFIED",
+        "CORPORATE_ACTION_REVIEW_REQUIRED",
+        "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+        "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+        "PAGINATION_METADATA_UNAVAILABLE"
+      ],
+      "raw_prices_admitted_to_label_builder": false
+    },
+    {
+      "symbol": "IBM",
+      "event_id": "0000051143-26-000004",
+      "publication_precision": "minute",
+      "first_public_verified": false,
+      "price_coverage": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "conditional_reaction_session": "2026-01-29",
+      "condition": "If first-public release was after the close on the stated release date.",
+      "conditional_windows": {
+        "1": {
+          "end": "2026-01-29",
+          "dividend_ex_dates": []
+        },
+        "2": {
+          "end": "2026-01-30",
+          "dividend_ex_dates": []
+        },
+        "5": {
+          "end": "2026-02-04",
+          "dividend_ex_dates": []
+        },
+        "10": {
+          "end": "2026-02-11",
+          "dividend_ex_dates": [
+            "2026-02-10"
+          ]
+        },
+        "20": {
+          "end": "2026-02-26",
+          "dividend_ex_dates": [
+            "2026-02-10"
+          ]
+        }
+      },
+      "additional_blockers": [
+        "REGULAR_SESSION_VOLUME_UNVERIFIED",
+        "ADJUSTMENT_UNVERIFIED",
+        "CORPORATE_ACTION_REVIEW_REQUIRED",
+        "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+        "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+        "PAGINATION_METADATA_UNAVAILABLE"
+      ],
+      "raw_prices_admitted_to_label_builder": false
+    },
+    {
+      "symbol": "NVDA",
+      "event_id": "0001045810-26-000019",
+      "publication_precision": "date",
+      "first_public_verified": false,
+      "price_coverage": {
+        "expected": 82,
+        "received": 82,
+        "missing_sessions": [],
+        "zero_volume_sessions": []
+      },
+      "conditional_reaction_session": "2026-02-26",
+      "condition": "If first-public release was after the close on the stated release date.",
+      "conditional_windows": {
+        "1": {
+          "end": "2026-02-26",
+          "dividend_ex_dates": []
+        },
+        "2": {
+          "end": "2026-02-27",
+          "dividend_ex_dates": []
+        },
+        "5": {
+          "end": "2026-03-04",
+          "dividend_ex_dates": []
+        },
+        "10": {
+          "end": "2026-03-11",
+          "dividend_ex_dates": [
+            "2026-03-11"
+          ]
+        },
+        "20": {
+          "end": "2026-03-25",
+          "dividend_ex_dates": [
+            "2026-03-11"
+          ]
+        }
+      },
+      "additional_blockers": [
+        "REGULAR_SESSION_VOLUME_UNVERIFIED",
+        "ADJUSTMENT_UNVERIFIED",
+        "CORPORATE_ACTION_REVIEW_REQUIRED",
+        "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+        "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+        "PAGINATION_METADATA_UNAVAILABLE"
+      ],
+      "raw_prices_admitted_to_label_builder": false
+    }
+  ],
+  "pipeline_report": {
+    "synthetic": false,
+    "events": 4,
+    "mapped_day1": 0,
+    "complete_20_session": 0,
+    "unique_issuers": 0,
+    "quarantined": 4,
+    "reasons": {
+      "AMBIGUOUS_PUBLICATION_TIME": 3,
+      "FIRST_PUBLIC_TIME_UNVERIFIED": 1
+    },
+    "historical_acceptance": "NOT_EVALUATED",
+    "note": "Counts alone cannot certify sampling, timestamp review or survivorship coverage."
+  },
+  "pipeline_outcomes": [
+    {
+      "event_id": "0000051143-26-000004",
+      "security_id": "IBM",
+      "state": "QUARANTINED",
+      "reasons": [
+        "AMBIGUOUS_PUBLICATION_TIME"
+      ],
+      "labels": {},
+      "features": {},
+      "target_version": "previous-regular-close-v1",
+      "synthetic": false
+    },
+    {
+      "event_id": "0000320193-26-000005",
+      "security_id": "AAPL",
+      "state": "QUARANTINED",
+      "reasons": [
+        "AMBIGUOUS_PUBLICATION_TIME"
+      ],
+      "labels": {},
+      "features": {},
+      "target_version": "previous-regular-close-v1",
+      "synthetic": false
+    },
+    {
+      "event_id": "0001045810-26-000019",
+      "security_id": "NVDA",
+      "state": "QUARANTINED",
+      "reasons": [
+        "AMBIGUOUS_PUBLICATION_TIME"
+      ],
+      "labels": {},
+      "features": {},
+      "target_version": "previous-regular-close-v1",
+      "synthetic": false
+    },
+    {
+      "event_id": "0001193125-26-027198",
+      "security_id": "MSFT",
+      "state": "QUARANTINED",
+      "reasons": [
+        "FIRST_PUBLIC_TIME_UNVERIFIED"
+      ],
+      "labels": {},
+      "features": {},
+      "target_version": "previous-regular-close-v1",
+      "synthetic": false
+    }
+  ],
+  "snapshot_id": "d33030c37d4df800c7841cc1a9668c23015e349099a9b7f62ad5a12fab969a05",
+  "replay_verified": true,
+  "pipeline_scope": "Source-review-only quarantine snapshot; no price-derived labels. The builder reports the first blocking reason; the independent intake audit lists additional blockers.",
+  "corporate_actions_payload_sha256": "b15cb7a082747fcefb449d89edda53e4cb7618dc1d7fe4999adc8b0ee4956aea",
+  "corporate_action_limit": "Observed dividends are positive evidence of action windows; absence of other actions is not a complete action audit. IBM acquirer-role merger not applied as a share adjustment."
+}
