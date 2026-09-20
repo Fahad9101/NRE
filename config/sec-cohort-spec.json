@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "protocol_sha256": "1d2c34c79f22b7c645fcb82de6a9caf20b21932073684d2e3f1da7e1b815bdd2",
+  "selection_source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+  "allowed_exchanges": [
+    "Nasdaq",
+    "NYSE",
+    "NYSE American"
+  ],
+  "sample_size": 260,
+  "deterministic_seed": "nre-m1-pilot-v1-clean-sec-cohort",
+  "exclude_ciks": [
+    "0000320193",
+    "0000789019",
+    "0000051143",
+    "0001045810"
+  ],
+  "exclusion_reason": "These four issuers were used in pre-freeze exploratory Alpaca price probes and are excluded from the clean acceptance cohort.",
+  "filing_screen_start": "2026-01-05",
+  "filing_screen_end": "2026-04-02",
+  "event_window_start": "2026-01-05",
+  "event_window_end": "2026-03-31",
+  "selection_method": "Among unique SEC CIKs with at least one ticker on an allowed exchange, excluding listed CIKs above, sort ascending by SHA256(seed + '|' + zero-padded CIK) then by CIK and take the first sample_size issuers. No price or return data may be queried before candidate membership is frozen.",
+  "candidate_rule": "Include every 8-K or 8-K/A row whose SEC Items field contains 2.02 and whose filing date falls within the filing screen. Fetch and hash the immutable SEC primary filing before freezing membership. Publication-date eligibility and duplicate economic-event review occur later.",
+  "price_access_policy": "No market-price acquisition for selected issuers until config/m1-frozen-candidate-ledger.json has been created and committed.",
+  "limitations": [
+    "The SEC exchange list is a current selection frame, not a survivorship-free 2026-Q1 universe.",
+    "This is an engineering acceptance cohort, not a representative market-performance sample.",
+    "Foreign issuers, funds or other non-common securities can enter the issuer frame and must be excluded later by contemporaneous identity review.",
+    "A filing-date buffer through 2026-04-02 is used to capture late-filed disclosures; actual publication dates must still fall inside the protocol event window for inclusion."
+  ]
+}
