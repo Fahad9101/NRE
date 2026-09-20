@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: nre-m1-sec-cohort-freeze
+  cancel-in-progress: true
+
 jobs:
   freeze:
     if: github.actor != 'github-actions[bot]'
@@ -25,41 +29,6 @@ jobs:
 
       - name: Re-run offline validation before network acquisition
         run: python -m unittest discover -s tests -v
-
-      - name: Probe static SEC archive access
-        env:
-          SEC_USER_AGENT: NRE-M1 research contact https://github.com/Fahad9101/NRE
-        run: |
-          python - <<'PY'
-          import urllib.request
-          urls = [
-              "https://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.gz",
-              "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/0000320193-26-000005-index.html",
-          ]
-          for url in urls:
-              req = urllib.request.Request(url, headers={"User-Agent": "NRE-M1 research contact https://github.com/Fahad9101/NRE", "Accept-Encoding": "gzip, deflate"})
-              try:
-                  with urllib.request.urlopen(req, timeout=20) as r:
-                      prefix = r.read(128)
-                      print(url, r.status, r.headers.get("Content-Type"), len(prefix))
-              except Exception as exc:
-                  print(url, type(exc).__name__, str(exc))
-          relay_urls = [
-              "https://r.jina.ai/http://www.sec.gov/Archives/edgar/full-index/2026/QTR1/master.idx",
-              "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001652044.json",
-              "https://r.jina.ai/http://www.sec.gov/files/company_tickers_exchange.json",
-              "https://r.jina.ai/http://www.sec.gov/Archives/edgar/data/320193/000032019326000005/0000320193-26-000005-index.html",
-              "https://r.jina.ai/http://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm",
-          ]
-          for url in relay_urls:
-              try:
-                  req = urllib.request.Request(url, headers={"User-Agent": "NRE-M1/1.0"})
-                  with urllib.request.urlopen(req, timeout=30) as r:
-                      prefix = r.read(256)
-                      print("relay", url, r.status, r.headers.get("Content-Type"), len(prefix), prefix[:80])
-              except Exception as exc:
-                  print("relay", url, type(exc).__name__, str(exc))
-          PY
 
       - name: Freeze deterministic SEC candidate membership
         env:
