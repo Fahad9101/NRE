@@ -36,6 +36,10 @@ def parser():
     p_alpaca.add_argument("input")
     p_alpaca.add_argument("--retrieved-at", required=True)
     p_alpaca.add_argument("--output", required=True)
+    f = sub.add_parser("freeze-sec-cohort")
+    f.add_argument("--spec", required=True)
+    f.add_argument("--protocol", required=True)
+    f.add_argument("--output", required=True)
     return p
 
 
@@ -54,6 +58,14 @@ def main(argv=None):
             save_json(args.output, result)
             print(canonical(result).decode())
             return 2  # Staged inputs never constitute accepted label data.
+        elif args.command == "freeze-sec-cohort":
+            from .cohort import freeze_sec_cohort
+            spec = json.loads(Path(args.spec).read_text())
+            protocol = json.loads(Path(args.protocol).read_text())
+            user_agent = os.environ.get("SEC_USER_AGENT", "")
+            _, _, result = freeze_sec_cohort(spec, protocol, args.output, user_agent)
+            print(canonical(result).decode())
+            return 0 if result["state"] == "FROZEN_CANDIDATE_MEMBERSHIP" else 2
         elif args.command == "audit-cohort":
             from .acceptance import audit_cohort
             inputs = [json.loads(Path(p).read_text()) for p in
