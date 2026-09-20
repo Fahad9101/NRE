@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_on": "2026-09-20",
-  "status": "PARTIAL_SOURCE_EVIDENCE",
+  "status": "PARTIAL_SOURCE_EVIDENCE_MINUTE_TIMES_FOR_FOUR",
   "frozen_cohort": false,
   "accepted_events": 0,
   "sources": [
@@ -50,19 +50,63 @@
       },
       "historical_identity_fully_verified": false,
       "note": "Contemporaneous filing supports security type and listing. It does not establish when this identity evidence was available relative to first news publication."
+    },
+    {
+      "source_id": "msft-prnewswire-20260128",
+      "url": "https://www.prnewswire.com/news-releases/microsoft-earnings-press-release-available-on-investor-relations-website-302673166.html",
+      "retrieval_method": "web_extracted_page",
+      "raw_bytes_archived": false,
+      "evidence_excerpt": "Jan 28, 2026, 16:05 ET",
+      "timestamp_role": "wire_publication",
+      "precision": "minute",
+      "displayed_minute_start_utc": "2026-01-28T21:05:00Z",
+      "timezone_interpretation": "America/New_York",
+      "first_public_verified": false,
+      "note": "Issuer-attributed PR Newswire timestamp establishes a publication minute, not earliest dissemination across every channel."
+    },
+    {
+      "source_id": "aapl-nasdaq-businesswire-20260129",
+      "url": "https://www.nasdaq.com/press-release/apple-reports-first-quarter-results-2026-01-29",
+      "retrieval_method": "web_extracted_page",
+      "raw_bytes_archived": false,
+      "evidence_excerpt": "Published Jan 29, 2026 4:30pm EST",
+      "timestamp_role": "businesswire_syndication_publication",
+      "precision": "minute",
+      "displayed_minute_start_utc": "2026-01-29T21:30:00Z",
+      "timezone_interpretation": "America/New_York",
+      "first_public_verified": false,
+      "note": "Nasdaq's Business Wire syndication establishes a displayed publication minute. It does not by itself prove the earliest Apple/Business Wire dissemination time."
+    },
+    {
+      "source_id": "nvda-globenewswire-20260225",
+      "url": "https://www.globenewswire.com/news-release/2026/02/25/3245078/0/en/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026.html",
+      "retrieval_method": "web_extracted_page",
+      "raw_bytes_archived": false,
+      "evidence_excerpt": "February 25, 2026 16:31 ET",
+      "timestamp_role": "wire_publication",
+      "precision": "minute",
+      "displayed_minute_start_utc": "2026-02-25T21:31:00Z",
+      "timezone_interpretation": "America/New_York",
+      "first_public_verified": false,
+      "note": "GlobeNewswire timestamp establishes a publication minute. NVIDIA's earlier scheduling notice described an approximate planned release time, so competing-channel review remains required before first-public verification."
     }
   ],
   "discovery_limitations": [
     "SEC submissions JSON unavailable through web retrieval; previously recorded direct HTTP 403 remains unresolved.",
     "Individual SEC filing pages are accessible through web retrieval, but isolated search results are not a complete Item 2.02 census.",
     "IBM issuer page direct HTML request timed out; wire page supplied a publication minute.",
-    "Search results for further issuer filings were mostly irrelevant and were discarded.",
-    "No source hashes are asserted for provider raw bytes not acquired."
+    "No source hashes are asserted for provider raw bytes not acquired.",
+    "Issuer-attributed wire/syndication timestamps establish displayed publication minutes but not global earliest dissemination."
   ],
   "required_input": {
     "format": "Original SEC submissions JSON files, including referenced historical continuation files",
     "coverage": "A declared issuer set with sufficient January 5–March 31 2026 Item 2.02 candidates for the 100-event / 25-issuer acceptance target",
     "provenance": "Preserve source URLs, actual download times, original filenames and issuer-selection rationale",
     "selection": "Freeze complete candidate membership before acquiring further outcome prices; retain all exclusions. Exploratory observations must be disclosed."
-  }
+  },
+  "review_notes": [
+    "Minute-level distribution evidence now exists for IBM, Microsoft, Apple and NVIDIA.",
+    "No candidate is promoted: first-public status remains false until competing-channel review and raw-source archival/provenance requirements are satisfied.",
+    "Minute precision is permitted by the current builder as an interval; no seconds are invented."
+  ]
 }
