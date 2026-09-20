@@ -259,6 +259,21 @@ class IngestionTests(unittest.TestCase):
         del doc["filings"]["recent"]["items"]
         self.assertEqual(sec_candidates(doc, "0")["candidates"][0]["state"], "ITEMS_UNAVAILABLE")
 
+    def test_nested_primary_path_is_safe(self):
+        doc = json.loads((FIXTURES / "sec_submissions.json").read_text())
+        doc["filings"]["recent"]["primaryDocument"][0] = "nested/earnings.htm"
+        row = sec_candidates(doc, "0")["candidates"][0]
+        self.assertEqual(row["primary_document_state"], "PARSED_SAFE")
+        self.assertTrue(row["url"].endswith("/nested/earnings.htm"))
+
+    def test_unusual_primary_path_falls_back_to_index(self):
+        doc = json.loads((FIXTURES / "sec_submissions.json").read_text())
+        doc["filings"]["recent"]["primaryDocument"][0] = "../unsafe.htm"
+        row = sec_candidates(doc, "0")["candidates"][0]
+        self.assertEqual(row["primary_document_state"], "REVIEW_REQUIRED")
+        self.assertIsNone(row["primary_url"])
+        self.assertTrue(row["url"].endswith("-index.html"))
+
     def test_directory_not_historical_universe(self):
         raw = "Symbol|Security Name|Market Category|Test Issue|ETF\nSYNTH|Synthetic Common Stock|Q|N|N\nETF|Synthetic Fund|Q|N|Y\nFile Creation Time: 0919202612:00||||\n"
         rows = nasdaq_directory(raw,"2026-09-19T12:00:00Z")
