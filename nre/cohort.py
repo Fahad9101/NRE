@@ -7,7 +7,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 from .core import DataError, canonical, digest, iso
-from .ingestion import PublicClient, sec_candidates
+from .ingestion import PublicClient, SecRelayClient, sec_candidates
 
 
 def _date(value):
@@ -143,7 +143,13 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
     root = Path(output)
     raw_root = root / "raw"
     root.mkdir(parents=True, exist_ok=True)
-    client = PublicClient(user_agent)
+    transport = spec.get("sec_transport", "direct")
+    if transport == "direct":
+        client = PublicClient(user_agent)
+    elif transport == "r_jina_relay":
+        client = SecRelayClient(user_agent)
+    else:
+        raise DataError("unsupported SEC cohort transport")
 
     selection_raw, selection_meta = client.fetch(spec["selection_source_url"], raw_root)
     try:
@@ -205,8 +211,11 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
                 "form": row["form"],
                 "items": row["items"],
                 "primary_url": row["url"],
-                "primary_raw_sha256": primary_meta["sha256"],
+                "primary_source_sha256": primary_meta["sha256"],
+                "primary_source_representation": primary_meta.get("source_representation", "raw"),
+                "primary_transport_sha256": primary_meta.get("transport_sha256"),
                 "discovery_submission_sha256": submissions_meta["sha256"],
+                "discovery_submission_representation": submissions_meta.get("source_representation", "raw"),
             })
             issuer_candidate_ids.append(row["candidate_id"])
 
@@ -234,6 +243,10 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
         "selection_source_url": spec["selection_source_url"],
         "selection_source_sha256": selection_meta["sha256"],
         "selection_source_retrieved_at": selection_meta["retrieved_at"],
+        "selection_source_representation": selection_meta.get("source_representation", "raw"),
+        "selection_transport": selection_meta.get("transport", "direct"),
+        "selection_transport_sha256": selection_meta.get("transport_sha256"),
+        "raw_sec_bytes_archived": selection_meta.get("raw_sec_bytes_archived", True),
         "selection_method": spec["selection_method"],
         "deterministic_seed": spec["deterministic_seed"],
         "sample_size": spec["sample_size"],
@@ -262,6 +275,8 @@ def freeze_sec_cohort(spec, protocol, output, user_agent):
         "filing_screen": [spec["filing_screen_start"], spec["filing_screen_end"]],
         "event_window": [spec["event_window_start"], spec["event_window_end"]],
         "accepted_events": 0,
+        "sec_transport": transport,
+        "raw_sec_bytes_archived": selection_meta.get("raw_sec_bytes_archived", True),
         "limitations": spec.get("limitations", []) + [
             "Item 2.02 membership is frozen before price acquisition, but publication-time eligibility, duplicate economic-event review, contemporaneous security identity and price-provider acceptance remain unresolved.",
             "Raw network objects are not intended for the public repository; preserve the workflow artifact or refetch immutable SEC primary filings and verify hashes before final acceptance.",
