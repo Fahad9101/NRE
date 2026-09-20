@@ -24,6 +24,18 @@ Call `alpaca_get_stock_bars` with these arguments. Call `alpaca_get_calendar` wi
 
 ## Remaining integration work
 
+The CLI now audits saved connector responses without requiring local API keys:
+
+```sh
+python -m nre audit-alpaca data/alpaca/ibm.json --retrieved-at 2026-09-20T07:05:49.068Z --output data/alpaca/audit.json
+```
+
+Supply the decoded `get_stock_bars` payload containing `tool`, `request`, `counts` and `bars`. Use its actual receipt time, not the example above. The command checks explicit SIP selection, historical symbol mapping date, New York daily timestamps across DST, OHLCV validity, duplicates, order, counts and every requested calendar session. It records a canonical payload hash. Missing sessions remain visible; no forward filling occurs. Exit status 2 means the export remains staged for review, even when all calendar dates are present. This command does not retrieve data or construct accepted labels.
+
+The real IBM run is recorded in `reports/alpaca-intake-validation.json`: 82 expected and received sessions, no missing sessions or zero-volume rows, and six unresolved review items. According to [Alpaca's aggregation rules](https://docs.alpaca.markets/us/docs/market-data-faq), daily volume can include extended-hours trades. Therefore the whole OHLCV bar cannot be declared regular-session data based only on its daily interval. Adjustment and pagination metadata are also not exposed by this connector response.
+
+The corporate-actions connector returned an IBM cash dividend with ex-date 2026-02-10, inside the January 29 reaction's 10- and 20-session windows. Under the existing raw-price policy those horizons cannot be treated as action-free. It also returned a March acquisition with IBM as acquirer and CFLT as acquiree: matching a symbol filter does not mean the action adjusts that symbol's shares. These findings require issuer-role review, not blind action import. This exploratory IBM case remains outside the frozen acceptance cohort.
+
 Before admitting data into NRE snapshots, verify regular-session construction, adjustment behavior, corporate actions, historical identity, source rights and first-public news timestamps. The connector response did not expose adjustment or pagination metadata. Do not infer full arbitrary-symbol coverage or live SIP entitlement from this small probe. The API documentation requires pagination checks even when a page contains fewer than the requested limit.
 
 Credentials remain managed by the existing connection. Do not paste them into chat or commit them. If a standalone collector or GitHub workflow is added later, it will need a separately configured secret store; this setup does not transfer connector credentials to GitHub. Milestone 1 remains open with zero accepted real event outcomes.

@@ -14,6 +14,8 @@ Update on 2026-09-20: the existing Alpaca connector is available and authenticat
 
 References:
 
+Implementation update: `audit-alpaca` now checks decoded connector exports and records coverage without promoting them to accepted labels. The IBM SIP export passed numeric and 82-session coverage checks but remains staged; `reports/alpaca-intake-validation.json` lists the unresolved reviews. The corporate-actions probe found a February 10 IBM dividend, so the January 29 event's longer raw-price horizons are not action-free. SEC discovery coverage, first-public timing and independent reviews still block the pilot's acceptance; zero accepted events remains the correct status.
+
 - [Alpha Vantage documentation](https://www.alphavantage.co/documentation/)
 - [Alpha Vantage terms](https://www.alphavantage.co/terms_of_service/)
 - [Alpaca data plans and authentication](https://docs.alpaca.markets/us/docs/about-market-data-api)

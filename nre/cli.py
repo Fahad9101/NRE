@@ -32,6 +32,10 @@ def parser():
     a.add_argument("--ledger", required=True)
     a.add_argument("--review", required=True)
     a.add_argument("--output", required=True)
+    p_alpaca = sub.add_parser("audit-alpaca")
+    p_alpaca.add_argument("input")
+    p_alpaca.add_argument("--retrieved-at", required=True)
+    p_alpaca.add_argument("--output", required=True)
     return p
 
 
@@ -44,7 +48,13 @@ def save_json(path, value):
 def main(argv=None):
     args = parser().parse_args(argv)
     try:
-        if args.command == "audit-cohort":
+        if args.command == "audit-alpaca":
+            from .alpaca import audit_daily
+            result = audit_daily(json.loads(Path(args.input).read_text()), args.retrieved_at)
+            save_json(args.output, result)
+            print(canonical(result).decode())
+            return 2  # Staged inputs never constitute accepted label data.
+        elif args.command == "audit-cohort":
             from .acceptance import audit_cohort
             inputs = [json.loads(Path(p).read_text()) for p in
                       (args.input, args.protocol, args.ledger, args.review)]
