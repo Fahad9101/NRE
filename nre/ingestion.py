@@ -27,6 +27,7 @@ class SecRelayClient:
         if not user_agent or not ("@" in user_agent or "https://" in user_agent):
             raise DataError("identifiable User-Agent with contact required")
         self.user_agent, self.timeout, self.last = user_agent, timeout, 0.0
+        self.min_interval = 3.1  # unauthenticated Reader is documented at 20 RPM
 
     @staticmethod
     def relay_url(url):
@@ -63,7 +64,7 @@ class SecRelayClient:
     def fetch(self, url, output):
         transport_url = self.relay_url(url)
         for attempt in range(3):
-            time.sleep(max(0, 0.25 - (time.monotonic() - self.last)))
+            time.sleep(max(0, self.min_interval - (time.monotonic() - self.last)))
             self.last = time.monotonic()
             try:
                 request = urllib.request.Request(
