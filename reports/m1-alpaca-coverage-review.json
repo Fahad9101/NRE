@@ -1,0 +1,82 @@
+{
+  "accepted_for_labels": false,
+  "blockers": [
+    "REGULAR_SESSION_VOLUME_UNVERIFIED",
+    "ADJUSTMENT_UNVERIFIED",
+    "CORPORATE_ACTION_REVIEW_REQUIRED",
+    "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+    "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+    "PAGINATION_METADATA_UNAVAILABLE"
+  ],
+  "calendar_cross_check": {
+    "calendar_sessions": 82,
+    "missing_daily_dates": [],
+    "unexpected_daily_dates": []
+  },
+  "coverage": {
+    "IBM": {
+      "expected": 82,
+      "missing_sessions": [],
+      "received": 82,
+      "zero_volume_sessions": []
+    }
+  },
+  "hash_basis": "canonical decoded connector payload",
+  "initial_attempts": "Daily, minute and calendar calls initially returned internal errors; sequential retries succeeded.",
+  "minute_probe": {
+    "close_boundary_rows": 1,
+    "daily_volume_equals_open_to_before_close_sum": false,
+    "daily_volume_equals_sum_including_close_boundary": false,
+    "expected_regular_interval_minutes": 390,
+    "interpretation": "All 390 interval-start timestamps are present plus one close-boundary bar. These aggregates do not isolate closing-auction prints, confirm trade completeness, or establish the required regular-session volume. Do not blindly discard or include the close-boundary bar.",
+    "invalid_ohlcv_rows": 0,
+    "missing_regular_minute_offsets": [],
+    "ordered": true,
+    "payload_sha256": "44c3519cde23f5f72486c422df6987d472c30d3c977852fe4bbe47381b6b9fe9",
+    "received": 391,
+    "regular_interval_minutes": 390,
+    "request": {
+      "asof": "2026-01-28",
+      "currency": "USD",
+      "days": 5,
+      "end": "2026-01-29T16:00:00-05:00",
+      "feed": "sip",
+      "hours": 0,
+      "limit": 10000,
+      "minutes": 30,
+      "sort": "asc",
+      "start": "2026-01-29T09:30:00-05:00",
+      "symbols": [
+        "IBM"
+      ],
+      "timeframe": "1Min",
+      "tz": "America/New_York"
+    },
+    "session": "2026-01-29",
+    "unique_timestamps": 391
+  },
+  "note": "Calendar coverage is not proof of trade completeness or historical availability.",
+  "payload_sha256": "c16c87e3f3331d96cc2e1abd118b147d334e253b78b36997319d5bbef2846eeb",
+  "raw_market_data_published": false,
+  "record_count": 82,
+  "request": {
+    "asof": "2026-01-28",
+    "currency": "USD",
+    "days": 5,
+    "end": "2026-04-30",
+    "feed": "sip",
+    "hours": 0,
+    "limit": 1000,
+    "minutes": 30,
+    "sort": "asc",
+    "start": "2026-01-02",
+    "symbols": [
+      "IBM"
+    ],
+    "timeframe": "1Day",
+    "tz": "America/New_York"
+  },
+  "retrieved_at": "2026-09-21T14:41:40.120872+00:00",
+  "scope": "Exploratory IBM only; outside frozen cohort. No cohort outcome acquisition.",
+  "state": "STAGED_REVIEW_REQUIRED"
+}
