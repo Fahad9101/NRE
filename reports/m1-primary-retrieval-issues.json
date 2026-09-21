@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-21",
+  "attempted_candidates": 243,
+  "primary_screened": 241,
+  "unresolved_count": 2,
+  "issues": [
+    {
+      "candidate_id": "0001104659-26-019719",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1422183/000110465926019719/tm267104d1_8k.htm",
+      "reason": "WEB_CONTENT_LENGTH_LIMIT",
+      "status": "PRIMARY_REVIEW_PENDING",
+      "next_action": "Retrieve the exact accession from a permitted primary-source route; do not infer its contents from neighboring filings."
+    },
+    {
+      "candidate_id": "0001539638-26-000004",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000004/tfin-20260126.htm",
+      "reason": "WEB_SOURCE_NOT_ACCESSIBLE",
+      "status": "PRIMARY_REVIEW_PENDING",
+      "next_action": "Retrieve the exact accession from a permitted primary-source route; do not infer its contents from neighboring filings."
+    }
+  ],
+  "resolved_transient_failures": [
+    {
+      "candidate_id": "0001759425-26-000004",
+      "reason": "Initial web fetch timeout; second fetch succeeded and was screened."
+    }
+  ],
+  "limitations": [
+    "Retrieval failures are not eligibility exclusions.",
+    "Screening notes are metadata summaries of rendered filing bodies, not raw-source archives or verified release timestamps."
+  ]
+}

@@ -3,24 +3,57 @@
   "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "frozen_at": "2026-09-20T19:47:56.780263Z",
   "candidate_count": 243,
-  "primary_screened": 16,
-  "primary_pending": 227,
+  "primary_screened": 241,
+  "primary_pending": 2,
   "accepted_events": 0,
   "price_acquisition_authorized_by_this_report": false,
   "flag_counts": {
+    "ACQUIRED_BUSINESS_RESULTS": 1,
     "AMENDMENT_REVIEW_REQUIRED": 1,
     "CONFERENCE_TIME_NOT_RELEASE_TIME": 1,
     "CONFLICTING_RELEASE_DATES": 1,
-    "COVER_DATE_NOT_EARNINGS_RELEASE_DATE": 2,
+    "CORRECTION_REVIEW_REQUIRED": 1,
+    "COVER_DATE_NOT_EARNINGS_RELEASE_DATE": 5,
+    "EARLIER_DISCLOSURE_REVIEW": 1,
+    "EXHIBIT_RECONCILIATION_REQUIRED": 1,
+    "EXHIBIT_REQUIRED_FOR_SUBTYPE": 2,
     "FILENAME_NOT_TICKER": 1,
-    "MULTIPLE_CATALYST_COMPONENTS": 2,
+    "FILING_ITEM_METADATA_MISMATCH": 1,
+    "GUIDANCE_ONLY_REVIEW": 1,
+    "GUIDANCE_SUBTYPE_REVIEW": 1,
+    "ISSUER_JURISDICTION_REVIEW": 10,
+    "JOINT_REGISTRANT_REVIEW": 6,
+    "LISTING_ELIGIBILITY_UNRESOLVED": 6,
+    "MULTIPLE_CATALYST_COMPONENTS": 24,
+    "MULTIPLE_COMMON_CLASSES_REVIEW": 1,
     "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED": 56,
-    "MULTIPLE_SECURITY_TYPES": 3,
-    "MULTIPLE_SHARE_CLASSES": 1,
-    "NO_EXCHANGE_LISTING_IN_FILING": 1,
+    "MULTIPLE_LISTINGS_REVIEW": 1,
+    "MULTIPLE_SECURITY_TYPES": 29,
+    "MULTIPLE_SHARE_CLASSES": 2,
+    "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW": 3,
+    "NO_COMMON_STOCK_LISTING_IN_COVER": 1,
+    "NO_EXCHANGE_LISTING_IN_FILING": 4,
+    "OUTSIDE_EVENT_WINDOW_REVIEW": 1,
+    "PARENT_SUBSIDIARY_EVENT_REVIEW": 1,
+    "PARTNERSHIP_SECURITY_TYPE_REVIEW": 2,
+    "PERIOD_END_INCONSISTENCY": 1,
+    "PRELIMINARY_CASH_ESTIMATE": 3,
     "PRELIMINARY_GUIDANCE_SUBTYPE_REVIEW": 1,
-    "RELATED_PRELIMINARY_ANNOUNCEMENT": 1,
-    "RELEASE_PRECEDES_FILING_DATE": 2
+    "PRELIMINARY_RESULTS_REVIEW": 17,
+    "PRESENTATION_SOURCE_REVIEW": 1,
+    "PRODUCTION_ONLY_SUBTYPE_REVIEW": 1,
+    "RELATED_CORPORATE_ANNOUNCEMENT": 1,
+    "RELATED_GUIDANCE_ANNOUNCEMENT": 2,
+    "RELATED_PRELIMINARY_ANNOUNCEMENT": 17,
+    "RELATED_RESULTS_ANNOUNCEMENT": 2,
+    "RELEASE_DATE_REVIEW_REQUIRED": 1,
+    "RELEASE_OUTSIDE_EVENT_WINDOW": 1,
+    "RELEASE_PRECEDES_FILING_DATE": 2,
+    "REPEATED_INFORMATION_REVIEW": 1,
+    "SCHEDULE_ONLY": 1,
+    "SECURITY_CLASS_REVIEW": 4,
+    "SHAREHOLDER_LETTER_SOURCE": 4,
+    "SUPPLEMENTAL_REPORT_REVIEW": 1
   },
   "limitations": [
     "Primary screening is not complete eligibility, source archival or independent review.",
@@ -171,14 +204,17 @@
       "candidate_id": "0000103379-26-000008",
       "cik": "0000103379",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/103379/000010337926000008/vfc-20260128.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS",
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0000216228-26-000005",
       "cik": "0000216228",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/216228/000021622826000005/itt-20260205.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
@@ -187,8 +223,10 @@
       "candidate_id": "0000216228-26-000020",
       "cik": "0000216228",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/216228/000021622826000020/itt-20260302.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "ACQUIRED_BUSINESS_RESULTS",
+        "MULTIPLE_CATALYST_COMPONENTS",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -196,302 +234,344 @@
       "candidate_id": "0000314489-26-000006",
       "cik": "0000314489",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/314489/000031448926000006/buse-20260127.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS",
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0000352825-26-000011",
       "cik": "0000352825",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/352825/000035282526000011/fstr-20260303.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000707549-26-000006",
       "cik": "0000707549",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000006/lrcx-20260128.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000726601-26-000002",
       "cik": "0000726601",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/726601/000072660126000002/ccbg-20260127.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000726854-26-000005",
       "cik": "0000726854",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/726854/000072685426000005/chco-20260121.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000732717-26-000047",
       "cik": "0000732717",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000047/t-20260128.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0000737758-26-000007",
       "cik": "0000737758",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775826000007/ttc-20260305.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000789460-26-000011",
       "cik": "0000789460",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/789460/000078946026000011/wkc-20260219.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000860413-26-000007",
       "cik": "0000860413",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/860413/000086041326000007/fibk-20260128.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0000879169-26-000006",
       "cik": "0000879169",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/879169/000087916926000006/incy-20260210.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000882835-26-000003",
       "cik": "0000882835",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000003/rop-20260127.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000891482-26-000004",
       "cik": "0000891482",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/891482/000089148226000004/fll-20260303x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "COVER_DATE_NOT_EARNINGS_RELEASE_DATE"
+      ]
     },
     {
       "candidate_id": "0000892553-26-000025",
       "cik": "0000892553",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/892553/000089255326000025/gtls-20260227.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000894671-26-000007",
       "cik": "0000894671",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/894671/000089467126000007/sec8kearngsrels123125.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "RELEASE_DATE_REVIEW_REQUIRED"
+      ]
     },
     {
       "candidate_id": "0000895421-26-000007",
       "cik": "0000895421",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/895421/000089542126000007/ms-20260115.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0000897077-26-000015",
       "cik": "0000897077",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/897077/000089707726000015/alg-20260302.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000914475-26-000006",
       "cik": "0000914475",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/nbix-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0000929351-26-000009",
       "cik": "0000929351",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/929351/000092935126000009/starz-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW"
+      ]
     },
     {
       "candidate_id": "0000950142-26-000775",
       "cik": "0000072573",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/72573/000095014226000775/eh260753383_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001001233-26-000002",
       "cik": "0001001233",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1001233/000100123326000002/sgmo-20260202.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "COVER_DATE_NOT_EARNINGS_RELEASE_DATE",
+        "MULTIPLE_CATALYST_COMPONENTS",
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_CASH_ESTIMATE"
       ]
     },
     {
       "candidate_id": "0001030469-26-000004",
       "cik": "0001030469",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1030469/000103046926000004/ofg-20260122.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001037540-26-000003",
       "cik": "0001037540",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1037540/000103754026000003/bxp-20260127.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "JOINT_REGISTRANT_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001057706-26-000005",
       "cik": "0001057706",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1057706/000105770626000005/fbpPRQ42025.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001078075-26-000009",
       "cik": "0001078075",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1078075/000107807526000009/ntct-20260205.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001099219-26-000008",
       "cik": "0001099219",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1099219/000109921926000008/met-20260204.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001104659-26-002799",
       "cik": "0001070081",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1070081/000110465926002799/tmb-20260112x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001104659-26-003829",
       "cik": "0000003453",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/3453/000110465926003829/matx-20260114x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001104659-26-004852",
       "cik": "0000707605",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/707605/000110465926004852/asrv-20260120x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001104659-26-005322",
       "cik": "0001160791",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1160791/000110465926005322/goro-20260120x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRODUCTION_ONLY_SUBTYPE_REVIEW"
       ]
     },
     {
       "candidate_id": "0001104659-26-005404",
       "cik": "0001422183",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1422183/000110465926005404/tm263668d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "SCHEDULE_ONLY"
       ]
     },
     {
       "candidate_id": "0001104659-26-006999",
       "cik": "0001341317",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1341317/000110465926006999/bwb-20260127x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001104659-26-007673",
       "cik": "0001413837",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1413837/000110465926007673/ffwm-20260129x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001104659-26-007832",
       "cik": "0000714712",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/714712/000110465926007832/juvf-20260129x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "NO_EXCHANGE_LISTING_IN_FILING"
+      ]
     },
     {
       "candidate_id": "0001104659-26-008972",
       "cik": "0001086600",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1086600/000110465926008972/arlp-20260202x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "PARTNERSHIP_SECURITY_TYPE_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001104659-26-009510",
       "cik": "0001737953",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1737953/000110465926009510/tm264822d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001104659-26-010325",
       "cik": "0000094344",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/94344/000110465926010325/tm265160d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001104659-26-013832",
       "cik": "0000004281",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/4281/000110465926013832/tm266060d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001104659-26-014302",
       "cik": "0000013372",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/13372/000110465926014302/tm266120d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "JOINT_REGISTRANT_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001104659-26-017546",
       "cik": "0001070081",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1070081/000110465926017546/tmb-20260219x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001104659-26-019116",
       "cik": "0000003453",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/3453/000110465926019116/matx-20260224x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001104659-26-019413",
       "cik": "0001958140",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1958140/000110465926019413/batra-20260225x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SHARE_CLASSES"
+      ]
     },
     {
       "candidate_id": "0001104659-26-019719",
@@ -506,181 +586,205 @@
       "candidate_id": "0001104659-26-020081",
       "cik": "0001845815",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1845815/000110465926020081/payo-20260226x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001104659-26-025834",
       "cik": "0001806347",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1806347/000110465926025834/west-20260305x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "COVER_DATE_NOT_EARNINGS_RELEASE_DATE",
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001104659-26-031309",
       "cik": "0001094038",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1094038/000110465926031309/tm268941d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001104659-26-031333",
       "cik": "0001160791",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1160791/000110465926031333/goro-20260318x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001104659-26-033399",
       "cik": "0001547546",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1547546/000110465926033399/tm269558d1_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001104659-26-036517",
       "cik": "0001839530",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1839530/000110465926036517/xbp-20260330x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001133311-26-000002",
       "cik": "0001133311",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1133311/000113331126000002/tzoo-20260219.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001140361-26-006558",
       "cik": "0000909724",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/909724/000114036126006558/ef20066316_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001140361-26-011738",
       "cik": "0001829280",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1829280/000114036126011738/ef20069177_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001140361-26-012158",
       "cik": "0001133416",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1133416/000114036126012158/ef20068722_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001140361-26-012885",
       "cik": "0001635088",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1635088/000114036126012885/ef20069685_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "ISSUER_JURISDICTION_REVIEW",
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_CASH_ESTIMATE",
+        "RELEASE_OUTSIDE_EVENT_WINDOW"
       ]
     },
     {
       "candidate_id": "0001171520-26-000002",
       "cik": "0000806172",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/806172/000117152026000002/eps12392.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001171843-26-000415",
       "cik": "0000763563",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/763563/000117184326000415/f8k_012626.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001171843-26-001072",
       "cik": "0001145986",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1145986/000117184326001072/f8k_022526.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001171843-26-001838",
       "cik": "0001447028",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1447028/000117184326001838/f8k_032026.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001171843-26-002061",
       "cik": "0000883107",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326002061/f8k_033126.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "EXHIBIT_REQUIRED_FOR_SUBTYPE"
+      ]
     },
     {
       "candidate_id": "0001174850-26-000004",
       "cik": "0001174850",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1174850/000117485026000004/nic-20260120.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001174947-26-000070",
       "cik": "0001437479",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1437479/000117494726000070/form8k-76543_enbp.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "NO_EXCHANGE_LISTING_IN_FILING"
       ]
     },
     {
       "candidate_id": "0001174947-26-000112",
       "cik": "0001337068",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1337068/000117494726000112/form8k-35129_mgyr.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001174947-26-000123",
       "cik": "0001437479",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1437479/000117494726000123/form8k-35199_enbf.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "FILING_ITEM_METADATA_MISMATCH",
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW",
+        "NO_EXCHANGE_LISTING_IN_FILING"
       ]
     },
     {
       "candidate_id": "0001175454-26-000008",
       "cik": "0001175454",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1175454/000117545426000008/flt-20260204.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-001502",
       "cik": "0001798749",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1798749/000119312526001502/d93206d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_CASH_ESTIMATE"
       ]
     },
     {
       "candidate_id": "0001193125-26-009828",
       "cik": "0001794546",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1794546/000119312526009828/carl-20260112.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001193125-26-011706",
       "cik": "0001070494",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1070494/000119312526011706/acad-20260113.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "GUIDANCE_SUBTYPE_REVIEW",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -688,227 +792,247 @@
       "candidate_id": "0001193125-26-011725",
       "cik": "0001600222",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1600222/000119312526011725/pxed-20260113.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-017242",
       "cik": "0000040729",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/40729/000119312526017242/d101102d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "PRELIMINARY_RESULTS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001193125-26-018018",
       "cik": "0002059653",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2059653/000119312526018018/lsbk-20260121.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-019448",
       "cik": "0001702750",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1702750/000119312526019448/by-20260122.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-022723",
       "cik": "0000880641",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/880641/000119312526022723/efsi-20260126.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-028227",
       "cik": "0000944745",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/944745/000119312526028227/civb-20260128.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "PRELIMINARY_RESULTS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001193125-26-029373",
       "cik": "0001308547",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1308547/000119312526029373/d36036d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001193125-26-029383",
       "cik": "0000880117",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312526029383/jbss-20260129.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-033757",
       "cik": "0002058758",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2058758/000119312526033757/avbc-20260129.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-036643",
       "cik": "0001414932",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1414932/000119312526036643/d12028d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-038589",
       "cik": "0001021860",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1021860/000119312526038589/nov-20260204.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-039528",
       "cik": "0000797721",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312526039528/d39970d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-041952",
       "cik": "0001843973",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1843973/000119312526041952/flyx-20260209.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "MULTIPLE_SECURITY_TYPES",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001193125-26-045530",
       "cik": "0000916076",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/916076/000119312526045530/mlm-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-045553",
       "cik": "0002078856",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2078856/000119312526045553/purr-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-045612",
       "cik": "0000751364",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/751364/000119312526045612/nnn-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-058075",
       "cik": "0000054476",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/54476/000119312526058075/d29762d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "JOINT_REGISTRANT_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001193125-26-062391",
       "cik": "0000094049",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/94049/000119312526062391/scl-20260223.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-064003",
       "cik": "0001825024",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1825024/000119312526064003/opad-20260223.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-071512",
       "cik": "0001794546",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1794546/000119312526071512/carl-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001193125-26-071518",
       "cik": "0002080921",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2080921/000119312526071518/apc-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PARENT_SUBSIDIARY_EVENT_REVIEW"
       ]
     },
     {
       "candidate_id": "0001193125-26-071674",
       "cik": "0001070494",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1070494/000119312526071674/acad-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_GUIDANCE_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001193125-26-071725",
       "cik": "0001538849",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1538849/000119312526071725/capl-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "PARTNERSHIP_SECURITY_TYPE_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001193125-26-071772",
       "cik": "0001643615",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1643615/000119312526071772/meg-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-076530",
       "cik": "0001582313",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1582313/000119312526076530/xene-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001193125-26-076562",
       "cik": "0001819404",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1819404/000119312526076562/d45653d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-076843",
       "cik": "0001681087",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526076843/tecx-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-076901",
       "cik": "0001794776",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1794776/000119312526076901/psbd-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-085444",
       "cik": "0001816581",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1816581/000119312526085444/d78060d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001193125-26-094967",
       "cik": "0001798749",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1798749/000119312526094967/d69373d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001193125-26-102342",
       "cik": "0001826600",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1826600/000119312526102342/mntk-20260311.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
@@ -917,185 +1041,209 @@
       "candidate_id": "0001193125-26-103173",
       "cik": "0001826600",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1826600/000119312526103173/d54101d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_RESULTS_ANNOUNCEMENT",
+        "SUPPLEMENTAL_REPORT_REVIEW"
       ]
     },
     {
       "candidate_id": "0001193125-26-104145",
       "cik": "0001873529",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1873529/000119312526104145/klc-20260312.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-104218",
       "cik": "0001095981",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1095981/000119312526104218/pstv-20260312.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001193125-26-104240",
       "cik": "0001696556",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1696556/000119312526104240/d76538d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-108324",
       "cik": "0000921299",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/921299/000119312526108324/kynb-20260316.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-115980",
       "cik": "0001426800",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1426800/000119312526115980/asmb-20260319.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-120687",
       "cik": "0000949858",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/949858/000119312526120687/achv-20260324.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-126223",
       "cik": "0001691082",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1691082/000119312526126223/d129775d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-131738",
       "cik": "0002080921",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2080921/000119312526131738/apc-20260330.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_RESULTS_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001193125-26-133153",
       "cik": "0001320350",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1320350/000119312526133153/lnsr-20260331.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-134854",
       "cik": "0001468748",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1468748/000119312526134854/kod-20260331.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001193125-26-135767",
       "cik": "0001419041",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1419041/000119312526135767/d63145d8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001213900-26-006946",
       "cik": "0001940177",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1940177/000121390026006946/ea0273876-8k_podcast.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001213900-26-010528",
       "cik": "0001877322",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1877322/000121390026010528/ea0274989-8k_esab.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_CATALYST_COMPONENTS",
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001213900-26-015621",
       "cik": "0001940177",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1940177/000121390026015621/ea0276842-8k_podcastone.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001213900-26-023054",
       "cik": "0001173313",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1173313/000121390026023054/ea0279143-8k_abvc.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001213900-26-034202",
       "cik": "0001960847",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1960847/000121390026034202/ea0283283-8k_toppoint.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001213900-26-038059",
       "cik": "0001959023",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1959023/000121390026038059/ea0284431-8k_renx.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "OUTSIDE_EVENT_WINDOW_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001214659-26-000377",
       "cik": "0001347123",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1347123/000121465926000377/b1122638k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "LISTING_ELIGIBILITY_UNRESOLVED",
+        "PRELIMINARY_RESULTS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001230245-26-000008",
       "cik": "0001230245",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1230245/000123024526000008/pipr-20260206.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001287032-26-000047",
       "cik": "0001287032",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1287032/000128703226000047/psec-20260209.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS",
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001288847-26-000021",
       "cik": "0001288847",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1288847/000128884726000021/fivn-20260219.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001408710-26-000006",
       "cik": "0001408710",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000006/fn-20260202.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW",
+        "SECURITY_CLASS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001428205-26-000028",
       "cik": "0001428205",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1428205/000142820526000028/arr-20260218.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001437749-26-001485",
       "cik": "0001042729",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1042729/000143774926001485/mbwm20251031_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
@@ -1104,9 +1252,10 @@
       "candidate_id": "0001437749-26-001502",
       "cik": "0001042729",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1042729/000143774926001502/mbwm20260120_8ka.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
         "AMENDMENT_REVIEW_REQUIRED",
+        "CORRECTION_REVIEW_REQUIRED",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -1114,209 +1263,238 @@
       "candidate_id": "0001437749-26-002140",
       "cik": "0000108385",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/108385/000143774926002140/wrld20260126_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001437749-26-002410",
       "cik": "0001698022",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1698022/000143774926002410/fmfg20260129_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "LISTING_ELIGIBILITY_UNRESOLVED"
+      ]
     },
     {
       "candidate_id": "0001437749-26-002976",
       "cik": "0001138723",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1138723/000143774926002976/aray20251117_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001437749-26-003198",
       "cik": "0001547459",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1547459/000143774926003198/ngvc20260203_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001437749-26-003227",
       "cik": "0001069533",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1069533/000143774926003227/rgco20251121_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001437749-26-003948",
       "cik": "0001120914",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1120914/000143774926003948/pdfs20251124_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001437749-26-005117",
       "cik": "0001095565",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1095565/000143774926005117/hstm20251021_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001437749-26-005740",
       "cik": "0000043196",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/43196/000143774926005740/gtn20260224d_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_COMMON_CLASSES_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001437749-26-009301",
       "cik": "0001389545",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1389545/000143774926009301/nby20260320_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001437749-26-009390",
       "cik": "0000914139",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/914139/000143774926009390/prkr20251123_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "LISTING_ELIGIBILITY_UNRESOLVED"
+      ]
     },
     {
       "candidate_id": "0001437749-26-010672",
       "cik": "0001697851",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774926010672/rekr20260330_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001459839-26-000010",
       "cik": "0001459839",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000010/sibn-20260112.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001459839-26-000022",
       "cik": "0001459839",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1459839/000145983926000022/sibn-20260220.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001477932-26-000817",
       "cik": "0000040570",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/40570/000147793226000817/job_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001493152-26-003520",
       "cik": "0000873860",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/873860/000149315226003520/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001493152-26-005210",
       "cik": "0001725430",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1725430/000149315226005210/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001493152-26-006291",
       "cik": "0000873860",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/873860/000149315226006291/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001493152-26-006317",
       "cik": "0001725430",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1725430/000149315226006317/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001493152-26-007190",
       "cik": "0001053369",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1053369/000149315226007190/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "EARLIER_DISCLOSURE_REVIEW",
+        "LISTING_ELIGIBILITY_UNRESOLVED"
+      ]
     },
     {
       "candidate_id": "0001493152-26-007955",
       "cik": "0000913241",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/913241/000149315226007955/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001493152-26-012902",
       "cik": "0001401914",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1401914/000149315226012902/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001493152-26-013456",
       "cik": "0000064463",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/64463/000149315226013456/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001493152-26-013477",
       "cik": "0001624326",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1624326/000149315226013477/form8-k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001522767-26-000027",
       "cik": "0001522767",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1522767/000152276726000027/mrmd-20260311.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "LISTING_ELIGIBILITY_UNRESOLVED"
+      ]
     },
     {
       "candidate_id": "0001525221-26-000011",
       "cik": "0001525221",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1525221/000152522126000011/vtol-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001527541-26-000053",
       "cik": "0001527541",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1527541/000152754126000053/whlr-20260305.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001529274-26-000005",
       "cik": "0001529274",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927426000005/alk-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001529628-26-000007",
       "cik": "0001529628",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1529628/000152962826000007/snd-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001539638-26-000004",
@@ -1329,82 +1507,100 @@
       "candidate_id": "0001541401-26-000005",
       "cik": "0001541401",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1541401/000154140126000005/esrt-20260217.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "JOINT_REGISTRANT_REVIEW",
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001551152-26-000002",
       "cik": "0001551152",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000002/abbv-20260107.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "MULTIPLE_SECURITY_TYPES",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001551152-26-000004",
       "cik": "0001551152",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1551152/000155115226000004/abbv-20260204.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "MULTIPLE_SECURITY_TYPES",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001552033-26-000006",
       "cik": "0001552033",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1552033/000155203326000006/ck0001552033-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001552781-26-000071",
       "cik": "0000078128",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/78128/000155278126000071/e26072_wtrg-8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001561032-26-000010",
       "cik": "0001561032",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1561032/000156103226000010/hct-20260220.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "NO_COMMON_STOCK_LISTING_IN_COVER",
+        "SECURITY_CLASS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001562528-26-000003",
       "cik": "0001562528",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1562528/000156252826000003/fbrt-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001571283-26-000003",
       "cik": "0001571283",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1571283/000157128326000003/rexr-20260204.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001573221-26-000009",
       "cik": "0001573221",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000157322126000009/real-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001603923-26-000011",
       "cik": "0001603923",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1603923/000160392326000011/wfrd-20260203.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW",
+        "SECURITY_CLASS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001628280-26-001271",
       "cik": "0001177394",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1177394/000162828026001271/snx-20260108.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -1412,161 +1608,177 @@
       "candidate_id": "0001628280-26-001909",
       "cik": "0001447362",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1447362/000162828026001909/cstl-20260111.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001628280-26-002895",
       "cik": "0000016058",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000162828026002895/caci-20260121.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-003514",
       "cik": "0000055785",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/55785/000162828026003514/pre-20260127.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-005010",
       "cik": "0000946581",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026005010/ttwo-20260203.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-005772",
       "cik": "0001820953",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1820953/000162828026005772/afrm-20260205.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "SHAREHOLDER_LETTER_SOURCE"
+      ]
     },
     {
       "candidate_id": "0001628280-26-005947",
       "cik": "0000776867",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/776867/000162828026005947/wtm-20260206.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW",
+        "MULTIPLE_LISTINGS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001628280-26-006634",
       "cik": "0001529377",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1529377/000162828026006634/acre-20260210.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-007165",
       "cik": "0001325814",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1325814/000162828026007165/fhlbdm-20260211.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "LISTING_ELIGIBILITY_UNRESOLVED",
+        "SECURITY_CLASS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001628280-26-007710",
       "cik": "0001699150",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1699150/000162828026007710/iri-20260212.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-010382",
       "cik": "0000924901",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/924901/000162828026010382/vre-20260223.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-010399",
       "cik": "0001825088",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1825088/000162828026010399/dream-20260223.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-011092",
       "cik": "0001289848",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1289848/000162828026011092/hurn-20260224.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-011137",
       "cik": "0001520006",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1520006/000162828026011137/mtdr-20260224.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001628280-26-011234",
       "cik": "0000821483",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/821483/000162828026011234/parr-20260224.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-011990",
       "cik": "0001267565",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1267565/000162828026011990/coll-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-012263",
       "cik": "0001447362",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1447362/000162828026012263/cstl-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001628280-26-014992",
       "cik": "0001866757",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1866757/000162828026014992/brlt-20260305.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-016596",
       "cik": "0001606909",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1606909/000162828026016596/panl-20260310.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001628280-26-021033",
       "cik": "0001639723",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1639723/000162828026021033/navn-20260325.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-021185",
       "cik": "0001701758",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828026021185/love-20260326.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001628280-26-022006",
       "cik": "0001001233",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1001233/000162828026022006/sgmo-20260330.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001628280-26-022204",
       "cik": "0001177394",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1177394/000162828026022204/snx-20260331.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -1574,8 +1786,9 @@
       "candidate_id": "0001635088-26-000009",
       "cik": "0001635088",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1635088/000163508826000009/roiv-20260206.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "ISSUER_JURISDICTION_REVIEW",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -1583,276 +1796,320 @@
       "candidate_id": "0001645873-26-000042",
       "cik": "0001645873",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1645873/000164587326000042/cik0001645873-20260325.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001649739-26-000005",
       "cik": "0001649739",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1649739/000164973926000005/bafn-20260129.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001660134-26-000016",
       "cik": "0001660134",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-20260304.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001683168-26-000482",
       "cik": "0001748137",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1748137/000168316826000482/neovolta_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS",
+        "MULTIPLE_SECURITY_TYPES",
+        "PRELIMINARY_RESULTS_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001683168-26-002004",
       "cik": "0000843006",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316826002004/access_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "EXHIBIT_RECONCILIATION_REQUIRED",
+        "PERIOD_END_INCONSISTENCY"
+      ]
     },
     {
       "candidate_id": "0001699838-26-000004",
       "cik": "0001699838",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1699838/000169983826000004/cflt-20260204.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001703057-26-000010",
       "cik": "0001703057",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000010/abcl-20260224.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "ISSUER_JURISDICTION_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001704720-26-000025",
       "cik": "0001704720",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1704720/000170472026000025/cnne-20260223.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "SHAREHOLDER_LETTER_SOURCE"
+      ]
     },
     {
       "candidate_id": "0001705696-26-000033",
       "cik": "0001705696",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1705696/000170569626000033/vici-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001706946-26-000017",
       "cik": "0001706946",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1706946/000170694626000017/spce-20260330.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001739445-26-000007",
       "cik": "0001739445",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1739445/000173944526000007/aca-20260224.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "EXHIBIT_REQUIRED_FOR_SUBTYPE",
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW"
       ]
     },
     {
       "candidate_id": "0001739445-26-000027",
       "cik": "0001739445",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1739445/000173944526000027/aca-20260223.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_CORPORATE_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001743725-26-000005",
       "cik": "0001743725",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1743725/000174372526000005/gdyn-20260305.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001746473-26-000039",
       "cik": "0001746473",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1746473/000174647326000039/plrx-20260311.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001759425-26-000004",
       "cik": "0001759425",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000004/mirm-20260112.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001759425-26-000010",
       "cik": "0001759425",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1759425/000175942526000010/mirm-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001770450-26-000003",
       "cik": "0000108772",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/108772/000177045026000003/xrx-20260129.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "JOINT_REGISTRANT_REVIEW"
+      ]
     },
     {
       "candidate_id": "0001771515-26-000014",
       "cik": "0001771515",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1771515/000177151526000014/go-20260302.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_CATALYST_COMPONENTS"
+      ]
     },
     {
       "candidate_id": "0001778922-26-000018",
       "cik": "0001778922",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1778922/000177892226000018/sgp-20260326.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001788882-26-000013",
       "cik": "0001788882",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1788882/000178888226000013/root-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "SHAREHOLDER_LETTER_SOURCE"
+      ]
     },
     {
       "candidate_id": "0001802974-26-000020",
       "cik": "0001802974",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1802974/000180297426000020/avo-20260312.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001829126-26-002747",
       "cik": "0001883814",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1883814/000182912626002747/southland_8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001841408-26-000003",
       "cik": "0001841408",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1841408/000184140826000003/dave-20260226.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES"
+      ]
     },
     {
       "candidate_id": "0001843973-26-000014",
       "cik": "0001843973",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1843973/000184397326000014/flyx-20260305.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "MULTIPLE_SECURITY_TYPES",
+        "PRESENTATION_SOURCE_REVIEW",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001849867-26-000002",
       "cik": "0001849867",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1849867/000184986726000002/clst-20260129x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001856365-26-000004",
       "cik": "0001856365",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1856365/000185636526000004/finw-20260129.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001865200-26-000018",
       "cik": "0001865200",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1865200/000186520026000018/angx-20260312x8k.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001866368-26-000009",
       "cik": "0001866368",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1866368/000186636826000009/cwan-20260218.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001869198-26-000003",
       "cik": "0001869198",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1869198/000186919826000003/lth-20260122.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "PRELIMINARY_RESULTS_REVIEW"
       ]
     },
     {
       "candidate_id": "0001869198-26-000009",
       "cik": "0001869198",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1869198/000186919826000009/lth-20260224.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT"
       ]
     },
     {
       "candidate_id": "0001874178-26-000007",
       "cik": "0001874178",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1874178/000187417826000007/rivn-20260212.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "SHAREHOLDER_LETTER_SOURCE"
+      ]
     },
     {
       "candidate_id": "0001876042-26-000032",
       "cik": "0001876042",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1876042/000187604226000032/crcl-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0001877322-26-000008",
       "cik": "0001877322",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1877322/000187732226000008/esab-20260220.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_PRELIMINARY_ANNOUNCEMENT",
+        "REPEATED_INFORMATION_REVIEW"
       ]
     },
     {
       "candidate_id": "0001971213-26-000009",
       "cik": "0000912752",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/912752/000197121326000009/sbgi-20260225.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "JOINT_REGISTRANT_REVIEW"
+      ]
     },
     {
       "candidate_id": "0002024218-26-000016",
       "cik": "0002024218",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2024218/000202421826000016/smc-20260316.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0002067129-26-000003",
       "cik": "0002067129",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2067129/000206712926000003/np-20260218.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": []
     },
     {
       "candidate_id": "0002070849-26-000010",
       "cik": "0002070849",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2070849/000207084926000010/blln-20260112.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "GUIDANCE_ONLY_REVIEW",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
       ]
     },
@@ -1860,9 +2117,10 @@
       "candidate_id": "0002070849-26-000013",
       "cik": "0002070849",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/2070849/000207084926000013/blln-20260304.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED"
+        "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
+        "RELATED_GUIDANCE_ANNOUNCEMENT"
       ]
     }
   ]
