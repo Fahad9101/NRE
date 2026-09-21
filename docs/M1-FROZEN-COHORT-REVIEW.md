@@ -64,3 +64,11 @@ Price-feed/adjustment/session-volume semantics, corporate-action coverage, permi
 - Wire pages display Solesence at March 31 08:02 ET and ACCESS at March 19 08:30 EDT. Conservative one-minute intervals are recorded only as displayed-publication evidence. Neither is certified first-public; earlier disclosures, version history, source archival and historical identity availability remain open.
 
 The direct raw SEC probe returned HTTP 403 and was not retried. Rendered source access does not replace a permitted durable raw archive. Source discovery also returned unrelated finance-page snippets and later issuer news; no price outcomes were used for selection or labeling. Milestone 1 remains open with zero accepted events.
+
+## Earlier-disclosure chronology (2026-09-21)
+
+`reports/m1-earlier-disclosure-review.json` records the next check for the two candidates with wire timestamps. Their preserved submissions payloads were hash-verified and all listed forms from January 1 through each release date were enumerated, together with December context filings. Each representation lists only the target 8-K and same-day 10-K in that 2026 interval; all four acceptance times follow the respective wire minute. The two annual-report indexes and ACCESS 8-K index corroborate three of those times. Solesence's 8-K index was inaccessible.
+
+This is partial chronology evidence, not proof of no earlier public information. Issuer archive routes were inaccessible and searches mostly returned unrelated pages. The four December 8-K bodies were screened: personnel agreements/compensation and a buyback authorization, without a quarterly earnings announcement in those bodies. Their covers corroborate SLSN/Nasdaq and ACCS/NYSE American common stock before the March events. Linked exhibits, unreviewed earlier issuer/wire announcements, version history, identity continuity and durable source archival still need review. Both candidates remain unverified and no prices were acquired.
+
+After source review, the remaining Milestone 1 sequence is provider/data-quality review, eligible-cohort price acquisition, reproducible reaction-label construction, and the 100-event/25-issuer acceptance audit with independent timing checks. Predictive models and later milestones require separate approval.

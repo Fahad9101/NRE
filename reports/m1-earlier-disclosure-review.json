@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-21",
+  "source_commit": "c735f1dd877a931359dd317dd84feca5e8182c2c",
+  "selection_basis": "The two candidates with displayed-publication intervals in the preceding source follow-up; no outcome-based selection.",
+  "frozen_membership_unchanged": true,
+  "accepted_events": 0,
+  "first_public_verified_count": 0,
+  "price_acquisition_authorized": false,
+  "reviews": [
+    {
+      "candidate_id": "0001171843-26-002061",
+      "cik": "883107",
+      "displayed_publication": {
+        "text": "March 31, 2026 08:02 ET",
+        "interval_start": "2026-03-31T08:02:00-04:00",
+        "interval_end_exclusive": "2026-03-31T08:03:00-04:00",
+        "precision": "minute",
+        "timezone_basis": "ET interpreted as America/New_York on this date",
+        "first_public_verified": false
+      },
+      "wire_source": "https://www.globenewswire.com/news-release/2026/03/31/3265441/12101/en/sol%C3%A9sence-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+      "archive_payload_sha256": "4a3fd56747046dba3351fccdf5d8c8d5bf1626588f8567b1cdf17af20d89d13c",
+      "archive_payload_member": "nre-sec-freeze/raw/4a3fd56747046dba3351fccdf5d8c8d5bf1626588f8567b1cdf17af20d89d13c.payload",
+      "canonical_submission_url": "https://data.sec.gov/submissions/CIK0000883107.json",
+      "source_representation": "preserved relay_json_extract; not authenticated raw SEC bytes",
+      "metadata_window_start": "2026-01-01",
+      "metadata_window_end_inclusive": "2026-03-31",
+      "all_forms_in_window": [
+        {
+          "accessionNumber": "0001999371-26-007345",
+          "filingDate": "2026-03-31",
+          "acceptanceDateTime": "2026-03-31T20:52:00.000Z",
+          "form": "10-K",
+          "items": "",
+          "primaryDocument": "slsn-10k_123125.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/883107/000199937126007345/0001999371-26-007345-index.htm",
+          "index_acceptance_cross_checked": true,
+          "body_reviewed_in_this_pass": false
+        },
+        {
+          "accessionNumber": "0001171843-26-002061",
+          "filingDate": "2026-03-31",
+          "acceptanceDateTime": "2026-03-31T12:10:10.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "primaryDocument": "f8k_033126.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326002061/0001171843-26-002061-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": false
+        }
+      ],
+      "december_context_filings": [
+        {
+          "accessionNumber": "0001193125-25-336020",
+          "filingDate": "2025-12-30",
+          "acceptanceDateTime": "2025-12-30T14:29:40.000Z",
+          "form": "4",
+          "items": "",
+          "primaryDocument": "xslF345X05/ownership.xml",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/883107/000119312525336020/0001193125-25-336020-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": false
+        },
+        {
+          "accessionNumber": "0001193125-25-315434",
+          "filingDate": "2025-12-11",
+          "acceptanceDateTime": "2025-12-11T16:50:36.000Z",
+          "form": "4",
+          "items": "",
+          "primaryDocument": "xslF345X05/ownership.xml",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/883107/000119312525315434/0001193125-25-315434-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": false
+        },
+        {
+          "accessionNumber": "0001171843-25-007730",
+          "filingDate": "2025-12-03",
+          "acceptanceDateTime": "2025-12-03T00:11:43.000Z",
+          "form": "8-K",
+          "items": "5.02,9.01",
+          "primaryDocument": "f8k_120225.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007730/0001171843-25-007730-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": true,
+          "body_finding": "Separation and severance agreement for the former CEO; the body does not announce quarterly results.",
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007730/f8k_120225.htm",
+          "identity_in_cover": {
+            "ticker": "SLSN",
+            "exchange": "NASDAQ",
+            "security_class": "common"
+          }
+        },
+        {
+          "accessionNumber": "0001171843-25-007680",
+          "filingDate": "2025-12-01",
+          "acceptanceDateTime": "2025-12-01T17:23:33.000Z",
+          "form": "8-K",
+          "items": "1.01,5.02,9.01",
+          "primaryDocument": "f8k_120125.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007680/0001171843-25-007680-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": true,
+          "body_finding": "Consulting agreement and board succession; the body does not announce quarterly results.",
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007680/f8k_120125.htm",
+          "identity_in_cover": {
+            "ticker": "SLSN",
+            "exchange": "NASDAQ",
+            "security_class": "common"
+          }
+        }
+      ],
+      "declared_continuation_files": [
+        {
+          "filingCount": 228,
+          "filingFrom": "1997-03-13",
+          "filingTo": "2006-01-03",
+          "name": "CIK0000883107-submissions-001.json"
+        }
+      ],
+      "finding": "The preserved recent-filings representation contains only the target 8-K and same-day 10-K in the 2026 window through the release date. Both acceptance timestamps follow the displayed wire minute. This metadata comparison does not exclude earlier non-SEC disclosures or establish source completeness.",
+      "first_public_verified": false,
+      "historical_identity_verified": false,
+      "status": "PARTIAL_CHRONOLOGY_REVIEW_REQUIRED",
+      "remaining": [
+        "Review earlier issuer and wire releases, including guidance or preliminary metrics, and version history.",
+        "Review linked December exhibits and any unreviewed earlier disclosures; establish identity continuity and historical availability.",
+        "Archive permitted release and identity evidence; current filing metadata is not a raw-source archive."
+      ],
+      "pre_release_identity_evidence": "Both December 8-K covers identify the same common-stock ticker and exchange as the March target. These are prior-dated corroborating observations; continuity and historical availability are not certified."
+    },
+    {
+      "candidate_id": "0001683168-26-002004",
+      "cik": "843006",
+      "displayed_publication": {
+        "text": "Thursday, 19 March 2026 08:30 EDT",
+        "interval_start": "2026-03-19T08:30:00-04:00",
+        "interval_end_exclusive": "2026-03-19T08:31:00-04:00",
+        "precision": "minute",
+        "timezone_basis": "Explicit EDT",
+        "first_public_verified": false
+      },
+      "wire_source": "https://newsroom.accesswire.com/articles/1148830/access-newswire-reports-fourth-quarter-and-full-year-2025-results",
+      "archive_payload_sha256": "c865bd208651913ecc942c12e659f59f507a2e573249053e3eca3b87b4a77226",
+      "archive_payload_member": "nre-sec-freeze/raw/c865bd208651913ecc942c12e659f59f507a2e573249053e3eca3b87b4a77226.payload",
+      "canonical_submission_url": "https://data.sec.gov/submissions/CIK0000843006.json",
+      "source_representation": "preserved relay_json_extract; not authenticated raw SEC bytes",
+      "metadata_window_start": "2026-01-01",
+      "metadata_window_end_inclusive": "2026-03-19",
+      "all_forms_in_window": [
+        {
+          "accessionNumber": "0001683168-26-002018",
+          "filingDate": "2026-03-19",
+          "acceptanceDateTime": "2026-03-19T20:02:25.000Z",
+          "form": "10-K",
+          "items": "",
+          "primaryDocument": "accesswire_i10k-123125.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316826002018/0001683168-26-002018-index.htm",
+          "index_acceptance_cross_checked": true,
+          "body_reviewed_in_this_pass": false
+        },
+        {
+          "accessionNumber": "0001683168-26-002004",
+          "filingDate": "2026-03-19",
+          "acceptanceDateTime": "2026-03-19T12:59:33.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "primaryDocument": "access_8k.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316826002004/0001683168-26-002004-index.htm",
+          "index_acceptance_cross_checked": true,
+          "body_reviewed_in_this_pass": false
+        }
+      ],
+      "december_context_filings": [
+        {
+          "accessionNumber": "0001683168-25-009281",
+          "filingDate": "2025-12-19",
+          "acceptanceDateTime": "2025-12-19T21:15:51.000Z",
+          "form": "8-K",
+          "items": "5.02",
+          "primaryDocument": "access_8k.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316825009281/0001683168-25-009281-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": true,
+          "body_finding": "CFO salary adjustment; the body does not announce quarterly results.",
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316825009281/access_8k.htm",
+          "identity_in_cover": {
+            "ticker": "ACCS",
+            "exchange": "NYSE_AMERICAN",
+            "security_class": "common"
+          }
+        },
+        {
+          "accessionNumber": "0001683168-25-008875",
+          "filingDate": "2025-12-04",
+          "acceptanceDateTime": "2025-12-04T14:17:57.000Z",
+          "form": "8-K",
+          "items": "8.01,9.01",
+          "primaryDocument": "access_8k.htm",
+          "index_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316825008875/0001683168-25-008875-index.htm",
+          "index_acceptance_cross_checked": false,
+          "body_reviewed_in_this_pass": true,
+          "body_finding": "Share repurchase authorization and referenced press release; the body does not announce quarterly results. The release exhibit remains to be checked.",
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316825008875/access_8k.htm",
+          "identity_in_cover": {
+            "ticker": "ACCS",
+            "exchange": "NYSE_AMERICAN",
+            "security_class": "common"
+          }
+        }
+      ],
+      "declared_continuation_files": [],
+      "finding": "The preserved recent-filings representation contains only the target 8-K and same-day 10-K in the 2026 window through the release date. Both acceptance timestamps follow the displayed wire minute. This metadata comparison does not exclude earlier non-SEC disclosures or establish source completeness.",
+      "first_public_verified": false,
+      "historical_identity_verified": false,
+      "status": "PARTIAL_CHRONOLOGY_REVIEW_REQUIRED",
+      "remaining": [
+        "Review earlier issuer and wire releases, including guidance or preliminary metrics, and version history.",
+        "Review linked December exhibits and any unreviewed earlier disclosures; establish identity continuity and historical availability.",
+        "Archive permitted release and identity evidence; current filing metadata is not a raw-source archive."
+      ],
+      "pre_release_identity_evidence": "Both December 8-K covers identify the same common-stock ticker and exchange as the March target. These are prior-dated corroborating observations; continuity and historical availability are not certified."
+    }
+  ],
+  "access_limitations": [
+    "Solesence target 8-K index did not load; its acceptance time remains supported only by the preserved relay representation in this pass.",
+    "Solesence news archive and attempted issuer archive routes were inaccessible.",
+    "Search attempts produced largely irrelevant results despite issuer-specific queries and domain filters; these searches provide no negative evidence of prior disclosure.",
+    "The two annual-report indexes and ACCESS target 8-K index were readable and their acceptance times corroborated the preserved representation."
+  ],
+  "next_milestone1_steps": [
+    "Complete source-side eligibility, economic-event grouping, timestamp and historical-security review across the frozen cohort.",
+    "Resolve durable source archival and price-provider permissions/session/adjustment/corporate-action coverage.",
+    "Acquire prices only after source-side eligibility is established; build and replay daily reaction labels.",
+    "Audit at least 100 complete eligible events across 25 issuers and obtain the required independent timing reviews.",
+    "Assess Milestone 1 acceptance; any subsequent milestone requires separate approval."
+  ]
+}
