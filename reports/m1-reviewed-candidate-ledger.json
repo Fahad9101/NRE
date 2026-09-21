@@ -1116,7 +1116,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "2eee7fa19faca99ee63682c2c68c88ce653b8dd668352f4e14d7a5bbf2e44a5b",
       "discovery_transport_sha256": "823ce9fa4e90a9428349bb2055d83fc9ddf43f6d3f68f4495401b45bc4ca14f6",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-02-02",
       "form": "8-K",
@@ -1128,7 +1128,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1086600/000110465926008972/arlp-20260202x8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "ARLP is common units representing limited partner interests, as identified in the filing registration table; not corporate common shares.",
       "source_sha256": "2eee7fa19faca99ee63682c2c68c88ce653b8dd668352f4e14d7a5bbf2e44a5b"
     },
     {
@@ -2297,7 +2297,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "b3fa26224f7bd52fa53271b5e5755ed453fae928d43fdc07255d678b476fbb66",
       "discovery_transport_sha256": "9c9153b22e9af16975a1a50453c73c61ebd447edb6ee6ae34522b06503d1f751",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-02-25",
       "form": "8-K",
@@ -2310,7 +2310,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1538849/000119312526071725/capl-20260225.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "CAPL is common units of CrossAmerica Partners LP, as identified in the filing registration table; not corporate common shares.",
       "source_sha256": "b3fa26224f7bd52fa53271b5e5755ed453fae928d43fdc07255d678b476fbb66"
     },
     {
@@ -3438,7 +3438,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "5f34bf67ae7ec65b6c37da97f868660540b68f73cfd3a72161673b3243206d77",
       "discovery_transport_sha256": "41eb90e6ef3c15d22a9f128e0af5ab30a8852873d11653f7b000e9ec966df175",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-02-17",
       "form": "8-K",
@@ -3451,7 +3451,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1053369/000149315226007190/form8-k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "ELTP common stock is identified as OTCQB in the filing registration table, outside NASDAQ, NYSE and NYSE American.",
       "source_sha256": "5f34bf67ae7ec65b6c37da97f868660540b68f73cfd3a72161673b3243206d77"
     },
     {

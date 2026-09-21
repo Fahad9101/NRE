@@ -6,7 +6,7 @@ The frozen cohort contains 243 candidates across 215 issuers. Existing source no
 
 ## New scope dispositions
 
-The original frozen ledger is unchanged. `reports/m1-reviewed-candidate-ledger.json` adds dispositions while preserving every candidate ID and source hash. Three candidates are excluded under the existing pilot scope:
+The original frozen ledger is unchanged. `reports/m1-reviewed-candidate-ledger.json` adds dispositions while preserving every candidate ID and source hash. The first three exclusions under the existing pilot scope were:
 
 | Candidate | Reason | Evidence |
 | --- | --- | --- |
@@ -14,7 +14,7 @@ The original frozen ledger is unchanged. `reports/m1-reviewed-candidate-ledger.j
 | 0001174947-26-000123 | ENB identifies OTCQX: ENBP and announces acquisition completion | [Release exhibit](https://www.sec.gov/Archives/edgar/data/1437479/000117494726000123/ex99-1.htm) |
 | 0001739445-26-000007 | Arcosa announces a divestiture; historical segment figures do not make it a company earnings-results release | [Release exhibit](https://www.sec.gov/Archives/edgar/data/1739445/000173944526000007/exh991pressrelease-bargesa.htm) |
 
-These are source-based screening decisions by Codex, not independent human sign-off. The other 240 candidates remain quarantined. `reports/m1-event-staging.json` accounts for all 243 and carries observations, review flags and unresolved verification fields. It is candidate staging, not a completed news-reaction dataset. No remaining candidate has been assigned an invented publication timestamp, accepted security identity or price reaction.
+These are source-based screening decisions by Codex, not independent human sign-off. After the security-scope follow-up below, six candidates are excluded and 237 remain quarantined. `reports/m1-event-staging.json` accounts for all 243 and carries observations, review flags and unresolved verification fields. It is candidate staging, not a completed news-reaction dataset. No remaining candidate has been assigned an invented publication timestamp, accepted security identity or price reaction.
 
 ## Alpaca validation
 
@@ -26,7 +26,7 @@ The January 29 minute probe returned 391 ordered, unique timestamps with valid O
 
 ## Reproducible acceptance result
 
-`reports/m1-readiness-audit.json` applies the existing acceptance engine to the complete reviewed candidate ledger and an explicitly empty accepted-input inventory. It reports **0 complete events, 0 complete-event issuers, 3 exclusions and 240 quarantined candidates**. This is a readiness audit, not the requested 100-event audit. Missing source text in the accepted inventory is not a claim that the separately preserved discovery archive is absent.
+`reports/m1-readiness-audit.json` applies the existing acceptance engine to the complete reviewed candidate ledger and an explicitly empty accepted-input inventory. It reports **0 complete events, 0 complete-event issuers, 6 exclusions and 237 quarantined candidates**. This is a readiness audit, not the requested 100-event audit. Missing source text in the accepted inventory is not a claim that the separately preserved discovery archive is absent.
 
 Recompute the engine result with:
 
@@ -51,4 +51,12 @@ Browser navigation recovered Solesence's two-page 2026 archive and ACCESS's embe
 
 The two December Solesence personnel exhibits and ACCESS's December buyback exhibit were screened. Historical ticker/exchange corroboration improved, but continuous security identity and first-public status remain unverified.
 
-A timestamp-quality issue was found: ACCESS's March 5 notice says EDT, while New York was on EST. Its archive feed also displays unlabeled times three hours behind newsroom clock readings. No timezone conversion or earlier-publication conclusion has been inferred from these displays. Detailed observations and URLs are in `reports/m1-earlier-disclosure-review.json`. Counts remain 0 complete events, 3 exclusions and 240 quarantined candidates.
+A timestamp-quality issue was found: ACCESS's March 5 notice says EDT, while New York was on EST. Its archive feed also displays unlabeled times three hours behind newsroom clock readings. No timezone conversion or earlier-publication conclusion has been inferred from these displays. Detailed observations and URLs are in `reports/m1-earlier-disclosure-review.json`. At the archive follow-up, counts were 0 complete events, 3 exclusions and 240 quarantined candidates; the security-scope follow-up below supersedes those disposition counts.
+
+## Security-scope follow-up
+
+`reports/m1-security-scope-review.json` records three additional exclusions confirmed directly against SEC filing registration tables: ARLP and CAPL are limited-partnership units; ELTP is OTCQB common stock. Current totals are **6 excluded, 237 quarantined, 0 complete events**. Frozen membership remains 243 candidates across 215 issuers.
+
+Elite's Item 2.02 expressly places the quarterly 10-Q before its press release, so the release cannot simply be treated as the first disclosure. National Healthcare Properties lists only preferred classes in its registration table; these instruments are ineligible, but its candidate remains quarantined until common-share listing scope is settled.
+
+The ACCESS conference presentation was not recovered by the focused follow-up searches. Searches are not negative evidence of disclosure. The remaining work is source evidence, historical identity, price semantics and independent review; software test success does not satisfy these gates. The acceptance report was recomputed after the disposition changes and frozen membership was checked unchanged.

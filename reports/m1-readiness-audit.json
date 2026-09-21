@@ -3,8 +3,8 @@
   "counts": {
     "candidates": 243,
     "dispositions": {
-      "excluded": 3,
-      "quarantined": 240
+      "excluded": 6,
+      "quarantined": 237
     },
     "eligible_complete_events": 0,
     "events": 0,
@@ -63,7 +63,6 @@
       "0001104659-26-006999",
       "0001104659-26-007673",
       "0001104659-26-007832",
-      "0001104659-26-008972",
       "0001104659-26-009510",
       "0001104659-26-010325",
       "0001104659-26-013832",
@@ -117,7 +116,6 @@
       "0001193125-26-071512",
       "0001193125-26-071518",
       "0001193125-26-071674",
-      "0001193125-26-071725",
       "0001193125-26-071772",
       "0001193125-26-076530",
       "0001193125-26-076562",
@@ -170,7 +168,6 @@
       "0001493152-26-005210",
       "0001493152-26-006291",
       "0001493152-26-006317",
-      "0001493152-26-007190",
       "0001493152-26-007955",
       "0001493152-26-012902",
       "0001493152-26-013456",
@@ -290,7 +287,7 @@
     "selection_frozen_before_prices": false
   },
   "input_sha256": "20c4d55930a44dd54842aab0c04511de16b92330c8e16865c803f9451bf6e193",
-  "ledger_sha256": "06ab2f416c03ba1a48326e8e29a4f5115bd7909385cd955ce07f5eec68661811",
+  "ledger_sha256": "79fd9e6ddc3a6076e57915a305de7bf6c44b2ec5e937db3866f7615c5453d87e",
   "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "milestone_accepted": false,
   "protocol_sha256": "1d2c34c79f22b7c645fcb82de6a9caf20b21932073684d2e3f1da7e1b815bdd2",
@@ -301,8 +298,8 @@
     "candidate_issuers": 215,
     "complete_event_issuers": 0,
     "complete_events": 0,
-    "excluded": 3,
-    "quarantined": 240,
+    "excluded": 6,
+    "quarantined": 237,
     "target_events": 100,
     "target_issuers": 25
   },

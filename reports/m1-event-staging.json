@@ -1172,10 +1172,15 @@
       "candidate_id": "0001104659-26-008972",
       "cik": "0001086600",
       "complete_reaction_event": false,
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "earlier_disclosure_check_complete": false,
-      "exclusion_code": null,
-      "exclusion_evidence": [],
+      "exclusion_code": "SECURITY_CLASS_OUTSIDE_SCOPE",
+      "exclusion_evidence": [
+        {
+          "locator": "Registration table; Item 2.02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1086600/000110465926008972/arlp-20260202x8k.htm"
+        }
+      ],
       "historical_security_identity_verified": false,
       "observed_exchange": "NASDAQ",
       "observed_security_class": "limited_partnership_common_units",
@@ -1183,7 +1188,7 @@
       "observed_ticker": "ARLP",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1086600/000110465926008972/arlp-20260202x8k.htm",
       "publication_time_verified": false,
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "ARLP is common units representing limited partner interests, as identified in the filing registration table; not corporate common shares.",
       "review_flags": [
         "PARTNERSHIP_SECURITY_TYPE_REVIEW"
       ],
@@ -2396,10 +2401,15 @@
       "candidate_id": "0001193125-26-071725",
       "cik": "0001538849",
       "complete_reaction_event": false,
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "earlier_disclosure_check_complete": false,
-      "exclusion_code": null,
-      "exclusion_evidence": [],
+      "exclusion_code": "SECURITY_CLASS_OUTSIDE_SCOPE",
+      "exclusion_evidence": [
+        {
+          "locator": "Registration table; Item 2.02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1538849/000119312526071725/capl-20260225.htm"
+        }
+      ],
       "historical_security_identity_verified": false,
       "observed_exchange": "NYSE",
       "observed_security_class": "limited_partnership_common_units",
@@ -2407,7 +2417,7 @@
       "observed_ticker": "CAPL",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1538849/000119312526071725/capl-20260225.htm",
       "publication_time_verified": false,
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "CAPL is common units of CrossAmerica Partners LP, as identified in the filing registration table; not corporate common shares.",
       "review_flags": [
         "PARTNERSHIP_SECURITY_TYPE_REVIEW"
       ],
@@ -3571,10 +3581,15 @@
       "candidate_id": "0001493152-26-007190",
       "cik": "0001053369",
       "complete_reaction_event": false,
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "earlier_disclosure_check_complete": false,
-      "exclusion_code": null,
-      "exclusion_evidence": [],
+      "exclusion_code": "EXCHANGE_OUTSIDE_SCOPE",
+      "exclusion_evidence": [
+        {
+          "locator": "Registration table; Item 2.02",
+          "url": "https://www.sec.gov/Archives/edgar/data/1053369/000149315226007190/form8-k.htm"
+        }
+      ],
       "historical_security_identity_verified": false,
       "observed_exchange": "OTCQB",
       "observed_security_class": "common",
@@ -3582,7 +3597,7 @@
       "observed_ticker": "ELTP",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1053369/000149315226007190/form8-k.htm",
       "publication_time_verified": false,
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "ELTP common stock is identified as OTCQB in the filing registration table, outside NASDAQ, NYSE and NYSE American.",
       "review_flags": [
         "LISTING_ELIGIBILITY_UNRESOLVED",
         "EARLIER_DISCLOSURE_REVIEW"

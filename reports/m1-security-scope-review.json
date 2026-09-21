@@ -1,0 +1,62 @@
+{
+  "conference_followup": "Two focused searches found the ACCESS conference notice but no presentation or recording; a second search engine returned irrelevant results. This provides no evidence that a presentation was absent.",
+  "counts": {
+    "candidates": 243,
+    "dispositions": {
+      "excluded": 6,
+      "quarantined": 237
+    },
+    "eligible_complete_events": 0,
+    "events": 0,
+    "unique_issuers": 0
+  },
+  "new_exclusions": [
+    {
+      "candidate_id": "0001104659-26-008972",
+      "code": "SECURITY_CLASS_OUTSIDE_SCOPE",
+      "locator": "Registration table",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1086600/000110465926008972/arlp-20260202x8k.htm",
+      "reason": "ARLP is common units representing limited partner interests, as identified in the filing registration table; not corporate common shares."
+    },
+    {
+      "candidate_id": "0001193125-26-071725",
+      "code": "SECURITY_CLASS_OUTSIDE_SCOPE",
+      "locator": "Registration table",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1538849/000119312526071725/capl-20260225.htm",
+      "reason": "CAPL is common units of CrossAmerica Partners LP, as identified in the filing registration table; not corporate common shares."
+    },
+    {
+      "candidate_id": "0001493152-26-007190",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Registration table",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1053369/000149315226007190/form8-k.htm",
+      "reason": "ELTP common stock is identified as OTCQB in the filing registration table, outside NASDAQ, NYSE and NYSE American."
+    }
+  ],
+  "other_findings": [
+    {
+      "candidate_id": "0001493152-26-007190",
+      "finding": "Filing explicitly says the December 31 quarterly 10-Q was filed on February 17 and the earnings press release issued thereafter. Release cannot be assumed the first disclosure of those financial statements. Exact first-public timestamp not certified.",
+      "locator": "Item 2.02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1053369/000149315226007190/form8-k.htm"
+    },
+    {
+      "candidate_id": "0001561032-26-000010",
+      "finding": "Only Nasdaq preferred classes NHPAP and NHPBP are listed. Those securities are ineligible; candidate remains quarantined pending issuer-level common-share listing evidence, rather than inferring nonexistence from this table alone.",
+      "locator": "Section 12(b)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1561032/000156103226000010/hct-20260220.htm"
+    }
+  ],
+  "reviewed_on": "2026-09-21",
+  "reviewer": "Codex; not independent human sign-off",
+  "schema_version": 1,
+  "scope_basis": "Contemporaneously evidenced US common shares on NASDAQ, NYSE or NYSE American",
+  "source_commit": "27f94f7b77e7d3d0f43f43a22d5b3f6a0ed206c1",
+  "source_representation": "Web-rendered SEC text; authored findings only, not archived raw filings",
+  "unchanged_constraints": [
+    "No frozen candidate removed or source hash changed.",
+    "No cohort prices acquired.",
+    "No first-public flags promoted.",
+    "No reaction dataset or 100-event audit claimed."
+  ]
+}
