@@ -1,0 +1,17 @@
+{
+  "state": "ARCHIVE_INTEGRITY_AND_DISCOVERY_REPLAY_VERIFIED",
+  "archive_sha256": "f2e01b0ca572ade034c047c40fab44e7218e59601f757c372cc1c306e6cff2b2",
+  "archive_members": 902,
+  "verified_observations": 300,
+  "candidate_count": 243,
+  "processed_issuers": 300,
+  "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
+  "accepted_events": 0,
+  "market_prices_accessed": false,
+  "limitations": [
+    "Integrity and deterministic replay do not authenticate SEC origin or first-public time.",
+    "Archived relay payloads remain transformed representations, not raw SEC bytes.",
+    "The parquet checksum is verified; parquet-to-frame transformation is not rerun here.",
+    "Primary-document eligibility, timing, provider permissions and independent reviews remain required."
+  ]
+}
