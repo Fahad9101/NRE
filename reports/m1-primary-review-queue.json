@@ -3,8 +3,8 @@
   "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "frozen_at": "2026-09-20T19:47:56.780263Z",
   "candidate_count": 243,
-  "primary_screened": 241,
-  "primary_pending": 2,
+  "primary_screened": 242,
+  "primary_pending": 1,
   "accepted_events": 0,
   "price_acquisition_authorized_by_this_report": false,
   "flag_counts": {
@@ -12,11 +12,12 @@
     "AMENDMENT_REVIEW_REQUIRED": 1,
     "CONFERENCE_TIME_NOT_RELEASE_TIME": 1,
     "CONFLICTING_RELEASE_DATES": 1,
+    "CONFLICT_RECONCILED_IN_FOLLOWUP": 2,
     "CORRECTION_REVIEW_REQUIRED": 1,
     "COVER_DATE_NOT_EARNINGS_RELEASE_DATE": 5,
     "EARLIER_DISCLOSURE_REVIEW": 1,
     "EXHIBIT_RECONCILIATION_REQUIRED": 1,
-    "EXHIBIT_REQUIRED_FOR_SUBTYPE": 2,
+    "EXHIBIT_SUBTYPE_RESOLVED": 2,
     "FILENAME_NOT_TICKER": 1,
     "FILING_ITEM_METADATA_MISMATCH": 1,
     "GUIDANCE_ONLY_REVIEW": 1,
@@ -28,7 +29,7 @@
     "MULTIPLE_COMMON_CLASSES_REVIEW": 1,
     "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED": 56,
     "MULTIPLE_LISTINGS_REVIEW": 1,
-    "MULTIPLE_SECURITY_TYPES": 29,
+    "MULTIPLE_SECURITY_TYPES": 30,
     "MULTIPLE_SHARE_CLASSES": 2,
     "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW": 3,
     "NO_COMMON_STOCK_LISTING_IN_COVER": 1,
@@ -52,7 +53,7 @@
     "REPEATED_INFORMATION_REVIEW": 1,
     "SCHEDULE_ONLY": 1,
     "SECURITY_CLASS_REVIEW": 4,
-    "SHAREHOLDER_LETTER_SOURCE": 4,
+    "SHAREHOLDER_LETTER_SOURCE": 5,
     "SUPPLEMENTAL_REPORT_REVIEW": 1
   },
   "limitations": [
@@ -82,6 +83,7 @@
       "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
         "CONFLICTING_RELEASE_DATES",
+        "CONFLICT_RECONCILED_IN_FOLLOWUP",
         "NO_EXCHANGE_LISTING_IN_FILING"
       ]
     },
@@ -712,7 +714,7 @@
       "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326002061/f8k_033126.htm",
       "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "EXHIBIT_REQUIRED_FOR_SUBTYPE"
+        "EXHIBIT_SUBTYPE_RESOLVED"
       ]
     },
     {
@@ -1500,8 +1502,11 @@
       "candidate_id": "0001539638-26-000004",
       "cik": "0001539638",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000004/tfin-20260126.htm",
-      "status": "PRIMARY_REVIEW_PENDING",
-      "flags": []
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "flags": [
+        "MULTIPLE_SECURITY_TYPES",
+        "SHAREHOLDER_LETTER_SOURCE"
+      ]
     },
     {
       "candidate_id": "0001541401-26-000005",
@@ -1832,6 +1837,7 @@
       "primary_url": "https://www.sec.gov/Archives/edgar/data/843006/000168316826002004/access_8k.htm",
       "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
+        "CONFLICT_RECONCILED_IN_FOLLOWUP",
         "EXHIBIT_RECONCILIATION_REQUIRED",
         "PERIOD_END_INCONSISTENCY"
       ]
@@ -1881,7 +1887,7 @@
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1739445/000173944526000007/aca-20260224.htm",
       "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
       "flags": [
-        "EXHIBIT_REQUIRED_FOR_SUBTYPE",
+        "EXHIBIT_SUBTYPE_RESOLVED",
         "MULTIPLE_FILINGS_FOR_ISSUER_REVIEW_REQUIRED",
         "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW"
       ]

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "review_order": "ascending frozen candidate_id; all 243 attempted, 241 screened, two retrieval failures pending",
+  "review_order": "ascending frozen candidate_id; all 243 attempted; 242 bodies screened after complete-submission recovery; one body pending with exhibit screened",
   "notes": [
     {
       "candidate_id": "0000007536-26-000004",
@@ -58,9 +58,11 @@
       "summary": "Section 12(b) lists no registered securities. Body says March 12, 2025 while cover/signature say March 12, 2026; do not correct silently.",
       "review_flags": [
         "NO_EXCHANGE_LISTING_IN_FILING",
-        "CONFLICTING_RELEASE_DATES"
+        "CONFLICTING_RELEASE_DATES",
+        "CONFLICT_RECONCILED_IN_FOLLOWUP"
       ],
-      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED"
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "followup_review": "reports/m1-source-followup-review.json#0000015847-26-000005"
     },
     {
       "candidate_id": "0000021175-26-000008",
@@ -1536,14 +1538,15 @@
       "release_date_in_filing": "2026-03-31",
       "release_time": null,
       "first_public_verified": false,
-      "subtype_in_filing": "unresolved",
-      "period_end_in_filing": null,
-      "evidence_locator": "Section 12(b); Item 2.02",
-      "summary": "Filing refers to a press release without describing its results; exhibit must establish subtype.",
+      "subtype_in_filing": "results",
+      "period_end_in_filing": "2025-12-31",
+      "evidence_locator": "Section 12(b); Item 2.02; linked Exhibit 99.1 headline and opening paragraph",
+      "summary": "Body references a release; linked Exhibit 99.1 confirms quarterly and annual results for December 31, 2025. Wire timestamp evidence is separately recorded and is not first-public verification.",
       "review_flags": [
-        "EXHIBIT_REQUIRED_FOR_SUBTYPE"
+        "EXHIBIT_SUBTYPE_RESOLVED"
       ],
-      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED"
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "followup_review": "reports/m1-source-followup-review.json#0001171843-26-002061"
     },
     {
       "candidate_id": "0001174850-26-000004",
@@ -1625,7 +1628,8 @@
         "FILING_ITEM_METADATA_MISMATCH",
         "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW"
       ],
-      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED"
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "followup_review": "reports/m1-source-followup-review.json#0001174947-26-000123"
     },
     {
       "candidate_id": "0001175454-26-000008",
@@ -3417,6 +3421,30 @@
       "status": "PRIMARY_SCREENED_REVIEW_REQUIRED"
     },
     {
+      "candidate_id": "0001539638-26-000004",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000004/tfin-20260126.htm",
+      "reviewed_on": "2026-09-21",
+      "reviewer": "Codex source-screening pass; not independent human sign-off",
+      "source_representation": "web-rendered complete SEC submission, first DOCUMENT body; raw bytes not archived",
+      "retrieved_source_url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000004/0001539638-26-000004.txt",
+      "ticker_in_filing": "TFIN",
+      "exchange_in_filing": "NYSE;NYSE_TEXAS",
+      "security_class_in_filing": "common",
+      "release_date_in_filing": "2026-01-26",
+      "release_time": null,
+      "first_public_verified": false,
+      "subtype_in_filing": "results",
+      "period_end_in_filing": "2025-12-31",
+      "evidence_locator": "First DOCUMENT tfin-20260126.htm; Section 12(b); Item 2.02",
+      "summary": "Triumph announced quarterly results through a shareholder letter. Common stock differs from separately registered preferred depositary shares. Body recovered from the complete submission.",
+      "review_flags": [
+        "MULTIPLE_SECURITY_TYPES",
+        "SHAREHOLDER_LETTER_SOURCE"
+      ],
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "followup_review": "reports/m1-source-followup-review.json#0001539638-26-000004"
+    },
+    {
       "candidate_id": "0001541401-26-000005",
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1541401/000154140126000005/esrt-20260217.htm",
       "reviewed_on": "2026-09-21",
@@ -4205,9 +4233,11 @@
       "summary": "ACCESS Newswire's Item states a December 31, 2026 period end despite a March 2026 release; preserve the source wording pending exhibit reconciliation.",
       "review_flags": [
         "PERIOD_END_INCONSISTENCY",
-        "EXHIBIT_RECONCILIATION_REQUIRED"
+        "EXHIBIT_RECONCILIATION_REQUIRED",
+        "CONFLICT_RECONCILED_IN_FOLLOWUP"
       ],
-      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED"
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "followup_review": "reports/m1-source-followup-review.json#0001683168-26-002004"
     },
     {
       "candidate_id": "0001699838-26-000004",
@@ -4326,9 +4356,10 @@
       "summary": "Arcosa's Item 2.02 incorporates a divestiture announcement from Item 7.01 rather than expressly announcing quarterly results.",
       "review_flags": [
         "NON_EARNINGS_FINANCIAL_UPDATE_REVIEW",
-        "EXHIBIT_REQUIRED_FOR_SUBTYPE"
+        "EXHIBIT_SUBTYPE_RESOLVED"
       ],
-      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED"
+      "status": "PRIMARY_SCREENED_REVIEW_REQUIRED",
+      "followup_review": "reports/m1-source-followup-review.json#0001739445-26-000007"
     },
     {
       "candidate_id": "0001739445-26-000027",

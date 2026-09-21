@@ -20,11 +20,11 @@ PYTHONPATH=. python scripts/review_frozen_candidates.py
 
 ## Primary filing screen
 
-All 243 candidates have been attempted in ascending frozen accession order. Rendered SEC filing bodies were screened for 241 candidates, focusing on the registration table, Item 2.02 and related sections. These are source-screening notes, not full exhibit reviews or signed independent reviews. Full raw filing bytes and release exhibits have not yet been archived in this pass. Each note has its canonical filing URL and section locator in `reports/m1-primary-source-notes.json`. Null fields remain unresolved; a stated period end is recorded as the source presents it, including flagged inconsistencies.
+All 243 candidates have been attempted in ascending frozen accession order. Rendered SEC filing bodies were screened for 242 candidates, focusing on the registration table, Item 2.02 and related sections. These are source-screening notes, not full exhibit reviews or signed independent reviews. Full raw filing bytes and release exhibits have not yet been archived in this pass. Each note has its canonical filing URL and section locator in `reports/m1-primary-source-notes.json`. Null fields remain unresolved; a stated period end is recorded as the source presents it, including flagged inconsistencies.
 
-The queue accounts for every frozen candidate: 241 screened, two pending. It never changes frozen membership, makes automatic exclusions, or promotes a filing date into a first-public timestamp. All 241 screened cases still require eligibility and timing review. A date in a release description, a cover date, a conference-call time or a filing-acceptance time is not verified first-public time.
+The queue accounts for every frozen candidate: 242 screened, one pending. It never changes frozen membership, makes automatic exclusions, or promotes a filing date into a first-public timestamp. All 242 screened cases still require eligibility and timing review. A date in a release description, a cover date, a conference-call time or a filing-acceptance time is not verified first-public time.
 
-`reports/m1-primary-retrieval-issues.json` records the two unresolved retrievals: FS KKR accession `0001104659-26-019719` exceeded the service's content-length limit, and accession `0001539638-26-000004` remained inaccessible after a retry. Mirum's initial timeout was resolved by a second fetch. Retrieval failures are not exclusions.
+`reports/m1-primary-retrieval-issues.json` preserves retrieval history. Triumph accession `0001539638-26-000004` was recovered through the exact accession's complete-submission text. FS KKR accession `0001104659-26-019719` remains pending for its oversized filing body, but its linked results exhibit has now been screened. Mirum's initial timeout was resolved by a second fetch. Retrieval failures are not exclusions.
 
 Material findings:
 
@@ -49,6 +49,18 @@ Across the full metadata ledger, 56 candidates belong to issuers with multiple f
 
 A source-discovery search returned unrelated results, including unsolicited ARW post-event price/performance commentary. It was not used for selection, eligibility or labeling. No structured cohort price query was made. Preserve this exposure record: do not represent the entire review session as having seen no outcome information, and do not expand or alter membership based on it. Any later expansion requires explicit review of this exposure and the preregistered selection policy.
 
-Next: retrieve the two inaccessible accessions; follow exhibits and issuer release archives; resolve the metadata and period-end conflicts, preliminary/final announcements, securities and timestamp intervals; preserve permitted source representations; and establish sufficient source-side eligibility before any outcome acquisition. All 241 screened cases still lack verified first-public time and pre-release identity availability. No event has been removed or accepted in this pass. The expanded pass used direct canonical SEC URLs and made no structured cohort price query.
+Next: retrieve the remaining oversized FS KKR filing body; follow exhibits and issuer release archives; resolve the metadata and period-end conflicts, preliminary/final announcements, securities and timestamp intervals; preserve permitted source representations; and establish sufficient source-side eligibility before any outcome acquisition. All 242 screened cases still lack verified first-public time and pre-release identity availability. No event has been removed or accepted in this pass. The expanded pass used direct canonical SEC URLs and made no structured cohort price query.
 
 Price-feed/adjustment/session-volume semantics, corporate-action coverage, permissions and independent timing checks remain separate acceptance requirements. The pilot still requires at least 100 complete eligible events across 25 issuers.
+
+## Exhibit and source-conflict follow-up (2026-09-21)
+
+`reports/m1-source-followup-review.json` records seven targeted follow-ups: the five exhibit/metadata conflicts identified in the body screen and the two retrieval failures. Original body observations remain visible; proposed reconciled fields are separate from accepted event data.
+
+- Butler's exhibit supports March 12, 2026 and identifies OTCQX. ACCESS's exhibit supports a December 31, 2025 period end. Their conflicting body values are retained with follow-up references.
+- Solesence's exhibit confirms full results. Arcosa's exhibit confirms a divestiture with historical segment figures. Their unresolved-exhibit subtype flags are resolved; final scope dispositions are still pending.
+- ENB's SEC index itself lists Item 2.02; the mismatch with Item 2.01 in the body is not solely a relay issue. Its acquisition exhibit identifies OTCQX.
+- Triumph's recovered body identifies NYSE and NYSE Texas common stock and a January 26 results letter. FS KKR's February 25 exhibit contains earnings and a distribution; the February 26 call is separate.
+- Wire pages display Solesence at March 31 08:02 ET and ACCESS at March 19 08:30 EDT. Conservative one-minute intervals are recorded only as displayed-publication evidence. Neither is certified first-public; earlier disclosures, version history, source archival and historical identity availability remain open.
+
+The direct raw SEC probe returned HTTP 403 and was not retried. Rendered source access does not replace a permitted durable raw archive. Source discovery also returned unrelated finance-page snippets and later issuer news; no price outcomes were used for selection or labeling. Milestone 1 remains open with zero accepted events.

@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-21",
+  "source_commit": "34013f1fe217c40ff2c9f593c5c21792ed00ca66",
+  "selection_basis": "All five body-screen source conflicts requiring exhibit or metadata reconciliation, plus the two unresolved retrievals; no price-based selection.",
+  "accepted_events": 0,
+  "first_public_verified_count": 0,
+  "limitations": [
+    "Authored evidence summaries; source bytes are not archived.",
+    "Displayed release timestamps do not establish absence of earlier disclosure.",
+    "No independent human sign-off, automatic exclusions or price acquisition authorization."
+  ],
+  "reviews": [
+    {
+      "candidate_id": "0000015847-26-000005",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/15847/000001584726000005/buks-exx99x13126pressrelea.htm",
+          "locator": "Exhibit 99 header and opening paragraph"
+        }
+      ],
+      "finding": "Exhibit dates the release March 12, 2026, identifies OTCQX: BUKS and reports the quarter ended January 31, 2026. This supports the cover/signature year rather than the body's 2025 year.",
+      "proposed_release_date": "2026-03-12",
+      "proposed_period_end": "2026-01-31",
+      "ticker_in_exhibit": "BUKS",
+      "exchange_in_exhibit": "OTCQX",
+      "status": "CONFLICT_RECONCILED_FROM_EXHIBIT_REVIEW_REQUIRED",
+      "remaining": [
+        "OTC security is outside the eligible exchange scope; record an evidence-backed disposition in the final reconciliation.",
+        "First-public time and source archival remain incomplete."
+      ]
+    },
+    {
+      "candidate_id": "0001104659-26-019719",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1422183/000110465926019719/0001104659-26-019719-index.htm",
+          "locator": "Accession, document list, filing date"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1422183/000110465926019719/tm267104d1_ex99-1.htm",
+          "locator": "Exhibit 99.1 heading and opening paragraph"
+        }
+      ],
+      "finding": "The accession-linked exhibit announces February 25 quarterly and annual results for December 31, 2025 and a distribution, identifying NYSE: FSK. The February 26 conference call is a separate event. The 6,325,989-byte filing body still exceeds retrieval limits.",
+      "proposed_release_date": "2026-02-25",
+      "proposed_period_end": "2025-12-31",
+      "proposed_subtype": "results",
+      "ticker_in_exhibit": "FSK",
+      "exchange_in_exhibit": "NYSE",
+      "status": "EXHIBIT_SCREENED_PRIMARY_BODY_PENDING",
+      "remaining": [
+        "Read the exact filing body and registration table.",
+        "Check public release time, earlier disclosures and archival."
+      ]
+    },
+    {
+      "candidate_id": "0001171843-26-002061",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326002061/exh_991.htm",
+          "locator": "Exhibit 99.1 headline and opening paragraph"
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2026/03/31/3265441/12101/en/sol%C3%A9sence-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+          "locator": "Headline, timestamp and opening paragraph"
+        }
+      ],
+      "finding": "Solésence's exhibit confirms completed quarterly and annual results for December 31, 2025. GlobeNewswire displays March 31, 2026 at 08:02 ET; the 08:30 ET conference call is distinct.",
+      "proposed_release_date": "2026-03-31",
+      "proposed_period_end": "2025-12-31",
+      "proposed_subtype": "results",
+      "displayed_publication": {
+        "text": "March 31, 2026 08:02 ET",
+        "interval_start": "2026-03-31T08:02:00-04:00",
+        "interval_end_exclusive": "2026-03-31T08:03:00-04:00",
+        "precision": "minute",
+        "timezone_basis": "ET interpreted as America/New_York on this date",
+        "first_public_verified": false
+      },
+      "status": "SUBTYPE_RESOLVED_TIMING_REVIEW_REQUIRED",
+      "remaining": [
+        "Check earlier disclosures and version history.",
+        "Archive permitted source representations and verify historical security availability."
+      ]
+    },
+    {
+      "candidate_id": "0001174947-26-000123",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1437479/000117494726000123/0001174947-26-000123-index.htm",
+          "locator": "Items metadata"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1437479/000117494726000123/ex99-1.htm",
+          "locator": "Exhibit 99.1 headline and opening paragraph"
+        }
+      ],
+      "finding": "The SEC index itself lists Item 2.02, while the previously read body has Item 2.01. The exhibit confirms acquisition completion, identifies OTCQX: ENBP, and supplies a February 2 release date. The mismatch is present in SEC index metadata, not solely in the discovery relay.",
+      "proposed_release_date": "2026-02-02",
+      "proposed_subtype": "acquisition_completion",
+      "ticker_in_exhibit": "ENBP",
+      "exchange_in_exhibit": "OTCQX",
+      "status": "METADATA_CONFLICT_LOCALIZED_NON_EARNINGS_REVIEW",
+      "remaining": [
+        "Preserve both metadata and body evidence; record a final scope disposition without rewriting the frozen ledger."
+      ]
+    },
+    {
+      "candidate_id": "0001539638-26-000004",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000004/0001539638-26-000004.txt",
+          "locator": "First DOCUMENT block: tfin-20260126.htm; registration table and Item 2.02"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000004/tfin-shareholderletterx4q25.htm",
+          "locator": "Exhibit 99.1 date and opening paragraph"
+        }
+      ],
+      "finding": "The complete-submission representation provides Triumph's previously inaccessible 8-K body. It identifies TFIN common stock on NYSE and NYSE Texas, separate preferred depositary shares, and January 26 results for December 31, 2025 in a shareholder letter.",
+      "proposed_release_date": "2026-01-26",
+      "proposed_period_end": "2025-12-31",
+      "proposed_subtype": "results",
+      "status": "PRIMARY_BODY_RECOVERED_REVIEW_REQUIRED",
+      "remaining": [
+        "First-public time, earlier disclosures, historical identity availability and raw archival remain unverified."
+      ]
+    },
+    {
+      "candidate_id": "0001683168-26-002004",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/843006/000168316826002004/access_ex9901.htm",
+          "locator": "Exhibit 99.1 title, opening paragraph and financial tables"
+        },
+        {
+          "url": "https://newsroom.accesswire.com/articles/1148830/access-newswire-reports-fourth-quarter-and-full-year-2025-results",
+          "locator": "Headline, timestamp and opening paragraph"
+        }
+      ],
+      "finding": "The exhibit and wire release consistently identify December 31, 2025, rather than the body's December 31, 2026. The wire displays March 19, 2026 at 08:30 EDT.",
+      "proposed_release_date": "2026-03-19",
+      "proposed_period_end": "2025-12-31",
+      "displayed_publication": {
+        "text": "Thursday, 19 March 2026 08:30 EDT",
+        "interval_start": "2026-03-19T08:30:00-04:00",
+        "interval_end_exclusive": "2026-03-19T08:31:00-04:00",
+        "precision": "minute",
+        "timezone_basis": "Explicit EDT",
+        "first_public_verified": false
+      },
+      "status": "CONFLICT_RECONCILED_TIMING_REVIEW_REQUIRED",
+      "remaining": [
+        "Retain the original body value and evidence trail; use the reconciled date only in a separately reviewed event record.",
+        "Check earlier disclosures, version history and source archival."
+      ]
+    },
+    {
+      "candidate_id": "0001739445-26-000007",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1739445/000173944526000007/exh991pressrelease-bargesa.htm",
+          "locator": "Exhibit 99.1 headline and opening paragraphs"
+        }
+      ],
+      "finding": "Arcosa's exhibit announces the barge-business divestiture and includes historical segment figures. It is a transaction update, not the later company-wide quarterly earnings announcement.",
+      "proposed_release_date": "2026-02-24",
+      "proposed_subtype": "divestiture_update",
+      "status": "SUBTYPE_CONFIRMED_NON_EARNINGS_REVIEW",
+      "remaining": [
+        "Record a final scope disposition and relate the later earnings release without merging economic events automatically."
+      ]
+    }
+  ]
+}
