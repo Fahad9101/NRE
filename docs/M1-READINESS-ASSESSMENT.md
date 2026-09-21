@@ -44,3 +44,11 @@ Exit status 2 is expected for BLOCKED. The published report adds `audit_scope` a
 4. Reach at least 100 complete events across 25 issuers and perform the required independent timing checks: two distinct events per represented timing class, each with two distinct reviewers. No independent reviews have been supplied or claimed.
 
 Validation for this metadata update: 105 existing tests passed; acceptance output was recomputed and frozen membership reconciled. No investment rules or acceptance thresholds changed.
+
+## Issuer-archive recovery follow-up
+
+Browser navigation recovered Solesence's two-page 2026 archive and ACCESS's embedded historical feed. Solesence lists two 2026 announcements before its target release: a February executive appointment and a March call notice. ACCESS lists four: a conference notice, two product announcements and a call notice. The reviewed release bodies do not announce earlier quarterly results. ACCESS's January 28 conference presentation remains an explicit earlier-disclosure channel to inspect. Solesence's corporate news page also points to a January industry webinar whose content has not been reviewed.
+
+The two December Solesence personnel exhibits and ACCESS's December buyback exhibit were screened. Historical ticker/exchange corroboration improved, but continuous security identity and first-public status remain unverified.
+
+A timestamp-quality issue was found: ACCESS's March 5 notice says EDT, while New York was on EST. Its archive feed also displays unlabeled times three hours behind newsroom clock readings. No timezone conversion or earlier-publication conclusion has been inferred from these displays. Detailed observations and URLs are in `reports/m1-earlier-disclosure-review.json`. Counts remain 0 complete events, 3 exclusions and 240 quarantined candidates.

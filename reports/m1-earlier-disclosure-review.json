@@ -89,6 +89,11 @@
             "ticker": "SLSN",
             "exchange": "NASDAQ",
             "security_class": "common"
+          },
+          "linked_exhibit_screen": {
+            "url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007730/exh_101.htm",
+            "status": "SCREENED",
+            "finding": "Personnel agreement terms reviewed; no quarterly results identified in the reviewed text. Not an audit of incorporated documents or redacted text."
           }
         },
         {
@@ -107,6 +112,11 @@
             "ticker": "SLSN",
             "exchange": "NASDAQ",
             "security_class": "common"
+          },
+          "linked_exhibit_screen": {
+            "url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007680/exh_101.htm",
+            "status": "SCREENED",
+            "finding": "Personnel agreement terms reviewed; no quarterly results identified in the reviewed text. Not an audit of incorporated documents or redacted text."
           }
         }
       ],
@@ -123,11 +133,48 @@
       "historical_identity_verified": false,
       "status": "PARTIAL_CHRONOLOGY_REVIEW_REQUIRED",
       "remaining": [
-        "Review earlier issuer and wire releases, including guidance or preliminary metrics, and version history.",
-        "Review linked December exhibits and any unreviewed earlier disclosures; establish identity continuity and historical availability.",
-        "Archive permitted release and identity evidence; current filing metadata is not a raw-source archive."
+        "Review linked presentation/webinar channels and outstanding SEC context, including Form 4 entries.",
+        "Resolve source archival, release version history and pre-release identity continuity.",
+        "Obtain independent timing review; no first-public certification yet."
       ],
-      "pre_release_identity_evidence": "Both December 8-K covers identify the same common-stock ticker and exchange as the March target. These are prior-dated corroborating observations; continuity and historical availability are not certified."
+      "pre_release_identity_evidence": "Both December 8-K covers identify the same common-stock ticker and exchange as the March target. These are prior-dated corroborating observations; continuity and historical availability are not certified.",
+      "issuer_archive_followup": {
+        "reviewed_on": "2026-09-21",
+        "method": "Browser UI year filter and pagination; web-rendered release bodies",
+        "archive_url": "https://ir.solesence.com/news-events/news-releases",
+        "observed_2026_archive_total": 14,
+        "pages_reviewed": [
+          1,
+          2
+        ],
+        "archive_entries_before_target_in_2026": [
+          {
+            "date": "2026-02-26",
+            "url": "https://ir.solesence.com/news-releases/news-release-details/yoolie-park-joins-solesence-inc-vice-president-brand",
+            "finding": "Executive appointment; Nasdaq SLSN identified; reviewed release does not report fourth-quarter results."
+          },
+          {
+            "date": "2026-03-19",
+            "url": "https://ir.solesence.com/news-releases/news-release-details/solesence-report-fourth-quarter-and-full-year-2025-financial",
+            "finding": "Schedules March 31 results before market open and an 08:30 ET call; contains no quarterly results. Supports intended session, not actual first-public minute."
+          }
+        ],
+        "prior_year_boundary": {
+          "year_filter": 2025,
+          "first_page_latest_date": "2025-11-11",
+          "url": "https://ir.solesence.com/news-releases/news-release-details/solesence-reports-third-quarter-2025-financial-results",
+          "finding": "Prior-quarter results and strategic changes; financial statements are for September 30, 2025. Does not itself establish absence of later conference disclosures."
+        },
+        "target_issuer_copy": "https://ir.solesence.com/news-releases/news-release-details/solesence-reports-fourth-quarter-and-full-year-2025-financial",
+        "bounded_conclusion": "No earlier fourth-quarter results found in the reviewed issuer release bodies and displayed 2026 archive entries. Archive history, deletions and oral disclosures are not certified.",
+        "other_channel_followup": {
+          "url": "https://solesence.com/news/",
+          "finding": "Corporate news page lists a January 8 beauty-industry webinar and March industry events. Announcement snippets are not transcripts; linked presentation content remains unreviewed."
+        },
+        "identity_observations": "November results, December SEC covers, February appointment, March call notice and target release consistently identify SLSN on Nasdaq; this is historical corroboration, not a verified continuous security master.",
+        "first_public_verified": false,
+        "historical_identity_verified": false
+      }
     },
     {
       "candidate_id": "0001683168-26-002004",
@@ -206,6 +253,11 @@
             "ticker": "ACCS",
             "exchange": "NYSE_AMERICAN",
             "security_class": "common"
+          },
+          "linked_exhibit_screen": {
+            "url": "https://www.sec.gov/Archives/edgar/data/843006/000168316825008875/access_ex9901.htm",
+            "status": "SCREENED",
+            "finding": "Share repurchase authorization, funding expectations and share count; no quarterly results. Identifies NYSE American ACCS."
           }
         }
       ],
@@ -215,18 +267,86 @@
       "historical_identity_verified": false,
       "status": "PARTIAL_CHRONOLOGY_REVIEW_REQUIRED",
       "remaining": [
-        "Review earlier issuer and wire releases, including guidance or preliminary metrics, and version history.",
-        "Review linked December exhibits and any unreviewed earlier disclosures; establish identity continuity and historical availability.",
-        "Archive permitted release and identity evidence; current filing metadata is not a raw-source archive."
+        "Obtain January 28 Dealflow public presentation/slides or recording and review possible preliminary metrics.",
+        "Reconcile origin copy for February marketplace release and newsroom/feed timezone semantics.",
+        "Resolve source archival, version history and historical security continuity; obtain independent timing review."
       ],
-      "pre_release_identity_evidence": "Both December 8-K covers identify the same common-stock ticker and exchange as the March target. These are prior-dated corroborating observations; continuity and historical availability are not certified."
+      "pre_release_identity_evidence": "Both December 8-K covers identify the same common-stock ticker and exchange as the March target. These are prior-dated corroborating observations; continuity and historical availability are not certified.",
+      "issuer_archive_followup": {
+        "reviewed_on": "2026-09-21",
+        "method": "Browser embedded feed pagination and distributed release-body review",
+        "archive_url": "https://investors.accessnewswire.com/press-releases",
+        "feed_url": "https://feeds.issuerdirect.com/news.html?symbol=ACCS&news_template=plain&link_color=000&font_family=Montserrat&headline_size=18&text_color=1a1b1f&per_page=10",
+        "pages_reviewed": [
+          1,
+          2
+        ],
+        "pre_target_2026_entries": [
+          {
+            "date": "2026-01-21",
+            "topic": "Dealflow conference notice",
+            "url": "https://www.newswire.com/news/access-newswire-to-present-at-the-dealflow-discovery-conference-in-atlantic",
+            "finding": "Announces January 28 14:30 ET management presentation and investor meetings; no quarterly results in notice. Presentation content remains to be obtained."
+          },
+          {
+            "date": "2026-01-28",
+            "topic": "ACCESS Verified product launch",
+            "url": "https://www.nasdaq.com/press-release/access-newswire-launches-access-verifiedtm-ai-driven-verification-and-distribution",
+            "representation": "Issuer release syndicated by Nasdaq",
+            "finding": "Verification product and rollout described; no quarterly financial results in reviewed text."
+          },
+          {
+            "date": "2026-02-17",
+            "topic": "Partner marketplace launch",
+            "url": "https://kbjr.marketminute.com/article/accwirecq-2026-2-17-access-newswire-launches-partner-marketplace-to-expand-its-communications-platform-for-pr-and-ir-professionals",
+            "representation": "Syndicated ACCESS release; origin-body comparison pending",
+            "finding": "Product ecosystem and prospective commissions described; not a reported quarterly earnings release."
+          },
+          {
+            "date": "2026-03-05",
+            "topic": "Earnings call notice",
+            "url": "https://newsroom.accesswire.com/articles/1144111/access-newswire-to-host-fourth-quarter-and-year-end-earnings-conference-call-on-march-19-2026",
+            "finding": "Schedules March 19 09:00 Eastern call; no quarterly financial results. Call time is not publication time."
+          }
+        ],
+        "timezone_findings": [
+          {
+            "source": "March 5 newsroom notice",
+            "displayed": "Thursday, 05 March 2026 11:55 EDT",
+            "problem": "America/New_York is EST on March 5, verified using Python zoneinfo. Do not silently normalize this timestamp.",
+            "normalized_instant": null
+          },
+          {
+            "source": "IssuerDirect feed",
+            "displayed_target": "3/19/26 5:30",
+            "displayed_call_notice": "3/5/26 8:55",
+            "problem": "Feed shows unlabeled times three hours behind the newsroom clock readings. Timezone not established; no UTC conversion or earlier-publication inference."
+          },
+          {
+            "source": "Issuer events page",
+            "displayed": "March 19, 2026 9:00am EST",
+            "problem": "Conflicts with America/New_York daylight time on March 19 and the earlier notice using generic Eastern time. Preserve raw display; do not use it to timestamp release."
+          }
+        ],
+        "bounded_conclusion": "Four 2026 pre-target archive entries identified and their notice/release text reviewed. No earlier quarterly results found there, but the January conference presentation is an explicit unresolved disclosure channel.",
+        "first_public_verified": false,
+        "historical_identity_verified": false,
+        "conference_material_access": {
+          "issuer_events_url": "https://investors.accessnewswire.com/events-presentations",
+          "browser_observation": "2026 selected; earnings calls and annual meeting visible, no January Dealflow item. Standalone investor presentation is labeled May 2025.",
+          "conference_schedule_url": "https://dealflowdiscoveryconference.com/2026-presenting-companies/",
+          "schedule_retrieval": "404 via web retrieval",
+          "conclusion": "January presentation not recovered; absence from the current events listing does not prove no public presentation occurred."
+        }
+      }
     }
   ],
   "access_limitations": [
     "Solesence target 8-K index did not load; its acceptance time remains supported only by the preserved relay representation in this pass.",
     "Solesence news archive and attempted issuer archive routes were inaccessible.",
     "Search attempts produced largely irrelevant results despite issuer-specific queries and domain filters; these searches provide no negative evidence of prior disclosure.",
-    "The two annual-report indexes and ACCESS target 8-K index were readable and their acceptance times corroborated the preserved representation."
+    "The two annual-report indexes and ACCESS target 8-K index were readable and their acceptance times corroborated the preserved representation.",
+    "Follow-up: both issuer archive routes recovered using browser UI. Earlier access errors remain historical observations. Solesence 2026 pagination and the ACCESS embedded feed page 2 are now readable; ACCESS feed detail page for its conference notice remained empty, with the issuer-distributed Newswire copy read instead."
   ],
   "next_milestone1_steps": [
     "Complete source-side eligibility, economic-event grouping, timestamp and historical-security review across the frozen cohort.",
@@ -234,5 +354,7 @@
     "Acquire prices only after source-side eligibility is established; build and replay daily reaction labels.",
     "Audit at least 100 complete eligible events across 25 issuers and obtain the required independent timing reviews.",
     "Assess Milestone 1 acceptance; any subsequent milestone requires separate approval."
-  ]
+  ],
+  "latest_followup_source_commit": "39afbf6c29485e470fa69d14696753d9be73d3ff",
+  "search_exposure_followup": "Archive navigation exposed later release headlines and snippets; no price outcomes used and no frozen membership change."
 }
