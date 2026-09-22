@@ -1,0 +1,65 @@
+{
+  "provenance": {
+    "workflow": "alpaca-access.yml",
+    "run_id": 35758685542,
+    "run_attempt": 3,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/35758685542",
+    "commit_sha": "76c3a9f0cfaf3a692f615a72b5f72284aa857e2c",
+    "trigger": "workflow_dispatch",
+    "verified_by": "live GitHub Actions run log, read via the GitHub REST API and the run's rendered log page"
+  },
+  "probe_output": {
+    "accepted_for_labels": false,
+    "access_check_passed": true,
+    "adjustment_requested": "raw",
+    "blockers": [
+      "REGULAR_SESSION_VOLUME_UNVERIFIED",
+      "CORPORATE_ACTION_REVIEW_REQUIRED",
+      "HISTORICAL_IDENTITY_REVIEW_REQUIRED",
+      "PROVIDER_RIGHTS_REVIEW_REQUIRED",
+      "RAW_RESPONSE_ARCHIVE_REQUIRED_FOR_ACCEPTANCE"
+    ],
+    "coverage": {
+      "IBM": {
+        "expected": 82,
+        "missing_sessions": [],
+        "received": 82,
+        "zero_volume_sessions": []
+      }
+    },
+    "hash_basis": "canonical normalized REST bars; pages hash original response bytes",
+    "note": "Calendar coverage is not proof of trade completeness or historical availability.",
+    "pages": [
+      {"records": 50, "sha256": "a6a18c52dafa691120c407424676f99c5ffd1a3337dd12934b6a299dd5488109"},
+      {"records": 32, "sha256": "8fcc66bb0c8966f42eded2239470cbcaf688475bf72ed74378bd4d8854b8dd6f"}
+    ],
+    "payload_sha256": "8eb9a47f7d576bab4096096b71669856f09677ca325e53dd569c8dbf1d4b42de",
+    "record_count": 82,
+    "request": {
+      "adjustment": "raw",
+      "asof": "2026-01-28",
+      "currency": "USD",
+      "end": "2026-04-30",
+      "feed": "sip",
+      "limit": 50,
+      "sort": "asc",
+      "start": "2026-01-02",
+      "symbols": "IBM",
+      "timeframe": "1Day"
+    },
+    "retrieved_at": "2026-09-22T17:13:54.704520+00:00",
+    "scope": "IBM access diagnostic outside frozen acceptance cohort",
+    "state": "STAGED_REVIEW_REQUIRED",
+    "terminal_page_observed": true,
+    "transport": "direct_alpaca_rest"
+  },
+  "interpretation": {
+    "resolved": "Direct, credentialed Alpaca REST access from GitHub Actions now works end to end: correctly-named repository secrets, explicit SIP feed, raw adjustment, ascending order, explicit historical asof, and complete pagination through an observed terminal next_page_token, reproducing the earlier connector-only IBM finding via an independent transport.",
+    "not_resolved": "This remains an IBM-only exploratory diagnostic outside the frozen 243-candidate acceptance cohort. accepted_for_labels is false and state is STAGED_REVIEW_REQUIRED. The five listed blockers are substantive open M1 research gates (regular-session volume semantics, corporate-action coverage, historical security identity, provider rights, and durable raw-response archival), not technical access problems, and remain required before any cohort candidate's prices can be acquired.",
+    "prior_failure_modes_fixed_this_session": [
+      "MISSING_GITHUB_ACTIONS_SECRETS: repository secrets existed under an ALPACA_ prefix, not the APCA_ prefix the workflow and Alpaca's own convention require",
+      "UNCATEGORIZED_VALUEERROR at http.client.putheader: a secret value contained an illegal HTTP header character (consistent with a stray copy-pasted character), diagnosed via safe raise-site location capture added to nre/alpaca_probe.py",
+      "ALPACA_HTTP_401: the specific key/secret pair saved at that point was rejected by Alpaca as invalid credentials; replaced with a verified-working pair"
+    ]
+  }
+}
