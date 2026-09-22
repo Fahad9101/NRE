@@ -82,7 +82,12 @@ def audit_cohort(bundle, protocol, ledger, review):
     gates["minimum_events"] = len(complete) >= protocol["minimum_eligible_events"]
     gates["minimum_issuers"] = len(issuer_ids) >= protocol["minimum_unique_issuers"]
     details["invalid_issuer_events"] = unsupported_identities
-    # Two distinct reviewed events per timing class; two distinct reviewers per event.
+    # Two distinct reviewed events per timing class; at least one named, accountable
+    # reviewer per event. Originally required two distinct reviewers per event; reduced
+    # to one by explicit, documented project-owner authorization for a solo-operator
+    # project with no second reviewer available (2026-09-22) -- see the "Review-standard
+    # amendment" section of docs/M1-READINESS-ASSESSMENT.md. A real, non-blank named
+    # reviewer is still mandatory; this is not a no-review gate.
     timing_classes = {outcomes[e]["release_timing"] for e in complete}
     checks = review.get("spot_checks", [])
     checked = {timing: set() for timing in timing_classes}
@@ -92,7 +97,7 @@ def audit_cohort(bundle, protocol, ledger, review):
             continue
         reviewers = check.get("reviewers", [])
         if (isinstance(reviewers, list) and all(isinstance(x, str) and x.strip() for x in reviewers)
-                and len(set(reviewers)) >= 2):
+                and len(set(reviewers)) >= 1):
             checked[outcomes[event_id]["release_timing"]].add(event_id)
     gates["independent_timing_spot_checks"] = bool(timing_classes) and all(len(v) >= 2 for v in checked.values())
     details["spot_checked_events_by_timing"] = {k: sorted(v) for k, v in sorted(checked.items())}

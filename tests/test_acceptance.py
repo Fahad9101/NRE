@@ -88,9 +88,20 @@ class AcceptanceTests(unittest.TestCase):
         self.assertEqual(r['counts']['unique_issuers'],0)
         self.assertIn('issuer_identity',r['failed_gates'])
 
-    def test_independent_reviewers_required(self):
-        self.review['spot_checks'][0]['reviewers'] = ['same','same']
-        self.assertIn('independent_timing_spot_checks',self.run_audit()['failed_gates'])
+    def test_single_named_reviewer_sufficient(self):
+        # Reduced from two distinct reviewers to one by explicit project-owner
+        # authorization (2026-09-22, no second reviewer available); a real named
+        # reviewer is still required. See docs/M1-READINESS-ASSESSMENT.md.
+        self.review['spot_checks'][0]['reviewers'] = ['solo-reviewer']
+        self.assertNotIn('independent_timing_spot_checks', self.run_audit()['failed_gates'])
+
+    def test_blank_reviewer_not_accepted(self):
+        self.review['spot_checks'][0]['reviewers'] = ['   ']
+        self.assertIn('independent_timing_spot_checks', self.run_audit()['failed_gates'])
+
+    def test_empty_reviewers_not_accepted(self):
+        self.review['spot_checks'][0]['reviewers'] = []
+        self.assertIn('independent_timing_spot_checks', self.run_audit()['failed_gates'])
 
     def test_unknown_event_not_a_spot_check(self):
         self.review['spot_checks'][0]['event_id'] = 'nonexistent'
