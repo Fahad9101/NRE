@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "purpose": "Consolidate every fact relevant to a human sign-off decision on SLSN's timing and identity into one place. This report does not decide anything itself -- first_public_verified and historical_identity_verified stay false until the project owner records their own name in a spot_checks entry per the 2026-09-22 review-standard amendment.",
+  "candidate_id": "0001171843-26-002061",
+  "cik": "0000883107",
+  "ticker": "SLSN",
+  "company": "Solesence, Inc. (formerly part of Suneva Medical structure per prior filings)",
+  "source_documents": {
+    "target_8k": "https://www.sec.gov/Archives/edgar/data/883107/000117184326002061/f8k_033126.htm",
+    "target_8k_items": "2.02, 9.01",
+    "target_8k_acceptance": "2026-03-31T12:10:10Z (SEC EDGAR acceptance time -- not the same as public release time)",
+    "wire_release": "https://www.globenewswire.com/news-release/2026/03/31/3265441/12101/en/sol%C3%A9sence-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+    "displayed_publication": "March 31, 2026 08:02 ET (GlobeNewswire)",
+    "publication_interval": "[2026-03-31T08:02:00-04:00, 2026-03-31T08:03:00-04:00) -- minute precision, no invented seconds",
+    "session_timing_class": "premarket"
+  },
+  "chronology_evidence_for_timing": [
+    "SEC submissions metadata for the Jan 1 - Mar 31, 2026 window contains only the target 8-K and a same-day 10-K; both acceptance timestamps (12:10:10 UTC and 20:52:00 UTC) are AFTER the 08:02 ET wire minute, so neither is an earlier disclosure channel.",
+    "Four December 2025 SEC filings (two Form 4s, two 8-Ks for personnel/severance matters) were individually read; none announces or references Q4/FY2025 results.",
+    "Solesence's own investor-relations news archive (ir.solesence.com) was paged through for all of 2026 and the boundary into 2025: a Feb 26 executive-appointment release and a Mar 19 call-notice release (schedules the Mar 31 premarket release and 08:30 ET call, contains no results) are the only entries before the target release. The most recent 2025 entry is a Nov 11 Q3 2025 results release -- a different, earlier quarter.",
+    "The January 8, 2026 BeautyMatter/Solesence webinar ('The SPF Advantage') was investigated to exhaustion: confirmed topic is SPF product-development strategy (not earnings) via the event's own landing page; no recording or transcript found via search; the webinar is not listed in Solesence's own webinar archive at all; the one article that looked like related coverage was from 2020 and unrelated (a false lead, caught before being relied on).",
+    "No evidence of any other conference, analyst call, or public presentation between Jan 1 and Mar 31, 2026 was found despite multiple search passes across sessions."
+  ],
+  "chronology_gap_that_cannot_be_closed_by_search": "Open-web research can show no discoverable earlier disclosure; it cannot prove a negative for something that may have been said live and unrecorded (e.g. at an unindexed investor meeting) with zero public trace. This is the residual, irreducible uncertainty a human sign-off is being asked to accept, not a gap more searching would close.",
+  "identity_evidence": [
+    "Both December 2025 8-K cover pages identify SLSN on Nasdaq as common stock, consistent with the March 2026 target filing.",
+    "No ticker change, merger, or reused-symbol event found in this window.",
+    "Not independently checked against a primary security-master/CUSIP source beyond SEC filing covers themselves."
+  ],
+  "price_window_if_signed_off": {
+    "anchor_session": "2026-03-30",
+    "reaction_session": "2026-03-31",
+    "horizon_20_session": "2026-04-28",
+    "required_daily_sessions": 21,
+    "note": "This calendar plan has existed since the prior completion check; no prices have been acquired for it. Acquiring them is the next step ONLY after a sign-off decision, per protocol ('acquire prices only after source-side eligibility is established')."
+  },
+  "what_a_sign_off_would_look_like": {
+    "mechanism": "Add an entry to a review bundle's spot_checks: {\"event_id\": \"<event id once constructed>\", \"reviewers\": [\"Fahad9101\"], \"evidence\": \"<pointer to this packet and the underlying source documents above>\"}. This satisfies the single-reviewer gate as amended 2026-09-22.",
+    "what_it_means": "You are personally accepting that the evidence above is sufficient, understanding the specific residual gap described (an unrecorded, unindexed live disclosure cannot be ruled out by search). This is not a claim that certainty was reached -- it is a documented, accountable judgment call, exactly as the amendment describes.",
+    "not_yet_done": "No spot_checks entry has been created. No event has been constructed for SLSN in an actual reviewed bundle. No prices have been acquired. All of that is downstream of an actual decision here."
+  }
+}
