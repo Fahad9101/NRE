@@ -786,7 +786,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/929351/000092935126000009/starz-20260226.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Starz Entertainment Corp. (British Columbia, Canada) lists one class, 'Common Shares, no par value', Nasdaq STRZ. Foreign incorporation alone does not disqualify a NASDAQ/NYSE/NYSE American-listed security the filer's own registration table labels as Common Shares/Stock. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "960a7158d134a16a0749292688ae803493c34121bb7d1cc8bf219bf94a34cdfd"
     },
     {
@@ -1622,7 +1622,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1447028/000117184326001838/f8k_032026.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Arbutus Biopharma Corporation (British Columbia, Canada) lists one class, 'Common Shares, without par value', Nasdaq ABUS. Same foreign-common-shares policy as Starz/Xenon/AbCellera/Weatherford/Fabrinet. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "8c64743a56ce900aee8b558efa94c28d1f96670496fe88789745e0593f9278d4"
     },
     {
@@ -2354,7 +2354,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1582313/000119312526076530/xene-20260226.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Xenon Pharmaceuticals Inc. (Canada) lists one class, 'Common Shares, without par value', Nasdaq XENE. Same foreign-common-shares policy. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "d783ca73fb248216a2979acfe73f15f34cdfd30aa4f8707f7e6fa921e71f042f"
     },
     {
@@ -4290,7 +4290,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1606909/000162828026016596/panl-20260310.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Pangaea Logistics Solutions Ltd. (Bermuda) lists one class, 'Common Stock', Nasdaq PANL. Same foreign-common-shares policy. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "69a377209df42234ba97f05dc4ee180c53a8a6216b6be9532b31637271c30949"
     },
     {
@@ -4396,7 +4396,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1635088/000163508826000009/roiv-20260206.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Roivant Sciences Ltd. (Bermuda) lists one class, 'Common Shares', Nasdaq ROIV. Same foreign-common-shares policy. Distinct from candidate 0001140361-26-012885 (same ticker, different accession, flagged separately for a release-date/event-window question, not identity). Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "ec45f3e40449787c17c51abfe6bb6ac85486d68203ebd7ec5d952ebcc320deb8"
     },
     {
@@ -4549,7 +4549,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000010/abcl-20260224.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: AbCellera Biologics Inc. (British Columbia, Canada) lists one class, 'Common shares', Nasdaq ABCL. Same foreign-common-shares policy. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "2e2f3b5134e45f03ef0ae6a23202fe030826c436a9ba15732e37b617d1af5980"
     },
     {

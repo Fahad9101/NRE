@@ -155,9 +155,19 @@
     ],
     "author": "Claude Sonnet 5; policy proposal applied without independent human sign-off -- flagged for user review, not a claim of final authority."
   },
-  "foreign_ordinary_shares_policy": {
-    "statement": "A foreign-incorporated issuer's ordinary/common shares that list directly on NASDAQ, NYSE or NYSE American (i.e. the exchange listing itself, not a depositary receipt representing shares held in trust) are treated as in-scope common shares under this pilot's plain-language universe definition ('U.S.-listed common shares'), since they are the issuer's actual common equity and trade identically to domestic common stock on the same market. This policy does not extend to ADRs, which represent a distinct security with potentially different reaction dynamics (currency, arbitrage, liquidity); ADR-structured candidates require separate review.",
-    "validated_against": ["0001408710-26-000006 (Fabrinet, Cayman Islands, NYSE FN)", "0001603923-26-000011 (Weatherford International plc, Ireland, Nasdaq WFRD)"],
+  "foreign_common_shares_policy": {
+    "formerly_named": "foreign_ordinary_shares_policy (generalized 2026-09-22 after a second, larger batch showed the same reasoning applies whether the filer's own registration table calls the security 'ordinary shares' or 'common shares'/'common stock')",
+    "statement": "A foreign-incorporated issuer's common or ordinary shares that list directly on NASDAQ, NYSE or NYSE American (i.e. the exchange listing itself, not a depositary receipt representing shares held in trust) are treated as in-scope common shares under this pilot's plain-language universe definition ('U.S.-listed common shares'), regardless of whether the filer's own Section 12(b) table labels them 'common shares', 'common stock' or 'ordinary shares' -- these are all the issuer's actual common equity, trading identically to domestic common stock on the same market. What matters is the U.S. exchange listing and the instrument being the issuer's common/ordinary equity (not preferred, units, rights or warrants), not the issuer's jurisdiction of incorporation or the exact word the filer uses for it. This policy does not extend to ADRs, which represent a distinct security with potentially different reaction dynamics (currency, arbitrage, liquidity); ADR-structured candidates require separate review.",
+    "validated_against": [
+      "0001408710-26-000006 (Fabrinet, Cayman Islands, NYSE FN, 'ordinary shares')",
+      "0001603923-26-000011 (Weatherford International plc, Ireland, Nasdaq WFRD, 'ordinary shares')",
+      "0000929351-26-000009 (Starz Entertainment Corp., British Columbia, Nasdaq STRZ, 'Common Shares')",
+      "0001171843-26-001838 (Arbutus Biopharma Corporation, British Columbia, Nasdaq ABUS, 'Common Shares')",
+      "0001193125-26-076530 (Xenon Pharmaceuticals Inc., Canada, Nasdaq XENE, 'Common Shares')",
+      "0001628280-26-016596 (Pangaea Logistics Solutions Ltd., Bermuda, Nasdaq PANL, 'Common Stock')",
+      "0001635088-26-000009 (Roivant Sciences Ltd., Bermuda, Nasdaq ROIV, 'Common Shares')",
+      "0001703057-26-000010 (AbCellera Biologics Inc., British Columbia, Nasdaq ABCL, 'Common shares')"
+    ],
     "author": "Claude Sonnet 5; policy proposal applied without independent human sign-off -- flagged for user review, not a claim of final authority."
   },
   "counts_after": {
