@@ -32,11 +32,137 @@
         }
       ],
       "explicit_caution": "Current (2026-09-22) ticker status is NOT used as evidence: NHP is listed today, which is exactly why this required a point-in-time check rather than inferring historical listing from the current ticker."
+    },
+    {
+      "candidate_id": "0001104659-26-007832",
+      "cik": "0000714712",
+      "issuer": "Juniata Valley Financial Corp.",
+      "ticker_in_filing": "JUVF",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (None)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/714712/000110465926007832/juvf-20260129x8k.htm",
+      "reason": "Registration table lists no Section 12(b) securities ('None'/'N/A'). Ticker JUVF trades on OTCQX, outside NASDAQ, NYSE and NYSE American."
+    },
+    {
+      "candidate_id": "0001174947-26-000070",
+      "cik": "0001437479",
+      "issuer": "ENB Financial Corp",
+      "ticker_in_filing": "ENBP",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (None)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1437479/000117494726000070/form8k-76543_enbp.htm",
+      "reason": "Registration table lists no Section 12(b) securities ('None'/'N/A'). Ticker ENBP trades on OTCQX, matching the same issuer's already-excluded candidate 0001174947-26-000123 (see reports/m1-readiness-assessment.json history)."
+    },
+    {
+      "candidate_id": "0001214659-26-000377",
+      "cik": "0001347123",
+      "issuer": "EBR Systems, Inc.",
+      "ticker_in_filing": "EBR",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (None)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1347123/000121465926000377/b1122638k.htm",
+      "reason": "Registration table lists no Section 12(b) securities. Ticker EBR is listed on the Australian Securities Exchange (ASX), with only an OTCPK secondary listing (EBRCZ) in the US; not NASDAQ, NYSE or NYSE American. Verified by search, not assumed from a prior belief about the company (a different, unrelated Nasdaq-listed 'EBR' -- Centrais Eletricas Brasileiras ADSs -- was initially and incorrectly assumed similar; direct verification corrected this)."
+    },
+    {
+      "candidate_id": "0001437749-26-002410",
+      "cik": "0001698022",
+      "issuer": "Farmers and Merchants Bancshares, Inc.",
+      "ticker_in_filing": "FMFG",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (None)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1698022/000143774926002410/fmfg20260129_8k.htm",
+      "reason": "Registration table lists no Section 12(b) securities. Ticker FMFG trades OTC."
+    },
+    {
+      "candidate_id": "0001437749-26-009390",
+      "cik": "0000914139",
+      "issuer": "ParkerVision, Inc.",
+      "ticker_in_filing": "PRKR",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (None)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/914139/000143774926009390/prkr20251123_8k.htm",
+      "reason": "Registration table lists no Section 12(b) securities. Ticker PRKR trades on OTCQB, outside eligible exchanges. Verified by search since ParkerVision was previously Nasdaq-listed years ago; current filing and search both confirm OTCQB now."
+    },
+    {
+      "candidate_id": "0001522767-26-000027",
+      "cik": "0001522767",
+      "issuer": "MariMed Inc.",
+      "ticker_in_filing": "MRMD",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (Not Applicable)",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1522767/000152276726000027/mrmd-20260311.htm",
+      "reason": "Section 12(b) table marked 'Not Applicable'. Ticker MRMD trades on OTCQX and the Canadian Securities Exchange, not NASDAQ, NYSE or NYSE American."
+    },
+    {
+      "candidate_id": "0001628280-26-007165",
+      "cik": "0001325814",
+      "issuer": "Federal Home Loan Bank of Des Moines",
+      "ticker_in_filing": null,
+      "code": "SECURITY_CLASS_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table (blank); Item 2.02 dividend disclosure",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1325814/000162828026007165/fhlbdm-20260211.htm",
+      "reason": "Federal Home Loan Bank of Des Moines is a member-owned cooperative (a federally chartered GSE). Its registration table has no entries and it has no public ticker or exchange listing. Disclosed 'activity-based capital stock' and 'membership capital stock' are cooperative member instruments transferable only among member institutions at par, not publicly traded common shares."
     }
   ],
+  "new_eligibility_confirmations": [
+    {
+      "candidate_id": "0001437749-26-005740",
+      "issuer": "Gray Media, Inc.",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/43196/000143774926005740/gtn20260224d_8k.htm",
+      "finding": "Two NYSE common classes registered: plain 'Common stock' (GTN) and 'Class A common stock' (GTN.A). Both eligible individually; policy needed to pick one identity for this event.",
+      "policy_applied": "class_selection_policy tier 1 (plain-titled class)",
+      "selected_security": "GTN"
+    },
+    {
+      "candidate_id": "0001104659-26-019413",
+      "issuer": "Atlanta Braves Holdings, Inc.",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1958140/000110465926019413/batra-20260225x8k.htm",
+      "finding": "Two Nasdaq common classes registered: Series A (BATRA, ~10.3M shares outstanding per 2023 offering disclosure) and Series C (BATRK, ~50.4M shares outstanding). Series B is OTC-only, not in the registration table. No plainly-titled 'Common stock' class exists.",
+      "policy_applied": "class_selection_policy tier 2 (materially larger public float)",
+      "selected_security": "BATRK"
+    },
+    {
+      "candidate_id": "0001628280-26-005947",
+      "issuer": "White Mountains Insurance Group, Ltd.",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/776867/000162828026005947/wtm-20260206.htm",
+      "finding": "Common Shares, par value $1.00, dual-listed as the same class on NYSE (WTM) and the Bermuda Stock Exchange (WTM.BH); not a class-selection ambiguity, since it is one security cross-listed on two venues.",
+      "policy_applied": "not applicable (single class, dual venue)",
+      "selected_security": "WTM"
+    },
+    {
+      "candidate_id": "0001408710-26-000006",
+      "issuer": "Fabrinet",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000006/",
+      "finding": "Cayman Islands-incorporated; ordinary shares (FN) list directly on NYSE as the company's sole listing, not via ADR.",
+      "policy_applied": "foreign_ordinary_shares_policy: directly NASDAQ/NYSE/NYSE American-listed foreign ordinary shares (not ADRs) are in-scope common shares under this pilot's plain-language scope ('U.S.-listed', not 'U.S.-incorporated'), since they are the issuer's actual common equity trading identically to domestic common stock. ADRs specifically are not addressed by this policy and would need separate review.",
+      "selected_security": "FN"
+    },
+    {
+      "candidate_id": "0001603923-26-000011",
+      "issuer": "Weatherford International plc",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1603923/",
+      "finding": "Ireland-incorporated; ordinary shares (WFRD) list directly on Nasdaq as the company's sole listing, not via ADR.",
+      "policy_applied": "foreign_ordinary_shares_policy (same as Fabrinet)",
+      "selected_security": "WFRD"
+    }
+  ],
+  "class_selection_policy": {
+    "statement": "For an issuer with multiple exchange-listed common share classes attached to one earnings event, select a single class deterministically rather than ad hoc: (1) if exactly one listed class is titled plainly 'Common stock' with no series/letter qualifier while other listed classes carry a qualifier, use the plainly-titled class; (2) otherwise, use the class with materially larger public float/shares outstanding, evidenced by a primary or reliable secondary source; (3) if neither rule resolves it (no plain title and float is not materially different), leave the candidate quarantined pending explicit protocol guidance rather than forcing a pick.",
+    "validated_against": ["0001437749-26-005740 (tier 1)", "0001104659-26-019413 (tier 2)"],
+    "not_needed_for": [
+      "0000034067-26-000008 (DMC/BOOM): common stock and listed stock purchase rights are different instrument types, not competing common-stock classes; common stock already unambiguous.",
+      "0000100493-26-000005 (Tyson/TSN): Class B is expressly stated as not publicly listed; only Class A is eligible, already unambiguous."
+    ],
+    "author": "Claude Sonnet 5; policy proposal applied without independent human sign-off -- flagged for user review, not a claim of final authority."
+  },
+  "foreign_ordinary_shares_policy": {
+    "statement": "A foreign-incorporated issuer's ordinary/common shares that list directly on NASDAQ, NYSE or NYSE American (i.e. the exchange listing itself, not a depositary receipt representing shares held in trust) are treated as in-scope common shares under this pilot's plain-language universe definition ('U.S.-listed common shares'), since they are the issuer's actual common equity and trade identically to domestic common stock on the same market. This policy does not extend to ADRs, which represent a distinct security with potentially different reaction dynamics (currency, arbitrage, liquidity); ADR-structured candidates require separate review.",
+    "validated_against": ["0001408710-26-000006 (Fabrinet, Cayman Islands, NYSE FN)", "0001603923-26-000011 (Weatherford International plc, Ireland, Nasdaq WFRD)"],
+    "author": "Claude Sonnet 5; policy proposal applied without independent human sign-off -- flagged for user review, not a claim of final authority."
+  },
   "counts_after": {
     "candidates": 243,
-    "dispositions": {"excluded": 7, "quarantined": 236},
+    "dispositions": {"excluded": 14, "quarantined": 229},
     "eligible_complete_events": 0,
     "unique_issuers": 0
   },

@@ -1095,7 +1095,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "c090ce336a3c18994f3d279291d9182950d0aabed2db8965009f5e7c4ff377fc",
       "discovery_transport_sha256": "11f5c4190d1cb93d29f63effb22814383ef91cc8ac2561a6037a487556d92d85",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-01-29",
       "form": "8-K",
@@ -1107,7 +1107,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/714712/000110465926007832/juvf-20260129x8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: Juniata Valley Financial Corp.'s registration table shows no Section 12(b) securities. Ticker JUVF trades on OTCQX, outside NASDAQ, NYSE and NYSE American. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "c090ce336a3c18994f3d279291d9182950d0aabed2db8965009f5e7c4ff377fc"
     },
     {
@@ -1279,7 +1279,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1958140/000110465926019413/batra-20260225x8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Atlanta Braves Holdings, Inc. lists two Nasdaq common classes, Series A (BATRA, ~10.3M shares) and Series C (BATRK, ~50.4M shares); Series B is OTC-only and not in the registration table. No plainly-titled 'Common stock' class exists, so per policy the class with materially larger public float (Series C, BATRK) is used. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "ecd6f81877f3dcd46d7f7f5944a8e9ad7ff7eeae194006895569f71bd96b755d"
     },
     {
@@ -1675,7 +1675,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "f68e6fa33c5e25b8cdae63c7eb1e156dfa8a03a8188c1eb9573a11b01b96e543",
       "discovery_transport_sha256": "ec274a6f2835e418802430e1c1ca2f16611c69712347038adbfd33767d9e5d76",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-01-22",
       "form": "8-K",
@@ -1687,7 +1687,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1437479/000117494726000070/form8k-76543_enbp.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: ENB Financial Corp.'s registration table shows no Section 12(b) securities. Ticker ENBP trades on OTCQX, matching the same issuer's already-excluded candidate 0001174947-26-000123. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "f68e6fa33c5e25b8cdae63c7eb1e156dfa8a03a8188c1eb9573a11b01b96e543"
     },
     {
@@ -2875,7 +2875,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "fbc61c2843f63ae9e8b238530ecd9b6f524dd0f8b2b43f974ca1a41a776d649a",
       "discovery_transport_sha256": "6ce970761cd71ad139c09a8768f081ee09d54bd422b8f2c674c24b7987dbc56e",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-01-13",
       "form": "8-K",
@@ -2887,7 +2887,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1347123/000121465926000377/b1122638k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: EBR Systems, Inc.'s registration table shows no Section 12(b) securities. Ticker EBR is listed on the Australian Securities Exchange, with only an OTCPK secondary listing (EBRCZ) in the US; not NASDAQ, NYSE or NYSE American. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "fbc61c2843f63ae9e8b238530ecd9b6f524dd0f8b2b43f974ca1a41a776d649a"
     },
     {
@@ -2974,7 +2974,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1408710/000140871026000006/fn-20260202.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Fabrinet is Cayman Islands-incorporated but its ordinary shares (FN) list directly on NYSE as its sole listing, not via ADR. Directly NASDAQ/NYSE/NYSE American-listed foreign ordinary shares are treated as in-scope common shares under this pilot. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "eca9326a4c8b245acd42e2646a922713ced926a5ab25faf513397792c73a1677"
     },
     {
@@ -3071,7 +3071,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "efdf9fa3c12d979bfd294eb98a6f3bb833db81d8045db8c77e56e54cbc727bae",
       "discovery_transport_sha256": "2b86773ae7501cd611d27e32591cbd5ebf586fc082ceb8c9c6207eee66d858c1",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-01-29",
       "form": "8-K",
@@ -3083,7 +3083,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1698022/000143774926002410/fmfg20260129_8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: Farmers and Merchants Bancshares, Inc.'s registration table shows no Section 12(b) securities. Ticker FMFG trades OTC. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "efdf9fa3c12d979bfd294eb98a6f3bb833db81d8045db8c77e56e54cbc727bae"
     },
     {
@@ -3213,7 +3213,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/43196/000143774926005740/gtn20260224d_8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Gray Media, Inc. lists two NYSE common classes, plain 'Common stock' (GTN) and 'Class A common stock' (GTN.A). Per policy, the plainly-titled Common stock class (GTN) is used when one exists among listed classes. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "079b403ef528431bda3863a2691a52e908f88297e1b4373d2648723fd3b36b86"
     },
     {
@@ -3245,7 +3245,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "d8f4ec6432623f0da2467a85e30a30a331f62290a18dfb0a453a0a6cd1cba52a",
       "discovery_transport_sha256": "79456a25f3fe024ffb940784f0dde59df3ebda8cb09310f2b32e4991bc668f52",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-03-23",
       "form": "8-K",
@@ -3257,7 +3257,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/914139/000143774926009390/prkr20251123_8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: ParkerVision, Inc.'s registration table shows no Section 12(b) securities. Ticker PRKR trades on OTCQB, outside eligible exchanges. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "d8f4ec6432623f0da2467a85e30a30a331f62290a18dfb0a453a0a6cd1cba52a"
     },
     {
@@ -3547,7 +3547,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "d406002793b257c700e27939d9c36cd6849fa02eb4202c96228091154b35af20",
       "discovery_transport_sha256": "e9edef234b4b855e0f0f9eb797b908968023b2e9d32e26200572a90c6c756193",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-03-11",
       "form": "8-K",
@@ -3559,7 +3559,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1522767/000152276726000027/mrmd-20260311.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: MariMed Inc.'s Section 12(b) table is marked not applicable. Ticker MRMD trades on OTCQX and the Canadian Securities Exchange, not NASDAQ, NYSE or NYSE American. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "d406002793b257c700e27939d9c36cd6849fa02eb4202c96228091154b35af20"
     },
     {
@@ -3884,7 +3884,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1603923/000160392326000011/wfrd-20260203.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: Weatherford International plc is Ireland-incorporated but its ordinary shares (WFRD) list directly on Nasdaq as its sole listing, not via ADR. Directly NASDAQ/NYSE/NYSE American-listed foreign ordinary shares are treated as in-scope common shares under this pilot. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "f9f7ec1be9380dbda3f5276315c12d0a5d31188478e2245fbc47f4605e4d48a1"
     },
     {
@@ -4032,7 +4032,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/776867/000162828026005947/wtm-20260206.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Identity confirmed eligible: White Mountains Insurance Group, Ltd. common shares are dual-listed as the same security class on NYSE (WTM) and the Bermuda Stock Exchange (WTM.BH); this is one class cross-listed, not a class-selection ambiguity. The NYSE listing (WTM) is used. Source chronology and independent review remain unresolved. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "6e884cb63275e508f24a4d7978385ecf68761922d05771ca6f79de418b972b72"
     },
     {
@@ -4063,7 +4063,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "7ee361422c8fbc2b96faa5d9af6f62b99254fc5aa0a6fb991af3c95c1e837397",
       "discovery_transport_sha256": "69b1d1ef836291a45b363a58dd4728ad9b09906d08a248db4cbc8b9d1c0c7d1b",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-02-11",
       "form": "8-K",
@@ -4076,7 +4076,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1325814/000162828026007165/fhlbdm-20260211.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "SECURITY_CLASS_OUTSIDE_SCOPE: Federal Home Loan Bank of Des Moines is a member-owned cooperative; its registration table lists no Section 12(b) securities and it has no public ticker or exchange listing. Activity-based and membership capital stock are not publicly traded common shares. See reports/m1-security-scope-review-2026-09-22.json.",
       "source_sha256": "7ee361422c8fbc2b96faa5d9af6f62b99254fc5aa0a6fb991af3c95c1e837397"
     },
     {
