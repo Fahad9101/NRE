@@ -2,7 +2,7 @@
 import json
 import os
 from datetime import datetime, timezone
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, HTTPRedirectHandler, build_opener
 
@@ -94,6 +94,15 @@ def main():
         except HTTPError as exc:
             # Never print request headers, response bodies, or exception text.
             report["error"] = "ALPACA_HTTP_" + str(exc.code)
+        except DataError as exc:
+            # DataError messages are short, static and developer-authored: they
+            # never contain response bytes, headers or credentials, so they are
+            # safe to surface directly for diagnosis.
+            report["error"] = "DATA_VALIDATION_FAILED: " + str(exc)
+        except json.JSONDecodeError:
+            report["error"] = "INVALID_JSON_RESPONSE"
+        except URLError:
+            report["error"] = "NETWORK_ERROR"
         except Exception:
             report["error"] = "NETWORK_OR_RESPONSE_VALIDATION_FAILED"
     print(json.dumps(report, sort_keys=True, indent=2))
