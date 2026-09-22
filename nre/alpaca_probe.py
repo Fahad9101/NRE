@@ -103,8 +103,11 @@ def main():
             report["error"] = "INVALID_JSON_RESPONSE"
         except URLError:
             report["error"] = "NETWORK_ERROR"
-        except Exception:
-            report["error"] = "NETWORK_OR_RESPONSE_VALIDATION_FAILED"
+        except Exception as exc:
+            # Exception *class names* are fixed identifiers from the standard
+            # library, never response content or credentials, so naming the
+            # class is safe and narrows an otherwise-opaque failure category.
+            report["error"] = "UNCATEGORIZED_" + type(exc).__name__.upper()
     print(json.dumps(report, sort_keys=True, indent=2))
     return 0 if report["access_check_passed"] else 2
 

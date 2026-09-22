@@ -92,3 +92,13 @@ class ProbeTests(unittest.TestCase):
             self.assertEqual(main(), 2)
             self.assertIn("NETWORK_ERROR", output.call_args.args[0])
             self.assertNotIn("connection refused", output.call_args.args[0])
+
+    def test_uncategorized_exception_reports_class_name_only(self):
+        opener = _FakeOpener(TimeoutError("timed out talking to a private host"))
+        with patch.dict("os.environ", CREDENTIALED_ENV, clear=True), \
+             patch("nre.alpaca_probe.build_opener", return_value=opener), \
+             patch("builtins.print") as output:
+            self.assertEqual(main(), 2)
+            printed = output.call_args.args[0]
+            self.assertIn("UNCATEGORIZED_TIMEOUTERROR", printed)
+            self.assertNotIn("private host", printed)
