@@ -1,6 +1,7 @@
 """Bounded, read-only REST access diagnostic. Never emits raw bars or secrets."""
 import json
 import os
+import traceback
 from datetime import datetime, timezone
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -104,10 +105,14 @@ def main():
         except URLError:
             report["error"] = "NETWORK_ERROR"
         except Exception as exc:
-            # Exception *class names* are fixed identifiers from the standard
-            # library, never response content or credentials, so naming the
-            # class is safe and narrows an otherwise-opaque failure category.
+            # Exception class names and the raising frame's file/line/function
+            # are fixed code-location metadata, never response content or
+            # credentials, so surfacing them is safe and narrows an otherwise
+            # opaque failure category without ever touching str(exc).
             report["error"] = "UNCATEGORIZED_" + type(exc).__name__.upper()
+            frame = traceback.extract_tb(exc.__traceback__)[-1]
+            report["error_origin"] = {"file": os.path.basename(frame.filename),
+                                       "line": frame.lineno, "function": frame.name}
     print(json.dumps(report, sort_keys=True, indent=2))
     return 0 if report["access_check_passed"] else 2
 

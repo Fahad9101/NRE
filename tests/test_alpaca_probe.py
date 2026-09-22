@@ -102,3 +102,19 @@ class ProbeTests(unittest.TestCase):
             printed = output.call_args.args[0]
             self.assertIn("UNCATEGORIZED_TIMEOUTERROR", printed)
             self.assertNotIn("private host", printed)
+
+    def test_uncategorized_exception_reports_safe_origin_location(self):
+        def fetch_raises(params):
+            raise ValueError("header value contains a secret-shaped payload")
+
+        with patch.dict("os.environ", CREDENTIALED_ENV, clear=True), \
+             patch("nre.alpaca_probe.build_opener"), \
+             patch("nre.alpaca_probe.collect", side_effect=fetch_raises), \
+             patch("builtins.print") as output:
+            self.assertEqual(main(), 2)
+            printed = output.call_args.args[0]
+            parsed = json.loads(printed)
+            self.assertEqual(parsed["error"], "UNCATEGORIZED_VALUEERROR")
+            self.assertEqual(parsed["error_origin"]["function"], "fetch_raises")
+            self.assertEqual(parsed["error_origin"]["file"], "test_alpaca_probe.py")
+            self.assertNotIn("secret-shaped payload", printed)
