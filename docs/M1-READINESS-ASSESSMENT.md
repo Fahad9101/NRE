@@ -60,3 +60,13 @@ A timestamp-quality issue was found: ACCESS's March 5 notice says EDT, while New
 Elite's Item 2.02 expressly places the quarterly 10-Q before its press release, so the release cannot simply be treated as the first disclosure. National Healthcare Properties lists only preferred classes in its registration table; these instruments are ineligible, but its candidate remains quarantined until common-share listing scope is settled.
 
 The ACCESS conference presentation was not recovered by the focused follow-up searches. Searches are not negative evidence of disclosure. The remaining work is source evidence, historical identity, price semantics and independent review; software test success does not satisfy these gates. The acceptance report was recomputed after the disposition changes and frozen membership was checked unchanged.
+
+## Single-event completion check — September 22
+
+`reports/m1-slsn-completion-check.json` specifies the exact remaining evidence for Solesence and a conditional acquisition window. If its displayed March 31 08:02 ET wire minute is confirmed, the previous-close anchor is March 30 and the twentieth reaction session is April 28: 21 required daily sessions including the anchor. This calendar plan contains no observed returns and is not an accepted reaction record.
+
+The January 8 webinar landing page is reachable, but its retrieved text contains no transcript or slides. Its product-development description cannot certify what was said. The Alpaca corporate-action query for SLSN from November 1 through April 30 returned no announcements; the empty response does not certify corporate-action or identity coverage.
+
+Alpaca's official historical-bars documentation confirms a raw adjustment default, an explicit adjustment parameter, and the requirement to inspect the next-page token even when fewer rows than the requested limit are returned. The connected bars tool exposes neither adjustment nor page-token controls. No separate Alpaca credentials are configured in this runtime (only presence was checked; no secrets were printed). This does not establish whether GitHub secrets exist.
+
+To remove the price-access limitation, the acquisition runtime needs securely configured Alpaca credentials or a permitted original API export retaining explicit raw/SIP/as-of parameters and every response page through a terminal token. Credentials must not be pasted into chat or committed. That access alone does not resolve session-volume methodology, research permissions, historical identity or first-public timing. Source-side evidence is still required before cohort outcomes are acquired. Milestone 1 remains open with zero complete events.

@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-22",
+  "source_commit": "22a3e7c4d55df9975f41636cf63222e5d139a096",
+  "candidate_id": "0001171843-26-002061",
+  "ticker": "SLSN",
+  "cik": "0000883107",
+  "state": "BLOCKED_NOT_A_REACTION_RECORD",
+  "first_public_verified": false,
+  "historical_identity_verified": false,
+  "accepted_for_labels": false,
+  "conditional_calendar_plan": {
+    "basis": "Displayed March 31 08:02 ET wire minute, not certified first-public time. Recompute if chronology changes.",
+    "reaction_session": "2026-03-31",
+    "timing": "premarket",
+    "anchor_session": "2026-03-30",
+    "required_sessions": [
+      "2026-03-30",
+      "2026-03-31",
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-06",
+      "2026-04-07",
+      "2026-04-08",
+      "2026-04-09",
+      "2026-04-10",
+      "2026-04-13",
+      "2026-04-14",
+      "2026-04-15",
+      "2026-04-16",
+      "2026-04-17",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28"
+    ],
+    "session_count": 21,
+    "horizon_20_session": "2026-04-28"
+  },
+  "new_checks": {
+    "webinar": {
+      "url": "https://www.bigmarker.com/beautymatter/the-spf-advantage-creating-beauty-products-consumers-trust-and-love",
+      "date": "2026-01-08",
+      "finding": "Public landing page describes SPF product development, names Kevin Cureton, and says free/everyone. Retrieved text provides no transcript or presentation; content review remains incomplete. Registration not submitted.",
+      "required_evidence": "Recording, transcript or slides sufficient to check any preliminary financial disclosures; a topical description alone is insufficient."
+    },
+    "corporate_actions": {
+      "provider": "Alpaca connected tool",
+      "request": {
+        "symbols": [
+          "SLSN"
+        ],
+        "start": "2025-11-01",
+        "end": "2026-04-30",
+        "sort": "asc",
+        "limit": 1000
+      },
+      "response_announcements": {},
+      "finding": "Successful empty response. No terminal pagination, coverage or historic-identity attestation exposed; do not promote corporate_actions_verified."
+    },
+    "price_api": {
+      "documentation": "https://docs.alpaca.markets/us/reference/stockbars",
+      "documented_raw_default": true,
+      "documented_explicit_adjustment_parameter": true,
+      "documented_next_page_token_required": true,
+      "connector_exposes_adjustment": false,
+      "connector_exposes_page_token": false,
+      "finding": "API documentation defaults do not establish connector implementation. A sub-limit response alone does not establish completeness."
+    },
+    "direct_api_credentials": {
+      "runtime_configured": false,
+      "checked_names": [
+        "APCA_API_KEY_ID",
+        "APCA_API_SECRET_KEY",
+        "ALPACA_API_KEY",
+        "ALPACA_SECRET_KEY"
+      ],
+      "scope": "Boolean presence check in this runtime only; not a check of GitHub secrets or the user account. Connector authentication is separate."
+    }
+  },
+  "minimum_price_export_requirements": {
+    "feed": "sip",
+    "currency": "USD",
+    "symbol_asof": "2026-03-31",
+    "adjustment": "raw",
+    "session_scope": "regular",
+    "required_sessions": [
+      "2026-03-30",
+      "2026-03-31",
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-06",
+      "2026-04-07",
+      "2026-04-08",
+      "2026-04-09",
+      "2026-04-10",
+      "2026-04-13",
+      "2026-04-14",
+      "2026-04-15",
+      "2026-04-16",
+      "2026-04-17",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28"
+    ],
+    "preserve": [
+      "Exact request parameters and retrieval time",
+      "All original response pages and terminal next_page_token",
+      "Provider terms and permitted research-use evidence",
+      "Regular-session OHLCV methodology including closing auction",
+      "Corporate-action coverage and historical symbol identity evidence"
+    ],
+    "note": "Explicit raw and pagination resolve only two issues. Daily bars cannot automatically be declared regular-session bars. Do not publish licensed raw bars to the public repository."
+  },
+  "remaining_source_requirements": [
+    "Permitted preserved release representation and release/version chronology",
+    "Prior disclosure review including webinar and any material public presentations",
+    "Historical security identity and availability evidence",
+    "Independent timing review"
+  ],
+  "complete_events": 0,
+  "cohort_price_query_performed": false
+}
