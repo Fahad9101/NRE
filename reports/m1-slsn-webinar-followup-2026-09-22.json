@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-22",
+  "reviewer": "Claude Sonnet 5; not independent human sign-off",
+  "candidate_id": "0001171843-26-002061",
+  "ticker": "SLSN",
+  "predecessor": "reports/m1-slsn-completion-check.json",
+  "subject": "Exhaust open-web diligence on the January 8, 2026 BeautyMatter/Solesence webinar as a possible earlier-disclosure channel before the March 31, 2026 08:02 ET wire release.",
+  "checks_performed": [
+    {
+      "action": "Direct fetch of the BigMarker event landing page",
+      "url": "https://www.bigmarker.com/beautymatter/the-spf-advantage-creating-beauty-products-consumers-trust-and-love",
+      "finding": "Event: 'The SPF Advantage: Creating Beauty Products Consumers Trust and Love', 2026-01-08 14:00 ET, hosted by BeautyMatter (Kelly Kovack) with Kevin Cureton, President and CEO of Solesence. Topic is squarely SPF/sun-care product development strategy. No recording, transcript or slides linked on the page. No mention of financial results, quarterly figures or business performance."
+    },
+    {
+      "action": "Targeted web search for a recording or third-party writeup of this specific webinar",
+      "finding": "No recording or transcript located. General confirmation the event occurred and its topic (product-development philosophy), consistent with the landing page. No financial content referenced in any result."
+    },
+    {
+      "action": "Checked Solesence's own webinar archive",
+      "url": "https://solesence.com/webinars/",
+      "finding": "Four webinars listed (blue light trend, inclusive sun care, brand foundations, hero product development), none dated January 2026 and none matching 'SPF Advantage' or the BeautyMatter partnership. The January 8, 2026 webinar is not present in the issuer's own archive of past webinars."
+    },
+    {
+      "action": "Fetched the BeautyMatter article most likely to be related coverage",
+      "url": "https://beautymatter.com/articles/solesence-supercharged-sun-care-is-the-future-of-beauty",
+      "finding": "Published 2020-09-28 -- five years before the event window and unrelated to the January 2026 webinar. Contains no financial data of any kind. This was a false lead."
+    }
+  ],
+  "conclusion": {
+    "first_public_verified": false,
+    "change_from_predecessor": "No change to first_public_verified or historical_identity_verified; both remain false.",
+    "strengthened_evidence": "Broader, multi-angle diligence (direct page, search, issuer's own archive, most-likely related article) found zero evidence of financial content at this webinar and confirmed it is not preserved anywhere in Solesence's own webinar library. This is materially more diligence than the single-page check in the predecessor report, but it does not and cannot constitute proof that no preliminary figures were mentioned live and unrecorded on 2026-01-08.",
+    "honest_limit": "Search failure is not proof of absence, per this project's own standing rule. A recording may exist privately (e.g. only sent to webinar registrants) and simply not be publicly discoverable. This thread is now exhausted for open-web research; closing it further would require either registering interest with BeautyMatter directly for archive access, or accepting this as the practical evidentiary ceiling for this channel.",
+    "recommendation": "Treat the webinar as very unlikely to be a competing earlier-disclosure channel given its confirmed non-financial topic, but do not mark first_public_verified true on this basis alone -- that still requires independent human review per project rules, which this report does not attempt to substitute for."
+  },
+  "candidate_disposition_unchanged": "0001171843-26-002061 remains quarantined; no ledger disposition change made by this report.",
+  "milestone_1_status_unchanged": "BLOCKED"
+}
