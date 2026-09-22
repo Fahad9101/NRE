@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-22",
+  "reviewer": "Claude Sonnet 5; not independent human sign-off",
+  "scope_basis": "Contemporaneously evidenced US common shares on NASDAQ, NYSE or NYSE American",
+  "predecessor_review": "reports/m1-security-scope-review.json",
+  "counts_before": {
+    "candidates": 243,
+    "dispositions": {"excluded": 6, "quarantined": 237}
+  },
+  "new_exclusions": [
+    {
+      "candidate_id": "0001561032-26-000010",
+      "cik": "0001561032",
+      "ticker_in_filing": "NHPAP, NHPBP (preferred only)",
+      "code": "EXCHANGE_OUTSIDE_SCOPE",
+      "locator": "Section 12(b) registration table",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1561032/000156103226000010/hct-20260220.htm",
+      "event_date": "2026-02-20",
+      "reason": "The candidate's own 8-K registration table lists only two preferred stock series (7.375% Series A, NHPAP; 7.125% Series B, NHPBP), both on The Nasdaq Global Market. No common stock class is listed in that table. National Healthcare Properties, Inc. (formerly Healthcare Trust, Inc.) was a non-traded REIT at the event date; its common stock had no national exchange listing.",
+      "point_in_time_corroboration": [
+        {
+          "source": "Issuer investor-relations release, 'National Healthcare Properties Announces Launch of Public Offering'",
+          "url": "https://investors.nhpreit.com/Investors/investor-news/news-details/2026/National-Healthcare-Properties-Announces-Launch-of-Public-Offering/default.aspx",
+          "published": "2026-04-13",
+          "quote": "NHP has applied to list its Class A common stock on The Nasdaq Global Select Market under the symbol \"NHP.\"",
+          "significance": "Confirms the common-stock listing was still a pending application as of April 13, 2026, nearly two months after the candidate's February 20, 2026 event date, i.e. no listing existed at or before the event."
+        },
+        {
+          "source": "Secondary corroboration (offering timeline): launch 2026-04-13, pricing 2026-04-21, trading commenced 2026-04-22 under 'NHP', offering closed 2026-04-23",
+          "note": "Secondary-source timeline (Yahoo Finance / MarketBeat aggregation of issuer press releases), consistent with the issuer's own primary release language above. Not itself treated as the sole basis for the exclusion; the controlling evidence is the candidate filing's own registration table plus the issuer's own pre-listing release."
+        }
+      ],
+      "explicit_caution": "Current (2026-09-22) ticker status is NOT used as evidence: NHP is listed today, which is exactly why this required a point-in-time check rather than inferring historical listing from the current ticker."
+    }
+  ],
+  "counts_after": {
+    "candidates": 243,
+    "dispositions": {"excluded": 7, "quarantined": 236},
+    "eligible_complete_events": 0,
+    "unique_issuers": 0
+  },
+  "unchanged_constraints": [
+    "No frozen candidate removed or source hash changed.",
+    "Frozen membership SHA256 unchanged: ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815.",
+    "No cohort prices acquired.",
+    "No first-public flags promoted.",
+    "No reaction dataset or 100-event audit claimed."
+  ]
+}

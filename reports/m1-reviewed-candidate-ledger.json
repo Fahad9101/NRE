@@ -3787,7 +3787,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "aabe5de078b0be3a2cd1a7b47c6a44cce35c97e010994e8e7bf342574c51a75e",
       "discovery_transport_sha256": "16de52b94aa5c815247cee99e72e50d4e6b095e577991cc8a10c5f03bb22eefa",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-02-20",
       "form": "8-K",
@@ -3799,7 +3799,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1561032/000156103226000010/hct-20260220.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "EXCHANGE_OUTSIDE_SCOPE: the filing's Section 12(b) registration table lists only two preferred series (NHPAP, NHPBP) on Nasdaq; no common stock was listed on any exchange at the February 20, 2026 event date. National Healthcare Properties, Inc. was a non-traded REIT at that time. Its Class A common stock first listed on Nasdaq under 'NHP' on 2026-04-22, following an S-11 offering the issuer's own 2026-04-13 release describes prospectively (\"NHP has applied to list its Class A common stock on The Nasdaq Global Select Market\"). See reports/m1-security-scope-review-2026-09-22.json for full citations.",
       "source_sha256": "aabe5de078b0be3a2cd1a7b47c6a44cce35c97e010994e8e7bf342574c51a75e"
     },
     {
