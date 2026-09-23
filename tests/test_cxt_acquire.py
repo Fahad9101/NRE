@@ -29,8 +29,9 @@ class FetchActionsTests(unittest.TestCase):
     def test_empty_dict_shape(self):
         def fetch(params):
             return json.dumps({"corporate_actions": {}, "next_page_token": None}).encode()
-        count, pages = fetch_actions(fetch)
+        count, by_type, pages = fetch_actions(fetch)
         self.assertEqual(count, 0)
+        self.assertEqual(by_type, {})
 
     def test_counts_a_declared_dividend(self):
         # CXT's release itself announces a fresh dividend increase; the
@@ -38,7 +39,7 @@ class FetchActionsTests(unittest.TestCase):
         def fetch(params):
             return json.dumps({"corporate_actions": {"cash_dividends": [{"a": 1}]},
                                 "next_page_token": None}).encode()
-        count, pages = fetch_actions(fetch)
+        count, by_type, pages = fetch_actions(fetch)
         self.assertEqual(count, 1)
 
 

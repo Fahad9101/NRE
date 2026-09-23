@@ -110,17 +110,22 @@ def fetch_bars(fetch):
 def fetch_actions(fetch):
     merged, pages = _paginate(fetch, ACTIONS_PARAMS, "corporate_actions")
     total = 0
+    by_type = {}
     for page in merged:
         ca = page.get("corporate_actions")
         if ca is None:
             continue
         if isinstance(ca, dict):
-            total += sum(len(v) for v in ca.values() if isinstance(v, list))
+            for action_type, entries in ca.items():
+                if not isinstance(entries, list):
+                    raise DataError("unexpected corporate_actions structure")
+                total += len(entries)
+                by_type.setdefault(action_type, []).extend(entries)
         elif isinstance(ca, list):
             total += len(ca)
         else:
             raise DataError("unexpected corporate_actions structure")
-    return total, pages
+    return total, by_type, pages
 
 
 def build_bundle(bars_by_session, actions_count):
@@ -204,7 +209,7 @@ def main():
 
     try:
         bars_by_session, bar_pages = fetch_bars(lambda p: fetch(BARS_ENDPOINT, p))
-        actions_count, action_pages = fetch_actions(lambda p: fetch(ACTIONS_ENDPOINT, p))
+        actions_count, actions_by_type, action_pages = fetch_actions(lambda p: fetch(ACTIONS_ENDPOINT, p))
     except HTTPError as exc:
         report["error"] = "ALPACA_HTTP_" + str(exc.code)
         print(json.dumps(report, sort_keys=True, indent=2))
@@ -230,6 +235,12 @@ def main():
     report["bar_pages"] = bar_pages
     report["action_pages"] = action_pages
     report["corporate_actions_count"] = actions_count
+    # Temporary diagnostic: dividend ex-dates/rates are already public (the
+    # release itself announced the increase), so printing the actual entries
+    # -- not raw price bars -- is safe. Needed once to see Alpaca's real
+    # field names before writing the ex-date parsing logic; remove once
+    # build_bundle() uses actions_by_type directly instead of just a count.
+    report["raw_actions_by_type_TEMPORARY_DIAGNOSTIC"] = actions_by_type
     report["missing_sessions"] = sorted(set(REQUIRED_SESSIONS) - set(bars_by_session))
     report["zero_volume_sessions"] = sorted(s for s, b in bars_by_session.items()
                                              if s in REQUIRED_SESSIONS and b["volume"] == 0)
