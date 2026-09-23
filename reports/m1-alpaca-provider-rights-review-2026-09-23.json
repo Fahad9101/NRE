@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-23",
+  "reviewer": "Claude Sonnet 5; not a lawyer, not independent human sign-off",
+  "purpose": "Determine whether provider.research_permitted can honestly be set true for this project's use of Alpaca market data, resolving the one remaining PROVIDER_USE_UNVERIFIED blocker on the signed-off SLSN event.",
+  "documents_reviewed": [
+    {
+      "name": "Alpaca Terms and Conditions",
+      "url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+      "read_in_full": true,
+      "pages": 4,
+      "last_modified_per_pdf_metadata": "2021-08-31"
+    },
+    {
+      "name": "NASDAQ Global Subscriber Agreement (representative copy via dxFeed, a market-data distributor; Alpaca's own signed instance is not separately published, but this agreement is a standard NASDAQ template distributors pass through largely unmodified)",
+      "url": "https://get.dxfeed.com/api/files/nasdaq.pdf",
+      "read_in_full": true,
+      "pages": 7,
+      "limitation": "Not confirmed byte-identical to whatever Alpaca's customers actually agree to; treated as representative of standard NASDAQ subscriber terms, not verified as Alpaca's exact executed version."
+    }
+  ],
+  "findings": {
+    "when_the_nasdaq_agreement_even_applies": {
+      "quote": "By selecting the 'Pro' market data plan during the user account creation/onboarding through Alpaca's Services, you agree to: (i) the NASDAQ OMX Global Subscriber Agreement, or AGREEMENT FOR MARKET DATA DISPLAY SERVICES, each to the extent applicable",
+      "source": "Alpaca Terms and Conditions, 'Data Plans' section",
+      "implication": "Only triggered by the paid 'Pro' plan, not the free 'Basic' plan. Since today's run successfully retrieved real SIP data (feed=sip), which free tiers typically cannot access, the account is very likely on a paid plan and this agreement likely does apply."
+    },
+    "base_alpaca_terms_permitted_use": {
+      "quote_1": "you agree to use the Services and Content solely for your own personal and non-commercial purposes",
+      "quote_2": "Content is provided exclusively for personal and noncommercial access and use. No part of the Service or Content may be copied, reproduced, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted or distributed in any way (including \"mirroring\") to any other computer, server, web site or other medium for publication or distribution or for any commercial enterprise, without Alpaca's express prior written consent.",
+      "source": "Alpaca Terms and Conditions, 'Personal and Non-Commercial Usage' and 'Content' sections",
+      "implication": "This project is personal, non-commercial research. The redistribution ban is framed around republishing 'the Content' (the market data itself) to another medium -- this directly validates the project's existing practice of never committing raw OHLCV to the repository, only hashes and derived values."
+    },
+    "non_professional_subscriber_status": {
+      "definition_quote": "Any natural person who is NOT: (a) registered or qualified in any capacity with the SEC, the Commodities Futures Trading Commission, any state securities agency, any securities exchange or association or any commodities or futures contract market or association; (b) engaged as an 'investment advisor'...; or (c) employed by a bank or other organization exempt from registration...",
+      "source": "NASDAQ Global Subscriber Agreement, Section 14 Definitions, U.S. Information",
+      "license_grant_quote": "For Non-Professional or Private Subscriber, the Information is licensed only for personal use.",
+      "source_2": "NASDAQ Global Subscriber Agreement, Section 1(a)",
+      "implication": "Nothing in this project suggests the account holder is a registered securities professional. As a Non-Professional Subscriber, the license is 'personal use' -- narrower than a Professional Subscriber's 'internal business use and/or personal use', but this project (personal research, not commercial, no clients, no product offered to others) fits within 'personal use' on its face."
+    },
+    "the_hard_clause": {
+      "quote": "Information also includes any element of Information as used or processed in such a way that the Information can be identified, recalculated or re-engineered from the processed Information or that the processed Information can be used as a substitute for Information.",
+      "source": "NASDAQ Global Subscriber Agreement, Section 14 Definitions, 'Information'",
+      "analysis": "This extends the license/restriction regime to derived data, not just raw quotes, under two alternative tests: (1) can the original be recalculated/re-engineered from what's published, or (2) can the derived output substitute for the original Information.",
+      "test_1_reconstruction": "A bare return percentage (e.g. 0.0234) or a threshold boolean, published WITHOUT the anchor price (which this project already redacts -- see nre/slsn_acquire.py), cannot be inverted to recover the actual quoted price: infinitely many price pairs share the same ratio. Session counts, missing/zero-volume flags, and hashes are likewise non-reconstructable. This appears to pass test 1 for what's actually been committed so far.",
+      "test_2_substitute_at_scale": "One event's derived labels are clearly not a substitute for a market data feed. The genuinely open question is what happens as the project accumulates derived labels across potentially 100+ events, many securities, over time -- at what point, if any, does the aggregate of derived outputs start to function as something that could substitute for a data product NASDAQ would otherwise license separately? This is not resolved by reading further; it is a judgment call about where a line sits, structurally identical to the timing and corporate-action residual gaps already signed off, except this one is contractual risk rather than evidentiary completeness."
+    }
+  },
+  "recommendation": {
+    "for_the_single_slsn_event_tested_today": "There is a reasonable, good-faith basis to treat this as within personal-use research given current practice (raw prices never committed, only ratios/booleans/counts/hashes, and even the anchor price redacted). I have not set research_permitted:true myself -- this is presented as the third explicit sign-off item, not decided unilaterally, given the stakes are contractual rather than just evidentiary.",
+    "forward_looking_risk_note_regardless_of_this_decision": "As the project scales toward its 100-event target, consider whether publishing derived labels for the full cohort in bulk (rather than a handful of individually-reviewed events) changes the 'substitute for Information' calculus. This is worth revisiting again at scale, not just decided once here."
+  },
+  "not_legal_advice": "This review was performed by an AI assistant reading publicly available documents. It is not legal advice and does not substitute for actual legal counsel if the project's scale or stakes ever warrant it."
+}

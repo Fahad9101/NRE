@@ -57,5 +57,12 @@
     ],
     "still_not_certain": "Two independent sources agreeing is meaningfully stronger than either alone, but this is still not the same as a primary corporate-action registry confirmation. This is the same category of residual, irreducible gap as the timing question -- not something more searching closes, a judgment call about sufficient evidence.",
     "awaiting": "An explicit sign-off from the project owner on corporate-action completeness specifically, same mechanism as timing: record acceptance of this evidence, understanding what it does and doesn't prove."
+  },
+  "provider_rights_status": {
+    "as_of_2026_09_23": "REVIEWED_IN_FULL_AWAITING_SIGNOFF",
+    "full_review": "reports/m1-alpaca-provider-rights-review-2026-09-23.json",
+    "summary": "Read Alpaca's Terms and Conditions and a representative NASDAQ Global Subscriber Agreement in full. As a Non-Professional Subscriber, Information is licensed for personal use, which this project fits. The harder question: the NASDAQ agreement's definition of 'Information' extends to derived data that can be 'recalculated or re-engineered' back to the original, or that 'can be used as a substitute for' the original. Bare return percentages and booleans (no anchor price, which this project already redacts) cannot be reverse-engineered to specific quoted prices -- this appears to hold up. The genuinely open question is whether the AGGREGATE of derived labels across the full 100+-event target could eventually look like a substitute data product; that is not resolved by more reading, it is a judgment call, the same shape as the timing and corporate-action gaps but with contractual rather than evidentiary stakes.",
+    "why_this_is_the_highest_stakes_of_the_three_signoffs": "Timing and corporate-action sign-offs are about evidentiary sufficiency for a research claim. This one is about contractual compliance with a third party's terms. Getting it wrong has different consequences than an under-evidenced timestamp.",
+    "awaiting": "An explicit sign-off from the project owner specifically authorizing provider.research_permitted:true for this use, understanding the 'substitute for Information' question is not fully closed, particularly at scale."
   }
 }
