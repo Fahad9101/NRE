@@ -38,5 +38,21 @@
   "what_a_sign_off_would_look_like": {
     "mechanism": "Same as SLSN: explicit sign-off on (1) timing, (2) identity, (3) corporate-action completeness once actually checked, (4) provider rights -- already authorized in general for this pattern of use per the 2026-09-23 sign-off, not re-asked here unless you want to scope it differently.",
     "distinguishing_feature_from_slsn": "This candidate has a known, specific, already-identified confound on the two longest-horizon labels (10/20 session) rather than an open-ended 'could something unrecorded exist' question. Arguably easier to sign off on precisely because the caveat is concrete and bounded rather than irreducible uncertainty."
+  },
+  "signoff_record": {
+    "decided_on": "2026-09-23",
+    "decided_by": "Fahad9101 (project owner)",
+    "exact_words": "sign off on cxt",
+    "scope": "Timing and identity, same as the exact words cover -- corporate-action completeness still needs the real Alpaca check before any label is trusted, and the session-10/20 competing-catalyst caveat is accepted as a known, documented limitation on those two specific labels, not something this sign-off pretends is resolved.",
+    "first_public_verified": true,
+    "historical_identity_verified": true
+  },
+  "computed_required_sessions": {
+    "anchor_session": "2026-02-11",
+    "reaction_session": "2026-02-12",
+    "horizon_20_session": "2026-03-12",
+    "all_21_sessions": ["2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12"],
+    "computed_via": "nre.calendar.Calendar, not hand-counted",
+    "confirms_caveat": "2026-02-25 (the Investor Day) is the 10th entry in this list, exactly matching the session_10/session_20 caveat above."
   }
 }
