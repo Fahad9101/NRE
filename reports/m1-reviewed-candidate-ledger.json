@@ -111,8 +111,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "283c9072726ced92eba78b5ad25c61b9acfd88dfe0c5846ca39411f2ff2a6777",
       "discovery_transport_sha256": "27ff5dae1e7975a5120bbda4fb7f8277d97ecdc982a50cf6e3dbb1270292bd61",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "cxt-2026-02-11",
       "filing_date": "2026-02-11",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -123,7 +123,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/25445/000002544526000005/cxt-20260211.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing and identity signed off by the project owner 2026-09-23 (reports/m1-cxt-signoff-packet-2026-09-23.json). Real prices and the actual dividend (ex-date 2026-02-27) acquired via nre/cxt_acquire.py, run 35828560404 -- state MAPPED, mapped_day1; session_20_close_return correctly left null (CORPORATE_ACTION_IN_WINDOW), all shorter horizons compute. Full record: reports/m1-cxt-complete-event-2026-09-23.json.",
       "source_sha256": "283c9072726ced92eba78b5ad25c61b9acfd88dfe0c5846ca39411f2ff2a6777"
     },
     {
