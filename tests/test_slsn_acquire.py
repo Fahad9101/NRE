@@ -55,22 +55,45 @@ class FetchActionsTests(unittest.TestCase):
 
 
 class BuildBundleTests(unittest.TestCase):
-    def test_full_window_quarantined_on_provider_rights_not_silently_completed(self):
+    def test_full_window_maps_and_computes_real_labels_once_signed_off(self):
+        # provider["research_permitted"] became True on 2026-09-23 after the
+        # project owner's explicit sign-off (reports/m1-slsn-signoff-packet-
+        # 2026-09-22.json); with clean, complete data this must now actually
+        # reach MAPPED, not stay quarantined the way it did before sign-off.
         bars = {s: {"open": 10.0, "high": 10.5, "low": 9.5, "close": 10.2, "volume": 1000}
                 for s in REQUIRED_SESSIONS}
         bundle = build_bundle(bars, actions_count=0)
         results, report = build(bundle)
         self.assertEqual(len(results), 1)
         outcome = results[0]
-        # quality() on the base [anchor, reaction] window runs before any label
-        # is computed; provider["research_permitted"]=False fails it there, so
-        # the whole event quarantines with an empty labels dict -- it must not
-        # silently reach MAPPED just because real, complete data was fetched.
-        self.assertEqual(outcome["state"], "QUARANTINED")
-        self.assertEqual(outcome["reasons"], ["PROVIDER_USE_UNVERIFIED"])
-        self.assertEqual(outcome["labels"], {})
-        self.assertEqual(report["complete_20_session"], 0)
-        self.assertEqual(report["mapped_day1"], 0)
+        self.assertEqual(outcome["state"], "MAPPED")
+        self.assertEqual(outcome["reasons"], [])
+        # Flat fixture prices (every session identical) make the arithmetic
+        # predictable: close return is 0, gap is negative (open < prior close)
+        # so no gap threshold is reached and gap-retention/fill are ineligible.
+        self.assertAlmostEqual(outcome["labels"]["day1_close_return"]["value"], 0.0)
+        self.assertIsNone(outcome["labels"]["day1_close_return"]["reason"])
+        self.assertFalse(outcome["labels"]["gap_ge_3pct"]["value"])
+        self.assertEqual(outcome["labels"]["positive_gap_retained_half"]["reason"],
+                          "NOT_POSITIVE_GAP_GE_0_5PCT")
+        self.assertAlmostEqual(outcome["labels"]["session_20_close_return"]["value"], 0.0)
+        self.assertIsNone(outcome["labels"]["session_20_close_return"]["reason"])
+        self.assertEqual(report["complete_20_session"], 1)
+        self.assertEqual(report["mapped_day1"], 1)
+
+    def test_provider_rights_false_still_quarantines(self):
+        # Regression guard: if research_permitted ever reverts to False (e.g.
+        # a future candidate without its own sign-off), the pipeline must
+        # still correctly refuse to compute labels -- this must never become
+        # unconditionally True in nre.dataset itself.
+        bars = {s: {"open": 10.0, "high": 10.5, "low": 9.5, "close": 10.2, "volume": 1000}
+                for s in REQUIRED_SESSIONS}
+        bundle = build_bundle(bars, actions_count=0)
+        bundle["providers"][0]["research_permitted"] = False
+        results, report = build(bundle)
+        self.assertEqual(results[0]["state"], "QUARANTINED")
+        self.assertEqual(results[0]["reasons"], ["PROVIDER_USE_UNVERIFIED"])
+        self.assertEqual(results[0]["labels"], {})
 
     def test_nonempty_corporate_actions_marks_bars_unverified(self):
         bars = {s: {"open": 10.0, "high": 10.5, "low": 9.5, "close": 10.2, "volume": 1000}
@@ -116,7 +139,7 @@ class MainTests(unittest.TestCase):
             self.assertEqual(main(), 2)
             self.assertIn("MISSING_GITHUB_ACTIONS_SECRETS", output.call_args.args[0])
 
-    def test_full_run_reports_provider_rights_blocker_not_fabricated_success(self):
+    def test_full_run_computes_real_labels_after_signoff(self):
         def responder(url):
             if "corporate-actions" in url:
                 return json.dumps({"corporate_actions": {}, "next_page_token": None}).encode()
@@ -131,7 +154,8 @@ class MainTests(unittest.TestCase):
             printed = json.loads(output.call_args.args[0])
             self.assertEqual(code, 0)
             self.assertTrue(printed["access_check_passed"])
-            self.assertFalse(printed["labels_computed"])
+            self.assertTrue(printed["labels_computed"])
+            self.assertEqual(printed["computed_outcome"]["state"], "MAPPED")
             self.assertEqual(printed["corporate_actions_count"], 0)
             self.assertEqual(printed["missing_sessions"], [])
             # No raw OHLCV numbers anywhere in the printed report, including

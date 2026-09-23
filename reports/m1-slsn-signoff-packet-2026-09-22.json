@@ -56,13 +56,24 @@
       "Alpaca's real corporate-actions REST endpoint (nre/slsn_acquire.py, run 35822680161) returned a well-formed, fully-paginated, genuinely empty response (0 actions) for 2026-03-01 through 2026-04-30 -- this is the properly-verified-pagination version of the check the earlier connector-based attempt could not certify."
     ],
     "still_not_certain": "Two independent sources agreeing is meaningfully stronger than either alone, but this is still not the same as a primary corporate-action registry confirmation. This is the same category of residual, irreducible gap as the timing question -- not something more searching closes, a judgment call about sufficient evidence.",
-    "awaiting": "An explicit sign-off from the project owner on corporate-action completeness specifically, same mechanism as timing: record acceptance of this evidence, understanding what it does and doesn't prove."
+    "signed_off_2026_09_23": true,
+    "signed_off_exact_words": "yes, sign off on both"
   },
   "provider_rights_status": {
     "as_of_2026_09_23": "REVIEWED_IN_FULL_AWAITING_SIGNOFF",
     "full_review": "reports/m1-alpaca-provider-rights-review-2026-09-23.json",
     "summary": "Read Alpaca's Terms and Conditions and a representative NASDAQ Global Subscriber Agreement in full. As a Non-Professional Subscriber, Information is licensed for personal use, which this project fits. The harder question: the NASDAQ agreement's definition of 'Information' extends to derived data that can be 'recalculated or re-engineered' back to the original, or that 'can be used as a substitute for' the original. Bare return percentages and booleans (no anchor price, which this project already redacts) cannot be reverse-engineered to specific quoted prices -- this appears to hold up. The genuinely open question is whether the AGGREGATE of derived labels across the full 100+-event target could eventually look like a substitute data product; that is not resolved by more reading, it is a judgment call, the same shape as the timing and corporate-action gaps but with contractual rather than evidentiary stakes.",
     "why_this_is_the_highest_stakes_of_the_three_signoffs": "Timing and corporate-action sign-offs are about evidentiary sufficiency for a research claim. This one is about contractual compliance with a third party's terms. Getting it wrong has different consequences than an under-evidenced timestamp.",
-    "awaiting": "An explicit sign-off from the project owner specifically authorizing provider.research_permitted:true for this use, understanding the 'substitute for Information' question is not fully closed, particularly at scale."
+    "signed_off_2026_09_23": true,
+    "signed_off_exact_words": "yes, sign off on both",
+    "scope_of_this_signoff": "Authorizes provider.research_permitted:true for this project's specific, current use (redacted-anchor derived ratios/booleans/counts/hashes only, never raw prices). The 'aggregate at scale' question is explicitly carried forward as something to revisit as the cohort grows, not closed by this decision."
+  },
+  "all_three_gates_signed_off": {
+    "date": "2026-09-23",
+    "timing": true,
+    "identity": true,
+    "corporate_actions": true,
+    "provider_rights": true,
+    "note": "This makes SLSN eligible to become the project's first candidate with real, complete computed labels, pending the actual pipeline re-run and independent_timing_spot_checks (still requires a named reviewer entry, per the 2026-09-22 amendment -- one name is now sufficient, but it must still be recorded)."
   }
 }

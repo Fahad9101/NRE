@@ -8,12 +8,15 @@ the existing nre.dataset.build() pipeline. Prints only derived results --
 computed labels, counts, hashes, quality reasons -- never raw OHLCV numbers,
 never credentials. Raw bars exist only transiently in this process's memory.
 
-provider["research_permitted"] is deliberately left False: Alpaca's market
-data terms require reviewing the incorporated NASDAQ OMX Global Subscriber
-Agreement and Market Data Display Services agreement, which has not been
-done. This means quality() will correctly report PROVIDER_USE_UNVERIFIED for
-every label -- an honest, expected result, not a bug. Nothing here should be
-changed to force labels to complete without that review actually happening.
+provider["research_permitted"] was False until the terms were actually
+reviewed in full (reports/m1-alpaca-provider-rights-review-2026-09-23.json)
+and the project owner explicitly signed off on 2026-09-23 ("yes, sign off on
+both"), authorizing this specific, narrow use: redacted-anchor derived
+ratios/booleans/counts/hashes only, never raw prices. See
+reports/m1-slsn-signoff-packet-2026-09-22.json for the full record. The
+"substitute for Information at scale" question from that review is
+explicitly not resolved by this sign-off and should be revisited as the
+cohort grows -- this authorization is not a blanket one for bulk publication.
 """
 import json
 import os
@@ -147,7 +150,7 @@ def build_bundle(bars_by_session, actions_count):
              "available_at": "2025-12-01T17:23:33Z"},
         ],
         "providers": [
-            {"provider_id": "alpaca", "research_permitted": False,
+            {"provider_id": "alpaca", "research_permitted": True,
              "terms_url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
              "feeds": ["sip"], "session_scope": "regular"},
         ],
