@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "purpose": "Second candidate evidence packet, same discipline as reports/m1-slsn-signoff-packet-2026-09-22.json. Decides nothing itself.",
+  "candidate_id": "0000025445-26-000005",
+  "cik": "0000025445",
+  "ticker": "CXT",
+  "company": "Crane NXT, Co.",
+  "source_documents": {
+    "target_8k": "https://www.sec.gov/Archives/edgar/data/25445/000002544526000005/cxt-20260211.htm",
+    "target_8k_items": "2.02, 9.01",
+    "wire_release": "https://www.globenewswire.com/news-release/2026/02/11/3236663/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2025-Results-Raises-Annual-Dividend-by-6.html",
+    "displayed_publication": "February 11, 2026, 16:05 ET (GlobeNewswire)",
+    "publication_interval": "[2026-02-11T16:05:00-05:00, 2026-02-11T16:06:00-05:00) -- minute precision, February is EST",
+    "session_timing_class": "after_hours (16:05 ET is after the 16:00 close)"
+  },
+  "chronology_evidence": [
+    "SEC 8-K history for CIK 25445 (10 most recent filings) shows the prior Item 2.02 filing was 2025-11-05 (the prior quarter's results) -- more than three months earlier, no competing filing in the immediate run-up to 2026-02-11.",
+    "The release itself mentions two prior acquisitions (Antares Vision 'first phase', De La Rue Authentication Solutions) as historical context explaining the quarter's performance -- verified these were separately announced and completed on 2025-12-16 and 2025-05-01 respectively, each via their own dedicated press release. These are recaps of already-public news, not fresh same-day disclosures, so this is NOT a same-day competing-catalyst situation the way the MEI candidate was."
+  ],
+  "known_caveat_not_present_for_slsn": {
+    "what": "An Item 7.01 (Regulation FD) 8-K filed 2026-02-25 discloses that Crane NXT held an Investor Day the same day, posting an updated corporate presentation including '2026 financial outlook and 2028 targets'.",
+    "why_it_matters": "2026-02-25 falls within the 20-session reaction window (roughly session 10 from the 2026-02-11 event). Updated financial guidance is potentially market-moving. Day-1, session-2 and session-5 labels (which mature well before 2026-02-25) are unaffected; session_10_close_return and session_20_close_return should be reported with this competing catalyst explicitly flagged, per the project's own standing rule to mark later competing catalysts rather than silently attribute the full continuation move to the original earnings event.",
+    "not_yet_done": "The Investor Day's actual content (whether the updated guidance was a raise, cut, or reaffirmation) has not been reviewed -- only that it exists and covers forward guidance, which is enough to flag it as a confound without characterizing its direction."
+  },
+  "identity_evidence": [
+    "Section 12(b) table confirms 'Common Stock, par value $1.00', ticker CXT, New York Stock Exchange -- single class, unambiguous.",
+    "Not independently checked against a primary security-master source beyond this filing cover, same limitation as SLSN."
+  ],
+  "corporate_action_note": {
+    "flagged_in_release": "The release itself announces a 6% dividend increase (new quarterly dividend rate). This is a genuine corporate action requiring the same treatment as any dividend: confirm its ex-date, and whether it falls inside the reaction windows being labeled, before setting corporate_actions_verified on any affected price bar.",
+    "not_yet_checked": "Alpaca's real corporate-actions endpoint has not yet been queried for CXT. This must happen before acquisition, same as SLSN's corporate-action check."
+  },
+  "price_window_if_signed_off": {
+    "anchor_session": "2026-02-11",
+    "reaction_session": "2026-02-12",
+    "note": "2026-02-11 16:05 ET is after-hours, so the reaction session is the next trading day, 2026-02-12, not 2026-02-11 itself. 21 daily sessions required including the anchor; exact calendar dates not yet enumerated here, would use the same nre.calendar.Calendar logic already relied on for SLSN."
+  },
+  "what_a_sign_off_would_look_like": {
+    "mechanism": "Same as SLSN: explicit sign-off on (1) timing, (2) identity, (3) corporate-action completeness once actually checked, (4) provider rights -- already authorized in general for this pattern of use per the 2026-09-23 sign-off, not re-asked here unless you want to scope it differently.",
+    "distinguishing_feature_from_slsn": "This candidate has a known, specific, already-identified confound on the two longest-horizon labels (10/20 session) rather than an open-ended 'could something unrecorded exist' question. Arguably easier to sign off on precisely because the caveat is concrete and bounded rather than irreducible uncertainty."
+  }
+}

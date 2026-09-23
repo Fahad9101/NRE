@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "purpose": "Record a chronology finding for candidate 0000065270-26-000005 (Methode Electronics, MEI) so this diligence isn't lost, without pushing it toward acceptance while the confound is unresolved.",
+  "candidate_id": "0000065270-26-000005",
+  "ticker": "MEI",
+  "finding": "Methode Electronics issued two separate GlobeNewswire releases 10 minutes apart on 2026-03-05, both after-hours: 'Methode Electronics Announces Sale of dataMate Business' at 16:20 ET, and 'Methode Electronics, Inc. Reports Fiscal 2026 Third Quarter Financial Results' at 16:30 ET. Both are on the SEC's frozen candidate's target Item 2.02 8-K date; the results filing itself only reports Item 2.02/9.01, but the market received both pieces of news within the same after-hours window.",
+  "why_this_blocks_a_clean_single_catalyst_label": "Unlike Crane NXT's Antares Vision/De La Rue mentions (which recap already-public news from months earlier), the dataMate divestiture was brand-new, market-moving information disclosed 10 minutes before earnings. Day-1 and likely all subsequent reaction labels for this candidate would reflect BOTH the divestiture and the earnings simultaneously, not earnings alone. This is exactly the kind of same-day competing catalyst the project's standing rules require marking rather than silently attributing to one cause.",
+  "disposition": "Not excluded, not included -- left quarantined. This is a methodological question (how should NRE represent/label events with a same-day competing catalyst?) that deserves a general, documented policy the way the multi-class-security and foreign-ordinary-shares questions got one, not an ad hoc decision for this single candidate.",
+  "recommendation": "When a general policy for same-day competing catalysts is designed (likely relevant to Model B's event-clustering requirements described in the master prompt), revisit this candidate. Do not silently drop the dataMate confound if this candidate is picked up again later.",
+  "sources": [
+    "https://www.globenewswire.com/news-release/2026/03/05/3250696/0/en/Methode-Electronics-Announces-Sale-of-dataMate-Business.html",
+    "https://www.globenewswire.com/news-release/2026/03/05/3250709/0/en/Methode-Electronics-Inc-Reports-Fiscal-2026-Third-Quarter-Financial-Results.html"
+  ]
+}
