@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-23",
+  "status": "FIRST_COMPLETE_EVENT_IN_PROJECT_HISTORY",
+  "candidate_id": "0001171843-26-002061",
+  "event_id": "slsn-2026-03-31",
+  "ticker": "SLSN",
+  "cik": "0000883107",
+  "provenance": {
+    "workflow": "slsn-acquire.yml",
+    "run_id": 35824817253,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/35824817253/job/107064148149",
+    "commit_sha": "16984ce28a569122ee1869f73fa804a2c0bc3068",
+    "bundle_sha256": "981ad3c494785ed89f842ed232be883b9ba37bdb599926202a64e931e298ab35",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {"item": "first_public_verified / historical_identity_verified", "date": "2026-09-23", "words": "okay sign off"},
+      {"item": "corporate_actions_verified", "date": "2026-09-23", "words": "yes, sign off on both"},
+      {"item": "provider.research_permitted", "date": "2026-09-23", "words": "yes, sign off on both"}
+    ]
+  },
+  "event_context": {
+    "release": "Solésence Reports Fourth Quarter and Full Year 2025 Financial Results",
+    "publication_interval": {"start_inclusive": "2026-03-31T12:02:00Z", "end_exclusive": "2026-03-31T12:03:00Z"},
+    "release_timing": "premarket",
+    "reaction_session": "2026-03-31",
+    "anchor_session": "2026-03-30"
+  },
+  "computed_labels": {
+    "day1_open_return": 0.0776580379957783,
+    "day1_high_return": 0.0776580379957783,
+    "day1_low_return": -0.11120986557049217,
+    "day1_close_return": 0.05388290189978884,
+    "gap_ge_3pct": true,
+    "gap_ge_5pct": true,
+    "gap_ge_10pct": false,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "positive_gap_filled": true,
+    "positive_gap_retained_half": true,
+    "session_2_close_return": 0.19431174313965105,
+    "session_5_close_return": 0.3442950783246306,
+    "session_10_close_return": 0.22208643484057333,
+    "session_20_close_return": 0.5220531052105322
+  },
+  "plain_english_summary": "SLSN gapped up 7.8% at the open following its Q4/FY2025 earnings release (premarket, 2026-03-31). The high of the day equaled the open (it never traded above its opening print), then fell hard intraday to a low of -11.1% below the prior close -- a full round-trip through and below the pre-earnings close -- before recovering to close the day up 5.4%, retaining more than half of the opening gap. Over the following month it continued higher: +19.4% after 2 sessions, +34.4% after 5, +22.2% after 10, and +52.2% by the 20th reaction session (2026-04-28).",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "complete_20_session": true,
+    "quarantined": false
+  },
+  "what_this_is_not": [
+    "Not a Milestone 1 acceptance -- this is 1 of the required >=100 events across >=25 issuers. The frozen cohort still needs the other 228 quarantined candidates worked through.",
+    "Not yet reflected in a re-run of nre.acceptance.audit_cohort -- that requires the full bundle (with real prices) to be re-available in the same process; it lives only transiently in the GitHub Actions run per the raw-data policy. The ledger and review-file updates in this commit are the durable, safe record; a full audit-cohort re-verification is a reasonable next step, not done in this batch.",
+    "Not a claim of predictive edge -- this is one historical observation, not evidence of a repeatable pattern.",
+    "Not independent (2-person) review -- the 2026-09-22 amendment reduced this to one named reviewer for a solo-operator project; this event has exactly one."
+  ],
+  "raw_data_policy_note": "No raw OHLCV values from this event have ever been committed to this repository. All values above are derived (returns, booleans, ratios) computed by the existing nre.dataset.build() pipeline from bars that existed only transiently in the Actions runner's memory."
+}

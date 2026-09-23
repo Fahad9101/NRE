@@ -1631,8 +1631,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "4a3fd56747046dba3351fccdf5d8c8d5bf1626588f8567b1cdf17af20d89d13c",
       "discovery_transport_sha256": "3c93ad69d391e47ae9828f92724ddd8042262b6c7c550c76fd4b93325206c5c2",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "slsn-2026-03-31",
       "filing_date": "2026-03-31",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -1643,7 +1643,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326002061/f8k_033126.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity, corporate-action completeness and provider rights all explicitly signed off by the project owner 2026-09-23 (reports/m1-slsn-signoff-packet-2026-09-22.json). Real prices acquired and labels computed 2026-09-23 via nre/slsn_acquire.py, run 35824817253 -- state MAPPED, complete_20_session. Full record: reports/m1-slsn-complete-event-2026-09-23.json.",
       "source_sha256": "4a3fd56747046dba3351fccdf5d8c8d5bf1626588f8567b1cdf17af20d89d13c"
     },
     {

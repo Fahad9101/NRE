@@ -1,8 +1,15 @@
 {
+  "_note": "discovery_coverage_evidence, identity_history_evidence and provider_rights_evidence are deliberately left empty: those are cohort-wide attestations covering all 243 frozen candidates, and only one (SLSN) has a completed reaction record so far. Filling these in now would misrepresent the other 228 quarantined candidates as reviewed when they are not. See reports/m1-slsn-signoff-packet-2026-09-22.json for the event-specific sign-offs that DO exist.",
   "discovery_coverage_evidence": "",
   "frozen_membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "identity_history_evidence": "",
-  "prices_first_accessed_at": null,
+  "prices_first_accessed_at": "2026-09-23T00:00:00Z",
   "provider_rights_evidence": "",
-  "spot_checks": []
+  "spot_checks": [
+    {
+      "event_id": "slsn-2026-03-31",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-slsn-signoff-packet-2026-09-22.json; reports/m1-slsn-complete-event-2026-09-23.json; reports/m1-alpaca-provider-rights-review-2026-09-23.json"
+    }
+  ]
 }
