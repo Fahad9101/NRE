@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-23",
+  "candidate_id": "0000025445-26-000005",
+  "event_id": "cxt-2026-02-11",
+  "ticker": "CXT",
+  "provenance": {
+    "workflow": "cxt-acquire.yml",
+    "run_id": 35827234602,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/35827234602/job/107071542025",
+    "commit_sha": "fe3cc3b5c9f054103eedf2cf46439a89ac0f6b1c",
+    "bundle_sha256": "1467986cf150fd28531854cc8cbaacea196543fa3b84c873335776ad0e4e4280"
+  },
+  "raw_output": {
+    "access_check_passed": true,
+    "corporate_actions_count": 1,
+    "missing_sessions": [],
+    "release_timing": "after_hours",
+    "build_report": {
+      "complete_20_session": 0, "events": 1, "mapped_day1": 0, "quarantined": 1,
+      "reasons": {"CORPORATE_ACTION_AUDIT_MISSING": 1}, "synthetic": false, "unique_issuers": 0
+    },
+    "computed_outcome": {
+      "anchor": {"basis": "previous_regular_close", "price_id": "cxt-2026-02-11", "session": "2026-02-11"},
+      "event_id": "cxt-2026-02-11", "features": {}, "labels": {}, "reasons": ["CORPORATE_ACTION_AUDIT_MISSING"]
+    }
+  },
+  "interpretation": {
+    "what_worked": "All 21 required sessions present with real SIP data, zero missing. Timezone/session classification confirmed correct (after_hours, matching the evidence packet's prediction exactly, since 16:05 ET is after the 16:00 close).",
+    "what_this_confirms": "Alpaca's real corporate-actions endpoint found exactly 1 action for CXT in the 2026-02-01 to 2026-03-31 window -- almost certainly the dividend increase the release itself announced. This directly validates the caution flagged in reports/m1-cxt-signoff-packet-2026-09-23.json's corporate_action_note before any data was fetched: 'this is a genuine corporate action requiring the same treatment as any dividend.'",
+    "why_it_quarantined": "nre/cxt_acquire.py conservatively sets corporate_actions_verified:false on every price bar whenever actions_count is nonzero, regardless of whether that specific action's effective date actually falls inside any given label's window. This is a blunt, all-or-nothing check by design -- it correctly refuses to fabricate a clean label rather than guess that a nonzero action count is irrelevant.",
+    "not_a_failure": "This is the pipeline working exactly as intended: real evidence of a corporate action was found and the system refused to produce a label without it being properly resolved, exactly as it should. Compare to SLSN, where the same check passed because Alpaca's real response was genuinely empty (0 actions)."
+  },
+  "next_step_if_pursued": "Fetch the specific corporate action's details (type, ex-date) rather than just its count, and determine whether it actually falls inside the reaction/anchor window or any of the session_N windows. If it's a cash dividend with an ex-date outside the labeled windows, that could be reflected in bundle['corporate_actions'] with the correct effective_date so quality()'s CORPORATE_ACTION_IN_WINDOW check (not the blunter verified-flag) does the real work -- this is a real script change, not yet made, and not something to rush without seeing the actual action first.",
+  "status": "QUARANTINED, not accepted. Candidate 0000025445-26-000005 stays as-is in the ledger (still quarantined) pending this follow-up."
+}
