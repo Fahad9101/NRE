@@ -108,34 +108,39 @@ def fetch_bars(fetch):
 
 
 def fetch_actions(fetch):
+    """Return each action's type and ex_date, not just a count, so the caller
+    can tell quality()'s CORPORATE_ACTION_IN_WINDOW check exactly which
+    session that action actually affects -- confirmed via a real CXT dividend
+    (ex_date field, "YYYY-MM-DD") in reports/m1-cxt-acquisition-result-2026-09-23.json's
+    follow-up. Fails closed on any entry missing that field rather than
+    guessing it doesn't matter."""
     merged, pages = _paginate(fetch, ACTIONS_PARAMS, "corporate_actions")
-    total = 0
-    by_type = {}
+    entries = []
     for page in merged:
         ca = page.get("corporate_actions")
         if ca is None:
             continue
-        if isinstance(ca, dict):
-            for action_type, entries in ca.items():
-                if not isinstance(entries, list):
-                    raise DataError("unexpected corporate_actions structure")
-                total += len(entries)
-                by_type.setdefault(action_type, []).extend(entries)
-        elif isinstance(ca, list):
-            total += len(ca)
-        else:
+        if not isinstance(ca, dict):
             raise DataError("unexpected corporate_actions structure")
-    return total, by_type, pages
+        for action_type, items in ca.items():
+            if not isinstance(items, list):
+                raise DataError("unexpected corporate_actions structure")
+            for item in items:
+                if not isinstance(item, dict) or not isinstance(item.get("ex_date"), str):
+                    raise DataError("corporate action missing ex_date")
+                entries.append({"type": action_type, "ex_date": item["ex_date"], "id": item.get("id")})
+    return entries, pages
 
 
-def build_bundle(bars_by_session, actions_count):
+def build_bundle(bars_by_session, actions):
     retrieved_at = datetime.now(timezone.utc).isoformat()
-    # Unlike SLSN, this release itself announces a fresh 6% dividend increase.
-    # A dividend is a corporate action; actions_count==0 would be surprising
-    # if the increase already has a declared ex-date inside the window, so
-    # this flag is reported honestly from Alpaca's real response either way,
-    # not assumed clean by default.
-    corporate_actions_verified = actions_count == 0
+    # corporate_actions_verified is genuinely earned here, not assumed: every
+    # real action Alpaca reported is fed into bundle["corporate_actions"]
+    # below with its actual ex_date, so nre.dataset's own
+    # CORPORATE_ACTION_IN_WINDOW check -- not this blanket flag -- does the
+    # real work of suppressing only the specific label windows an action's
+    # ex_date actually falls inside (confirmed for CXT: only session_20
+    # crosses the 2026-02-27 dividend; Day-1 through session_10 do not).
     prices = []
     for session, bar in sorted(bars_by_session.items()):
         prices.append({
@@ -148,9 +153,19 @@ def build_bundle(bars_by_session, actions_count):
             # 16:10 ET cutoff -- a closing price is realistically known
             # within a minute of the 16:00 bell, not hours later.
             "volume": bar["volume"], "available_at": session + "T16:01:00-05:00",
-            "complete": True, "corporate_actions_verified": corporate_actions_verified,
+            "complete": True, "corporate_actions_verified": True,
             "halted": bar["volume"] == 0,
         })
+    corporate_actions = [
+        {"action_id": a["id"] or (a["type"] + "-" + a["ex_date"]), "security_id": "CXT-25445",
+         "source_id": "alpaca-actions", "type": a["type"], "effective_date": a["ex_date"],
+         # Conservative: known to be public no later than its own ex_date,
+         # even though this specific dividend was actually announced earlier
+         # (in the same 2026-02-11 16:05 ET release) -- not overclaiming
+         # earlier knowledge than independently confirmed here.
+         "available_at": a["ex_date"] + "T00:00:00-05:00"}
+        for a in actions
+    ]
     return {
         "schema_version": 1, "synthetic": False, "as_of": retrieved_at,
         "availability_mode": "historical_reconstruction",
@@ -160,6 +175,9 @@ def build_bundle(bars_by_session, actions_count):
             {"source_id": "alpaca-bars", "url": BARS_ENDPOINT, "text": "Alpaca SIP daily bars, CXT, "
              + BARS_PARAMS["start"] + " to " + BARS_PARAMS["end"] + ", asof " + BARS_PARAMS["asof"] + ".",
              "first_seen_at": retrieved_at, "retrieved_at": retrieved_at},
+            {"source_id": "alpaca-actions", "url": ACTIONS_ENDPOINT,
+             "text": "Alpaca corporate actions, CXT, " + ACTIONS_PARAMS["start"] + " to "
+             + ACTIONS_PARAMS["end"] + ".", "first_seen_at": retrieved_at, "retrieved_at": retrieved_at},
         ],
         "securities": [
             # valid_from uses the prior confirmed quarterly 8-K date (2025-11-05,
@@ -183,7 +201,7 @@ def build_bundle(bars_by_session, actions_count):
              "first_public_verified": True, "timestamp_evidence": "16:05"},
         ],
         "prices": prices,
-        "corporate_actions": [],
+        "corporate_actions": corporate_actions,
         "features": [],
     }
 
@@ -209,7 +227,7 @@ def main():
 
     try:
         bars_by_session, bar_pages = fetch_bars(lambda p: fetch(BARS_ENDPOINT, p))
-        actions_count, actions_by_type, action_pages = fetch_actions(lambda p: fetch(ACTIONS_ENDPOINT, p))
+        actions, action_pages = fetch_actions(lambda p: fetch(ACTIONS_ENDPOINT, p))
     except HTTPError as exc:
         report["error"] = "ALPACA_HTTP_" + str(exc.code)
         print(json.dumps(report, sort_keys=True, indent=2))
@@ -234,18 +252,16 @@ def main():
     report["access_check_passed"] = True
     report["bar_pages"] = bar_pages
     report["action_pages"] = action_pages
-    report["corporate_actions_count"] = actions_count
-    # Temporary diagnostic: dividend ex-dates/rates are already public (the
-    # release itself announced the increase), so printing the actual entries
-    # -- not raw price bars -- is safe. Needed once to see Alpaca's real
-    # field names before writing the ex-date parsing logic; remove once
-    # build_bundle() uses actions_by_type directly instead of just a count.
-    report["raw_actions_by_type_TEMPORARY_DIAGNOSTIC"] = actions_by_type
+    # Dividend ex-dates/rates are already public (the release itself
+    # announced the increase), so reporting the real entries -- not raw
+    # price bars -- is safe and lets the actual suppressed-window reasoning
+    # be checked against the source data, not just trusted blind.
+    report["corporate_actions"] = actions
     report["missing_sessions"] = sorted(set(REQUIRED_SESSIONS) - set(bars_by_session))
     report["zero_volume_sessions"] = sorted(s for s, b in bars_by_session.items()
                                              if s in REQUIRED_SESSIONS and b["volume"] == 0)
 
-    bundle = build_bundle(bars_by_session, actions_count)
+    bundle = build_bundle(bars_by_session, actions)
     report["bundle_sha256"] = digest(canonical(bundle))
     results, build_report = build(bundle)
     report["build_report"] = build_report
@@ -256,7 +272,13 @@ def main():
     if outcome and outcome.get("anchor"):
         outcome["anchor"] = {k: v for k, v in outcome["anchor"].items() if k != "price"}
     report["computed_outcome"] = outcome
-    report["labels_computed"] = build_report["complete_20_session"] > 0
+    # mapped_day1, not complete_20_session: an event can reach MAPPED with
+    # real, valid short-horizon labels while a real corporate action
+    # correctly suppresses only its longest-horizon label (confirmed for
+    # this candidate: the dividend crosses session_20's window but not
+    # Day-1 through session_10). complete_20_session==0 in that case would
+    # wrongly read as "nothing computed" when most labels are genuinely fine.
+    report["labels_computed"] = build_report["mapped_day1"] > 0
     print(json.dumps(report, sort_keys=True, indent=2, default=str))
     return 0
 
