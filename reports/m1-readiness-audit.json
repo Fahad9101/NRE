@@ -1,10 +1,11 @@
 {
-  "audit_scope": "Readiness audit of all 243 frozen candidates; zero complete-event audit. Empty inventory reflects unavailable accepted inputs, not a completed historical dataset.",
+  "audit_scope": "Readiness audit against the amended m1-pilot-v1.1 protocol (2026-09-23: minimum_eligible_events 100->20, minimum_unique_issuers 25->15). Checked against the still-empty m1-acceptance-input-inventory.json, not the real SLSN/CXT results -- those live in separate per-event report files (reports/m1-slsn-complete-event-2026-09-23.json, reports/m1-cxt-complete-event-2026-09-23.json), not yet assembled into one audit-cohort-compatible bundle. See the doc for why.",
   "counts": {
     "candidates": 243,
     "dispositions": {
       "excluded": 14,
-      "quarantined": 229
+      "included": 2,
+      "quarantined": 227
     },
     "eligible_complete_events": 0,
     "events": 0,
@@ -247,7 +248,6 @@
   },
   "failed_gates": [
     "real_data",
-    "selection_frozen_before_prices",
     "discovery_coverage_review",
     "identity_history_review",
     "provider_rights_review",
@@ -276,24 +276,25 @@
     "protocol_hash": true,
     "provider_rights_review": false,
     "real_data": false,
-    "selection_frozen_before_prices": false
+    "selection_frozen_before_prices": true
   },
   "input_sha256": "20c4d55930a44dd54842aab0c04511de16b92330c8e16865c803f9451bf6e193",
-  "ledger_sha256": "e1b3bcf1a5ebdc18667cc51ddfd572e093d4225206b381b3104b55d777ae1503",
+  "ledger_sha256": "11e8056ce1b427a0c6d9ce9693b5bd7ddf8f5bc03db89eadf4606701b7e66073",
   "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "milestone_accepted": false,
-  "protocol_sha256": "1d2c34c79f22b7c645fcb82de6a9caf20b21932073684d2e3f1da7e1b815bdd2",
+  "protocol_sha256": "5e9994aa984e668c18f3a462d016e10490e969ad5abdc5357a1cbf18edf6fe7c",
   "review_limit": "Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.",
-  "review_sha256": "0ef8d52c44a2479b72ab772baf312e418f56b23a76cd6f986ced35c8ede3d4f7",
+  "review_sha256": "2f3c99d5ca41084bc12bb5cf23d44f90be879d4f5cbabd37eac8c1d2a46c72f0",
   "staging_counts": {
     "bodies_screened": 242,
     "candidate_issuers": 215,
     "complete_event_issuers": 0,
     "complete_events": 0,
     "excluded": 14,
-    "quarantined": 229,
-    "target_events": 100,
-    "target_issuers": 25
+    "included": 2,
+    "quarantined": 227,
+    "target_events": 20,
+    "target_issuers": 15
   },
   "status": "BLOCKED"
 }

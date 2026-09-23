@@ -1,14 +1,15 @@
 {
-  "protocol_version": "m1-pilot-v1",
+  "protocol_version": "m1-pilot-v1.1-amended-2026-09-23",
   "event_window_start": "2026-01-05",
   "event_window_end": "2026-03-31",
   "price_window_end": "2026-04-30",
   "discovery": "All Item 2.02 8-K candidates in the supplied SEC submission snapshots; record every exclusion",
   "universe": "Contemporaneously evidenced US common shares on NASDAQ, NYSE or NYSE American",
-  "minimum_eligible_events": 100,
-  "minimum_unique_issuers": 25,
+  "minimum_eligible_events": 20,
+  "minimum_unique_issuers": 15,
   "selection": "Enumerate before reading returns; no performance-based sampling",
   "availability_mode": "historical_reconstruction",
   "scope": "Daily regular-session previous-close-anchored labels only; intraday events quarantined",
-  "acceptance": "Engineering coverage target, not evidence of predictive power"
+  "acceptance": "Engineering coverage target, not evidence of predictive power",
+  "amendment_2026_09_23": "minimum_eligible_events reduced from 100 to 20, minimum_unique_issuers from 25 to 15, by explicit project-owner decision. Original targets were engineering coverage goals set before the real per-event cost (solo manual chronology review) was known; the underlying purpose -- proving the pipeline handles real-world diversity, not statistical power -- doesn't require literally 100. Issuer count deliberately weighted higher relative to events (15/20 = 75%, vs the original 25/100 = 25%) to prioritize cross-sectional diversity over repeat observations of the same company. See docs/M1-READINESS-ASSESSMENT.md 'Target amendment' section for the full record. Frozen candidate membership, event window and universe scope are all unchanged by this amendment."
 }

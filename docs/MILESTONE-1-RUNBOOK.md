@@ -6,7 +6,7 @@ Minute-precision publication timestamps are supported as intervals: encode the m
 
 The engineering foundation is implemented. **Historical-data acceptance is not complete.** Tests use explicitly synthetic sources and prices, not trading evidence. No model, ranking, reaction fingerprint, analogue engine, investment score, brokerage integration or downstream modification is included.
 
-The pilot protocol is frozen in `config/pilot.json`: releases 2026-01-05 through 2026-03-31, price coverage through 2026-04-30, at least 100 eligible events and 25 issuers. It must be used when constructing the reviewed input cohort; the general-purpose builder does not automatically enforce this particular research sample window. Candidate selection must precede inspection of returns. These are engineering sample targets, not statistical evidence of an edge.
+The pilot protocol is frozen in `config/pilot.json`: releases 2026-01-05 through 2026-03-31, price coverage through 2026-04-30, at least 20 eligible events and 15 issuers. It must be used when constructing the reviewed input cohort; the general-purpose builder does not automatically enforce this particular research sample window. Candidate selection must precede inspection of returns. These are engineering sample targets, not statistical evidence of an edge. The event/issuer minimums originally read 100/25; reduced to 20/15 by explicit, documented project-owner authorization on 2026-09-23 -- see the "Target amendment" section of `M1-READINESS-ASSESSMENT.md`. Frozen candidate membership, event window and universe scope are unchanged by that amendment.
 
 ## Run without Docker or third-party Python dependencies
 
@@ -96,7 +96,7 @@ The command returns exit code 2 when blocked and lists all failed gates. Even if
 
 Automated validation covers time/session rules, schema constraints, source checksums, duplicate economic clusters, corporate-action and price quality, missing horizons, explicit unknowns, future-information exclusion, database integrity, snapshot tampering and deterministic replay. CI runs offline tests on Python 3.12 and 3.13 plus the synthetic CLI build.
 
-Before historical acceptance, obtain permitted archived SEC/issuer documents and raw regular-session prices, enumerate the frozen-window cohort without selecting on outcomes, reconcile every candidate into mapped/excluded/quarantined states, review security history and source timing, meet the 100-event/25-issuer target, and complete two independent spot checks for each timing class used. Store signed-off review evidence and coverage/exclusion counts. The program intentionally reports `NOT_EVALUATED` for a real input bundle; passing schema checks is not an automatic acceptance certificate.
+Before historical acceptance, obtain permitted archived SEC/issuer documents and raw regular-session prices, enumerate the frozen-window cohort without selecting on outcomes, reconcile every candidate into mapped/excluded/quarantined states, review security history and source timing, meet the 20-event/15-issuer target, and complete two independent spot checks for each timing class used. Store signed-off review evidence and coverage/exclusion counts. The program intentionally reports `NOT_EVALUATED` for a real input bundle; passing schema checks is not an automatic acceptance certificate.
 
 Live evidence and unresolved blockers are in `reports/milestone-1-validation.json`. Milestone 1 remains open while the real cohort is unverified. Milestone 2 requires separate approval after acceptance.
 
