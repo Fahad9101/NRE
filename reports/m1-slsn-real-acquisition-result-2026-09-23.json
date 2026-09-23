@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-23",
+  "candidate_id": "0001171843-26-002061",
+  "ticker": "SLSN",
+  "provenance": {
+    "workflow": "slsn-acquire.yml",
+    "run_id": 35822680161,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/35822680161/job/107057702858",
+    "commit_sha": "5854bf1ad148326cdd98b9abdcadae601b29c593",
+    "trigger": "push (auto-fired via the workflow's own path filter)",
+    "retrieved_by": "project owner (Fahad9101), pasted from their authenticated GitHub session after anonymous log viewing stopped working"
+  },
+  "raw_output": {
+    "access_check_passed": true,
+    "action_pages": [{"records": null, "sha256": "fea17f17380b7eb24c760478974fddd2b3525612ac6076eb0b5bc5ab078d3b08"}],
+    "bar_pages": [{"records": null, "sha256": "9d3a14d86e77929b51a6e488252aee25c42fa7fdae9839b1eb617e33e239f94e"}],
+    "build_report": {
+      "complete_20_session": 0, "events": 1, "historical_acceptance": "NOT_EVALUATED",
+      "mapped_day1": 0, "quarantined": 1, "reasons": {"PROVIDER_USE_UNVERIFIED": 1},
+      "synthetic": false, "unique_issuers": 0
+    },
+    "bundle_sha256": "8e824516a904bb1d6dee02ee4acfcff5ad1ac6aee4cee03d03d4ac93e9135a5d",
+    "computed_outcome": {
+      "anchor": {"basis": "previous_regular_close", "price_id": "slsn-2026-03-30", "session": "2026-03-30"},
+      "event_id": "slsn-2026-03-31", "features": {}, "labels": {},
+      "publication_interval": {"end_exclusive": "2026-03-31T12:03:00Z", "start_inclusive": "2026-03-31T12:02:00Z"},
+      "reaction_session": "2026-03-31", "reasons": ["PROVIDER_USE_UNVERIFIED"],
+      "release_timing": "premarket", "security_id": "SLSN-883107", "state": "QUARANTINED",
+      "synthetic": false, "target_version": "previous-regular-close-v1"
+    },
+    "corporate_actions_count": 0, "labels_computed": false,
+    "missing_sessions": [], "zero_volume_sessions": []
+  },
+  "interpretation": {
+    "pipeline_validated_end_to_end_for_the_first_time": "This is the first time in the project's history that real Alpaca data has flowed through nre.dataset.build() for an actual security and event, rather than the synthetic fixture or a bounded out-of-cohort diagnostic (IBM). The mechanics all worked correctly on the first real attempt: pagination, bundle construction, calendar classification, quality gating.",
+    "timezone_and_session_classification_confirmed_correct": "publication_interval (12:02-12:03 UTC) correctly converts 08:02 ET to UTC accounting for EDT, and release_timing:'premarket' / reaction_session:'2026-03-31' match every prior manual calculation across earlier sessions' evidence files.",
+    "price_coverage_confirmed_clean": "All 21 required daily sessions (2026-03-30 anchor through the 2026-04-28 twentieth reaction session) were present with real SIP data; zero missing, zero zero-volume. This had never been directly confirmed for SLSN before -- only inferred from the unrelated IBM exploratory probe.",
+    "corporate_actions_now_has_two_independent_clean_signals": "(1) Alpaca's real corporate-actions endpoint returned a well-formed, fully-paginated, empty response (0 actions) for 2026-03-01 through 2026-04-30. (2) SEC filing history for CIK 883107 shows no Item 3.03/5.03 filings in or around the window (checked 2026-09-22, see docs/M1-READINESS-ASSESSMENT.md). These are two different sources agreeing, which is meaningfully stronger than either alone.",
+    "the_one_remaining_blocker": "PROVIDER_USE_UNVERIFIED, exactly as designed. nre/slsn_acquire.py deliberately left provider.research_permitted=False because Alpaca's terms (incorporating the NASDAQ OMX Global Subscriber Agreement and a Market Data Display Services agreement) have not been reviewed in full. This is the single remaining gate on this specific event's labels -- not a data problem, not an identity problem, not a chronology problem, not a corporate-action problem. All of those are now cleanly resolved for this one event.",
+    "not_yet_true": "labels_computed is false. No day1_close_return, no gap thresholds, no session_N_close_return values exist yet for this event. accepted_for_labels-equivalent status remains false until provider rights are resolved."
+  },
+  "next_decision": "Corporate-action completeness is now well-evidenced enough to present as its own explicit sign-off item, the same way timing was -- not something to fold in silently. Provider rights requires actually reading Alpaca's Terms and Conditions PDF and the incorporated NASDAQ agreement in full, which has not been attempted yet this session."
+}

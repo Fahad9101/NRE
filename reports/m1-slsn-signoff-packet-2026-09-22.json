@@ -48,8 +48,14 @@
     "historical_identity_verified": true
   },
   "corporate_actions_status": {
-    "as_of_this_signoff": "UNVERIFIED",
-    "why_this_is_separate_from_the_timing_signoff": "The pipeline (nre/dataset.py event_outcome -> quality()) requires corporate_actions_verified:true on every price bar in a label's window, or that bar makes the label MISSING/quarantined via CORPORATE_ACTION_AUDIT_MISSING. Existing evidence (reports/m1-slsn-completion-check.json) explicitly says an empty Alpaca corporate-actions response does not certify coverage. This has not yet been re-checked properly and is not something the timing sign-off above covers.",
-    "next_step": "Re-run the corporate-actions check via the now-working direct Alpaca REST path (confirmed pagination, not the earlier connector-only attempt) for the full 2026-03-01 to 2026-04-30 window, plus check SEC filings for CIK 883107 for any Item 3.03/5.03/8.01 corporate-action filings in that window. If both come back clean, present that as its own explicit item for sign-off, the same way timing was."
+    "as_of_2026_09_22": "UNVERIFIED",
+    "as_of_2026_09_23": "TWO_INDEPENDENT_CLEAN_SIGNALS_AWAITING_SIGNOFF",
+    "why_this_is_separate_from_the_timing_signoff": "The pipeline (nre/dataset.py event_outcome -> quality()) requires corporate_actions_verified:true on every price bar in a label's window, or that bar makes the label MISSING/quarantined via CORPORATE_ACTION_AUDIT_MISSING. Existing evidence (reports/m1-slsn-completion-check.json) explicitly says an empty Alpaca corporate-actions response does not certify coverage. The 2026-09-22 timing sign-off deliberately did not cover this.",
+    "evidence_gathered_2026_09_23": [
+      "SEC filing history for CIK 883107 (all 8-Ks back through mid-2025, plus the one 10-K/A in the window) shows no Item 3.03 or 5.03 filing -- no split, dividend or rights-modification disclosure anywhere near the event.",
+      "Alpaca's real corporate-actions REST endpoint (nre/slsn_acquire.py, run 35822680161) returned a well-formed, fully-paginated, genuinely empty response (0 actions) for 2026-03-01 through 2026-04-30 -- this is the properly-verified-pagination version of the check the earlier connector-based attempt could not certify."
+    ],
+    "still_not_certain": "Two independent sources agreeing is meaningfully stronger than either alone, but this is still not the same as a primary corporate-action registry confirmation. This is the same category of residual, irreducible gap as the timing question -- not something more searching closes, a judgment call about sufficient evidence.",
+    "awaiting": "An explicit sign-off from the project owner on corporate-action completeness specifically, same mechanism as timing: record acceptance of this evidence, understanding what it does and doesn't prove."
   }
 }
