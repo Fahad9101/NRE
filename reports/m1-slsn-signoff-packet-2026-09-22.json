@@ -38,5 +38,18 @@
     "mechanism": "Add an entry to a review bundle's spot_checks: {\"event_id\": \"<event id once constructed>\", \"reviewers\": [\"Fahad9101\"], \"evidence\": \"<pointer to this packet and the underlying source documents above>\"}. This satisfies the single-reviewer gate as amended 2026-09-22.",
     "what_it_means": "You are personally accepting that the evidence above is sufficient, understanding the specific residual gap described (an unrecorded, unindexed live disclosure cannot be ruled out by search). This is not a claim that certainty was reached -- it is a documented, accountable judgment call, exactly as the amendment describes.",
     "not_yet_done": "No spot_checks entry has been created. No event has been constructed for SLSN in an actual reviewed bundle. No prices have been acquired. All of that is downstream of an actual decision here."
+  },
+  "signoff_record": {
+    "decided_on": "2026-09-23",
+    "decided_by": "Fahad9101 (project owner)",
+    "exact_words": "okay sign off",
+    "scope_of_this_decision": "Timing (first_public_verified) and identity (historical_identity_verified) only, as presented immediately before this decision. This does NOT cover corporate-action completeness for the price window, which is a separate, not-yet-presented question -- see corporate_actions_status below.",
+    "first_public_verified": true,
+    "historical_identity_verified": true
+  },
+  "corporate_actions_status": {
+    "as_of_this_signoff": "UNVERIFIED",
+    "why_this_is_separate_from_the_timing_signoff": "The pipeline (nre/dataset.py event_outcome -> quality()) requires corporate_actions_verified:true on every price bar in a label's window, or that bar makes the label MISSING/quarantined via CORPORATE_ACTION_AUDIT_MISSING. Existing evidence (reports/m1-slsn-completion-check.json) explicitly says an empty Alpaca corporate-actions response does not certify coverage. This has not yet been re-checked properly and is not something the timing sign-off above covers.",
+    "next_step": "Re-run the corporate-actions check via the now-working direct Alpaca REST path (confirmed pagination, not the earlier connector-only attempt) for the full 2026-03-01 to 2026-04-30 window, plus check SEC filings for CIK 883107 for any Item 3.03/5.03/8.01 corporate-action filings in that window. If both come back clean, present that as its own explicit item for sign-off, the same way timing was."
   }
 }
