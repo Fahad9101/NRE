@@ -12,6 +12,7 @@ on:
       - 'reports/m1-acceptance-review.json'
 permissions:
   contents: read
+  actions: read
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -21,8 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Download the frozen SEC discovery archive from the original freeze run
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: nre-m1-historical-sec-freeze-audit
+          run-id: 35532616764
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: frozen-archive
       - name: Refetch accepted events' prices and run the formal cohort audit
         env:
           APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
           APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
-        run: python -m nre.consolidated_audit
+        run: python -m nre.consolidated_audit --archive-dir frozen-archive

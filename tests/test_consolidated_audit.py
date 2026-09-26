@@ -1,5 +1,6 @@
 import copy
 import json
+import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -9,7 +10,7 @@ from nre import consolidated_audit as ca
 from nre import event_acquire as ea
 from nre.acceptance import audit_cohort
 from nre.calendar import Calendar
-from nre.core import DataError
+from nre.core import DataError, digest
 from nre.dataset import build
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -122,6 +123,63 @@ class AuditTests(unittest.TestCase):
         body = json.loads(line[len("::notice title=NRE cohort audit::"):])
         self.assertEqual(body["counts"]["events"], len(ACCEPTED))
         self.assertIn("candidate_accounting", body["failed_gates"] + body["passed_gates"])
+
+
+class ArchiveTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.raw = self.root / "nre-sec-freeze" / "raw"
+        self.raw.mkdir(parents=True)
+
+    def observation(self, name, payload, sha=None, url="https://data.sec.gov/submissions/CIK0000000001.json"):
+        (self.raw / (name + ".payload")).write_bytes(payload)
+        meta = {"payload_file": name + ".payload", "raw_file": name + ".raw", "sha256": sha or digest(payload),
+                "size": len(payload), "url": url, "retrieved_at": "2026-09-20T12:00:00Z"}
+        (self.raw / (name + ".json")).write_text(json.dumps(meta), encoding="utf-8")
+
+    def test_missing_directory_means_no_sources(self):
+        self.assertEqual(ca.archive_sources(self.root / "absent"), [])
+
+    def test_payloads_become_verified_sources(self):
+        self.observation("a", b'{"filings": [1]}', url="https://data.sec.gov/submissions/CIK0000000001.json")
+        self.observation("b", b'{"filings": [2]}', url="https://data.sec.gov/submissions/CIK0000000002.json")
+        sources = ca.archive_sources(self.root)
+        self.assertEqual(len(sources), 2)
+        self.assertEqual(len({s["source_id"] for s in sources}), 2)
+        for source in sources:
+            self.assertEqual(digest(source["text"].encode("utf-8")), source["sha256"])
+            self.assertTrue(source["url"].startswith("https://"))
+
+    def test_tampered_payload_rejected(self):
+        self.observation("a", b'{"filings": [1]}', sha="0" * 64)
+        with self.assertRaises(DataError):
+            ca.archive_sources(self.root)
+
+    def test_identical_payloads_collapse_to_one_source(self):
+        self.observation("a", b'{"same": true}')
+        self.observation("b", b'{"same": true}')
+        self.assertEqual(len(ca.archive_sources(self.root)), 1)
+
+    def test_files_that_are_not_observation_records_are_ignored(self):
+        (self.raw / "noise.json").write_text(json.dumps({"unrelated": 1}), encoding="utf-8")
+        (self.raw / "broken.json").write_text("{not json", encoding="utf-8")
+        self.assertEqual(ca.archive_sources(self.root), [])
+
+    def test_archived_payloads_satisfy_the_source_hash_condition(self):
+        self.observation("a", b'{"filings": [1]}')
+        bundle = ca.assemble(SPEC, ACCEPTED[:2], fetch, CAL, NOW, ca.archive_sources(self.root))
+        available = {digest(s["text"].encode("utf-8")) for s in bundle["sources"]}
+        self.assertIn(digest(b'{"filings": [1]}'), available)
+        build(bundle)
+
+    def test_main_reports_the_archive_size(self):
+        self.observation("a", b'{"filings": [1]}')
+        with patch.dict("os.environ", ENV, clear=True), patch("nre.consolidated_audit.build_opener", return_value=_Opener()),              patch("builtins.print") as output:
+            code = ca.main(["--archive-dir", str(self.root)])
+        self.assertEqual(code, 0)
+        self.assertEqual(json.loads(output.call_args_list[0].args[0])["archive_observations"], 1)
 
 
 class MainTests(unittest.TestCase):
