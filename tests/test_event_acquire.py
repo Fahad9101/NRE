@@ -577,6 +577,34 @@ class MainTests(unittest.TestCase):
         for raw in RAW_PRICES:
             self.assertNotIn(raw, line)
 
+    def test_annotations_split_under_the_github_limit(self):
+        events = {"e%02d" % i: {"labels": {"day1_close_return": 0.123456789012345 + i}, "note": "y" * 300}
+                  for i in range(40)}
+        lines = ea._annotations("notice", True, events)
+        prefix = "::notice title=NRE event acquisition::"
+        self.assertGreater(len(lines), 1)
+        merged = {}
+        for number, line in enumerate(lines, 1):
+            self.assertTrue(line.startswith(prefix))
+            self.assertLess(len(line), 4000)
+            self.assertNotIn("\n", line)
+            body = json.loads(line[len(prefix):])
+            self.assertEqual(body["part"], "%d/%d" % (number, len(lines)))
+            merged.update(body["events"])
+        self.assertEqual(merged, events)
+
+    def test_annotation_escapes_percent_signs(self):
+        line = ea._annotations("notice", True, {"a": {"note": "100%"}})[0]
+        self.assertIn("100%25", line)
+
+    def test_matched_pins_drop_label_values_from_the_annotation(self):
+        report = {"labels_match_recorded": True, "labels_sha256": "abc",
+                  "computed_outcome": {"state": "MAPPED", "labels": {"a": {"value": 1.5, "reason": None}}}}
+        compact = ea._compact(report)
+        self.assertEqual((compact["labels"], compact["labels_sha256"]), ({}, "abc"))
+        report["labels_match_recorded"] = None
+        self.assertEqual(ea._compact(report)["labels"], {"a": 1.5})
+
     def test_failed_run_annotates_an_error(self):
         _, printed = self.run_main(["--event", SLSN], env=dict(ENV, GITHUB_ACTIONS="true"))
         self.assertTrue(printed[-1].startswith("::error title=NRE event acquisition::"))

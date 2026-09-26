@@ -342,7 +342,7 @@ def run_event(event, provider, fetch, calendar, retrieved_at=None):
 
 def _compact(report):
     outcome = report.get("computed_outcome") or {}
-    labels = outcome.get("labels", {})
+    labels = {} if report.get("labels_match_recorded") else outcome.get("labels", {})
     return {"state": outcome.get("state"), "reasons": outcome.get("reasons"), "error": report.get("error"),
             "release_timing": outcome.get("release_timing"), "reaction_session": outcome.get("reaction_session"),
             "missing_sessions": report.get("missing_sessions"), "zero_volume_sessions": report.get("zero_volume_sessions"),
@@ -352,10 +352,25 @@ def _compact(report):
             "label_reasons": {k: v["reason"] for k, v in sorted(labels.items()) if v["reason"]}}
 
 
-def _annotation(level, payload):
-    message = json.dumps(payload, sort_keys=True, separators=(",", ":"))
-    message = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
-    return "::" + level + " title=NRE event acquisition::" + message
+def _annotations(level, all_ok, events, budget=3300):
+    """GitHub truncates an annotation message near 4,096 characters, so split the summary into parts."""
+    parts, current, size = [], {}, 0
+    for key, value in events.items():
+        piece = len(json.dumps({key: value}, separators=(",", ":")))
+        if current and size + piece > budget:
+            parts.append(current)
+            current, size = {}, 0
+        current[key] = value
+        size += piece
+    if current or not parts:
+        parts.append(current)
+    lines = []
+    for number, part in enumerate(parts, 1):
+        message = json.dumps({"all_ok": all_ok, "part": "%d/%d" % (number, len(parts)), "events": part},
+                             sort_keys=True, separators=(",", ":"))
+        message = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        lines.append("::" + level + " title=NRE event acquisition::" + message)
+    return lines
 
 
 def main(argv=None):
@@ -402,8 +417,9 @@ def main(argv=None):
     out["all_ok"] = all("error" not in report for report in out["events"].values())
     code = finish(0 if out["all_ok"] else 2)
     if os.getenv("GITHUB_ACTIONS") == "true":
-        print(_annotation("notice" if out["all_ok"] else "error",
-                          {"all_ok": out["all_ok"], "events": {k: _compact(v) for k, v in out["events"].items()}}))
+        for line in _annotations("notice" if out["all_ok"] else "error", out["all_ok"],
+                                 {k: _compact(v) for k, v in out["events"].items()}):
+            print(line)
     return code
 
 
