@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-09-26",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "declare Milestone 1 accepted",
+  "context": "Made in reply to the assistant's statement that, if the owner wanted to declare Milestone 1 accepted, they should say so in their own words and it would be recorded verbatim.",
+  "status": "MILESTONE_1_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 1 -- Historical Event Dataset (NRE 1.0)",
+  "acceptance_criterion": "\"Historical events can reproducibly be mapped to subsequent market reactions.\" (docs/NRE-1.0-MASTER-PROMPT.md, Milestone 1)",
+  "governing_protocol": {
+    "file": "config/pilot.json",
+    "protocol_version": "m1-pilot-v1.1-amended-2026-09-23",
+    "protocol_sha256": "5e9994aa984e668c18f3a462d016e10490e969ad5abdc5357a1cbf18edf6fe7c",
+    "frozen_membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815"
+  },
+  "state_declared": {
+    "repository_head_at_declaration": "d3c117a4c92e9245dc9392223fa1710a9da584bd",
+    "audited_commit": "4e197add412fe4dd837260714b374119947b67cc",
+    "audit_inputs_unchanged_since_the_audit": true,
+    "how_verified": "At declaration time the acceptance code, event-acquisition code, protocol, spec, ledger and review file were diffed against the audited commit (no change), and the protocol, ledger, review and membership hashes were recomputed and matched those recorded by the final audit.",
+    "audit_input_hashes": {
+      "input_sha256": "834aa899fffe1b4122dcf23cbf0c211b97a6e81048a7da3c0076a8a0f47e3858",
+      "ledger_sha256": "46fb23a5161f2de73a5f59ced72b85553516059f1ff9427fd15648e2d59b0229",
+      "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
+      "protocol_sha256": "5e9994aa984e668c18f3a462d016e10490e969ad5abdc5357a1cbf18edf6fe7c",
+      "review_sha256": "59e1b973e0cee55edf270093181638eab39b789bcc745ca59f961ac9e97e695d"
+    }
+  },
+  "basis": {
+    "final_audit": {
+      "record": "reports/m1-consolidated-audit-final-2026-09-26.json",
+      "workflow_run": 36259510427,
+      "commit": "4e197add412fe4dd837260714b374119947b67cc",
+      "all_16_gates_pass": true,
+      "status": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED",
+      "counts": {
+        "candidates": 243,
+        "dispositions": {
+          "excluded": 15,
+          "included": 23,
+          "quarantined": 205
+        },
+        "eligible_complete_events": 22,
+        "events": 23,
+        "unique_issuers": 22
+      },
+      "spot_checked_events_by_timing": {
+        "after_hours": 15,
+        "premarket": 7
+      },
+      "first_audit_record": "reports/m1-consolidated-audit-2026-09-26.json (12 of 16 gates; the four failures were owner decisions, since made)"
+    },
+    "reproducibility": [
+      "Each accepted event's derived labels are pinned by digest in config/m1-events.json and were reproduced exactly from freshly retrieved live data: SLSN and CXT, recorded on 2026-09-23, matched their pins on 2026-09-26 (event-acquire run 36253583546).",
+      "All 23 accepted events matched their pins at event-acquire run 36258488231 (commit 49f5854) and the workflow succeeded again after a refactor at run 36258734416 (commit 5bd3d54); the workflow exits non-zero on any mismatch.",
+      "The consolidated audit recomputed every label from refetched prices with nre.dataset.build() (runs 36258734571, 36258926318 and 36259510427).",
+      "CI passes on Python 3.12 and 3.13 at the declared commit (run 36260051574)."
+    ],
+    "owner_decisions_relied_on": [
+      {
+        "date": "2026-09-22",
+        "decision": "One named reviewer per event",
+        "words": "i take responsibility from here. no other reviewer. resume work.",
+        "record": "docs/M1-READINESS-ASSESSMENT.md, Review-standard amendment"
+      },
+      {
+        "date": "2026-09-23",
+        "decision": "Target reduced from 100 events / 25 issuers to 20 events / 15 issuers",
+        "words": "chose \"Revisit the 100-event target explicitly\" and \"Yes, 20 events / 15 issuers (Recommended)\"",
+        "record": "config/pilot.json (amendment_2026_09_23); docs/M1-READINESS-ASSESSMENT.md, Target amendment"
+      },
+      {
+        "date": "2026-09-23",
+        "decision": "SLSN and CXT sign-offs; standing provider-rights authorization for derived-only use",
+        "words": "\"okay sign off\"; \"yes, sign off on both\"; \"sign off on cxt\"; \"resolve the dividend\"",
+        "record": "reports/m1-slsn-signoff-packet-2026-09-22.json; reports/m1-cxt-signoff-packet-2026-09-23.json"
+      },
+      {
+        "date": "2026-09-26",
+        "decision": "Second batch (eight events)",
+        "words": "sign off on all eight",
+        "record": "reports/m1-signoff-packet-batch-2026-09-26.json"
+      },
+      {
+        "date": "2026-09-26",
+        "decision": "Third batch (thirteen events) and explicit provider-rights confirmation at about twenty-three events",
+        "words": "sign off on all thirteen, provider rights fine",
+        "record": "reports/m1-signoff-packet-batch-3-2026-09-26.json"
+      },
+      {
+        "date": "2026-09-26",
+        "decision": "Candidate accounting accepts quarantined with a reason; the three cohort-wide attestations",
+        "words": "I agree with \"amend accounting\" and \"attest all three\"",
+        "record": "reports/m1-acceptance-review.json (attestation_record); docs/M1-READINESS-ASSESSMENT.md"
+      }
+    ]
+  },
+  "accepted_scope": "The 23 recorded events (22 eligible complete events across 22 issuers, plus CXT, included but not eligible) drawn from the frozen cohort of 243 candidates across 215 issuers, under the amended pilot protocol: daily regular-session, previous-close-anchored reaction labels (day-1 open/high/low/close, gap thresholds, gap fill and retention, closes at sessions 2, 5, 10 and 20) for premarket and after-hours earnings releases from 2026-01-05 to 2026-03-31, computed from Alpaca SIP raw daily bars with explicit corporate-action handling and published only as derived values.",
+  "accepted_with_these_stated_limits": [
+    "The chronology gap that search cannot close: the absence of an earlier public disclosure is evidenced by wire pages and SEC filing history, never proved.",
+    "One named reviewer, the project owner, under the 2026-09-22 amendment; there was no independent second review.",
+    "Label-level caveats travel with their events: ACHV, COLL, OKTA and REAL have in-window 8-Ks affecting later horizons; LNSR follows a merger termination two weeks earlier; CXT is included but not eligible because a dividend suppresses its session-20 label.",
+    "The provider-rights authorization covers derived ratios, booleans, counts and hashes only, confirmed explicitly for about twenty-three recorded events; no raw prices are committed or printed.",
+    "The amended target (20 events, 15 issuers) and the amended accounting rule are the owner's decisions; 205 candidates were never reviewed and no claim is made about them.",
+    "The frozen sample is the 300 issuers processed under the pinned rule, not the market.",
+    "The engine's own stated limit stands: \"Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.\""
+  ],
+  "not_authorized_or_claimed": [
+    "Milestone 2, or any later milestone, is not authorized; it requires the project owner's separate explicit approval.",
+    "No predictive claim, validated edge or trading use: the target was an engineering coverage goal, not evidence of predictive power.",
+    "The frozen BOE, SOE and IEE rules are untouched.",
+    "The engine flag is not set: nre.acceptance.audit_cohort reports milestone_accepted false by design, because acceptance is a human declaration outside the code. This file is that declaration."
+  ],
+  "note_for_milestone_2_planning": "Each of the 22 issuers with an eligible event contributes exactly one event, so the accepted dataset supports no company-level histories or event-type distributions. That is a property of the accepted dataset, not a limitation of the acceptance.",
+  "housekeeping": "The SEC freeze artifact used by the source-hash gate expires on 2026-10-20; the final audit record preserves this result, and the owner holds NRE-M1-SEC-Freeze-Audit.zip."
+}

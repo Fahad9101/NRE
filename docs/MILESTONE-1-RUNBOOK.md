@@ -4,7 +4,7 @@ Minute-precision publication timestamps are supported as intervals: encode the m
 
 ## Current state
 
-The engineering foundation is implemented. **Historical-data acceptance has not been declared.** As of 2026-09-26 the formal audit's 16 structural gates all pass over 22 eligible events across 22 issuers (`reports/m1-consolidated-audit-final-2026-09-26.json`); the declaration is the project owner's, made outside the code. Tests use explicitly synthetic sources and prices, not trading evidence. No model, ranking, reaction fingerprint, analogue engine, investment score, brokerage integration or downstream modification is included.
+The engineering foundation is implemented. **Milestone 1 was declared accepted by the project owner on 2026-09-26** (`reports/m1-acceptance-declaration-2026-09-26.json`). The formal audit's 16 structural gates all pass over 22 eligible events across 22 issuers (`reports/m1-consolidated-audit-final-2026-09-26.json`); the engine's `milestone_accepted` flag stays false by design because acceptance is a human declaration outside the code. Milestone 2 has not been authorized. Tests use explicitly synthetic sources and prices, not trading evidence. No model, ranking, reaction fingerprint, analogue engine, investment score, brokerage integration or downstream modification is included.
 
 The pilot protocol is frozen in `config/pilot.json`: releases 2026-01-05 through 2026-03-31, price coverage through 2026-04-30, at least 20 eligible events and 15 issuers. It must be used when constructing the reviewed input cohort; the general-purpose builder does not automatically enforce this particular research sample window. Candidate selection must precede inspection of returns. These are engineering sample targets, not statistical evidence of an edge. The event/issuer minimums originally read 100/25; reduced to 20/15 by explicit, documented project-owner authorization on 2026-09-23 -- see the "Target amendment" section of `M1-READINESS-ASSESSMENT.md`. Frozen candidate membership, event window and universe scope are unchanged by that amendment.
 
@@ -112,7 +112,7 @@ Automated validation covers time/session rules, schema constraints, source check
 
 Before historical acceptance, obtain permitted archived SEC/issuer documents and raw regular-session prices, enumerate the frozen-window cohort without selecting on outcomes, reconcile every candidate into mapped/excluded/quarantined states, review security history and source timing, meet the 20-event/15-issuer target, and complete two independent spot checks for each timing class used. Store signed-off review evidence and coverage/exclusion counts. The program intentionally reports `NOT_EVALUATED` for a real input bundle; passing schema checks is not an automatic acceptance certificate.
 
-Live evidence and unresolved blockers are in `reports/milestone-1-validation.json`. Milestone 1 remains open while the real cohort is unverified. Milestone 2 requires separate approval after acceptance.
+`reports/milestone-1-validation.json` is the earlier, dated validation evidence; the accepted state is recorded in `reports/m1-acceptance-declaration-2026-09-26.json` and the audit record it cites. Milestone 2 requires the project owner's separate approval, which has not been given.
 
 ## Source references
 

@@ -1,6 +1,6 @@
 # Milestone 1 readiness assessment — September 21, 2026
 
-**Current status (2026-09-26): all 16 structural audit gates pass over 22 eligible events across 22 issuers, against the amended target of 20 events across 15 issuers. Milestone 1 has not been declared accepted; that declaration is the project owner's, made outside the code. The sections below are chronological and later sections supersede earlier totals; the last section records the final audit.**
+**Current status (2026-09-26): Milestone 1 was declared accepted by the project owner on 2026-09-26 (`reports/m1-acceptance-declaration-2026-09-26.json`), on the strength of a formal audit in which all 16 structural gates pass over 22 eligible events across 22 issuers, against the amended target of 20 events across 15 issuers. Milestone 2 has not been authorized. The sections below are chronological and later sections supersede earlier totals; the last two sections record the final audit and the declaration.**
 
 *Original status, 2026-09-21: BLOCKED. Milestone 1 remains open. The historical reaction dataset and the audit of 100 complete events across 25 issuers are not complete.*
 
@@ -268,3 +268,11 @@ What the engine says about itself still governs how far to trust that: "Hashes a
 - The amended target and accounting rule, both owner decisions recorded above, and 205 candidates that were never reviewed and are not claimed to have been.
 
 Nothing in the audit or in this document declares the milestone accepted. The SEC archive artifact expires on 2026-10-20, so re-running the audit after that date needs the owner's `NRE-M1-SEC-Freeze-Audit.zip` supplied another way; the final record preserves this result. Milestone 2 remains unauthorized and separately requires the owner's approval.
+
+## Milestone 1 declared accepted — September 26
+
+The project owner declared Milestone 1 accepted on 2026-09-26, in their own words: "declare Milestone 1 accepted". The declaration, its basis and its stated limits are recorded in `reports/m1-acceptance-declaration-2026-09-26.json`.
+
+Before recording it, the state being declared was checked against the state the final audit examined. The acceptance and acquisition code, the protocol, the event spec, the ledger and the review file are unchanged since the audited commit `4e197ad`, and the protocol, ledger, review and membership hashes recomputed at declaration time match those in the audit record. The declaration rests on the criterion in the master prompt ("Historical events can reproducibly be mapped to subsequent market reactions"): the accepted events' derived labels are pinned by digest and were reproduced exactly from freshly retrieved live data, and all 16 structural gates pass over 22 eligible events across 22 issuers under the amended protocol.
+
+It is accepted with the limits stated in the previous section and in the declaration: the chronology gap that search cannot close, one named reviewer, the per-event caveats, derived-only provider rights, the owner's amended target and accounting rule, and 205 candidates never reviewed. It does not authorize Milestone 2 or any later milestone, claims no predictive edge, leaves the frozen BOE, SOE and IEE rules untouched, and does not set the engine's `milestone_accepted` flag, which stays false by design because acceptance is a human declaration outside the code. Milestone 2 requires the owner's separate explicit approval. One planning fact for that decision: each of the 22 issuers contributes exactly one event, so the accepted dataset supports no company-level histories.
