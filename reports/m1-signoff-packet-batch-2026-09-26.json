@@ -453,5 +453,24 @@
     "Not Milestone 1 acceptance.",
     "Not evidence of any predictive edge.",
     "Only events with a non-null session-20 label count toward the 20-event target; none of these eight has a corporate action in its window, so all could count if their data completes."
-  ]
+  ],
+  "signoff_record": {
+    "decided_on": "2026-09-26",
+    "decided_by": "Fahad9101 (project owner)",
+    "exact_words": "sign off on all eight",
+    "as_received": "sign off on all eight\"",
+    "scope": "first_public_time, historical_identity and corporate_actions for the eight candidates in this packet (ACHV, COLL, LOVE, ASPN, LNSR, ASMB, TECX, REKR), as offered in the message that requested it.",
+    "provider_rights_at_scale": "The reply did not separately address whether the 2026-09-23 provider-rights authorization still holds at ten recorded events. The batch therefore proceeds under that standing authorization (redacted-anchor derived ratios, booleans, counts and hashes only, never raw prices). This is not a fresh explicit re-confirmation, and the aggregate-at-scale question remains open.",
+    "candidates_signed_off": [
+      "achv-2026-03-24",
+      "coll-2026-02-26",
+      "love-2026-03-26",
+      "aspn-2026-02-25",
+      "lnsr-2026-03-31",
+      "asmb-2026-03-19",
+      "tecx-2026-02-26",
+      "rekr-2026-03-31"
+    ]
+  },
+  "all_items_signed_off_except": "provider_rights_at_the_new_scale (proceeding under the standing 2026-09-23 authorization; see signoff_record)"
 }

@@ -13,7 +13,8 @@
       "reviewer": "Fahad9101",
       "date": "2026-09-23",
       "record": "reports/m1-slsn-signoff-packet-2026-09-22.json",
-      "scope": "Authorizes provider.research_permitted:true for this project's specific, current use (redacted-anchor derived ratios/booleans/counts/hashes only, never raw prices). The 'aggregate at scale' question is explicitly carried forward as something to revisit as the cohort grows, not closed by this decision."
+      "scope": "Authorizes provider.research_permitted:true for this project's specific, current use (redacted-anchor derived ratios/booleans/counts/hashes only, never raw prices). The 'aggregate at scale' question is explicitly carried forward as something to revisit as the cohort grows, not closed by this decision.",
+      "scale_review_2026_09_26": "Put to the project owner with the second batch (recorded events growing from 2 to up to 10). The reply 'sign off on all eight' proceeded under this standing authorization without separately addressing the scale question; the aggregate-at-scale question remains open."
     }
   },
   "events": [
@@ -161,7 +162,27 @@
       "published_at": "2026-03-24T07:00:00-04:00",
       "cutoff": "2026-03-24T07:05:00-04:00",
       "precision": "minute",
-      "timestamp_evidence": "07:00"
+      "timestamp_evidence": "07:00",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "coll-2026-02-26",
@@ -188,7 +209,27 @@
       "published_at": "2026-02-26T07:30:00-05:00",
       "cutoff": "2026-02-26T07:35:00-05:00",
       "precision": "minute",
-      "timestamp_evidence": "07:30"
+      "timestamp_evidence": "07:30",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "love-2026-03-26",
@@ -215,7 +256,27 @@
       "published_at": "2026-03-26T07:00:00-04:00",
       "cutoff": "2026-03-26T07:05:00-04:00",
       "precision": "minute",
-      "timestamp_evidence": "07:00"
+      "timestamp_evidence": "07:00",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "aspn-2026-02-25",
@@ -242,7 +303,27 @@
       "published_at": "2026-02-25T06:30:00-05:00",
       "cutoff": "2026-02-25T06:35:00-05:00",
       "precision": "minute",
-      "timestamp_evidence": "06:30"
+      "timestamp_evidence": "06:30",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "lnsr-2026-03-31",
@@ -269,7 +350,27 @@
       "published_at": "2026-03-31T06:00:00-04:00",
       "cutoff": "2026-03-31T06:05:00-04:00",
       "precision": "minute",
-      "timestamp_evidence": "06:00"
+      "timestamp_evidence": "06:00",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "asmb-2026-03-19",
@@ -296,7 +397,27 @@
       "published_at": "2026-03-19T16:05:00-04:00",
       "cutoff": "2026-03-19T16:10:00-04:00",
       "precision": "minute",
-      "timestamp_evidence": "16:05"
+      "timestamp_evidence": "16:05",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "tecx-2026-02-26",
@@ -323,7 +444,27 @@
       "published_at": "2026-02-26T16:17:00-05:00",
       "cutoff": "2026-02-26T16:22:00-05:00",
       "precision": "minute",
-      "timestamp_evidence": "16:17"
+      "timestamp_evidence": "16:17",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     },
     {
       "event_id": "rekr-2026-03-31",
@@ -350,7 +491,27 @@
       "published_at": "2026-03-31T16:05:00-04:00",
       "cutoff": "2026-03-31T16:10:00-04:00",
       "precision": "minute",
-      "timestamp_evidence": "16:05"
+      "timestamp_evidence": "16:05",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on the chronology and identity evidence in the batch packet, accepting the residual gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-26",
+          "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
+          "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
+        }
+      }
     }
   ]
 }
