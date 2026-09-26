@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Events with a recorded human review, run by nre/event_acquire.py. An attestation is added only after the project owner signs off on that item; an unattested item keeps the event quarantined (reasons reported, no labels computed). recorded_result pins the digest of an accepted run's derived labels so a later run detects upstream data drift. Raw prices are never stored here.",
+  "description": "Events with a recorded human review, run by nre/event_acquire.py. An attestation is added only after the project owner signs off on that item; an unattested item keeps the event quarantined (reasons reported, no labels computed). An entry with no attestations is a pending dry run: it reports data availability and any corporate actions found, never a label. recorded_result pins the digest of an accepted run's derived labels so a later run detects upstream data drift. Raw prices are never stored here.",
   "provider": {
     "provider_id": "alpaca",
     "research_permitted": true,
@@ -135,6 +135,249 @@
         "labels_sha256": "5f01390fd6bd0b1388deb04587a63ed19ffb1deb74930d20fd8aba1dacde3d12",
         "recorded_in": "reports/m1-cxt-complete-event-2026-09-23.json"
       }
+    },
+    {
+      "event_id": "achv-2026-03-24",
+      "cluster_id": "achv-q4fy25",
+      "candidate_id": "0001193125-26-120687",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-03-24",
+      "security": {
+        "security_id": "ACHV-949858",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-06T00:00:00-05:00",
+        "available_at": "2025-11-06T12:10:25Z"
+      },
+      "source": {
+        "source_id": "achv-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/24/3261062/0/en/Achieve-Life-Sciences-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Provides-Business-Updates.html",
+        "text": "GlobeNewswire release, 'Achieve Life Sciences Reports Fourth Quarter and Full Year 2025 Financial Results and Provides Business Updates', displayed dateline March 24, 2026 07:00 ET. https://www.globenewswire.com/news-release/2026/03/24/3261062/0/en/Achieve-Life-Sciences-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Provides-Business-Updates.html",
+        "first_seen_at": "2026-03-24T07:01:00-04:00"
+      },
+      "published_at": "2026-03-24T07:00:00-04:00",
+      "cutoff": "2026-03-24T07:05:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00"
+    },
+    {
+      "event_id": "coll-2026-02-26",
+      "cluster_id": "coll-q4fy25",
+      "candidate_id": "0001628280-26-011990",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-02-26",
+      "security": {
+        "security_id": "COLL-1267565",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-06T00:00:00-05:00",
+        "available_at": "2025-11-06T12:33:12Z"
+      },
+      "source": {
+        "source_id": "coll-wire",
+        "url": "https://www.globenewswire.com/en/news-release/2026/02/26/3245467/34897/en/Collegium-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results.html",
+        "text": "GlobeNewswire release, 'Collegium Reports Fourth Quarter and Full-Year 2025 Financial Results', displayed dateline February 26, 2026 07:30 ET. https://www.globenewswire.com/en/news-release/2026/02/26/3245467/34897/en/Collegium-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results.html",
+        "first_seen_at": "2026-02-26T07:31:00-05:00"
+      },
+      "published_at": "2026-02-26T07:30:00-05:00",
+      "cutoff": "2026-02-26T07:35:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30"
+    },
+    {
+      "event_id": "love-2026-03-26",
+      "cluster_id": "love-q4fy26",
+      "candidate_id": "0001628280-26-021185",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-03-26",
+      "security": {
+        "security_id": "LOVE-1701758",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-12-11T00:00:00-05:00",
+        "available_at": "2025-12-11T12:00:59Z"
+      },
+      "source": {
+        "source_id": "love-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/26/3262858/0/en/The-Lovesac-Company-Reports-Fourth-Quarter-and-Fiscal-2026-Financial-Results.html",
+        "text": "GlobeNewswire release, 'The Lovesac Company Reports Fourth Quarter and Fiscal 2026 Financial Results', displayed dateline March 26, 2026 07:00 ET. https://www.globenewswire.com/news-release/2026/03/26/3262858/0/en/The-Lovesac-Company-Reports-Fourth-Quarter-and-Fiscal-2026-Financial-Results.html",
+        "first_seen_at": "2026-03-26T07:01:00-04:00"
+      },
+      "published_at": "2026-03-26T07:00:00-04:00",
+      "cutoff": "2026-03-26T07:05:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00"
+    },
+    {
+      "event_id": "aspn-2026-02-25",
+      "cluster_id": "aspn-q4fy25",
+      "candidate_id": "0001171843-26-001072",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-02-25",
+      "security": {
+        "security_id": "ASPN-1145986",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-06T00:00:00-05:00",
+        "available_at": "2025-11-06T11:30:31Z"
+      },
+      "source": {
+        "source_id": "aspn-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/25/3244410/0/en/Aspen-Aerogels-Inc-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "GlobeNewswire release, 'Aspen Aerogels, Inc. Reports Fourth Quarter and Full Year 2025 Financial Results and Recent Business Highlights', displayed dateline February 25, 2026 06:30 ET. https://www.globenewswire.com/news-release/2026/02/25/3244410/0/en/Aspen-Aerogels-Inc-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2026-02-25T06:31:00-05:00"
+      },
+      "published_at": "2026-02-25T06:30:00-05:00",
+      "cutoff": "2026-02-25T06:35:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:30"
+    },
+    {
+      "event_id": "lnsr-2026-03-31",
+      "cluster_id": "lnsr-q4fy25",
+      "candidate_id": "0001193125-26-133153",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-03-31",
+      "security": {
+        "security_id": "LNSR-1320350",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-06T00:00:00-05:00",
+        "available_at": "2025-11-06T12:15:28Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/31/3265246/0/en/lensar-reports-fourth-quarter-and-full-year-2025-results-and-provides-business-update.html",
+        "text": "GlobeNewswire release, 'LENSAR® Reports Fourth Quarter and Full Year 2025 Results and Provides Business Update', displayed dateline March 31, 2026 06:00 ET. https://www.globenewswire.com/news-release/2026/03/31/3265246/0/en/lensar-reports-fourth-quarter-and-full-year-2025-results-and-provides-business-update.html",
+        "first_seen_at": "2026-03-31T06:01:00-04:00"
+      },
+      "published_at": "2026-03-31T06:00:00-04:00",
+      "cutoff": "2026-03-31T06:05:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:00"
+    },
+    {
+      "event_id": "asmb-2026-03-19",
+      "cluster_id": "asmb-fy25",
+      "candidate_id": "0001193125-26-115980",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-03-20",
+      "security": {
+        "security_id": "ASMB-1426800",
+        "company_id": "0001426800",
+        "cik": "0001426800",
+        "ticker": "ASMB",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-10T00:00:00-05:00",
+        "available_at": "2025-11-10T21:10:29Z"
+      },
+      "source": {
+        "source_id": "asmb-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/19/3259423/16259/en/Assembly-Biosciences-Reports-Year-End-2025-Financial-Results-and-Recent-Highlights.html",
+        "text": "GlobeNewswire release, 'Assembly Biosciences Reports Year-End 2025 Financial Results and Recent Highlights', displayed dateline March 19, 2026 16:05 ET. https://www.globenewswire.com/news-release/2026/03/19/3259423/16259/en/Assembly-Biosciences-Reports-Year-End-2025-Financial-Results-and-Recent-Highlights.html",
+        "first_seen_at": "2026-03-19T16:06:00-04:00"
+      },
+      "published_at": "2026-03-19T16:05:00-04:00",
+      "cutoff": "2026-03-19T16:10:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05"
+    },
+    {
+      "event_id": "tecx-2026-02-26",
+      "cluster_id": "tecx-q4fy25",
+      "candidate_id": "0001193125-26-076843",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-02-27",
+      "security": {
+        "security_id": "TECX-1681087",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-06T00:00:00-05:00",
+        "available_at": "2025-11-06T21:15:50Z"
+      },
+      "source": {
+        "source_id": "tecx-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/26/3246161/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "GlobeNewswire release, 'Tectonic Therapeutic Announces Fourth Quarter and Full Year 2025 Financial Results and Recent Business Highlights', displayed dateline February 26, 2026 16:17 ET. https://www.globenewswire.com/news-release/2026/02/26/3246161/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2026-02-26T16:18:00-05:00"
+      },
+      "published_at": "2026-02-26T16:17:00-05:00",
+      "cutoff": "2026-02-26T16:22:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:17"
+    },
+    {
+      "event_id": "rekr-2026-03-31",
+      "cluster_id": "rekr-fy25",
+      "candidate_id": "0001437749-26-010672",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-01",
+      "security": {
+        "security_id": "REKR-1697851",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-13T00:00:00-05:00",
+        "available_at": "2025-11-13T21:25:20Z"
+      },
+      "source": {
+        "source_id": "rekr-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/31/3266027/0/en/Rekor-Systems-Reports-Full-Year-2025-Results.html",
+        "text": "GlobeNewswire release, 'Rekor Systems Reports Full Year 2025 Results', displayed dateline March 31, 2026 16:05 ET. https://www.globenewswire.com/news-release/2026/03/31/3266027/0/en/Rekor-Systems-Reports-Full-Year-2025-Results.html",
+        "first_seen_at": "2026-03-31T16:06:00-04:00"
+      },
+      "published_at": "2026-03-31T16:05:00-04:00",
+      "cutoff": "2026-03-31T16:10:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05"
+    },
+    {
+      "event_id": "tlf-2026-02-24",
+      "cluster_id": "tlf-q4fy25",
+      "candidate_id": "0001140361-26-006558",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-02-25",
+      "security": {
+        "security_id": "TLF-909724",
+        "company_id": "0000909724",
+        "cik": "0000909724",
+        "ticker": "TLF",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-10T00:00:00-05:00",
+        "available_at": "2025-11-10T21:31:21Z"
+      },
+      "source": {
+        "source_id": "tlf-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/24/3244051/0/en/Tandy-Leather-Factory-Reports-Fourth-Quarter-and-Full-Year-2025-Results.html",
+        "text": "GlobeNewswire release, 'Tandy Leather Factory Reports Fourth Quarter and Full Year 2025 Results', displayed dateline February 24, 2026 16:15 ET. https://www.globenewswire.com/news-release/2026/02/24/3244051/0/en/Tandy-Leather-Factory-Reports-Fourth-Quarter-and-Full-Year-2025-Results.html",
+        "first_seen_at": "2026-02-24T16:16:00-05:00"
+      },
+      "published_at": "2026-02-24T16:15:00-05:00",
+      "cutoff": "2026-02-24T16:20:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15"
     }
   ]
 }

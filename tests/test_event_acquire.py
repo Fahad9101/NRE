@@ -80,22 +80,41 @@ class SpecTests(unittest.TestCase):
 
     def test_shipped_events(self):
         got = {e["event_id"]: (e["expected_release_timing"], e["expected_reaction_session"]) for e in SPEC["events"]}
-        self.assertEqual(got, {SLSN: ("premarket", "2026-03-31"), CXT: ("after_hours", "2026-02-12")})
+        self.assertEqual(got[SLSN], ("premarket", "2026-03-31"))
+        self.assertEqual(got[CXT], ("after_hours", "2026-02-12"))
 
-    def test_spec_agrees_with_ledger_and_review(self):
+    def test_recorded_events_agree_with_ledger_and_review(self):
         ledger = json.loads((ROOT / "reports/m1-reviewed-candidate-ledger.json").read_text(encoding="utf-8"))
         included = {c["event_id"]: c["candidate_id"] for c in ledger["candidates"] if c["disposition"] == "included"}
-        self.assertEqual(included, {e["event_id"]: e["candidate_id"] for e in SPEC["events"]})
+        recorded = {e["event_id"]: e["candidate_id"] for e in SPEC["events"] if "recorded_result" in e}
+        self.assertEqual(included, recorded)
+        for event in SPEC["events"]:
+            if "recorded_result" in event:
+                self.assertEqual(set(event["attestations"]), ea.ATTESTATIONS, event["event_id"])
         review = json.loads((ROOT / "reports/m1-acceptance-review.json").read_text(encoding="utf-8"))
         self.assertLessEqual({s["event_id"] for s in review["spot_checks"]}, set(included))
 
     def test_recorded_pins_match_the_committed_records(self):
-        reasons = {SLSN: {}, CXT: {"session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"}}
+        legacy_reasons = {SLSN: {}, CXT: {"session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"}}
         for event in SPEC["events"]:
+            if "recorded_result" not in event:
+                continue
             record = json.loads((ROOT / event["recorded_result"]["recorded_in"]).read_text(encoding="utf-8"))
-            labels = {name: {"value": value, "reason": reasons[event["event_id"]].get(name)}
+            reasons = record.get("label_reasons", legacy_reasons.get(event["event_id"], {}))
+            labels = {name: {"value": value, "reason": reasons.get(name)}
                       for name, value in record["computed_labels"].items()}
-            self.assertEqual(digest(canonical(labels)), event["recorded_result"]["labels_sha256"])
+            self.assertEqual(digest(canonical(labels)), event["recorded_result"]["labels_sha256"], event["event_id"])
+
+    def test_pending_events_never_produce_labels(self):
+        for event in SPEC["events"]:
+            if set(event.get("attestations", {})) == ea.ATTESTATIONS:
+                continue
+            rows = [bar(s) for s in ea.event_window(event, CAL)["required_sessions"]]
+            report = ea.run_event(copy.deepcopy(event), SPEC["provider"],
+                                  fetcher(event["security"]["ticker"], rows), CAL, NOW)
+            outcome = report["computed_outcome"]
+            self.assertEqual((outcome["state"], outcome["labels"]), ("QUARANTINED", {}), event["event_id"])
+            self.assertNotIn("labels_sha256", report)
 
     def test_offset_must_match_new_york(self):
         self.rejects(lambda s: s["events"][0].update(published_at="2026-03-31T08:02:00-05:00"),
@@ -455,6 +474,7 @@ class MainTests(unittest.TestCase):
 
     def unpinned_spec(self):
         spec = spec_copy()
+        spec["events"] = [e for e in spec["events"] if e["event_id"] in (SLSN, CXT)]
         for event in spec["events"]:
             event.pop("recorded_result")
         path = Path(self.tmp.name) / "spec.json"
