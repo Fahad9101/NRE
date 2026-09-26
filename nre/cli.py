@@ -41,6 +41,19 @@ def parser():
     f.add_argument("--protocol", required=True)
     f.add_argument("--output", required=True)
     f.add_argument("--frame")
+    fg = sub.add_parser("fingerprints")
+    fg.add_argument("--as-of")
+    fg.add_argument("--event")
+    fg.add_argument("--descriptor")
+    an = sub.add_parser("analogues")
+    an.add_argument("--event")
+    an.add_argument("--descriptor")
+    an.add_argument("--label", action="append")
+    an.add_argument("--all-targets", action="store_true")
+    for step in (fg, an):
+        step.add_argument("--output", required=True)
+        for option in ("--spec", "--sector-map", "--policy", "--root"):
+            step.add_argument(option)
     return p
 
 
@@ -76,6 +89,12 @@ def main(argv=None):
             save_json(args.output, result)
             print(canonical(result).decode())
             return 2 if result["failed_gates"] else 0
+        elif args.command == "fingerprints":
+            from .fingerprints import fingerprints_command
+            print(canonical(fingerprints_command(args)).decode())
+        elif args.command == "analogues":
+            from .analogues import analogues_command
+            print(canonical(analogues_command(args)).decode())
         elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)
             print(canonical({"snapshot": str(path), "report": report}).decode())

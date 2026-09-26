@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "description": "SIC classification of the issuers of the accepted Milestone 1 events. It is used only to group those events in Milestone 2 fingerprints and analogues, and carries no price or return data.",
+  "taxonomy": "SEC Standard Industrial Classification (SIC) code from each issuer's EDGAR submissions record.",
+  "point_in_time": false,
+  "limitation": "Each code is the assignment on the record when it was read on 2026-09-26, not the one in force at the event's date, and SIC is coarse. It is not GICS. payload_sha256 identifies the exact response that was read; the response changes whenever the issuer files, so it cannot be re-fetched identically later.",
+  "retrieval": {
+    "method": "Read with the built-in browser from data.sec.gov on 2026-09-26, hashing the exact bytes of each response with SHA-256.",
+    "source_pattern": "https://data.sec.gov/submissions/CIK<cik>.json",
+    "retrieved_between_utc": [
+      "2026-09-26T19:00:35Z",
+      "2026-09-26T19:00:48Z"
+    ],
+    "frozen_archive_not_used": "The cohort freeze's archived SEC payloads were not used because that archive is not on this machine: it exists only as a GitHub Actions artifact until 2026-10-20 and as the owner's zip. The confirmed scope names a fresh retrieval with recorded hashes as the alternative."
+  },
+  "issuers": {
+    "0000016058": {
+      "ticker": "CACI",
+      "company_name": "CACI INTERNATIONAL INC /DE/",
+      "sic": "7373",
+      "sic_description": "Services-Computer Integrated Systems Design",
+      "source_url": "https://data.sec.gov/submissions/CIK0000016058.json",
+      "retrieved_at": "2026-09-26T19:00:42Z",
+      "payload_bytes": 159725,
+      "payload_sha256": "fb62d7d802ef4889b8ef43619d65017be539c249055d04311f7d31fd2b8e1f4b"
+    },
+    "0000025445": {
+      "ticker": "CXT",
+      "company_name": "Crane NXT, Co.",
+      "sic": "3490",
+      "sic_description": "Miscellaneous Fabricated Metal Products",
+      "source_url": "https://data.sec.gov/submissions/CIK0000025445.json",
+      "retrieved_at": "2026-09-26T19:00:35Z",
+      "payload_bytes": 160743,
+      "payload_sha256": "aa1aba07d9f6a9b3abd3eab9842527942e3bf99877a7243b04c38afbd8456ab6"
+    },
+    "0000797721": {
+      "ticker": "VSAT",
+      "company_name": "VIASAT INC",
+      "sic": "4899",
+      "sic_description": "Communications Services, NEC",
+      "source_url": "https://data.sec.gov/submissions/CIK0000797721.json",
+      "retrieved_at": "2026-09-26T19:00:43Z",
+      "payload_bytes": 155966,
+      "payload_sha256": "e1f1b69d1c4114a2f7c39fa51f7b84ae631d0651f2d1dbdd0b3ac842412bc993"
+    },
+    "0000821483": {
+      "ticker": "PARR",
+      "company_name": "PAR PACIFIC HOLDINGS, INC.",
+      "sic": "1311",
+      "sic_description": "Crude Petroleum & Natural Gas",
+      "source_url": "https://data.sec.gov/submissions/CIK0000821483.json",
+      "retrieved_at": "2026-09-26T19:00:44Z",
+      "payload_bytes": 156560,
+      "payload_sha256": "ca702c5d44dd700c5276a1d9c1b56db7e1e29a9aa396c5db1badb63661fb7362"
+    },
+    "0000880117": {
+      "ticker": "JBSS",
+      "company_name": "SANFILIPPO JOHN B & SON INC",
+      "sic": "2060",
+      "sic_description": "Sugar & Confectionery Products",
+      "source_url": "https://data.sec.gov/submissions/CIK0000880117.json",
+      "retrieved_at": "2026-09-26T19:00:41Z",
+      "payload_bytes": 162008,
+      "payload_sha256": "90f938a28a6af085fb2b2a4ef8204f52b019fd3bab7b47ff65a35c761177e146"
+    },
+    "0000883107": {
+      "ticker": "SLSN",
+      "company_name": "SOLESENCE, INC.",
+      "sic": "2844",
+      "sic_description": "Perfumes, Cosmetics & Other Toilet Preparations",
+      "source_url": "https://data.sec.gov/submissions/CIK0000883107.json",
+      "retrieved_at": "2026-09-26T19:00:35Z",
+      "payload_bytes": 164065,
+      "payload_sha256": "8ac8d3280d2cc98af2923a36278a5bfebf7719fa6fdd5a8908819eebe04ebf7d"
+    },
+    "0000914475": {
+      "ticker": "NBIX",
+      "company_name": "NEUROCRINE BIOSCIENCES INC",
+      "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "source_url": "https://data.sec.gov/submissions/CIK0000914475.json",
+      "retrieved_at": "2026-09-26T19:00:42Z",
+      "payload_bytes": 158716,
+      "payload_sha256": "151fe40af646fdcfcad8f26b650991a16b5b76308456e76f34c0defac374d2be"
+    },
+    "0000946581": {
+      "ticker": "TTWO",
+      "company_name": "TAKE TWO INTERACTIVE SOFTWARE INC",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_url": "https://data.sec.gov/submissions/CIK0000946581.json",
+      "retrieved_at": "2026-09-26T19:00:41Z",
+      "payload_bytes": 158303,
+      "payload_sha256": "eba413eb4e974e7fcc0a596794a3c9255146a3e97b7acf4e646f33ace412be8a"
+    },
+    "0000949858": {
+      "ticker": "ACHV",
+      "company_name": "ACHIEVE LIFE SCIENCES, INC.",
+      "sic": "2835",
+      "sic_description": "In Vitro & In Vivo Diagnostic Substances",
+      "source_url": "https://data.sec.gov/submissions/CIK0000949858.json",
+      "retrieved_at": "2026-09-26T19:00:36Z",
+      "payload_bytes": 161614,
+      "payload_sha256": "6a164fbc233da72fa0be4868ee35a9538d2171f24b74946d609e5faef671b696"
+    },
+    "0001120914": {
+      "ticker": "PDFS",
+      "company_name": "PDF SOLUTIONS INC",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_url": "https://data.sec.gov/submissions/CIK0001120914.json",
+      "retrieved_at": "2026-09-26T19:00:45Z",
+      "payload_bytes": 161737,
+      "payload_sha256": "650d3999145280d988b4589dc9c637256954ad664f808818a06cf0c21c005067"
+    },
+    "0001145986": {
+      "ticker": "ASPN",
+      "company_name": "ASPEN AEROGELS INC",
+      "sic": "5030",
+      "sic_description": "Wholesale-Lumber & Other Construction Materials",
+      "source_url": "https://data.sec.gov/submissions/CIK0001145986.json",
+      "retrieved_at": "2026-09-26T19:00:38Z",
+      "payload_bytes": 138206,
+      "payload_sha256": "e2ff9ae4574bd351e1862930c6066dd44d5b45db9c3f52e7f22f8a3f6c2d3edd"
+    },
+    "0001267565": {
+      "ticker": "COLL",
+      "company_name": "COLLEGIUM PHARMACEUTICAL, INC",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "source_url": "https://data.sec.gov/submissions/CIK0001267565.json",
+      "retrieved_at": "2026-09-26T19:00:36Z",
+      "payload_bytes": 144402,
+      "payload_sha256": "7ea3c41af2bdbadf412581db964f8632d36e8ccc696be5b05f2a9cd2c7897c76"
+    },
+    "0001289848": {
+      "ticker": "HURN",
+      "company_name": "Huron Consulting Group Inc.",
+      "sic": "8742",
+      "sic_description": "Services-Management Consulting Services",
+      "source_url": "https://data.sec.gov/submissions/CIK0001289848.json",
+      "retrieved_at": "2026-09-26T19:00:43Z",
+      "payload_bytes": 156096,
+      "payload_sha256": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87"
+    },
+    "0001320350": {
+      "ticker": "LNSR",
+      "company_name": "LENSAR, Inc.",
+      "sic": "3841",
+      "sic_description": "Surgical & Medical Instruments & Apparatus",
+      "source_url": "https://data.sec.gov/submissions/CIK0001320350.json",
+      "retrieved_at": "2026-09-26T19:00:38Z",
+      "payload_bytes": 53666,
+      "payload_sha256": "8b91447688329b63eb89bba8bd76977a83053739f2cfbabf43769ca72e180bea"
+    },
+    "0001426800": {
+      "ticker": "ASMB",
+      "company_name": "ASSEMBLY BIOSCIENCES, INC.",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "source_url": "https://data.sec.gov/submissions/CIK0001426800.json",
+      "retrieved_at": "2026-09-26T19:00:39Z",
+      "payload_bytes": 146058,
+      "payload_sha256": "a4079fcce8e001ed6c3202b7ab2fc7ae28f2fc610f313fd7f95e2ddad1bae4bc"
+    },
+    "0001529274": {
+      "ticker": "ALKT",
+      "company_name": "ALKAMI TECHNOLOGY, INC.",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_url": "https://data.sec.gov/submissions/CIK0001529274.json",
+      "retrieved_at": "2026-09-26T19:00:46Z",
+      "payload_bytes": 97928,
+      "payload_sha256": "b04d5280f489f241f51b670e01bc148135625221ff007ffaf1f04d30e887fe66"
+    },
+    "0001573221": {
+      "ticker": "REAL",
+      "company_name": "TheRealReal, Inc.",
+      "sic": "5900",
+      "sic_description": "Retail-Miscellaneous Retail",
+      "source_url": "https://data.sec.gov/submissions/CIK0001573221.json",
+      "retrieved_at": "2026-09-26T19:00:47Z",
+      "payload_bytes": 110043,
+      "payload_sha256": "7c6f7432a254a047c4aa93a96b62cbd8b9382340bd87b47ca825172b1bc2459c"
+    },
+    "0001660134": {
+      "ticker": "OKTA",
+      "company_name": "Okta, Inc.",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_url": "https://data.sec.gov/submissions/CIK0001660134.json",
+      "retrieved_at": "2026-09-26T19:00:46Z",
+      "payload_bytes": 158605,
+      "payload_sha256": "ac2aab0b73eb05081846807099968fcf495f4b57c1602e4aeffd5f121b0b8f0e"
+    },
+    "0001681087": {
+      "ticker": "TECX",
+      "company_name": "Tectonic Therapeutic, Inc.",
+      "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "source_url": "https://data.sec.gov/submissions/CIK0001681087.json",
+      "retrieved_at": "2026-09-26T19:00:39Z",
+      "payload_bytes": 92358,
+      "payload_sha256": "386b6eaf7d2eb946524a39d8c9ac13e4f5b7d081474726066060bcc97284dd8b"
+    },
+    "0001697851": {
+      "ticker": "REKR",
+      "company_name": "Rekor Systems, Inc.",
+      "sic": "3669",
+      "sic_description": "Communications Equipment, NEC",
+      "source_url": "https://data.sec.gov/submissions/CIK0001697851.json",
+      "retrieved_at": "2026-09-26T19:00:40Z",
+      "payload_bytes": 97179,
+      "payload_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a"
+    },
+    "0001701758": {
+      "ticker": "LOVE",
+      "company_name": "Lovesac Co",
+      "sic": "5712",
+      "sic_description": "Retail-Furniture Stores",
+      "source_url": "https://data.sec.gov/submissions/CIK0001701758.json",
+      "retrieved_at": "2026-09-26T19:00:37Z",
+      "payload_bytes": 98169,
+      "payload_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48"
+    },
+    "0001845815": {
+      "ticker": "PAYO",
+      "company_name": "Payoneer Global Inc.",
+      "sic": "7389",
+      "sic_description": "Services-Business Services, NEC",
+      "source_url": "https://data.sec.gov/submissions/CIK0001845815.json",
+      "retrieved_at": "2026-09-26T19:00:48Z",
+      "payload_bytes": 93774,
+      "payload_sha256": "73a9fbc07bb6e2630e38712e68cba0d62eed8abfc0928322c3b76b04e44cebf0"
+    },
+    "0001873529": {
+      "ticker": "KLC",
+      "company_name": "KinderCare Learning Companies, Inc.",
+      "sic": "8351",
+      "sic_description": "Services-Child Day Care Services",
+      "source_url": "https://data.sec.gov/submissions/CIK0001873529.json",
+      "retrieved_at": "2026-09-26T19:00:45Z",
+      "payload_bytes": 19823,
+      "payload_sha256": "d3d658d651ce67919aa48602b333fab9b4b93d026326f0b457ec7802fda2c269"
+    }
+  }
+}

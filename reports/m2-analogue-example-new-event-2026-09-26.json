@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "kind": "analogue_query",
+  "policy": {"version": "m2-fingerprint-policy-v1-2026-09-26", "sha256": "6a925b59f410bcf646c6e08a9914a4bf8b0d75024dca9d44e67b96b47a15cc1a", "count_unit": "event"},
+  "inputs": {
+    "event_table_sha256": "0c3afb8d6b7f28dbc2f711482a6e6013a1ea203030b018b446ea1b39409825c6",
+    "sector_map_sha256": "775b39cb312d96943109851f815172157f727a11e086728dff7fbe11d3195ae8",
+    "event_labels_sha256": {
+      "achv-2026-03-24": "4f3d6b13189353c1ce160cc1990edeb243206387448e6b4a3f162cf2dfa464e3",
+      "alkt-2026-02-25": "33c0332dfa3c3e7a56d6e27ff64695521faae002694e571cecf04bcf9cbea2c8",
+      "asmb-2026-03-19": "41f62fbb7d4afce9042777e31d7b8915e23f0d1f75c48f117ec8e15bf5fe1f74",
+      "aspn-2026-02-25": "03fae2da482bc7edd7d08d4074ff16e1a02d803324dde328eb1893f84682b76d",
+      "caci-2026-01-21": "944b041c7af76b096f0caea23801b1118a12a17f093f4a17c0201507189af524",
+      "coll-2026-02-26": "ae4011660a2314e215c051d28e3a6790fa930a591784850fc6d2d7cd83a2943c",
+      "cxt-2026-02-11": "5f01390fd6bd0b1388deb04587a63ed19ffb1deb74930d20fd8aba1dacde3d12",
+      "hurn-2026-02-24": "b2a00924118cdeba104d903ad4ae80c7ec6db8893d9a16267eca9a9fca464a10",
+      "jbss-2026-01-29": "b60e67280456fc30cc6d65f12b6b45408bd6ab4519b72e28c1b12a49b18d5439",
+      "klc-2026-03-12": "5de1a77c325fe4912e149da1173e3942e20698bb818cac2e5afeb5f232b4dc50",
+      "lnsr-2026-03-31": "733b9d73b158b6614b4678bf0b9da5f488e23b7f5b0e11b4b709f87fe836c816",
+      "love-2026-03-26": "29c2356beebe5a5d88643c37e1f7864c21b8a1e77eff79c4ce94b65de3714700",
+      "nbix-2026-02-11": "2da9e6064c2e0bc29f9925388f3f4ce7df5e506f66cbc1091a835e4ba937f622",
+      "okta-2026-03-04": "2e28b67e4352bbe827cbbb35857164dbcab80b83de6743079f5078ce0ec1d778",
+      "parr-2026-02-24": "54aea2e41d5986535d907be7a0ec85c41a79b7654a3da126d703ea38567c2772",
+      "payo-2026-02-26": "4abf8e0663b3a4e9ec3794e5af89dbcb557aee46339812a935e0d3f06b579e7c",
+      "pdfs-2026-02-12": "5a508018a7873431e10ef76ced4b5b2dc9a4daf6c864c53da2eedaa46e80cf25",
+      "real-2026-02-26": "d55707e25e2282731eaec0303604a092e254909bb00e897baa8e48ebd28e5b31",
+      "rekr-2026-03-31": "3d20adc516b45e7bbd91b8290da195f5c6652ba15fdd3e0d789941ac0d926b85",
+      "slsn-2026-03-31": "0ad476eb112cfeaa4639238f69c942e5a9c3adeff846480e21ca60ace09938d7",
+      "tecx-2026-02-26": "8552ef41fb47918ac1ab27df0729d49b812639fe7bf9b5b1fa5631f6d017f301",
+      "ttwo-2026-02-03": "f236578c647baf4476204b63d9656e710a0bc111284a064d020e05138e02185e",
+      "vsat-2026-02-05": "5241858a269d2d7893143237a459898b7090fe7a02ea6fb4d32dea2a71ccfd9e"
+    }
+  },
+  "scope_note": "These figures describe the accepted Milestone 1 events only: a convenience sample chosen because a minute-stamped wire release and a clean SEC neighbourhood existed, one event per issuer. They are not market base rates, and nothing here predicts, scores or ranks.",
+  "limits": [
+    "SIC codes are each issuer's assignment when read on 2026-09-26, not the one in force at the event's date.",
+    "Labels are raw daily returns, not market-adjusted, and events on one reaction session share market moves; reaction sessions are counted beside events.",
+    "Counts and intervals treat events as independent. No significance is claimed and nothing is tested or ranked.",
+    "positive_gap_retained_half and positive_gap_filled exist only for events that opened at least 0.5% above the prior close, so their counts are smaller than the group's."
+  ],
+  "target": {"kind": "new", "event_id": null, "cluster_id": null, "ticker": null, "cik": null, "category": "earnings/results", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_division_name": "Services", "sic_major_group": "73", "cutoff": "2026-09-26T12:00:00Z"},
+  "queries": [
+    {
+      "label": "day1_close_return",
+      "kind": "return",
+      "count_unit": "event",
+      "minimum_members": 5,
+      "maximum_distance": 1.0,
+      "state": "ANALOGUES_FOUND",
+      "pool": {
+        "eligible": 23,
+        "excluded_by_reason": {"BEYOND_EXPANSION": 12, "BEYOND_MAX_DISTANCE": 6}
+      },
+      "distance_reached": 0.0,
+      "counts": {"members": 5, "issuers": 5, "reaction_sessions": 5, "gate_n": 5, "effective_sample_size": 5.0},
+      "members": [
+        {"event_id": "caci-2026-01-21", "ticker": "CACI", "cik": "0000016058", "cluster_id": "caci-q2fy26", "reaction_session": "2026-01-22", "category": "earnings/results", "source_id": "caci-wire", "source_url": "https://www.businesswire.com/news/home/20260121953892/en/CACI-Reports-Results-for-Its-Fiscal-2026-Second-Quarter-and-Raises-Guidance-for-All-Metrics", "release_timing": "after_hours", "sic": "7373", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-01-21T21:15:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.013453269255090605, "day1_high_return": 0.049117870241558226, "day1_low_return": -0.01661502466169218, "day1_close_return": 0.03620209940559005, "session_2_close_return": 0.04684140634880496, "session_5_close_return": 0.00897938535474907, "session_10_close_return": -0.04344251928670784, "session_20_close_return": -0.06538510180852397, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "ttwo-2026-02-03", "ticker": "TTWO", "cik": "0000946581", "cluster_id": "ttwo-q3fy26", "reaction_session": "2026-02-04", "category": "earnings/results", "source_id": "ttwo-wire", "source_url": "https://www.businesswire.com/news/home/20260203145448/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2026", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-03T21:05:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.021020879483433008, "day1_high_return": -0.014728755243436864, "day1_low_return": -0.06937832869868499, "day1_close_return": -0.05377763114483669, "session_2_close_return": -0.08922090776264302, "session_5_close_return": -0.006881274449733632, "session_10_close_return": -0.0614601498798133, "session_20_close_return": 0.016967526040439385, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "pdfs-2026-02-12", "ticker": "PDFS", "cik": "0001120914", "cluster_id": "pdfs-q4fy25", "reaction_session": "2026-02-13", "category": "earnings/results", "source_id": "pdfs-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/12/3237650/0/en/PDF-Solutions-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results-and-Announces-Record-2025-Fourth-Quarter-and-Record-Full-Year-Total-Revenues.html", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-12T21:02:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.0015571473061350982, "day1_high_return": 0.09405169729056384, "day1_low_return": -0.002802865151043221, "day1_close_return": 0.04920585487387097, "session_2_close_return": 0.04827156649018982, "session_5_close_return": 0.009965742759264984, "session_10_close_return": 0.05200872002491441, "session_20_close_return": -0.010588601681719045, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "alkt-2026-02-25", "ticker": "ALKT", "cik": "0001529274", "cluster_id": "alkt-q4fy25", "reaction_session": "2026-02-26", "category": "earnings/results", "source_id": "alkt-wire", "source_url": "https://www.prnewswire.com/news-releases/alkami-announces-fourth-quarter-2025-financial-results-302697481.html", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-25T21:05:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.027183872938301823, "day1_high_return": -0.017715332926084515, "day1_low_return": -0.1380574221136226, "day1_close_return": -0.045204642638973724, "session_2_close_return": 0.010690287110568075, "session_5_close_return": 0.007330482590103715, "session_10_close_return": 0.1343921808185704, "session_20_close_return": -0.030543677458766183, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "okta-2026-03-04", "ticker": "OKTA", "cik": "0001660134", "cluster_id": "okta-q4fy26", "reaction_session": "2026-03-05", "category": "earnings/results", "source_id": "okta-wire", "source_url": "https://www.businesswire.com/news/home/20260304801624/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2026-Financial-Results", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-03-04T21:01:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.017563423473655027, "day1_high_return": 0.12001672706997502, "day1_low_return": 0.01407861722888204, "day1_close_return": 0.11025926958461119, "session_2_close_return": 0.12517424031223867, "session_5_close_return": 0.12698633955952054, "session_10_close_return": 0.09325341511012009, "session_20_close_return": 0.10321996097017005, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": false}}
+      ],
+      "summary": {
+        "n": 5,
+        "gate_n": 5,
+        "mean": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 10"},
+        "median": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 10"},
+        "quantiles": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 20"}
+      },
+      "excluded": [
+        {"event_id": "jbss-2026-01-29", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "vsat-2026-02-05", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "nbix-2026-02-11", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "cxt-2026-02-11", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "hurn-2026-02-24", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "parr-2026-02-24", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "aspn-2026-02-25", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "coll-2026-02-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "payo-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "real-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "tecx-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "klc-2026-03-12", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "asmb-2026-03-19", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "achv-2026-03-24", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "love-2026-03-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "lnsr-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "slsn-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "rekr-2026-03-31", "reason": "BEYOND_EXPANSION"}
+      ]
+    },
+    {
+      "label": "session_5_close_return",
+      "kind": "return",
+      "count_unit": "event",
+      "minimum_members": 5,
+      "maximum_distance": 1.0,
+      "state": "ANALOGUES_FOUND",
+      "pool": {
+        "eligible": 23,
+        "excluded_by_reason": {"BEYOND_EXPANSION": 12, "BEYOND_MAX_DISTANCE": 6}
+      },
+      "distance_reached": 0.0,
+      "counts": {"members": 5, "issuers": 5, "reaction_sessions": 5, "gate_n": 5, "effective_sample_size": 5.0},
+      "members": [
+        {"event_id": "caci-2026-01-21", "ticker": "CACI", "cik": "0000016058", "cluster_id": "caci-q2fy26", "reaction_session": "2026-01-22", "category": "earnings/results", "source_id": "caci-wire", "source_url": "https://www.businesswire.com/news/home/20260121953892/en/CACI-Reports-Results-for-Its-Fiscal-2026-Second-Quarter-and-Raises-Guidance-for-All-Metrics", "release_timing": "after_hours", "sic": "7373", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-01-21T21:15:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.013453269255090605, "day1_high_return": 0.049117870241558226, "day1_low_return": -0.01661502466169218, "day1_close_return": 0.03620209940559005, "session_2_close_return": 0.04684140634880496, "session_5_close_return": 0.00897938535474907, "session_10_close_return": -0.04344251928670784, "session_20_close_return": -0.06538510180852397, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "ttwo-2026-02-03", "ticker": "TTWO", "cik": "0000946581", "cluster_id": "ttwo-q3fy26", "reaction_session": "2026-02-04", "category": "earnings/results", "source_id": "ttwo-wire", "source_url": "https://www.businesswire.com/news/home/20260203145448/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2026", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-03T21:05:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.021020879483433008, "day1_high_return": -0.014728755243436864, "day1_low_return": -0.06937832869868499, "day1_close_return": -0.05377763114483669, "session_2_close_return": -0.08922090776264302, "session_5_close_return": -0.006881274449733632, "session_10_close_return": -0.0614601498798133, "session_20_close_return": 0.016967526040439385, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "pdfs-2026-02-12", "ticker": "PDFS", "cik": "0001120914", "cluster_id": "pdfs-q4fy25", "reaction_session": "2026-02-13", "category": "earnings/results", "source_id": "pdfs-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/12/3237650/0/en/PDF-Solutions-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results-and-Announces-Record-2025-Fourth-Quarter-and-Record-Full-Year-Total-Revenues.html", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-12T21:02:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.0015571473061350982, "day1_high_return": 0.09405169729056384, "day1_low_return": -0.002802865151043221, "day1_close_return": 0.04920585487387097, "session_2_close_return": 0.04827156649018982, "session_5_close_return": 0.009965742759264984, "session_10_close_return": 0.05200872002491441, "session_20_close_return": -0.010588601681719045, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "alkt-2026-02-25", "ticker": "ALKT", "cik": "0001529274", "cluster_id": "alkt-q4fy25", "reaction_session": "2026-02-26", "category": "earnings/results", "source_id": "alkt-wire", "source_url": "https://www.prnewswire.com/news-releases/alkami-announces-fourth-quarter-2025-financial-results-302697481.html", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-25T21:05:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.027183872938301823, "day1_high_return": -0.017715332926084515, "day1_low_return": -0.1380574221136226, "day1_close_return": -0.045204642638973724, "session_2_close_return": 0.010690287110568075, "session_5_close_return": 0.007330482590103715, "session_10_close_return": 0.1343921808185704, "session_20_close_return": -0.030543677458766183, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "okta-2026-03-04", "ticker": "OKTA", "cik": "0001660134", "cluster_id": "okta-q4fy26", "reaction_session": "2026-03-05", "category": "earnings/results", "source_id": "okta-wire", "source_url": "https://www.businesswire.com/news/home/20260304801624/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2026-Financial-Results", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-03-04T21:01:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.017563423473655027, "day1_high_return": 0.12001672706997502, "day1_low_return": 0.01407861722888204, "day1_close_return": 0.11025926958461119, "session_2_close_return": 0.12517424031223867, "session_5_close_return": 0.12698633955952054, "session_10_close_return": 0.09325341511012009, "session_20_close_return": 0.10321996097017005, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": false}}
+      ],
+      "summary": {
+        "n": 5,
+        "gate_n": 5,
+        "mean": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 10"},
+        "median": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 10"},
+        "quantiles": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 20"}
+      },
+      "excluded": [
+        {"event_id": "jbss-2026-01-29", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "vsat-2026-02-05", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "nbix-2026-02-11", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "cxt-2026-02-11", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "hurn-2026-02-24", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "parr-2026-02-24", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "aspn-2026-02-25", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "coll-2026-02-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "payo-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "real-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "tecx-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "klc-2026-03-12", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "asmb-2026-03-19", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "achv-2026-03-24", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "love-2026-03-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "lnsr-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "slsn-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "rekr-2026-03-31", "reason": "BEYOND_EXPANSION"}
+      ]
+    },
+    {
+      "label": "session_20_close_return",
+      "kind": "return",
+      "count_unit": "event",
+      "minimum_members": 5,
+      "maximum_distance": 1.0,
+      "state": "ANALOGUES_FOUND",
+      "pool": {
+        "eligible": 22,
+        "excluded_by_reason": {"BEYOND_EXPANSION": 11, "BEYOND_MAX_DISTANCE": 6, "LABEL_ABSENT": 1}
+      },
+      "distance_reached": 0.0,
+      "counts": {"members": 5, "issuers": 5, "reaction_sessions": 5, "gate_n": 5, "effective_sample_size": 5.0},
+      "members": [
+        {"event_id": "caci-2026-01-21", "ticker": "CACI", "cik": "0000016058", "cluster_id": "caci-q2fy26", "reaction_session": "2026-01-22", "category": "earnings/results", "source_id": "caci-wire", "source_url": "https://www.businesswire.com/news/home/20260121953892/en/CACI-Reports-Results-for-Its-Fiscal-2026-Second-Quarter-and-Raises-Guidance-for-All-Metrics", "release_timing": "after_hours", "sic": "7373", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-01-21T21:15:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.013453269255090605, "day1_high_return": 0.049117870241558226, "day1_low_return": -0.01661502466169218, "day1_close_return": 0.03620209940559005, "session_2_close_return": 0.04684140634880496, "session_5_close_return": 0.00897938535474907, "session_10_close_return": -0.04344251928670784, "session_20_close_return": -0.06538510180852397, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "ttwo-2026-02-03", "ticker": "TTWO", "cik": "0000946581", "cluster_id": "ttwo-q3fy26", "reaction_session": "2026-02-04", "category": "earnings/results", "source_id": "ttwo-wire", "source_url": "https://www.businesswire.com/news/home/20260203145448/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2026", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-03T21:05:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.021020879483433008, "day1_high_return": -0.014728755243436864, "day1_low_return": -0.06937832869868499, "day1_close_return": -0.05377763114483669, "session_2_close_return": -0.08922090776264302, "session_5_close_return": -0.006881274449733632, "session_10_close_return": -0.0614601498798133, "session_20_close_return": 0.016967526040439385, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "pdfs-2026-02-12", "ticker": "PDFS", "cik": "0001120914", "cluster_id": "pdfs-q4fy25", "reaction_session": "2026-02-13", "category": "earnings/results", "source_id": "pdfs-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/12/3237650/0/en/PDF-Solutions-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results-and-Announces-Record-2025-Fourth-Quarter-and-Record-Full-Year-Total-Revenues.html", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-12T21:02:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.0015571473061350982, "day1_high_return": 0.09405169729056384, "day1_low_return": -0.002802865151043221, "day1_close_return": 0.04920585487387097, "session_2_close_return": 0.04827156649018982, "session_5_close_return": 0.009965742759264984, "session_10_close_return": 0.05200872002491441, "session_20_close_return": -0.010588601681719045, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "alkt-2026-02-25", "ticker": "ALKT", "cik": "0001529274", "cluster_id": "alkt-q4fy25", "reaction_session": "2026-02-26", "category": "earnings/results", "source_id": "alkt-wire", "source_url": "https://www.prnewswire.com/news-releases/alkami-announces-fourth-quarter-2025-financial-results-302697481.html", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-02-25T21:05:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": -0.027183872938301823, "day1_high_return": -0.017715332926084515, "day1_low_return": -0.1380574221136226, "day1_close_return": -0.045204642638973724, "session_2_close_return": 0.010690287110568075, "session_5_close_return": 0.007330482590103715, "session_10_close_return": 0.1343921808185704, "session_20_close_return": -0.030543677458766183, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": null, "positive_gap_filled": null}},
+        {"event_id": "okta-2026-03-04", "ticker": "OKTA", "cik": "0001660134", "cluster_id": "okta-q4fy26", "reaction_session": "2026-03-05", "category": "earnings/results", "source_id": "okta-wire", "source_url": "https://www.businesswire.com/news/home/20260304801624/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2026-Financial-Results", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-03-04T21:01:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.017563423473655027, "day1_high_return": 0.12001672706997502, "day1_low_return": 0.01407861722888204, "day1_close_return": 0.11025926958461119, "session_2_close_return": 0.12517424031223867, "session_5_close_return": 0.12698633955952054, "session_10_close_return": 0.09325341511012009, "session_20_close_return": 0.10321996097017005, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": false}}
+      ],
+      "summary": {
+        "n": 5,
+        "gate_n": 5,
+        "mean": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 10"},
+        "median": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 10"},
+        "quantiles": {"state": "WITHHELD", "reason": "count 5 is below the minimum of 20"}
+      },
+      "excluded": [
+        {"event_id": "jbss-2026-01-29", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "vsat-2026-02-05", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "nbix-2026-02-11", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "cxt-2026-02-11", "reason": "LABEL_ABSENT", "detail": "CORPORATE_ACTION_IN_WINDOW"},
+        {"event_id": "hurn-2026-02-24", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "parr-2026-02-24", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "aspn-2026-02-25", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "coll-2026-02-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "payo-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "real-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "tecx-2026-02-26", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "klc-2026-03-12", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "asmb-2026-03-19", "reason": "BEYOND_EXPANSION"},
+        {"event_id": "achv-2026-03-24", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "love-2026-03-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "lnsr-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "slsn-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "rekr-2026-03-31", "reason": "BEYOND_EXPANSION"}
+      ]
+    },
+    {
+      "label": "positive_gap_filled",
+      "kind": "boolean",
+      "count_unit": "event",
+      "minimum_members": 5,
+      "maximum_distance": 1.0,
+      "state": "ANALOGUES_FOUND",
+      "pool": {
+        "eligible": 12,
+        "excluded_by_reason": {"BEYOND_MAX_DISTANCE": 3, "LABEL_ABSENT": 11}
+      },
+      "distance_reached": 1.0,
+      "counts": {"members": 9, "issuers": 9, "reaction_sessions": 8, "gate_n": 9, "effective_sample_size": 9.0},
+      "members": [
+        {"event_id": "caci-2026-01-21", "ticker": "CACI", "cik": "0000016058", "cluster_id": "caci-q2fy26", "reaction_session": "2026-01-22", "category": "earnings/results", "source_id": "caci-wire", "source_url": "https://www.businesswire.com/news/home/20260121953892/en/CACI-Reports-Results-for-Its-Fiscal-2026-Second-Quarter-and-Raises-Guidance-for-All-Metrics", "release_timing": "after_hours", "sic": "7373", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-01-21T21:15:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.013453269255090605, "day1_high_return": 0.049117870241558226, "day1_low_return": -0.01661502466169218, "day1_close_return": 0.03620209940559005, "session_2_close_return": 0.04684140634880496, "session_5_close_return": 0.00897938535474907, "session_10_close_return": -0.04344251928670784, "session_20_close_return": -0.06538510180852397, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "okta-2026-03-04", "ticker": "OKTA", "cik": "0001660134", "cluster_id": "okta-q4fy26", "reaction_session": "2026-03-05", "category": "earnings/results", "source_id": "okta-wire", "source_url": "https://www.businesswire.com/news/home/20260304801624/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2026-Financial-Results", "release_timing": "after_hours", "sic": "7372", "sic_division": "I", "sic_major_group": "73", "published_at": "2026-03-04T21:01:00Z", "distance": 0.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.017563423473655027, "day1_high_return": 0.12001672706997502, "day1_low_return": 0.01407861722888204, "day1_close_return": 0.11025926958461119, "session_2_close_return": 0.12517424031223867, "session_5_close_return": 0.12698633955952054, "session_10_close_return": 0.09325341511012009, "session_20_close_return": 0.10321996097017005, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": false}},
+        {"event_id": "hurn-2026-02-24", "ticker": "HURN", "cik": "0001289848", "cluster_id": "hurn-q4fy25", "reaction_session": "2026-02-25", "category": "earnings/results", "source_id": "hurn-wire", "source_url": "https://www.businesswire.com/news/home/20260224117886/en/Huron-Announces-Fourth-Quarter-2025-Financial-Results-and-Provides-2026-Guidance", "release_timing": "after_hours", "sic": "8742", "sic_division": "I", "sic_major_group": "87", "published_at": "2026-02-24T21:05:00Z", "distance": 0.5, "weight": 1.0, "outcomes": {"day1_open_return": 0.018558088002532447, "day1_high_return": 0.057375751820196275, "day1_low_return": -0.08103830326052541, "day1_close_return": 0.055001582779360625, "session_2_close_return": 0.1339822728711617, "session_5_close_return": 0.17489711934156382, "session_10_close_return": 0.06837606837606836, "session_20_close_return": -0.011949984172206385, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "jbss-2026-01-29", "ticker": "JBSS", "cik": "0000880117", "cluster_id": "jbss-q2fy26", "reaction_session": "2026-01-30", "category": "earnings/results", "source_id": "jbss-wire", "source_url": "https://www.businesswire.com/news/home/20260129356587/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Second-Quarter-Results", "release_timing": "after_hours", "sic": "2060", "sic_division": "D", "sic_major_group": "20", "published_at": "2026-01-29T21:10:00Z", "distance": 1.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.010190577024880909, "day1_high_return": 0.07848067760719957, "day1_low_return": -0.002117522498676472, "day1_close_return": 0.0706723133933298, "session_2_close_return": 0.05717310746426674, "session_5_close_return": 0.05029115934356798, "session_10_close_return": 0.04579142403388037, "session_20_close_return": 0.09330333509793531, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "vsat-2026-02-05", "ticker": "VSAT", "cik": "0000797721", "cluster_id": "vsat-q3fy26", "reaction_session": "2026-02-06", "category": "earnings/results", "source_id": "vsat-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/05/3233423/0/en/Viasat-Releases-Third-Quarter-Fiscal-Year-2026-Financial-Results.html", "release_timing": "after_hours", "sic": "4899", "sic_division": "E", "sic_major_group": "48", "published_at": "2026-02-05T21:05:00Z", "distance": 1.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.10283119658119655, "day1_high_return": 0.13002938034188039, "day1_low_return": 0.040064102564102644, "day1_close_return": 0.11378205128205132, "session_2_close_return": 0.23611111111111116, "session_5_close_return": 0.24545940170940184, "session_10_close_return": 0.24198717948717952, "session_20_close_return": 0.1696047008547008, "gap_ge_3pct": true, "gap_ge_5pct": true, "gap_ge_10pct": true, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": false}},
+        {"event_id": "cxt-2026-02-11", "ticker": "CXT", "cik": "0000025445", "cluster_id": "cxt-q4fy25", "reaction_session": "2026-02-12", "category": "earnings/results", "source_id": "cxt-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/11/3236663/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2025-Results-Raises-Annual-Dividend-by-6.html", "release_timing": "after_hours", "sic": "3490", "sic_division": "D", "sic_major_group": "34", "published_at": "2026-02-11T21:05:00Z", "distance": 1.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.010052194084670507, "day1_high_return": 0.08012758554030541, "day1_low_return": -0.020297699594045926, "day1_close_return": 0.03421612217282055, "session_2_close_return": 0.019911076744635547, "session_5_close_return": 0.017591339648173276, "session_10_close_return": -0.04388169340808035, "session_20_close_return": null, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": true, "positive_gap_filled": true}},
+        {"event_id": "real-2026-02-26", "ticker": "REAL", "cik": "0001573221", "cluster_id": "real-q4fy25", "reaction_session": "2026-02-27", "category": "earnings/results", "source_id": "real-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/26/3246067/0/en/the-realreal-announces-fourth-quarter-and-full-year-2025-results.html", "release_timing": "after_hours", "sic": "5900", "sic_division": "G", "sic_major_group": "59", "published_at": "2026-02-26T21:03:00Z", "distance": 1.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.12913640032284102, "day1_high_return": 0.13434221146085545, "day1_low_return": -0.041162227602905554, "day1_close_return": -0.01049233252623094, "session_2_close_return": -0.04196933010492343, "session_5_close_return": -0.08232445520581122, "session_10_close_return": -0.19531880548829705, "session_20_close_return": -0.27360774818401945, "gap_ge_3pct": true, "gap_ge_5pct": true, "gap_ge_10pct": true, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": false, "positive_gap_filled": true}},
+        {"event_id": "tecx-2026-02-26", "ticker": "TECX", "cik": "0001681087", "cluster_id": "tecx-q4fy25", "reaction_session": "2026-02-27", "category": "earnings/results", "source_id": "tecx-wire", "source_url": "https://www.globenewswire.com/news-release/2026/02/26/3246161/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html", "release_timing": "after_hours", "sic": "2836", "sic_division": "D", "sic_major_group": "28", "published_at": "2026-02-26T21:17:00Z", "distance": 1.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.007939824488090386, "day1_high_return": 0.0154617634768075, "day1_low_return": -0.046385290430422055, "day1_close_return": -0.020058503969912267, "session_2_close_return": -0.03886335144170494, "session_5_close_return": 0.16381111575428342, "session_10_close_return": 0.42582532386126193, "session_20_close_return": 0.2854157960718764, "gap_ge_3pct": false, "gap_ge_5pct": false, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": false, "positive_gap_filled": true}},
+        {"event_id": "asmb-2026-03-19", "ticker": "ASMB", "cik": "0001426800", "cluster_id": "asmb-fy25", "reaction_session": "2026-03-20", "category": "earnings/results", "source_id": "asmb-wire", "source_url": "https://www.globenewswire.com/news-release/2026/03/19/3259423/16259/en/Assembly-Biosciences-Reports-Year-End-2025-Financial-Results-and-Recent-Highlights.html", "release_timing": "after_hours", "sic": "2834", "sic_division": "D", "sic_major_group": "28", "published_at": "2026-03-19T20:05:00Z", "distance": 1.0, "weight": 1.0, "outcomes": {"day1_open_return": 0.09523809523809512, "day1_high_return": 0.09523809523809512, "day1_low_return": 0.0050890585241729624, "day1_close_return": 0.034532897128316975, "session_2_close_return": 0.0388949472918938, "session_5_close_return": 0.049436568520538016, "session_10_close_return": 0.05452562704471098, "session_20_close_return": 0.06288622319156656, "gap_ge_3pct": true, "gap_ge_5pct": true, "gap_ge_10pct": false, "gap_ge_15pct": false, "gap_ge_20pct": false, "gap_ge_30pct": false, "positive_gap_retained_half": false, "positive_gap_filled": false}}
+      ],
+      "summary": {
+        "n": 9,
+        "gate_n": 9,
+        "k": 6,
+        "proportion": {"state": "REPORTED_UNRELIABLE", "reason": "count 9 is below 10, from which estimates count as reliable", "value": 0.6666666667, "wilson_low": 0.3542021356, "wilson_high": 0.8794161816}
+      },
+      "excluded": [
+        {"event_id": "ttwo-2026-02-03", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "nbix-2026-02-11", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "pdfs-2026-02-12", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "parr-2026-02-24", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "aspn-2026-02-25", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "alkt-2026-02-25", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "coll-2026-02-26", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "payo-2026-02-26", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "klc-2026-03-12", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "achv-2026-03-24", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"},
+        {"event_id": "love-2026-03-26", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "lnsr-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "slsn-2026-03-31", "reason": "BEYOND_MAX_DISTANCE"},
+        {"event_id": "rekr-2026-03-31", "reason": "LABEL_ABSENT", "detail": "NOT_POSITIVE_GAP_GE_0_5PCT"}
+      ]
+    }
+  ]
+}
