@@ -14,19 +14,31 @@
     "bundle_sha256": "150efa02878e4c0b294f0861ee481fcfc19e814c11dced589fc0c526b89b5af4",
     "reviewer": "Fahad9101 (project owner)",
     "signoffs": [
-      {"item": "first_public_verified / historical_identity_verified", "date": "2026-09-23", "words": "sign off on cxt"},
-      {"item": "corporate_actions / provider.research_permitted", "note": "provider rights carried forward from the 2026-09-23 general authorization for this pattern of use; corporate-action completeness resolved by fetching the real action (ex_date 2026-02-27) rather than by a signoff on an unverified count"}
+      {
+        "item": "first_public_verified / historical_identity_verified",
+        "date": "2026-09-23",
+        "words": "sign off on cxt"
+      },
+      {
+        "item": "corporate_actions / provider.research_permitted",
+        "note": "provider rights carried forward from the 2026-09-23 general authorization for this pattern of use; corporate-action completeness resolved by fetching the real action (ex_date 2026-02-27) rather than by a signoff on an unverified count"
+      }
     ]
   },
   "event_context": {
     "release": "Crane NXT Announces Fourth Quarter and Full Year 2025 Results; Raises Annual Dividend by 6%",
-    "publication_interval": {"start_inclusive": "2026-02-11T21:05:00Z", "end_exclusive": "2026-02-11T21:06:00Z"},
+    "publication_interval": {
+      "start_inclusive": "2026-02-11T21:05:00Z",
+      "end_exclusive": "2026-02-11T21:06:00Z"
+    },
     "release_timing": "after_hours",
     "reaction_session": "2026-02-12",
     "anchor_session": "2026-02-11"
   },
   "corporate_action_on_record": {
-    "type": "cash_dividends", "ex_date": "2026-02-27", "id": "b1b4b72d-9894-4baf-8ef9-b5b87f4908c7",
+    "type": "cash_dividends",
+    "ex_date": "2026-02-27",
+    "id": "b1b4b72d-9894-4baf-8ef9-b5b87f4908c7",
     "effect": "Suppresses session_20_close_return only (its window is the only one whose range, 2026-02-11 to 2026-03-12, includes 2026-02-27; session_10's window ends 2026-02-26)."
   },
   "computed_labels": {
@@ -48,11 +60,17 @@
     "session_20_close_return": null
   },
   "plain_english_summary": "CXT opened up a modest 1.0% the session after its after-hours earnings/dividend-increase release, ran as high as +8.0% intraday, pulled back to a low of -2.0%, and closed the day up 3.4%. It drifted slightly higher over the next two and five sessions (+2.0%, +1.8%) before giving that back and more by session 10 (-4.4%). The 20-session value is honestly left null: a real dividend (ex-date 2026-02-27) falls inside that specific window and the system correctly refuses to guess through it, exactly as designed -- Day-1 through session-10 are unaffected since the ex-date falls after their windows close.",
-  "state": {"build_state": "MAPPED", "reasons": [], "mapped_day1": true, "complete_20_session": false},
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": false
+  },
   "what_this_demonstrates": "The first real-world test of nre.dataset's granular corporate-action handling: a genuine action correctly suppresses exactly the one label it actually crosses, not the whole event. This is the honest, non-fabricated behavior the project is built around, working as designed on real data for the first time.",
   "what_this_is_not": [
     "Not a Milestone 1 acceptance -- 2 of the required >=100 events across >=25 issuers now exist (SLSN, CXT), across 2 issuers.",
     "Does not advance independent_timing_spot_checks: SLSN is 'premarket' timing, CXT is 'after_hours' -- different classes. Each class still needs a second distinct event of its own kind; having one of each does not satisfy '2 distinct events per timing class' for either class.",
     "session_20_close_return remaining null is correct and permanent for this event unless a future methodology explicitly handles dividend-crossing windows differently -- it is not a temporary gap to be filled in later without a real methodological decision."
-  ]
+  ],
+  "correction_2026_09_26": "This event is MAPPED and included in the ledger, but it is not an eligible complete event under nre/acceptance.py: the gate counts only events whose session_20_close_return is non-null, and the dividend (ex-date 2026-02-27) suppresses it. It therefore does not count toward minimum_eligible_events, minimum_unique_issuers or the timing spot-check requirement. The 'second complete event' status and the '2 of the required events' sentence in this record overstated progress; true progress on 2026-09-26 is 1 eligible complete event (SLSN). See docs/M1-READINESS-ASSESSMENT.md, 'Correction: what counts toward the 20/15 target'."
 }

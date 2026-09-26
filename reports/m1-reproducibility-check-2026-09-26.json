@@ -65,7 +65,7 @@
     "Attestation gating, calendar-derived windows and the recorded-result pins work in production, and the annotation channel returns results without any job-log access."
   ],
   "what_this_does_not_show": [
-    "Not a new event and not progress toward the 20-event target: still 2 events across 2 issuers.",
+    "Not a new event and not progress toward the 20-event target: 1 eligible complete event (SLSN) across 1 issuer. CXT is included and mapped, but its dividend-suppressed session-20 label means it does not count toward the minimums.",
     "Not Milestone 1 acceptance; milestone_accepted remains a human declaration outside the code.",
     "The pin detects changes in the derived labels only; a provider revision that leaves every label unchanged would not be visible."
   ],
