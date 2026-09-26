@@ -182,6 +182,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "4f3d6b13189353c1ce160cc1990edeb243206387448e6b4a3f162cf2dfa464e3",
+        "recorded_in": "reports/m1-achv-complete-event-2026-09-26.json"
       }
     },
     {
@@ -229,6 +233,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "ae4011660a2314e215c051d28e3a6790fa930a591784850fc6d2d7cd83a2943c",
+        "recorded_in": "reports/m1-coll-complete-event-2026-09-26.json"
       }
     },
     {
@@ -276,6 +284,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "29c2356beebe5a5d88643c37e1f7864c21b8a1e77eff79c4ce94b65de3714700",
+        "recorded_in": "reports/m1-love-complete-event-2026-09-26.json"
       }
     },
     {
@@ -323,6 +335,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "03fae2da482bc7edd7d08d4074ff16e1a02d803324dde328eb1893f84682b76d",
+        "recorded_in": "reports/m1-aspn-complete-event-2026-09-26.json"
       }
     },
     {
@@ -370,6 +386,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "733b9d73b158b6614b4678bf0b9da5f488e23b7f5b0e11b4b709f87fe836c816",
+        "recorded_in": "reports/m1-lnsr-complete-event-2026-09-26.json"
       }
     },
     {
@@ -417,6 +437,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "41f62fbb7d4afce9042777e31d7b8915e23f0d1f75c48f117ec8e15bf5fe1f74",
+        "recorded_in": "reports/m1-asmb-complete-event-2026-09-26.json"
       }
     },
     {
@@ -464,6 +488,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "8552ef41fb47918ac1ab27df0729d49b812639fe7bf9b5b1fa5631f6d017f301",
+        "recorded_in": "reports/m1-tecx-complete-event-2026-09-26.json"
       }
     },
     {
@@ -511,6 +539,10 @@
           "record": "reports/m1-signoff-packet-batch-2026-09-26.json",
           "basis": "Project owner sign-off ('sign off on all eight', 2026-09-26) on two independent clean signals: no Item 3.03/5.03 8-K in the filing history, and an empty, fully paginated Alpaca corporate-actions response for the window (dry run, workflow run 36256523957)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "3d20adc516b45e7bbd91b8290da195f5c6652ba15fdd3e0d789941ac0d926b85",
+        "recorded_in": "reports/m1-rekr-complete-event-2026-09-26.json"
       }
     }
   ]

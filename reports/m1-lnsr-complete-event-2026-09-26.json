@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "candidate_id": "0001193125-26-133153",
+  "event_id": "lnsr-2026-03-31",
+  "ticker": "LNSR",
+  "cik": "0001320350",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36257372832,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36257372832",
+    "job_id": 108446612652,
+    "commit_sha": "0512860fbbf239c9f893428ec43dd0e3d40a3bf4",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all eight",
+        "record": "reports/m1-signoff-packet-batch-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Standing 2026-09-23 authorization; not separately re-confirmed at this scale (see the packet's signoff_record)."
+  },
+  "event_context": {
+    "release": "LENSAR® Reports Fourth Quarter and Full Year 2025 Results and Provides Business Update",
+    "wire_url": "https://www.globenewswire.com/news-release/2026/03/31/3265246/0/en/lensar-reports-fourth-quarter-and-full-year-2025-results-and-provides-business-update.html",
+    "displayed_stamp_et": "March 31, 2026 06:00 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-03-31T10:00:00Z",
+      "end_exclusive": "2026-03-31T10:01:00Z"
+    },
+    "release_timing": "premarket",
+    "reaction_session": "2026-03-31",
+    "anchor_session": "2026-03-30",
+    "twentieth_reaction_session": "2026-04-28"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": 0.015332197614991383,
+    "day1_high_return": 0.10732538330494035,
+    "day1_low_return": -0.011925042589437829,
+    "day1_open_return": 0.022146507666098714,
+    "gap_ge_10pct": false,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": false,
+    "gap_ge_5pct": false,
+    "positive_gap_filled": true,
+    "positive_gap_retained_half": true,
+    "session_10_close_return": 0.028960817717206044,
+    "session_20_close_return": -0.0885860306643953,
+    "session_2_close_return": 0.017035775127768327,
+    "session_5_close_return": -0.040885860306643984
+  },
+  "label_reasons": {},
+  "labels_sha256": "733b9d73b158b6614b4678bf0b9da5f488e23b7f5b0e11b4b709f87fe836c816",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [
+    {
+      "labels": [
+        "all"
+      ],
+      "note": "Unusual pre-event context: the Alcon merger agreement was terminated on 2026-03-16 (GlobeNewswire release; 8-K filed 2026-03-17), two weeks before this release, so the stock had been trading as a deal-pinned special situation until then. The window itself contains only a 2026-04-15 Item 5.02 8-K."
+    }
+  ],
+  "additional_note": "The release says the company is moving forward independently following the merger termination.",
+  "plain_english_summary": "LNSR opened +2.2% versus the prior close on 2026-03-31, the reaction session to its premarket results release, ranged from -1.2% to +10.7% over the day, and closed +1.5%. The opening gap reached none of the 3/5/10/15/20/30% thresholds. The day's low reached the prior close (gap filled), and the close was at or above the gap midpoint. Closes versus the prior close: +1.7% after 2 sessions, -4.1% after 5, +2.9% after 10 and -8.9% after 20 (through 2026-04-28).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

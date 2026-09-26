@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "candidate_id": "0001628280-26-011990",
+  "event_id": "coll-2026-02-26",
+  "ticker": "COLL",
+  "cik": "0001267565",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36257372832,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36257372832",
+    "job_id": 108446612652,
+    "commit_sha": "0512860fbbf239c9f893428ec43dd0e3d40a3bf4",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all eight",
+        "record": "reports/m1-signoff-packet-batch-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Standing 2026-09-23 authorization; not separately re-confirmed at this scale (see the packet's signoff_record)."
+  },
+  "event_context": {
+    "release": "Collegium Reports Fourth Quarter and Full-Year 2025 Financial Results",
+    "wire_url": "https://www.globenewswire.com/en/news-release/2026/02/26/3245467/34897/en/Collegium-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results.html",
+    "displayed_stamp_et": "February 26, 2026 07:30 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-02-26T12:30:00Z",
+      "end_exclusive": "2026-02-26T12:31:00Z"
+    },
+    "release_timing": "premarket",
+    "reaction_session": "2026-02-26",
+    "anchor_session": "2026-02-25",
+    "twentieth_reaction_session": "2026-03-25"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": -0.03344262295081968,
+    "day1_high_return": -0.012459016393442601,
+    "day1_low_return": -0.10382513661202186,
+    "day1_open_return": -0.08743169398907102,
+    "gap_ge_10pct": false,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": false,
+    "gap_ge_5pct": false,
+    "positive_gap_filled": null,
+    "positive_gap_retained_half": null,
+    "session_10_close_return": -0.22142076502732244,
+    "session_20_close_return": -0.27322404371584696,
+    "session_2_close_return": -0.08918032786885244,
+    "session_5_close_return": -0.134207650273224
+  },
+  "label_reasons": {
+    "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+    "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+  },
+  "labels_sha256": "ae4011660a2314e215c051d28e3a6790fa930a591784850fc6d2d7cd83a2943c",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [
+    {
+      "labels": [
+        "session_20_close_return"
+      ],
+      "note": "An Item 1.01 8-K was filed 2026-03-19 17:06 ET, inside the window before session 20 (reaction 2026-03-20, session 17); content not reviewed. Sessions 1-10 precede it."
+    }
+  ],
+  "additional_note": "The 2026-01-08 8-K (Item 7.01) is 'Collegium Provides 2026 Financial Guidance and Business Update': forward guidance, not preliminary actual results. The 2026-02-26 release reports actual Q4/FY2025 results and reaffirms that guidance.",
+  "plain_english_summary": "COLL opened -8.7% versus the prior close on 2026-02-26, the reaction session to its premarket results release, ranged from -10.4% to -1.2% over the day, and closed -3.3%. The opening gap reached none of the 3/5/10/15/20/30% thresholds. There was no positive opening gap of at least 0.5%, so the gap-fill and half-retention labels do not apply. Closes versus the prior close: -8.9% after 2 sessions, -13.4% after 5, -22.1% after 10 and -27.3% after 20 (through 2026-03-25).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

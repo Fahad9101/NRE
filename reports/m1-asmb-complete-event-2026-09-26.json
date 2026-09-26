@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "candidate_id": "0001193125-26-115980",
+  "event_id": "asmb-2026-03-19",
+  "ticker": "ASMB",
+  "cik": "0001426800",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36257372832,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36257372832",
+    "job_id": 108446612652,
+    "commit_sha": "0512860fbbf239c9f893428ec43dd0e3d40a3bf4",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all eight",
+        "record": "reports/m1-signoff-packet-batch-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Standing 2026-09-23 authorization; not separately re-confirmed at this scale (see the packet's signoff_record)."
+  },
+  "event_context": {
+    "release": "Assembly Biosciences Reports Year-End 2025 Financial Results and Recent Highlights",
+    "wire_url": "https://www.globenewswire.com/news-release/2026/03/19/3259423/16259/en/Assembly-Biosciences-Reports-Year-End-2025-Financial-Results-and-Recent-Highlights.html",
+    "displayed_stamp_et": "March 19, 2026 16:05 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-03-19T20:05:00Z",
+      "end_exclusive": "2026-03-19T20:06:00Z"
+    },
+    "release_timing": "after_hours",
+    "reaction_session": "2026-03-20",
+    "anchor_session": "2026-03-19",
+    "twentieth_reaction_session": "2026-04-17"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": 0.034532897128316975,
+    "day1_high_return": 0.09523809523809512,
+    "day1_low_return": 0.0050890585241729624,
+    "day1_open_return": 0.09523809523809512,
+    "gap_ge_10pct": false,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": true,
+    "gap_ge_5pct": true,
+    "positive_gap_filled": false,
+    "positive_gap_retained_half": false,
+    "session_10_close_return": 0.05452562704471098,
+    "session_20_close_return": 0.06288622319156656,
+    "session_2_close_return": 0.0388949472918938,
+    "session_5_close_return": 0.049436568520538016
+  },
+  "label_reasons": {},
+  "labels_sha256": "41f62fbb7d4afce9042777e31d7b8915e23f0d1f75c48f117ec8e15bf5fe1f74",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [],
+  "additional_note": "The release highlights the Gilead licence of the helicase-primase programme; the 2025-12-08 8-K (Items 7.01, 8.01) precedes it and is presumably the original announcement, but was not opened.",
+  "plain_english_summary": "ASMB opened +9.5% versus the prior close on 2026-03-20, the reaction session to its after-hours results release, ranged from +0.5% to +9.5% over the day, and closed +3.5%. The opening gap reached the >=3%, >=5% thresholds. The day's low did not reach the prior close (gap not filled), and the close was below the gap midpoint. Closes versus the prior close: +3.9% after 2 sessions, +4.9% after 5, +5.5% after 10 and +6.3% after 20 (through 2026-04-17).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

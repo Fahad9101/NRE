@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "candidate_id": "0001628280-26-021185",
+  "event_id": "love-2026-03-26",
+  "ticker": "LOVE",
+  "cik": "0001701758",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36257372832,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36257372832",
+    "job_id": 108446612652,
+    "commit_sha": "0512860fbbf239c9f893428ec43dd0e3d40a3bf4",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all eight",
+        "record": "reports/m1-signoff-packet-batch-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Standing 2026-09-23 authorization; not separately re-confirmed at this scale (see the packet's signoff_record)."
+  },
+  "event_context": {
+    "release": "The Lovesac Company Reports Fourth Quarter and Fiscal 2026 Financial Results",
+    "wire_url": "https://www.globenewswire.com/news-release/2026/03/26/3262858/0/en/The-Lovesac-Company-Reports-Fourth-Quarter-and-Fiscal-2026-Financial-Results.html",
+    "displayed_stamp_et": "March 26, 2026 07:00 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-03-26T11:00:00Z",
+      "end_exclusive": "2026-03-26T11:01:00Z"
+    },
+    "release_timing": "premarket",
+    "reaction_session": "2026-03-26",
+    "anchor_session": "2026-03-25",
+    "twentieth_reaction_session": "2026-04-23"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": 0.21877767936226755,
+    "day1_high_return": 0.2766164747564217,
+    "day1_low_return": 0.1718334809565989,
+    "day1_open_return": 0.2134632418069089,
+    "gap_ge_10pct": true,
+    "gap_ge_15pct": true,
+    "gap_ge_20pct": true,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": true,
+    "gap_ge_5pct": true,
+    "positive_gap_filled": false,
+    "positive_gap_retained_half": true,
+    "session_10_close_return": 0.38972542072630656,
+    "session_20_close_return": 0.4836138175376441,
+    "session_2_close_return": 0.19840566873339238,
+    "session_5_close_return": 0.29406554472984947
+  },
+  "label_reasons": {},
+  "labels_sha256": "29c2356beebe5a5d88643c37e1f7864c21b8a1e77eff79c4ce94b65de3714700",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [],
+  "additional_note": "Fiscal Q4 FY2026 (year ended 2026-02-01). Same release announces a new $40 million share repurchase authorization. The Item 7.01 8-K one minute later is the same-day presentation.",
+  "plain_english_summary": "LOVE opened +21.3% versus the prior close on 2026-03-26, the reaction session to its premarket results release, ranged from +17.2% to +27.7% over the day, and closed +21.9%. The opening gap reached the >=3%, >=5%, >=10%, >=15%, >=20% thresholds. The day's low did not reach the prior close (gap not filled), and the close was at or above the gap midpoint. Closes versus the prior close: +19.8% after 2 sessions, +29.4% after 5, +39.0% after 10 and +48.4% after 20 (through 2026-04-23).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

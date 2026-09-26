@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "candidate_id": "0001193125-26-076843",
+  "event_id": "tecx-2026-02-26",
+  "ticker": "TECX",
+  "cik": "0001681087",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36257372832,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36257372832",
+    "job_id": 108446612652,
+    "commit_sha": "0512860fbbf239c9f893428ec43dd0e3d40a3bf4",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all eight",
+        "record": "reports/m1-signoff-packet-batch-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Standing 2026-09-23 authorization; not separately re-confirmed at this scale (see the packet's signoff_record)."
+  },
+  "event_context": {
+    "release": "Tectonic Therapeutic Announces Fourth Quarter and Full Year 2025 Financial Results and Recent Business Highlights",
+    "wire_url": "https://www.globenewswire.com/news-release/2026/02/26/3246161/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+    "displayed_stamp_et": "February 26, 2026 16:17 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-02-26T21:17:00Z",
+      "end_exclusive": "2026-02-26T21:18:00Z"
+    },
+    "release_timing": "after_hours",
+    "reaction_session": "2026-02-27",
+    "anchor_session": "2026-02-26",
+    "twentieth_reaction_session": "2026-03-26"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": -0.020058503969912267,
+    "day1_high_return": 0.0154617634768075,
+    "day1_low_return": -0.046385290430422055,
+    "day1_open_return": 0.007939824488090386,
+    "gap_ge_10pct": false,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": false,
+    "gap_ge_5pct": false,
+    "positive_gap_filled": true,
+    "positive_gap_retained_half": false,
+    "session_10_close_return": 0.42582532386126193,
+    "session_20_close_return": 0.2854157960718764,
+    "session_2_close_return": -0.03886335144170494,
+    "session_5_close_return": 0.16381111575428342
+  },
+  "label_reasons": {},
+  "labels_sha256": "8552ef41fb47918ac1ab27df0729d49b812639fe7bf9b5b1fa5631f6d017f301",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [],
+  "additional_note": "An Item 5.02/7.01 8-K was filed two days before the event (2026-02-24 16:06 ET), apparently about a board appointment effective 2026-04-01; content not opened. It precedes the release, so it is context rather than a competing catalyst.",
+  "plain_english_summary": "TECX opened +0.8% versus the prior close on 2026-02-27, the reaction session to its after-hours results release, ranged from -4.6% to +1.5% over the day, and closed -2.0%. The opening gap reached none of the 3/5/10/15/20/30% thresholds. The day's low reached the prior close (gap filled), and the close was below the gap midpoint. Closes versus the prior close: -3.9% after 2 sessions, +16.4% after 5, +42.6% after 10 and +28.5% after 20 (through 2026-03-26).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

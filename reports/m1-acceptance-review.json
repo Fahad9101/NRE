@@ -15,6 +15,46 @@
       "event_id": "cxt-2026-02-11",
       "reviewers": ["Fahad9101"],
       "evidence": "reports/m1-cxt-signoff-packet-2026-09-23.json; reports/m1-cxt-complete-event-2026-09-23.json"
+    },
+    {
+      "event_id": "achv-2026-03-24",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-achv-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "coll-2026-02-26",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-coll-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "love-2026-03-26",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-love-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "aspn-2026-02-25",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-aspn-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "lnsr-2026-03-31",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-lnsr-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "asmb-2026-03-19",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-asmb-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "tecx-2026-02-26",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-tecx-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "rekr-2026-03-31",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-rekr-complete-event-2026-09-26.json"
     }
   ]
 }
