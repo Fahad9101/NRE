@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "MILESTONE_2_STEP_1_APPROVED_SCOPE_PROPOSAL_AWAITING_OWNER_CONFIRMATION",
+  "milestone": "Milestone 2 -- Reaction Fingerprints (NRE 1.0)",
+  "owner_reply": {
+    "by": "Fahad9101 (project owner)",
+    "sent_at_utc": "2026-09-26T17:57:55Z (per the session transcript)",
+    "exact_words": "approve",
+    "in_reply_to": "I'd approve Milestone 2 in two steps: first the fingerprint machinery and leakage tests on what exists, with sparse-suppression on. Its outputs will mostly say \"insufficient data\". Then decide separately whether to fund the depth push, which is the real work. If you approve, I'll write a scope proposal for you to review before touching anything.",
+    "same_message_also_said": "Milestone 2's acceptance test can't honestly be met on this dataset (23 events, one per issuer, so company-level histories are empty)."
+  },
+  "reading_recorded": {
+    "made_by": "the assistant, not the owner",
+    "step_1": "Approved, subject to the owner's review and confirmation of docs/M2-SCOPE-PROPOSAL.md: fingerprint statistics and analogue retrieval with leakage tests and sparse-data suppression, offline, on the 23 accepted events.",
+    "step_2": "Not approved. Data depth (prior quarters, the unreviewed candidates, chronology at scale) is a separate decision.",
+    "open_to_correction": "The word \"approve\" does not itself distinguish the two steps. If the owner meant something else, this record is corrected."
+  },
+  "done_under_this_authorization": [
+    "Wrote docs/M2-SCOPE-PROPOSAL.md, the scope proposal the recommendation promised for the owner's review.",
+    "Recorded this authorization and updated the status text that still said Milestone 2 was unauthorized."
+  ],
+  "not_yet_authorized": [
+    "Building any Milestone 2 code before the owner confirms the scope in the proposal.",
+    "Step 2 (data depth), including extending the session calendar, freezing a new candidate set or reviewing further candidates.",
+    "Any prediction, score, ranking or model, and Milestones 3 onward; each needs its own explicit approval.",
+    "Any change to Milestone 1 records, code or protocol, or to the frozen BOE, SOE and IEE rules."
+  ],
+  "milestone_1_state_relied_on": {
+    "declaration": "reports/m1-acceptance-declaration-2026-09-26.json",
+    "repository_head_before_this_record": "dafb2c2358a4f541437291669cbad59b2e570180",
+    "note": "The declaration's statement that Milestone 2 was not authorized was true when it was made and is left as recorded; this record supersedes it for status purposes only."
+  },
+  "proposal": {
+    "file": "docs/M2-SCOPE-PROPOSAL.md",
+    "headline_finding": "With 23 events, one per issuer, most step 1 answers will be \"insufficient data\"; step 1 can show the machinery obeys the Milestone 0 contract but not that comparable events exist for a typical target, so Milestone 2 is not to be called accepted on step 1 alone."
+  }
+}

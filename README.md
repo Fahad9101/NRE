@@ -32,7 +32,11 @@ Python 3.12+ and IANA timezone data are required. No Docker, API subscription or
 
 ## Milestone 1 status
 
-Declared accepted by the project owner on 2026-09-26 ([declaration](reports/m1-acceptance-declaration-2026-09-26.json)). The amended target (20 events across 15 issuers) is met by 22 eligible events across 22 issuers, and the formal audit's 16 structural gates all pass ([final audit record](reports/m1-consolidated-audit-final-2026-09-26.json), [assessment](docs/M1-READINESS-ASSESSMENT.md)). The engine's `milestone_accepted` flag stays false by design. No predictive scoring exists; Milestone 2 has not been authorized and requires separate approval.
+Declared accepted by the project owner on 2026-09-26 ([declaration](reports/m1-acceptance-declaration-2026-09-26.json)). The amended target (20 events across 15 issuers) is met by 22 eligible events across 22 issuers, and the formal audit's 16 structural gates all pass ([final audit record](reports/m1-consolidated-audit-final-2026-09-26.json), [assessment](docs/M1-READINESS-ASSESSMENT.md)). The engine's `milestone_accepted` flag stays false by design. No predictive scoring exists.
+
+## Milestone 2 status
+
+The project owner replied "approve" on 2026-09-26 to a two-step plan. It is read as approving step 1, reaction fingerprints and analogue retrieval on the existing 23 events with leakage tests and sparse-data suppression, subject to the owner's review of the [scope proposal](docs/M2-SCOPE-PROPOSAL.md) ([record](reports/m2-authorization-2026-09-26.json)); the reading is recorded as the assistant's and is open to correction. Nothing is built yet. Step 2, the data-depth push, is a separate decision that has not been made.
 
 ## Validation status
 
