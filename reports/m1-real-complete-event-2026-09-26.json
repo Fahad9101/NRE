@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "batch": "third (2026-09-26)",
+  "selection_role": "spare",
+  "candidate_id": "0001573221-26-000009",
+  "event_id": "real-2026-02-26",
+  "ticker": "REAL",
+  "cik": "0001573221",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36258355816,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36258355816",
+    "job_id": 108449304733,
+    "commit_sha": "39f89a0b3571a8afddd5cd889858e9c30d44927a",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all thirteen, provider rights fine",
+        "record": "reports/m1-signoff-packet-batch-3-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Explicitly re-confirmed by the owner on 2026-09-26 ('provider rights fine') for about twenty-three recorded events; see the packet's signoff_record."
+  },
+  "event_context": {
+    "release": "The RealReal Announces Fourth Quarter and Full Year 2025 Results",
+    "wire": "GlobeNewswire",
+    "wire_url": "https://www.globenewswire.com/news-release/2026/02/26/3246067/0/en/the-realreal-announces-fourth-quarter-and-full-year-2025-results.html",
+    "displayed_stamp_et": "February 26, 2026 16:03 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-02-26T21:03:00Z",
+      "end_exclusive": "2026-02-26T21:04:00Z"
+    },
+    "release_timing": "after_hours",
+    "reaction_session": "2026-02-27",
+    "anchor_session": "2026-02-26",
+    "twentieth_reaction_session": "2026-03-26"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": -0.01049233252623094,
+    "day1_high_return": 0.13434221146085545,
+    "day1_low_return": -0.041162227602905554,
+    "day1_open_return": 0.12913640032284102,
+    "gap_ge_10pct": true,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": true,
+    "gap_ge_5pct": true,
+    "positive_gap_filled": true,
+    "positive_gap_retained_half": false,
+    "session_10_close_return": -0.19531880548829705,
+    "session_20_close_return": -0.27360774818401945,
+    "session_2_close_return": -0.04196933010492343,
+    "session_5_close_return": -0.08232445520581122
+  },
+  "label_reasons": {},
+  "labels_sha256": "d55707e25e2282731eaec0303604a092e254909bb00e897baa8e48ebd28e5b31",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [
+    {
+      "labels": [
+        "session_10_close_return",
+        "session_20_close_return"
+      ],
+      "note": "An 8-K with Items 5.02 and 7.01 was filed 2026-03-09 16:11 ET (reaction 2026-03-10, session 8); content not reviewed. Sessions 1-5 precede it."
+    }
+  ],
+  "competing_catalysts_inside_window": [
+    "2026-03-09 16:11 ET 8-K Items 5.02 and 7.01 (content not opened; reaction session 2026-03-10)"
+  ],
+  "additional_note": "SPARE. In February 2025 this company issued preliminary Q4 results ahead of its formal release; the 8-K history shows nothing comparable between 2025-11-10 and this event.",
+  "plain_english_summary": "REAL opened +12.9% versus the prior close on 2026-02-27, the reaction session to its after-hours results release, ranged from -4.1% to +13.4% over the day, and closed -1.0%. The opening gap reached the >=3%, >=5%, >=10% thresholds. The day's low reached the prior close (gap filled), and the close was below the gap midpoint. Closes versus the prior close: -4.2% after 2 sessions, -8.2% after 5, -19.5% after 10 and -27.4% after 20 (through 2026-03-26).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

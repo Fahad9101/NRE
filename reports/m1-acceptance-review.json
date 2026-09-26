@@ -55,6 +55,71 @@
       "event_id": "rekr-2026-03-31",
       "reviewers": ["Fahad9101"],
       "evidence": "reports/m1-signoff-packet-batch-2026-09-26.json; reports/m1-rekr-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "ttwo-2026-02-03",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-ttwo-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "jbss-2026-01-29",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-jbss-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "nbix-2026-02-11",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-nbix-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "caci-2026-01-21",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-caci-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "vsat-2026-02-05",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-vsat-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "hurn-2026-02-24",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-hurn-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "parr-2026-02-24",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-parr-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "klc-2026-03-12",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-klc-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "pdfs-2026-02-12",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-pdfs-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "alkt-2026-02-25",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-alkt-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "payo-2026-02-26",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-payo-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "okta-2026-03-04",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-okta-complete-event-2026-09-26.json"
+    },
+    {
+      "event_id": "real-2026-02-26",
+      "reviewers": ["Fahad9101"],
+      "evidence": "reports/m1-signoff-packet-batch-3-2026-09-26.json; reports/m1-real-complete-event-2026-09-26.json"
     }
   ]
 }

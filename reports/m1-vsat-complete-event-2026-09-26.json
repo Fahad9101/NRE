@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ELIGIBLE_COMPLETE_EVENT",
+  "batch": "third (2026-09-26)",
+  "selection_role": "core",
+  "candidate_id": "0001193125-26-039528",
+  "event_id": "vsat-2026-02-05",
+  "ticker": "VSAT",
+  "cik": "0000797721",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36258355816,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36258355816",
+    "job_id": 108449304733,
+    "commit_sha": "39f89a0b3571a8afddd5cd889858e9c30d44927a",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "reviewer": "Fahad9101 (project owner)",
+    "signoffs": [
+      {
+        "items": [
+          "first_public_time",
+          "historical_identity",
+          "corporate_actions"
+        ],
+        "date": "2026-09-26",
+        "words": "sign off on all thirteen, provider rights fine",
+        "record": "reports/m1-signoff-packet-batch-3-2026-09-26.json"
+      }
+    ],
+    "provider_rights": "Explicitly re-confirmed by the owner on 2026-09-26 ('provider rights fine') for about twenty-three recorded events; see the packet's signoff_record."
+  },
+  "event_context": {
+    "release": "Viasat Releases Third Quarter Fiscal Year 2026 Financial Results",
+    "wire": "GlobeNewswire",
+    "wire_url": "https://www.globenewswire.com/news-release/2026/02/05/3233423/0/en/Viasat-Releases-Third-Quarter-Fiscal-Year-2026-Financial-Results.html",
+    "displayed_stamp_et": "February 05, 2026 16:05 ET",
+    "publication_interval": {
+      "start_inclusive": "2026-02-05T21:05:00Z",
+      "end_exclusive": "2026-02-05T21:06:00Z"
+    },
+    "release_timing": "after_hours",
+    "reaction_session": "2026-02-06",
+    "anchor_session": "2026-02-05",
+    "twentieth_reaction_session": "2026-03-06"
+  },
+  "corporate_actions_in_window": [],
+  "computed_labels": {
+    "day1_close_return": 0.11378205128205132,
+    "day1_high_return": 0.13002938034188039,
+    "day1_low_return": 0.040064102564102644,
+    "day1_open_return": 0.10283119658119655,
+    "gap_ge_10pct": true,
+    "gap_ge_15pct": false,
+    "gap_ge_20pct": false,
+    "gap_ge_30pct": false,
+    "gap_ge_3pct": true,
+    "gap_ge_5pct": true,
+    "positive_gap_filled": false,
+    "positive_gap_retained_half": true,
+    "session_10_close_return": 0.24198717948717952,
+    "session_20_close_return": 0.1696047008547008,
+    "session_2_close_return": 0.23611111111111116,
+    "session_5_close_return": 0.24545940170940184
+  },
+  "label_reasons": {},
+  "labels_sha256": "5241858a269d2d7893143237a459898b7090fe7a02ea6fb4d32dea2a71ccfd9e",
+  "state": {
+    "build_state": "MAPPED",
+    "reasons": [],
+    "mapped_day1": true,
+    "complete_20_session": true
+  },
+  "eligible_for_minimums": true,
+  "caveats": [],
+  "competing_catalysts_inside_window": [],
+  "additional_note": "A financing-type 8-K (Items 1.01, 2.03, 8.01) was filed ten days before the event; nothing falls inside the window. The release is a shareholder letter; the call was at 5:30 pm ET. Fiscal Q3 FY2026.",
+  "plain_english_summary": "VSAT opened +10.3% versus the prior close on 2026-02-06, the reaction session to its after-hours results release, ranged from +4.0% to +13.0% over the day, and closed +11.4%. The opening gap reached the >=3%, >=5%, >=10% thresholds. The day's low did not reach the prior close (gap not filled), and the close was at or above the gap midpoint. Closes versus the prior close: +23.6% after 2 sessions, +24.5% after 5, +24.2% after 10 and +17.0% after 20 (through 2026-03-06).",
+  "what_this_is_not": [
+    "Not Milestone 1 acceptance.",
+    "One historical observation, not evidence of a repeatable pattern or a predictive edge.",
+    "Selected from filing and wire metadata before any label existed; recorded as computed, whatever the result."
+  ],
+  "raw_data_policy_note": "No raw OHLCV was committed; every value above is a derived ratio, boolean or digest computed by nre.dataset.build()."
+}

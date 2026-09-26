@@ -753,8 +753,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "70c4493470cdbf2fa1fb3a4b42874890d5ac754d50941f715ee91256a5a4a402",
       "discovery_transport_sha256": "32cbd5771d1f3f3818aaeba2a04214ae3bd09238d272c6d74d36a7c213a5a855",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "nbix-2026-02-11",
       "filing_date": "2026-02-11",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -765,7 +765,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/nbix-20260211.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-nbix-complete-event-2026-09-26.json.",
       "source_sha256": "70c4493470cdbf2fa1fb3a4b42874890d5ac754d50941f715ee91256a5a4a402"
     },
     {
@@ -1310,8 +1310,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "d78e8e2599fd15f3c20f7736bf515d9cec2afe0cac8fa2ce5b3ed8188c898ccd",
       "discovery_transport_sha256": "1f37bfafa694d69cc5467f0424c1ff0566304e314abbe9673dc25908c1f34c14",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "payo-2026-02-26",
       "filing_date": "2026-02-26",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -1322,7 +1322,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1845815/000110465926020081/payo-20260226x8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-payo-complete-event-2026-09-26.json.",
       "source_sha256": "d78e8e2599fd15f3c20f7736bf515d9cec2afe0cac8fa2ce5b3ed8188c898ccd"
     },
     {
@@ -1976,8 +1976,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "8b52673bd347bfb6a7aae8867047e2cc9553b8f9f88fc9695bdd05427aa7c205",
       "discovery_transport_sha256": "54c4de2917b88df90b63389041d0e2a740977c6a4de9d55a976de9e5c83dcea5",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "jbss-2026-01-29",
       "filing_date": "2026-01-29",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -1988,7 +1988,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312526029383/jbss-20260129.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-jbss-complete-event-2026-09-26.json.",
       "source_sha256": "8b52673bd347bfb6a7aae8867047e2cc9553b8f9f88fc9695bdd05427aa7c205"
     },
     {
@@ -2061,8 +2061,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "c26949197b77a52556e1ac5127f39508a128e7670720602ed2d84302aa1708ce",
       "discovery_transport_sha256": "d3e26864a81e76d1b9ef3499129289f035408506bbcd5b039db62699e0c81f62",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "vsat-2026-02-05",
       "filing_date": "2026-02-05",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -2073,7 +2073,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312526039528/d39970d8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-vsat-complete-event-2026-09-26.json.",
       "source_sha256": "c26949197b77a52556e1ac5127f39508a128e7670720602ed2d84302aa1708ce"
     },
     {
@@ -2511,8 +2511,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "590174574df2047e3c29030cf12966d705b00bcbfd858984eb343137a9b90e5d",
       "discovery_transport_sha256": "a031c75303f25104a802d50f0931a548b7fa73e4ae435cb9b7f819917280fa3f",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "klc-2026-03-12",
       "filing_date": "2026-03-12",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -2523,7 +2523,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1873529/000119312526104145/klc-20260312.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-klc-complete-event-2026-09-26.json.",
       "source_sha256": "590174574df2047e3c29030cf12966d705b00bcbfd858984eb343137a9b90e5d"
     },
     {
@@ -3157,8 +3157,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "fe255d1a8a0edc8739baa8af3416b6c0d6008d22bff333de56a7cceef36aec26",
       "discovery_transport_sha256": "9e93af46fa198ee006aca441821beeb9f180334e87d22c89d4984e333d28f987",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "pdfs-2026-02-12",
       "filing_date": "2026-02-12",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -3169,7 +3169,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1120914/000143774926003948/pdfs20251124_8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-pdfs-complete-event-2026-09-26.json.",
       "source_sha256": "fe255d1a8a0edc8739baa8af3416b6c0d6008d22bff333de56a7cceef36aec26"
     },
     {
@@ -3612,8 +3612,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "1f0c309beca607376b14d52bab42c435079194258bcc17bdd9b6ed753385d47b",
       "discovery_transport_sha256": "95241b905cfde664b45b3e0904f1c5e6af67378280638f75eaba09cb2b4d99e5",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "alkt-2026-02-25",
       "filing_date": "2026-02-25",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -3625,7 +3625,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927426000005/alk-20260225.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-alkt-complete-event-2026-09-26.json.",
       "source_sha256": "1f0c309beca607376b14d52bab42c435079194258bcc17bdd9b6ed753385d47b"
     },
     {
@@ -3851,8 +3851,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "8d30c86c531b7916669567abb8168a766fdd4797115f0bd3ad1bb27337fde48b",
       "discovery_transport_sha256": "c5e0d8276aa83b2979321ebbb7d2c3eec0034248da34cc63f44c180f51595104",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "real-2026-02-26",
       "filing_date": "2026-02-26",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -3863,7 +3863,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000157322126000009/real-20260226.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-real-complete-event-2026-09-26.json.",
       "source_sha256": "8d30c86c531b7916669567abb8168a766fdd4797115f0bd3ad1bb27337fde48b"
     },
     {
@@ -3936,8 +3936,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "f4c0e5ea31bcc7a251e4836ee679cfa42e18fd483929a4484360d2ae2c4b2e46",
       "discovery_transport_sha256": "fb47861a0b72d4f4cc5655bba9af6ecec14a30a0cfd260e1f8e63ff84a2611b2",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "caci-2026-01-21",
       "filing_date": "2026-01-21",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -3948,7 +3948,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000162828026002895/caci-20260121.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-caci-complete-event-2026-09-26.json.",
       "source_sha256": "f4c0e5ea31bcc7a251e4836ee679cfa42e18fd483929a4484360d2ae2c4b2e46"
     },
     {
@@ -3978,8 +3978,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "8040b3eabc7e8bcf86268544b92c3fe658314ac39a254b10b847a2103eff1c55",
       "discovery_transport_sha256": "8857a6de565fda4ca3d7a6cd61d688c5cbe1260914e157877311cca7b319d780",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "ttwo-2026-02-03",
       "filing_date": "2026-02-03",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -3990,7 +3990,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026005010/ttwo-20260203.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-ttwo-complete-event-2026-09-26.json.",
       "source_sha256": "8040b3eabc7e8bcf86268544b92c3fe658314ac39a254b10b847a2103eff1c55"
     },
     {
@@ -4149,8 +4149,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "bfcc9a4fa455ad365a9f69b53eb3889ffe17295ec0c4939164f4aaae75456cb8",
       "discovery_transport_sha256": "0000c6bdd90fd2d56ced4505ab29a8131cee411b4673d901bdc7d9fc2f47e2a2",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "hurn-2026-02-24",
       "filing_date": "2026-02-24",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -4161,7 +4161,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1289848/000162828026011092/hurn-20260224.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-hurn-complete-event-2026-09-26.json.",
       "source_sha256": "bfcc9a4fa455ad365a9f69b53eb3889ffe17295ec0c4939164f4aaae75456cb8"
     },
     {
@@ -4192,8 +4192,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "98e90a71bab0fddcc433fb873cf41c8ea1ee280ae88460f12840860a3d2a348b",
       "discovery_transport_sha256": "3f69e9af3b90aab204c45edea884998a491a1c318b696381938adaf23dccad4e",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "parr-2026-02-24",
       "filing_date": "2026-02-24",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -4204,7 +4204,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/821483/000162828026011234/parr-20260224.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-parr-complete-event-2026-09-26.json.",
       "source_sha256": "98e90a71bab0fddcc433fb873cf41c8ea1ee280ae88460f12840860a3d2a348b"
     },
     {
@@ -4449,8 +4449,8 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "de4bbc54bb6958c97181861db6cdd4f7e36b29fc0d6f2ac5653a468c320c65ed",
       "discovery_transport_sha256": "e7b855caad5c2757286cff35b07f364638f9363a6d39863cc28d09f21ec03c48",
-      "disposition": "quarantined",
-      "event_id": null,
+      "disposition": "included",
+      "event_id": "okta-2026-03-04",
       "filing_date": "2026-03-04",
       "form": "8-K",
       "historical_frame_reconciliation": "MATCHED",
@@ -4462,7 +4462,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-20260304.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Included: timing, identity and corporate actions signed off by the project owner 2026-09-26 (reports/m1-signoff-packet-batch-3-2026-09-26.json). Real prices acquired and labels computed 2026-09-26 via nre/event_acquire.py, run 36258355816 -- state MAPPED, complete_20_session. Full record: reports/m1-okta-complete-event-2026-09-26.json.",
       "source_sha256": "de4bbc54bb6958c97181861db6cdd4f7e36b29fc0d6f2ac5653a468c320c65ed"
     },
     {

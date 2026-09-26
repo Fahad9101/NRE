@@ -212,3 +212,20 @@ The same outcome-blind screen was extended to the rest of the unflagged pool. Th
 `reports/m1-signoff-packet-batch-3-2026-09-26.json` proposes thirteen of the sixteen: eleven with no 8-K inside their window (TTWO, JBSS, NBIX, CACI, VSAT, HURN, PARR, KLC, PDFS, ALKT, PAYO), which would bring the eligible total to exactly 20 events across 20 issuers, plus two spares whose only in-window 8-Ks are Item 5.02 (OKTA, REAL). NAVN, BRLT and CRCL are held in reserve. Nothing is accepted; each event stays quarantined until the project owner signs off. The packet asks explicitly whether the provider-rights authorization still holds at about twenty-three recorded events, because the previous batch proceeded under the standing authorization without that question being separately answered.
 
 Current totals are unchanged: 243 candidates / 215 issuers / 15 excluded / 10 included / 218 quarantined. Progress is still 9 of 20 eligible events across 9 of 15 issuers.
+
+## Third batch signed off and recorded; the recorded target is met — September 26
+
+The project owner replied "sign off on all thirteen, provider rights fine" (2026-09-26): first-public time, historical identity and corporate actions for TTWO, JBSS, NBIX, CACI, VSAT, HURN, PARR, KLC, PDFS, ALKT, PAYO and the two spares OKTA and REAL, and an explicit answer to the provider-rights question at about twenty-three recorded events. The workflow (run `36258355816`, commit `39f89a0`) computed their labels for the first time. All thirteen reached `MAPPED` with a non-null session-20 label, every required session present, no zero-volume day and no corporate action in any window. Each result is recorded as computed in `reports/m1-<ticker>-complete-event-2026-09-26.json`, the ledger marks them `included`, the spot-check entries name the reviewer, and each spec entry pins its label digest. NAVN, BRLT and CRCL remain pending and unattested as reserves.
+
+The largest single-day move, KLC (day-1 close -42.6%), was checked against independent reporting before recording (shares fell about 39% on 2026-03-13 on weak 2026 guidance), so it is a real market move and not a data error. Day-1 closes across the thirteen ranged from -42.6% (KLC) to +11.4% (VSAT); no outcome was used to select or drop any event.
+
+Recorded progress against the target is now **22 eligible events across 22 issuers** (target: 20 events across 15 issuers): seven premarket (SLSN, ACHV, COLL, LOVE, ASPN, LNSR, PAYO) and fifteen after-hours. CXT stays included but not eligible. This is recorded progress, not an accepted milestone. The formal `audit-cohort` still cannot see these events, so `reports/m1-readiness-audit.json` remains BLOCKED, and its `recorded_*` fields carry the real counts.
+
+What still stands between this and a Milestone 1 declaration:
+
+1. **A consolidated audit run that sees the real events.** Raw prices exist only inside GitHub Actions, so the audit needs to be assembled and run there, publishing only its derived result. Its input must declare `category: earnings` and `subtype: results` on each event (the current per-event bundles do not), and must carry the exact archived text of all 243 candidate sources (`NRE-M1-SEC-Freeze-Audit.zip`, not in the repository), which `candidate_source_hashes` requires.
+2. **Candidate accounting.** `candidate_accounting` accepts only `included` or `excluded` for every candidate, and 205 remain `quarantined`. Either each is excluded with a documented reason or the accounting rule is amended; that is a protocol decision for the project owner.
+3. **The three cohort-wide attestations** (`discovery_coverage_evidence`, `identity_history_evidence`, `provider_rights_evidence`), currently blank on purpose. The owner decides their scope.
+4. **The owner's acceptance declaration**, which no script sets.
+
+Current totals: 243 candidates / 215 issuers / 15 excluded / 23 included / 205 quarantined.
