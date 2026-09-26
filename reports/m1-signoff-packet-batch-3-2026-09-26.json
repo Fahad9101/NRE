@@ -641,5 +641,28 @@
     "Not Milestone 1 acceptance.",
     "Not evidence of any predictive edge.",
     "Only events with a non-null session-20 label count toward the target; none of these has a corporate action in its window."
-  ]
+  ],
+  "signoff_record": {
+    "decided_on": "2026-09-26",
+    "decided_by": "Fahad9101 (project owner)",
+    "exact_words": "sign off on all thirteen, provider rights fine",
+    "scope": "first_public_time, historical_identity and corporate_actions for the thirteen candidates in this packet (eleven core and two spares), and an explicit answer to the provider-rights question at about twenty-three recorded events.",
+    "provider_rights_at_scale": "Answered explicitly: 'provider rights fine'. The 2026-09-23 authorization (redacted-anchor derived ratios, booleans, counts and hashes only, never raw prices) is confirmed for about twenty-three recorded events. This is the first explicit re-confirmation at scale; the previous batch had proceeded under the standing authorization without one.",
+    "candidates_signed_off": [
+      "ttwo-2026-02-03",
+      "jbss-2026-01-29",
+      "nbix-2026-02-11",
+      "caci-2026-01-21",
+      "vsat-2026-02-05",
+      "hurn-2026-02-24",
+      "parr-2026-02-24",
+      "klc-2026-03-12",
+      "pdfs-2026-02-12",
+      "alkt-2026-02-25",
+      "payo-2026-02-26",
+      "okta-2026-03-04",
+      "real-2026-02-26"
+    ]
+  },
+  "all_items_signed_off": true
 }
