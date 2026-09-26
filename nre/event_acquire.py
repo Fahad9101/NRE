@@ -25,7 +25,7 @@ ACTIONS_ENDPOINT = "https://data.alpaca.markets/v1/corporate-actions"
 REACTION_SESSIONS = 20
 TIMINGS = {"premarket", "after_hours"}
 ATTESTATIONS = {"first_public_time", "historical_identity", "corporate_actions"}
-RESERVED_SOURCE_IDS = {"alpaca-bars", "alpaca-actions"}
+EVENT_CATEGORY, EVENT_SUBTYPE = "earnings", "results"
 TICKER = re.compile(r"^[A-Z][A-Z0-9.]{0,9}$")
 SECURITY_KEYS = ("security_id", "company_id", "cik", "ticker", "exchange", "security_type", "valid_from", "available_at")
 SOURCE_KEYS = ("source_id", "url", "text", "first_seen_at")
@@ -84,8 +84,8 @@ def _validate_event(event, calendar, root):
     _require(source, SOURCE_KEYS, name + ".source")
     if not TICKER.match(security["ticker"]):
         raise DataError(name + ": ticker is not a plain symbol")
-    if source["source_id"] in RESERVED_SOURCE_IDS or not source["url"].startswith("https://"):
-        raise DataError(name + ": source needs an unreserved id and an https URL")
+    if source["source_id"].startswith("alpaca-") or not source["url"].startswith("https://"):
+        raise DataError(name + ": source needs an id not starting with alpaca- and an https URL")
     if event.get("precision") != "minute":
         raise DataError(name + ": only minute precision is supported")
     published = _aware(event["published_at"], name + ".published_at")
@@ -228,6 +228,7 @@ def build_bundle(event, provider, window, bars_by_session, actions, retrieved_at
     first_public = "first_public_time" in attested and "historical_identity" in attested
     actions_verified = "corporate_actions" in attested
     stamp = iso(retrieved_at)
+    bars_source, actions_source = "alpaca-bars-" + ticker.lower(), "alpaca-actions-" + ticker.lower()
     prices = []
     for session in window["required_sessions"]:
         bar = bars_by_session.get(session)
@@ -235,7 +236,7 @@ def build_bundle(event, provider, window, bars_by_session, actions, retrieved_at
             continue
         prices.append({
             "price_id": ticker.lower() + "-" + session, "security_id": security["security_id"],
-            "source_id": "alpaca-bars", "session": session, "provider_id": provider["provider_id"],
+            "source_id": bars_source, "session": session, "provider_id": provider["provider_id"],
             "feed": "sip", "price_basis": "raw", "open": bar["open"], "high": bar["high"],
             "low": bar["low"], "close": bar["close"], "volume": bar["volume"],
             # A regular close is known within a minute of the bell; a later stamp would wrongly block the
@@ -251,10 +252,10 @@ def build_bundle(event, provider, window, bars_by_session, actions, retrieved_at
         "sources": [
             {"source_id": source["source_id"], "url": source["url"], "text": source["text"],
              "first_seen_at": source["first_seen_at"], "retrieved_at": stamp},
-            {"source_id": "alpaca-bars", "url": BARS_ENDPOINT, "first_seen_at": stamp, "retrieved_at": stamp,
+            {"source_id": bars_source, "url": BARS_ENDPOINT, "first_seen_at": stamp, "retrieved_at": stamp,
              "text": "Alpaca SIP daily bars, " + ticker + ", " + window["start"] + " to " + window["end"]
              + ", asof " + window["asof"] + "."},
-            {"source_id": "alpaca-actions", "url": ACTIONS_ENDPOINT, "first_seen_at": stamp, "retrieved_at": stamp,
+            {"source_id": actions_source, "url": ACTIONS_ENDPOINT, "first_seen_at": stamp, "retrieved_at": stamp,
              "text": "Alpaca corporate actions, " + ticker + ", " + window["start"] + " to " + window["end"] + "."},
         ],
         "securities": [
@@ -271,17 +272,37 @@ def build_bundle(event, provider, window, bars_by_session, actions, retrieved_at
             {"event_id": event["event_id"], "cluster_id": event["cluster_id"], "security_id": security["security_id"],
              "source_id": source["source_id"], "published_at": event["published_at"], "cutoff": event["cutoff"],
              "precision": "minute", "first_public_verified": first_public,
-             "timestamp_evidence": event["timestamp_evidence"]},
+             "timestamp_evidence": event["timestamp_evidence"],
+             "category": EVENT_CATEGORY, "subtype": EVENT_SUBTYPE},
         ],
         "prices": prices,
         "corporate_actions": [
             {"action_id": a["id"] or (a["type"] + "-" + a["ex_date"]), "security_id": security["security_id"],
-             "source_id": "alpaca-actions", "type": a["type"], "effective_date": a["ex_date"],
+             "source_id": actions_source, "type": a["type"], "effective_date": a["ex_date"],
              # Conservatively public no later than its own ex-date.
              "available_at": iso(datetime.combine(date.fromisoformat(a["ex_date"]), time(0), calendar.zone))}
             for a in actions],
         "features": [],
     }
+
+
+def fetch_event_data(event, window, fetch):
+    ticker = event["security"]["ticker"]
+    bars, bar_pages = fetch_bars(lambda p: fetch(BARS_ENDPOINT, p), ticker, bars_params(ticker, window))
+    actions, action_pages = fetch_actions(lambda p: fetch(ACTIONS_ENDPOINT, p), actions_params(ticker, window))
+    return bars, bar_pages, actions, action_pages
+
+
+def make_fetch(opener, key, secret):
+    def fetch(endpoint, params):
+        request = Request(endpoint + "?" + urlencode(params),
+                          headers={"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret})
+        with opener.open(request, timeout=30) as response:
+            raw = response.read(4_000_001)
+            if len(raw) > 4_000_000:
+                raise DataError("response size limit exceeded")
+            return raw
+    return fetch
 
 
 def labels_digest(outcome):
@@ -311,8 +332,7 @@ def run_event(event, provider, fetch, calendar, retrieved_at=None):
         report["window"] = {key: window[key] for key in ("anchor_session", "reaction_session", "release_timing",
                                                           "start", "end", "asof")}
         report["window"]["required_sessions"] = len(window["required_sessions"])
-        bars, bar_pages = fetch_bars(lambda p: fetch(BARS_ENDPOINT, p), ticker, bars_params(ticker, window))
-        actions, action_pages = fetch_actions(lambda p: fetch(ACTIONS_ENDPOINT, p), actions_params(ticker, window))
+        bars, bar_pages, actions, action_pages = fetch_event_data(event, window, fetch)
         report.update(access_check_passed=True, bar_pages=bar_pages, action_pages=action_pages,
                       corporate_actions=actions)
         required = window["required_sessions"]
@@ -401,17 +421,7 @@ def main(argv=None):
         out["error"] = "MISSING_GITHUB_ACTIONS_SECRETS"
         return finish(2)
 
-    opener = build_opener(NoRedirect())
-
-    def fetch(endpoint, params):
-        request = Request(endpoint + "?" + urlencode(params),
-                          headers={"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret})
-        with opener.open(request, timeout=30) as response:
-            raw = response.read(4_000_001)
-            if len(raw) > 4_000_000:
-                raise DataError("response size limit exceeded")
-            return raw
-
+    fetch = make_fetch(build_opener(NoRedirect()), key, secret)
     for event in events:
         out["events"][event["event_id"]] = run_event(event, spec["provider"], fetch, calendar)
     out["all_ok"] = all("error" not in report for report in out["events"].values())
