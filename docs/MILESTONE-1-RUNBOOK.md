@@ -54,6 +54,18 @@ SEC acceptance times remain separate from first-public news release times. Retri
 
 Security aliases/share classes are resolved by the input reviewer using stable IDs and valid intervals. The pilot builder accepts one reviewed identity interval per security per snapshot; it does not yet reconstruct multi-year ticker histories automatically. Historical membership, delistings, missing issuers and every candidate exclusion must remain documented externally in the cohort ledger.
 
+## Acquiring prices for an attested event
+
+Each event that has cleared human review is one entry in `config/m1-events.json`: security identity, first-public evidence, decision cutoff, and an `attestations` block naming who signed off on each item (`first_public_time`, `historical_identity`, `corporate_actions`) and the report file that records it. `nre/event_acquire.py`, run by the `event-acquire.yml` workflow, derives the session window from the calendar, fetches Alpaca SIP raw daily bars and corporate actions with the repository's `APCA_*` secrets, and runs `nre.dataset.build()`. The workflow runs on manual dispatch (an `event_id`, or `all`) and on any push touching the spec, the module or the workflow.
+
+Only derived results are printed: labels, counts, hashes and quality reasons. The same summary is emitted as a workflow annotation, which the public check-run annotations API serves without log access. Credentials and raw OHLCV never leave the runner. Loading the spec fails closed on a wrong New York UTC offset, a `timestamp_evidence` that is not the displayed minute, an expected timing or reaction session that disagrees with the calendar, or an attestation whose record file does not exist.
+
+To add an event:
+
+1. Finish chronology, identity and competing-catalyst review in a sign-off packet under `reports/`.
+2. Add the spec entry with only the attestations the project owner has actually given. Without `first_public_time` and `historical_identity` the event quarantines before any label is computed; without `corporate_actions` it quarantines as `CORPORATE_ACTION_AUDIT_MISSING`, and the run still reports the actions found so they can be reviewed before attesting.
+3. After the owner accepts the run, record the outcome under `reports/`, set the ledger disposition to `included`, add the spot-check entry, and pin the run's `labels_sha256` as `recorded_result`. A later run then fails if the provider's history no longer reproduces the recorded labels. `tests/test_event_acquire.py` also requires the spec, the ledger's included events and the review file to agree.
+
 ## Labels and conservative exclusions
 
 This release implements **previous regular-session close anchored** daily reaction labels. They are not exact last-trade-before-news returns. For an after-hours event, the anchor is that day's regular close and the reaction session is the next trading session. For premarket/weekend/holiday events, it is the prior regular close before the reaction session.

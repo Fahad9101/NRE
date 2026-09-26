@@ -1,0 +1,31 @@
+name: Attested event acquisition
+on:
+  workflow_dispatch:
+    inputs:
+      event_id:
+        description: 'event_id from config/m1-events.json, or "all"'
+        required: false
+        default: 'all'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/event-acquire.yml'
+      - 'nre/event_acquire.py'
+      - 'config/m1-events.json'
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch real bars/actions and compute labels
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+          EVENT_ID: ${{ inputs.event_id || 'all' }}
+        run: python -m nre.event_acquire --event "$EVENT_ID"

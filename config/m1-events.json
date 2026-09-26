@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "description": "Events with a recorded human review, run by nre/event_acquire.py. An attestation is added only after the project owner signs off on that item; an unattested item keeps the event quarantined (reasons reported, no labels computed). recorded_result pins the digest of an accepted run's derived labels so a later run detects upstream data drift. Raw prices are never stored here.",
+  "provider": {
+    "provider_id": "alpaca",
+    "research_permitted": true,
+    "terms_url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+    "feeds": [
+      "sip"
+    ],
+    "session_scope": "regular",
+    "attestation": {
+      "reviewer": "Fahad9101",
+      "date": "2026-09-23",
+      "record": "reports/m1-slsn-signoff-packet-2026-09-22.json",
+      "scope": "Authorizes provider.research_permitted:true for this project's specific, current use (redacted-anchor derived ratios/booleans/counts/hashes only, never raw prices). The 'aggregate at scale' question is explicitly carried forward as something to revisit as the cohort grows, not closed by this decision."
+    }
+  },
+  "events": [
+    {
+      "event_id": "slsn-2026-03-31",
+      "cluster_id": "slsn-q4fy25",
+      "candidate_id": "0001171843-26-002061",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-03-31",
+      "security": {
+        "security_id": "SLSN-883107",
+        "company_id": "0000883107",
+        "cik": "0000883107",
+        "ticker": "SLSN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-12-01T00:00:00-05:00",
+        "available_at": "2025-12-01T17:23:33Z"
+      },
+      "source": {
+        "source_id": "slsn-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/31/3265441/12101/en/sol%C3%A9sence-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+        "text": "GlobeNewswire release, 'Solésence Reports Fourth Quarter and Full Year 2025 Financial Results', displayed dateline March 31, 2026 08:02 ET. https://www.globenewswire.com/news-release/2026/03/31/3265441/12101/en/sol%C3%A9sence-reports-fourth-quarter-and-full-year-2025-financial-results.html",
+        "first_seen_at": "2026-03-31T08:03:00-04:00"
+      },
+      "published_at": "2026-03-31T08:02:00-04:00",
+      "cutoff": "2026-03-31T08:05:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "08:02",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-23",
+          "record": "reports/m1-slsn-signoff-packet-2026-09-22.json",
+          "basis": "Project owner sign-off ('okay sign off'), accepting the residual chronology gap that open-web search cannot close."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-23",
+          "record": "reports/m1-slsn-signoff-packet-2026-09-22.json",
+          "basis": "Project owner sign-off ('okay sign off'), accepting the residual chronology gap that open-web search cannot close."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-23",
+          "record": "reports/m1-slsn-signoff-packet-2026-09-22.json",
+          "basis": "Project owner sign-off ('yes, sign off on both') on two independent clean signals: no Item 3.03/5.03 SEC filing near the window, and an empty, fully paginated Alpaca response."
+        }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "Accepted residual chronology gap: Open-web research can show no discoverable earlier disclosure; it cannot prove a negative for something that may have been said live and unrecorded (e.g. at an unindexed investor meeting) with zero public trace. This is the residual, irreducible uncertainty a human sign-off is being asked to accept, not a gap more searching would close."
+        }
+      ],
+      "recorded_result": {
+        "labels_sha256": "0ad476eb112cfeaa4639238f69c942e5a9c3adeff846480e21ca60ace09938d7",
+        "recorded_in": "reports/m1-slsn-complete-event-2026-09-23.json"
+      }
+    },
+    {
+      "event_id": "cxt-2026-02-11",
+      "cluster_id": "cxt-q4fy25",
+      "candidate_id": "0000025445-26-000005",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-02-12",
+      "security": {
+        "security_id": "CXT-25445",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-05T00:00:00-05:00",
+        "available_at": "2025-11-05T00:00:00-05:00"
+      },
+      "source": {
+        "source_id": "cxt-wire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/11/3236663/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2025-Results-Raises-Annual-Dividend-by-6.html",
+        "text": "GlobeNewswire release, 'Crane NXT Announces Fourth Quarter and Full Year 2025 Results; Raises Annual Dividend by 6%', displayed dateline February 11, 2026 16:05 ET. https://www.globenewswire.com/news-release/2026/02/11/3236663/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2025-Results-Raises-Annual-Dividend-by-6.html",
+        "first_seen_at": "2026-02-11T16:06:00-05:00"
+      },
+      "published_at": "2026-02-11T16:05:00-05:00",
+      "cutoff": "2026-02-11T16:10:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-23",
+          "record": "reports/m1-cxt-signoff-packet-2026-09-23.json",
+          "basis": "Project owner sign-off ('sign off on cxt')."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-23",
+          "record": "reports/m1-cxt-signoff-packet-2026-09-23.json",
+          "basis": "Project owner sign-off ('sign off on cxt')."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-23",
+          "record": "reports/m1-cxt-complete-event-2026-09-23.json",
+          "basis": "Resolved by fetching the real action (cash dividend, ex-date 2026-02-27) and feeding it to the pipeline, which suppresses only the labels it crosses, rather than by a sign-off on an unverified count; the project owner directed the resolution ('resolve the dividend')."
+        }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Competing catalyst: an Item 7.01 8-K filed 2026-02-25 discloses an Investor Day with an updated 2026 financial outlook and 2028 targets (content not reviewed); it falls inside the 20-session window at about session 10. Day-1, session-2 and session-5 labels mature before it."
+        }
+      ],
+      "recorded_result": {
+        "labels_sha256": "5f01390fd6bd0b1388deb04587a63ed19ffb1deb74930d20fd8aba1dacde3d12",
+        "recorded_in": "reports/m1-cxt-complete-event-2026-09-23.json"
+      }
+    }
+  ]
+}
