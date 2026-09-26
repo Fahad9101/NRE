@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "UNIFIED_ACQUISITION_REPRODUCES_RECORDED_RESULTS",
+  "purpose": "Verify that nre/event_acquire.py, which replaced the per-event scripts nre/slsn_acquire.py and nre/cxt_acquire.py, reproduces the derived labels recorded for SLSN and CXT on 2026-09-23 from freshly retrieved live Alpaca data.",
+  "provenance": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36253583546,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36253583546",
+    "job_id": 108436054506,
+    "commit_sha": "03dfec5fec0ec31f37e38b3986932f2b1d23a9eb",
+    "result_channel": "check-run annotation 'NRE event acquisition' via the public annotations API",
+    "ci": {
+      "run_id": 36253583538,
+      "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36253583538",
+      "pythons": [
+        "3.12",
+        "3.13"
+      ],
+      "conclusion": "success"
+    }
+  },
+  "all_ok": true,
+  "events": {
+    "cxt-2026-02-11": {
+      "state": "MAPPED",
+      "reasons": [],
+      "release_timing": "after_hours",
+      "reaction_session": "2026-02-12",
+      "missing_sessions": [],
+      "zero_volume_sessions": [],
+      "corporate_actions": [
+        {
+          "ex_date": "2026-02-27",
+          "id": "b1b4b72d-9894-4baf-8ef9-b5b87f4908c7",
+          "type": "cash_dividends"
+        }
+      ],
+      "label_reasons": {
+        "session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"
+      },
+      "labels_sha256": "5f01390fd6bd0b1388deb04587a63ed19ffb1deb74930d20fd8aba1dacde3d12",
+      "recorded_labels_sha256": "5f01390fd6bd0b1388deb04587a63ed19ffb1deb74930d20fd8aba1dacde3d12",
+      "recorded_in": "reports/m1-cxt-complete-event-2026-09-23.json",
+      "labels_match_recorded": true
+    },
+    "slsn-2026-03-31": {
+      "state": "MAPPED",
+      "reasons": [],
+      "release_timing": "premarket",
+      "reaction_session": "2026-03-31",
+      "missing_sessions": [],
+      "zero_volume_sessions": [],
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels_sha256": "0ad476eb112cfeaa4639238f69c942e5a9c3adeff846480e21ca60ace09938d7",
+      "recorded_labels_sha256": "0ad476eb112cfeaa4639238f69c942e5a9c3adeff846480e21ca60ace09938d7",
+      "recorded_in": "reports/m1-slsn-complete-event-2026-09-23.json",
+      "labels_match_recorded": true
+    }
+  },
+  "what_this_shows": [
+    "The unified fetch -> bundle -> nre.dataset.build() path reproduces, digest for digest, the 16 derived labels (values and reasons) that two separate per-event scripts recorded three days earlier.",
+    "The provider bars that feed those labels and the corporate-action history for both windows did not change between the two retrievals, as far as the derived labels can detect.",
+    "Attestation gating, calendar-derived windows and the recorded-result pins work in production, and the annotation channel returns results without any job-log access."
+  ],
+  "what_this_does_not_show": [
+    "Not a new event and not progress toward the 20-event target: still 2 events across 2 issuers.",
+    "Not Milestone 1 acceptance; milestone_accepted remains a human declaration outside the code.",
+    "The pin detects changes in the derived labels only; a provider revision that leaves every label unchanged would not be visible."
+  ],
+  "raw_data_policy_note": "Only derived values, digests and public corporate-action identifiers appear here; no raw OHLCV."
+}
