@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "STEP_1_BUILT_AWAITING_OWNER_REVIEW_MILESTONE_2_NOT_ACCEPTED",
+  "scope": {
+    "confirmed_in": "reports/m2-scope-confirmation-2026-09-26.json",
+    "proposal": "docs/M2-SCOPE-PROPOSAL.md",
+    "proposal_commit": "58d07b52b54e53909840a723c497586f6cd0e427",
+    "confirmation_commit": "f75345838941dce2b2a03249e7f6e6887fa7978f"
+  },
+  "built_in": {
+    "code_commit": "c96cf3a2ef57c49bd9150f11cea34914fd895785",
+    "files": [
+      "nre/fingerprints.py",
+      "nre/analogues.py",
+      "nre/cli.py (two subcommands added; not an audit input)",
+      "config/fingerprint-policy.json",
+      "config/sector-map.json",
+      "tests/m2_support.py",
+      "tests/test_fingerprints.py",
+      "tests/test_analogues.py",
+      "tests/fixtures/m2_new_event_example.json",
+      "reports/m2-*.json (four derived-only reports)"
+    ]
+  },
+  "verification": {
+    "tests": "295 ran locally on Windows with Python 3.12: 82 new, all passing; the 3 errors are the known Windows-only timezone errors in test_pipeline (write_snapshot), unchanged. CI had not run on the step 1 commits when this was recorded.",
+    "mutation_check": "26 deliberate one-line bugs applied one at a time to a scratch copy of the repository (quantile, Wilson, both thresholds, label maturity, availability lag and horizon, cluster dedupe, pooling weight and recursion, own-cluster exclusion, count unit, digest check, timing check, compaction, null-reason inference, cutoff boundary, maturity, self and cluster exclusion, distance reading an outcome, minimum members, maximum distance, unmatured outcomes, absent labels): all 26 made at least one test fail.",
+    "pool_table": "The code reproduces the hand-computed table in section 3.3 of the proposal exactly for all five horizons.",
+    "suppression_table": "The code reproduces the hand-computed table in section 3.2 of the proposal.",
+    "independent_statistics": "80 statistics of the all-events cell were compared with Python's statistics module and the closed-form Wilson bounds; largest absolute difference 5e-11 (10-decimal rounding).",
+    "record_digests": "All 23 committed per-event records reproduce the label digests pinned in config/m1-events.json when loaded.",
+    "sector_map": "23 of 23 SEC payload hashes and SIC codes were identical on a second read.",
+    "milestone_1_untouched": "The protocol, ledger, review and membership hashes in the Milestone 1 declaration still recompute equal (a test checks it)."
+  },
+  "output_canonical_sha256": {
+    "reports/m2-fingerprints-2026-09-26.json": "292e7902872c21f87c54f2040960822f85f59c58b59b03405d4d88ff7965a6b7",
+    "reports/m2-analogue-pools-2026-09-26.json": "a6650d83038ff8c01a45c7afac6f7827ba1c5f62f0a77744dc5c09c0156df24c",
+    "reports/m2-analogue-example-historical-2026-09-26.json": "292b3ccd1434b329dc23be866577dd1a9bb100e83567c92e2c2856bf745f02fd",
+    "reports/m2-analogue-example-new-event-2026-09-26.json": "0fc6e1afaad88027a1bf210b6cfeea2c867f418dad39a80810502823a1dbb1cf"
+  },
+  "findings_for_the_owner": [
+    {
+      "finding": "The analogue minimum (5) is below the mean and median reporting minimum (10).",
+      "facts": "Analogue sets exist for 13, 12, 11, 8 and 4 of 23 targets at the day-1, session 2, 5, 10 and 20 return labels, and a mean and median is reported for only 3, 1, 1, 2 and 1 of them; quantiles are never reported. With a minimum of 10, sets would exist for 6, 4, 4, 3 and 1 targets and each would carry a mean and median. Not changed: it is a confirmed default."
+    },
+    {
+      "finding": "The two conditional gap labels exist only after an opening gap of at least 0.5%.",
+      "facts": "For positive_gap_retained_half and positive_gap_filled the confirmed exclusion 'label absent' is therefore decided by an outcome. It is those labels' definition and is reported as LABEL_ABSENT; no other selection depends on an outcome (a test replaces every label value with junk)."
+    },
+    {
+      "finding": "The SIC codes come from a fresh SEC read, not the frozen archive.",
+      "facts": "The archive is not on this machine; the confirmed scope allowed a fresh retrieval with recorded hashes."
+    }
+  ],
+  "open_decisions": [
+    "Whether to raise analogues.min_members from 5 to 10 (see the first finding).",
+    "Step 2, the data-depth push, which is undecided and has not been started."
+  ],
+  "not_done_or_claimed": [
+    "Milestone 2 is not accepted.",
+    "Nothing here predicts, scores or ranks.",
+    "Commits after f753458 were held locally, as recorded in the confirmation, until the owner asks for a push."
+  ]
+}

@@ -4,7 +4,7 @@ Independent research system for estimating conditional market reactions to corpo
 
 ## Current boundary
 
-Milestone 1 authorized: earnings event dataset engineering is implemented; the acceptance sample is assembled (22 eligible events across 22 issuers), all 16 structural audit gates pass, and **the project owner declared Milestone 1 accepted on 2026-09-26**. The repository includes a standard-library Python pipeline, source ingestion, daily reaction extraction, point-in-time checks, immutable snapshots, SQLite schema, tests and CI. No predictive engine, validated edge, trading execution or production ranking exists.
+Milestone 1 authorized: earnings event dataset engineering is implemented; the acceptance sample is assembled (22 eligible events across 22 issuers), all 16 structural audit gates pass, and **the project owner declared Milestone 1 accepted on 2026-09-26**. The repository includes a standard-library Python pipeline, source ingestion, daily reaction extraction, point-in-time checks, immutable snapshots, SQLite schema, tests and CI. No predictive engine, validated edge, trading execution or production ranking exists. Milestone 2 step 1, which only describes the accepted events, is built and awaits the owner's review (see below).
 
 ## Documents
 
@@ -12,6 +12,8 @@ Milestone 1 authorized: earnings event dataset engineering is implemented; the a
 - [Original master build prompt](docs/NRE-1.0-MASTER-PROMPT.md): governing scope and sequential milestone authorization.
 - [Milestone 1 runbook](docs/MILESTONE-1-RUNBOOK.md): commands, reviewed input format, target semantics, limitations and acceptance requirements.
 - [Milestone 1 validation evidence](reports/milestone-1-validation.json): live source capability and historical acceptance status.
+- [Milestone 2 scope proposal](docs/M2-SCOPE-PROPOSAL.md): the step 1 scope the owner confirmed, what the data can support, and the step 2 options.
+- [Milestone 2 runbook](docs/MILESTONE-2-RUNBOOK.md): commands, how to read the outputs, the point-in-time rule and the limits.
 
 ## Model separation
 
@@ -36,7 +38,7 @@ Declared accepted by the project owner on 2026-09-26 ([declaration](reports/m1-a
 
 ## Milestone 2 status
 
-The project owner replied "approve" on 2026-09-26 to a two-step plan and then confirmed the [scope proposal](docs/M2-SCOPE-PROPOSAL.md) for step 1 with all six of its defaults ([approval record](reports/m2-authorization-2026-09-26.json), [confirmation record](reports/m2-scope-confirmation-2026-09-26.json)). Step 1 is reaction fingerprints and analogue retrieval on the existing 23 events, with leakage tests and sparse-data suppression; it is authorized to be built and is not built yet. Step 2, the data-depth push, is a separate decision that has not been made.
+The project owner replied "approve" on 2026-09-26 to a two-step plan and then confirmed the [scope proposal](docs/M2-SCOPE-PROPOSAL.md) for step 1 with all six of its defaults ([approval record](reports/m2-authorization-2026-09-26.json), [confirmation record](reports/m2-scope-confirmation-2026-09-26.json)). Step 1, reaction fingerprints and analogue retrieval on the existing 23 events with leakage tests and sparse-data suppression, is built ([runbook](docs/MILESTONE-2-RUNBOOK.md), [build record](reports/m2-step-1-build-record-2026-09-26.json)) and awaits the owner's review. It describes the accepted events and predicts nothing, and with one event per issuer most answers are "insufficient data". Milestone 2 is not accepted, and step 2, the data-depth push, is a separate decision that has not been made.
 
 ## Validation status
 

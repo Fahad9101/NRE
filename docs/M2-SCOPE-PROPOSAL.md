@@ -1,6 +1,6 @@
 # Milestone 2 — scope proposal (for the project owner's review)
 
-**Status: scope confirmed by the project owner on 2026-09-26 ("confirm and push", taking all six defaults in section 6). Building step 1 is authorized; step 2 is not. Nothing described here was built when this status was written.** Written 2026-09-26, after the owner replied "approve" to the recommendation quoted in section 1. Records: `reports/m2-authorization-2026-09-26.json` and `reports/m2-scope-confirmation-2026-09-26.json`. Any change to a confirmed default needs the owner's approval first.
+**Status: scope confirmed by the project owner on 2026-09-26 ("confirm and push", taking all six defaults in section 6). Building step 1 is authorized; step 2 is not. Nothing described here was built when this status was written; step 1 has since been built and awaits the owner's review (section 8).** Written 2026-09-26, after the owner replied "approve" to the recommendation quoted in section 1. Records: `reports/m2-authorization-2026-09-26.json` and `reports/m2-scope-confirmation-2026-09-26.json`. Any change to a confirmed default needs the owner's approval first.
 
 ## Summary
 
@@ -180,3 +180,16 @@ Defaults are proposed for each, so a one-line reply is enough.
 - **Shared dates and raw returns.** Same-day events share market moves that no label adjusts for; counts of reaction sessions are shown beside event counts.
 - **No significance claims.** Outputs report counts and intervals; nothing is tested or ranked.
 - **Scope creep.** Anything that ranks, scores or predicts stays out until a later milestone is separately approved.
+
+## 8. Implementation notes (added after step 1 was built)
+
+Step 1 was built as specified, in the files named in section 4, and is described in `docs/MILESTONE-2-RUNBOOK.md` and recorded in `reports/m2-step-1-build-record-2026-09-26.json`. The pool table in section 3.3 and the suppression table in section 3.2 are reproduced by the code exactly, and the tests pin them.
+
+**Two findings for the owner.**
+
+1. *The analogue minimum is below the mean and median minimum.* With the confirmed defaults an analogue set needs 5 members but a return mean or median needs 10. Analogue sets exist for 13, 12, 11, 8 and 4 of the 23 targets at the day-1, session 2, 5, 10 and 20 return labels (fewer than the matured pools in section 3.3, because of the maximum distance), and a mean and median is reported for only 3, 1, 1, 2 and 1 of them. Quantiles are never reported. The members are always listed, as the contract requires. With a minimum of 10, sets would exist for 6, 4, 4, 3 and 1 targets, and every one would carry a mean and median. Nothing was changed; this is a confirmed default and the change is the owner's to make.
+2. *One label's existence depends on an outcome.* `positive_gap_retained_half` and `positive_gap_filled` exist only after an opening gap of at least 0.5%, so for those two labels the confirmed exclusion "label absent" is decided by an outcome. It is those labels' definition and is reported as `LABEL_ABSENT`, and the test that replaces every label value with junk shows that no other choice of analogue depends on an outcome. Section 4 said selection uses no outcome field; this is the one qualification.
+
+**Choices inside the confirmed scope.** A cell whose every statistic is withheld is written compactly, with its counts and per-label n and no estimates, and a withheld cell names its parent. Partial pooling shrinks toward the nearest reported ancestor, recursively, and never changes the cell's own n. The effective sample size equals the count while weights are uniform, as section 4 said. The exclusion audit also uses `BEYOND_EXPANSION`, `BEYOND_MAX_DISTANCE` and `CLUSTER_ALREADY_COUNTED`. The SIC codes were taken from a fresh retrieval, the alternative section 4 allowed, because the frozen archive is not on this machine; every response's hash is recorded and 23 of 23 hashes and codes were confirmed by a second read.
+
+**Not done, and not claimed.** Milestone 2 is not accepted, step 2 has not been started, and nothing predicts, scores or ranks.
