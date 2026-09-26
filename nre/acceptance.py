@@ -48,8 +48,8 @@ def audit_cohort(bundle, protocol, ledger, review):
         state, event_id = candidate.get("disposition"), candidate.get("event_id")
         if state == "included" and event_id in events:
             represented.append(event_id)
-        elif state == "excluded" and candidate.get("reason") and not event_id:
-            continue
+        elif state in ("excluded", "quarantined") and candidate.get("reason") and not event_id:
+            continue  # quarantined with a reason counts as accounted for (owner amendment 2026-09-26)
         else:
             bad_dispositions.append(candidate["candidate_id"])
     gates["candidate_accounting"] = bool(candidates) and not bad_dispositions and len(represented) == len(set(represented)) and set(represented) == set(events)

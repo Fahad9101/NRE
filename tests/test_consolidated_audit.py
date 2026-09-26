@@ -106,6 +106,13 @@ class AuditTests(unittest.TestCase):
                      "independent_timing_spot_checks"):
             self.assertTrue(gates[name], name)
 
+    def test_owner_decision_gates_pass_on_the_repository_records(self):
+        for name in ("candidate_accounting", "discovery_coverage_review", "identity_history_review", "provider_rights_review"):
+            self.assertTrue(self.result["gates"][name], name)
+
+    def test_only_the_archive_gate_fails_without_the_archive(self):
+        self.assertEqual(self.result["failed_gates"], ["candidate_source_hashes"])
+
     def test_counts_follow_the_non_null_session_20_rule(self):
         counts = self.result["counts"]
         suppressed = sum(1 for e in ACCEPTED if e["security"]["ticker"] in DIVIDENDS)

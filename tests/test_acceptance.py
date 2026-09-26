@@ -67,6 +67,22 @@ class AcceptanceTests(unittest.TestCase):
         self.ledger['candidates'].append({'candidate_id':'rejected', 'disposition':'excluded'})
         self.assertIn('candidate_accounting', self.run_audit()['failed_gates'])
 
+    def test_quarantined_with_a_reason_is_accounted_for(self):
+        self.ledger['candidates'].append({'candidate_id':'unreviewed', 'disposition':'quarantined', 'reason':'not reviewed'})
+        self.assertNotIn('candidate_accounting', self.run_audit()['failed_gates'])
+
+    def test_quarantined_needs_a_reason(self):
+        self.ledger['candidates'].append({'candidate_id':'unreviewed', 'disposition':'quarantined'})
+        self.assertIn('candidate_accounting', self.run_audit()['failed_gates'])
+
+    def test_quarantined_cannot_carry_an_event(self):
+        self.ledger['candidates'].append({'candidate_id':'unreviewed', 'disposition':'quarantined', 'reason':'not reviewed', 'event_id':'e1'})
+        self.assertIn('candidate_accounting', self.run_audit()['failed_gates'])
+
+    def test_unknown_disposition_is_not_accounted_for(self):
+        self.ledger['candidates'].append({'candidate_id':'unreviewed', 'disposition':'pending', 'reason':'not reviewed'})
+        self.assertIn('candidate_accounting', self.run_audit()['failed_gates'])
+
     def test_selection_after_prices(self):
         self.review['prices_first_accessed_at'] = '2026-07-01T00:00:00Z'
         self.assertIn('selection_frozen_before_prices', self.run_audit()['failed_gates'])

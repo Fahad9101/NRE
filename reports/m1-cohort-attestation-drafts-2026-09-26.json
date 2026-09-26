@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-26",
+  "status": "ATTESTED_2026-09-26",
+  "purpose": "Proposed wording for the three cohort-wide attestations in reports/m1-acceptance-review.json, drawn only from evidence already in the repository. Nothing here is attested and nothing has been copied into the review file: an attestation is the project owner's statement, and the audit gate checks only that each is non-empty.",
+  "how_to_accept": "Reply with the wording you accept, or edits; the accepted text is then recorded verbatim in the review file with your words and the date.",
+  "discovery_coverage_evidence": {
+    "draft": "Candidate membership was frozen on 2026-09-20 (membership SHA256 ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815; 243 candidates across 215 issuers) by the SEC freeze workflow (run 35532616764) from a pinned historical filing frame and per-issuer SEC submissions for the 300 issuers it processed under the pinned sampling and stopping rule, before any price was accessed. Every Item 2.02 8-K in the event window for those issuers was recorded as a candidate and reconciled to the frame (docs/M1-FROZEN-COHORT-REVIEW.md). reports/m1-frozen-archive-audit.json verified all 902 archive members and replayed discovery offline, and the consolidated audit (run 36258926318) verified every candidate's source hash against the 300 archived observations. This is coverage of the frozen issuer set, not a claim of complete market coverage.",
+    "evidence": [
+      "docs/M1-FROZEN-COHORT-REVIEW.md",
+      "reports/m1-frozen-archive-audit.json",
+      "reports/m1-consolidated-audit-2026-09-26.json",
+      "reports/m1-sec-cohort-freeze.json"
+    ]
+  },
+  "identity_history_evidence": {
+    "draft": "For each of the 23 included events, historical security identity was established from the event-date 8-K cover page and the prior-quarter 8-K cover page (registered class, ticker and exchange), recorded in each sign-off packet and event record and signed off by the project owner on 2026-09-23 and 2026-09-26. The 15 excluded candidates record scope, identity or corporate-action reasons with evidence. The 205 remaining candidates are unreviewed and no identity claim is made for them.",
+    "evidence": [
+      "reports/m1-signoff-packet-2026-09-22 and later packets under reports/",
+      "reports/m1-*-complete-event-*.json",
+      "reports/m1-security-scope-review*.json",
+      "reports/m1-reviewed-candidate-ledger.json"
+    ]
+  },
+  "provider_rights_evidence": {
+    "draft": "Alpaca's Terms and Conditions and a representative NASDAQ Global Subscriber Agreement were reviewed in full (reports/m1-alpaca-provider-rights-review-2026-09-23.json). The project owner authorized redacted, derived-only use on 2026-09-23 and confirmed it explicitly for about twenty-three recorded events on 2026-09-26 ('provider rights fine'). No raw prices are committed or printed; only derived ratios, booleans, counts and hashes.",
+    "evidence": [
+      "reports/m1-alpaca-provider-rights-review-2026-09-23.json",
+      "reports/m1-signoff-packet-batch-3-2026-09-26.json (signoff_record)"
+    ]
+  },
+  "limits_stated_in_the_drafts": [
+    "Coverage is of the frozen issuer set, not the market.",
+    "Identity is claimed only for the included and excluded candidates.",
+    "The provider-rights position is the owner's authorization, not a legal opinion."
+  ],
+  "accepted": {
+    "decided_on": "2026-09-26",
+    "decided_by": "Fahad9101 (project owner)",
+    "exact_words": "I agree with \"amend accounting\" and \"attest all three\"",
+    "recorded_in": "reports/m1-acceptance-review.json (attestation_record and the three evidence fields), verbatim and without edits",
+    "disclosures_recorded_alongside": "See attestation_record.disclosures in the review file."
+  }
+}

@@ -1,10 +1,20 @@
 {
-  "_note": "discovery_coverage_evidence, identity_history_evidence and provider_rights_evidence are deliberately left empty: those are cohort-wide attestations covering all 243 frozen candidates, and only two (SLSN, CXT) have completed reaction records so far. Filling these in now would misrepresent the other 227 quarantined candidates as reviewed when they are not. See each candidate's own signoff-packet/complete-event reports for the event-specific sign-offs that DO exist.",
-  "discovery_coverage_evidence": "",
+  "_note": "The three cohort-wide attestations were blank until 2026-09-26, when the project owner accepted, without edits, the wording drafted in reports/m1-cohort-attestation-drafts-2026-09-26.json (see attestation_record). They cover the frozen issuer set and the included and excluded candidates only; they make no claim that the 205 quarantined candidates were reviewed. Each event's own sign-off packet and complete-event report hold the event-specific sign-offs.",
+  "attestation_record": {
+    "decided_on": "2026-09-26",
+    "decided_by": "Fahad9101 (project owner)",
+    "exact_words": "I agree with \"amend accounting\" and \"attest all three\"",
+    "scope": "The three attestations below are the wording proposed in reports/m1-cohort-attestation-drafts-2026-09-26.json, accepted without edits and recorded verbatim.",
+    "disclosures": [
+      "An exploratory price check on IBM, a symbol outside the frozen cohort, took place on 2026-09-20 and is disclosed in docs/DATA-INTAKE-STATUS.md; the recorded first access to any cohort candidate's prices is 2026-09-23 (prices_first_accessed_at).",
+      "The identity statement is exact for the twenty-one events whose sign-off packets compare the event-date and prior-quarter 8-K cover pages. SLSN's identity evidence is two December 2025 8-K covers plus its March 2026 filing, and CXT's is its event-date Section 12(b) table plus the filing history checked on 2026-09-23."
+    ]
+  },
+  "discovery_coverage_evidence": "Candidate membership was frozen on 2026-09-20 (membership SHA256 ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815; 243 candidates across 215 issuers) by the SEC freeze workflow (run 35532616764) from a pinned historical filing frame and per-issuer SEC submissions for the 300 issuers it processed under the pinned sampling and stopping rule, before any price was accessed. Every Item 2.02 8-K in the event window for those issuers was recorded as a candidate and reconciled to the frame (docs/M1-FROZEN-COHORT-REVIEW.md). reports/m1-frozen-archive-audit.json verified all 902 archive members and replayed discovery offline, and the consolidated audit (run 36258926318) verified every candidate's source hash against the 300 archived observations. This is coverage of the frozen issuer set, not a claim of complete market coverage.",
   "frozen_membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
-  "identity_history_evidence": "",
+  "identity_history_evidence": "For each of the 23 included events, historical security identity was established from the event-date 8-K cover page and the prior-quarter 8-K cover page (registered class, ticker and exchange), recorded in each sign-off packet and event record and signed off by the project owner on 2026-09-23 and 2026-09-26. The 15 excluded candidates record scope, identity or corporate-action reasons with evidence. The 205 remaining candidates are unreviewed and no identity claim is made for them.",
   "prices_first_accessed_at": "2026-09-23T00:00:00Z",
-  "provider_rights_evidence": "",
+  "provider_rights_evidence": "Alpaca's Terms and Conditions and a representative NASDAQ Global Subscriber Agreement were reviewed in full (reports/m1-alpaca-provider-rights-review-2026-09-23.json). The project owner authorized redacted, derived-only use on 2026-09-23 and confirmed it explicitly for about twenty-three recorded events on 2026-09-26 ('provider rights fine'). No raw prices are committed or printed; only derived ratios, booleans, counts and hashes.",
   "spot_checks": [
     {
       "event_id": "slsn-2026-03-31",
