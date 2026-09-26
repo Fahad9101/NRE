@@ -36,7 +36,7 @@ Declared accepted by the project owner on 2026-09-26 ([declaration](reports/m1-a
 
 ## Milestone 2 status
 
-The project owner replied "approve" on 2026-09-26 to a two-step plan. It is read as approving step 1, reaction fingerprints and analogue retrieval on the existing 23 events with leakage tests and sparse-data suppression, subject to the owner's review of the [scope proposal](docs/M2-SCOPE-PROPOSAL.md) ([record](reports/m2-authorization-2026-09-26.json)); the reading is recorded as the assistant's and is open to correction. Nothing is built yet. Step 2, the data-depth push, is a separate decision that has not been made.
+The project owner replied "approve" on 2026-09-26 to a two-step plan and then confirmed the [scope proposal](docs/M2-SCOPE-PROPOSAL.md) for step 1 with all six of its defaults ([approval record](reports/m2-authorization-2026-09-26.json), [confirmation record](reports/m2-scope-confirmation-2026-09-26.json)). Step 1 is reaction fingerprints and analogue retrieval on the existing 23 events, with leakage tests and sparse-data suppression; it is authorized to be built and is not built yet. Step 2, the data-depth push, is a separate decision that has not been made.
 
 ## Validation status
 

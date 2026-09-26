@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "MILESTONE_2_STEP_1_SCOPE_CONFIRMED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 2 -- Reaction Fingerprints (NRE 1.0)",
+  "owner_reply": {
+    "by": "Fahad9101 (project owner)",
+    "sent_at_utc": "2026-09-26T18:52:36Z (per the session transcript)",
+    "exact_words": "confirm and push",
+    "in_reply_to": "Six defaults for you to confirm or change. Reply \"confirm\" to take them all.\n1. Build step 1 only, and decide step 2 (data depth) later.\n2. Sector is SIC major group and division from SEC records, which is free. GICS would be paid.\n3. Thresholds:\n   - Proportions are reported from n=5 and flagged unreliable below 10.\n   - Mean and median are reported from n=10 and flagged unreliable below 20.\n   - Quantiles need n=20.\n   - Pooling strength is 10, and analogues need at least 5 members within distance 1.0.\n   - Counting distinct reaction dates instead of events would cut today's total from 23 to 16, so no quantiles would be reported anywhere.\n4. CXT contributes its day-1 through session-10 labels and none for session 20.\n5. Outputs are derived statistics only.\n6. No pre-event numeric features in step 1.\n\nI haven't pushed because your earlier push instructions covered specific commits. Say \"push\" and I'll push it and check CI.",
+    "in_reply_to_note": "Verbatim from the assistant message of 2026-09-26T18:17Z (per the session transcript); markdown emphasis markers removed.",
+    "earlier_record": "reports/m2-authorization-2026-09-26.json (the reply \"approve\", which this reply follows)"
+  },
+  "confirmed": {
+    "proposal": {
+      "file": "docs/M2-SCOPE-PROPOSAL.md",
+      "commit": "58d07b52b54e53909840a723c497586f6cd0e427",
+      "sha256_of_committed_file": "f1a2f3f516d0de847dcaa249f8cd182854a141c8c909c6c609aba432dfb6166d"
+    },
+    "what": "All six defaults in the message replied to, which restate section 6 of the proposal: step 1 only with step 2 decided later; SIC major group and division as the sector taxonomy; the section 4 policy defaults including the event count unit; CXT contributing its day-1 through session-10 labels only; derived statistics only; no pre-event numeric features."
+  },
+  "push_instruction": {
+    "words": "push",
+    "read_as": "Push commit 58d07b52b54e53909840a723c497586f6cd0e427 to origin/main and check CI. The commit recording this reply is pushed with it, because it records the same message. Commits made afterwards are held locally until the owner asks for a push."
+  },
+  "authorized_now": [
+    "Building step 1 exactly as specified in docs/M2-SCOPE-PROPOSAL.md: nre/fingerprints.py, nre/analogues.py, config/fingerprint-policy.json, config/sector-map.json, the fingerprints and analogues subcommands in nre/cli.py, derived-only reports, tests and a runbook section."
+  ],
+  "still_not_authorized": [
+    "Step 2 (data depth), including extending the session calendar, freezing a new candidate set or reviewing further candidates.",
+    "Any prediction, score, ranking or model, and Milestones 3 onward; each needs its own explicit approval.",
+    "Any change to Milestone 1 records, code or protocol, or to the frozen BOE, SOE and IEE rules.",
+    "Declaring Milestone 2 accepted: building step 1 does not do that, and the proposal says step 1 alone cannot show comparable events for a typical target."
+  ],
+  "change_rule": "If building step 1 shows that a confirmed default cannot be applied as written, the assistant stops at that point, records the finding and asks the owner; it does not change a confirmed default on its own."
+}

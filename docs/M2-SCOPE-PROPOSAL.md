@@ -1,6 +1,6 @@
 # Milestone 2 — scope proposal (for the project owner's review)
 
-**Status: proposal only. Nothing described here has been built.** Written 2026-09-26, after the owner replied "approve" to the recommendation quoted in section 1. Building step 1 starts when the owner confirms this scope, as that recommendation offered.
+**Status: scope confirmed by the project owner on 2026-09-26 ("confirm and push", taking all six defaults in section 6). Building step 1 is authorized; step 2 is not. Nothing described here was built when this status was written.** Written 2026-09-26, after the owner replied "approve" to the recommendation quoted in section 1. Records: `reports/m2-authorization-2026-09-26.json` and `reports/m2-scope-confirmation-2026-09-26.json`. Any change to a confirmed default needs the owner's approval first.
 
 ## Summary
 
