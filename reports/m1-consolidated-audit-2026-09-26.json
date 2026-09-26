@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "FORMAL_AUDIT_OVER_THE_REAL_EVENTS_BLOCKED_ON_FOUR_OWNER_GATES",
+  "purpose": "Apply nre.acceptance.audit_cohort to the 23 accepted events with freshly refetched prices, the repository's own protocol, ledger and review files, and the archived SEC observations behind every frozen candidate's source hash, so the engine itself counts the eligible events.",
+  "provenance": {
+    "workflow": "consolidated-audit.yml",
+    "run_id": 36258926318,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36258926318",
+    "job_id": 108450886755,
+    "commit_sha": "b1d10c9e6e75ac85c23119950e17ad1aa2a356cf",
+    "result_channel": "check-run annotation 'NRE cohort audit' via the public annotations API",
+    "archive": {
+      "artifact": "nre-m1-historical-sec-freeze-audit",
+      "from_run": 35532616764,
+      "observations_loaded": 300,
+      "artifact_expires": "2026-10-20",
+      "durable_copy": "NRE-M1-SEC-Freeze-Audit.zip (held by the project owner)"
+    }
+  },
+  "audit": {
+    "status": "BLOCKED",
+    "milestone_accepted": false,
+    "failed_gates": [
+      "discovery_coverage_review",
+      "identity_history_review",
+      "provider_rights_review",
+      "candidate_accounting"
+    ],
+    "passed_gates": [
+      "all_events_in_window",
+      "availability_mode",
+      "candidate_source_hashes",
+      "earnings_results_only",
+      "frozen_membership_hash",
+      "independent_timing_spot_checks",
+      "issuer_identity",
+      "minimum_events",
+      "minimum_issuers",
+      "protocol_hash",
+      "real_data",
+      "selection_frozen_before_prices"
+    ],
+    "counts": {
+      "candidates": 243,
+      "dispositions": {
+        "excluded": 15,
+        "included": 23,
+        "quarantined": 205
+      },
+      "eligible_complete_events": 22,
+      "events": 23,
+      "unique_issuers": 22
+    },
+    "invalid_candidate_dispositions": 205,
+    "spot_checked_events_by_timing": {
+      "after_hours": [
+        "alkt-2026-02-25",
+        "asmb-2026-03-19",
+        "caci-2026-01-21",
+        "hurn-2026-02-24",
+        "jbss-2026-01-29",
+        "klc-2026-03-12",
+        "nbix-2026-02-11",
+        "okta-2026-03-04",
+        "parr-2026-02-24",
+        "pdfs-2026-02-12",
+        "real-2026-02-26",
+        "rekr-2026-03-31",
+        "tecx-2026-02-26",
+        "ttwo-2026-02-03",
+        "vsat-2026-02-05"
+      ],
+      "premarket": [
+        "achv-2026-03-24",
+        "aspn-2026-02-25",
+        "coll-2026-02-26",
+        "lnsr-2026-03-31",
+        "love-2026-03-26",
+        "payo-2026-02-26",
+        "slsn-2026-03-31"
+      ]
+    },
+    "hashes": {
+      "input_sha256": "691ce12ab8816cedeb7601cc63098ca57f286c69e58e5437e75614f05123b493",
+      "ledger_sha256": "46fb23a5161f2de73a5f59ced72b85553516059f1ff9427fd15648e2d59b0229",
+      "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
+      "protocol_sha256": "5e9994aa984e668c18f3a462d016e10490e969ad5abdc5357a1cbf18edf6fe7c",
+      "review_sha256": "2aada75512c68e4355bbf81fca442de7028942a3b8f9351edfde873da5e69818"
+    }
+  },
+  "earlier_run_without_the_archive": {
+    "run_id": 36258734571,
+    "failed_gates": [
+      "discovery_coverage_review",
+      "identity_history_review",
+      "provider_rights_review",
+      "candidate_source_hashes",
+      "candidate_accounting"
+    ],
+    "note": "The same audit before the archive was supplied; candidate_source_hashes also failed."
+  },
+  "what_the_failed_gates_need": {
+    "candidate_accounting": "Accepts only included or excluded for every candidate; 205 are quarantined. The runbook allows quarantined as an accounted state, so amending the rule to accept quarantined with a non-empty reason is a protocol decision for the project owner.",
+    "discovery_coverage_review": "The owner's cohort-wide attestation, blank on purpose.",
+    "identity_history_review": "The owner's cohort-wide attestation, blank on purpose.",
+    "provider_rights_review": "The owner's cohort-wide attestation, blank on purpose."
+  },
+  "not_a_claim": [
+    "Not Milestone 1 acceptance: milestone_accepted is false and remains a human declaration outside the code.",
+    "Passing structural gates establishes internal consistency, not the truth of source attestations.",
+    "No raw prices appear here; the audit result holds only gates, counts and hashes."
+  ]
+}

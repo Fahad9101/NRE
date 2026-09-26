@@ -4,7 +4,7 @@ Independent research system for estimating conditional market reactions to corpo
 
 ## Current boundary
 
-Milestone 1 authorized: earnings event dataset engineering is implemented; real historical cohort acceptance remains **pending**. The repository includes a standard-library Python pipeline, source ingestion, daily reaction extraction, point-in-time checks, immutable snapshots, SQLite schema, tests and CI. No predictive engine, validated edge, trading execution or production ranking exists.
+Milestone 1 authorized: earnings event dataset engineering is implemented; the acceptance sample is assembled (22 eligible events across 22 issuers) and all 16 structural audit gates pass, but Milestone 1 acceptance has **not been declared** by the project owner. The repository includes a standard-library Python pipeline, source ingestion, daily reaction extraction, point-in-time checks, immutable snapshots, SQLite schema, tests and CI. No predictive engine, validated edge, trading execution or production ranking exists.
 
 ## Documents
 
@@ -32,7 +32,7 @@ Python 3.12+ and IANA timezone data are required. No Docker, API subscription or
 
 ## Remaining Milestone 1 work
 
-Acquire and review the frozen historical cohort using verified release timing, security identity and permitted regular-session price data. The 100-event/25-issuer acceptance sample is not yet available. No predictive scoring in Milestone 1; Milestone 2 requires separate approval.
+The project owner's declaration that Milestone 1 is accepted, made outside the code. The amended target (20 events across 15 issuers) is met on record by 22 eligible events across 22 issuers, and the formal audit's gates all pass ([final audit record](reports/m1-consolidated-audit-final-2026-09-26.json), [assessment](docs/M1-READINESS-ASSESSMENT.md)). No predictive scoring in Milestone 1; Milestone 2 requires separate approval.
 
 ## Validation status
 

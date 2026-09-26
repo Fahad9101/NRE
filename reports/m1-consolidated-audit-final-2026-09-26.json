@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-26",
+  "status": "ALL_STRUCTURAL_GATES_PASSED_MILESTONE_NOT_DECLARED",
+  "purpose": "The formal audit over the 23 accepted events after the project owner's accounting amendment and cohort attestations of 2026-09-26: refetched prices, the archived SEC observations behind every frozen candidate's source hash, and the repository's own protocol, ledger and review files.",
+  "provenance": {
+    "workflow": "consolidated-audit.yml",
+    "run_id": 36259510427,
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/36259510427",
+    "job_id": 108452514149,
+    "commit_sha": "4e197add412fe4dd837260714b374119947b67cc",
+    "result_channel": "check-run annotation 'NRE cohort audit' via the public annotations API",
+    "archive": {
+      "artifact": "nre-m1-historical-sec-freeze-audit",
+      "from_run": 35532616764,
+      "observations_loaded": 300,
+      "artifact_expires": "2026-10-20",
+      "durable_copy": "NRE-M1-SEC-Freeze-Audit.zip (held by the project owner)"
+    }
+  },
+  "audit": {
+    "status": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED",
+    "milestone_accepted": false,
+    "failed_gates": [],
+    "passed_gates": [
+      "all_events_in_window",
+      "availability_mode",
+      "candidate_accounting",
+      "candidate_source_hashes",
+      "discovery_coverage_review",
+      "earnings_results_only",
+      "frozen_membership_hash",
+      "identity_history_review",
+      "independent_timing_spot_checks",
+      "issuer_identity",
+      "minimum_events",
+      "minimum_issuers",
+      "protocol_hash",
+      "provider_rights_review",
+      "real_data",
+      "selection_frozen_before_prices"
+    ],
+    "counts": {
+      "candidates": 243,
+      "dispositions": {
+        "excluded": 15,
+        "included": 23,
+        "quarantined": 205
+      },
+      "eligible_complete_events": 22,
+      "events": 23,
+      "unique_issuers": 22
+    },
+    "invalid_candidate_dispositions": 0,
+    "spot_checked_events_by_timing": {
+      "after_hours": [
+        "alkt-2026-02-25",
+        "asmb-2026-03-19",
+        "caci-2026-01-21",
+        "hurn-2026-02-24",
+        "jbss-2026-01-29",
+        "klc-2026-03-12",
+        "nbix-2026-02-11",
+        "okta-2026-03-04",
+        "parr-2026-02-24",
+        "pdfs-2026-02-12",
+        "real-2026-02-26",
+        "rekr-2026-03-31",
+        "tecx-2026-02-26",
+        "ttwo-2026-02-03",
+        "vsat-2026-02-05"
+      ],
+      "premarket": [
+        "achv-2026-03-24",
+        "aspn-2026-02-25",
+        "coll-2026-02-26",
+        "lnsr-2026-03-31",
+        "love-2026-03-26",
+        "payo-2026-02-26",
+        "slsn-2026-03-31"
+      ]
+    },
+    "hashes": {
+      "input_sha256": "834aa899fffe1b4122dcf23cbf0c211b97a6e81048a7da3c0076a8a0f47e3858",
+      "ledger_sha256": "46fb23a5161f2de73a5f59ced72b85553516059f1ff9427fd15648e2d59b0229",
+      "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
+      "protocol_sha256": "5e9994aa984e668c18f3a462d016e10490e969ad5abdc5357a1cbf18edf6fe7c",
+      "review_sha256": "59e1b973e0cee55edf270093181638eab39b789bcc745ca59f961ac9e97e695d"
+    }
+  },
+  "changes_since_the_first_audit_record": {
+    "first_record": "reports/m1-consolidated-audit-2026-09-26.json (run 36258926318: 12 of 16 gates, four failing)",
+    "candidate_accounting": "Passes after the owner's amendment (quarantined with a reason is accounted for); invalid_candidate_dispositions went from 205 to 0.",
+    "discovery_coverage_review, identity_history_review, provider_rights_review": "Pass now that the owner's attestations are recorded in the review file.",
+    "unchanged": "Frozen membership, the protocol hash, the ledger hash, the thresholds and the eligibility rule are unchanged; only the review hash moved."
+  },
+  "what_this_establishes": [
+    "The audit engine itself counts 22 eligible complete events across 22 issuers (23 accepted events; CXT is not eligible) against a target of 20 events across 15 issuers.",
+    "Seven premarket and fifteen after-hours eligible events each have a named-reviewer spot check, satisfying the two-per-class requirement.",
+    "Every one of the 243 frozen candidates is accounted for: 23 included, 15 excluded with reasons, 205 quarantined with reasons."
+  ],
+  "what_remains": [
+    "The project owner's declaration that Milestone 1 is accepted, made outside the code. The engine reports milestone_accepted false by design.",
+    "The engine's own stated limit stands: \"Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.\"",
+    "The SEC archive artifact expires on 2026-10-20; re-running this audit afterwards needs the owner's NRE-M1-SEC-Freeze-Audit.zip supplied another way. This record preserves the result."
+  ],
+  "not_a_claim": [
+    "Not a statement that Milestone 1 is accepted.",
+    "Not evidence of any predictive edge; the target is an engineering coverage goal.",
+    "No raw prices appear here; the audit result holds only gates, counts and hashes."
+  ]
+}

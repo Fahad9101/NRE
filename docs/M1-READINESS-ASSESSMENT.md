@@ -1,6 +1,8 @@
 # Milestone 1 readiness assessment — September 21, 2026
 
-**BLOCKED. Milestone 1 remains open. The historical reaction dataset and the audit of 100 complete events across 25 issuers are not complete.**
+**Current status (2026-09-26): all 16 structural audit gates pass over 22 eligible events across 22 issuers, against the amended target of 20 events across 15 issuers. Milestone 1 has not been declared accepted; that declaration is the project owner's, made outside the code. The sections below are chronological and later sections supersede earlier totals; the last section records the final audit.**
+
+*Original status, 2026-09-21: BLOCKED. Milestone 1 remains open. The historical reaction dataset and the audit of 100 complete events across 25 issuers are not complete.*
 
 The frozen cohort contains 243 candidates across 215 issuers. Existing source notes cover 242 filing bodies; the remaining oversized FS KKR filing has a reviewed linked results exhibit. Displayed wire minutes exist for two candidates, but neither has verified first-public status. Partial SEC chronology checks do not establish the absence of earlier issuer or wire disclosures.
 
@@ -252,3 +254,17 @@ The project owner replied "I agree with "amend accounting" and "attest all three
 **Attestations.** The owner accepted, without edits, the wording drafted in `reports/m1-cohort-attestation-drafts-2026-09-26.json` for `discovery_coverage_evidence`, `identity_history_evidence` and `provider_rights_evidence`. It is recorded verbatim in `reports/m1-acceptance-review.json` with the owner's words and the date. Two disclosures sit beside it and were not folded into the approved text: an exploratory price check on IBM (outside the frozen cohort) on 2026-09-20, and the fact that the identity statement is exact for the twenty-one events whose packets compare event-date and prior-quarter 8-K covers, while SLSN's evidence is two December 2025 covers plus its March filing and CXT's is its event-date Section 12(b) table plus the filing history. The attestations cover the frozen issuer set and the included and excluded candidates; they make no claim that the 205 quarantined candidates were reviewed.
 
 With both in place, every structural gate has an input; whether they all pass is decided by the consolidated audit, not by this note (see its record). Even then `milestone_accepted` stays false: acceptance is the owner's declaration outside the code.
+
+## Final audit: all structural gates pass; the declaration is the owner's — September 26
+
+After the owner's accounting amendment and cohort attestations, the consolidated audit was run again (run `36259510427`, commit `4e197ad`, record `reports/m1-consolidated-audit-final-2026-09-26.json`). Over the 23 accepted events, with refetched prices and the 300 archived SEC observations, **all 16 gates pass** and the engine reports `STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED` with `milestone_accepted: false`. It counts 22 eligible complete events across 22 issuers against a target of 20 across 15, with seven premarket and fifteen after-hours events each carrying a named-reviewer spot check. All 243 frozen candidates are accounted for: 23 included, 15 excluded with reasons, 205 quarantined with reasons. Frozen membership, the protocol hash, the ledger hash, the thresholds and the eligibility rule did not change; only the review hash moved.
+
+What the engine says about itself still governs how far to trust that: "Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required." A declaration that Milestone 1 is accepted would rest on the following, all recorded in this repository:
+
+- 22 eligible events, each with a signed-off chronology, identity and corporate-action review, a computed and pinned label record, and a single named reviewer (the owner) under the 2026-09-22 amendment.
+- The residual gap that chronology cannot close: absence of an earlier public disclosure is evidenced by search and filing history, never proved.
+- Label-level caveats that travel with their events: ACHV, COLL, OKTA and REAL (in-window 8-Ks affecting the later horizons) and LNSR (a merger termination two weeks earlier). CXT is included but not eligible.
+- The provider-rights authorization: derived-only use, confirmed explicitly for about twenty-three recorded events on 2026-09-26; no raw prices are committed.
+- The amended target and accounting rule, both owner decisions recorded above, and 205 candidates that were never reviewed and are not claimed to have been.
+
+Nothing in the audit or in this document declares the milestone accepted. The SEC archive artifact expires on 2026-10-20, so re-running the audit after that date needs the owner's `NRE-M1-SEC-Freeze-Audit.zip` supplied another way; the final record preserves this result. Milestone 2 remains unauthorized and separately requires the owner's approval.
