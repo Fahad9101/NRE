@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-26",
+  "purpose": "Evidence for the project owner to sign off, or not, on thirteen more candidate events for Milestone 1: eleven that bring the recorded eligible total to the 20-event target, and two spares. Nothing here is an acceptance: each event stays quarantined, and no label is computed, until attestations are added.",
+  "how_candidates_were_chosen": "From the 110 frozen candidates with no review flags, using only SEC filing metadata and wire pages: 8-K acceptance time, a clean 8-K neighbourhood, common stock on Nasdaq or NYSE, and a wire release with a minute stamp (Business Wire, GlobeNewswire or PR Newswire). Sixteen were dry-run; all sixteen had every session, no zero-volume day and no corporate action in any window. Thirteen are proposed by an outcome-blind rule: the eleven with no 8-K inside their window, plus the two whose only in-window 8-Ks are Item 5.02 (OKTA, REAL) as a two-event margin. Three others are held in reserve. No price or return data was viewed.",
+  "target_arithmetic": "Recorded eligible events today: 9 across 9 issuers. The eleven core candidates would make 20 across 20 issuers, exactly the target of 20 events across 15 issuers; the two spares add margin.",
+  "dry_run": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36258011977,
+    "commit": "758a9145beec3c3501c46e5ca61c711db3dfbd43",
+    "result": "Sixteen pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels, no missing session, no zero-volume day and no corporate action. The ten recorded events again matched their pinned digests."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate, including the residual gap that open-web search cannot close.",
+    "corporate_actions": "Accept two independent clean signals per candidate: no Item 3.03/5.03 8-K, and Alpaca's real, fully paginated corporate-actions response empty for the window.",
+    "provider_rights_at_the_new_scale": "Recorded events would grow from 10 to 23. On 2026-09-26 the batch of eight proceeded under the standing 2026-09-23 authorization without your separately addressing the aggregate-at-scale question. Please answer it explicitly this time: is the authorization (derived ratios, booleans, counts and hashes only, never raw prices) still fine at about twenty-three events?"
+  },
+  "candidates": [
+    {
+      "event_id": "ttwo-2026-02-03",
+      "candidate_id": "0001628280-26-005010",
+      "ticker": "TTWO",
+      "company": "Take-Two Interactive Software, Inc.",
+      "cik": "0000946581",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260203145448/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2026",
+        "displayed_stamp_et": "Feb 3, 2026 4:05 PM Eastern Standard Time (16:05 ET)",
+        "minute_encoded_in_spec": "2026-02-03T16:05:00-05:00",
+        "sec_8k_accepted_et": "2026-02-03 16:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-03",
+      "reaction_session": "2026-02-04",
+      "twentieth_reaction_session": "2026-03-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.01 par value | TTWO | NASDAQ Global Select Market",
+        "prior_8k": {
+          "accession": "0001628280-25-050182",
+          "accepted_et": "2025-11-06 16:13"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T21:13:47Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 16:13 2.02,9.01",
+          "2026-02-03 16:14 2.02,9.01 <EVENT>",
+          "2026-05-21 16:08 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Fiscal Q3 FY2026 (quarter ended 2025-12-31); the release raises the fiscal-year outlook."
+    },
+    {
+      "event_id": "jbss-2026-01-29",
+      "candidate_id": "0001193125-26-029383",
+      "ticker": "JBSS",
+      "company": "John B. Sanfilippo & Son, Inc.",
+      "cik": "0000880117",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260129356587/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Second-Quarter-Results",
+        "displayed_stamp_et": "Jan 29, 2026 4:10 PM Eastern Standard Time (16:10 ET)",
+        "minute_encoded_in_spec": "2026-01-29T16:10:00-05:00",
+        "sec_8k_accepted_et": "2026-01-29 16:16",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-01-29",
+      "reaction_session": "2026-01-30",
+      "twentieth_reaction_session": "2026-02-27",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $.01 par value per share | JBSS | The Nasdaq Stock Market LLC",
+        "prior_8k": {
+          "accession": "0001193125-25-256336",
+          "accepted_et": "2025-10-29 16:14"
+        },
+        "spec_valid_from": "2025-10-29T00:00:00-04:00",
+        "spec_available_at": "2025-10-29T20:14:43Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2026-01-29 16:16 2.02,9.01 <EVENT>",
+          "2026-03-30 17:30 8.01,9.01",
+          "2026-04-29 16:13 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Fiscal Q2 FY2026. The previous quarter's 8-K is three months earlier; no other 8-K precedes the event."
+    },
+    {
+      "event_id": "nbix-2026-02-11",
+      "candidate_id": "0000914475-26-000006",
+      "ticker": "NBIX",
+      "company": "Neurocrine Biosciences, Inc.",
+      "cik": "0000914475",
+      "release": {
+        "wire": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-fourth-quarter-and-full-year-2025-financial-results-and-provides-financial-expectations-for-2026-302685532.html",
+        "displayed_stamp_et": "Feb 11, 2026, 16:01 ET",
+        "minute_encoded_in_spec": "2026-02-11T16:01:00-05:00",
+        "sec_8k_accepted_et": "2026-02-11 16:02",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-11",
+      "reaction_session": "2026-02-12",
+      "twentieth_reaction_session": "2026-03-12",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value | NBIX | Nasdaq Global Select Market",
+        "prior_8k": {
+          "accession": "0000914475-25-000180",
+          "accepted_et": "2025-10-28 16:02"
+        },
+        "spec_valid_from": "2025-10-28T00:00:00-04:00",
+        "spec_available_at": "2025-10-28T20:02:28Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-24 16:02 5.02,9.01",
+          "2026-02-11 16:02 2.02,9.01 <EVENT>",
+          "2026-04-06 07:35 1.01,9.01",
+          "2026-05-05 16:02 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Wire stamp 16:01 and SEC acceptance 16:02 are one minute apart."
+    },
+    {
+      "event_id": "caci-2026-01-21",
+      "candidate_id": "0001628280-26-002895",
+      "ticker": "CACI",
+      "company": "CACI International Inc",
+      "cik": "0000016058",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260121953892/en/CACI-Reports-Results-for-Its-Fiscal-2026-Second-Quarter-and-Raises-Guidance-for-All-Metrics",
+        "displayed_stamp_et": "Jan 21, 2026 4:15 PM Eastern Standard Time (16:15 ET)",
+        "minute_encoded_in_spec": "2026-01-21T16:15:00-05:00",
+        "sec_8k_accepted_et": "2026-01-21 16:35",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-01-21",
+      "reaction_session": "2026-01-22",
+      "twentieth_reaction_session": "2026-02-19",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | CACI | New York Stock Exchange",
+        "prior_8k": {
+          "accession": "0000016058-25-000084",
+          "accepted_et": "2025-10-22 16:45"
+        },
+        "spec_valid_from": "2025-10-22T00:00:00-04:00",
+        "spec_available_at": "2025-10-22T20:45:15Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-12-01 16:55 1.01,2.03,9.01",
+          "2025-12-22 07:32 1.01,7.01,9.01",
+          "2025-12-29 17:19 1.01,2.03,9.01",
+          "2025-12-30 08:33 5.02,9.01",
+          "2026-01-21 16:35 2.02,9.01 <EVENT>",
+          "2026-02-26 08:17 8.01,9.01",
+          "2026-02-26 16:18 8.01,9.01",
+          "2026-03-09 16:45 1.01,2.01,2.03,8.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Several financing and acquisition 8-Ks in December (Items 1.01, 2.03, 7.01) precede the event by three to seven weeks; none falls inside the window (2026-01-22 to 2026-02-19). Fiscal Q2 FY2026."
+    },
+    {
+      "event_id": "vsat-2026-02-05",
+      "candidate_id": "0001193125-26-039528",
+      "ticker": "VSAT",
+      "company": "Viasat, Inc.",
+      "cik": "0000797721",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/05/3233423/0/en/Viasat-Releases-Third-Quarter-Fiscal-Year-2026-Financial-Results.html",
+        "displayed_stamp_et": "February 05, 2026 16:05 ET",
+        "minute_encoded_in_spec": "2026-02-05T16:05:00-05:00",
+        "sec_8k_accepted_et": "2026-02-05 16:41",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-05",
+      "reaction_session": "2026-02-06",
+      "twentieth_reaction_session": "2026-03-06",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.0001 per share | VSAT | The Nasdaq Stock Market LLC",
+        "prior_8k": {
+          "accession": "0001193125-25-272331",
+          "accepted_et": "2025-11-07 16:07"
+        },
+        "spec_valid_from": "2025-11-07T00:00:00-05:00",
+        "spec_available_at": "2025-11-07T21:07:17Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-07 16:07 2.02,9.01",
+          "2025-11-19 08:00 5.02",
+          "2025-12-11 16:51 5.02",
+          "2026-01-26 16:05 1.01,2.03,8.01,9.01",
+          "2026-02-05 16:41 2.02,9.01 <EVENT>",
+          "2026-05-07 08:14 1.01,5.02,7.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "A financing-type 8-K (Items 1.01, 2.03, 8.01) was filed ten days before the event; nothing falls inside the window. The release is a shareholder letter; the call was at 5:30 pm ET. Fiscal Q3 FY2026."
+    },
+    {
+      "event_id": "hurn-2026-02-24",
+      "candidate_id": "0001628280-26-011092",
+      "ticker": "HURN",
+      "company": "Huron Consulting Group Inc.",
+      "cik": "0001289848",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260224117886/en/Huron-Announces-Fourth-Quarter-2025-Financial-Results-and-Provides-2026-Guidance",
+        "displayed_stamp_et": "Feb 24, 2026 4:05 PM Eastern Standard Time (16:05 ET)",
+        "minute_encoded_in_spec": "2026-02-24T16:05:00-05:00",
+        "sec_8k_accepted_et": "2026-02-24 16:12",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-24",
+      "reaction_session": "2026-02-25",
+      "twentieth_reaction_session": "2026-03-24",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | HURN | Nasdaq Global Select Market",
+        "prior_8k": {
+          "accession": "0001628280-25-046762",
+          "accepted_et": "2025-10-28 16:14"
+        },
+        "spec_valid_from": "2025-10-28T00:00:00-04:00",
+        "spec_available_at": "2025-10-28T20:14:23Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2026-02-24 16:12 2.02,9.01 <EVENT>",
+          "2026-05-05 17:27 2.02,9.01",
+          "2026-05-12 14:25 5.07"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Q4 results and 2026 guidance are in the same release. No other 8-K between the previous quarter and the event."
+    },
+    {
+      "event_id": "parr-2026-02-24",
+      "candidate_id": "0001628280-26-011234",
+      "ticker": "PARR",
+      "company": "Par Pacific Holdings, Inc.",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/24/3244063/0/en/Par-Pacific-Reports-Fourth-Quarter-and-2025-Results.html",
+        "displayed_stamp_et": "February 24, 2026 16:15 ET",
+        "minute_encoded_in_spec": "2026-02-24T16:15:00-05:00",
+        "sec_8k_accepted_et": "2026-02-24 17:25",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-24",
+      "reaction_session": "2026-02-25",
+      "twentieth_reaction_session": "2026-03-24",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.01 par value | PARR | New York Stock Exchange (and, at the event, also NYSE Texas, Inc.)",
+        "prior_8k": {
+          "accession": "0001628280-25-048903",
+          "accepted_et": "2025-11-04 16:36"
+        },
+        "spec_valid_from": "2025-11-04T00:00:00-05:00",
+        "spec_available_at": "2025-11-04T21:36:26Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-04 16:36 2.02,9.01",
+          "2025-12-19 16:02 1.01,2.03,9.01",
+          "2026-02-24 17:25 2.02,9.01 <EVENT>",
+          "2026-05-04 11:10 5.07",
+          "2026-05-05 17:03 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Dual-listed on NYSE and NYSE Texas at the event (the prior-quarter cover shows NYSE only); NYSE is the primary listing and is used. The 8-K was accepted 70 minutes after the wire stamp."
+    },
+    {
+      "event_id": "klc-2026-03-12",
+      "candidate_id": "0001193125-26-104145",
+      "ticker": "KLC",
+      "company": "KinderCare Learning Companies, Inc.",
+      "cik": "0001873529",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260312699138/en/KinderCare-Reports-Fourth-Quarter-2025-Financial-Results",
+        "displayed_stamp_et": "Mar 12, 2026 4:10 PM Eastern Daylight Time (16:10 ET)",
+        "minute_encoded_in_spec": "2026-03-12T16:10:00-04:00",
+        "sec_8k_accepted_et": "2026-03-12 16:10",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-03-12",
+      "reaction_session": "2026-03-13",
+      "twentieth_reaction_session": "2026-04-10",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | KLC | New York Stock Exchange",
+        "prior_8k": {
+          "accession": "0001193125-25-277750",
+          "accepted_et": "2025-11-12 16:30"
+        },
+        "spec_valid_from": "2025-11-12T00:00:00-05:00",
+        "spec_available_at": "2025-11-12T21:30:32Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-12 16:30 2.02,9.01",
+          "2025-12-03 08:05 5.02,7.01,9.01",
+          "2026-02-27 19:30 5.02,9.01",
+          "2026-03-12 16:10 2.02,9.01 <EVENT>",
+          "2026-05-14 16:15 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "SEC acceptance is in the same minute as the wire stamp. Q4 2025 was a 14-week quarter (53-week year). An Item 5.02 8-K was filed two weeks earlier."
+    },
+    {
+      "event_id": "pdfs-2026-02-12",
+      "candidate_id": "0001437749-26-003948",
+      "ticker": "PDFS",
+      "company": "PDF Solutions, Inc.",
+      "cik": "0001120914",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/12/3237650/0/en/PDF-Solutions-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results-and-Announces-Record-2025-Fourth-Quarter-and-Record-Full-Year-Total-Revenues.html",
+        "displayed_stamp_et": "February 12, 2026 16:02 ET",
+        "minute_encoded_in_spec": "2026-02-12T16:02:00-05:00",
+        "sec_8k_accepted_et": "2026-02-12 16:26",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-12",
+      "reaction_session": "2026-02-13",
+      "twentieth_reaction_session": "2026-03-13",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.00015 par value | PDFS | The NASDAQ Stock Market LLC",
+        "prior_8k": {
+          "accession": "0001437749-25-033622",
+          "accepted_et": "2025-11-06 16:29"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T21:29:05Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 16:29 2.02,9.01",
+          "2025-11-12 21:55 7.01",
+          "2026-02-12 16:26 2.02,9.01 <EVENT>",
+          "2026-04-24 17:27 1.01,2.03,9.01",
+          "2026-05-07 16:23 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "The prior-quarter 8-K's primary document is named with an August 2025 date although it was filed 2025-11-06; the cover page and acceptance time are what were used."
+    },
+    {
+      "event_id": "alkt-2026-02-25",
+      "candidate_id": "0001529274-26-000005",
+      "ticker": "ALKT",
+      "company": "Alkami Technology, Inc.",
+      "cik": "0001529274",
+      "release": {
+        "wire": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-fourth-quarter-2025-financial-results-302697481.html",
+        "displayed_stamp_et": "Feb 25, 2026, 16:05 ET",
+        "minute_encoded_in_spec": "2026-02-25T16:05:00-05:00",
+        "sec_8k_accepted_et": "2026-02-25 16:13",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-25",
+      "reaction_session": "2026-02-26",
+      "twentieth_reaction_session": "2026-03-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value per share | ALKT | The Nasdaq Stock Market LLC",
+        "prior_8k": {
+          "accession": "0001529274-25-000159",
+          "accepted_et": "2025-10-30 16:08"
+        },
+        "spec_valid_from": "2025-10-30T00:00:00-04:00",
+        "spec_available_at": "2025-10-30T20:08:38Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2026-02-25 16:13 2.02,7.01,9.01 <EVENT>",
+          "2026-04-01 16:10 5.02",
+          "2026-04-29 16:11 2.02,7.01,8.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "No other 8-K between the previous quarter (2025-10-30) and the event."
+    },
+    {
+      "event_id": "payo-2026-02-26",
+      "candidate_id": "0001104659-26-020081",
+      "ticker": "PAYO",
+      "company": "Payoneer Global Inc.",
+      "cik": "0001845815",
+      "release": {
+        "wire": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/payoneer-reports-fourth-quarter-and-full-year-2025-financial-results-302697783.html",
+        "displayed_stamp_et": "Feb 26, 2026, 07:30 ET",
+        "minute_encoded_in_spec": "2026-02-26T07:30:00-05:00",
+        "sec_8k_accepted_et": "2026-02-26 07:35",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-02-25",
+      "reaction_session": "2026-02-26",
+      "twentieth_reaction_session": "2026-03-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | PAYO | The Nasdaq Stock Market LLC",
+        "prior_8k": {
+          "accession": "0001104659-25-106667",
+          "accepted_et": "2025-11-05 07:35"
+        },
+        "spec_valid_from": "2025-11-05T00:00:00-05:00",
+        "spec_available_at": "2025-11-05T12:35:30Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-05 07:35 2.02,9.01",
+          "2025-12-03 16:21 5.02,9.01",
+          "2026-02-26 07:35 2.02,9.01 <EVENT>",
+          "2026-05-07 07:35 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "core",
+      "additional_note": "Earlier quarters were released on Business Wire; this release is on PR Newswire."
+    },
+    {
+      "event_id": "okta-2026-03-04",
+      "candidate_id": "0001660134-26-000016",
+      "ticker": "OKTA",
+      "company": "Okta, Inc.",
+      "cik": "0001660134",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260304801624/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2026-Financial-Results",
+        "displayed_stamp_et": "Mar 4, 2026 4:01 PM Eastern Standard Time (16:01 ET)",
+        "minute_encoded_in_spec": "2026-03-04T16:01:00-05:00",
+        "sec_8k_accepted_et": "2026-03-04 16:04",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-03-04",
+      "reaction_session": "2026-03-05",
+      "twentieth_reaction_session": "2026-04-01",
+      "identity_evidence": {
+        "event_filing_cover": "Class A common stock, par value $0.0001 per share | OKTA | The Nasdaq Stock Market LLC (the only listed class)",
+        "prior_8k": {
+          "accession": "0001660134-25-000170",
+          "accepted_et": "2025-12-02 16:03"
+        },
+        "spec_valid_from": "2025-12-02T00:00:00-05:00",
+        "spec_available_at": "2025-12-02T21:03:49Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-12-02 16:03 2.02,7.01,9.01",
+          "2025-12-19 16:39 5.02,9.01",
+          "2026-01-05 08:18 8.01,9.01",
+          "2026-03-04 16:04 2.02,7.01,9.01 <EVENT>",
+          "2026-03-11 16:05 5.02,9.01",
+          "2026-03-23 08:01 5.02,9.01",
+          "2026-04-22 16:21 5.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2026-03-11 16:05 ET 8-K Item 5.02 (content not opened; reaction session 2026-03-12)",
+        "2026-03-23 08:01 ET 8-K Item 5.02 (content not opened; reaction session 2026-03-23)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "spare",
+      "additional_note": "SPARE. Two Item 5.02 8-Ks inside the window (officer or director changes)."
+    },
+    {
+      "event_id": "real-2026-02-26",
+      "candidate_id": "0001573221-26-000009",
+      "ticker": "REAL",
+      "company": "TheRealReal, Inc.",
+      "cik": "0001573221",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/26/3246067/0/en/the-realreal-announces-fourth-quarter-and-full-year-2025-results.html",
+        "displayed_stamp_et": "February 26, 2026 16:03 ET",
+        "minute_encoded_in_spec": "2026-02-26T16:03:00-05:00",
+        "sec_8k_accepted_et": "2026-02-26 16:15",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-26",
+      "reaction_session": "2026-02-27",
+      "twentieth_reaction_session": "2026-03-26",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.00001 par value | REAL | The Nasdaq Global Select Market",
+        "prior_8k": {
+          "accession": "0001573221-25-000076",
+          "accepted_et": "2025-11-10 16:15"
+        },
+        "spec_valid_from": "2025-11-10T00:00:00-05:00",
+        "spec_available_at": "2025-11-10T21:15:29Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-10 16:15 2.02,9.01",
+          "2025-11-18 08:00 5.02,9.01",
+          "2026-02-26 16:15 2.02,9.01 <EVENT>",
+          "2026-03-09 16:11 5.02,7.01,9.01",
+          "2026-05-07 16:14 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. No 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2026-03-09 16:11 ET 8-K Items 5.02 and 7.01 (content not opened; reaction session 2026-03-10)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36258011977)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_role": "spare",
+      "additional_note": "SPARE. In February 2025 this company issued preliminary Q4 results ahead of its formal release; the 8-K history shows nothing comparable between 2025-11-10 and this event."
+    }
+  ],
+  "reserves": [
+    {
+      "ticker": "NAVN",
+      "event_id": "navn-2026-03-25",
+      "candidate_id": "0001628280-26-021033",
+      "why_held_back": "Recent IPO (October 2025) with an Item 5.02 8-K inside the window (2026-04-17); Class A common stock only. Viable if more events are needed."
+    },
+    {
+      "ticker": "BRLT",
+      "event_id": "brlt-2026-03-05",
+      "candidate_id": "0001628280-26-014992",
+      "why_held_back": "Reincorporated 1-for-1 from Delaware to Nevada on 2025-12-22 (Items 3.03/5.03, outside the window, no economic change) and has an Item 5.02 8-K inside the window (2026-03-20). Viable if more events are needed."
+    },
+    {
+      "ticker": "CRCL",
+      "event_id": "crcl-2026-02-25",
+      "candidate_id": "0001876042-26-000032",
+      "why_held_back": "Its Business Wire page shows no visible stamp; the 06:25 ET minute comes from the page's structured datePublished (2026-02-25T11:25:00Z), a different kind of evidence. Item 5.02 8-K inside the window (2026-03-17). Viable if more events are needed."
+    }
+  ],
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all thirteen, provider rights fine', or a list of tickers to drop.",
+  "not_a_claim": [
+    "Not Milestone 1 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Only events with a non-null session-20 label count toward the target; none of these has a corporate action in its window."
+  ]
+}
