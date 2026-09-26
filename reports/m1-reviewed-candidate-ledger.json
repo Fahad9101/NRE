@@ -1460,7 +1460,7 @@
       "discovery_submission_representation": "relay_json_extract",
       "discovery_submission_sha256": "5f439550966ce7932619edae9d736137f6525016c76c489586f5ade79765c8e7",
       "discovery_transport_sha256": "022713ad87b57b2c0762d431503b5f243d1e848323b30b3cfa0867093cc275cf",
-      "disposition": "quarantined",
+      "disposition": "excluded",
       "event_id": null,
       "filing_date": "2026-02-24",
       "form": "8-K",
@@ -1472,7 +1472,7 @@
       "primary_review_state": "REQUIRED_POST_FREEZE",
       "primary_source_sha256": null,
       "primary_url": "https://www.sec.gov/Archives/edgar/data/909724/000114036126006558/ef20066316_8k.htm",
-      "reason": "Source chronology and historical security eligibility unresolved; no accepted reaction record.",
+      "reason": "Cash dividend (ex-date 2026-02-25, Alpaca corporate-action id 19423172-4162-4d05-a984-cc38415ceb68) falls on the reaction session, so the Day-1 window contains a corporate action and the event quarantines as CORPORATE_ACTION_IN_WINDOW; no valid label can be computed under the raw-price method. Found by the 2026-09-26 data-availability dry run (workflow run 36256523957); no returns were computed or viewed. Chronology was otherwise clean: GlobeNewswire release 2026-02-24 16:15 ET.",
       "source_sha256": "5f439550966ce7932619edae9d736137f6525016c76c489586f5ade79765c8e7"
     },
     {

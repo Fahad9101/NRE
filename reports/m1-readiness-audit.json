@@ -3,9 +3,9 @@
   "counts": {
     "candidates": 243,
     "dispositions": {
-      "excluded": 14,
+      "excluded": 15,
       "included": 2,
-      "quarantined": 227
+      "quarantined": 226
     },
     "eligible_complete_events": 0,
     "events": 0,
@@ -78,7 +78,6 @@
       "0001104659-26-033399",
       "0001104659-26-036517",
       "0001133311-26-000002",
-      "0001140361-26-006558",
       "0001140361-26-011738",
       "0001140361-26-012158",
       "0001140361-26-012885",
@@ -279,7 +278,7 @@
     "selection_frozen_before_prices": true
   },
   "input_sha256": "20c4d55930a44dd54842aab0c04511de16b92330c8e16865c803f9451bf6e193",
-  "ledger_sha256": "11e8056ce1b427a0c6d9ce9693b5bd7ddf8f5bc03db89eadf4606701b7e66073",
+  "ledger_sha256": "ce9af2b53d8706f9d40abbbe39f6613986e46c49891f44e25edb3ab30b7be32f",
   "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "milestone_accepted": false,
   "protocol_sha256": "5e9994aa984e668c18f3a462d016e10490e969ad5abdc5357a1cbf18edf6fe7c",
@@ -290,9 +289,12 @@
     "candidate_issuers": 215,
     "complete_event_issuers": 0,
     "complete_events": 0,
-    "excluded": 14,
+    "excluded": 15,
     "included": 2,
-    "quarantined": 227,
+    "quarantined": 226,
+    "recorded_eligible_complete_events": 1,
+    "recorded_eligible_issuers": 1,
+    "recorded_progress_note": "complete_events/complete_event_issuers are what this audit run can see (its input inventory is empty). recorded_* count events whose committed record has a non-null session_20_close_return, the rule nre/acceptance.py applies.",
     "target_events": 20,
     "target_issuers": 15
   },

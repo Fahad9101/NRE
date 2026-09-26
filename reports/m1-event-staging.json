@@ -5445,7 +5445,7 @@
       "source_sha256": "7021429cc6e274aa24366ae1ca8b382703a0e1cf6d5ab57d040b67f7040d53aa"
     }
   ],
-  "description": "Candidate staging only; not a historical reaction dataset. All null/false verification fields are unresolved, not inferred negative findings. Exclusions follow the stated pilot scope and cited exhibits.",
+  "description": "Candidate staging only; not a historical reaction dataset. All null/false verification fields are unresolved, not inferred negative findings. Exclusions follow the stated pilot scope and cited exhibits. Snapshot as of 2026-09-21: dispositions and inclusions decided since then are recorded only in reports/m1-reviewed-candidate-ledger.json, which is authoritative.",
   "membership_sha256": "ae571171a7ba23c732d0230d9ed8c1dd21ac97f16bbda4ec087554a470ab2815",
   "schema_version": 1,
   "state": "BLOCKED_SOURCE_REVIEW"

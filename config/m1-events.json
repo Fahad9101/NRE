@@ -351,33 +351,6 @@
       "cutoff": "2026-03-31T16:10:00-04:00",
       "precision": "minute",
       "timestamp_evidence": "16:05"
-    },
-    {
-      "event_id": "tlf-2026-02-24",
-      "cluster_id": "tlf-q4fy25",
-      "candidate_id": "0001140361-26-006558",
-      "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-02-25",
-      "security": {
-        "security_id": "TLF-909724",
-        "company_id": "0000909724",
-        "cik": "0000909724",
-        "ticker": "TLF",
-        "exchange": "NASDAQ",
-        "security_type": "common_stock",
-        "valid_from": "2025-11-10T00:00:00-05:00",
-        "available_at": "2025-11-10T21:31:21Z"
-      },
-      "source": {
-        "source_id": "tlf-wire",
-        "url": "https://www.globenewswire.com/news-release/2026/02/24/3244051/0/en/Tandy-Leather-Factory-Reports-Fourth-Quarter-and-Full-Year-2025-Results.html",
-        "text": "GlobeNewswire release, 'Tandy Leather Factory Reports Fourth Quarter and Full Year 2025 Results', displayed dateline February 24, 2026 16:15 ET. https://www.globenewswire.com/news-release/2026/02/24/3244051/0/en/Tandy-Leather-Factory-Reports-Fourth-Quarter-and-Full-Year-2025-Results.html",
-        "first_seen_at": "2026-02-24T16:16:00-05:00"
-      },
-      "published_at": "2026-02-24T16:15:00-05:00",
-      "cutoff": "2026-02-24T16:20:00-05:00",
-      "precision": "minute",
-      "timestamp_evidence": "16:15"
     }
   ]
 }

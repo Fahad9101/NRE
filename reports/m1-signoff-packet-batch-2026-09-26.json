@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-26",
+  "purpose": "Evidence for the project owner to sign off, or not, on eight candidate events for Milestone 1. Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "From the 110 frozen candidates with no review flags, using only SEC filing metadata and wire pages: 8-K acceptance time (premarket or after-hours), a clean 8-K neighbourhood, common stock on Nasdaq or NYSE, and a GlobeNewswire release showing a minute stamp. No price or return data was viewed before or during selection; the dry run reports data availability and corporate actions only.",
+  "dry_run": {
+    "workflow": "event-acquire.yml",
+    "run_id": 36256523957,
+    "commit": "279920f12bb234ecc9a556e5f70a4258dc17ac74",
+    "result": "Nine pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels. Eight showed all sessions present, no zero-volume days and no corporate actions in their windows. One (TLF) showed a dividend on its reaction session and was excluded."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below, including the residual gap that open-web search cannot close (a live or unrecorded earlier disclosure).",
+    "corporate_actions": "Accept two independent clean signals per candidate: no Item 3.03/5.03 8-K, and Alpaca's real, fully paginated corporate-actions response empty for the window.",
+    "provider_rights_at_the_new_scale": "The 2026-09-23 authorization covers redacted derived ratios, booleans, counts and hashes, and explicitly carried the 'aggregate at scale' question forward as something to revisit as the cohort grows. Signing off on this batch would take the recorded event count from 2 to 10. Please confirm the standing authorization still holds at that size (each event publishes about sixteen derived numbers and no prices)."
+  },
+  "candidates": [
+    {
+      "event_id": "achv-2026-03-24",
+      "candidate_id": "0001193125-26-120687",
+      "ticker": "ACHV",
+      "company": "Achieve Life Sciences, Inc.",
+      "cik": "0000949858",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/24/3261062/0/en/Achieve-Life-Sciences-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Provides-Business-Updates.html",
+        "displayed_stamp_et": "March 24, 2026 07:00 ET",
+        "minute_encoded_in_spec": "2026-03-24T07:00:00-04:00",
+        "sec_8k_accepted_et": "2026-03-24 07:05",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-03-23",
+      "reaction_session": "2026-03-24",
+      "twentieth_reaction_session": "2026-04-21",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 per share | ACHV | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-268056",
+          "accepted_et": "2025-11-06 07:10"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T12:10:25Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 07:10 2.02,9.01",
+          "2026-03-24 07:05 2.02,9.01 <EVENT>",
+          "2026-04-16 16:47 1.01,3.02,5.02,7.01,9.01",
+          "2026-05-12 07:20 2.02,5.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2026-04-15 GlobeNewswire release 'Achieve Life Sciences Announces Operational Progress Including Completion of Technology Transfer to Adare Pharma Solutions' (about session 16)",
+        "2026-04-16 16:47 ET 8-K Items 1.01, 3.02, 5.02, 7.01 (financing; reaction session 2026-04-17 = session 18)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "Two company announcements fall inside the window before session 20 (2026-04-15 operational-progress release; 2026-04-16 financing 8-K, reaction 2026-04-17). Day-1 through session 10 (2026-04-07) precede both. The same release also announced an Adare Pharma Solutions manufacturing partnership."
+      },
+      "additional_note": "Earnings release also announces the Adare manufacturing partnership (same first-public minute)."
+    },
+    {
+      "event_id": "coll-2026-02-26",
+      "candidate_id": "0001628280-26-011990",
+      "ticker": "COLL",
+      "company": "Collegium Pharmaceutical, Inc.",
+      "cik": "0001267565",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/en/news-release/2026/02/26/3245467/34897/en/Collegium-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results.html",
+        "displayed_stamp_et": "February 26, 2026 07:30 ET",
+        "minute_encoded_in_spec": "2026-02-26T07:30:00-05:00",
+        "sec_8k_accepted_et": "2026-02-26 07:32",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-02-25",
+      "reaction_session": "2026-02-26",
+      "twentieth_reaction_session": "2026-03-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.001 per share | COLL | The NASDAQ Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001104659-25-107389",
+          "accepted_et": "2025-11-06 07:33"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T12:33:12Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 07:33 2.02,7.01,9.01",
+          "2025-12-30 08:05 1.01,1.02,3.02,7.01,9.01",
+          "2026-01-08 08:06 7.01,9.01",
+          "2026-02-26 07:32 2.02,7.01,9.01 <EVENT>",
+          "2026-03-19 17:06 1.01,7.01,9.01",
+          "2026-04-07 16:01 5.02",
+          "2026-05-07 07:33 2.02,7.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2026-03-19 17:06 ET 8-K Items 1.01 and 7.01 (content not opened; reaction session 2026-03-20 = session 17)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "An Item 1.01 8-K was filed 2026-03-19 17:06 ET, inside the window before session 20 (reaction 2026-03-20, session 17); content not reviewed. Sessions 1-10 precede it."
+      },
+      "additional_note": "The 2026-01-08 8-K (Item 7.01) is 'Collegium Provides 2026 Financial Guidance and Business Update': forward guidance, not preliminary actual results. The 2026-02-26 release reports actual Q4/FY2025 results and reaffirms that guidance."
+    },
+    {
+      "event_id": "love-2026-03-26",
+      "candidate_id": "0001628280-26-021185",
+      "ticker": "LOVE",
+      "company": "The Lovesac Company",
+      "cik": "0001701758",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/26/3262858/0/en/The-Lovesac-Company-Reports-Fourth-Quarter-and-Fiscal-2026-Financial-Results.html",
+        "displayed_stamp_et": "March 26, 2026 07:00 ET",
+        "minute_encoded_in_spec": "2026-03-26T07:00:00-04:00",
+        "sec_8k_accepted_et": "2026-03-26 07:00 (2.02) and 07:01 (7.01)",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-03-25",
+      "reaction_session": "2026-03-26",
+      "twentieth_reaction_session": "2026-04-23",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.00001 per share | LOVE | The NASDAQ Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001628280-25-056422",
+          "accepted_et": "2025-12-11 07:00"
+        },
+        "spec_valid_from": "2025-12-11T00:00:00-05:00",
+        "spec_available_at": "2025-12-11T12:00:59Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-20 07:18 5.02,7.01,9.01",
+          "2025-12-11 07:00 2.02,9.01",
+          "2026-03-26 07:00 2.02,9.01 <EVENT>",
+          "2026-03-26 07:01 7.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Fiscal Q4 FY2026 (year ended 2026-02-01). Same release announces a new $40 million share repurchase authorization. The Item 7.01 8-K one minute later is the same-day presentation."
+    },
+    {
+      "event_id": "aspn-2026-02-25",
+      "candidate_id": "0001171843-26-001072",
+      "ticker": "ASPN",
+      "company": "Aspen Aerogels, Inc.",
+      "cik": "0001145986",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/25/3244410/0/en/Aspen-Aerogels-Inc-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "displayed_stamp_et": "February 25, 2026 06:30 ET",
+        "minute_encoded_in_spec": "2026-02-25T06:30:00-05:00",
+        "sec_8k_accepted_et": "2026-02-25 06:30",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-02-24",
+      "reaction_session": "2026-02-25",
+      "twentieth_reaction_session": "2026-03-24",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | ASPN | The New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001171843-25-007067",
+          "accepted_et": "2025-11-06 06:30"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T11:30:31Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 06:30 2.02,7.01,9.01",
+          "2025-12-17 18:35 1.01,7.01,9.01",
+          "2026-02-25 06:30 2.02,7.01,9.01 <EVENT>",
+          "2026-04-21 16:30 7.01,8.01,9.01",
+          "2026-05-07 06:30 2.02,7.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "The release itself carries large non-routine content (revenue decline, a $291.2 million impairment and an announced strategic review), all at the same first-public minute. SEC acceptance is in the same minute as the wire stamp."
+    },
+    {
+      "event_id": "lnsr-2026-03-31",
+      "candidate_id": "0001193125-26-133153",
+      "ticker": "LNSR",
+      "company": "LENSAR, Inc.",
+      "cik": "0001320350",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/31/3265246/0/en/lensar-reports-fourth-quarter-and-full-year-2025-results-and-provides-business-update.html",
+        "displayed_stamp_et": "March 31, 2026 06:00 ET",
+        "minute_encoded_in_spec": "2026-03-31T06:00:00-04:00",
+        "sec_8k_accepted_et": "2026-03-31 06:10",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-03-30",
+      "reaction_session": "2026-03-31",
+      "twentieth_reaction_session": "2026-04-28",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.01 per share | LNSR | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-268073",
+          "accepted_et": "2025-11-06 07:15"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T12:15:28Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 07:15 2.02,9.01",
+          "2025-12-19 16:01 5.07",
+          "2026-02-25 17:09 7.01,9.01",
+          "2026-03-12 16:17 8.01",
+          "2026-03-13 06:02 8.01",
+          "2026-03-17 08:26 1.01,1.02,7.01,9.01",
+          "2026-03-31 06:10 2.02,9.01 <EVENT>",
+          "2026-04-15 16:30 5.02",
+          "2026-05-08 07:05 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "all"
+        ],
+        "note": "Unusual pre-event context: the Alcon merger agreement was terminated on 2026-03-16 (GlobeNewswire release; 8-K filed 2026-03-17), two weeks before this release, so the stock had been trading as a deal-pinned special situation until then. The window itself contains only a 2026-04-15 Item 5.02 8-K."
+      },
+      "additional_note": "The release says the company is moving forward independently following the merger termination."
+    },
+    {
+      "event_id": "asmb-2026-03-19",
+      "candidate_id": "0001193125-26-115980",
+      "ticker": "ASMB",
+      "company": "Assembly Biosciences, Inc.",
+      "cik": "0001426800",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/19/3259423/16259/en/Assembly-Biosciences-Reports-Year-End-2025-Financial-Results-and-Recent-Highlights.html",
+        "displayed_stamp_et": "March 19, 2026 16:05 ET",
+        "minute_encoded_in_spec": "2026-03-19T16:05:00-04:00",
+        "sec_8k_accepted_et": "2026-03-19 16:10",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-03-19",
+      "reaction_session": "2026-03-20",
+      "twentieth_reaction_session": "2026-04-17",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 | ASMB | The Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-274235",
+          "accepted_et": "2025-11-10 16:10"
+        },
+        "spec_valid_from": "2025-11-10T00:00:00-05:00",
+        "spec_available_at": "2025-11-10T21:10:29Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-10 16:10 2.02,9.01",
+          "2025-12-08 16:17 7.01,8.01,9.01",
+          "2026-03-19 16:10 2.02,9.01 <EVENT>",
+          "2026-03-30 17:32 5.02,9.01",
+          "2026-05-07 16:12 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2026-03-30 17:32 ET 8-K Item 5.02 (officer/director change; content not opened; reaction session 2026-03-31)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "The release highlights the Gilead licence of the helicase-primase programme; the 2025-12-08 8-K (Items 7.01, 8.01) precedes it and is presumably the original announcement, but was not opened."
+    },
+    {
+      "event_id": "tecx-2026-02-26",
+      "candidate_id": "0001193125-26-076843",
+      "ticker": "TECX",
+      "company": "Tectonic Therapeutic, Inc.",
+      "cik": "0001681087",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/02/26/3246161/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "displayed_stamp_et": "February 26, 2026 16:17 ET",
+        "minute_encoded_in_spec": "2026-02-26T16:17:00-05:00",
+        "sec_8k_accepted_et": "2026-02-26 16:26",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-02-26",
+      "reaction_session": "2026-02-27",
+      "twentieth_reaction_session": "2026-03-26",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.0001 par value per share | TECX | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-269573",
+          "accepted_et": "2025-11-06 16:15"
+        },
+        "spec_valid_from": "2025-11-06T00:00:00-05:00",
+        "spec_available_at": "2025-11-06T21:15:50Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-06 16:15 2.02,9.01",
+          "2026-02-24 16:06 5.02,7.01,9.01",
+          "2026-02-26 16:26 2.02,9.01 <EVENT>",
+          "2026-04-23 16:30 5.02,7.01,9.01",
+          "2026-05-07 16:23 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "An Item 5.02/7.01 8-K was filed two days before the event (2026-02-24 16:06 ET), apparently about a board appointment effective 2026-04-01; content not opened. It precedes the release, so it is context rather than a competing catalyst."
+    },
+    {
+      "event_id": "rekr-2026-03-31",
+      "candidate_id": "0001437749-26-010672",
+      "ticker": "REKR",
+      "company": "Rekor Systems, Inc.",
+      "cik": "0001697851",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/03/31/3266027/0/en/Rekor-Systems-Reports-Full-Year-2025-Results.html",
+        "displayed_stamp_et": "March 31, 2026 16:05 ET",
+        "minute_encoded_in_spec": "2026-03-31T16:05:00-04:00",
+        "sec_8k_accepted_et": "2026-03-31 16:26",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-03-31",
+      "reaction_session": "2026-04-01",
+      "twentieth_reaction_session": "2026-04-29",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.0001 par value per share | REKR | The Nasdaq Stock Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001437749-25-034859",
+          "accepted_et": "2025-11-13 16:25"
+        },
+        "spec_valid_from": "2025-11-13T00:00:00-05:00",
+        "spec_available_at": "2025-11-13T21:25:20Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_et_utc_converted": [
+          "2025-11-13 16:25 2.02,5.02,9.01",
+          "2025-12-16 16:03 1.01,8.01,9.01",
+          "2026-01-15 19:10 5.02",
+          "2026-03-27 16:15 5.02,9.01",
+          "2026-03-31 16:26 2.02,9.01 <EVENT>",
+          "2026-05-01 16:30 3.01",
+          "2026-05-11 16:07 2.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or GlobeNewswire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks you to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (dry run, workflow run 36256523957)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (same dry run). No returns were computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "The twentieth reaction session is 2026-04-29, one day before the frozen price window ends (2026-04-30). An Item 5.02 8-K was filed four days before the event (2026-03-27)."
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": [
+      "achv-2026-03-24",
+      "coll-2026-02-26",
+      "love-2026-03-26",
+      "aspn-2026-02-25",
+      "lnsr-2026-03-31"
+    ],
+    "after_hours": [
+      "asmb-2026-03-19",
+      "tecx-2026-02-26",
+      "rekr-2026-03-31"
+    ]
+  },
+  "set_aside": [
+    {
+      "ticker": "TLF",
+      "candidate_id": "0001140361-26-006558",
+      "outcome": "EXCLUDED in the ledger",
+      "reason": "Cash dividend with ex-date 2026-02-25 falls on the reaction session, so the Day-1 window contains a corporate action and the event cannot yield a valid label."
+    },
+    {
+      "ticker": "GALT",
+      "candidate_id": "0001140361-26-012158",
+      "outcome": "SET ASIDE, still quarantined",
+      "reason": "Its 8-K was accepted at 07:55 ET on 2026-03-31, five minutes before the 08:00 ET wire stamp, so the SEC filing itself was the first public disclosure. Both are premarket, but the encoded minute would need a decision about which source to treat as first public."
+    }
+  ],
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all eight', or a list of tickers to drop. Then the attestations are added, the workflow runs, and each result is recorded with a pinned label digest.",
+  "not_a_claim": [
+    "Not Milestone 1 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Only events with a non-null session-20 label count toward the 20-event target; none of these eight has a corporate action in its window, so all could count if their data completes."
+  ]
+}
