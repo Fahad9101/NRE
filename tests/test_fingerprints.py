@@ -43,10 +43,12 @@ def edit_json(path, change):
 
 class PolicyTests(unittest.TestCase):
     def test_repository_policy_holds_the_defaults_the_owner_confirmed(self):
+        # analogues.min_members was amended from 5 to 10 on 2026-09-27 by explicit owner instruction
+        # (reports/m2-policy-amendment-2026-09-27.json); every other value is as originally confirmed.
         expected = {"count_unit": "event", "wilson_confidence": 0.95, "proportion": {"report_from_n": 5, "unreliable_below_n": 10},
                     "mean_median": {"report_from_n": 10, "unreliable_below_n": 20},
                     "quantiles": {"levels": [0.1, 0.25, 0.5, 0.75, 0.9], "report_from_n": 20}, "pooling": {"prior_strength": 10},
-                    "analogues": {"min_members": 5, "max_distance": 1.0,
+                    "analogues": {"min_members": 10, "max_distance": 1.0,
                                   "distance": {"timing_mismatch": 1.0, "sector_mismatch": {"same_major_group": 0.0, "same_division": 0.5, "other": 1.0}}}}
         for key, value in expected.items():
             self.assertEqual(S.POLICY[key], value, key)

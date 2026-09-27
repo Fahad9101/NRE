@@ -63,7 +63,9 @@ class DistanceTests(unittest.TestCase):
 
 class RetrievalTests(unittest.TestCase):
     def test_expansion_stops_at_the_minimum_and_ties_enter_together(self):
-        result = retrieve()
+        # Pinned to 5 deliberately: this illustrates the algorithm's tier-by-tier expansion, independent of
+        # whatever the production default (raised to 10 on 2026-09-27) currently is.
+        result = retrieve(policy=S.policy_with(**{"analogues.min_members": 5}))
         self.assertEqual((result["state"], result["distance_reached"]), (an.FOUND, 0.5))
         self.assertEqual([m["event_id"] for m in result["members"]], ["e0", "e1", "e2", "e3", "e4"])
         self.assertEqual([m["distance"] for m in result["members"]], [0.0, 0.0, 0.0, 0.5, 0.5])
@@ -108,7 +110,8 @@ class RetrievalTests(unittest.TestCase):
         self.assertAlmostEqual(returns["mean"]["value"], sum(0.01 * (i + 1) for i in range(12)) / 12, places=9)
 
     def test_a_reaction_session_count_unit_can_make_the_same_events_insufficient(self):
-        events = [S.event(i, session=S.SESSIONS[0], sic="7372") for i in range(6)]
+        # 12 events comfortably clears the production min_members (10) by event, while sharing one session.
+        events = [S.event(i, session=S.SESSIONS[0], sic="7372") for i in range(12)]
         self.assertEqual(retrieve(events=events)["state"], an.FOUND)
         self.assertEqual(retrieve(events=events, policy=S.policy_with(count_unit="reaction_session"))["state"], an.INSUFFICIENT)
 
@@ -266,10 +269,17 @@ class RealDataTests(unittest.TestCase):
             self.assertEqual(got["targets"], 23)
 
     def test_analogue_sets_exist_for_fewer_targets_than_matured_events_suggest(self):
+        # analogues.min_members was raised from 5 to 10 on 2026-09-27 (reports/m2-policy-amendment-2026-09-27.json),
+        # exactly so that every found set would clear the mean/median reporting minimum too (checked below).
         summary = an.pool_report(REAL)["summary"]
         found = {label: summary[label]["analogues_found"] for label in an.HORIZON_LABELS}
-        self.assertEqual(found, {"day1_close_return": 13, "session_2_close_return": 12, "session_5_close_return": 11,
-                                 "session_10_close_return": 8, "session_20_close_return": 4})
+        self.assertEqual(found, {"day1_close_return": 6, "session_2_close_return": 4, "session_5_close_return": 4,
+                                 "session_10_close_return": 3, "session_20_close_return": 1})
+        for event in REAL["events"]:
+            for label in an.HORIZON_LABELS:
+                result = an.retrieve(fp.historical_target(event), REAL["events"], label, REAL["policy"])
+                if result["state"] == an.FOUND:
+                    self.assertNotEqual(result["summary"]["mean"]["state"], fp.WITHHELD, (event["event_id"], label))
 
     def test_the_earliest_target_has_nothing_matured_to_draw_on(self):
         first = an.pool_report(REAL)["targets"][0]

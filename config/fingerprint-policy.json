@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "policy_version": "m2-fingerprint-policy-v1-2026-09-26",
+  "policy_version": "m2-fingerprint-policy-v2-amended-2026-09-27",
   "confirmed_by": {
     "record": "reports/m2-scope-confirmation-2026-09-26.json",
     "proposal": "docs/M2-SCOPE-PROPOSAL.md",
     "proposal_commit": "58d07b52b54e53909840a723c497586f6cd0e427",
-    "note": "These are the defaults the project owner confirmed. A change to any value needs the owner's approval first, and every output stamps this file's hash."
+    "note": "These are the defaults the project owner confirmed. A change to any value needs the owner's approval first, and every output stamps this file's hash.",
+    "amendment_2026_09_27": "analogues.min_members raised from 5 to 10, by explicit project-owner instruction (\"raise the analogue minimum to 10\"), on the finding recorded in docs/M2-SCOPE-PROPOSAL.md section 8 and reports/m2-step-1-build-record-2026-09-26.json that an analogue minimum of 5 sat below the mean/median reporting minimum of 10, so most analogue sets that existed could not themselves carry a mean or median. See reports/m2-policy-amendment-2026-09-27.json for the full record, including the counts before and after. Nothing else in this file changed."
   },
   "count_unit": "event",
   "wilson_confidence": 0.95,
@@ -14,7 +15,7 @@
   "quantiles": {"levels": [0.1, 0.25, 0.5, 0.75, 0.9], "report_from_n": 20},
   "pooling": {"prior_strength": 10},
   "analogues": {
-    "min_members": 5,
+    "min_members": 10,
     "max_distance": 1.0,
     "distance": {
       "timing_mismatch": 1.0,

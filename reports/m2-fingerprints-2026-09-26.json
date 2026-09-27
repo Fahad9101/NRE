@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kind": "reaction_fingerprint_table",
-  "policy": {"version": "m2-fingerprint-policy-v1-2026-09-26", "sha256": "6a925b59f410bcf646c6e08a9914a4bf8b0d75024dca9d44e67b96b47a15cc1a", "count_unit": "event"},
+  "policy": {"version": "m2-fingerprint-policy-v2-amended-2026-09-27", "sha256": "9a2193a0077a9377f581c7b82b3a6c4dea15337735d6f0edcbf71efaae3db188", "count_unit": "event"},
   "inputs": {
     "event_table_sha256": "0c3afb8d6b7f28dbc2f711482a6e6013a1ea203030b018b446ea1b39409825c6",
     "sector_map_sha256": "775b39cb312d96943109851f815172157f727a11e086728dff7fbe11d3195ae8",

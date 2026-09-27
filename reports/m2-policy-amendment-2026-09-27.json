@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-27",
+  "status": "ANALOGUES_MIN_MEMBERS_RAISED_FROM_5_TO_10_BY_PROJECT_OWNER",
+  "owner_instruction": {
+    "by": "Fahad9101 (project owner)",
+    "exact_words": "raise the analogue minimum to 10",
+    "context": "Given in reply to the two findings recorded in docs/M2-SCOPE-PROPOSAL.md section 8 and reports/m2-step-1-build-record-2026-09-26.json: the analogue minimum (5) sat below the mean/median reporting minimum (10), so most analogue sets that existed could not themselves carry a mean or median.",
+    "field_changed": "analogues.min_members in config/fingerprint-policy.json, from 5 to 10",
+    "nothing_else_changed": "No other policy value, and no code, changed as part of this instruction."
+  },
+  "policy": {
+    "file": "config/fingerprint-policy.json",
+    "version_before": "m2-fingerprint-policy-v1-2026-09-26",
+    "version_after": "m2-fingerprint-policy-v2-amended-2026-09-27",
+    "sha256_before": "6a925b59f410bcf646c6e08a9914a4bf8b0d75024dca9d44e67b96b47a15cc1a",
+    "sha256_after": "9a2193a0077a9377f581c7b82b3a6c4dea15337735d6f0edcbf71efaae3db188",
+    "sha256_before_recorded_in": [
+      "reports/m2-fingerprints-2026-09-26.json",
+      "reports/m2-analogue-pools-2026-09-26.json",
+      "reports/m2-analogue-example-historical-2026-09-26.json",
+      "reports/m2-analogue-example-new-event-2026-09-26.json",
+      "reports/m2-step-1-build-record-2026-09-26.json (output_canonical_sha256, unchanged by this amendment)"
+    ]
+  },
+  "effect": {
+    "fingerprints": "None. nre/fingerprints.py never reads the analogues policy block, so no fingerprint statistic changes. Regenerating reports/m2-fingerprints-2026-09-26.json only changes its stamped policy.sha256, because every report stamps the whole policy file's hash.",
+    "analogues_found_by_label_before_min_5_after_min_10": {
+      "note": "Counts are how many of the 23 accepted events, treated as a historical target at its own cutoff, get an ANALOGUES_FOUND state for that label. Computed directly from the code, not estimated.",
+      "day1_close_return": {
+        "before": 13,
+        "after": 6
+      },
+      "session_2_close_return": {
+        "before": 12,
+        "after": 4
+      },
+      "session_5_close_return": {
+        "before": 11,
+        "after": 4
+      },
+      "session_10_close_return": {
+        "before": 8,
+        "after": 3
+      },
+      "session_20_close_return": {
+        "before": 4,
+        "after": 1
+      },
+      "gap_ge_3pct": {
+        "before": 13,
+        "after": 6
+      },
+      "gap_ge_5pct": {
+        "before": 13,
+        "after": 6
+      },
+      "gap_ge_10pct": {
+        "before": 13,
+        "after": 6
+      },
+      "gap_ge_15pct": {
+        "before": 13,
+        "after": 6
+      },
+      "gap_ge_20pct": {
+        "before": 13,
+        "after": 6
+      },
+      "gap_ge_30pct": {
+        "before": 13,
+        "after": 6
+      },
+      "positive_gap_retained_half": {
+        "before": 7,
+        "after": 0
+      },
+      "positive_gap_filled": {
+        "before": 7,
+        "after": 0
+      }
+    },
+    "mean_or_proportion_reported_among_found_sets": {
+      "before": "Only some found sets reached the mean/median or proportion reliability minimum of 10, since the analogue minimum (5) was below it: 3, 1, 1, 2 and 1 of the 13, 12, 11, 8 and 4 found sets carried a mean, for day1/session2/5/10/20 respectively.",
+      "after": "Every found set now carries a mean, because the analogue minimum (10) equals the mean/median reporting minimum: 6/6, 4/4, 4/4, 3/3 and 1/1 for the same five labels.",
+      "verified": "Recomputed directly: for every label and every found set, the summary's mean (or, for gap flags, proportion) state is never WITHHELD after this change."
+    },
+    "new_side_effect_worth_flagging": "The two conditional gap labels (positive_gap_retained_half, positive_gap_filled) now have zero targets with a found analogue set, down from 7. They exist for only 12 of the 23 events (an opening gap of at least 0.5% is required), and reaching 10 matured, eligible, in-range analogues from a pool that thin, on top of self- and cluster-exclusion, is harder than for the unconditional labels. This is a direct, verified consequence of the same instruction, not a separate decision."
+  },
+  "regenerated": [
+    "reports/m2-fingerprints-2026-09-26.json",
+    "reports/m2-analogue-pools-2026-09-26.json",
+    "reports/m2-analogue-example-historical-2026-09-26.json",
+    "reports/m2-analogue-example-new-event-2026-09-26.json"
+  ],
+  "not_regenerated": "reports/m2-step-1-build-record-2026-09-26.json is left as the record of the 2026-09-26 build; this file is the record of the 2026-09-27 amendment on top of it.",
+  "tests_updated": [
+    "tests/test_fingerprints.py (the pinned default value)",
+    "tests/test_analogues.py (two tests that exercised the prior default of 5 directly now pin 5 explicitly with a policy override, since that is what they are illustrating and not the production default; the real-data found-count test now expects the counts above)"
+  ],
+  "not_changed": [
+    "Milestone 1 records, protocol, code or the frozen cohort.",
+    "Any other Milestone 2 policy value.",
+    "The confirmed scope in docs/M2-SCOPE-PROPOSAL.md; this is an amendment on top of it, recorded the same way config/pilot.json records its own 2026-09-23 amendment."
+  ]
+}
