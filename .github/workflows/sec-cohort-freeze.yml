@@ -1,13 +1,10 @@
 name: NRE M1 SEC Cohort Freeze
 
+# The Milestone 1 cohort was frozen once, on 2026-09-20, and must never change. This workflow is kept as the record of how
+# that freeze was produced. It runs only when dispatched by hand, and it stops before touching SEC or the repository whenever
+# any frozen file already exists on main, so no push or dispatch can re-freeze or overwrite the frozen cohort.
 on:
-  push:
-    paths:
-      - '.github/workflows/sec-cohort-freeze.yml'
-      - 'config/sec-cohort-spec.json'
-      - 'nre/cohort.py'
-      - 'nre/ingestion.py'
-      - 'nre/cli.py'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,6 +20,19 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+
+      - name: Refuse to run while a frozen cohort file exists on main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          for path in config/m1-frozen-issuer-cohort.json config/m1-frozen-candidate-ledger.json reports/m1-sec-cohort-freeze.json; do
+            found="$(git ls-tree --name-only origin/main -- "$path")"
+            if [ -n "$found" ]; then
+              echo "::error::$path already exists on origin/main. The frozen Milestone 1 cohort is never re-frozen or overwritten."
+              exit 1
+            fi
+          done
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -167,7 +177,15 @@ jobs:
 
       - name: Publish frozen metadata only from unchanged source SHA
         run: |
+          set -euo pipefail
           git fetch origin main
+          for path in config/m1-frozen-issuer-cohort.json config/m1-frozen-candidate-ledger.json reports/m1-sec-cohort-freeze.json; do
+            found="$(git ls-tree --name-only origin/main -- "$path")"
+            if [ -n "$found" ]; then
+              echo "::error::$path already exists on origin/main. The frozen Milestone 1 cohort is never re-frozen or overwritten."
+              exit 1
+            fi
+          done
           test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
           cp /tmp/nre-sec-freeze/issuer-cohort.json config/m1-frozen-issuer-cohort.json
           cp /tmp/nre-sec-freeze/candidate-ledger.json config/m1-frozen-candidate-ledger.json
