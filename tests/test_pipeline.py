@@ -197,10 +197,13 @@ class PipelineTests(unittest.TestCase):
             second, _ = write_snapshot(self.bundle, tmp)
             self.assertEqual(first, second)
             verify_snapshot(first)
-            with sqlite3.connect(first / "dataset.sqlite") as db:
+            db = sqlite3.connect(first / "dataset.sqlite")
+            try:  # closed explicitly: an open handle blocks the tempdir cleanup below on Windows
                 self.assertEqual(db.execute("PRAGMA integrity_check").fetchone()[0], "ok")
                 self.assertEqual(db.execute("PRAGMA foreign_key_check").fetchall(), [])
                 self.assertEqual(db.execute("SELECT COUNT(*) FROM outcomes").fetchone()[0], 1)
+            finally:
+                db.close()
             self.assertEqual(main(["replay",str(first)]), 0)
 
     def test_tampered_snapshot_detected(self):

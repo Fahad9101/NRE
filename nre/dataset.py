@@ -271,21 +271,27 @@ def write_snapshot(bundle, output):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(body)
         manifest = dict(identity, snapshot_id=sid, files={k: digest(v) for k, v in sorted(files.items())})
-        with sqlite3.connect(temporary / "dataset.sqlite") as db:
-            db.executescript(Path(__file__).with_name("schema.sql").read_text())
-            for source in bundle["sources"]:
-                db.execute("INSERT INTO sources VALUES (?,?,?)", (source["source_id"], digest(source["text"].encode()), canonical(source).decode()))
-            for security in bundle["securities"]:
-                db.execute("INSERT INTO securities VALUES (?,?,?)", (security["security_id"], security["source_id"], canonical(security).decode()))
-            for event in bundle["events"]:
-                db.execute("INSERT INTO events VALUES (?,?,?,?,?)", (event["event_id"], event["security_id"], event["source_id"], event["cluster_id"], canonical(event).decode()))
-            for bar in bundle["prices"]:
-                db.execute("INSERT INTO prices VALUES (?,?,?,?)", (bar["price_id"], bar["security_id"], bar["source_id"], canonical(bar).decode()))
-            for row in results:
-                db.execute("INSERT INTO outcomes VALUES (?,?,?)", (row["event_id"], row["state"], canonical(row).decode()))
-            db.execute("INSERT INTO snapshots VALUES (?,?)", (sid, canonical(identity).decode()))
-            if db.execute("PRAGMA foreign_key_check").fetchall():
-                raise DataError("SQLite foreign-key failure")
+        db = sqlite3.connect(temporary / "dataset.sqlite")
+        try:
+            with db:  # commits/rolls back the transaction; it does not close the connection
+                db.executescript(Path(__file__).with_name("schema.sql").read_text())
+                for source in bundle["sources"]:
+                    db.execute("INSERT INTO sources VALUES (?,?,?)", (source["source_id"], digest(source["text"].encode()), canonical(source).decode()))
+                for security in bundle["securities"]:
+                    db.execute("INSERT INTO securities VALUES (?,?,?)", (security["security_id"], security["source_id"], canonical(security).decode()))
+                for event in bundle["events"]:
+                    db.execute("INSERT INTO events VALUES (?,?,?,?,?)", (event["event_id"], event["security_id"], event["source_id"], event["cluster_id"], canonical(event).decode()))
+                for bar in bundle["prices"]:
+                    db.execute("INSERT INTO prices VALUES (?,?,?,?)", (bar["price_id"], bar["security_id"], bar["source_id"], canonical(bar).decode()))
+                for row in results:
+                    db.execute("INSERT INTO outcomes VALUES (?,?,?)", (row["event_id"], row["state"], canonical(row).decode()))
+                db.execute("INSERT INTO snapshots VALUES (?,?)", (sid, canonical(identity).decode()))
+                if db.execute("PRAGMA foreign_key_check").fetchall():
+                    raise DataError("SQLite foreign-key failure")
+        finally:
+            # Close explicitly (success or failure): an open handle to dataset.sqlite blocks the
+            # rename/rmtree below on Windows, even though POSIX allows renaming an open file.
+            db.close()
         manifest["files"]["dataset.sqlite"] = digest((temporary / "dataset.sqlite").read_bytes())
         (temporary / "manifest.json").write_bytes(canonical(manifest))
         temporary.rename(destination)

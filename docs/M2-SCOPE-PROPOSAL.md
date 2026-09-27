@@ -110,7 +110,7 @@ Step 1 can show that when the system answers, the answer obeys the contract, and
 - `config/sector-map.json`: SIC by CIK for the 23 issuers, with the source and hash of the SEC payload each came from. The source is the frozen archive payloads that the cohort freeze already hash-pins, if the archive is available; otherwise a fresh retrieval whose hash is recorded.
 - Two subcommands in `nre/cli.py` (`fingerprints`, `analogues`), derived-only reports under `reports/`, tests, and a runbook section.
 
-**Inputs.** The 23 committed per-event records and `config/m1-events.json`. No network, no prices, no credentials. Nothing in Milestone 1 is modified, including `nre/dataset.py`; the three Windows-only test errors in `write_snapshot` stay as they are, since CI passes.
+**Inputs.** The 23 committed per-event records and `config/m1-events.json`. No network, no prices, no credentials. Nothing in Milestone 1's acceptance logic, protocol or records is modified. (`nre/dataset.py`'s `write_snapshot` was later touched, 2026-09-27, only to close a leaked SQLite connection handle before renaming/removing its directory — Windows enforces file locks that POSIX doesn't, so the unclosed handle blocked cleanup there. This fixed the three Windows-only test errors this section originally referenced; it is a portability fix with no bearing on labels, hashes or any accepted output, and `write_snapshot` is still not used anywhere in the real acquisition or audit path.)
 
 **Queries.** A target is either a historical event (by id, at its own recorded cutoff, excluded from its own pool) or a new event described by category, release timing, sector and an as-of timestamp. Only attributes known at the cutoff are used.
 
