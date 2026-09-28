@@ -397,6 +397,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Acquire real prices and compute labels for attested M1 events.")
     parser.add_argument("--spec", default=str(DEFAULT_SPEC))
     parser.add_argument("--event", default="all", help="event_id from the spec, or 'all'")
+    parser.add_argument("--calendar", default=None,
+                        help="path to a Calendar spec JSON (e.g. a merged multi-year spec); omit for the default 2026-only calendar")
     args = parser.parse_args(argv)
     out = {"all_ok": False, "events": {}}
 
@@ -405,7 +407,7 @@ def main(argv=None):
         return code
 
     try:
-        calendar = Calendar()
+        calendar = Calendar(spec=json.loads(Path(args.calendar).read_text(encoding="utf-8"))) if args.calendar else Calendar()
         spec = json.loads(Path(args.spec).read_text(encoding="utf-8"))
         validate_spec(spec, calendar)
         events = [e for e in spec["events"] if args.event in ("all", e["event_id"])]

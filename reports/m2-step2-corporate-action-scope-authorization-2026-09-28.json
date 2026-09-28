@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "context": "Asked after docs/M2-STEP-2-CORPORATE-ACTION-CHECK-SCOPE.md was written, proposing to extend the real, Alpaca-backed acquisition pipeline (nre/event_acquire.py, already generic via its --spec argument) to Milestone 2 step 2's candidates. config/m1-events.json's own provider attestation record explicitly carries the 'aggregate at scale' question forward as 'something to revisit as the cohort grows, not closed by this decision' -- and it was in fact re-confirmed by the owner at each of Milestone 1's own scale-ups (2->10, then 10->23 recorded events). Step 2 would add up to 46 more.",
+  "questions_and_answers": [
+    {
+      "question": "Does the Alpaca provider research authorization extend to step 2's scale (up to 46 more events)?",
+      "owner_selected": "Yes, provider rights fine (Recommended)",
+      "selected_option_description": "Confirms the standing authorization (redacted derived ratios/booleans/counts/hashes only, never raw prices) covers step 2's scale, matching how the owner confirmed it at Milestone 1's own 10- and 23-event thresholds."
+    },
+    {
+      "question": "How should the 46 candidates be batched for the dry run and signoff packets?",
+      "owner_selected": "~4 batches of ~11-12 (Recommended)",
+      "selected_option_description": "Matches Milestone 1's own established batch size. Each batch gets its own signoff packet once its dry run is clean, so a flagged candidate in one batch doesn't hold up the others."
+    }
+  ],
+  "scope_of_this_authorization": "research_permitted:true for Alpaca, for this project's specific, current use (redacted derived ratios/booleans/counts/hashes only, never raw prices), extended to cover Milestone 2 step 2's up-to-46-event scale. Does not authorize any prediction, score, ranking or model -- those remain separately gated. Does not itself attest any individual candidate's first_public_time, historical_identity, or corporate_actions -- those are added per batch, after that batch's own signoff packet.",
+  "batching_plan": "~4 batches of ~11-12 candidates each, ordered by filing date. Batch 1: LOVE 2025-06-12 through ACHV 2025-08-07 (12 candidates)."
+}

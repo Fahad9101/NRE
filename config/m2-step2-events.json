@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "provider": {
+    "provider_id": "alpaca",
+    "research_permitted": true,
+    "terms_url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+    "feeds": [
+      "sip"
+    ],
+    "session_scope": "regular",
+    "attestation": {
+      "reviewer": "Fahad9101",
+      "date": "2026-09-28",
+      "record": "reports/m2-step2-corporate-action-scope-authorization-2026-09-28.json"
+    }
+  },
+  "events": [
+    {
+      "event_id": "love-step2-2025-06-12",
+      "cluster_id": "love-step2-2025-06-12",
+      "candidate_id": "0001628280-25-030859",
+      "security": {
+        "security_id": "LOVE-1701758",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-11T00:00:00-04:00",
+        "available_at": "2025-06-11T20:26:09Z"
+      },
+      "source": {
+        "source_id": "love-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/06/12/3098177/0/en/The-Lovesac-Company-Reports-First-Quarter-Fiscal-2026-Financial-Results.html",
+        "text": "Wire release, displayed dateline June 12, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/06/12/3098177/0/en/The-Lovesac-Company-Reports-First-Quarter-Fiscal-2026-Financial-Results.html",
+        "first_seen_at": "2025-06-12T07:01:00-04:00"
+      },
+      "published_at": "2025-06-12T07:00:00-04:00",
+      "cutoff": "2025-06-12T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-06-12"
+    },
+    {
+      "event_id": "nbix-step2-2025-07-30",
+      "cluster_id": "nbix-step2-2025-07-30",
+      "candidate_id": "0000914475-25-000157",
+      "security": {
+        "security_id": "NBIX-914475",
+        "company_id": "0000914475",
+        "cik": "0000914475",
+        "ticker": "NBIX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-05-30T00:00:00-04:00",
+        "available_at": "2025-05-30T20:05:10Z"
+      },
+      "source": {
+        "source_id": "nbix-wire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2025-financial-results-302517700.html",
+        "text": "Wire release, displayed dateline Jul 30, 2025, 16:01 ET (16:01 ET). https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2025-financial-results-302517700.html",
+        "first_seen_at": "2025-07-30T16:02:00-04:00"
+      },
+      "published_at": "2025-07-30T16:01:00-04:00",
+      "cutoff": "2025-07-30T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-07-31"
+    },
+    {
+      "event_id": "alkt-step2-2025-07-30",
+      "cluster_id": "alkt-step2-2025-07-30",
+      "candidate_id": "0001529274-25-000147",
+      "security": {
+        "security_id": "ALKT-1529274",
+        "company_id": "0001529274",
+        "cik": "0001529274",
+        "ticker": "ALKT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-30T00:00:00-04:00",
+        "available_at": "2025-06-30T20:20:07Z"
+      },
+      "source": {
+        "source_id": "alkt-wire",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2025-financial-results-302517660.html",
+        "text": "Wire release, displayed dateline Jul 30, 2025, 16:05 ET (16:05 ET). https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2025-financial-results-302517660.html",
+        "first_seen_at": "2025-07-30T16:06:00-04:00"
+      },
+      "published_at": "2025-07-30T16:05:00-04:00",
+      "cutoff": "2025-07-30T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-07-31"
+    },
+    {
+      "event_id": "slsn-step2-2025-07-31",
+      "cluster_id": "slsn-step2-2025-07-31",
+      "candidate_id": "0001171843-25-004923",
+      "security": {
+        "security_id": "SLSN-883107",
+        "company_id": "0000883107",
+        "cik": "0000883107",
+        "ticker": "SLSN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-06T00:00:00-04:00",
+        "available_at": "2025-06-06T21:44:07Z"
+      },
+      "source": {
+        "source_id": "slsn-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/07/31/3125368/0/en/Sol%C3%A9sence-Reports-Second-Quarter-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline July 31, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/07/31/3125368/0/en/Sol%C3%A9sence-Reports-Second-Quarter-2025-Financial-Results.html",
+        "first_seen_at": "2025-07-31T16:02:00-04:00"
+      },
+      "published_at": "2025-07-31T16:01:00-04:00",
+      "cutoff": "2025-07-31T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-01"
+    },
+    {
+      "event_id": "hurn-step2-2025-07-31",
+      "cluster_id": "hurn-step2-2025-07-31",
+      "candidate_id": "0001289848-25-000189",
+      "security": {
+        "security_id": "HURN-1289848",
+        "company_id": "0001289848",
+        "cik": "0001289848",
+        "ticker": "HURN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-05-13T00:00:00-04:00",
+        "available_at": "2025-05-13T19:58:32Z"
+      },
+      "source": {
+        "source_id": "hurn-wire",
+        "url": "https://www.businesswire.com/news/home/20250731360295/en/Huron-Announces-Second-Quarter-2025-Financial-Results-and-Increases-2025-Guidance",
+        "text": "Wire release, displayed dateline Jul 31, 2025 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20250731360295/en/Huron-Announces-Second-Quarter-2025-Financial-Results-and-Increases-2025-Guidance",
+        "first_seen_at": "2025-07-31T16:06:00-04:00"
+      },
+      "published_at": "2025-07-31T16:05:00-04:00",
+      "cutoff": "2025-07-31T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "caveats": [
+        {
+          "labels": [
+            "session_1_close_return",
+            "session_2_close_return",
+            "session_3_close_return",
+            "session_4_close_return",
+            "session_5_close_return",
+            "session_6_close_return",
+            "session_7_close_return",
+            "session_8_close_return",
+            "session_9_close_return",
+            "session_10_close_return",
+            "session_11_close_return",
+            "session_12_close_return",
+            "session_13_close_return",
+            "session_14_close_return",
+            "session_15_close_return",
+            "session_16_close_return",
+            "session_17_close_return",
+            "session_18_close_return",
+            "session_19_close_return",
+            "session_20_close_return"
+          ],
+          "note": "A separate same-day 8-K (items 1.01, 2.03, 9.01) with its own 'FOR IMMEDIATE RELEASE' press release announced a $1.1B credit-facility refinancing 18 minutes after this earnings release (16:23 ET vs. 16:05 ET). Assessed against docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded (routine treasury management, not new information about the business), but every session's return reflects both pieces of news at once. See reports/m2-step2-same-day-8k-sweep-2026-09-28.json."
+        }
+      ],
+      "expected_reaction_session": "2025-08-01"
+    },
+    {
+      "event_id": "vsat-step2-2025-08-05",
+      "cluster_id": "vsat-step2-2025-08-05",
+      "candidate_id": "0001193125-25-173528",
+      "security": {
+        "security_id": "VSAT-797721",
+        "company_id": "0000797721",
+        "cik": "0000797721",
+        "ticker": "VSAT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-13T00:00:00-04:00",
+        "available_at": "2025-06-13T12:31:11Z"
+      },
+      "source": {
+        "source_id": "vsat-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/05/3127804/0/en/Viasat-Releases-First-Quarter-Fiscal-Year-2026-Financial-Results.html",
+        "text": "Wire release, displayed dateline August 05, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/08/05/3127804/0/en/Viasat-Releases-First-Quarter-Fiscal-Year-2026-Financial-Results.html",
+        "first_seen_at": "2025-08-05T16:06:00-04:00"
+      },
+      "published_at": "2025-08-05T16:05:00-04:00",
+      "cutoff": "2025-08-05T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-06"
+    },
+    {
+      "event_id": "cxt-step2-2025-08-06",
+      "cluster_id": "cxt-step2-2025-08-06",
+      "candidate_id": "0000025445-25-000081",
+      "security": {
+        "security_id": "CXT-25445",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-05-27T00:00:00-04:00",
+        "available_at": "2025-05-27T20:12:24Z"
+      },
+      "source": {
+        "source_id": "cxt-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/06/3128648/0/en/Crane-NXT-Reports-Second-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline August 06, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/08/06/3128648/0/en/Crane-NXT-Reports-Second-Quarter-2025-Results.html",
+        "first_seen_at": "2025-08-06T16:06:00-04:00"
+      },
+      "published_at": "2025-08-06T16:05:00-04:00",
+      "cutoff": "2025-08-06T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-07"
+    },
+    {
+      "event_id": "parr-step2-2025-08-05",
+      "cluster_id": "parr-step2-2025-08-05",
+      "candidate_id": "0000821483-25-000024",
+      "security": {
+        "security_id": "PARR-821483",
+        "company_id": "0000821483",
+        "cik": "0000821483",
+        "ticker": "PARR",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-21T00:00:00-04:00",
+        "available_at": "2025-07-21T20:42:27Z"
+      },
+      "source": {
+        "source_id": "parr-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/05/3127866/0/en/Par-Pacific-Holdings-Reports-Second-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline August 05, 2025 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2025/08/05/3127866/0/en/Par-Pacific-Holdings-Reports-Second-Quarter-2025-Results.html",
+        "first_seen_at": "2025-08-05T16:16:00-04:00"
+      },
+      "published_at": "2025-08-05T16:15:00-04:00",
+      "cutoff": "2025-08-05T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-06"
+    },
+    {
+      "event_id": "payo-step2-2025-08-06",
+      "cluster_id": "payo-step2-2025-08-06",
+      "candidate_id": "0001558370-25-010405",
+      "security": {
+        "security_id": "PAYO-1845815",
+        "company_id": "0001845815",
+        "cik": "0001845815",
+        "ticker": "PAYO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-17T00:00:00-04:00",
+        "available_at": "2025-06-17T11:30:21Z"
+      },
+      "source": {
+        "source_id": "payo-wire",
+        "url": "https://www.businesswire.com/news/home/20250806700955/en/Payoneer-Reports-Second-Quarter-2025-Financial-Results",
+        "text": "Wire release, displayed dateline Aug 6, 2025 7:30 AM Eastern Daylight Time (07:30 ET). https://www.businesswire.com/news/home/20250806700955/en/Payoneer-Reports-Second-Quarter-2025-Financial-Results",
+        "first_seen_at": "2025-08-06T07:31:00-04:00"
+      },
+      "published_at": "2025-08-06T07:30:00-04:00",
+      "cutoff": "2025-08-06T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-08-06"
+    },
+    {
+      "event_id": "caci-step2-2025-08-06",
+      "cluster_id": "caci-step2-2025-08-06",
+      "candidate_id": "0001628280-25-038398",
+      "security": {
+        "security_id": "CACI-16058",
+        "company_id": "0000016058",
+        "cik": "0000016058",
+        "ticker": "CACI",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-16T00:00:00-04:00",
+        "available_at": "2025-07-16T20:13:27Z"
+      },
+      "source": {
+        "source_id": "caci-wire",
+        "url": "https://www.businesswire.com/news/home/20250806267956/en/CACI-Reports-Results-for-Its-Fiscal-2025-Fourth-Quarter-and-Full-Year-and-Issues-Fiscal-Year-2026-Guidance",
+        "text": "Wire release, displayed dateline Aug 6, 2025 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20250806267956/en/CACI-Reports-Results-for-Its-Fiscal-2025-Fourth-Quarter-and-Full-Year-and-Issues-Fiscal-Year-2026-Guidance",
+        "first_seen_at": "2025-08-06T16:16:00-04:00"
+      },
+      "published_at": "2025-08-06T16:15:00-04:00",
+      "cutoff": "2025-08-06T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-07"
+    },
+    {
+      "event_id": "lnsr-step2-2025-08-07",
+      "cluster_id": "lnsr-step2-2025-08-07",
+      "candidate_id": "0000950170-25-104556",
+      "security": {
+        "security_id": "LNSR-1320350",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-02T00:00:00-04:00",
+        "available_at": "2025-07-02T20:00:35Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129055/0/en/lensar-reports-second-quarter-2025-results-and-provides-business-update.html",
+        "text": "Wire release, displayed dateline August 07, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/08/07/3129055/0/en/lensar-reports-second-quarter-2025-results-and-provides-business-update.html",
+        "first_seen_at": "2025-08-07T07:01:00-04:00"
+      },
+      "published_at": "2025-08-07T07:00:00-04:00",
+      "cutoff": "2025-08-07T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-08-07"
+    },
+    {
+      "event_id": "achv-step2-2025-08-07",
+      "cluster_id": "achv-step2-2025-08-07",
+      "candidate_id": "0000950170-25-104569",
+      "security": {
+        "security_id": "ACHV-949858",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-27T00:00:00-04:00",
+        "available_at": "2025-06-27T21:28:32Z"
+      },
+      "source": {
+        "source_id": "achv-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129127/0/en/Achieve-Life-Sciences-Reports-Second-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html",
+        "text": "Wire release, displayed dateline August 07, 2025 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2025/08/07/3129127/0/en/Achieve-Life-Sciences-Reports-Second-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html",
+        "first_seen_at": "2025-08-07T07:31:00-04:00"
+      },
+      "published_at": "2025-08-07T07:30:00-04:00",
+      "cutoff": "2025-08-07T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-08-07"
+    }
+  ]
+}

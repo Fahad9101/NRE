@@ -1,6 +1,23 @@
 # Milestone 2 step 2 — corporate-action check scope proposal (for the project owner's review)
 
-**Status: proposed 2026-09-28, not yet built. Nothing described here has been built or run.**
+**Status: proposed 2026-09-28; owner confirmed provider rights and ~4-batch pacing the same day
+(`reports/m2-step2-corporate-action-scope-authorization-2026-09-28.json`). Batch 1 (12 candidates,
+LOVE 2025-06-12 through ACHV 2025-08-07) is now built and validated as `config/m2-step2-events.json`
+-- unattested, so every event quarantines on `FIRST_PUBLIC_TIME_UNVERIFIED` until a signoff packet
+and attestation are added per section 2's plan. No dry run against the real Alpaca API has been
+dispatched yet.**
+
+**Correction found while building batch 1 (2026-09-28):** the original "no new Python module
+needed" claim in this doc's summary was incomplete. `nre/event_acquire.py`'s `--spec` argument is
+generic, but its `main()` hardcoded `calendar = Calendar()` with no arguments -- always loading the
+2026-only calendar, which would reject every 2025-dated step-2 event with `CALENDAR_OUT_OF_RANGE`.
+Fixed with a small, additive `--calendar` argument (default `None`, preserving today's exact
+behavior when omitted) rather than a parallel module, per the owner's choice between the two -- see
+`nre/event_acquire.py`'s `main()` and the new `config/m2-step2-merged-calendar.json`
+(`nre.depth_cohort.merged_calendar_spec()` applied to `calendar-2025.json` + `calendar-2026.json`).
+`.github/workflows/event-acquire.yml` (Milestone 1's own workflow) never passes `--calendar`, so its
+behavior is unchanged; the new `.github/workflows/depth-event-acquire.yml` does. Both new tests in
+`tests/test_event_acquire.py` and the full suite (334 passed) confirm this.
 
 ## Summary
 

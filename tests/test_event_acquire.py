@@ -10,6 +10,7 @@ from urllib.error import HTTPError, URLError
 from nre import event_acquire as ea
 from nre.calendar import Calendar
 from nre.core import DataError, canonical, digest
+from nre.depth_cohort import merged_calendar_spec
 
 ROOT = Path(__file__).resolve().parent.parent
 SPEC = json.loads(ea.DEFAULT_SPEC.read_text(encoding="utf-8"))
@@ -130,6 +131,24 @@ class SpecTests(unittest.TestCase):
     def test_expected_timing_and_session_must_agree_with_calendar(self):
         self.rejects(lambda s: s["events"][0].update(expected_release_timing="after_hours"), "release timing")
         self.rejects(lambda s: s["events"][0].update(expected_reaction_session="2026-04-01"), "reaction session")
+
+    def test_default_calendar_is_2026_only_but_a_spec_can_extend_it(self):
+        # A 2025-dated event: the default Calendar() (2026-only) must reject it, and a merged
+        # 2025+2026 spec (the shape step-2's --calendar argument loads) must accept the same date.
+        event_2025 = event_copy(CXT)
+        event_2025.update(published_at="2025-02-11T16:05:00-05:00", cutoff="2025-02-11T16:08:00-05:00",
+                          timestamp_evidence="16:05", expected_reaction_session="2025-02-12")
+        event_2025["source"]["first_seen_at"] = "2025-02-11T16:06:00-05:00"
+        event_2025.pop("recorded_result", None)
+        spec = spec_copy()
+        spec["events"] = [event_2025]
+        with self.assertRaises(DataError) as caught:
+            ea.validate_spec(spec, CAL)
+        self.assertIn("CALENDAR_OUT_OF_RANGE", str(caught.exception))
+        merged = merged_calendar_spec(
+            json.loads((ROOT / "nre" / "calendar-2025.json").read_text(encoding="utf-8")),
+            json.loads((ROOT / "nre" / "calendar-2026.json").read_text(encoding="utf-8")))
+        ea.validate_spec(spec, Calendar(spec=merged))
 
     def test_regular_session_release_rejected(self):
         def mutate(spec):
@@ -508,6 +527,39 @@ class MainTests(unittest.TestCase):
         code, printed = self.run_main(["--spec", str(bad)])
         self.assertEqual(code, 2)
         self.assertIn("SPEC_INVALID: not valid JSON", printed[0])
+
+    def a_2025_dated_unattested_spec_path(self):
+        event = event_copy(CXT)
+        event.update(published_at="2025-02-11T16:05:00-05:00", cutoff="2025-02-11T16:08:00-05:00",
+                     timestamp_evidence="16:05", expected_reaction_session="2025-02-12")
+        event["source"]["first_seen_at"] = "2025-02-11T16:06:00-05:00"
+        event.pop("recorded_result", None)
+        event.pop("attestations", None)
+        spec = spec_copy()
+        spec["events"] = [event]
+        path = Path(self.tmp.name) / "spec-2025.json"
+        path.write_text(json.dumps(spec), encoding="utf-8")
+        return str(path)
+
+    def test_calendar_argument_is_optional_and_additive(self):
+        # Omitted: unchanged default behavior -- a 2025 event fails calendar validation, same as
+        # before this flag existed.
+        code, printed = self.run_main(["--spec", self.a_2025_dated_unattested_spec_path()])
+        self.assertEqual(code, 2)
+        self.assertIn("CALENDAR_OUT_OF_RANGE", printed[0])
+
+        # Given: a merged calendar spec lets the same 2025 event past validation (it then
+        # quarantines normally, same as any other unattested event -- no network call needed).
+        merged = merged_calendar_spec(
+            json.loads((ROOT / "nre" / "calendar-2025.json").read_text(encoding="utf-8")),
+            json.loads((ROOT / "nre" / "calendar-2026.json").read_text(encoding="utf-8")))
+        calendar_path = Path(self.tmp.name) / "merged-calendar.json"
+        calendar_path.write_text(json.dumps(merged), encoding="utf-8")
+        code, printed = self.run_main(["--spec", self.a_2025_dated_unattested_spec_path(),
+                                       "--calendar", str(calendar_path)])
+        report = json.loads(printed[0])
+        self.assertEqual(report["events"][CXT]["computed_outcome"]["state"], "QUARANTINED")
+        self.assertIn("FIRST_PUBLIC_TIME_UNVERIFIED", report["events"][CXT]["computed_outcome"]["reasons"])
 
     def test_all_events_run_and_report(self):
         code, printed = self.run_main(["--spec", self.unpinned_spec()])
