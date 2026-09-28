@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "context": "docs/MILESTONE-2-STEP-2-PILOT.md flagged, at freeze time, that LOVE and REKR each had 3 candidates in the pool instead of the expected 2, without resolving why. Both are resolved here by reading the actual filings, not by inference.",
+  "rekr_2025_10_14": {
+    "candidate_id": "0001437749-25-030890",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774925030890/rekr20251013_8k.htm",
+    "finding": "The 8-K's own Item 2.02 text states this is 'preliminary, unaudited financial results... including expected revenue, gross margin, and Adjusted EBITDA ranges' and explicitly names the full third-quarter results and investor call as scheduled for 2025-11-13 -- which is the other REKR candidate already in this same pool. This is a pre-announcement of estimated ranges, not the quarterly results release itself; it passed the freeze's Item-2.02 screen mechanically without being the kind of event this study measures.",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "not_a_qualifying_earnings_event: preliminary/guidance-range pre-announcement, not the full quarterly results release (the full release for the same quarter is REKR's separate 2025-11-13 candidate already in this pool)",
+    "distinct_from": "This is NOT a same-day-competing-catalyst exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md doesn't apply here) -- it's an event-type eligibility exclusion. Resolves the 'REKR has 3 candidates instead of 2' open note."
+  },
+  "love_three_candidates": {
+    "candidate_ids": [
+      "0001628280-25-030859",
+      "0001701758-25-000015",
+      "0001628280-25-056422"
+    ],
+    "dates_and_items": [
+      [
+        "2025-06-12",
+        [
+          "2.02",
+          "9.01"
+        ]
+      ],
+      [
+        "2025-09-11",
+        [
+          "2.02",
+          "9.01"
+        ]
+      ],
+      [
+        "2025-12-11",
+        [
+          "2.02",
+          "9.01"
+        ]
+      ]
+    ],
+    "finding": "All three candidates carry only Item 2.02/9.01 -- no preliminary-guidance language, no extra items, no duplicate accession numbers. Three quarterly reports (~3 months apart) fit inside the 7-month step-2 window because Lovesac's fiscal year is offset from the calendar year (a retailer reporting Q1/Q2/Q3 in June/September/December), not because of any data or freeze error.",
+    "verdict": "NOT AN ANOMALY -- all three are genuine, distinct quarterly earnings events",
+    "disposition": "no exclusion; all 3 remain candidates pending the remaining gates"
+  },
+  "net_effect": {
+    "newly_excluded": [
+      "REKR 2025-10-14"
+    ],
+    "confirmed_no_action_needed": [
+      "LOVE (all 3 candidates legitimate)"
+    ],
+    "running_excluded_total": [
+      "ASMB 2025-08-06 (same-day competing catalyst)",
+      "REKR 2025-10-14 (not a qualifying earnings event)"
+    ]
+  },
+  "not_a_claim": "Excluding REKR 2025-10-14 and clearing LOVE does not mark any remaining candidate 'included' -- the corporate-action check, identity/exchange re-verification, and a label-engine dry run are still pending for every step-2 candidate that remains."
+}
