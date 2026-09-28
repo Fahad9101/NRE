@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "policy": "docs/SAME-DAY-COMPETING-CATALYST-POLICY.md",
+  "owner_confirmation": "Owner replied \"yes\" to: \"Want me to go ahead and record this as the decision and also write up the three-part test as a general same-day-competing-catalyst policy doc...?\" -- confirming both the policy write-up and the three candidate calls below.",
+  "same_day_catalyst_test_applied": [
+    {
+      "ticker": "ASMB",
+      "candidate_id": "0000950170-25-104020",
+      "filing_date": "2025-08-06",
+      "competing_item": "Item 8.01 -- Phase 1a clinical data for ABI-6250 (HDV entry inhibitor)",
+      "same_reaction_day": true,
+      "independently_disseminated": true,
+      "detail_dissemination": "Separate Exhibit 99.2 press release, same day as the Item 2.02 earnings release.",
+      "fresh_independently_material_content": true,
+      "detail_content": "A first-in-kind clinical readout for a named drug candidate -- new as of that day, and the textbook example of an independently price-moving biotech catalyst.",
+      "verdict": "EXCLUDE",
+      "reasoning": "All three conditions hold, the same as MEI's business-sale announcement. Day-1 (and likely later) reaction labels would reflect both pieces of news at once.",
+      "disposition": "excluded",
+      "disposition_reason": "same_day_competing_catalyst: Item 8.01 Phase 1a clinical data, independently disseminated and independently material -- see docs/SAME-DAY-COMPETING-CATALYST-POLICY.md"
+    },
+    {
+      "ticker": "ALKT",
+      "candidate_id": "0001529274-25-000159",
+      "filing_date": "2025-10-30",
+      "competing_item": "Item 5.02 -- CFO succession (Cassandra Hudson replacing Bryan Hill)",
+      "same_reaction_day": true,
+      "independently_disseminated": true,
+      "detail_dissemination": "Separate Exhibit 99.2 press release (Item 7.01 Reg FD), same day as earnings.",
+      "fresh_independently_material_content": false,
+      "detail_content": "Hill's transition to a consulting role was already disclosed in an 8-K filed 2025-04-30, six months earlier -- an orderly, long-telegraphed succession, not a surprise. No disagreement, standard employment terms. The same category (officer/director change) Milestone 1's own accepted OKTA event already treated as non-disqualifying.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails condition 3. Same-day and separately disseminated, but not fresh or independently material -- an already-telegraphed personnel change, not new information.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition (included/quarantined) still pending the corporate-action check, identity/exchange re-verification, and a label-engine dry run -- none of which have run for any step-2 candidate yet."
+    },
+    {
+      "ticker": "OKTA",
+      "candidate_id": "0001660134-25-000156",
+      "filing_date": "2025-08-26",
+      "competing_item": "Item 8.01 -- stockholder derivative litigation settlement",
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "detail_dissemination": "No press release for this item. Exhibits 99.2/99.3 are the court Stipulation and Notice of Settlement themselves (legal filings), not wire-carried news. Only Exhibit 99.1 (the earnings release) is an actual press release.",
+      "fresh_independently_material_content": false,
+      "detail_content": "The Stipulation was signed 2025-06-26 (2 months earlier); the court granted preliminary approval 2025-08-18 (8 days earlier). This 8-K is a procedural disclosure catch-up alongside the scheduled earnings filing, not a new development.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails conditions 2 and 3 -- no independent dissemination and nothing new happened on this specific day. Weaker case for concern than ALKT.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending remaining gates."
+    },
+    {
+      "ticker": "REKR",
+      "candidate_id": "0001437749-25-034859",
+      "filing_date": "2025-11-13",
+      "competing_item": "Item 5.02 -- CFO succession (Joseph Nalepa replacing Eyal Hen)",
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "detail_dissemination": "Item 9.01 lists only one exhibit total (the earnings press release, 99.1) -- no separate CFO-announcement exhibit or press release anywhere in the filing.",
+      "fresh_independently_material_content": false,
+      "detail_content": "Hen's resignation is explicitly stated as not the result of any disagreement; Nalepa is an internal promotion (the company's own Corporate Controller since 2020) with no compensation terms finalized yet.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails all three conditions except same-day. Already noted in reports/m2-step2-item502-characterization-2026-09-28.json; restated here under the formal policy for consistency.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending remaining gates."
+    }
+  ],
+  "other_flags_not_governed_by_this_policy": [
+    {
+      "ticker": "REKR",
+      "filing_date": "2025-10-14",
+      "issue": "Preliminary guidance, not a full quarterly release -- an event-type eligibility question, not a same-day-competing-catalyst question. Still open, needs its own decision."
+    },
+    {
+      "ticker": "SLSN",
+      "filing_date_on_ledger": "2025-11-13",
+      "issue": "SEC filing date lags the true release date (2025-11-11) by 2 days -- a data correction, not a judgment call. Use 2025-11-11 as the true anchor date when this candidate's event window is eventually built."
+    },
+    {
+      "ticker": "PDFS",
+      "filing_date": "2025-08-07",
+      "issue": "Released at exactly 16:00 ET, the closing-bell boundary. Mechanical: nre/calendar.py's classify() already quarantines an exact-instant-equal-to-close timestamp as bell_ambiguous -- no owner call needed, let the existing logic run."
+    },
+    {
+      "ticker": "JBSS",
+      "filing_date": "2025-08-20",
+      "issue": "Dividend + special dividend declared, payable 2025-09-11 -- needs the real Alpaca-backed corporate-action check (on hold per reports/m2-step2-review-pause-2026-09-28.json), not an inclusion/exclusion call."
+    }
+  ],
+  "net_effect_on_the_48_candidates": {
+    "excluded": [
+      "ASMB 2025-08-06"
+    ],
+    "same_day_catalyst_check_clear_but_other_gates_still_pending": [
+      "ALKT 2025-10-30",
+      "OKTA 2025-08-26",
+      "REKR 2025-11-13"
+    ],
+    "unaffected_by_this_review": 44
+  },
+  "not_a_claim": [
+    "Not a final disposition for ALKT, OKTA 2025-08-26, or REKR 2025-11-13 -- only the same-day-competing-catalyst axis is resolved for them. They still need the corporate-action check, identity/exchange re-verification, and a label-engine dry run before any of them can honestly be marked 'included' in the nre/acceptance.py sense (which requires a completed event_id).",
+    "ASMB's exclusion is final and needs no further gates, consistent with how nre/acceptance.py treats an 'excluded' disposition with a reason and no event_id."
+  ]
+}
