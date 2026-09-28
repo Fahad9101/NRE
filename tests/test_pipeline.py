@@ -37,6 +37,26 @@ class PipelineTests(unittest.TestCase):
     def test_synthetic_never_counts_as_historical_acceptance(self):
         self.assertEqual(build(self.bundle)[1]["historical_acceptance"], "NOT_APPLICABLE_SYNTHETIC")
 
+    def test_build_defaults_to_2026_calendar_but_accepts_an_override(self):
+        # A 2025-dated bundle: build(bundle) (no calendar arg) must fail exactly as it always has
+        # (2026-only default), and build(bundle, calendar=<merged>) must accept the same date.
+        from nre.depth_cohort import merged_calendar_spec
+        bundle = copy.deepcopy(self.bundle)
+        bundle["sources"][1]["text"] = "SYNTHETIC earnings release. Published 2025-06-12T12:00:00Z. Not a real company."
+        bundle["sources"][1]["first_seen_at"] = "2025-06-12T12:00:05Z"
+        bundle["events"][0].update(published_at="2025-06-12T12:00:00Z", cutoff="2025-06-12T12:01:00Z",
+                                   timestamp_evidence="2025-06-12T12:00:00Z")
+        bundle["prices"] = [bundle["prices"][0], bundle["prices"][1]]
+        bundle["prices"][0]["session"], bundle["prices"][1]["session"] = "2025-06-11", "2025-06-12"
+        with self.assertRaises(DataError) as caught:
+            build(bundle)
+        self.assertIn("not a supported session", str(caught.exception))
+        spec_2025 = json.loads((Path(__file__).parent.parent / "nre" / "calendar-2025.json").read_text(encoding="utf-8"))
+        spec_2026 = json.loads((Path(__file__).parent.parent / "nre" / "calendar-2026.json").read_text(encoding="utf-8"))
+        merged = Calendar(spec=merged_calendar_spec(spec_2025, spec_2026))
+        row = build(bundle, merged)[0][0]
+        self.assertIn(row["state"], ("MAPPED", "QUARANTINED"))
+
     def test_exact_threshold_is_inclusive(self):
         self.assertTrue(self.row()["labels"]["gap_ge_10pct"]["value"])
         self.assertFalse(self.row()["labels"]["gap_ge_15pct"]["value"])

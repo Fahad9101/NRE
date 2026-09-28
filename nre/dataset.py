@@ -221,8 +221,8 @@ def event_outcome(event, bundle, calendar, sources, securities, providers):
     return result
 
 
-def build(bundle):
-    cal = Calendar()
+def build(bundle, calendar=None):
+    cal = calendar or Calendar()
     sources, securities, providers = validate(bundle, cal)
     results = [event_outcome(event, bundle, cal, sources, securities, providers)
                for event in sorted(bundle["events"], key=lambda r: r["event_id"])]

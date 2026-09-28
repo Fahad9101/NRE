@@ -341,7 +341,7 @@ def run_event(event, provider, fetch, calendar, retrieved_at=None):
         bundle = build_bundle(event, provider, window, bars, actions, retrieved_at or datetime.now(timezone.utc),
                               calendar)
         report["bundle_sha256"] = digest(canonical(bundle))
-        results, build_report = build(bundle)
+        results, build_report = build(bundle, calendar)
         outcome = results[0]
         if outcome.get("anchor"):
             # event_outcome() embeds the anchor close as the return denominator; keep only its identifier.
