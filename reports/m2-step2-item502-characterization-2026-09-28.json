@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "status": "CHARACTERIZATION_COMPILED_NOT_A_DECISION",
+  "reviewer": "Fahad9101 (project owner) -- evidence compiled by the assistant for the owner's review; no sign-off recorded here",
+  "scope": "Full Item 5.02 text for the 2 step-2 candidates flagged in reports/m2-step2-chronology-batch-1-2026-09-28.json and reports/m2-step2-chronology-batch-2-2026-09-28.json as 'item_5_02_present_not_yet_characterized': ALKT 2025-10-30 and REKR 2025-11-13. Both 8-Ks were read in full directly from sec.gov.",
+  "candidates": [
+    {
+      "ticker": "ALKT",
+      "candidate_id": "0001529274-25-000159",
+      "filing_date": "2025-10-30",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927425000159/alk-20251029.htm",
+      "item_502_subtype": "(b) and (c) combined -- CFO succession",
+      "summary": "Alkami appointed Cassandra Hudson (previously CFO of StackAdapt and, before that, of EngageSmart) as CFO effective 2025-11-01. She succeeds Bryan Hill, who retires from employment on 2025-10-31 and transitions to a paid consulting role through 2026-12-15 under an agreement already disclosed in an 8-K filed 2025-04-30 -- i.e. this succession was already signaled to the market roughly 6 months earlier, not a surprise departure. The 8-K states there is no disagreement, no family relationship, and no related-party interest; Hudson's employment agreement (salary $460,000, target bonus 70%, $6M RSU grant, standard severance) is filed in full as Exhibit 10.1.",
+      "separate_wire_dissemination": true,
+      "separate_wire_detail": "Item 7.01 (Reg FD) of the SAME 8-K states: 'On October 30, 2025, the Company issued a press release announcing the appointment of Ms. Hudson... A copy of this press release is furnished as Exhibit 99.2.' This is a genuine second, independently labeled press release on the SAME reaction day as the Item 2.02 earnings release (Exhibit 99.1) -- not merely a line inside the earnings release. An investor presentation was also posted the same day (Exhibit 99.3), already noted in batch 1's chronology record.",
+      "assessment": "This is the same class of finding that flagged ASMB (2025-08-06, Item 8.01 clinical data) and excluded MEI in Milestone 1: a genuine, separately-disseminated, same-day corporate disclosure independent of the earnings release itself, even though its content (a long-telegraphed, orderly CFO succession with no disagreement) is far less likely to be independently market-moving than a clinical trial readout. FLAGGED FOR THE OWNER'S DECISION, not resolved here -- the same standard applied to ASMB should apply here for consistency, regardless of this assistant's own view that the content looks low-intensity."
+    },
+    {
+      "ticker": "REKR",
+      "candidate_id": "0001437749-25-034859",
+      "filing_date": "2025-11-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774925034859/rekr20251112_8k.htm",
+      "item_502_subtype": "(b) and (c) combined -- CFO succession",
+      "summary": "Rekor's CFO Eyal Hen resigned effective 2025-11-17; the 8-K states explicitly the resignation 'is not the result of any disagreement with the Company on any matter... including the preparation of its financial statements.' Joseph Nalepa (the Company's own Corporate Controller since 2020, an internal promotion) succeeds him effective 2025-11-17. No compensatory arrangement for Nalepa has been finalized yet -- explicitly deferred to the 2026 proxy statement.",
+      "separate_wire_dissemination": false,
+      "separate_wire_detail": "Item 9.01 lists only ONE exhibit: '99.1 -- Press Release dated November 13, 2025', the same exhibit Item 2.02 cites for the earnings release. There is no Item 7.01 and no second press-release exhibit anywhere in this 8-K. The CFO change appears nowhere outside the 8-K's own Item 5.02 text -- it was not independently confirmed whether the single Exhibit 99.1 earnings release also mentions the CFO change in its body text, since that exhibit itself was not separately fetched and read here.",
+      "assessment": "Materially different from ALKT: no evidence of a second, independently-disseminated public disclosure on this reaction day -- the CFO change appears to have been folded into the single 8-K without its own wire release. Lower-intensity finding. Still flagged rather than cleared outright, since the single earnings press release (Exhibit 99.1) itself was not directly read to confirm it is silent on the CFO change."
+    }
+  ],
+  "not_a_claim": [
+    "Not an acceptance or exclusion decision for either candidate.",
+    "Not a claim that ALKT's CFO announcement did or did not move the market independently of earnings -- that requires the corporate-action/price-data check already listed as not-yet-done for every candidate.",
+    "The 'lower-intensity' language for REKR is this assistant's read of the filing text, not a finding that REKR is clear -- the owner may weigh it differently."
+  ]
+}
