@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "context": "Asked via AskUserQuestion after all 48 step-2 candidates had confirmed chronology evidence (batch 1 + batch 2) and both unread Item 5.02 disclosures were characterized, since the remaining work (corporate-action check, identity/exchange re-verification) either needs an Actions-infrastructure scoping decision or risks being redone if a flagged candidate is later excluded.",
+  "question": "How should I proceed with Milestone 2 step 2 from here?",
+  "options_offered": [
+    "Wait on your review (Recommended)",
+    "Do identity/exchange re-verification now",
+    "Scope the corporate-action check",
+    "Something else"
+  ],
+  "owner_selected": "Wait on your review (Recommended)",
+  "decision": "Pause all further step-2 pipeline/infrastructure work. No corporate-action check, no identity/exchange re-verification, no event-acquire scoping until the owner has reviewed the flagged same-day-catalyst candidates and decided which (if any) to exclude.",
+  "candidates_awaiting_owner_review": [
+    "ALKT 2025-10-30 -- separate same-day CFO-succession press release (Item 7.01/Exhibit 99.2), same class of finding that excluded MEI in Milestone 1",
+    "ASMB 2025-08-06 -- separate same-day Phase 1a clinical-data press release (Item 8.01)",
+    "REKR 2025-11-13 -- CFO change with no separate press release (lower-intensity, still flagged)",
+    "REKR 2025-10-14 -- preliminary guidance, not a full quarterly release",
+    "OKTA 2025-08-26 -- same-day derivative-lawsuit settlement (Item 8.01)",
+    "SLSN 2025-11-13 ledger date -- true release is 2025-11-11 (a filing-lag correction, not a same-day-catalyst question, but still needs the owner's acknowledgment before use)",
+    "PDFS 2025-08-07 -- released exactly at 16:00 ET, the closing-bell boundary",
+    "JBSS 2025-08-20 -- dividend + special dividend declared, needs a price-data check"
+  ],
+  "where_the_evidence_lives": [
+    "reports/m2-step2-chronology-batch-1-2026-09-28.json",
+    "reports/m2-step2-chronology-batch-2-2026-09-28.json",
+    "reports/m2-step2-item502-characterization-2026-09-28.json"
+  ],
+  "not_a_claim": "This record does not decide any candidate's inclusion or exclusion. It records only that further pipeline work is deliberately paused pending the owner's own review."
+}
