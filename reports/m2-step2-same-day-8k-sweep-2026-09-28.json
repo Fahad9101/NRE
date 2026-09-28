@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "why_this_exists": "Discovered while constructing identity evidence for the step-2 corporate-action check's batch-1 spec: HURN's own earnings 8-K (2025-07-31) showed clean items (2.02, 9.01), but a wholly separate 8-K (items 1.01, 2.03, 9.01 -- a $1.1B credit-facility refinancing, WITH its own 'FOR IMMEDIATE RELEASE' press release) was filed under a different accession number just 18 minutes later. The original batch-1/batch-2 chronology review (reports/m2-step2-chronology-batch-*-2026-09-28.json) only read each candidate's own accession number's item codes, so it could not have caught a genuinely separate same-day filing. This report closes that gap for all 46 surviving candidates, not just HURN.",
+  "method": "For each of the 46 surviving candidates, fetched the issuer's SEC submissions.json (data.sec.gov/submissions/CIK<cik>.json) and listed every 8-K filed within roughly two weeks of the candidate's own filing date, then checked for any OTHER accession number filed on the exact same calendar date. A same-day hit was read in full and assessed against docs/SAME-DAY-COMPETING-CATALYST-POLICY.md's three-part test.",
+  "clean_no_same_day_duplicate": [
+    "LOVE 2025-06-12",
+    "NBIX 2025-07-30",
+    "ALKT 2025-07-30",
+    "SLSN 2025-07-31",
+    "VSAT 2025-08-05",
+    "CXT 2025-08-06",
+    "PARR 2025-08-06",
+    "PAYO 2025-08-06",
+    "CACI 2025-08-06",
+    "LNSR 2025-08-07",
+    "ACHV 2025-08-07",
+    "ASPN 2025-08-07",
+    "TECX 2025-08-07",
+    "PDFS 2025-08-07",
+    "COLL 2025-08-07",
+    "REAL 2025-08-07",
+    "TTWO 2025-08-07",
+    "KLC 2025-08-12",
+    "JBSS 2025-08-20",
+    "OKTA 2025-08-26",
+    "LOVE 2025-09-11",
+    "CACI 2025-10-22",
+    "NBIX 2025-10-28",
+    "HURN 2025-10-28",
+    "JBSS 2025-10-29",
+    "ALKT 2025-10-30",
+    "PARR 2025-11-04",
+    "CXT 2025-11-05",
+    "PAYO 2025-11-05",
+    "COLL 2025-11-06",
+    "ASPN 2025-11-06",
+    "ACHV 2025-11-06",
+    "LNSR 2025-11-06",
+    "TECX 2025-11-06",
+    "PDFS 2025-11-06",
+    "TTWO 2025-11-06",
+    "VSAT 2025-11-07",
+    "ASMB 2025-11-10",
+    "REAL 2025-11-10",
+    "KLC 2025-11-12",
+    "SLSN 2025-11-13",
+    "REKR 2025-11-13",
+    "OKTA 2025-12-02",
+    "LOVE 2025-12-11"
+  ],
+  "same_day_duplicate_found": [
+    {
+      "candidate": "HURN 2025-07-31",
+      "duplicate_accession": "0001289848-25-000188",
+      "duplicate_items": "1.01, 2.03, 9.01",
+      "accepted": "2025-07-31 16:23:10 ET (18 minutes after the 16:05 ET earnings release)",
+      "content": "Fourth Amended and Restated Credit Agreement: $700M revolver + $400M term loan (up from $600M/$275M), maturity extended to 2030, improved pricing. Has its own 'FOR IMMEDIATE RELEASE' press release (Exhibit 99.1).",
+      "policy_test": {
+        "same_day": true,
+        "independently_disseminated": true,
+        "fresh_independently_material": "judgment call -- routine treasury refinancing, not new information about the business itself"
+      },
+      "resolution": "NOT EXCLUDED, flagged as a caveat. Owner-confirmed 2026-09-28."
+    },
+    {
+      "candidate": "REKR 2025-08-12",
+      "duplicate_accession": "0001437749-25-026269",
+      "duplicate_items": "1.02, 9.01",
+      "accepted": "2025-08-12 17:03:51 ET",
+      "content": "Voluntary termination of a previously-disclosed At Market Issuance Sales Agreement (had raised ~$23.3M since Feb 2025). No press release -- only the 8-K itself.",
+      "policy_test": {
+        "same_day": true,
+        "independently_disseminated": false,
+        "fresh_independently_material": false
+      },
+      "resolution": "NOT EXCLUDED, flagged as a caveat. Fails 2 of 3 policy conditions -- lower intensity than HURN's finding."
+    }
+  ],
+  "summary": {
+    "total_candidates": 46,
+    "clean": 44,
+    "flagged_and_resolved": 2,
+    "newly_excluded": 0
+  },
+  "not_a_claim": "Neither HURN nor REKR is excluded by this finding. Both remain candidates pending the corporate-action check, identity/exchange verification (already done for identity/exchange generally, but this sweep is a separate axis), and a label-engine dry run."
+}
