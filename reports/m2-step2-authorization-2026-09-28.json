@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "status": "MILESTONE_2_STEP_2_AUTHORIZED_PILOT_SCOPE",
+  "milestone": "Milestone 2 step 2 -- data depth (NRE 1.0)",
+  "owner_instruction": {
+    "by": "Fahad9101 (project owner)",
+    "exact_words": "decide milestone 2 step 2",
+    "context": "Milestone 2 step 2 had been left as an unauthorized, separate decision since the M2 scope proposal (docs/M2-SCOPE-PROPOSAL.md section 5), pending the owner's own choice of size and review standard. The owner's instruction was read as asking for a reasoned recommendation to review and authorize, consistent with how every other scope or protocol decision in this project has been made -- not as delegating the decision itself. A recommendation was given in chat (pilot scope: 2 prior quarters for the same 23 issuers; full Milestone-1-standard review, citing the 100-event over-scoping lesson as the reason not to commit to the full 4-8 quarter range up front) and put to the owner as two questions."
+  },
+  "owner_decision": {
+    "scope_question": "What scope for Milestone 2 step 2 (data depth)?",
+    "scope_chosen": "2 prior quarters, same 23 issuers (Recommended)",
+    "review_question": "What review standard applies to the new candidates?",
+    "review_chosen": "Same as Milestone 1: full review, one named reviewer per event (Recommended)",
+    "how_recorded": "Selected via the question tool, not typed; recorded here as the chosen option labels, the same convention this project already used for the 2026-09-23 target-amendment decision (see docs/M1-READINESS-ASSESSMENT.md, 'Target amendment' section, and reports/m1-acceptance-declaration-2026-09-26.json, owner_decisions_relied_on)."
+  },
+  "what_this_authorizes": [
+    "Extending the session calendar backward to cover 2025 (nre/calendar-2025.json), kept entirely separate from the frozen nre/calendar-2026.json.",
+    "A new, separate protocol (config/m2-step2-protocol.json) covering 2025-06-01 to 2026-01-04 -- the two quarterly earnings cycles immediately before Milestone 1's already-frozen window, for the same 23 already-accepted issuers only.",
+    "Discovering and freezing that protocol's Item 2.02 8-K candidates from real SEC EDGAR submissions, outcome-blind, the same way Milestone 1's frozen cohort was built.",
+    "Reviewing those candidates to the same standard Milestone 1 used: one named reviewer, full chronology and identity evidence per event, no independent second reviewer (per the 2026-09-22 review-standard amendment, which this pilot continues rather than re-deciding)."
+  ],
+  "what_this_does_not_authorize": [
+    "Any change to config/pilot.json, the frozen 243-candidate membership, nre/calendar-2026.json, or any Milestone 1 record.",
+    "The wider sizing options (the 205 unreviewed frozen candidates, or more issuers) -- a separate decision if the pilot's real throughput supports it.",
+    "A lighter or sampled review standard -- explicitly declined; see the review_chosen field above.",
+    "Any prediction, score, ranking or model."
+  ],
+  "pilot_success_criterion": "Not a numeric target. config/m2-step2-protocol.json sets minimum_eligible_events and minimum_unique_issuers to 1 deliberately, so there is no pressure to force a borderline candidate through to hit a count. The pilot's actual purpose is to measure real solo-review throughput for this depth push and report it honestly, whatever it turns out to be."
+}

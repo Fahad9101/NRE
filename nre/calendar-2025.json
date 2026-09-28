@@ -1,0 +1,11 @@
+{
+  "version": "us-equities-2025-v1",
+  "source": "https://www.nyse.com/publicdocs/ICE_NYSE_2025_Yearly_Trading_Calendar.pdf",
+  "reviewed_at": "2026-09-28",
+  "review_note": "Official NYSE/ICE 2025 yearly trading calendar, read directly (not from a search summary). Cross-checked for internal consistency against nre/calendar-2026.json (same 10-holiday count; same early-close pattern of day-after-Thanksgiving and Christmas-Eve, plus a day-before-July-4th early close specific to 2025's July 4 falling on a Friday). Columbus Day and Veterans Day are bank/bond-market holidays only, shown on the source as open days for NYSE equities, and are correctly absent here.",
+  "start": "2025-01-01",
+  "end": "2025-12-31",
+  "timezone": "America/New_York",
+  "holidays": ["2025-01-01", "2025-01-20", "2025-02-17", "2025-04-18", "2025-05-26", "2025-06-19", "2025-07-04", "2025-09-01", "2025-11-27", "2025-12-25"],
+  "early_closes": {"2025-07-03": "13:00", "2025-11-28": "13:00", "2025-12-24": "13:00"}
+}
