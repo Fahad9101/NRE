@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "method": "For each of the 23 step-2 issuers, three independent points were compared: (1) the CIK recorded in config/m2-step2-cohort-spec.json, (2) the CIK+exchange Milestone 1 itself recorded per-event in config/m1-events.json's security block (with its own valid_from/available_at provenance), and (3) a live fetch of SEC's own company_tickers_exchange.json performed in-browser on 2026-09-28. All three must agree for a clean result -- this is a genuine then-vs-now re-verification, not a fresh one-time check.",
+  "source_of_live_data": "https://www.sec.gov/files/company_tickers_exchange.json, fetched in-browser 2026-09-28 via javascript_tool (in-page fetch, not local urllib, per this project's established SEC-access workaround).",
+  "issuers": [
+    {
+      "ticker": "SLSN",
+      "cohort_spec_cik": "0000883107",
+      "m1_baseline": {
+        "cik": "0000883107",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000883107",
+        "name": "SOLESENCE, INC.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "CXT",
+      "cohort_spec_cik": "0000025445",
+      "m1_baseline": {
+        "cik": "0000025445",
+        "exchange": "NYSE"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000025445",
+        "name": "Crane NXT, Co.",
+        "exchange": "NYSE"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "ACHV",
+      "cohort_spec_cik": "0000949858",
+      "m1_baseline": {
+        "cik": "0000949858",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000949858",
+        "name": "ACHIEVE LIFE SCIENCES, INC.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "COLL",
+      "cohort_spec_cik": "0001267565",
+      "m1_baseline": {
+        "cik": "0001267565",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001267565",
+        "name": "COLLEGIUM PHARMACEUTICAL, INC",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "LOVE",
+      "cohort_spec_cik": "0001701758",
+      "m1_baseline": {
+        "cik": "0001701758",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001701758",
+        "name": "Lovesac Co",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "ASPN",
+      "cohort_spec_cik": "0001145986",
+      "m1_baseline": {
+        "cik": "0001145986",
+        "exchange": "NYSE"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001145986",
+        "name": "ASPEN AEROGELS INC",
+        "exchange": "NYSE"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "LNSR",
+      "cohort_spec_cik": "0001320350",
+      "m1_baseline": {
+        "cik": "0001320350",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001320350",
+        "name": "LENSAR, Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "ASMB",
+      "cohort_spec_cik": "0001426800",
+      "m1_baseline": {
+        "cik": "0001426800",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001426800",
+        "name": "ASSEMBLY BIOSCIENCES, INC.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "TECX",
+      "cohort_spec_cik": "0001681087",
+      "m1_baseline": {
+        "cik": "0001681087",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001681087",
+        "name": "Tectonic Therapeutic, Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "REKR",
+      "cohort_spec_cik": "0001697851",
+      "m1_baseline": {
+        "cik": "0001697851",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001697851",
+        "name": "Rekor Systems, Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "TTWO",
+      "cohort_spec_cik": "0000946581",
+      "m1_baseline": {
+        "cik": "0000946581",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000946581",
+        "name": "TAKE TWO INTERACTIVE SOFTWARE INC",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "JBSS",
+      "cohort_spec_cik": "0000880117",
+      "m1_baseline": {
+        "cik": "0000880117",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000880117",
+        "name": "SANFILIPPO JOHN B & SON INC",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "NBIX",
+      "cohort_spec_cik": "0000914475",
+      "m1_baseline": {
+        "cik": "0000914475",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000914475",
+        "name": "NEUROCRINE BIOSCIENCES INC",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "CACI",
+      "cohort_spec_cik": "0000016058",
+      "m1_baseline": {
+        "cik": "0000016058",
+        "exchange": "NYSE"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000016058",
+        "name": "CACI INTERNATIONAL INC /DE/",
+        "exchange": "NYSE"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "VSAT",
+      "cohort_spec_cik": "0000797721",
+      "m1_baseline": {
+        "cik": "0000797721",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000797721",
+        "name": "VIASAT INC",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "HURN",
+      "cohort_spec_cik": "0001289848",
+      "m1_baseline": {
+        "cik": "0001289848",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001289848",
+        "name": "Huron Consulting Group Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "PARR",
+      "cohort_spec_cik": "0000821483",
+      "m1_baseline": {
+        "cik": "0000821483",
+        "exchange": "NYSE"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0000821483",
+        "name": "PAR PACIFIC HOLDINGS, INC.",
+        "exchange": "NYSE"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "KLC",
+      "cohort_spec_cik": "0001873529",
+      "m1_baseline": {
+        "cik": "0001873529",
+        "exchange": "NYSE"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001873529",
+        "name": "KinderCare Learning Companies, Inc.",
+        "exchange": "NYSE"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "PDFS",
+      "cohort_spec_cik": "0001120914",
+      "m1_baseline": {
+        "cik": "0001120914",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001120914",
+        "name": "PDF SOLUTIONS INC",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "ALKT",
+      "cohort_spec_cik": "0001529274",
+      "m1_baseline": {
+        "cik": "0001529274",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001529274",
+        "name": "ALKAMI TECHNOLOGY, INC.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "OKTA",
+      "cohort_spec_cik": "0001660134",
+      "m1_baseline": {
+        "cik": "0001660134",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001660134",
+        "name": "Okta, Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "REAL",
+      "cohort_spec_cik": "0001573221",
+      "m1_baseline": {
+        "cik": "0001573221",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001573221",
+        "name": "TheRealReal, Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    },
+    {
+      "ticker": "PAYO",
+      "cohort_spec_cik": "0001845815",
+      "m1_baseline": {
+        "cik": "0001845815",
+        "exchange": "NASDAQ"
+      },
+      "live_sec_2026_09_28": {
+        "cik": "0001845815",
+        "name": "Payoneer Global Inc.",
+        "exchange": "Nasdaq"
+      },
+      "checks": {
+        "cohort_spec_cik_matches_live_sec": true,
+        "cohort_spec_cik_matches_m1_baseline": true,
+        "m1_baseline_exchange_matches_live_sec": true,
+        "m1_events_internally_consistent": true,
+        "still_listed_on_an_exchange": true
+      },
+      "clean": true
+    }
+  ],
+  "summary": {
+    "total_issuers": 23,
+    "all_clean": true,
+    "clean_count": 23,
+    "tickers_with_any_discrepancy": []
+  },
+  "finding": "All 23 issuers are clean: identical CIK across all three sources, identical exchange between Milestone 1's baseline and today's live SEC data, and every ticker is still actively listed (present in SEC's current exchange file, which does not carry delisted companies). No ticker change, no CIK change, no exchange change, no name suggesting a completed merger or re-domiciliation, for any of the 23 issuers since Milestone 1.",
+  "not_a_claim": [
+    "This confirms the ticker/CIK/exchange mapping is stable as of today, 2026-09-28 -- it does not independently re-verify the deeper security-class properties Milestone 1 already checked for these exact issuers (common vs. preferred stock, single vs. multiple share classes, foreign incorporation), which are static company properties that don't change quarter to quarter and were not re-examined here.",
+    "This is one gate among several still pending for step 2 (corporate-action check, label-engine dry run, owner sign-off) -- it does not by itself mark any candidate 'included'."
+  ]
+}
