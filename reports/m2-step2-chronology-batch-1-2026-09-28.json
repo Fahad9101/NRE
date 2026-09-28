@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-28",
+  "status": "CHRONOLOGY_EVIDENCE_COMPILED_NOT_YET_SIGNED_OFF",
+  "reviewer": "Fahad9101 (project owner) -- evidence compiled by the assistant for the owner's review; no sign-off recorded here",
+  "scope": "The first 11 of the 48 frozen step-2 candidates (config/m2-step2-frozen-candidate-ledger.json), processed oldest filing date first.",
+  "method": "For each candidate: (1) the SEC 8-K itself was read for its Item 2.02 text and any other items present (already known from the freeze's own 'items' field, cross-checked here against the filing text); (2) the issuer's actual wire release was located by web search, using the same wire service the issuer used for its Milestone 1 event (config/m1-events.json) as a strong prior; (3) the wire page's own displayed minute-precision dateline was read directly in the browser (GlobeNewswire and BusinessWire show it as page text; neither needed the SEC filing date, which only carries a date, never a time). No return or price value was looked at for any candidate before or during this pass.",
+  "candidates": [
+    {
+      "ticker": "LOVE",
+      "candidate_id": "0001628280-25-030859",
+      "cik": "0001701758",
+      "sec_filing_date": "2025-06-12",
+      "release_date": "2025-06-12",
+      "release_time_et": "07:00",
+      "timing": "premarket",
+      "wire": "globenewswire.com",
+      "wire_url": "https://www.globenewswire.com/news-release/2025/06/12/3098177/0/en/The-Lovesac-Company-Reports-First-Quarter-Fiscal-2026-Financial-Results.html",
+      "displayed_stamp": "June 12, 2025 07:00 ET",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    },
+    {
+      "ticker": "NBIX",
+      "candidate_id": "0000914475-25-000157",
+      "cik": "0000914475",
+      "sec_filing_date": "2025-07-30",
+      "release_date": "2025-07-30",
+      "release_time_et": "16:01",
+      "timing": "after_hours",
+      "wire": "prnewswire.com",
+      "wire_url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2025-financial-results-302517700.html",
+      "displayed_stamp": "Jul 30, 2025, 16:01 ET",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    },
+    {
+      "ticker": "ALKT",
+      "candidate_id": "0001529274-25-000147",
+      "cik": "0001529274",
+      "sec_filing_date": "2025-07-30",
+      "release_date": "2025-07-30",
+      "release_time_et": "16:05",
+      "timing": "after_hours",
+      "wire": "prnewswire.com",
+      "wire_url": "https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2025-financial-results-302517660.html",
+      "displayed_stamp": "Jul 30, 2025, 16:05 ET",
+      "sec_items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "same_day_flag": "Item 7.01: an investor presentation was posted to the company's website the same day. Read as routine supplementary material accompanying the same earnings release (very common practice), not a separate catalyst -- not independently confirmed further."
+    },
+    {
+      "ticker": "SLSN",
+      "candidate_id": "0001171843-25-004923",
+      "cik": "0000883107",
+      "sec_filing_date": "2025-07-31",
+      "release_date": "2025-07-31",
+      "release_time_et": "16:01",
+      "timing": "after_hours",
+      "wire": "globenewswire.com",
+      "wire_url": "https://www.globenewswire.com/news-release/2025/07/31/3125368/0/en/Sol%C3%A9sence-Reports-Second-Quarter-2025-Financial-Results.html",
+      "displayed_stamp": "July 31, 2025 16:01 ET",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    },
+    {
+      "ticker": "HURN",
+      "candidate_id": "0001289848-25-000189",
+      "cik": "0001289848",
+      "sec_filing_date": "2025-07-31",
+      "release_date": "2025-07-31",
+      "release_time_et": "16:05",
+      "timing": "after_hours",
+      "wire": "businesswire.com",
+      "wire_url": "https://www.businesswire.com/news/home/20250731360295/en/Huron-Announces-Second-Quarter-2025-Financial-Results-and-Increases-2025-Guidance",
+      "displayed_stamp": "Jul 31, 2025 4:05 PM Eastern Daylight Time",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    },
+    {
+      "ticker": "VSAT",
+      "candidate_id": "0001193125-25-173528",
+      "cik": "0000797721",
+      "sec_filing_date": "2025-08-05",
+      "release_date": "2025-08-05",
+      "release_time_et": "16:05",
+      "timing": "after_hours",
+      "wire": "globenewswire.com",
+      "wire_url": "https://www.globenewswire.com/news-release/2025/08/05/3127804/0/en/Viasat-Releases-First-Quarter-Fiscal-Year-2026-Financial-Results.html",
+      "displayed_stamp": "August 05, 2025 16:05 ET",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null,
+      "note": "SEC 8-K's own Date of Report / filing_date recorded by the freeze is 2025-08-05 as well; matches the wire date exactly."
+    },
+    {
+      "ticker": "CXT",
+      "candidate_id": "0000025445-25-000081",
+      "cik": "0000025445",
+      "sec_filing_date": "2025-08-06",
+      "release_date": "2025-08-06",
+      "release_time_et": "16:05",
+      "timing": "after_hours",
+      "wire": "globenewswire.com",
+      "wire_url": "https://www.globenewswire.com/news-release/2025/08/06/3128648/0/en/Crane-NXT-Reports-Second-Quarter-2025-Results.html",
+      "displayed_stamp": "August 06, 2025 16:05 ET",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    },
+    {
+      "ticker": "PARR",
+      "candidate_id": "0000821483-25-000024",
+      "cik": "0000821483",
+      "sec_filing_date": "2025-08-06",
+      "release_date": "2025-08-05",
+      "release_time_et": "16:15",
+      "timing": "after_hours",
+      "wire": "globenewswire.com",
+      "wire_url": "https://www.globenewswire.com/news-release/2025/08/05/3127866/0/en/Par-Pacific-Holdings-Reports-Second-Quarter-2025-Results.html",
+      "displayed_stamp": "August 05, 2025 16:15 ET",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null,
+      "note": "IMPORTANT: the SEC 8-K's own filing_date recorded by the freeze is 2025-08-06, one calendar day after the actual wire release (2025-08-05 16:15 ET, after-hours). This is the SEC filing lagging the after-hours release by one business day, the same pattern Milestone 1's own process already knew to expect (SEC acceptance time is not the release time). The event window/anchor must be built from 2025-08-05, not the SEC filing_date."
+    },
+    {
+      "ticker": "ASMB",
+      "candidate_id": "0000950170-25-104020",
+      "cik": "0001426800",
+      "sec_filing_date": "2025-08-06",
+      "release_date": "2025-08-06",
+      "release_time_et": "16:05",
+      "timing": "after_hours",
+      "wire": "globenewswire.com",
+      "wire_url": "https://www.globenewswire.com/news-release/2025/08/06/3128647/16259/en/Assembly-Biosciences-Reports-Second-Quarter-2025-Financial-Results-and-Recent-Updates.html",
+      "displayed_stamp": "August 06, 2025 16:05 ET",
+      "sec_items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "same_day_flag": "Item 8.01: a SEPARATE press release (Exhibit 99.2), same day, announcing interim Phase 1a clinical data for ABI-6250 (an HDV entry-inhibitor candidate). This is a genuine, material, independent catalyst on the same reaction day as the earnings release, not routine supplementary material -- the same class of finding that excluded MEI from Milestone 1 (a same-day competing catalyst). FLAGGED FOR LIKELY EXCLUSION, not decided here; the exact wire time of the clinical-data release (Exhibit 99.2) was not separately checked, since same-day co-occurrence of two material catalysts is already sufficient grounds to flag regardless of ordering."
+    },
+    {
+      "ticker": "PAYO",
+      "candidate_id": "0001558370-25-010405",
+      "cik": "0001845815",
+      "sec_filing_date": "2025-08-06",
+      "release_date": "2025-08-06",
+      "release_time_et": "07:30",
+      "timing": "premarket",
+      "wire": "businesswire.com",
+      "wire_url": "https://www.businesswire.com/news/home/20250806700955/en/Payoneer-Reports-Second-Quarter-2025-Financial-Results",
+      "displayed_stamp": "Aug 6, 2025 7:30 AM Eastern Daylight Time",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    },
+    {
+      "ticker": "CACI",
+      "candidate_id": "0001628280-25-038398",
+      "cik": "0000016058",
+      "sec_filing_date": "2025-08-06",
+      "release_date": "2025-08-06",
+      "release_time_et": "16:15",
+      "timing": "after_hours",
+      "wire": "businesswire.com",
+      "wire_url": "https://www.businesswire.com/news/home/20250806267956/en/CACI-Reports-Results-for-Its-Fiscal-2025-Fourth-Quarter-and-Full-Year-and-Issues-Fiscal-Year-2026-Guidance",
+      "displayed_stamp": "Aug 6, 2025 4:15 PM Eastern Daylight Time",
+      "sec_items": [
+        "2.02",
+        "9.01"
+      ],
+      "same_day_flag": null
+    }
+  ],
+  "summary": {
+    "reviewed": 11,
+    "clean": 9,
+    "flagged_same_day_catalyst": [
+      "ALKT",
+      "ASMB"
+    ],
+    "sec_filing_date_differs_from_release_date": [
+      "PARR"
+    ],
+    "timing_split": {
+      "premarket": 2,
+      "after_hours": 9
+    }
+  },
+  "not_yet_done_for_these_11": [
+    "Corporate-action check (needs Alpaca data, GitHub-Actions-only, not run yet).",
+    "Identity/exchange re-verification (carried forward from Milestone 1 for the same 23 issuers; not independently redone here).",
+    "Owner sign-off.",
+    "A dry run through the label-computation engine."
+  ],
+  "remaining_candidates": 37,
+  "not_a_claim": [
+    "Not an acceptance decision for any candidate.",
+    "Not a statement that ASMB is excluded -- flagged for the owner's decision, matching how MEI was handled in Milestone 1."
+  ]
+}
