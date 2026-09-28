@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "recorded_on": "2026-09-28",
-  "status": "CHRONOLOGY_EVIDENCE_COMPILED_NOT_YET_SIGNED_OFF",
+  "status": "CHRONOLOGY_EVIDENCE_COMPLETE_ALL_48_NOT_YET_SIGNED_OFF",
   "reviewer": "Fahad9101 (project owner) -- evidence compiled by the assistant for the owner's review; no sign-off recorded here",
-  "scope": "The remaining 37 of the 48 frozen step-2 candidates not covered by reports/m2-step2-chronology-batch-1-2026-09-28.json (11 covered there; together this is 48 of 48 candidates, of which 45 have a confirmed minute-precision timestamp and 3 have a confirmed date/URL but a pending exact minute).",
+  "scope": "The remaining 37 of the 48 frozen step-2 candidates not covered by reports/m2-step2-chronology-batch-1-2026-09-28.json (11 covered there; together this is 48 of 48 candidates, all 48 now with a confirmed minute-precision timestamp).",
   "method": "Same as batch 1: SEC 8-K text plus each issuer's actual wire release, read directly for its own displayed dateline.",
   "candidates": [
     {
@@ -376,17 +376,17 @@
       "candidate_id": "0001104659-25-106667",
       "sec_filing_date": "2025-11-05",
       "release_date": "2025-11-05",
-      "release_time_et": null,
-      "timing": "PENDING",
-      "wire": "businesswire.com",
-      "wire_url": "https://www.businesswire.com/news/home/20251105351426/en/Payoneer-Reports-Third-Quarter-2025-Financial-Results",
-      "displayed_stamp": null,
+      "release_time_et": "07:30",
+      "timing": "premarket",
+      "wire": "prnewswire.com",
+      "wire_url": "https://www.prnewswire.com/news-releases/payoneer-reports-third-quarter-2025-financial-results-302604833.html",
+      "displayed_stamp": "Nov 05, 2025, 07:30 ET",
       "sec_items": [
         "2.02",
         "9.01"
       ],
       "same_day_flag": null,
-      "note": "Wire URL found (an investor-relations mirror states the release time as 07:30 ET, matching this issuer's usual premarket pattern), but the authoritative BusinessWire page's own timestamp was not directly read due to a tool outage during this session; left pending rather than recorded from the secondary source."
+      "note": "CORRECTED WIRE: the businesswire.com URL originally on file for this candidate returned 'gone out of circulation' (dead link) when read directly. The real release ran on PR Newswire, confirmed both by its own displayed dateline ('Nov 05, 2025, 07:30 ET') and independently by the issuer's own investor-relations page, whose title metadata records the identical time ('Wed, 11/05/2025 - 07:30'). This issuer's Q2 2025 candidate (batch 1) did run on BusinessWire, so the wire service is not constant per issuer -- a prior assumption worth noting for any future candidate lookups."
     },
     {
       "ticker": "COLL",
@@ -617,47 +617,43 @@
       "candidate_id": "0001660134-25-000170",
       "sec_filing_date": "2025-12-02",
       "release_date": "2025-12-02",
-      "release_time_et": null,
-      "timing": "PENDING",
+      "release_time_et": "16:01",
+      "timing": "after_hours",
       "wire": "businesswire.com",
       "wire_url": "https://www.businesswire.com/news/home/20251202009675/en/Okta-Announces-Third-Quarter-Fiscal-Year-2026-Financial-Results",
-      "displayed_stamp": null,
+      "displayed_stamp": "Dec 2, 2025 4:01 PM Eastern Standard Time",
       "sec_items": [
         "2.02",
         "7.01",
         "9.01"
       ],
       "same_day_flag": null,
-      "note": "Wire URL found and confirmed 'after the U.S. market close' via search summary, but the exact minute was not directly read due to a tool outage during this session; left pending rather than guessed. Note: unlike the 2025-08-26 OKTA candidate, this one carries no Item 8.01 -- the derivative-litigation disclosure was a one-time item, not recurring."
+      "note": "Confirmed via the BusinessWire page's own displayed dateline. Unlike the 2025-08-26 OKTA candidate, this one carries no Item 8.01 -- the derivative-litigation disclosure was a one-time item, not recurring. It does carry Item 7.01 (see sec_items), same as ASPN 2025-08-07 -- added to the item-7.01 flag below for consistency."
     },
     {
       "ticker": "LOVE",
       "candidate_id": "0001628280-25-056422",
       "sec_filing_date": "2025-12-11",
       "release_date": "2025-12-11",
-      "release_time_et": null,
-      "timing": "PENDING",
+      "release_time_et": "07:00",
+      "timing": "premarket",
       "wire": "globenewswire.com",
       "wire_url": "https://www.globenewswire.com/news-release/2025/12/11/3203761/0/en/The-Lovesac-Company-Reports-Third-Quarter-Fiscal-2026-Financial-Results.html",
-      "displayed_stamp": null,
+      "displayed_stamp": "December 11, 2025 07:00 ET",
       "sec_items": [
         "2.02",
         "9.01"
       ],
       "same_day_flag": null,
-      "note": "Wire URL found; exact minute not yet directly read due to a tool outage during this session; left pending rather than guessed (this issuer's other three candidates in this pool are all exactly 07:00 ET premarket, a strong prior, but not used as a substitute for reading this specific release)."
+      "note": "Confirmed via the GlobeNewswire page's own displayed dateline: exactly 07:00 ET, matching this issuer's other three candidates in this pool -- the prior was correct, but was not substituted for a direct read."
     }
   ],
   "summary": {
-    "reviewed_with_confirmed_timestamp": 34,
-    "pending_exact_minute": [
-      "PAYO 0001104659-25-106667",
-      "OKTA 0001660134-25-000170",
-      "LOVE 0001628280-25-056422"
-    ],
+    "reviewed_with_confirmed_timestamp": 37,
+    "pending_exact_minute": [],
     "timing_split": {
-      "premarket": 11,
-      "after_hours": 23
+      "premarket": 13,
+      "after_hours": 24
     },
     "flagged_needing_owner_attention": {
       "same_day_competing_catalyst_or_judgement_call": [
@@ -677,17 +673,21 @@
         "REKR 2025-11-13"
       ],
       "item_7_01_present_not_independently_confirmed_routine": [
-        "ASPN 2025-08-07"
+        "ASPN 2025-08-07",
+        "OKTA 2025-12-02"
       ],
       "real_corporate_action_declared_in_the_release_needs_price_data_check": [
         "JBSS 2025-08-20 (dividend + special dividend, payable 2025-09-11)"
       ]
-    }
+    },
+    "wire_service_corrections": [
+      "PAYO 2025-11-05: recorded wire_url was dead (businesswire.com); corrected to the real prnewswire.com release after direct read, cross-confirmed by the issuer's own IR page metadata."
+    ]
   },
   "combined_with_batch_1": {
     "total_candidates": 48,
-    "total_confirmed_timestamp": 45,
-    "total_pending": 3
+    "total_confirmed_timestamp": 48,
+    "total_pending": 0
   },
   "not_yet_done_for_any_candidate": [
     "Corporate-action check (needs Alpaca data, GitHub-Actions-only, not run yet).",
