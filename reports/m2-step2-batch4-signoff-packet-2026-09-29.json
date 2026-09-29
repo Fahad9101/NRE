@@ -522,7 +522,7 @@
       },
       "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 11, https://github.com/Fahad9101/NRE/actions/runs/36582085894). No return was computed or viewed.",
       "proposed_label_caveat": null,
-      "additional_note": "This is the fourth and final of this issuer's step-2 candidates (2025-06-12 batch 1, 2025-09-11 batch 2, this one) -- all confirmed genuine, clean quarterly reports (fiscal year offset from the calendar), not an anomaly."
+      "additional_note": "This is the third and final of this issuer's step-2 candidates (2025-06-12 batch 1, 2025-09-11 batch 2, this one) -- all confirmed genuine, clean quarterly reports (fiscal year offset from the calendar), not an anomaly. Corrected 2026-09-29: this note originally said 'fourth' by mistake; the frozen candidate ledger and reports/m2-step2-eligibility-review-2026-09-28.json's own love_three_candidates finding both confirm exactly 3."
     }
   ],
   "timing_class_balance": {
