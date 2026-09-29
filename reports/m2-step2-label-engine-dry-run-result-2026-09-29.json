@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36592784171",
+  "workflow_run_number": 5,
+  "commit": "c277729",
+  "trigger": "push (auto-triggered: reports/m2-step2-acceptance-review.json is a watched path)",
+  "context": "The real, final result of Milestone 2 step 2's label-engine dry run -- the cohort-level formal audit (nre.acceptance.audit_cohort(), the same machinery Milestone 1 itself used before its own acceptance), run standalone under step 2's own protocol. This is the FIRST time all 45 Milestone 2 step 2 events were merged into one bundle and run through the full structural-gate check.",
+  "path_to_this_result": "Took 5 attempts, each a real bug found only by actually running it -- the same pattern that found both hardcoded-Calendar() bugs during the corporate-action check: (1) source_id collisions in config/m2-step2-events.json (every batch used a bare '{ticker}-wire', never a problem per-event, always going to collide once merged -- fixed by appending each event's date); (2) a second, deeper source_id collision inside nre.event_acquire.build_bundle()'s own synthetic 'alpaca-bars-{ticker}'/'alpaca-actions-{ticker}' ids (a real code bug, fixed by appending event_id); (3) the identical class of bug a third time, in security_id (fixed the same way); (4) a spot-check selection error -- cxt-step2-2025-08-06 was picked as an after_hours spot check, but CXT's own real dividend nulls exactly its session_20_close_return, so it can never count as 'complete' -- swapped for ttwo-step2-2025-11-06.",
+  "result": {
+    "accepted_events": 45,
+    "archive_observations": 0,
+    "audit_ran": true,
+    "result": {
+      "counts": {
+        "candidates": 48,
+        "dispositions": {
+          "excluded": 2,
+          "included": 45,
+          "quarantined": 1
+        },
+        "eligible_complete_events": 43,
+        "events": 45,
+        "unique_issuers": 22
+      },
+      "details": {
+        "invalid_candidate_dispositions": [],
+        "invalid_issuer_events": [],
+        "spot_checked_events_by_timing": {
+          "after_hours": [
+            "okta-step2-2025-12-02",
+            "ttwo-step2-2025-11-06"
+          ],
+          "premarket": [
+            "love-step2-2025-12-11",
+            "slsn-step2-2025-11-11"
+          ]
+        }
+      },
+      "failed_gates": [
+        "candidate_source_hashes"
+      ],
+      "gates": {
+        "all_events_in_window": true,
+        "availability_mode": true,
+        "candidate_accounting": true,
+        "candidate_source_hashes": false,
+        "discovery_coverage_review": true,
+        "earnings_results_only": true,
+        "frozen_membership_hash": true,
+        "identity_history_review": true,
+        "independent_timing_spot_checks": true,
+        "issuer_identity": true,
+        "minimum_events": true,
+        "minimum_issuers": true,
+        "protocol_hash": true,
+        "provider_rights_review": true,
+        "real_data": true,
+        "selection_frozen_before_prices": true
+      },
+      "input_sha256": "8697654ab91c2d6a57e11440983b048dfab11ba959e8fc79d86421b68bbc3aa4",
+      "ledger_sha256": "b608905edf6fdc90552ff2056cf4d068d54758106627cc29edcd0a03fbdca127",
+      "membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+      "milestone_accepted": false,
+      "protocol_sha256": "751c9ba108ae2f724f2d84d3ada02804406d41cc1fe79ebcf88b5d502d969591",
+      "review_limit": "Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.",
+      "review_sha256": "87c0627145e8c853bcc0550afe1204ceec7d936db13ea2b71457c456bde71041",
+      "status": "BLOCKED"
+    }
+  },
+  "reading": {
+    "status_BLOCKED_why": "Exactly one gate failed: candidate_source_hashes. This is the pre-documented, owner-accepted gap from docs/M2-STEP-2-LABEL-ENGINE-DRY-RUN-SCOPE.md section 5 -- Milestone 2 step 2's raw SEC discovery bytes were never archived anywhere durable (unlike Milestone 1's, which the audit downloads as a GitHub Actions artifact), so there is nothing for the audit to read the candidates' source hashes back from. Not a sign of an error in the data or the review.",
+    "every_other_gate": "All 15 other gates passed, including candidate_accounting (all 48 frozen candidates correctly accounted for: 45 included matching real event_ids, 2 excluded with reasons, 1 quarantined with a reason and no event_id), independent_timing_spot_checks (2 premarket + 2 after_hours, each independently evidenced), and all the hash-consistency gates (protocol_hash, frozen_membership_hash).",
+    "eligible_complete_events_43_not_45": "CXT's two real cash dividends (one per candidate, both already known) each null exactly their own session_20_close_return, so neither of CXT's two events counts as 'complete' under this gate's own definition (needs a non-null session_20). This does not mean CXT's events are wrong or excluded from the spec -- both are still real, attested, MAPPED events with pinned labels_sha256 -- just that the corporate-action-suppressed one label keeps them out of this specific count. Correspondingly, unique_issuers is 22, not 23 (CXT contributes zero 'complete' events, so its issuer is not counted here).",
+    "milestone_accepted_is_always_false": "audit_cohort() never sets this true regardless of gate outcome, by design -- the owner's own final Milestone 2 step 2 sign-off is a separate, later, human decision, exactly like Milestone 1's."
+  },
+  "not_a_claim": [
+    "Not Milestone 2 step 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that the candidate_source_hashes gap can be ignored indefinitely -- only that proceeding without first closing it was the owner's own explicit, informed choice (reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json)."
+  ]
+}
