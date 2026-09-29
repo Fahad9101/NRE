@@ -79,3 +79,21 @@ def classify_filing(items):
         found = classify_item(item)
         rows.append({"item": item, **(found or {"title": None, "category": "unclassified", "subtype": None})})
     return rows
+
+
+def normalize_filing(candidate_id, cik, filing_date, items, source_url=None):
+    """One structured event record per genuinely distinct item in a real, already-discovered SEC
+    filing -- the "raw public announcement becomes a structured machine-readable event feature"
+    docs/NRE-1.0-MASTER-PROMPT.md's own Milestone 3 criterion names, for the item-classification
+    slice of it. Takes exactly the fields nre.ingestion.sec_candidates() already produces for every
+    real candidate this project has ever discovered (candidate_id, cik, filing_date, items) --
+    nothing here fetches or infers identity on its own; it only classifies what's already known."""
+    if not isinstance(candidate_id, str) or not candidate_id:
+        raise DataError("candidate_id must be a non-empty string")
+    if not isinstance(cik, str) or not cik.isdigit():
+        raise DataError("cik must be a digit string")
+    if not isinstance(filing_date, str) or not filing_date:
+        raise DataError("filing_date must be a non-empty string")
+    return [{"candidate_id": candidate_id, "cik": cik.zfill(10), "filing_date": filing_date,
+             "source_url": source_url, **row}
+            for row in classify_filing(items)]
