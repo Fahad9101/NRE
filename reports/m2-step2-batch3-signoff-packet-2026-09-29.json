@@ -1,0 +1,612 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-29",
+  "purpose": "Evidence for the project owner to sign off, or not, on twelve candidate events for Milestone 2 step 2 (batch 3 of 4). Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "Candidates 25-36 of the 46 surviving step-2 candidates by filing date.",
+  "caveat_correction_note": "This packet's caveats use only the 4 real session milestones (2, 5, 10, 20) nre/dataset.py actually computes, confirmed by reading build() directly -- see commit 8daed6f, which corrected the same error in batches 1-2's already-committed caveats (HURN's had fabricated 16 non-existent label names).",
+  "dry_run": {
+    "workflow": "depth-event-acquire.yml",
+    "run_id": 36553711658,
+    "commit": "883010b",
+    "result": "All 12 pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels. All 12 showed all 21 sessions present and no zero-volume days. One (CXT) showed a real cash dividend (ex-date 2025-11-28, session 16 of its window) -- a separate dividend from this same issuer's batch-1 candidate. All 23 prior events (batches 1-2) re-confirmed labels_match_recorded: true."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below, including the residual gap that open-web search cannot close.",
+    "corporate_actions": "For 11 of 12 candidates: accept two independent clean signals -- no Item 3.03/5.03 8-K in the shown history, and Alpaca's real, fully paginated corporate-actions response empty for the window. CXT is the exception -- a real cash dividend, ex-date 2025-11-28."
+  },
+  "candidates": [
+    {
+      "event_id": "nbix-step2-2025-10-28",
+      "candidate_id": "0000914475-25-000180",
+      "ticker": "NBIX",
+      "company": "Neurocrine Biosciences, Inc.",
+      "cik": "0000914475",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-third-quarter-2025-financial-results-302597268.html",
+        "displayed_stamp_et": "Oct 28, 2025, 16:01 ET",
+        "minute_encoded_in_spec": "2025-10-28T16:01:00-04:00",
+        "sec_8k_accepted_et": "2025-10-28 16:02",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-10-28",
+      "reaction_session": "2025-10-29",
+      "twentieth_reaction_session": "2025-11-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value | NBIX | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000914475-25-000157",
+          "accepted_et": "2025-07-30 16:02"
+        },
+        "spec_valid_from": "2025-07-30T00:00:00-04:00",
+        "spec_available_at": "2025-07-30T20:02:54Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-07-30 2.02,9.01 (batch 1's own NBIX candidate)",
+          "2025-10-28 2.02,9.01 <EVENT>",
+          "2025-11-24 5.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-11-24 8-K Item 5.02 (officer/director change; content not opened; session 19)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "2025-11-24 8-K Item 5.02 (officer/director change; content not opened; session 19). Of the 4 real session-milestone labels (2, 5, 10, 20), those in this list fall at or after session 19."
+      },
+      "additional_note": null
+    },
+    {
+      "event_id": "hurn-step2-2025-10-28",
+      "candidate_id": "0001628280-25-046762",
+      "ticker": "HURN",
+      "company": "Huron Consulting Group Inc.",
+      "cik": "0001289848",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20251028802664/en/Huron-Announces-Record-Third-Quarter-2025-Financial-Results-and-Raises-2025-Adjusted-Diluted-EPS-Guidance",
+        "displayed_stamp_et": "Oct 28, 2025 4:05 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2025-10-28T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-10-28 16:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-10-28",
+      "reaction_session": "2025-10-29",
+      "twentieth_reaction_session": "2025-11-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | HURN | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001289848-25-000189",
+          "accepted_et": "2025-07-31 16:42"
+        },
+        "spec_valid_from": "2025-07-31T00:00:00-04:00",
+        "spec_available_at": "2025-07-31T20:42:50Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-07-31 2.02,9.01 (batch 1's own HURN candidate, itself flagged -- caveated)",
+          "2025-10-28 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "No same-day duplicate for THIS candidate specifically (confirmed in the original 46-candidate sweep). This issuer's OTHER step-2 candidate (2025-07-31, batch 1) is the one with the credit-facility caveat."
+    },
+    {
+      "event_id": "jbss-step2-2025-10-29",
+      "candidate_id": "0001193125-25-256336",
+      "ticker": "JBSS",
+      "company": "John B. Sanfilippo & Son, Inc.",
+      "cik": "0000880117",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/10/29/3176875/0/en/John-B-Sanfilippo-Son-Inc-Reports-Fiscal-2026-First-Quarter-Results.html",
+        "displayed_stamp_et": "October 29, 2025 16:10 ET",
+        "minute_encoded_in_spec": "2025-10-29T16:10:00-04:00",
+        "sec_8k_accepted_et": "2025-10-29 16:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-10-29",
+      "reaction_session": "2025-10-30",
+      "twentieth_reaction_session": "2025-11-26",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $.01 par value per share | JBSS | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000880117-25-000005",
+          "accepted_et": "2025-08-26 16:30"
+        },
+        "spec_valid_from": "2025-08-26T00:00:00-04:00",
+        "spec_available_at": "2025-08-26T20:30:53Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-26 7.01,9.01",
+          "2025-10-29 2.02,9.01 <EVENT> (16:14:43 ET)",
+          "2025-10-29 8.01,9.01 (same day, 16:24:05 ET, $1.00/share special dividend, its own press release -- see reports/m2-step2-same-day-8k-sweep-2026-09-28.json's correction)",
+          "2025-10-30 5.07 (16:15:27 ET, session 1 -- after this session's own close)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-10-30 8-K Item 5.07 (shareholder vote results; content not opened; session 1, but accepted 16:15:27 ET, after the regular close -- day1's own close price already reflects the earnings-day reaction alone)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_2_close_return",
+          "session_5_close_return",
+          "session_10_close_return",
+          "session_20_close_return"
+        ],
+        "note": "2025-10-30 8-K Item 5.07 (shareholder vote results; content not opened; session 1, but accepted 16:15:27 ET, after the regular close -- day1's own close price already reflects the earnings-day reaction alone). Of the 4 real session-milestone labels (2, 5, 10, 20), those in this list fall at or after session 2."
+      },
+      "additional_note": "Same-day special dividend already assessed under docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded (routine for this issuer -- same reasoning as its 2025-08-20 candidate's dividend). Wire runs on GlobeNewswire here, unlike this issuer's other candidates (BusinessWire) -- wire service isn't constant per issuer, already known."
+    },
+    {
+      "event_id": "alkt-step2-2025-10-30",
+      "candidate_id": "0001529274-25-000159",
+      "ticker": "ALKT",
+      "company": "Alkami Technology, Inc.",
+      "cik": "0001529274",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-third-quarter-2025-financial-results-302600234.html",
+        "displayed_stamp_et": "Oct 30, 2025, 16:05 ET",
+        "minute_encoded_in_spec": "2025-10-30T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-10-30 16:08",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-10-30",
+      "reaction_session": "2025-10-31",
+      "twentieth_reaction_session": "2025-11-28",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value per share | ALKT | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001529274-25-000147",
+          "accepted_et": "2025-07-30 16:11"
+        },
+        "spec_valid_from": "2025-07-30T00:00:00-04:00",
+        "spec_available_at": "2025-07-30T20:11:50Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-07-30 2.02,7.01,9.01 (batch 1's own ALKT candidate)",
+          "2025-10-30 2.02,5.02,7.01,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Item 5.02 already fully characterized in reports/m2-step2-item502-characterization-2026-09-28.json: CFO succession (Cassandra Hudson replacing Bryan Hill, a retirement already signaled 6 months earlier), own separate Item 7.01 press release same day. Assessed under docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and NOT excluded -- fails the freshness condition (telegraphed succession, not new information). The chronology batch file's own note calling this 'NOT YET CHARACTERIZED' is now stale; superseded by the item502 characterization done later the same day."
+    },
+    {
+      "event_id": "parr-step2-2025-11-04",
+      "candidate_id": "0001628280-25-048903",
+      "ticker": "PARR",
+      "company": "Par Pacific Holdings, Inc.",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/04/3180903/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2025-Results.html",
+        "displayed_stamp_et": "November 04, 2025 16:15 ET",
+        "minute_encoded_in_spec": "2025-11-04T16:15:00-05:00",
+        "sec_8k_accepted_et": "2025-11-04 16:36",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-11-04",
+      "reaction_session": "2025-11-05",
+      "twentieth_reaction_session": "2025-12-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.01 par value | PARR | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001437749-25-031441",
+          "accepted_et": "2025-10-21 18:31"
+        },
+        "spec_valid_from": "2025-10-21T00:00:00-04:00",
+        "spec_available_at": "2025-10-21T22:31:24Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-10-03 1.01,2.03,9.01",
+          "2025-10-21/22 1.01,7.01,9.01 (accepted 10/21 18:31 ET, EDGAR filingDate 10/22 -- same late-evening-acceptance pattern as this issuer's own earnings filings)",
+          "2025-11-04 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Release states PARR's common stock became dual-listed on NYSE Texas effective the next day, 2025-11-05 -- a listing-venue change, not a security-identity change, and takes effect after this event's own reaction day. Not treated as a same-day catalyst."
+    },
+    {
+      "event_id": "cxt-step2-2025-11-05",
+      "candidate_id": "0000025445-25-000093",
+      "ticker": "CXT",
+      "company": "Crane NXT, Co.",
+      "cik": "0000025445",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/05/3181965/0/en/crane-nxt-reports-third-quarter-2025-results.html",
+        "displayed_stamp_et": "November 05, 2025 16:05 ET",
+        "minute_encoded_in_spec": "2025-11-05T16:05:00-05:00",
+        "sec_8k_accepted_et": "2025-11-05 16:24",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "twentieth_reaction_session": "2025-12-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $1.00 | CXT | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000025445-25-000086",
+          "accepted_et": "2025-09-17 21:42"
+        },
+        "spec_valid_from": "2025-09-17T00:00:00-04:00",
+        "spec_available_at": "2025-09-18T01:42:40Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-06 2.02,9.01 (batch 1's own CXT candidate, also has a dividend)",
+          "2025-09-17/18 7.01,8.01,9.01 (accepted 9/17 21:42 ET, EDGAR filingDate 9/18)",
+          "2025-11-05 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "NOT EMPTY -- [{\"ex_date\": \"2025-11-28\", \"id\": \"6910e2b6-091d-4bd6-95d7-2aa0f36e2530\", \"type\": \"cash_dividends\"}] (real dry run). Ex-date falls on session 16 of this event's window; of the 4 real session-milestone labels (2, 5, 10, 20), only session_20 is at or after session 16 and would be suppressed if it crosses -- confirmed by attesting and letting the pipeline decide, not asserted here. Needs the owner's explicit attestation before any label can be trusted for this candidate."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's own batch-1 candidate (2025-08-06) already had a real dividend; this is a SEPARATE, later dividend for the same issuer -- consistent with CXT being a regular quarterly payer, not a surprise."
+    },
+    {
+      "event_id": "payo-step2-2025-11-05",
+      "candidate_id": "0001104659-25-106667",
+      "ticker": "PAYO",
+      "company": "Payoneer Global Inc.",
+      "cik": "0001845815",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/payoneer-reports-third-quarter-2025-financial-results-302604833.html",
+        "displayed_stamp_et": "Nov 05, 2025, 07:30 ET",
+        "minute_encoded_in_spec": "2025-11-05T07:30:00-05:00",
+        "sec_8k_accepted_et": "2025-11-05 07:35",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-11-04",
+      "reaction_session": "2025-11-05",
+      "twentieth_reaction_session": "2025-12-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | PAYO | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001558370-25-010405",
+          "accepted_et": "2025-08-06 07:35"
+        },
+        "spec_valid_from": "2025-08-06T00:00:00-04:00",
+        "spec_available_at": "2025-08-06T11:35:34Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-06 2.02,9.01 (batch 1's own PAYO candidate)",
+          "2025-11-05 2.02,9.01 <EVENT>",
+          "2025-12-03 5.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-12-03 8-K Item 5.02 (officer/director change; content not opened; session 20, the last session)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "2025-12-03 8-K Item 5.02 (officer/director change; content not opened; session 20, the last session). Of the 4 real session-milestone labels (2, 5, 10, 20), those in this list fall at or after session 20."
+      },
+      "additional_note": "Confirms this issuer's wire service isn't constant per quarter: BusinessWire (batch 1, 2025-08-06) vs. PR Newswire (this candidate and its Nov identity anchor) -- already known."
+    },
+    {
+      "event_id": "coll-step2-2025-11-06",
+      "candidate_id": "0001104659-25-107389",
+      "ticker": "COLL",
+      "company": "Collegium Pharmaceutical, Inc.",
+      "cik": "0001267565",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182446/34897/en/Collegium-Reports-Third-Quarter-2025-Financial-Results-Raises-2025-Guidance.html",
+        "displayed_stamp_et": "November 06, 2025 07:30 ET",
+        "minute_encoded_in_spec": "2025-11-06T07:30:00-05:00",
+        "sec_8k_accepted_et": "2025-11-06 07:33",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "twentieth_reaction_session": "2025-12-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.001 per share | COLL | The NASDAQ Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001558370-25-010647",
+          "accepted_et": "2025-08-07 07:32"
+        },
+        "spec_valid_from": "2025-08-07T00:00:00-04:00",
+        "spec_available_at": "2025-08-07T11:32:22Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-07 2.02,7.01,9.01 (batch 2's own COLL candidate)",
+          "2025-11-06 2.02,7.01,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Item 7.01 (same-day) is this issuer's own routine earnings-presentation pattern, already characterized for its other candidates."
+    },
+    {
+      "event_id": "aspn-step2-2025-11-06",
+      "candidate_id": "0001171843-25-007067",
+      "ticker": "ASPN",
+      "company": "Aspen Aerogels, Inc.",
+      "cik": "0001145986",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182330/0/en/Aspen-Aerogels-Inc-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "displayed_stamp_et": "November 06, 2025 06:30 ET",
+        "minute_encoded_in_spec": "2025-11-06T06:30:00-05:00",
+        "sec_8k_accepted_et": "2025-11-06 06:30",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "twentieth_reaction_session": "2025-12-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | ASPN | The New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001171843-25-005147",
+          "accepted_et": "2025-08-07 06:30"
+        },
+        "spec_valid_from": "2025-08-07T00:00:00-04:00",
+        "spec_available_at": "2025-08-07T10:30:30Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-07 2.02,7.01,9.01 (batch 2's own ASPN candidate)",
+          "2025-09-11 5.02,9.01 (before this event, historical context only)",
+          "2025-11-06 2.02,7.01,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "The 2025-09-11 Item 5.02 predates this event and was already noted as in-window for THIS issuer's prior (batch-2) candidate's own window, not this one."
+    },
+    {
+      "event_id": "achv-step2-2025-11-06",
+      "candidate_id": "0001193125-25-268056",
+      "ticker": "ACHV",
+      "company": "Achieve Life Sciences, Inc.",
+      "cik": "0000949858",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182358/0/en/Achieve-Life-Sciences-Reports-Third-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html",
+        "displayed_stamp_et": "November 06, 2025 07:00 ET",
+        "minute_encoded_in_spec": "2025-11-06T07:00:00-05:00",
+        "sec_8k_accepted_et": "2025-11-06 07:10",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "twentieth_reaction_session": "2025-12-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 per share | ACHV | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-233581",
+          "accepted_et": "2025-10-07 16:51"
+        },
+        "spec_valid_from": "2025-10-07T00:00:00-04:00",
+        "spec_available_at": "2025-10-07T20:51:49Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-07 2.02,9.01 (batch 2's own ACHV candidate)",
+          "2025-09-11 5.02",
+          "2025-10-07 5.02",
+          "2025-11-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Two Item 5.02 filings (9/11, 10/7) between this issuer's prior candidate and this one -- both predate this event, historical officer-change context only, not in-window for this candidate."
+    },
+    {
+      "event_id": "lnsr-step2-2025-11-06",
+      "candidate_id": "0001193125-25-268073",
+      "ticker": "LNSR",
+      "company": "LENSAR, Inc.",
+      "cik": "0001320350",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182416/0/en/LENSAR-Reports-Third-Quarter-2025-Results-and-Provides-Business-Update.html",
+        "displayed_stamp_et": "November 06, 2025 07:00 ET",
+        "minute_encoded_in_spec": "2025-11-06T07:00:00-05:00",
+        "sec_8k_accepted_et": "2025-11-06 07:15",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "twentieth_reaction_session": "2025-12-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.01 per share | LNSR | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-245196",
+          "accepted_et": "2025-10-21 16:30"
+        },
+        "spec_valid_from": "2025-10-21T00:00:00-04:00",
+        "spec_available_at": "2025-10-21T20:30:26Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-07 2.02,9.01 (batch 2's own LNSR candidate)",
+          "2025-10-21 5.08,8.01",
+          "2025-11-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "2025-10-21's Item 5.08/8.01 predates this event; serves as the identity anchor, not in-window content."
+    },
+    {
+      "event_id": "tecx-step2-2025-11-06",
+      "candidate_id": "0001193125-25-269573",
+      "ticker": "TECX",
+      "company": "Tectonic Therapeutic, Inc.",
+      "cik": "0001681087",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3183059/0/en/tectonic-therapeutic-announces-third-quarter-2025-financial-results-and-recent-business-highlights.html",
+        "displayed_stamp_et": "November 06, 2025 16:01 ET",
+        "minute_encoded_in_spec": "2025-11-06T16:01:00-05:00",
+        "sec_8k_accepted_et": "2025-11-06 17:15",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-11-06",
+      "reaction_session": "2025-11-07",
+      "twentieth_reaction_session": "2025-12-05",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.0001 par value per share | TECX | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-175567",
+          "accepted_et": "2025-08-07 17:08"
+        },
+        "spec_valid_from": "2025-08-07T00:00:00-04:00",
+        "spec_available_at": "2025-08-07T21:08:54Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-08-07 2.02,7.01,9.01 (batch 2's own TECX candidate)",
+          "2025-10-30 8.01,9.01 (accepted 10/29, predates this event)",
+          "2025-11-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 9, https://github.com/Fahad9101/NRE/actions/runs/36553711658). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "2025-10-30's Item 8.01 predates this event, historical context only."
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": [
+      "payo-step2-2025-11-05",
+      "coll-step2-2025-11-06",
+      "aspn-step2-2025-11-06",
+      "achv-step2-2025-11-06",
+      "lnsr-step2-2025-11-06"
+    ],
+    "after_hours": [
+      "nbix-step2-2025-10-28",
+      "hurn-step2-2025-10-28",
+      "jbss-step2-2025-10-29",
+      "alkt-step2-2025-10-30",
+      "parr-step2-2025-11-04",
+      "cxt-step2-2025-11-05",
+      "tecx-step2-2025-11-06"
+    ]
+  },
+  "flagged_not_a_blanket_clean_signoff": {
+    "cxt-step2-2025-11-05": "Real cash dividend (ex-date 2025-11-28, session 16) -- likely suppresses session_20 only, of the 4 real milestones, but needs explicit attestation.",
+    "nbix-step2-2025-10-28": "Item 5.02 at session 19; proposed_label_caveat covers session_20 only (the sole real milestone at or after 19), content not opened.",
+    "jbss-step2-2025-10-29": "Item 5.07 at session 1, but accepted after the regular close -- proposed_label_caveat covers session_2/5/10/20 (day1 excluded), content not opened.",
+    "payo-step2-2025-11-05": "Item 5.02 exactly on session 20 (the last session); proposed_label_caveat on session_20 only, content not opened."
+  },
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all twelve', or a list of tickers/decisions.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that NBIX's, JBSS's, or PAYO's caveated items are or are not disqualifying -- content was not opened beyond what's in chronology_evidence."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36553711658",
+  "workflow_run_number": 9,
+  "commit": "883010b",
+  "trigger": "push (auto-triggered: config/m2-step2-events.json is a watched path)",
+  "result": {
+    "all_ok": true,
+    "batch3_events": 12,
+    "errors": 0
+  },
+  "batch1_2_recheck": "All 23 prior events (batches 1-2) still report labels_match_recorded: true against their pinned labels_sha256.",
+  "every_batch3_event": {
+    "state": "QUARANTINED (all 12)",
+    "reason": "FIRST_PUBLIC_TIME_UNVERIFIED (all 12).",
+    "missing_sessions": "none for any event.",
+    "zero_volume_sessions": "none for any event."
+  },
+  "corporate_actions_found": {
+    "cxt-step2-2025-11-05": [
+      {
+        "ex_date": "2025-11-28",
+        "id": "6910e2b6-091d-4bd6-95d7-2aa0f36e2530",
+        "type": "cash_dividends"
+      }
+    ]
+  },
+  "corporate_actions_clean": [
+    "nbix-step2-2025-10-28",
+    "hurn-step2-2025-10-28",
+    "jbss-step2-2025-10-29",
+    "alkt-step2-2025-10-30",
+    "parr-step2-2025-11-04",
+    "payo-step2-2025-11-05",
+    "coll-step2-2025-11-06",
+    "aspn-step2-2025-11-06",
+    "achv-step2-2025-11-06",
+    "lnsr-step2-2025-11-06",
+    "tecx-step2-2025-11-06"
+  ],
+  "raw_per_event": {
+    "nbix-step2-2025-10-28": {
+      "corporate_actions": []
+    },
+    "hurn-step2-2025-10-28": {
+      "corporate_actions": []
+    },
+    "jbss-step2-2025-10-29": {
+      "corporate_actions": []
+    },
+    "alkt-step2-2025-10-30": {
+      "corporate_actions": []
+    },
+    "parr-step2-2025-11-04": {
+      "corporate_actions": []
+    },
+    "cxt-step2-2025-11-05": {
+      "corporate_actions": [
+        {
+          "ex_date": "2025-11-28",
+          "id": "6910e2b6-091d-4bd6-95d7-2aa0f36e2530",
+          "type": "cash_dividends"
+        }
+      ]
+    },
+    "payo-step2-2025-11-05": {
+      "corporate_actions": []
+    },
+    "coll-step2-2025-11-06": {
+      "corporate_actions": []
+    },
+    "aspn-step2-2025-11-06": {
+      "corporate_actions": []
+    },
+    "achv-step2-2025-11-06": {
+      "corporate_actions": []
+    },
+    "lnsr-step2-2025-11-06": {
+      "corporate_actions": []
+    },
+    "tecx-step2-2025-11-06": {
+      "corporate_actions": []
+    }
+  },
+  "cxt_dividend_note": "This is CXT's OWN, separate later-quarter candidate (not the same dividend as its 2025-08-06 event, which already has its own recorded ex-date 2025-08-29). Ex-date 2025-11-28 falls on session 16 of this event's window (reaction 2025-11-06, 20th session 2025-12-04) -- inside the forward window, so this one likely WILL suppress a forward label the way the first CXT dividend did, unlike JBSS's. Confirmed by attesting and letting the pipeline decide, not asserted here. CXT appears to be a regular quarterly dividend payer -- unsurprising given a real dividend already turned up on its prior-quarter candidate too.",
+  "not_a_claim": [
+    "No label was computed or exposed for any candidate."
+  ]
+}
