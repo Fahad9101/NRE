@@ -103,6 +103,8 @@ def main(argv=None):
     parser.add_argument("--ledger", default=str(ROOT / "reports" / "m1-reviewed-candidate-ledger.json"))
     parser.add_argument("--review", default=str(ROOT / "reports" / "m1-acceptance-review.json"))
     parser.add_argument("--archive-dir", help="directory holding the extracted SEC freeze artifact")
+    parser.add_argument("--calendar", default=None,
+                        help="path to a Calendar spec JSON (e.g. a merged multi-year spec); omit for the default 2026-only calendar")
     parser.add_argument("--strict", action="store_true", help="exit 2 when any gate fails")
     args = parser.parse_args(argv)
     out = {"audit_ran": False}
@@ -112,7 +114,7 @@ def main(argv=None):
         return code
 
     try:
-        calendar = Calendar()
+        calendar = Calendar(spec=json.loads(Path(args.calendar).read_text(encoding="utf-8"))) if args.calendar else Calendar()
         spec = json.loads(Path(args.spec).read_text(encoding="utf-8"))
         ea.validate_spec(spec, calendar)
         protocol, ledger, review = [json.loads(Path(p).read_text(encoding="utf-8"))
@@ -133,7 +135,7 @@ def main(argv=None):
     try:
         archived = archive_sources(args.archive_dir) if args.archive_dir else []
         bundle = assemble(spec, events, fetch, calendar, datetime.now(timezone.utc), archived)
-        result = audit_cohort(bundle, protocol, ledger, review)
+        result = audit_cohort(bundle, protocol, ledger, review, calendar)
     except Exception as exc:
         out["error"] = ea._error_category(exc)
         return finish(2)

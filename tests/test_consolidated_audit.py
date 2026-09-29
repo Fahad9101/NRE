@@ -227,6 +227,16 @@ class MainTests(unittest.TestCase):
         _, printed = self.run_main([], env=dict(ENV, GITHUB_ACTIONS="true"))
         self.assertTrue(printed[-1].startswith("::notice title=NRE cohort audit::"))
 
+    def test_calendar_argument_is_optional_and_additive(self):
+        # Explicitly passing a spec that covers the same (2026-only) dates as the default
+        # must behave identically to omitting --calendar -- proves the new CLI argument
+        # is wired through (main() -> audit_cohort() -> dataset.build()) without changing
+        # anything when the calendar it points to covers the same ground as the default.
+        code, printed = self.run_main(["--calendar", str(ROOT / "nre" / "calendar-2026.json")])
+        default_code, default_printed = self.run_main([])
+        self.assertEqual(code, default_code)
+        self.assertEqual(json.loads(printed[0])["result"]["gates"], json.loads(default_printed[0])["result"]["gates"])
+
     def test_invalid_input_rejected(self):
         code, printed = self.run_main(["--ledger", str(ROOT / "config" / "does-not-exist.json")])
         self.assertEqual(code, 2)

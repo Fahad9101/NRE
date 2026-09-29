@@ -4,7 +4,8 @@ import json
 import unittest
 from pathlib import Path
 from nre.acceptance import audit_cohort
-from nre.core import canonical, digest
+from nre.calendar import Calendar
+from nre.core import DataError, canonical, digest
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -130,6 +131,26 @@ class AcceptanceTests(unittest.TestCase):
     def test_source_not_in_archive(self):
         self.ledger['candidates'][0]['source_sha256'] = 'missing'
         self.assertIn('candidate_source_hashes',self.run_audit()['failed_gates'])
+
+    def test_default_calendar_is_2026_only_but_a_spec_can_extend_it(self):
+        # A 2025-dated bundle: audit_cohort(...) (no calendar arg) must fail exactly as it
+        # always has (2026-only default, via dataset.build()), and passing a merged calendar
+        # must get past that same error. Mirrors test_pipeline.py's build() calendar test.
+        from nre.depth_cohort import merged_calendar_spec
+        for event in self.bundle['events']:
+            event.update(published_at='2025-06-12T12:00:00Z', cutoff='2025-06-12T12:01:00Z',
+                         timestamp_evidence='2025-06-12T12:00:00Z')
+        self.bundle['sources'][1]['text'] = 'SYNTHETIC earnings release. Published 2025-06-12T12:00:00Z. Not a real company.'
+        self.bundle['sources'][1]['first_seen_at'] = '2025-06-12T12:00:05Z'
+        self.bundle['prices'] = [self.bundle['prices'][0], self.bundle['prices'][1]]
+        self.bundle['prices'][0]['session'], self.bundle['prices'][1]['session'] = '2025-06-11', '2025-06-12'
+        with self.assertRaises(DataError) as caught:
+            self.run_audit()
+        self.assertIn('not a supported session', str(caught.exception))
+        spec_2025 = json.loads((ROOT / 'nre/calendar-2025.json').read_text(encoding='utf-8'))
+        spec_2026 = json.loads((ROOT / 'nre/calendar-2026.json').read_text(encoding='utf-8'))
+        merged = Calendar(spec=merged_calendar_spec(spec_2025, spec_2026))
+        audit_cohort(self.bundle, self.protocol, self.ledger, self.review, merged)  # no DataError
 
     def test_window_checked_in_exchange_timezone(self):
         # Midnight UTC Jan 5 is still Jan 4 in New York, outside the frozen window.

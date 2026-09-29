@@ -6,13 +6,13 @@ from .core import DataError, canonical, digest, timestamp, unique
 from .dataset import build
 
 
-def audit_cohort(bundle, protocol, ledger, review):
+def audit_cohort(bundle, protocol, ledger, review, calendar=None):
     """Recompute labels and reconcile all candidates to the frozen cohort.
 
     Counts are derived from data, never accepted from a submitted report.
     A clean result still requires independent source/timestamp review.
     """
-    rows, _ = build(bundle)
+    rows, _ = build(bundle, calendar)
     start = date.fromisoformat(protocol["event_window_start"])
     end = date.fromisoformat(protocol["event_window_end"])
     price_end = date.fromisoformat(protocol["price_window_end"])
