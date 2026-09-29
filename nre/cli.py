@@ -52,7 +52,7 @@ def parser():
     an.add_argument("--all-targets", action="store_true")
     for step in (fg, an):
         step.add_argument("--output", required=True)
-        for option in ("--spec", "--sector-map", "--policy", "--root"):
+        for option in ("--spec", "--sector-map", "--policy", "--root", "--calendar"):
             step.add_argument(option)
     return p
 

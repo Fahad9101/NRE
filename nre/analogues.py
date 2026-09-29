@@ -146,7 +146,7 @@ def pool_report(inputs):
 
 
 def analogues_command(args):
-    inputs = fp.load_inputs(args.spec, args.sector_map, args.policy, args.root)
+    inputs = fp.load_inputs(args.spec, args.sector_map, args.policy, args.root, args.calendar)
     if args.all_targets:
         if args.event or args.descriptor or args.label:
             raise DataError("--all-targets cannot be combined with --event, --descriptor or --label")

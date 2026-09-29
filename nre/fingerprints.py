@@ -194,17 +194,28 @@ def event_from_record(entry, record, sector, calendar):
     name = entry["event_id"]
     pin = entry["recorded_result"]
     security = entry["security"]
-    if (record.get("event_id"), record.get("ticker"), record.get("cik")) != (name, security["ticker"], security["cik"]):
-        raise DataError(name + ": record identity differs from the spec")
     window = ea.event_window(entry, calendar)
-    context = record.get("event_context", {})
-    if any(context.get(key) != window[key] for key in ("release_timing", "reaction_session", "anchor_session")):
-        raise DataError(name + ": record timing differs from the timing derived from the spec")
-    values = record.get("computed_labels")
+    if "computed_events" in record:
+        # A batch record (several events' results in one file -- Milestone 2 step 2's per-batch
+        # reports, unlike Milestone 1's one-file-per-event convention) carries no redundant
+        # identity/timing block to cross-check; entry/window from the spec are already this
+        # function's authoritative source for those fields on the per-event-file path too.
+        sub = record["computed_events"].get(name)
+        if not isinstance(sub, dict):
+            raise DataError(name + ": no computed_events entry for this event_id")
+        values, reasons = sub.get("labels"), sub.get("label_reasons") or {}
+    else:
+        if (record.get("event_id"), record.get("ticker"), record.get("cik")) != (name, security["ticker"], security["cik"]):
+            raise DataError(name + ": record identity differs from the spec")
+        context = record.get("event_context", {})
+        if any(context.get(key) != window[key] for key in ("release_timing", "reaction_session", "anchor_session")):
+            raise DataError(name + ": record timing differs from the timing derived from the spec")
+        values = record.get("computed_labels")
+        reasons = record["label_reasons"] if "label_reasons" in record else {n: INFERRED_REASONS[n] for n in LABELS
+                                                                              if isinstance(values, dict) and values.get(n) is None
+                                                                              and n in INFERRED_REASONS}
     if not isinstance(values, dict) or set(values) != set(LABELS):
         raise DataError(name + ": record must hold exactly the sixteen labels")
-    reasons = record["label_reasons"] if "label_reasons" in record else {n: INFERRED_REASONS[n] for n in LABELS
-                                                                          if values[n] is None and n in INFERRED_REASONS}
     labels = {n: {"value": values[n], "reason": reasons.get(n)} for n in LABELS}
     if ea.labels_digest({"labels": labels}) != pin["labels_sha256"]:
         raise DataError(name + ": committed label values do not reproduce the pinned digest")
@@ -233,9 +244,9 @@ def load_events(spec, sectors, calendar, root=ROOT):
     return sorted(events, key=event_order)
 
 
-def load_inputs(spec_path=None, sector_map_path=None, policy_path=None, root=None):
+def load_inputs(spec_path=None, sector_map_path=None, policy_path=None, root=None, calendar_path=None):
     """Everything step 1 reads, validated and hashed. Nothing here touches the network."""
-    calendar = Calendar()
+    calendar = Calendar(spec=json.loads(Path(calendar_path).read_text(encoding="utf-8"))) if calendar_path else Calendar()
     spec = json.loads(Path(spec_path or ea.DEFAULT_SPEC).read_text(encoding="utf-8"))
     sectors, sector_sha, sector_read_on = load_sector_map(sector_map_path or DEFAULT_SECTOR_MAP)
     policy, policy_sha = load_policy(policy_path or DEFAULT_POLICY)
@@ -531,7 +542,7 @@ def write_report(path, report):
 
 
 def fingerprints_command(args):
-    inputs = load_inputs(args.spec, args.sector_map, args.policy, args.root)
+    inputs = load_inputs(args.spec, args.sector_map, args.policy, args.root, args.calendar)
     if args.event or args.descriptor:
         report = target_fingerprint(inputs, resolve_target(inputs, args.event, args.descriptor))
     else:

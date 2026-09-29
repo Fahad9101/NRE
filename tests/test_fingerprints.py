@@ -356,6 +356,17 @@ class RealDataTests(unittest.TestCase):
         self.assertEqual(len(pins), 23)
         self.assertEqual({e["event_id"]: e["labels_sha256"] for e in REAL["events"]}, pins)
 
+    def test_default_calendar_is_2026_only_but_a_spec_can_extend_it(self):
+        # config/m2-step2-events.json is real, already on disk, and 2025-dated throughout: load_inputs()
+        # with no --calendar must fail exactly as it always has (2026-only default, via
+        # nre.event_acquire.validate_spec's own calendar.classify() call chain), and passing the
+        # real merged 2025+2026 calendar must load all 45 of its accepted events.
+        m2_step2 = ROOT / "config" / "m2-step2-events.json"
+        with self.assertRaises(DataError):
+            fp.load_inputs(m2_step2, calendar_path=None)
+        inputs = fp.load_inputs(m2_step2, calendar_path=ROOT / "config" / "m2-step2-merged-calendar.json")
+        self.assertEqual(len(inputs["events"]), 45)
+
     def test_a_changed_label_value_fails_the_digest_check(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = copy_inputs(tmp)
