@@ -21,11 +21,11 @@
       "evidence": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json; reports/m2-step2-batch4-complete-events-2026-09-29.json"
     },
     {
-      "event_id": "cxt-step2-2025-08-06",
+      "event_id": "ttwo-step2-2025-11-06",
       "reviewers": [
         "Fahad9101"
       ],
-      "evidence": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json; reports/m2-step2-batch1-complete-events-2026-09-29.json"
+      "evidence": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json; reports/m2-step2-batch4-complete-events-2026-09-29.json"
     },
     {
       "event_id": "okta-step2-2025-12-02",
