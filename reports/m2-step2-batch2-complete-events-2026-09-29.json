@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36553042991",
+  "workflow_run_number": 8,
+  "commit": "45928bb",
+  "trigger": "push (auto-triggered: config/m2-step2-events.json is a watched path)",
+  "context": "Second real, attested result for Milestone 2 step 2: all 11 batch-2 candidates now carry attestations (reports/m2-step2-batch2-signoff-2026-09-29.json, owner reply \"yes go ahead\"). No raw OHLCV was ever committed, only the derived returns/booleans the pipeline computed. All 12 batch-1 events re-confirmed labels_match_recorded: true.",
+  "result": {
+    "all_ok": true,
+    "total_events": 11,
+    "errors": 0,
+    "all_mapped": true
+  },
+  "computed_events": {
+    "caci-step2-2025-10-22": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.12382728391264242,
+        "day1_high_return": 0.14762765302983705,
+        "day1_low_return": 0.04236677176253467,
+        "day1_open_return": 0.045851276530298524,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.13151722546908662,
+        "session_20_close_return": 0.15897031682559226,
+        "session_2_close_return": 0.12571131959397097,
+        "session_5_close_return": 0.0807828360504459
+      },
+      "labels_sha256": "2041aa5ff1e3cc98bd5f030d4de4c2436a0cba572c220d17d4b039642a57b3e5"
+    },
+    "love-step2-2025-09-11": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.14843373493975898,
+        "day1_high_return": -0.11518072289156633,
+        "day1_low_return": -0.19807228915662645,
+        "day1_open_return": -0.1469879518072289,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.14409638554216864,
+        "session_20_close_return": -0.2612048192771085,
+        "session_2_close_return": -0.1489156626506024,
+        "session_5_close_return": -0.1286746987951808
+      },
+      "labels_sha256": "5b1bd0e36e77466dcc473d2f727f45c8760cab990474ffabceae0c5dfb1af287"
+    },
+    "okta-step2-2025-08-26": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.016055045871559592,
+        "day1_high_return": 0.07983726518130196,
+        "day1_low_return": 0.006662297946701701,
+        "day1_open_return": 0.06411096548711237,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": -0.014744429882044607,
+        "session_20_close_return": -0.01845784185233723,
+        "session_2_close_return": 0.011249453910004314,
+        "session_5_close_return": -0.01900393184796867
+      },
+      "labels_sha256": "61534ec1e52d7c1069f3ef9b75797156141c27fcc9198c229ddb773ba1d75804"
+    },
+    "jbss-step2-2025-08-20": {
+      "corporate_actions": [
+        {
+          "ex_date": "2025-08-19",
+          "id": "d0e32304-0dbf-43ea-81ca-724e3bc59e04",
+          "type": "cash_dividends"
+        }
+      ],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": 0.01913265306122458,
+        "day1_high_return": 0.02734375,
+        "day1_low_return": -0.03125,
+        "day1_open_return": -0.03125,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.014349489795918435,
+        "session_20_close_return": 0.029655612244897878,
+        "session_2_close_return": 0.07047193877551017,
+        "session_5_close_return": 0.046556122448979664
+      },
+      "labels_sha256": "038d38b47548ec3ad1a38139363c88a5dbe1f2c603ece566b2b482bba829d467"
+    },
+    "klc-step2-2025-08-12": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.2232415902140673,
+        "day1_high_return": -0.15698267074413874,
+        "day1_low_return": -0.3119266055045872,
+        "day1_open_return": -0.2854230377166157,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.25891946992864434,
+        "session_20_close_return": -0.2691131498470949,
+        "session_2_close_return": -0.2466870540265036,
+        "session_5_close_return": -0.2691131498470949
+      },
+      "labels_sha256": "d42b986bafc90f9de2f463a218974f83b8f88b27c8656ff8ad5c83d86888800f"
+    },
+    "rekr-step2-2025-08-12": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.04504504504504481,
+        "day1_high_return": 0.09009009009009006,
+        "day1_low_return": 0.009009009009008917,
+        "day1_open_return": 0.018018018018017834,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.06306306306306286,
+        "session_20_close_return": 0.0,
+        "session_2_close_return": 0.0,
+        "session_5_close_return": -0.05405405405405406
+      },
+      "labels_sha256": "7a709468192c8603190745a83df97eda85657ffdfba63a5e90413575406a2279"
+    },
+    "coll-step2-2025-08-07": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.10722689075630254,
+        "day1_high_return": 0.12504201680672256,
+        "day1_low_return": 0.055462184873949605,
+        "day1_open_return": 0.05815126050420161,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.2897478991596638,
+        "session_20_close_return": 0.31865546218487384,
+        "session_2_close_return": 0.1741176470588235,
+        "session_5_close_return": 0.2726050420168067
+      },
+      "labels_sha256": "8167bbfbd40ee11597a316b8a0cdffa4ad2d7c81e375db5de21e7769a6420669"
+    },
+    "real-step2-2025-08-07": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.16152450090744108,
+        "day1_high_return": 0.33756805807622503,
+        "day1_low_return": 0.147005444646098,
+        "day1_open_return": 0.2794918330308531,
+        "gap_ge_10pct": true,
+        "gap_ge_15pct": true,
+        "gap_ge_20pct": true,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.38294010889292207,
+        "session_20_close_return": 0.5735027223230491,
+        "session_2_close_return": 0.19056261343012704,
+        "session_5_close_return": 0.4283121597096189
+      },
+      "labels_sha256": "f83f8a22acf7e1142c1d00cbab81bcf16802b6f5b34087d5fee66897a33ddecf"
+    },
+    "ttwo-step2-2025-08-07": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.04026667844054932,
+        "day1_high_return": 0.055830279482537826,
+        "day1_low_return": -0.04481434058898848,
+        "day1_open_return": 0.04869972184202398,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": 0.006092984237714649,
+        "session_20_close_return": 0.05823656673583821,
+        "session_2_close_return": -0.01686608680294943,
+        "session_5_close_return": 0.02944942381562088
+      },
+      "labels_sha256": "2c3b112f4e654a18aeedbb374b2f8ca7ccc94b060c19f91a42614a226611cd70"
+    },
+    "aspn-step2-2025-08-07": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.0813106796116505,
+        "day1_high_return": 0.18689320388349495,
+        "day1_low_return": -0.08919902912621358,
+        "day1_open_return": 0.08373786407766981,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": -0.1893203883495146,
+        "session_20_close_return": -0.22936893203883502,
+        "session_2_close_return": -0.08373786407766992,
+        "session_5_close_return": -0.09344660194174759
+      },
+      "labels_sha256": "753c00679509a73605820732f28663ba81bf9545b228cfb7380d8aa9c9cb655a"
+    },
+    "tecx-step2-2025-08-07": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": 0.0177919708029195,
+        "day1_high_return": 0.021897810218977964,
+        "day1_low_return": -0.08759124087591252,
+        "day1_open_return": -0.04197080291970812,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.1585310218978102,
+        "session_20_close_return": -0.2339324817518248,
+        "session_2_close_return": 0.008667883211678662,
+        "session_5_close_return": 0.11633211678832112
+      },
+      "labels_sha256": "28f1e93726c0989578312672618a537d93224259773417b0fc8f7267694e4737"
+    }
+  },
+  "jbss_dividend_confirmed": "Confirmed exactly as predicted in reports/m2-step2-batch2-signoff-packet-2026-09-29.json: the dividend (ex-date 2025-08-19, before the anchor session 2025-08-20) crossed NO forward session label. session_20_close_return computed a real value (0.0297), not suppressed -- unlike CXT's, where the same mechanism did suppress session_20 for a dividend that fell inside the forward window.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge -- 23 events total (batch 1 + batch 2) is still far below any defensible sample size for any fingerprints/analogues cell.",
+    "REAL's and TTWO's proposed_label_caveat (reports/m2-step2-batch2-signoff-packet-2026-09-29.json) still applies to their forward session labels -- the caveat travels with these results.",
+    "These 11 events are not yet in any dataset the fingerprints/analogues machinery reads from."
+  ]
+}
