@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "context": "Reply to: \"Want me to go ahead on that basis?\", itself a recommendation to sign off on all 12 batch-1 candidates -- attest CXT (trusting nre/dataset.py's own tested CORPORATE_ACTION_IN_WINDOW label-suppression logic rather than withholding attestation over a routine, well-typed dividend), and accept LOVE/VSAT/HURN's proposed_label_caveat as informational rather than blocking, matching how Milestone 1's own batch signed off on ACHV/COLL/TECX/ASMB despite their own \"content not opened\" caveats.",
+  "owner_reply": "yes go ahead",
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 12 candidates in reports/m2-step2-batch1-signoff-packet-2026-09-29.json: love-step2-2025-06-12, nbix-step2-2025-07-30, alkt-step2-2025-07-30, slsn-step2-2025-07-31, hurn-step2-2025-07-31, vsat-step2-2025-08-05, cxt-step2-2025-08-06, parr-step2-2025-08-05, payo-step2-2025-08-06, caci-step2-2025-08-06, lnsr-step2-2025-08-07, achv-step2-2025-08-07.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not a claim that LOVE's 2025-06-13 Item 8.01 or VSAT's 2025-08-21 Item 5.02 are immaterial -- their content was not opened; the caveat travels with the computed labels rather than being resolved here.",
+    "CXT's session labels crossing its 2025-08-29 dividend will be suppressed with a computed reason by the pipeline itself, not asserted here."
+  ]
+}
