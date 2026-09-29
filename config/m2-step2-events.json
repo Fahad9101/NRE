@@ -1214,6 +1214,330 @@
         "labels_sha256": "2041aa5ff1e3cc98bd5f030d4de4c2436a0cba572c220d17d4b039642a57b3e5",
         "recorded_in": "reports/m2-step2-batch2-complete-events-2026-09-29.json"
       }
+    },
+    {
+      "event_id": "nbix-step2-2025-10-28",
+      "cluster_id": "nbix-step2-2025-10-28",
+      "candidate_id": "0000914475-25-000180",
+      "security": {
+        "security_id": "NBIX-914475",
+        "company_id": "0000914475",
+        "cik": "0000914475",
+        "ticker": "NBIX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-30T00:00:00-04:00",
+        "available_at": "2025-07-30T20:02:54Z"
+      },
+      "source": {
+        "source_id": "nbix-wire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-third-quarter-2025-financial-results-302597268.html",
+        "text": "Wire release, displayed dateline Oct 28, 2025, 16:01 ET (16:01 ET). https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-third-quarter-2025-financial-results-302597268.html",
+        "first_seen_at": "2025-10-28T16:02:00-04:00"
+      },
+      "published_at": "2025-10-28T16:01:00-04:00",
+      "cutoff": "2025-10-28T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-10-29"
+    },
+    {
+      "event_id": "hurn-step2-2025-10-28",
+      "cluster_id": "hurn-step2-2025-10-28",
+      "candidate_id": "0001628280-25-046762",
+      "security": {
+        "security_id": "HURN-1289848",
+        "company_id": "0001289848",
+        "cik": "0001289848",
+        "ticker": "HURN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-31T00:00:00-04:00",
+        "available_at": "2025-07-31T20:42:50Z"
+      },
+      "source": {
+        "source_id": "hurn-wire",
+        "url": "https://www.businesswire.com/news/home/20251028802664/en/Huron-Announces-Record-Third-Quarter-2025-Financial-Results-and-Raises-2025-Adjusted-Diluted-EPS-Guidance",
+        "text": "Wire release, displayed dateline Oct 28, 2025 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20251028802664/en/Huron-Announces-Record-Third-Quarter-2025-Financial-Results-and-Raises-2025-Adjusted-Diluted-EPS-Guidance",
+        "first_seen_at": "2025-10-28T16:06:00-04:00"
+      },
+      "published_at": "2025-10-28T16:05:00-04:00",
+      "cutoff": "2025-10-28T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-10-29"
+    },
+    {
+      "event_id": "jbss-step2-2025-10-29",
+      "cluster_id": "jbss-step2-2025-10-29",
+      "candidate_id": "0001193125-25-256336",
+      "security": {
+        "security_id": "JBSS-880117",
+        "company_id": "0000880117",
+        "cik": "0000880117",
+        "ticker": "JBSS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-26T00:00:00-04:00",
+        "available_at": "2025-08-26T20:30:53Z"
+      },
+      "source": {
+        "source_id": "jbss-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/10/29/3176875/0/en/John-B-Sanfilippo-Son-Inc-Reports-Fiscal-2026-First-Quarter-Results.html",
+        "text": "Wire release, displayed dateline October 29, 2025 16:10 ET (16:10 ET). https://www.globenewswire.com/news-release/2025/10/29/3176875/0/en/John-B-Sanfilippo-Son-Inc-Reports-Fiscal-2026-First-Quarter-Results.html",
+        "first_seen_at": "2025-10-29T16:11:00-04:00"
+      },
+      "published_at": "2025-10-29T16:10:00-04:00",
+      "cutoff": "2025-10-29T16:13:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-10-30"
+    },
+    {
+      "event_id": "alkt-step2-2025-10-30",
+      "cluster_id": "alkt-step2-2025-10-30",
+      "candidate_id": "0001529274-25-000159",
+      "security": {
+        "security_id": "ALKT-1529274",
+        "company_id": "0001529274",
+        "cik": "0001529274",
+        "ticker": "ALKT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-30T00:00:00-04:00",
+        "available_at": "2025-07-30T20:11:50Z"
+      },
+      "source": {
+        "source_id": "alkt-wire",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-third-quarter-2025-financial-results-302600234.html",
+        "text": "Wire release, displayed dateline Oct 30, 2025, 16:05 ET (16:05 ET). https://www.prnewswire.com/news-releases/alkami-announces-third-quarter-2025-financial-results-302600234.html",
+        "first_seen_at": "2025-10-30T16:06:00-04:00"
+      },
+      "published_at": "2025-10-30T16:05:00-04:00",
+      "cutoff": "2025-10-30T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-10-31"
+    },
+    {
+      "event_id": "parr-step2-2025-11-04",
+      "cluster_id": "parr-step2-2025-11-04",
+      "candidate_id": "0001628280-25-048903",
+      "security": {
+        "security_id": "PARR-821483",
+        "company_id": "0000821483",
+        "cik": "0000821483",
+        "ticker": "PARR",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-10-21T00:00:00-04:00",
+        "available_at": "2025-10-21T22:31:24Z"
+      },
+      "source": {
+        "source_id": "parr-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/04/3180903/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline November 04, 2025 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2025/11/04/3180903/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2025-Results.html",
+        "first_seen_at": "2025-11-04T16:16:00-05:00"
+      },
+      "published_at": "2025-11-04T16:15:00-05:00",
+      "cutoff": "2025-11-04T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-05"
+    },
+    {
+      "event_id": "cxt-step2-2025-11-05",
+      "cluster_id": "cxt-step2-2025-11-05",
+      "candidate_id": "0000025445-25-000093",
+      "security": {
+        "security_id": "CXT-25445",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-09-17T00:00:00-04:00",
+        "available_at": "2025-09-18T01:42:40Z"
+      },
+      "source": {
+        "source_id": "cxt-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/05/3181965/0/en/crane-nxt-reports-third-quarter-2025-results.html",
+        "text": "Wire release, displayed dateline November 05, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/11/05/3181965/0/en/crane-nxt-reports-third-quarter-2025-results.html",
+        "first_seen_at": "2025-11-05T16:06:00-05:00"
+      },
+      "published_at": "2025-11-05T16:05:00-05:00",
+      "cutoff": "2025-11-05T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-06"
+    },
+    {
+      "event_id": "payo-step2-2025-11-05",
+      "cluster_id": "payo-step2-2025-11-05",
+      "candidate_id": "0001104659-25-106667",
+      "security": {
+        "security_id": "PAYO-1845815",
+        "company_id": "0001845815",
+        "cik": "0001845815",
+        "ticker": "PAYO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-06T00:00:00-04:00",
+        "available_at": "2025-08-06T11:35:34Z"
+      },
+      "source": {
+        "source_id": "payo-wire",
+        "url": "https://www.prnewswire.com/news-releases/payoneer-reports-third-quarter-2025-financial-results-302604833.html",
+        "text": "Wire release, displayed dateline Nov 05, 2025, 07:30 ET (07:30 ET). https://www.prnewswire.com/news-releases/payoneer-reports-third-quarter-2025-financial-results-302604833.html",
+        "first_seen_at": "2025-11-05T07:31:00-05:00"
+      },
+      "published_at": "2025-11-05T07:30:00-05:00",
+      "cutoff": "2025-11-05T07:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-11-05"
+    },
+    {
+      "event_id": "coll-step2-2025-11-06",
+      "cluster_id": "coll-step2-2025-11-06",
+      "candidate_id": "0001104659-25-107389",
+      "security": {
+        "security_id": "COLL-1267565",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-07T00:00:00-04:00",
+        "available_at": "2025-08-07T11:32:22Z"
+      },
+      "source": {
+        "source_id": "coll-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182446/34897/en/Collegium-Reports-Third-Quarter-2025-Financial-Results-Raises-2025-Guidance.html",
+        "text": "Wire release, displayed dateline November 06, 2025 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2025/11/06/3182446/34897/en/Collegium-Reports-Third-Quarter-2025-Financial-Results-Raises-2025-Guidance.html",
+        "first_seen_at": "2025-11-06T07:31:00-05:00"
+      },
+      "published_at": "2025-11-06T07:30:00-05:00",
+      "cutoff": "2025-11-06T07:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-11-06"
+    },
+    {
+      "event_id": "aspn-step2-2025-11-06",
+      "cluster_id": "aspn-step2-2025-11-06",
+      "candidate_id": "0001171843-25-007067",
+      "security": {
+        "security_id": "ASPN-1145986",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-07T00:00:00-04:00",
+        "available_at": "2025-08-07T10:30:30Z"
+      },
+      "source": {
+        "source_id": "aspn-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182330/0/en/Aspen-Aerogels-Inc-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "Wire release, displayed dateline November 06, 2025 06:30 ET (06:30 ET). https://www.globenewswire.com/news-release/2025/11/06/3182330/0/en/Aspen-Aerogels-Inc-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2025-11-06T06:31:00-05:00"
+      },
+      "published_at": "2025-11-06T06:30:00-05:00",
+      "cutoff": "2025-11-06T06:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-11-06"
+    },
+    {
+      "event_id": "achv-step2-2025-11-06",
+      "cluster_id": "achv-step2-2025-11-06",
+      "candidate_id": "0001193125-25-268056",
+      "security": {
+        "security_id": "ACHV-949858",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-10-07T00:00:00-04:00",
+        "available_at": "2025-10-07T20:51:49Z"
+      },
+      "source": {
+        "source_id": "achv-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182358/0/en/Achieve-Life-Sciences-Reports-Third-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html",
+        "text": "Wire release, displayed dateline November 06, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/11/06/3182358/0/en/Achieve-Life-Sciences-Reports-Third-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html",
+        "first_seen_at": "2025-11-06T07:01:00-05:00"
+      },
+      "published_at": "2025-11-06T07:00:00-05:00",
+      "cutoff": "2025-11-06T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-11-06"
+    },
+    {
+      "event_id": "lnsr-step2-2025-11-06",
+      "cluster_id": "lnsr-step2-2025-11-06",
+      "candidate_id": "0001193125-25-268073",
+      "security": {
+        "security_id": "LNSR-1320350",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-10-21T00:00:00-04:00",
+        "available_at": "2025-10-21T20:30:26Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3182416/0/en/LENSAR-Reports-Third-Quarter-2025-Results-and-Provides-Business-Update.html",
+        "text": "Wire release, displayed dateline November 06, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/11/06/3182416/0/en/LENSAR-Reports-Third-Quarter-2025-Results-and-Provides-Business-Update.html",
+        "first_seen_at": "2025-11-06T07:01:00-05:00"
+      },
+      "published_at": "2025-11-06T07:00:00-05:00",
+      "cutoff": "2025-11-06T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-11-06"
+    },
+    {
+      "event_id": "tecx-step2-2025-11-06",
+      "cluster_id": "tecx-step2-2025-11-06",
+      "candidate_id": "0001193125-25-269573",
+      "security": {
+        "security_id": "TECX-1681087",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-07T00:00:00-04:00",
+        "available_at": "2025-08-07T21:08:54Z"
+      },
+      "source": {
+        "source_id": "tecx-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3183059/0/en/tectonic-therapeutic-announces-third-quarter-2025-financial-results-and-recent-business-highlights.html",
+        "text": "Wire release, displayed dateline November 06, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/11/06/3183059/0/en/tectonic-therapeutic-announces-third-quarter-2025-financial-results-and-recent-business-highlights.html",
+        "first_seen_at": "2025-11-06T16:02:00-05:00"
+      },
+      "published_at": "2025-11-06T16:01:00-05:00",
+      "cutoff": "2025-11-06T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-07"
     }
   ]
 }
