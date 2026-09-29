@@ -1,0 +1,670 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-29",
+  "purpose": "Evidence for the project owner to sign off, or not, on twelve candidate events for Milestone 2 step 2 (batch 1 of ~4). Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "Batch 1 is the first 12 of the 46 surviving step-2 candidates by filing date (LOVE 2025-06-12 through ACHV 2025-08-07), per the ~4-batches-of-~11-12 pacing the owner confirmed in reports/m2-step2-corporate-action-scope-authorization-2026-09-28.json. All 46 had already passed chronology review, the same-day-competing-catalyst policy, identity/exchange re-verification, and a same-day-8-K sweep before any of these 12 were selected for this check.",
+  "dry_run": {
+    "workflow": "depth-event-acquire.yml",
+    "run_id": 36535838176,
+    "commit": "8f23907",
+    "result": "All 12 pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels. All 12 showed all 21 sessions present and no zero-volume days. One (CXT) showed a real cash dividend (ex-date 2025-08-29) in its corporate-actions response -- see CXT's entry below."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below, including the residual gap that open-web search cannot close (a live or unrecorded earlier disclosure).",
+    "corporate_actions": "For 11 of 12 candidates: accept two independent clean signals -- no Item 3.03/5.03 8-K in the shown history, and Alpaca's real, fully paginated corporate-actions response empty for the window. CXT is the exception -- its Alpaca response is NOT empty (a real cash dividend, ex-date 2025-08-29); this candidate needs its own explicit decision, not a blanket sign-off."
+  },
+  "candidates": [
+    {
+      "event_id": "love-step2-2025-06-12",
+      "candidate_id": "0001628280-25-030859",
+      "ticker": "LOVE",
+      "company": "The Lovesac Company",
+      "cik": "0001701758",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/06/12/3098177/0/en/The-Lovesac-Company-Reports-First-Quarter-Fiscal-2026-Financial-Results.html",
+        "displayed_stamp_et": "June 12, 2025 07:00 ET",
+        "minute_encoded_in_spec": "2025-06-12T07:00:00-04:00",
+        "sec_8k_accepted_et": "2025-06-12 07:00",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-06-11",
+      "reaction_session": "2025-06-12",
+      "twentieth_reaction_session": "2025-07-11",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.00001 per share | LOVE | The NASDAQ Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001628280-25-030758",
+          "accepted_et": "2025-06-11 16:26"
+        },
+        "spec_valid_from": "2025-06-11T00:00:00-04:00",
+        "spec_available_at": "2025-06-11T20:26:09Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-22 5.02",
+          "2025-06-11 5.07,9.01",
+          "2025-06-12 2.02,9.01 <EVENT>",
+          "2025-06-13 8.01,9.01",
+          "2025-08-27 5.02,7.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-06-13 8-K Item 8.01,9.01 (content not opened)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_2_close_return",
+          "session_3_close_return",
+          "session_4_close_return",
+          "session_5_close_return",
+          "session_6_close_return",
+          "session_7_close_return",
+          "session_8_close_return",
+          "session_9_close_return",
+          "session_10_close_return",
+          "session_11_close_return",
+          "session_12_close_return",
+          "session_13_close_return",
+          "session_14_close_return",
+          "session_15_close_return",
+          "session_16_close_return",
+          "session_17_close_return",
+          "session_18_close_return",
+          "session_19_close_return",
+          "session_20_close_return"
+        ],
+        "note": "An Item 8.01 8-K was filed 2025-06-13 (session 2), inside the window before session 20; content not opened."
+      },
+      "additional_note": "Same release also announces a new $40 million share repurchase authorization (recorded from the wire text; not independently re-verified here)."
+    },
+    {
+      "event_id": "nbix-step2-2025-07-30",
+      "candidate_id": "0000914475-25-000157",
+      "ticker": "NBIX",
+      "company": "Neurocrine Biosciences, Inc.",
+      "cik": "0000914475",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2025-financial-results-302517700.html",
+        "displayed_stamp_et": "Jul 30, 2025, 16:01 ET",
+        "minute_encoded_in_spec": "2025-07-30T16:01:00-04:00",
+        "sec_8k_accepted_et": "2025-07-30 16:02",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-07-30",
+      "reaction_session": "2025-07-31",
+      "twentieth_reaction_session": "2025-08-27",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value | NBIX | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000914475-25-000139",
+          "accepted_et": "2025-05-30 16:05"
+        },
+        "spec_valid_from": "2025-05-30T00:00:00-04:00",
+        "spec_available_at": "2025-05-30T20:05:10Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-05 2.02,9.01",
+          "2025-05-22 5.02,5.07",
+          "2025-05-30 5.02,9.01",
+          "2025-07-30 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    },
+    {
+      "event_id": "alkt-step2-2025-07-30",
+      "candidate_id": "0001529274-25-000147",
+      "ticker": "ALKT",
+      "company": "Alkami Technology, Inc.",
+      "cik": "0001529274",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2025-financial-results-302517660.html",
+        "displayed_stamp_et": "Jul 30, 2025, 16:05 ET",
+        "minute_encoded_in_spec": "2025-07-30T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-07-30 16:11",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-07-30",
+      "reaction_session": "2025-07-31",
+      "twentieth_reaction_session": "2025-08-27",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value per share | ALKT | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001529274-25-000130",
+          "accepted_et": "2025-06-30 16:20"
+        },
+        "spec_valid_from": "2025-06-30T00:00:00-04:00",
+        "spec_available_at": "2025-06-30T20:20:07Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-15 5.07",
+          "2025-06-30 5.02",
+          "2025-07-30 2.02,7.01,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's OTHER step-2 candidate (2025-10-30, not in this batch) has a same-day CFO-succession press release, already assessed under docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded."
+    },
+    {
+      "event_id": "slsn-step2-2025-07-31",
+      "candidate_id": "0001171843-25-004923",
+      "ticker": "SLSN",
+      "company": "Solésence, Inc.",
+      "cik": "0000883107",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/07/31/3125368/0/en/Sol%C3%A9sence-Reports-Second-Quarter-2025-Financial-Results.html",
+        "displayed_stamp_et": "July 31, 2025 16:01 ET",
+        "minute_encoded_in_spec": "2025-07-31T16:01:00-04:00",
+        "sec_8k_accepted_et": "2025-07-31 16:32",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-07-31",
+      "reaction_session": "2025-08-01",
+      "twentieth_reaction_session": "2025-08-28",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.01 par value per share | SLSN | The NASDAQ Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001999371-25-007401",
+          "accepted_et": "2025-06-06 17:44"
+        },
+        "spec_valid_from": "2025-06-06T00:00:00-04:00",
+        "spec_available_at": "2025-06-06T21:44:07Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-07 2.02,9.01",
+          "2025-06-02 1.01,7.01,9.01",
+          "2025-06-09 5.03,9.01",
+          "2025-07-31 2.02,9.01 <EVENT>",
+          "2025-08-29 5.07",
+          "2025-09-04 1.01,5.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "One Item 5.03 8-K in the identity-anchor history (2025-06-09, accepted 2025-06-06): a certificate-of-correction to the March 2025 Nanophase→Solésence rename amendment, read in full -- not a stock split, reclassification, or rights change. No other Item 3.03/5.03 8-K anywhere in the shown history.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer changed its name from Nanophase Technologies Corporation to Solésence, Inc. (certificate filed 2025-03-10) and its SEC file number changed from a 12(g) format (000-22333) to a 12(b) exchange-listed format (001-42589) between its 2025-03-26 and 2025-05-07 filings -- i.e. this issuer was newly uplisted to Nasdaq in that window. The identity anchor used here (2025-06-06) is safely after that uplisting, confirmed by reading the 2025-06-09 filing's own cover page directly."
+    },
+    {
+      "event_id": "hurn-step2-2025-07-31",
+      "candidate_id": "0001289848-25-000189",
+      "ticker": "HURN",
+      "company": "Huron Consulting Group Inc.",
+      "cik": "0001289848",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250731360295/en/Huron-Announces-Second-Quarter-2025-Financial-Results-and-Increases-2025-Guidance",
+        "displayed_stamp_et": "Jul 31, 2025 4:05 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2025-07-31T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-07-31 16:42",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-07-31",
+      "reaction_session": "2025-08-01",
+      "twentieth_reaction_session": "2025-08-28",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | HURN | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001289848-25-000160",
+          "accepted_et": "2025-05-13 15:58"
+        },
+        "spec_valid_from": "2025-05-13T00:00:00-04:00",
+        "spec_available_at": "2025-05-13T19:58:32Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-13 5.02,5.07,9.01",
+          "2025-07-31 1.01,2.03,9.01 (16:23 ET, separate filing)",
+          "2025-07-31 2.02,9.01 <EVENT> (16:42 ET)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_1_close_return",
+          "session_2_close_return",
+          "session_3_close_return",
+          "session_4_close_return",
+          "session_5_close_return",
+          "session_6_close_return",
+          "session_7_close_return",
+          "session_8_close_return",
+          "session_9_close_return",
+          "session_10_close_return",
+          "session_11_close_return",
+          "session_12_close_return",
+          "session_13_close_return",
+          "session_14_close_return",
+          "session_15_close_return",
+          "session_16_close_return",
+          "session_17_close_return",
+          "session_18_close_return",
+          "session_19_close_return",
+          "session_20_close_return"
+        ],
+        "note": "A separate same-day 8-K (items 1.01, 2.03, 9.01) with its own 'FOR IMMEDIATE RELEASE' press release announced a $1.1B credit-facility refinancing 18 minutes after this earnings release (16:23 ET vs. 16:05 ET). Assessed against docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded (routine treasury management, not new information about the business), but every session's return reflects both pieces of news at once. See reports/m2-step2-same-day-8k-sweep-2026-09-28.json."
+      },
+      "additional_note": "A SEPARATE same-day 8-K (items 1.01, 2.03, 9.01; accepted 16:23:10 ET, 18 minutes before this event's own 8-K was accepted at 16:42:50 ET) announced a $1.1B credit-facility refinancing with its own 'FOR IMMEDIATE RELEASE' press release -- see the proposed_label_caveat below and reports/m2-step2-same-day-8k-sweep-2026-09-28.json. Assessed against docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded (routine treasury management, not new information about the business)."
+    },
+    {
+      "event_id": "vsat-step2-2025-08-05",
+      "candidate_id": "0001193125-25-173528",
+      "ticker": "VSAT",
+      "company": "Viasat, Inc.",
+      "cik": "0000797721",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/05/3127804/0/en/Viasat-Releases-First-Quarter-Fiscal-Year-2026-Financial-Results.html",
+        "displayed_stamp_et": "August 05, 2025 16:05 ET",
+        "minute_encoded_in_spec": "2025-08-05T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-08-05 16:06",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-08-05",
+      "reaction_session": "2025-08-06",
+      "twentieth_reaction_session": "2025-09-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.0001 per share | VSAT | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-140346",
+          "accepted_et": "2025-06-13 08:31"
+        },
+        "spec_valid_from": "2025-06-13T00:00:00-04:00",
+        "spec_available_at": "2025-06-13T12:31:11Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-02 1.02",
+          "2025-05-12 5.02",
+          "2025-05-20 2.02,9.01",
+          "2025-05-22 1.01,1.02,5.02,9.01",
+          "2025-06-13 7.01,9.01",
+          "2025-08-05 2.02,9.01 <EVENT>",
+          "2025-08-21 5.02",
+          "2025-09-05 5.02,5.07,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-08-21 8-K Item 5.02 (officer/director change; content not opened)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_12_close_return",
+          "session_13_close_return",
+          "session_14_close_return",
+          "session_15_close_return",
+          "session_16_close_return",
+          "session_17_close_return",
+          "session_18_close_return",
+          "session_19_close_return",
+          "session_20_close_return"
+        ],
+        "note": "An Item 5.02 8-K (officer/director change) was filed 2025-08-21 (session 12), inside the window before session 20; content not opened."
+      },
+      "additional_note": null
+    },
+    {
+      "event_id": "cxt-step2-2025-08-06",
+      "candidate_id": "0000025445-25-000081",
+      "ticker": "CXT",
+      "company": "Crane NXT, Co.",
+      "cik": "0000025445",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/06/3128648/0/en/Crane-NXT-Reports-Second-Quarter-2025-Results.html",
+        "displayed_stamp_et": "August 06, 2025 16:05 ET",
+        "minute_encoded_in_spec": "2025-08-06T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-08-06 16:19",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-08-06",
+      "reaction_session": "2025-08-07",
+      "twentieth_reaction_session": "2025-09-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $1.00 | CXT | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000025445-25-000070",
+          "accepted_et": "2025-05-27 16:12"
+        },
+        "spec_valid_from": "2025-05-27T00:00:00-04:00",
+        "spec_available_at": "2025-05-27T20:12:24Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-07 2.02,9.01",
+          "2025-05-27 5.07,9.01",
+          "2025-08-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the filing history above -- but see corporate_actions below: Alpaca's real corporate-actions response is NOT empty for this candidate, the only one in this batch. A routine dividend declaration commonly carries no 8-K at all, so a clean 8-K history here is not itself evidence the dividend claim is wrong.",
+        "alpaca_real_response": "NOT EMPTY -- [{\"ex_date\": \"2025-08-29\", \"id\": \"7f1b57a4-8cc4-450c-8abb-1fcbfcdd8a9d\", \"type\": \"cash_dividends\"}] (real dry run). See additional_note; needs the owner's explicit attestation and a check against the reaction window before any label can be trusted for this candidate."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Milestone 1's OWN event for this same issuer (a later quarter) was quarantined on CORPORATE_ACTION_AUDIT_MISSING for exactly this reason (a real dividend increase found by the same dry-run mechanism) -- see docs/M1-READINESS-ASSESSMENT.md's 2026-09-23 CXT entry. This is not a new or surprising kind of finding for this issuer."
+    },
+    {
+      "event_id": "parr-step2-2025-08-05",
+      "candidate_id": "0000821483-25-000024",
+      "ticker": "PARR",
+      "company": "Par Pacific Holdings, Inc.",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/05/3127866/0/en/Par-Pacific-Holdings-Reports-Second-Quarter-2025-Results.html",
+        "displayed_stamp_et": "August 05, 2025 16:15 ET",
+        "minute_encoded_in_spec": "2025-08-05T16:15:00-04:00",
+        "sec_8k_accepted_et": "2025-08-05 20:39 (EDGAR's own filingDate field records this filing as 2025-08-06, one calendar day later)",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-08-05",
+      "reaction_session": "2025-08-06",
+      "twentieth_reaction_session": "2025-09-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.01 par value | PARR | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-25-161924",
+          "accepted_et": "2025-07-21 16:42"
+        },
+        "spec_valid_from": "2025-07-21T00:00:00-04:00",
+        "spec_available_at": "2025-07-21T20:42:27Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-06 5.07",
+          "2025-05-06/07 2.02,9.01 (accepted 5/6 17:46 ET, EDGAR filingDate 5/7)",
+          "2025-07-21 1.01,7.01,9.01",
+          "2025-08-05/06 2.02,9.01 <EVENT> (accepted 8/5 20:39 ET, EDGAR filingDate 8/6)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's own SEC filingDate metadata field consistently lags its true after-hours release by one calendar day (confirmed for both this event and its prior quarter's) -- an EDGAR processing/recording convention for late-evening acceptances, not a second disclosure or any data problem. published_at in the spec uses the true release date/time (2025-08-05 16:15 ET), not the SEC filingDate."
+    },
+    {
+      "event_id": "payo-step2-2025-08-06",
+      "candidate_id": "0001558370-25-010405",
+      "ticker": "PAYO",
+      "company": "Payoneer Global Inc.",
+      "cik": "0001845815",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250806700955/en/Payoneer-Reports-Second-Quarter-2025-Financial-Results",
+        "displayed_stamp_et": "Aug 6, 2025 7:30 AM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2025-08-06T07:30:00-04:00",
+        "sec_8k_accepted_et": "2025-08-06 07:35",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-08-05",
+      "reaction_session": "2025-08-06",
+      "twentieth_reaction_session": "2025-09-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | PAYO | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000950103-25-007473",
+          "accepted_et": "2025-06-17 07:30"
+        },
+        "spec_valid_from": "2025-06-17T00:00:00-04:00",
+        "spec_available_at": "2025-06-17T11:30:21Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-07 2.02,9.01",
+          "2025-06-10 5.02,5.07",
+          "2025-06-17 5.03,5.07,9.01 (8-K/A)",
+          "2025-08-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above (the 2025-06-17 filing is itself an amendment, form 8-K/A, correcting an earlier filing not shown in this window; not independently opened).",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's OTHER step-2 candidate (2025-11-05) ran on PR Newswire, not BusinessWire -- the wire service is not constant across this issuer's quarters."
+    },
+    {
+      "event_id": "caci-step2-2025-08-06",
+      "candidate_id": "0001628280-25-038398",
+      "ticker": "CACI",
+      "company": "CACI International Inc",
+      "cik": "0000016058",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250806267956/en/CACI-Reports-Results-for-Its-Fiscal-2025-Fourth-Quarter-and-Full-Year-and-Issues-Fiscal-Year-2026-Guidance",
+        "displayed_stamp_et": "Aug 6, 2025 4:15 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2025-08-06T16:15:00-04:00",
+        "sec_8k_accepted_et": "2025-08-06 16:46",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-08-06",
+      "reaction_session": "2025-08-07",
+      "twentieth_reaction_session": "2025-09-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | CACI | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001628280-25-035064",
+          "accepted_et": "2025-07-16 16:13"
+        },
+        "spec_valid_from": "2025-07-16T00:00:00-04:00",
+        "spec_available_at": "2025-07-16T20:13:27Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-20 8.01,9.01",
+          "2025-05-21 8.01,9.01",
+          "2025-06-03 1.01,2.03,9.01",
+          "2025-07-16 8.01,9.01",
+          "2025-08-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's OTHER step-2 candidate (2025-10-22) has a same-day annual-meeting results 8-K, already assessed and not excluded (routine, filed hours before that quarter's earnings, no press release)."
+    },
+    {
+      "event_id": "lnsr-step2-2025-08-07",
+      "candidate_id": "0000950170-25-104556",
+      "ticker": "LNSR",
+      "company": "LENSAR, Inc.",
+      "cik": "0001320350",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129055/0/en/lensar-reports-second-quarter-2025-results-and-provides-business-update.html",
+        "displayed_stamp_et": "August 07, 2025 07:00 ET",
+        "minute_encoded_in_spec": "2025-08-07T07:00:00-04:00",
+        "sec_8k_accepted_et": "2025-08-07 07:15",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-08-06",
+      "reaction_session": "2025-08-07",
+      "twentieth_reaction_session": "2025-09-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.01 per share | LNSR | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000950170-25-092921",
+          "accepted_et": "2025-07-02 16:00"
+        },
+        "spec_valid_from": "2025-07-02T00:00:00-04:00",
+        "spec_available_at": "2025-07-02T20:00:35Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-08 2.02,9.01",
+          "2025-05-08 9.01 (8-K/A)",
+          "2025-05-22 8.01",
+          "2025-07-02 5.07",
+          "2025-08-07 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    },
+    {
+      "event_id": "achv-step2-2025-08-07",
+      "candidate_id": "0000950170-25-104569",
+      "ticker": "ACHV",
+      "company": "Achieve Life Sciences, Inc.",
+      "cik": "0000949858",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129127/0/en/Achieve-Life-Sciences-Reports-Second-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html",
+        "displayed_stamp_et": "August 07, 2025 07:30 ET",
+        "minute_encoded_in_spec": "2025-08-07T07:30:00-04:00",
+        "sec_8k_accepted_et": "2025-08-07 07:36",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-08-06",
+      "reaction_session": "2025-08-07",
+      "twentieth_reaction_session": "2025-09-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 per share | ACHV | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000950170-25-091055",
+          "accepted_et": "2025-06-27 17:28"
+        },
+        "spec_valid_from": "2025-06-27T00:00:00-04:00",
+        "spec_available_at": "2025-06-27T21:28:32Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-05-13 2.02,9.01",
+          "2025-06-06 5.07",
+          "2025-06-27 1.01,8.01,9.01",
+          "2025-08-07 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, not a fixture)."
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session (real dry run, workflow run 2, https://github.com/Fahad9101/NRE/actions/runs/36535838176). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": [
+      "love-step2-2025-06-12",
+      "payo-step2-2025-08-06",
+      "lnsr-step2-2025-08-07",
+      "achv-step2-2025-08-07"
+    ],
+    "after_hours": [
+      "nbix-step2-2025-07-30",
+      "alkt-step2-2025-07-30",
+      "slsn-step2-2025-07-31",
+      "hurn-step2-2025-07-31",
+      "vsat-step2-2025-08-05",
+      "cxt-step2-2025-08-06",
+      "parr-step2-2025-08-05",
+      "caci-step2-2025-08-06"
+    ]
+  },
+  "flagged_not_a_blanket_clean_signoff": {
+    "cxt-step2-2025-08-06": "Real cash dividend found (ex-date 2025-08-29). Milestone 1 quarantined this SAME issuer's own event on CORPORATE_ACTION_AUDIT_MISSING for the same reason -- recommend the same treatment here rather than attesting corporate_actions for this one candidate specifically.",
+    "hurn-step2-2025-07-31": "Same-day competing 8-K (credit-facility refinancing, own press release) already assessed and not excluded, but carries a proposed_label_caveat across all 20 session labels.",
+    "love-step2-2025-06-12": "An Item 8.01 8-K one session later; proposed_label_caveat from that session onward, content not opened.",
+    "vsat-step2-2025-08-05": "An Item 5.02 8-K inside the window; proposed_label_caveat from that session onward, content not opened."
+  },
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all twelve except CXT', or a list of tickers/decisions. Then the attestations are added for the signed-off candidates, the workflow runs for real, and each result is recorded with a pinned label digest.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- content was not opened for the three caveated items (LOVE, VSAT) beyond what's already in chronology_evidence; HURN's item was opened and already assessed under the same-day policy."
+  ]
+}
