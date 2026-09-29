@@ -228,7 +228,12 @@ def build_bundle(event, provider, window, bars_by_session, actions, retrieved_at
     first_public = "first_public_time" in attested and "historical_identity" in attested
     actions_verified = "corporate_actions" in attested
     stamp = iso(retrieved_at)
-    bars_source, actions_source = "alpaca-bars-" + ticker.lower(), "alpaca-actions-" + ticker.lower()
+    # Suffixed with the event_id, not just the ticker: two events for the same issuer (different
+    # quarters) fetch different windows, so they need distinct source ids when their bundles are
+    # later merged into one (nre.consolidated_audit) -- a single-event-per-issuer cohort like
+    # Milestone 1's never exercised that path, which is how this stayed latent.
+    bars_source = "alpaca-bars-" + ticker.lower() + "-" + event["event_id"]
+    actions_source = "alpaca-actions-" + ticker.lower() + "-" + event["event_id"]
     prices = []
     for session in window["required_sessions"]:
         bar = bars_by_session.get(session)

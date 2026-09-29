@@ -308,6 +308,23 @@ class BundleTests(unittest.TestCase):
         self.assertEqual(action["action_id"], "cash_dividends-2026-02-27")
         self.assertEqual(action["available_at"], "2026-02-27T05:00:00Z")
 
+    def test_two_events_for_the_same_ticker_get_distinct_alpaca_source_ids(self):
+        # Regression: build_bundle() used to derive bars_source/actions_source from the ticker
+        # alone, so two events for the same issuer (different quarters -- the normal case once a
+        # cohort has more than one event per issuer) collided when their bundles were later merged
+        # into one (nre.core.unique() rejects the same source_id appearing with different content).
+        # A single-event-per-issuer cohort like Milestone 1's never exercised this path.
+        first, second = event_copy(SLSN), event_copy(SLSN)
+        second["event_id"] = second["cluster_id"] = "slsn-2099-01-01"
+        second["source"]["source_id"] = "slsn-wire-2099-01-01"  # a second event also needs its own wire source id
+        window = ea.event_window(first, CAL)
+        bars = {s: {"open": 1.0, "high": 2.0, "low": 0.5, "close": 1.5, "volume": 10} for s in SLSN_SESSIONS}
+        first_bundle = ea.build_bundle(first, SPEC["provider"], window, bars, [], NOW, CAL)
+        second_bundle = ea.build_bundle(second, SPEC["provider"], window, bars, [], NOW, CAL)
+        first_ids = {s["source_id"] for s in first_bundle["sources"]}
+        second_ids = {s["source_id"] for s in second_bundle["sources"]}
+        self.assertTrue(first_ids.isdisjoint(second_ids), (first_ids, second_ids))
+
     def test_attestations_drive_the_verification_flags(self):
         event = event_copy(SLSN)
         window = ea.event_window(event, CAL)
