@@ -1842,6 +1842,276 @@
         "labels_sha256": "874d12646f15c5ed92ea31eb3040cc0e60288406c9130413e649aaf43824e9a3",
         "recorded_in": "reports/m2-step2-batch3-complete-events-2026-09-29.json"
       }
+    },
+    {
+      "event_id": "pdfs-step2-2025-11-06",
+      "cluster_id": "pdfs-step2-2025-11-06",
+      "candidate_id": "0001437749-25-033622",
+      "security": {
+        "security_id": "PDFS-1120914",
+        "company_id": "0001120914",
+        "cik": "0001120914",
+        "ticker": "PDFS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-07T00:00:00-04:00",
+        "available_at": "2025-08-07T20:28:51Z"
+      },
+      "source": {
+        "source_id": "pdfs-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/06/3183166/7239/en/PDF-Solutions-Reports-Third-Quarter-2025-Financial-Results-Announcing-Record-Third-Quarter-2025-Total-Revenues.html",
+        "text": "Wire release, displayed dateline November 06, 2025 16:10 ET (16:10 ET). https://www.globenewswire.com/news-release/2025/11/06/3183166/7239/en/PDF-Solutions-Reports-Third-Quarter-2025-Financial-Results-Announcing-Record-Third-Quarter-2025-Total-Revenues.html",
+        "first_seen_at": "2025-11-06T16:11:00-05:00"
+      },
+      "published_at": "2025-11-06T16:10:00-05:00",
+      "cutoff": "2025-11-06T16:13:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-07"
+    },
+    {
+      "event_id": "ttwo-step2-2025-11-06",
+      "cluster_id": "ttwo-step2-2025-11-06",
+      "candidate_id": "0001628280-25-050182",
+      "security": {
+        "security_id": "TTWO-946581",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-09-19T00:00:00-04:00",
+        "available_at": "2025-09-19T20:30:18Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire",
+        "url": "https://www.businesswire.com/news/home/20251106169372/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Second-Quarter-2026",
+        "text": "Wire release, displayed dateline Nov 6, 2025 4:05 PM Eastern Standard Time (16:05 ET). https://www.businesswire.com/news/home/20251106169372/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Second-Quarter-2026",
+        "first_seen_at": "2025-11-06T16:06:00-05:00"
+      },
+      "published_at": "2025-11-06T16:05:00-05:00",
+      "cutoff": "2025-11-06T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-07"
+    },
+    {
+      "event_id": "vsat-step2-2025-11-07",
+      "cluster_id": "vsat-step2-2025-11-07",
+      "candidate_id": "0001193125-25-272331",
+      "security": {
+        "security_id": "VSAT-797721",
+        "company_id": "0000797721",
+        "cik": "0000797721",
+        "ticker": "VSAT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-09-05T00:00:00-04:00",
+        "available_at": "2025-09-05T20:39:41Z"
+      },
+      "source": {
+        "source_id": "vsat-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/07/3183958/0/en/Viasat-Releases-Second-Quarter-Fiscal-Year-2026-Financial-Results.html",
+        "text": "Wire release, displayed dateline November 07, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/11/07/3183958/0/en/Viasat-Releases-Second-Quarter-Fiscal-Year-2026-Financial-Results.html",
+        "first_seen_at": "2025-11-07T16:06:00-05:00"
+      },
+      "published_at": "2025-11-07T16:05:00-05:00",
+      "cutoff": "2025-11-07T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-10"
+    },
+    {
+      "event_id": "asmb-step2-2025-11-10",
+      "cluster_id": "asmb-step2-2025-11-10",
+      "candidate_id": "0001193125-25-274235",
+      "security": {
+        "security_id": "ASMB-1426800",
+        "company_id": "0001426800",
+        "cik": "0001426800",
+        "ticker": "ASMB",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-06T00:00:00-04:00",
+        "available_at": "2025-08-06T20:10:35Z"
+      },
+      "source": {
+        "source_id": "asmb-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/10/3185025/16259/en/Assembly-Biosciences-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Updates.html",
+        "text": "Wire release, displayed dateline November 10, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/11/10/3185025/16259/en/Assembly-Biosciences-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Updates.html",
+        "first_seen_at": "2025-11-10T16:06:00-05:00"
+      },
+      "published_at": "2025-11-10T16:05:00-05:00",
+      "cutoff": "2025-11-10T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-11"
+    },
+    {
+      "event_id": "real-step2-2025-11-10",
+      "cluster_id": "real-step2-2025-11-10",
+      "candidate_id": "0001573221-25-000076",
+      "security": {
+        "security_id": "REAL-1573221",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-21T00:00:00-04:00",
+        "available_at": "2025-08-21T20:07:53Z"
+      },
+      "source": {
+        "source_id": "real-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/10/3185030/0/en/The-RealReal-Announces-Third-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline November 10, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/11/10/3185030/0/en/The-RealReal-Announces-Third-Quarter-2025-Results.html",
+        "first_seen_at": "2025-11-10T16:06:00-05:00"
+      },
+      "published_at": "2025-11-10T16:05:00-05:00",
+      "cutoff": "2025-11-10T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-11"
+    },
+    {
+      "event_id": "klc-step2-2025-11-12",
+      "cluster_id": "klc-step2-2025-11-12",
+      "candidate_id": "0001193125-25-277750",
+      "security": {
+        "security_id": "KLC-1873529",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-10-15T00:00:00-04:00",
+        "available_at": "2025-10-15T20:30:06Z"
+      },
+      "source": {
+        "source_id": "klc-wire",
+        "url": "https://www.businesswire.com/news/home/20251112661473/en/KinderCare-Reports-Third-Quarter-2025-Financial-Results",
+        "text": "Wire release, displayed dateline Nov 12, 2025 4:15 PM Eastern Standard Time (16:15 ET). https://www.businesswire.com/news/home/20251112661473/en/KinderCare-Reports-Third-Quarter-2025-Financial-Results",
+        "first_seen_at": "2025-11-12T16:16:00-05:00"
+      },
+      "published_at": "2025-11-12T16:15:00-05:00",
+      "cutoff": "2025-11-12T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-13"
+    },
+    {
+      "event_id": "slsn-step2-2025-11-11",
+      "cluster_id": "slsn-step2-2025-11-11",
+      "candidate_id": "0001171843-25-007246",
+      "security": {
+        "security_id": "SLSN-883107",
+        "company_id": "0000883107",
+        "cik": "0000883107",
+        "ticker": "SLSN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-11-06T00:00:00-05:00",
+        "available_at": "2025-11-06T21:14:54Z"
+      },
+      "source": {
+        "source_id": "slsn-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/11/3185292/12101/en/Sol%C3%A9sence-Reports-Third-Quarter-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline November 11, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/11/11/3185292/12101/en/Sol%C3%A9sence-Reports-Third-Quarter-2025-Financial-Results.html",
+        "first_seen_at": "2025-11-11T07:01:00-05:00"
+      },
+      "published_at": "2025-11-11T07:00:00-05:00",
+      "cutoff": "2025-11-11T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-11-11"
+    },
+    {
+      "event_id": "rekr-step2-2025-11-13",
+      "cluster_id": "rekr-step2-2025-11-13",
+      "candidate_id": "0001437749-25-034859",
+      "security": {
+        "security_id": "REKR-1697851",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-10-14T00:00:00-04:00",
+        "available_at": "2025-10-14T11:05:54Z"
+      },
+      "source": {
+        "source_id": "rekr-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/11/13/3187814/0/en/Rekor-Systems-Reports-Record-Third-Quarter-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline November 13, 2025 16:03 ET (16:03 ET). https://www.globenewswire.com/news-release/2025/11/13/3187814/0/en/Rekor-Systems-Reports-Record-Third-Quarter-2025-Financial-Results.html",
+        "first_seen_at": "2025-11-13T16:04:00-05:00"
+      },
+      "published_at": "2025-11-13T16:03:00-05:00",
+      "cutoff": "2025-11-13T16:06:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:03",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-11-14"
+    },
+    {
+      "event_id": "okta-step2-2025-12-02",
+      "cluster_id": "okta-step2-2025-12-02",
+      "candidate_id": "0001660134-25-000170",
+      "security": {
+        "security_id": "OKTA-1660134",
+        "company_id": "0001660134",
+        "cik": "0001660134",
+        "ticker": "OKTA",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-26T00:00:00-04:00",
+        "available_at": "2025-08-26T20:03:10Z"
+      },
+      "source": {
+        "source_id": "okta-wire",
+        "url": "https://www.businesswire.com/news/home/20251202009675/en/Okta-Announces-Third-Quarter-Fiscal-Year-2026-Financial-Results",
+        "text": "Wire release, displayed dateline Dec 2, 2025 4:01 PM Eastern Standard Time (16:01 ET). https://www.businesswire.com/news/home/20251202009675/en/Okta-Announces-Third-Quarter-Fiscal-Year-2026-Financial-Results",
+        "first_seen_at": "2025-12-02T16:02:00-05:00"
+      },
+      "published_at": "2025-12-02T16:01:00-05:00",
+      "cutoff": "2025-12-02T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-12-03"
+    },
+    {
+      "event_id": "love-step2-2025-12-11",
+      "cluster_id": "love-step2-2025-12-11",
+      "candidate_id": "0001628280-25-056422",
+      "security": {
+        "security_id": "LOVE-1701758",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-09-11T00:00:00-04:00",
+        "available_at": "2025-09-11T11:24:28Z"
+      },
+      "source": {
+        "source_id": "love-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/12/11/3203761/0/en/The-Lovesac-Company-Reports-Third-Quarter-Fiscal-2026-Financial-Results.html",
+        "text": "Wire release, displayed dateline December 11, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/12/11/3203761/0/en/The-Lovesac-Company-Reports-Third-Quarter-Fiscal-2026-Financial-Results.html",
+        "first_seen_at": "2025-12-11T07:01:00-05:00"
+      },
+      "published_at": "2025-12-11T07:00:00-05:00",
+      "cutoff": "2025-12-11T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-12-11"
     }
   ]
 }
