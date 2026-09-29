@@ -28,7 +28,6 @@
     "CACI 2025-10-22",
     "NBIX 2025-10-28",
     "HURN 2025-10-28",
-    "JBSS 2025-10-29",
     "ALKT 2025-10-30",
     "PARR 2025-11-04",
     "CXT 2025-11-05",
@@ -75,13 +74,27 @@
         "fresh_independently_material": false
       },
       "resolution": "NOT EXCLUDED, flagged as a caveat. Fails 2 of 3 policy conditions -- lower intensity than HURN's finding."
+    },
+    {
+      "candidate": "JBSS 2025-10-29",
+      "duplicate_accession": "0001193125-25-256383",
+      "duplicate_items": "8.01, 9.01",
+      "accepted": "2025-10-29 16:24:05 ET (9 minutes after the earnings 8-K, accepted 16:14:43 ET)",
+      "content": "A special cash dividend of $1.00/share (~$11.7M total), record date 2025-12-01, payable 2025-12-30. Has its own press release (Exhibit 99.1).",
+      "policy_test": {
+        "same_day": true,
+        "independently_disseminated": true,
+        "fresh_independently_material": "not a competing catalyst in the MEI/ASMB sense -- this issuer's own 2025-08-20 candidate already established that dividends are expected/routine for JBSS and are handled as corporate actions (Alpaca-verified, label-suppressing), not as competing business news"
+      },
+      "resolution": "NOT EXCLUDED. Treat as a real corporate action needing the same attest-and-suppress handling as CXT's and JBSS's own 2025-08-20 dividend, not as a same-day-catalyst exclusion."
     }
   ],
   "summary": {
     "total_candidates": 46,
-    "clean": 44,
-    "flagged_and_resolved": 2,
+    "clean": 43,
+    "flagged_and_resolved": 3,
     "newly_excluded": 0
   },
-  "not_a_claim": "Neither HURN nor REKR is excluded by this finding. Both remain candidates pending the corporate-action check, identity/exchange verification (already done for identity/exchange generally, but this sweep is a separate axis), and a label-engine dry run."
+  "not_a_claim": "Neither HURN nor REKR is excluded by this finding. Both remain candidates pending the corporate-action check, identity/exchange verification (already done for identity/exchange generally, but this sweep is a separate axis), and a label-engine dry run.",
+  "correction_2026_09_29": "JBSS 2025-10-29 was originally recorded clean. Found to have a real same-day duplicate while gathering batch-2 evidence via SEC's submissions.json API, which is more reliable than browse-edgar's HTML listing (independently found this session to serve stale/cached pages under heavy sequential use). Corrected here rather than silently -- the original 44/2 counts in this file's body text are superseded by clean=43, flagged_and_resolved=3."
 }
