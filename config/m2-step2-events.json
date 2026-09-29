@@ -64,7 +64,18 @@
       "recorded_result": {
         "labels_sha256": "481b15b7211f964e899ceb9b934283f920688ee450d527050660a256ec7a8490",
         "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "An Item 8.01 8-K was filed 2025-06-13 (session 2 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the 4 real session-milestone labels at or after session 2 (2, 5, 10, 20) are listed; there is no session_3 or session_4 label to caveat."
+        }
+      ]
     },
     {
       "event_id": "nbix-step2-2025-07-30",
@@ -247,28 +258,16 @@
       "caveats": [
         {
           "labels": [
-            "session_1_close_return",
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return",
             "session_2_close_return",
-            "session_3_close_return",
-            "session_4_close_return",
             "session_5_close_return",
-            "session_6_close_return",
-            "session_7_close_return",
-            "session_8_close_return",
-            "session_9_close_return",
             "session_10_close_return",
-            "session_11_close_return",
-            "session_12_close_return",
-            "session_13_close_return",
-            "session_14_close_return",
-            "session_15_close_return",
-            "session_16_close_return",
-            "session_17_close_return",
-            "session_18_close_return",
-            "session_19_close_return",
             "session_20_close_return"
           ],
-          "note": "A separate same-day 8-K (items 1.01, 2.03, 9.01) with its own 'FOR IMMEDIATE RELEASE' press release announced a $1.1B credit-facility refinancing 18 minutes after this earnings release (16:23 ET vs. 16:05 ET). Assessed against docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded (routine treasury management, not new information about the business), but every session's return reflects both pieces of news at once. See reports/m2-step2-same-day-8k-sweep-2026-09-28.json."
+          "note": "CORRECTED 2026-09-29: the original caveat listed session_1 through session_20 as a range, but nre/dataset.py only ever computes 4 session milestones (2, 5, 10, 20) plus the 4 day1_* returns -- 16 of the 20 label names in the original list did not exist. A separate same-day 8-K (items 1.01, 2.03, 9.01) with its own 'FOR IMMEDIATE RELEASE' press release announced a $1.1B credit-facility refinancing 18 minutes after this earnings release (16:23 ET vs. 16:05 ET). Assessed against docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and not excluded (routine treasury management, not new information about the business), but every one of the real return labels reflects both pieces of news at once, since the competing item landed before day1 itself closed. See reports/m2-step2-same-day-8k-sweep-2026-09-28.json."
         }
       ],
       "expected_reaction_session": "2025-08-01",
@@ -346,7 +345,15 @@
       "recorded_result": {
         "labels_sha256": "55f45e8c67c46930d2a48aafad4e792935d8a67cdc819d2672e1257f43c54af5",
         "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "An Item 5.02 8-K (officer/director change) was filed 2025-08-21, session 12 of this event's window; content not opened. Of the 4 real session-milestone labels (2, 5, 10, 20), only session_20 falls at or after session 12, so it is the only one listed."
+        }
+      ]
     },
     {
       "event_id": "cxt-step2-2025-08-06",
@@ -856,7 +863,16 @@
       "recorded_result": {
         "labels_sha256": "f83f8a22acf7e1142c1d00cbab81bcf16802b6f5b34087d5fee66897a33ddecf",
         "recorded_in": "reports/m2-step2-batch2-complete-events-2026-09-29.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Items 2.03, 3.02 8-K filed 2025-08-21, session 10 of this event's window; content not opened. Of the 4 real session-milestone labels (2, 5, 10, 20), session_10 and session_20 fall at or after session 10."
+        }
+      ]
     },
     {
       "event_id": "ttwo-step2-2025-08-07",
