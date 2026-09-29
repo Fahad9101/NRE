@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "proposal": "docs/M3-NEWS-CATALYST-INTELLIGENCE-SCOPE.md",
+  "decisions": {
+    "sequencing": {
+      "owner_reply": "Phase A first: SEC-only corporate events (Recommended)",
+      "effect": "Build event_normalization/ + corporate_event_parser/ on SEC EDGAR data alone first -- no new provider, no new terms review, directly extends nre/ingestion.py. FDA/ClinicalTrials.gov (Phase C) and earnings surprise (Phase B) follow later, each its own authorized step."
+    },
+    "consensus_data_gap": {
+      "owner_reply": "Skip consensus, use prior-guidance surprise (Recommended)",
+      "effect": "Earnings surprise normalization (Phase B, not yet started) will be built only against prior guidance/prior period using real SEC/issuer data, explicitly labeled as such -- never against consensus. Revisit consensus only if a legitimate free/ToS-compliant source is later found or named."
+    }
+  },
+  "not_a_claim": [
+    "Not Milestone 3 acceptance -- nothing has been built yet.",
+    "Not a claim that Phase A alone satisfies M3's own criterion (\"raw public announcements reliably become structured machine-readable event features\") -- that needs real, tested code plus the owner's own review, the same as every prior phase."
+  ]
+}
