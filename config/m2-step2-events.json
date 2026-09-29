@@ -60,6 +60,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "481b15b7211f964e899ceb9b934283f920688ee450d527050660a256ec7a8490",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -107,6 +111,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "8d6a6cea63d764a0d5ef868a6188b1b5ebabb818e3d872c3e077a12b74b6aad3",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -154,6 +162,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "4db6ab796610e0eb135e59d80858594076ec0fec9764b8fb0561825de7c861be",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -201,6 +213,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "97336852b8a6b52c0528395be583cef3b4e888b389b51d47a63d734d87b89957",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -275,6 +291,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "9ca8a599bd1c66e3cbef1eb117f284ce955f9fba07ed571356d0ef24a28bb436",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -322,6 +342,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "55f45e8c67c46930d2a48aafad4e792935d8a67cdc819d2672e1257f43c54af5",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -369,6 +393,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "66a094133573e5990b691edc791b9156bfae12fa87e3d490b37f4bdf239b4d06",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -416,6 +444,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "55143e57845474da097e182655811d02a849a194878f28a55cb312487bb21681",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -463,6 +495,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "8040f0a5caebb2414efcc5c97cd345ea9e3dc0de6a3fa58e8e0c8fec354eade2",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -510,6 +546,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "84a79a72c823d60cae3ba0dc09076f1b59a3f55c7a5c1fcdbeb6cd0300fa924a",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -557,6 +597,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "95a4ace09d0103aebe4e4cf03787060170ecdfec4cc250162880fc07e448c9ce",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     },
     {
@@ -604,6 +648,10 @@
           "record": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch1-signoff-2026-09-29.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "b8e7de2d1ffdabec5efcecc6b80ef591d8ea4a325f1c053ce5f57a9d170eec2c",
+        "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
     }
   ]
