@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36549702453",
+  "workflow_run_number": 7,
+  "commit": "30881f9",
+  "trigger": "push (auto-triggered: config/m2-step2-events.json is a watched path). Multiple runs (#4-7) fired from the same push containing several commits; all checked out the same final commit and produced identical results -- this result is from the last one.",
+  "result": {
+    "all_ok": true,
+    "batch2_events": 11,
+    "errors": 0
+  },
+  "batch1_recheck": "All 12 batch-1 events report labels_match_recorded: true against their pinned labels_sha256 (reports/m2-step2-batch1-complete-events-2026-09-29.json) -- confirms the pin mechanism works as intended on a real re-run.",
+  "every_batch2_event": {
+    "state": "QUARANTINED (all 11)",
+    "reason": "FIRST_PUBLIC_TIME_UNVERIFIED (all 11) -- expected, none are attested yet.",
+    "missing_sessions": "none for any event.",
+    "zero_volume_sessions": "none for any event."
+  },
+  "corporate_actions_found": {
+    "jbss-step2-2025-08-20": [
+      {
+        "ex_date": "2025-08-19",
+        "id": "d0e32304-0dbf-43ea-81ca-724e3bc59e04",
+        "type": "cash_dividends"
+      }
+    ]
+  },
+  "corporate_actions_clean": [
+    "aspn-step2-2025-08-07",
+    "coll-step2-2025-08-07",
+    "klc-step2-2025-08-12",
+    "real-step2-2025-08-07",
+    "rekr-step2-2025-08-12",
+    "tecx-step2-2025-08-07",
+    "ttwo-step2-2025-08-07",
+    "caci-step2-2025-10-22",
+    "love-step2-2025-09-11",
+    "okta-step2-2025-08-26"
+  ],
+  "raw_per_event": {
+    "aspn-step2-2025-08-07": {
+      "corporate_actions": []
+    },
+    "coll-step2-2025-08-07": {
+      "corporate_actions": []
+    },
+    "klc-step2-2025-08-12": {
+      "corporate_actions": []
+    },
+    "real-step2-2025-08-07": {
+      "corporate_actions": []
+    },
+    "rekr-step2-2025-08-12": {
+      "corporate_actions": []
+    },
+    "tecx-step2-2025-08-07": {
+      "corporate_actions": []
+    },
+    "ttwo-step2-2025-08-07": {
+      "corporate_actions": []
+    },
+    "caci-step2-2025-10-22": {
+      "corporate_actions": []
+    },
+    "jbss-step2-2025-08-20": {
+      "corporate_actions": [
+        {
+          "ex_date": "2025-08-19",
+          "id": "d0e32304-0dbf-43ea-81ca-724e3bc59e04",
+          "type": "cash_dividends"
+        }
+      ]
+    },
+    "love-step2-2025-09-11": {
+      "corporate_actions": []
+    },
+    "okta-step2-2025-08-26": {
+      "corporate_actions": []
+    }
+  },
+  "jbss_dividend_note": "The ex_date (2025-08-19) is ONE DAY BEFORE this event's own anchor session (2025-08-20), not inside the forward-looking reaction window the way CXT's or batch-2's own JBSS-2025-10-29 (a separate, later candidate not in this batch) dividends are. Likely does not cross any of the 20 forward session labels at all -- the anchor close itself would already reflect the ex-dividend price -- but this is confirmed by letting the pipeline decide after attestation, not asserted here. This is the same regular dividend already noted in reports/m2-step2-chronology-batch-2-2026-09-28.json's JBSS 2025-08-20 entry ('annual dividend raised to $0.90/share... payable 2025-09-11').",
+  "not_a_claim": [
+    "No label was computed or exposed for any candidate.",
+    "JBSS's dividend is a real finding, not yet a disposition -- needs the owner's attestation like CXT's did, following the same reasoning already validated in batch 1."
+  ]
+}
