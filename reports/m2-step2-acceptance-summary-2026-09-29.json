@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-29",
+  "purpose": "Evidence for the project owner's own decision on Milestone 2 step 2, mirroring reports/m1-acceptance-declaration-2026-09-26.json's structure. This file is NOT a declaration -- nre.acceptance.audit_cohort() reports milestone_accepted false by design, because acceptance is a human declaration outside the code, the same as Milestone 1. If the owner wants to declare Milestone 2 step 2 accepted, saying so in their own words is what gets recorded, mirroring exactly how Milestone 1's own declaration was made (context: 'Made in reply to the assistant's statement that, if the owner wanted to declare Milestone 1 accepted, they should say so in their own words and it would be recorded verbatim').",
+  "milestone": "Milestone 2 step 2 -- Data depth pilot (2 prior quarters, same 23 Milestone-1-accepted issuers)",
+  "scope_as_authorized": "reports/m2-step2-authorization-2026-09-28.json: 2 prior quarterly earnings cycles for the same 23 already-accepted issuers, reviewed one named reviewer per event with no shortcuts -- a pilot to measure real solo-review throughput, deliberately not the scope proposal's fuller 4-8 quarter range.",
+  "governing_protocol": {
+    "file": "config/m2-step2-protocol.json",
+    "protocol_version": "m2-step2-pilot-v1-2026-09-28",
+    "protocol_sha256": "751c9ba108ae2f724f2d84d3ada02804406d41cc1fe79ebcf88b5d502d969591",
+    "frozen_membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+    "relationship_to_milestone_1": "A separate, parallel protocol -- does not amend, extend or touch config/pilot.json, the frozen 243-candidate membership, or any Milestone 1 record. Milestone 2 step 2's own audit ran standalone under this protocol, not merged with Milestone 1's cohort."
+  },
+  "candidate_disposition": {
+    "frozen_total": 48,
+    "source": "config/m2-step2-frozen-candidate-ledger.json",
+    "excluded": [
+      {"candidate": "ASMB 2025-08-06", "reason": "Same-day Phase 1a clinical-data press release -- fails docs/SAME-DAY-COMPETING-CATALYST-POLICY.md's 3-part test.", "record": "reports/m2-step2-same-day-catalyst-review-2026-09-28.json"},
+      {"candidate": "REKR 2025-10-14", "reason": "Preliminary-guidance pre-announcement, not the quarterly results release itself (that release is REKR's separate, kept 2025-11-13 candidate).", "record": "reports/m2-step2-eligibility-review-2026-09-28.json"}
+    ],
+    "quarantined": [
+      {"candidate": "PDFS 2025-08-07", "reason": "Released exactly at the 16:00:00 ET bell boundary; calendar.classify() returns bell_ambiguous, which validate_spec() does not accept as a timing class at minute precision. Mirrors Milestone 1's own GALT precedent (left quarantined, not excluded, as an unresolved encoding limitation, not a same-day-catalyst or eligibility judgment).", "owner_decision": "reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json"}
+    ],
+    "included": 45,
+    "reviewed_candidate_ledger": "reports/m2-step2-reviewed-candidate-ledger.json"
+  },
+  "corporate_action_check": {
+    "status": "COMPLETE -- all 45 included candidates real, attested, pinned",
+    "process": "4 batches, each following the identical cycle: build unattested spec entries -> validate offline -> commit+push (auto-triggers depth-event-acquire.yml) -> real Alpaca dry run, quarantined on FIRST_PUBLIC_TIME_UNVERIFIED -> signoff packet mirroring Milestone 1's own exact schema -> owner reply -> attestations added -> commit+push -> real attested run -> results recorded, labels_sha256 pinned as recorded_result (matching config/m1-events.json's own convention).",
+    "batches": [
+      {"batch": 1, "count": 12, "owner_reply": "yes go ahead", "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36548416202", "commit": "4dcd48b", "record": "reports/m2-step2-batch1-complete-events-2026-09-29.json"},
+      {"batch": 2, "count": 11, "owner_reply": "yes go ahead", "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36553042991", "commit": "45928bb", "record": "reports/m2-step2-batch2-complete-events-2026-09-29.json"},
+      {"batch": 3, "count": 12, "owner_reply": "yes go ahead", "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36581114347", "commit": "a4c3392", "record": "reports/m2-step2-batch3-complete-events-2026-09-29.json"},
+      {"batch": 4, "count": 10, "owner_reply": "yes go ahead", "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36583560284", "commit": "24a5079", "record": "reports/m2-step2-batch4-complete-events-2026-09-29.json", "note": "Cleanest batch -- zero corporate actions found for any of the 10."}
+    ],
+    "corporate_actions_found": "CXT's two candidates each have a real cash dividend, suppressing only their own session_20_close_return (CORPORATE_ACTION_IN_WINDOW) -- the identical suppression pattern Milestone 1 itself used for CXT's own event.",
+    "label_caveats_travel_with_their_events": "ALKT, OKTA (both candidates), REKR (both candidates), HURN, SLSN, JBSS (both candidates), PDFS, VSAT, ASMB, REAL (both candidates), KLC, LOVE, TTWO each have an in-window competing 8-K item, content never opened -- the caveat travels with the computed labels, same discipline as Milestone 1's own ACHV/COLL/OKTA/REAL/LNSR caveats."
+  },
+  "label_engine_dry_run": {
+    "status": "COMPLETE -- 15 of 16 structural gates pass",
+    "record": "reports/m2-step2-label-engine-dry-run-result-2026-09-29.json",
+    "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36592784171",
+    "commit": "c277729",
+    "gate_result": "BLOCKED",
+    "failed_gates": ["candidate_source_hashes"],
+    "why_that_one_gate_fails": "Milestone 2 step 2's raw SEC discovery bytes were never archived anywhere durable (unlike Milestone 1's, which the owner holds as NRE-M1-SEC-Freeze-Audit.zip and which the audit downloads as a GitHub Actions artifact). Nothing for the audit to check candidate source hashes back against. Flagged in docs/M2-STEP-2-LABEL-ENGINE-DRY-RUN-SCOPE.md section 5 before the run, and the owner explicitly chose to proceed without first closing this gap (reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json) -- unlike Milestone 1, where all 16 gates were made to pass before declaration.",
+    "all_15_other_gates_passed": true,
+    "counts": {"candidates": 48, "included": 45, "excluded": 2, "quarantined": 1,
+               "eligible_complete_events": 43, "events": 45, "unique_issuers": 22},
+    "eligible_complete_events_43_not_45": "CXT's two real dividends each null exactly session_20_close_return, so neither of CXT's two events counts as 'complete' under this gate's own definition (needs a non-null session_20) -- not a defect in those events, which are still real, attested and pinned.",
+    "bugs_found_and_fixed_along_the_way": [
+      "nre/acceptance.py's audit_cohort() had the same hardcoded 2026-only Calendar() bug already found twice during the corporate-action check -- fixed additively before running, not after.",
+      "Three shared-id collisions (source_id twice, security_id once), all the same root cause: ids built per-ticker instead of per-event, invisible with Milestone 1's one-event-per-issuer world, breaking the moment an issuer has 2+ events. Fixed one at a time as each successive run exposed the next.",
+      "One spot-check selection error: CXT was picked as an after_hours spot check, but its own dividend excludes it from 'complete'. Swapped for a clean event."
+    ]
+  },
+  "how_this_differs_from_milestone_1s_own_path_to_acceptance": "Milestone 1's final declaration required, and got, all 16 gates passing (reports/m1-acceptance-declaration-2026-09-26.json: \"all_16_gates_pass\": true) -- its one hard gate (candidate_source_hashes) passed because the owner had separately archived the raw SEC discovery bytes as a durable artifact. Milestone 2 step 2 has not done that archiving, so its own audit is BLOCKED on that one gate by design, not by oversight, and the owner explicitly chose to proceed on that basis rather than close the gap first. Any decision to accept Milestone 2 step 2 would be accepting WITH that one gate unresolved, which Milestone 1 never had to do.",
+  "proposed_accepted_with_these_stated_limits": [
+    "candidate_source_hashes does not pass -- no durable archive of step 2's raw SEC discovery bytes exists for the audit to check against (accepted explicitly, not overlooked; see label_engine_dry_run above).",
+    "The chronology gap search cannot close: the absence of an earlier public disclosure is evidenced by wire pages and SEC filing history, never proved -- identical to Milestone 1's own stated limit.",
+    "One named reviewer, the project owner, throughout -- no independent second review, carrying forward Milestone 1's own 2026-09-22 amendment.",
+    "Label-level caveats travel with their events (listed above under corporate_action_check) -- content was never opened for any of them.",
+    "CXT's two dividends leave eligible_complete_events at 43, not 45, and unique_issuers at 22, not 23 -- a property of the accepted dataset, not a limitation of the review.",
+    "The provider-rights authorization covers derived ratios, booleans, counts and hashes only, re-confirmed explicitly at each batch's own scale -- no raw prices are committed or printed.",
+    "This is still an engineering pilot to measure real solo-review throughput, per config/m2-step2-protocol.json's own minimum_note -- not evidence of predictive power.",
+    "The engine's own stated limit stands: \"Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.\""
+  ],
+  "not_authorized_or_claimed_if_accepted": [
+    "Milestone 3, or any later milestone or scope expansion (e.g. the scope proposal's fuller 4-8 quarter range), is not authorized by this and would need the owner's own separate explicit approval.",
+    "No predictive claim, validated edge or trading use -- same as Milestone 1.",
+    "The frozen BOE, SOE and IEE rules remain untouched.",
+    "milestone_accepted stays false in the code regardless of any owner declaration -- acceptance is a human record, not a flag this pipeline sets."
+  ],
+  "what_a_declaration_would_look_like": "For example, mirroring exactly how Milestone 1's own declaration was made: saying 'declare Milestone 2 step 2 accepted' (or equivalent, in the owner's own words) would be recorded verbatim in a new reports/m2-step2-acceptance-declaration-2026-09-29.json, mirroring reports/m1-acceptance-declaration-2026-09-26.json's own structure."
+}
