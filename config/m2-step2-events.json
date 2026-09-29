@@ -1868,7 +1868,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:10",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-07"
+      "expected_reaction_session": "2025-11-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "ttwo-step2-2025-11-06",
@@ -1895,7 +1915,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-07"
+      "expected_reaction_session": "2025-11-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "vsat-step2-2025-11-07",
@@ -1922,7 +1962,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-10"
+      "expected_reaction_session": "2025-11-10",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "asmb-step2-2025-11-10",
@@ -1949,7 +2009,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-11"
+      "expected_reaction_session": "2025-11-11",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "real-step2-2025-11-10",
@@ -1976,7 +2056,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-11"
+      "expected_reaction_session": "2025-11-11",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "klc-step2-2025-11-12",
@@ -2003,7 +2103,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:15",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-13"
+      "expected_reaction_session": "2025-11-13",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "slsn-step2-2025-11-11",
@@ -2030,7 +2150,27 @@
       "precision": "minute",
       "timestamp_evidence": "07:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2025-11-11"
+      "expected_reaction_session": "2025-11-11",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "rekr-step2-2025-11-13",
@@ -2057,7 +2197,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:03",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-11-14"
+      "expected_reaction_session": "2025-11-14",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "okta-step2-2025-12-02",
@@ -2084,7 +2244,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:01",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2025-12-03"
+      "expected_reaction_session": "2025-12-03",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     },
     {
       "event_id": "love-step2-2025-12-11",
@@ -2111,7 +2291,27 @@
       "precision": "minute",
       "timestamp_evidence": "07:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2025-12-11"
+      "expected_reaction_session": "2025-12-11",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-09-29",
+          "record": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json",
+          "basis": "Owner sign-off (\"yes go ahead\", 2026-09-29) on the recommendation in reports/m2-step2-batch4-signoff-2026-09-29.json."
+        }
+      }
     }
   ]
 }

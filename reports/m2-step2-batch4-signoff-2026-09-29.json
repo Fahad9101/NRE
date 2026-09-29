@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "context": "Reply to a recommendation to sign off on all 10 batch-4 candidates -- the final batch of Milestone 2 step 2's corporate-action check. Zero corporate actions found for any of the 10; seven carry a proposed_label_caveat for in-window competing 8-K items (content not opened), following the exact same attest-and-let-the-pipeline-decide pattern already validated in batches 1-3.",
+  "owner_reply": "yes go ahead",
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 10 candidates in reports/m2-step2-batch4-signoff-packet-2026-09-29.json: pdfs-step2-2025-11-06, ttwo-step2-2025-11-06, vsat-step2-2025-11-07, asmb-step2-2025-11-10, real-step2-2025-11-10, klc-step2-2025-11-12, slsn-step2-2025-11-11, rekr-step2-2025-11-13, okta-step2-2025-12-02, love-step2-2025-12-11.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not a claim that any caveated item (PDFS, VSAT, ASMB, REAL, KLC, SLSN, OKTA) is immaterial -- content was not opened; each caveat travels with the computed labels.",
+    "SLSN's true-release-date correction (2025-11-11, not the ledger's 2025-11-13) does not change this attestation's basis -- it was already established before this signoff."
+  ]
+}
