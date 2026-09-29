@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-09-29",
+  "purpose": "Evidence for the project owner's own decision on whether docs/NRE-1.0-MASTER-PROMPT.md's Milestone 2 acceptance criterion is satisfied: \"Given a historical/new event, the system can return defensible comparable historical events and reaction distributions.\" This file is NOT a declaration -- exactly like every acceptance step in this project, evidence is assembled here and the decision stays the owner's, in their own words, if and when they choose to make it.",
+  "what_full_milestone_2_acceptance_would_mean": "Full Milestone 2 (\"Reaction Fingerprints\": company-level event histories, sector histories, event-type histories, reaction statistics, analogue retrieval) is broader than what's evidenced here. This evidence is about the retrieval capability specifically -- the analogue_query()/pool_report() machinery working against real, accepted, per-issuer-deep data -- which is the part of Milestone 2 that Milestone 2 step 2 was built to unblock. Company-level and sector-level fingerprint statistics remain thin (see the withheld issuer-level cells noted below) and are not claimed here.",
+  "the_three_pieces_of_evidence": [
+    {
+      "kind": "aggregate pool health across the whole dataset",
+      "record": "reports/m2-combined-analogue-pool-report-2026-09-29.json",
+      "context": "reports/m2-combined-fingerprints-analogues-run-2026-09-29.json",
+      "what_it_shows": "Every one of the 68 accepted events (23 Milestone 1 + 45 Milestone 2 step 2) queried as its own historical target, at its own real cutoff, for every label. session_20_close_return's found-analogues rate went from 1 of 23 (Milestone 1 alone) to 44 of 68 combined; positive_gap_filled/positive_gap_retained_half went from 0 of 23 to 33 of 68. This is breadth: how often the system can answer at all, across the whole accepted dataset, not a single cherry-picked case."
+    },
+    {
+      "kind": "one worked historical-target query, in full",
+      "record": "reports/m2-worked-example-cxt-2026-02-11-analogue-query-2026-09-29.json",
+      "what_it_shows": "CXT's own Milestone 1 event, queried across every label. For session_20_close_return: 10 analogues found (all from Milestone 2 step 2; Milestone 1's other 22 events contributed none), distance 0.5, correctly flagged REPORTED_UNRELIABLE (n=10 is below the policy's own reliability floor of 20 -- not overclaimed). CXT's own two step-2 events were correctly excluded from CXT's own query (LABEL_ABSENT / CORPORATE_ACTION_IN_WINDOW, the same dividend suppression already on record), not silently dropped -- a real test of whether the exclusion machinery holds up on a case already known to be tricky."
+    },
+    {
+      "kind": "one worked new-target query, in full -- the other half of the criterion's own wording",
+      "record": "reports/m2-worked-example-new-target-analogue-query-2026-09-29.json",
+      "descriptor": "config/m2-worked-example-new-target-descriptor.json",
+      "what_it_shows": "A hypothetical premarket release for PDF Solutions (a real, already-vetted issuer, CIK 0001120914), as of today -- not a historical event in the dataset, exercising nre.fingerprints.new_target()'s own first-class support for exactly this. Deliberately a harder case, not a softball: none of this issuer's own sector's real events are premarket. Retrieval honestly reached the policy's own max_distance (1.0) to gather 35 members, plainly reporting distance_reached: 1.0 rather than hiding the stretch or refusing to answer -- the reader can judge the pool's own relevance from that number, which is exactly what 'defensible' requires: not that every answer is strong, but that every answer states plainly how strong it is."
+    }
+  ],
+  "what_this_does_not_cover": [
+    "No true out-of-sample validation: every analogue-pool member is drawn from the same accepted convenience sample described throughout this project (SCOPE_NOTE, unchanged), not an independent holdout.",
+    "Company-level and sector-level fingerprint statistics (as opposed to analogue retrieval) remain thin -- every issuer-level cell in reports/m2-combined-fingerprint-table-2026-09-29.json still reports all_statistics_withheld, since the policy's own report_from_n (5) exceeds even the deepest single issuer's event count (LOVE, 4).",
+    "Only two targets were worked through in full (one historical, one new); the aggregate pool report covers breadth across all 68 targets but only at the summary level (found/not-found, member counts), not full per-target comparable lists.",
+    "Nothing here predicts, scores, or ranks -- unchanged from every prior statement in this project. A defensible comparable-event answer is not a forecast."
+  ],
+  "not_a_claim": [
+    "Not a declaration of full Milestone 2 acceptance -- that remains the owner's own decision, the same as every prior milestone step in this project.",
+    "Not evidence that any specific query would be useful for a real decision -- both worked examples are illustrations of the machinery's behavior, not investment or business guidance.",
+    "Not Milestone 3, and not an expansion of Milestone 2 step 2's own already-declared, already-accepted scope."
+  ]
+}
