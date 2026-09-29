@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36535838176",
+  "workflow_run_number": 2,
+  "commit": "8f23907",
+  "trigger": "workflow_dispatch (manual, event_id=all), owner signed in and confirmed dispatch",
+  "context": "First real dry run of the step-2 corporate-action check (batch 1, 12 candidates). Run #1 (commit b430a3c) failed all 12 events with DATA_VALIDATION_FAILED: not a supported session -- traced to nre/dataset.py's build() hardcoding its own internal Calendar(), independent of the calendar already threaded through event_acquire.py (fixed in commit 8f23907). This run, against the fixed code, is the real result.",
+  "result": {
+    "all_ok": true,
+    "total_events": 12,
+    "errors": 0
+  },
+  "every_event": {
+    "state": "QUARANTINED (all 12)",
+    "reason": "FIRST_PUBLIC_TIME_UNVERIFIED (all 12) -- expected and correct: no event in config/m2-step2-events.json carries an attestations block yet, per the plan to attest only after a signoff packet.",
+    "missing_sessions": "none for any event -- full 21-session (anchor + 20 reaction) data availability from Alpaca's real SIP feed for all 12 candidates.",
+    "zero_volume_sessions": "none for any event."
+  },
+  "corporate_actions_found": {
+    "cxt-step2-2025-08-06": [
+      {
+        "ex_date": "2025-08-29",
+        "id": "7f1b57a4-8cc4-450c-8abb-1fcbfcdd8a9d",
+        "type": "cash_dividends"
+      }
+    ]
+  },
+  "corporate_actions_clean": [
+    "achv-step2-2025-08-07",
+    "lnsr-step2-2025-08-07",
+    "alkt-step2-2025-07-30",
+    "caci-step2-2025-08-06",
+    "hurn-step2-2025-07-31",
+    "love-step2-2025-06-12",
+    "nbix-step2-2025-07-30",
+    "parr-step2-2025-08-05",
+    "payo-step2-2025-08-06",
+    "slsn-step2-2025-07-31",
+    "vsat-step2-2025-08-05"
+  ],
+  "raw_per_event": {
+    "achv-step2-2025-08-07": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "lnsr-step2-2025-08-07": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "alkt-step2-2025-07-30": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "caci-step2-2025-08-06": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "cxt-step2-2025-08-06": {
+      "corporate_actions": [
+        {
+          "ex_date": "2025-08-29",
+          "id": "7f1b57a4-8cc4-450c-8abb-1fcbfcdd8a9d",
+          "type": "cash_dividends"
+        }
+      ],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "hurn-step2-2025-07-31": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "love-step2-2025-06-12": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "nbix-step2-2025-07-30": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "parr-step2-2025-08-05": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "payo-step2-2025-08-06": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "slsn-step2-2025-07-31": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    },
+    "vsat-step2-2025-08-05": {
+      "corporate_actions": [],
+      "missing_sessions": [],
+      "zero_volume_sessions": []
+    }
+  },
+  "not_a_claim": [
+    "No label was computed or exposed for any candidate -- corporate_actions_verified stays False on every price row until an attestation is added, per nre/event_acquire.py's build_bundle().",
+    "CXT's dividend is a real finding, not yet a disposition. Milestone 1 itself quarantined an analogous case (CXT's OWN M1 event) on CORPORATE_ACTION_AUDIT_MISSING rather than silently computing a label around it -- the same discipline applies here: this candidate needs explicit owner attestation of corporate_actions before any label is trusted, and the dividend needs to be checked against the reaction window the same way M1's did.",
+    "This confirms data availability and surfaces real corporate actions -- it does not attest first_public_time, historical_identity, or corporate_actions for any of the 12 candidates. A signoff packet and the owner's attestation are still the next step before any label exists for batch 1."
+  ]
+}
