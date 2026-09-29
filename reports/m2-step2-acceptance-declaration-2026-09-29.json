@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-09-29",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "declare Milestone 2 step 2 accepted",
+  "context": "Made in reply to the assistant's statement that, if the owner wanted to declare Milestone 2 step 2 accepted, they should say so in their own words and it would be recorded verbatim -- mirroring exactly how Milestone 1's own declaration (reports/m1-acceptance-declaration-2026-09-26.json) was made.",
+  "status": "MILESTONE_2_STEP_2_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 2 step 2 -- Data depth pilot (2 prior quarterly earnings cycles for the same 23 Milestone-1-accepted issuers)",
+  "acceptance_criterion": {
+    "milestone_2_full_criterion": "\"Given a historical/new event, the system can return defensible comparable historical events and reaction distributions.\" (docs/NRE-1.0-MASTER-PROMPT.md, Milestone 2 -- Reaction Fingerprints)",
+    "what_step_2_actually_is": "Step 2 is a data-depth precondition for that criterion, not the criterion itself: it extends the dataset already-built M2 step 1 fingerprints/analogues machinery can draw on, from one event per issuer (Milestone 1's own limit) to 2-3 events for 21 of 23 issuers. Declaring step 2 accepted is declaring this data real, attested and structurally sound -- it is not a claim that the master prompt's Milestone 2 acceptance criterion is itself satisfied, which additionally requires the retrieval system to actually consume this data and demonstrate defensible comparable-event retrieval. See not_authorized_or_claimed below."
+  },
+  "governing_protocol": {
+    "file": "config/m2-step2-protocol.json",
+    "protocol_version": "m2-step2-pilot-v1-2026-09-28",
+    "protocol_sha256": "751c9ba108ae2f724f2d84d3ada02804406d41cc1fe79ebcf88b5d502d969591",
+    "frozen_membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+    "relationship_to_milestone_1": "A separate, parallel protocol -- never amended, extended or touched config/pilot.json, the frozen 243-candidate membership, or any Milestone 1 record."
+  },
+  "state_declared": {
+    "repository_head_at_declaration": "0a98ecd937c6e56dc8b7b972b934b935a727c8d1",
+    "audited_commit": "c277729d234b74180adf48c09c4debc250b5463d",
+    "audit_inputs_unchanged_since_the_audit": true,
+    "how_verified": "At declaration time, config/m2-step2-protocol.json, reports/m2-step2-reviewed-candidate-ledger.json, reports/m2-step2-acceptance-review.json, nre/acceptance.py, nre/consolidated_audit.py and config/m2-step2-events.json were diffed against the audited commit (no change), and the protocol, ledger, review and membership hashes were recomputed directly with nre.core.canonical/digest and matched those recorded by the final audit exactly.",
+    "audit_input_hashes": {
+      "input_sha256": "8697654ab91c2d6a57e11440983b048dfab11ba959e8fc79d86421b68bbc3aa4",
+      "ledger_sha256": "b608905edf6fdc90552ff2056cf4d068d54758106627cc29edcd0a03fbdca127",
+      "membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+      "protocol_sha256": "751c9ba108ae2f724f2d84d3ada02804406d41cc1fe79ebcf88b5d502d969591",
+      "review_sha256": "87c0627145e8c853bcc0550afe1204ceec7d936db13ea2b71457c456bde71041"
+    }
+  },
+  "basis": {
+    "final_audit": {
+      "record": "reports/m2-step2-label-engine-dry-run-result-2026-09-29.json",
+      "workflow_run": 36592784171,
+      "commit": "c277729d234b74180adf48c09c4debc250b5463d",
+      "all_16_gates_pass": false,
+      "gates_passed": 15,
+      "gates_failed": ["candidate_source_hashes"],
+      "why_the_one_gate_fails": "Milestone 2 step 2's raw SEC discovery bytes were never archived anywhere durable (unlike Milestone 1's, which the owner holds as NRE-M1-SEC-Freeze-Audit.zip and which Milestone 1's own audit downloads as a GitHub Actions artifact) -- nothing for the audit to check candidate source hashes back against. This is a known, pre-documented gap the owner explicitly chose to accept rather than resolve first (reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json), unlike Milestone 1, where all 16 gates were made to pass before declaration.",
+      "status": "BLOCKED",
+      "counts": {
+        "candidates": 48,
+        "dispositions": {"excluded": 2, "included": 45, "quarantined": 1},
+        "eligible_complete_events": 43,
+        "events": 45,
+        "unique_issuers": 22
+      },
+      "spot_checked_events_by_timing": {"after_hours": 2, "premarket": 2},
+      "prior_audit_attempts": "4 prior real runs (workflow runs 1-4 of depth-consolidated-audit.yml) each found and fixed one genuine bug before this final, real result -- source_id collisions (twice), a security_id collision, and a spot-check selection error. None of the 45 events' own computed labels were ever at risk; each fix was reconfirmed against the real per-event workflow (labels_match_recorded: true, all 45) before the next audit attempt. Full detail in reports/m2-step2-label-engine-dry-run-result-2026-09-29.json."
+    },
+    "reproducibility": [
+      "Each accepted event's derived labels are pinned by digest in config/m2-step2-events.json's own recorded_result field, matching config/m1-events.json's convention exactly.",
+      "All 45 labels were independently re-confirmed against freshly refetched real Alpaca data three separate times during the label-engine dry run's own debugging (after each of the source_id x2 and security_id fixes), via workflow runs 14, 15 and 16 of depth-event-acquire.yml -- labels_match_recorded: true for all 45, every time, despite the underlying code and spec both changing around them.",
+      "The consolidated audit itself recomputed every label from a freshly assembled, freshly refetched merged bundle with nre.dataset.build() (workflow run 36592784171).",
+      "Full test suite green throughout every step of this work (338 tests, 4 skipped)."
+    ],
+    "owner_decisions_relied_on": [
+      {"date": "2026-09-28", "decision": "Milestone 2 step 2 pilot scope: 2 prior quarters, same 23 issuers, full Milestone 1 review standard", "record": "reports/m2-step2-authorization-2026-09-28.json"},
+      {"date": "2026-09-28", "decision": "Corporate-action check batch pacing (~4 batches of ~11-12) and provider-rights-at-scale reconfirmation", "record": "reports/m2-step2-corporate-action-scope-authorization-2026-09-28.json"},
+      {"date": "2026-09-29", "decision": "Batch 1 sign-off (12 candidates, including CXT)", "words": "yes go ahead", "record": "reports/m2-step2-batch1-signoff-2026-09-29.json"},
+      {"date": "2026-09-29", "decision": "Batch 2 sign-off (11 candidates, including JBSS)", "words": "yes go ahead", "record": "reports/m2-step2-batch2-signoff-2026-09-29.json"},
+      {"date": "2026-09-29", "decision": "Batch 3 sign-off (12 candidates, including CXT's second dividend)", "words": "yes go ahead", "record": "reports/m2-step2-batch3-signoff-2026-09-29.json"},
+      {"date": "2026-09-29", "decision": "Batch 4 sign-off (10 candidates, the final batch, zero corporate actions)", "words": "yes go ahead", "record": "reports/m2-step2-batch4-signoff-2026-09-29.json"},
+      {"date": "2026-09-29", "decision": "PDFS 2025-08-07 quarantined (mirroring GALT), not excluded; proceed with the label-engine dry run without first archiving step 2's raw SEC bytes", "record": "reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json"}
+    ]
+  },
+  "accepted_scope": "The 45 recorded events (43 eligible complete events across 22 issuers, plus CXT's two events, included but not eligible under this gate's own count) drawn from the frozen cohort of 48 candidates across the same 23 Milestone-1-accepted issuers, under Milestone 2 step 2's own protocol: daily regular-session, previous-close-anchored reaction labels (day-1 open/high/low/close, gap thresholds, gap fill and retention, closes at sessions 2, 5, 10 and 20) for premarket and after-hours earnings releases from 2025-06-01 to 2026-01-04, computed from Alpaca SIP raw daily bars with explicit corporate-action handling and published only as derived values -- identical methodology to Milestone 1, extended to a second protocol covering a different, non-overlapping window.",
+  "accepted_with_these_stated_limits": [
+    "candidate_source_hashes does not pass -- no durable archive of step 2's raw SEC discovery bytes exists for the audit to check against. Accepted explicitly, not overlooked; see basis.final_audit above. Housekeeping below notes how this could be closed later if desired.",
+    "The chronology gap search cannot close: the absence of an earlier public disclosure is evidenced by wire pages and SEC filing history, never proved -- identical to Milestone 1's own stated limit.",
+    "One named reviewer, the project owner, throughout -- no independent second review, carrying forward Milestone 1's own 2026-09-22 amendment.",
+    "Label-level caveats travel with their events: ALKT, OKTA (both candidates), REKR (both candidates), HURN, SLSN, JBSS (both candidates), PDFS, VSAT, ASMB, REAL (both candidates), KLC, LOVE and TTWO each have an in-window competing 8-K item whose content was never opened.",
+    "CXT's two real cash dividends (one per candidate) each null exactly their own session_20_close_return, leaving eligible_complete_events at 43, not 45, and unique_issuers at 22, not 23 -- a property of the accepted dataset, not a limitation of the review.",
+    "The provider-rights authorization covers derived ratios, booleans, counts and hashes only, re-confirmed explicitly at each batch's own scale -- no raw prices are committed or printed.",
+    "This remains an engineering pilot to measure real solo-review throughput, per config/m2-step2-protocol.json's own minimum_note -- not evidence of predictive power.",
+    "The engine's own stated limit stands: \"Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.\""
+  ],
+  "not_authorized_or_claimed": [
+    "Full Milestone 2 acceptance is not claimed or authorized by this declaration -- the master prompt's own criterion (defensible comparable-event retrieval) requires the fingerprints/analogues system to actually consume this data and demonstrate that, which has not been done or asked for here.",
+    "The scope proposal's fuller 4-8 quarter range, Milestone 3, or any other scope expansion is not authorized; each would need the owner's own separate explicit approval, the same as every prior scale-up in this project.",
+    "No predictive claim, validated edge or trading use -- same as Milestone 1.",
+    "The frozen Milestone 1 BOE, SOE and IEE rules, and the frozen 243-candidate membership, remain untouched.",
+    "milestone_accepted stays false in nre.acceptance.audit_cohort()'s own output regardless of this declaration, by design -- acceptance is a human record outside the code. This file is that record."
+  ],
+  "note_for_future_planning": "Unlike Milestone 1, where each of the 22 eligible issuers contributed exactly one event (no company-level history was possible), 21 of these 23 issuers now have 2-3 events each -- this is the first dataset in the project with enough per-issuer depth to support the company-level event histories and reaction-distribution comparisons Milestone 2's own criterion actually calls for. That capability is new; nothing has yet been built or asked to use it.",
+  "housekeeping": "If the candidate_source_hashes gate is ever worth closing, the raw SEC discovery bytes and their hashes for all 48 frozen candidates are still available locally at data/m2-step2-freeze/raw/ (gitignored, never committed -- the same situation Milestone 1's own archive was in before the owner was separately asked to keep NRE-M1-SEC-Freeze-Audit.zip). Archiving that directory the same way and adding an --archive-dir-equivalent flow to depth-consolidated-audit.yml would let the gate pass for real, mirroring consolidated-audit.yml's own --archive-dir handling exactly."
+}
