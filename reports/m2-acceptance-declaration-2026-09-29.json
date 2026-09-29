@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-09-29",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "declare it",
+  "context": "Made in direct reply to the assistant's closing question -- \"Let me know if you want to declare it, want more worked examples first, or want to go a different direction entirely\" -- itself in reply to reports/m2-milestone-2-criterion-evidence-2026-09-29.json, presented the same turn. \"It\" is that evidence packet's own subject: whether docs/NRE-1.0-MASTER-PROMPT.md's Milestone 2 acceptance criterion is satisfied. Recorded verbatim, mirroring exactly how Milestone 1's (reports/m1-acceptance-declaration-2026-09-26.json) and Milestone 2 step 2's (reports/m2-step2-acceptance-declaration-2026-09-29.json) own declarations were made.",
+  "status": "MILESTONE_2_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 2 -- Reaction Fingerprints",
+  "acceptance_criterion": "\"Given a historical/new event, the system can return defensible comparable historical events and reaction distributions.\" (docs/NRE-1.0-MASTER-PROMPT.md, Milestone 2 -- Reaction Fingerprints)",
+  "state_declared": {
+    "repository_head_at_declaration": "2ceb733775892b3450cfba443139f392c70c2854",
+    "audit_inputs_unchanged_since_the_evidence_was_prepared": true,
+    "how_verified": "At declaration time, the four cited evidence reports were re-hashed directly with nre.core.canonical/digest (the same formula nre.fingerprints.write_report() uses) and matched the report_sha256 values printed when each was generated, exactly: reports/m2-combined-fingerprint-table-2026-09-29.json, reports/m2-combined-analogue-pool-report-2026-09-29.json, reports/m2-worked-example-cxt-2026-02-11-analogue-query-2026-09-29.json, reports/m2-worked-example-new-target-analogue-query-2026-09-29.json. Unlike Milestone 1's and Milestone 2 step 2's own declarations, there is no single audit_cohort()-style gate-check result to re-verify here -- nre.fingerprints/nre.analogues is descriptive and retrieval machinery, not a gated acceptance audit -- so this declaration verifies reproducibility of the actual evidence reports instead.",
+    "report_hashes_reconfirmed": {
+      "reports/m2-combined-fingerprint-table-2026-09-29.json": "e8f3015702a3148af6cc22a78dda650168841f7cf48e8a4777df48af4259571f",
+      "reports/m2-combined-analogue-pool-report-2026-09-29.json": "156c159d486fa5ed566232de90a73a4b261f4e3e077eacf45c2ff51bba3ae9f8",
+      "reports/m2-worked-example-cxt-2026-02-11-analogue-query-2026-09-29.json": "aa5a9d555182c1d552bb200f5e88f7d75792fd1e7e8b64d271baaf9efd81cccc",
+      "reports/m2-worked-example-new-target-analogue-query-2026-09-29.json": "49b00116c023bcaee1562793c5997fdb6f93dcd829d9da11207f3c938f2bcf11"
+    }
+  },
+  "basis": {
+    "evidence_packet": "reports/m2-milestone-2-criterion-evidence-2026-09-29.json",
+    "dependency_chain": [
+      "Milestone 1 accepted 2026-09-26 (reports/m1-acceptance-declaration-2026-09-26.json) -- 23 events, exactly one per issuer.",
+      "Milestone 2 step 1 (fingerprints/analogues machinery): built, confirmed, reviewed 2026-09-27; analogue minimum raised 5 to 10.",
+      "Milestone 2 step 2 (data depth pilot) accepted 2026-09-29 (reports/m2-step2-acceptance-declaration-2026-09-29.json) -- 45 more events across the same 23 issuers, with one knowingly unresolved gate (candidate_source_hashes).",
+      "The machinery was pointed at the combined 68-event dataset for the first time today, requiring two more additive fixes (a fourth hardcoded 2026-only Calendar(), and event_from_record() support for Milestone 2 step 2's batch-recorded results) -- neither changes Milestone 1's own output.",
+      "Three pieces of real evidence were produced and reviewed the same day: the aggregate pool report across all 68 targets, one full historical-target worked example (CXT), and one full new-target worked example (PDF Solutions, deliberately a harder case)."
+    ],
+    "owner_decision_relied_on": {
+      "date": "2026-09-29",
+      "decision": "Run the fingerprints/analogues machinery on the accepted data, then build one new-target worked example and an evidence summary before any acceptance decision",
+      "words": "use the fingerprints/analogues machinery on this data; ... yes go ahead [to running a new-target worked example and building the evidence summary]",
+      "record": "This session's own conversation; reports/m2-combined-fingerprints-analogues-run-2026-09-29.json, reports/m2-worked-example-new-target-analogue-query-2026-09-29.json, reports/m2-milestone-2-criterion-evidence-2026-09-29.json"
+    }
+  },
+  "accepted_scope": "The retrieval capability the criterion actually names: nre.fingerprints.new_target()/historical_target() plus nre.analogues.retrieve()/analogue_query()/pool_report(), demonstrated against the combined 68-event accepted dataset (23 Milestone 1 + 45 Milestone 2 step 2) under config/fingerprint-policy.json's unchanged, already-confirmed thresholds (min_members 10, max_distance 1.0, wilson_confidence and reporting floors as previously set). Both the historical and the new-event halves of the criterion's own wording were exercised.",
+  "accepted_with_these_stated_limits": [
+    "This is retrieval capability, not full company/sector-level fingerprint reporting -- every issuer-level cell in reports/m2-combined-fingerprint-table-2026-09-29.json still reports all_statistics_withheld (policy report_from_n is 5; the deepest single issuer, LOVE, has 4 combined events). Sector-level (sic_division/sic_major_group) and pooled (all/timing) cells are where the real statistical gain landed.",
+    "No true out-of-sample validation -- every analogue-pool member is drawn from the same accepted convenience sample this project has described throughout (SCOPE_NOTE, unchanged), never an independent holdout.",
+    "Only two targets were worked through in full detail (one historical, one deliberately hard new case); the aggregate pool report covers all 68 targets but only at summary granularity (found/not-found, member counts), not full comparable lists for each.",
+    "Milestone 2 step 2's own unresolved limits carry forward unchanged (candidate_source_hashes gap, single named reviewer, label-level caveats that travel with their events) -- see reports/m2-step2-acceptance-declaration-2026-09-29.json.",
+    "The engine's own stated limit stands, unchanged since Milestone 1: \"Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.\""
+  ],
+  "not_authorized_or_claimed": [
+    "No predictive claim, validated edge, or trading use -- a defensible comparable-event answer, honestly hedged by sample size, is not a forecast. Nothing here predicts, scores, or ranks, matching nre/fingerprints.py's own unchanged SCOPE_NOTE.",
+    "Milestone 3 (News/Catalyst Intelligence) or any later milestone is not authorized by this declaration; each needs the owner's own separate explicit approval, the same as every milestone before it.",
+    "No scope expansion beyond what was already authorized for Milestone 2 step 2 (e.g. the scope proposal's fuller 4-8 quarter range) is implied.",
+    "The frozen Milestone 1 BOE, SOE and IEE rules, and the frozen 243-candidate membership, remain untouched.",
+    "This declaration governs the retrieval capability specifically; it does not retroactively change or strengthen Milestone 2 step 2's own already-declared, already-stated limits."
+  ],
+  "housekeeping": "Two loose ends remain from this project's own hardcoded-Calendar() bug class, both explicitly flagged rather than fixed: nre/alpaca.py still has the same latent 2026-only default, not yet exercised by any 2025-dated real workflow. Milestone 2 step 2's own candidate_source_hashes gap (reports/m2-step2-acceptance-declaration-2026-09-29.json's own housekeeping field) is unaffected by this declaration."
+}
