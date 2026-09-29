@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "purpose": "Running the already-built Milestone 2 step 1 fingerprints/analogues machinery for the first time against real, accepted data with per-issuer depth (Milestone 2 step 2, declared accepted the same day). Entirely local and offline -- neither module touches the network, prices, or credentials; both read only already-committed derived records.",
+  "code_fixes_needed": [
+    "nre/fingerprints.py's load_inputs() hardcoded a 2026-only Calendar() -- the fourth instance of the same bug class found this project (event_acquire.main(), dataset.build(), acceptance.audit_cohort() were the first three). Fixed additively with a calendar_path parameter and a new --calendar CLI flag on both the fingerprints and analogues subcommands; omitted, behavior is unchanged.",
+    "event_from_record() assumed every recorded_result pointed at a Milestone-1-style one-file-per-event record. Milestone 2 step 2's own batch reports hold several events under computed_events instead. Fixed by reading that shape directly when present; Milestone 1's own per-event-file path is unchanged."
+  ],
+  "combined_dataset": {
+    "file": "config/m2-combined-events.json",
+    "note": "A new, parallel file -- never modifies config/m1-events.json or config/m2-step2-events.json. Holds only the 23 Milestone 1 + 45 Milestone 2 step 2 events that already carry a recorded_result (accepted, attested, pinned); no quarantined or excluded candidate from either file is included.",
+    "provider": "Copied from config/m2-step2-events.json's own provider block -- identical core terms to Milestone 1's (provider_id, research_permitted, terms_url, feeds, session_scope); only the attestation record differs, and both are independently real and already govern this exact data. validate_spec() needs only one.",
+    "calendar_used": "config/m2-step2-merged-calendar.json (already existed; covers both years additively)",
+    "total_events": 68,
+    "unique_issuers": 23
+  },
+  "outputs": {
+    "reaction_fingerprint_table": "reports/m2-combined-fingerprint-table-2026-09-29.json",
+    "analogue_pool_report": "reports/m2-combined-analogue-pool-report-2026-09-29.json"
+  },
+  "what_actually_improved": {
+    "note": "Milestone 1 alone (23 events, exactly one per issuer) vs the combined 68-event dataset, both under the identical, unchanged fingerprint-policy.json thresholds. 'with_5_or_more' and 'analogues_found' below both use the policy's own minimum (5 members) and its full min_members/max_distance analogue rule respectively -- see config/fingerprint-policy.json.",
+    "milestone_1_alone": {
+      "day1_close_return": {
+        "targets": 23,
+        "with_5_or_more": 17,
+        "analogues_found": 6
+      },
+      "session_2_close_return": {
+        "targets": 23,
+        "with_5_or_more": 16,
+        "analogues_found": 4
+      },
+      "session_5_close_return": {
+        "targets": 23,
+        "with_5_or_more": 16,
+        "analogues_found": 4
+      },
+      "session_10_close_return": {
+        "targets": 23,
+        "with_5_or_more": 10,
+        "analogues_found": 3
+      },
+      "session_20_close_return": {
+        "targets": 23,
+        "with_5_or_more": 7,
+        "analogues_found": 1
+      },
+      "positive_gap_retained_half": {
+        "targets": 23,
+        "with_5_or_more": 13,
+        "analogues_found": 0
+      },
+      "positive_gap_filled": {
+        "targets": 23,
+        "with_5_or_more": 13,
+        "analogues_found": 0
+      }
+    },
+    "combined_68_events": {
+      "day1_close_return": {
+        "targets": 68,
+        "with_5_or_more": 63,
+        "with_10_or_more": 54,
+        "with_20_or_more": 48,
+        "with_none": 1,
+        "analogues_found": 49
+      },
+      "session_2_close_return": {
+        "targets": 68,
+        "with_5_or_more": 63,
+        "with_10_or_more": 51,
+        "with_20_or_more": 48,
+        "with_none": 1,
+        "analogues_found": 48
+      },
+      "session_5_close_return": {
+        "targets": 68,
+        "with_5_or_more": 54,
+        "with_10_or_more": 49,
+        "with_20_or_more": 47,
+        "with_none": 1,
+        "analogues_found": 46
+      },
+      "session_10_close_return": {
+        "targets": 68,
+        "with_5_or_more": 49,
+        "with_10_or_more": 49,
+        "with_20_or_more": 47,
+        "with_none": 1,
+        "analogues_found": 45
+      },
+      "session_20_close_return": {
+        "targets": 68,
+        "with_5_or_more": 47,
+        "with_10_or_more": 47,
+        "with_20_or_more": 46,
+        "with_none": 1,
+        "analogues_found": 44
+      },
+      "positive_gap_retained_half": {
+        "targets": 68,
+        "with_5_or_more": 54,
+        "with_10_or_more": 51,
+        "with_20_or_more": 34,
+        "with_none": 8,
+        "analogues_found": 33
+      },
+      "positive_gap_filled": {
+        "targets": 68,
+        "with_5_or_more": 54,
+        "with_10_or_more": 51,
+        "with_20_or_more": 34,
+        "with_none": 8,
+        "analogues_found": 33
+      }
+    },
+    "reading_it": "Every label's analogue-retrieval health improved -- most sharply for the labels that matter most for later-horizon comparisons: session_20_close_return went from 1 of 23 targets finding enough analogues to 44 of 68, and positive_gap_filled/positive_gap_retained_half went from 0 of 23 to 33 of 68 (these two labels only exist for events with a positive opening gap, so their own pool is always smaller than the others')."
+  },
+  "issuer_level_statistics_still_withheld": {
+    "why": "config/fingerprint-policy.json's own proportion.report_from_n is 5; even Milestone 2 step 2's deepest issuer (LOVE, 3 events combined with Milestone 1's own 1) tops out at 4 events for one issuer. All 23 issuer-level cells in reports/m2-combined-fingerprint-table-2026-09-29.json still report all_statistics_withheld -- correctly, under the policy's own conservative threshold, not a defect in the data or the run.",
+    "what_did_improve": "The all/timing/sic_division/sic_major_group level cells, which pool across issuers rather than needing per-issuer depth, now rest on real n of up to 68 (vs 23) -- e.g. the top-level 'all' cell's day1_close_return mean is REPORTED at n=68, mean -0.0237, versus n=23 under Milestone 1 alone."
+  },
+  "not_a_claim": [
+    "Nothing here predicts, scores, or ranks -- matching nre/fingerprints.py's own SCOPE_NOTE, unchanged: 'These figures describe the accepted events only... not market base rates.'",
+    "Analogue retrieval is categorical distance only (release timing, sector) -- never by outcome; an analogue's own reaction never influences whether it is selected.",
+    "This is a description of the already-accepted, already-declared dataset, not a new milestone or a new acceptance -- Milestone 2 step 2's own declaration (2026-09-29) already covers the data; this just exercises the machinery M2 step 1 built to consume it.",
+    "No model, prediction, or trading signal was built or requested; none is implied by this run."
+  ]
+}
