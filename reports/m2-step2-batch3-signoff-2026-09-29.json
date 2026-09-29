@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "context": "Reply to a recommendation to sign off on all 12 batch-3 candidates, mirroring batches 1-2's already-approved reasoning: attest CXT (a real dividend, following the same attest-and-let-the-pipeline-decide pattern already validated twice), and accept NBIX's/JBSS's/PAYO's proposed_label_caveat as informational.",
+  "owner_reply": "yes go ahead",
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 12 candidates in reports/m2-step2-batch3-signoff-packet-2026-09-29.json: achv-step2-2025-11-06, alkt-step2-2025-10-30, aspn-step2-2025-11-06, coll-step2-2025-11-06, cxt-step2-2025-11-05, hurn-step2-2025-10-28, jbss-step2-2025-10-29, lnsr-step2-2025-11-06, nbix-step2-2025-10-28, parr-step2-2025-11-04, payo-step2-2025-11-05, tecx-step2-2025-11-06.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not a claim that NBIX's, JBSS's, or PAYO's caveated items are immaterial -- content was not opened; the caveat travels with the computed labels.",
+    "CXT's dividend crossing (or not) session_20 will be determined by the pipeline itself."
+  ]
+}
