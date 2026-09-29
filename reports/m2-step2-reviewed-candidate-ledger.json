@@ -1,0 +1,984 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "0000016058-25-000084",
+      "cik": "0000016058",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "fb62d7d802ef4889b8ef43619d65017be539c249055d04311f7d31fd2b8e1f4b",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-10-22",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000001605825000084/caci-20251022.htm",
+      "source_sha256": "fb62d7d802ef4889b8ef43619d65017be539c249055d04311f7d31fd2b8e1f4b",
+      "ticker": "CACI",
+      "disposition": "included",
+      "event_id": "caci-step2-2025-10-22"
+    },
+    {
+      "candidate_id": "0000025445-25-000081",
+      "cik": "0000025445",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "aa1aba07d9f6a9b3abd3eab9842527942e3bf99877a7243b04c38afbd8456ab6",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/25445/000002544525000081/cxt-20250806.htm",
+      "source_sha256": "aa1aba07d9f6a9b3abd3eab9842527942e3bf99877a7243b04c38afbd8456ab6",
+      "ticker": "CXT",
+      "disposition": "included",
+      "event_id": "cxt-step2-2025-08-06"
+    },
+    {
+      "candidate_id": "0000025445-25-000093",
+      "cik": "0000025445",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "aa1aba07d9f6a9b3abd3eab9842527942e3bf99877a7243b04c38afbd8456ab6",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-05",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/25445/000002544525000093/cxt-20251105.htm",
+      "source_sha256": "aa1aba07d9f6a9b3abd3eab9842527942e3bf99877a7243b04c38afbd8456ab6",
+      "ticker": "CXT",
+      "disposition": "included",
+      "event_id": "cxt-step2-2025-11-05"
+    },
+    {
+      "candidate_id": "0000821483-25-000024",
+      "cik": "0000821483",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "ca702c5d44dd700c5276a1d9c1b56db7e1e29a9aa396c5db1badb63661fb7362",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/821483/000082148325000024/parr-20250805.htm",
+      "source_sha256": "ca702c5d44dd700c5276a1d9c1b56db7e1e29a9aa396c5db1badb63661fb7362",
+      "ticker": "PARR",
+      "disposition": "included",
+      "event_id": "parr-step2-2025-08-05"
+    },
+    {
+      "candidate_id": "0000914475-25-000157",
+      "cik": "0000914475",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "151fe40af646fdcfcad8f26b650991a16b5b76308456e76f34c0defac374d2be",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-07-30",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000157/nbix-20250730.htm",
+      "source_sha256": "151fe40af646fdcfcad8f26b650991a16b5b76308456e76f34c0defac374d2be",
+      "ticker": "NBIX",
+      "disposition": "included",
+      "event_id": "nbix-step2-2025-07-30"
+    },
+    {
+      "candidate_id": "0000914475-25-000180",
+      "cik": "0000914475",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "151fe40af646fdcfcad8f26b650991a16b5b76308456e76f34c0defac374d2be",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-10-28",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/nbix-20251028.htm",
+      "source_sha256": "151fe40af646fdcfcad8f26b650991a16b5b76308456e76f34c0defac374d2be",
+      "ticker": "NBIX",
+      "disposition": "included",
+      "event_id": "nbix-step2-2025-10-28"
+    },
+    {
+      "candidate_id": "0000950170-25-104020",
+      "cik": "0001426800",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "a4079fcce8e001ed6c3202b7ab2fc7ae28f2fc610f313fd7f95e2ddad1bae4bc",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1426800/000095017025104020/asmb-20250806.htm",
+      "source_sha256": "a4079fcce8e001ed6c3202b7ab2fc7ae28f2fc610f313fd7f95e2ddad1bae4bc",
+      "ticker": "ASMB",
+      "disposition": "excluded",
+      "event_id": null,
+      "reason": "Same-day competing catalyst: this filing's own Item 8.01 press release discloses new Phase 1a clinical-trial data alongside the earnings release, on the same reaction day, independently wire-disseminated, and materially fresh -- fails docs/SAME-DAY-COMPETING-CATALYST-POLICY.md's 3-part test. reports/m2-step2-same-day-catalyst-review-2026-09-28.json."
+    },
+    {
+      "candidate_id": "0000950170-25-104556",
+      "cik": "0001320350",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "8b91447688329b63eb89bba8bd76977a83053739f2cfbabf43769ca72e180bea",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1320350/000095017025104556/lnsr-20250807.htm",
+      "source_sha256": "8b91447688329b63eb89bba8bd76977a83053739f2cfbabf43769ca72e180bea",
+      "ticker": "LNSR",
+      "disposition": "included",
+      "event_id": "lnsr-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0000950170-25-104569",
+      "cik": "0000949858",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "6a164fbc233da72fa0be4868ee35a9538d2171f24b74946d609e5faef671b696",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/949858/000095017025104569/achv-20250807.htm",
+      "source_sha256": "6a164fbc233da72fa0be4868ee35a9538d2171f24b74946d609e5faef671b696",
+      "ticker": "ACHV",
+      "disposition": "included",
+      "event_id": "achv-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0000950170-25-107337",
+      "cik": "0001873529",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "d3d658d651ce67919aa48602b333fab9b4b93d026326f0b457ec7802fda2c269",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-12",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1873529/000095017025107337/klc-20250812.htm",
+      "source_sha256": "d3d658d651ce67919aa48602b333fab9b4b93d026326f0b457ec7802fda2c269",
+      "ticker": "KLC",
+      "disposition": "included",
+      "event_id": "klc-step2-2025-08-12"
+    },
+    {
+      "candidate_id": "0000950170-25-110453",
+      "cik": "0000880117",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "90f938a28a6af085fb2b2a4ef8204f52b019fd3bab7b47ff65a35c761177e146",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-20",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/880117/000095017025110453/jbss-20250820.htm",
+      "source_sha256": "90f938a28a6af085fb2b2a4ef8204f52b019fd3bab7b47ff65a35c761177e146",
+      "ticker": "JBSS",
+      "disposition": "included",
+      "event_id": "jbss-step2-2025-08-20"
+    },
+    {
+      "candidate_id": "0001104659-25-106667",
+      "cik": "0001845815",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "73a9fbc07bb6e2630e38712e68cba0d62eed8abfc0928322c3b76b04e44cebf0",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-05",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1845815/000110465925106667/payo-20251105x8k.htm",
+      "source_sha256": "73a9fbc07bb6e2630e38712e68cba0d62eed8abfc0928322c3b76b04e44cebf0",
+      "ticker": "PAYO",
+      "disposition": "included",
+      "event_id": "payo-step2-2025-11-05"
+    },
+    {
+      "candidate_id": "0001104659-25-107389",
+      "cik": "0001267565",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "7ea3c41af2bdbadf412581db964f8632d36e8ccc696be5b05f2a9cd2c7897c76",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1267565/000110465925107389/coll-20251106x8k.htm",
+      "source_sha256": "7ea3c41af2bdbadf412581db964f8632d36e8ccc696be5b05f2a9cd2c7897c76",
+      "ticker": "COLL",
+      "disposition": "included",
+      "event_id": "coll-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001171843-25-004923",
+      "cik": "0000883107",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "8ac8d3280d2cc98af2923a36278a5bfebf7719fa6fdd5a8908819eebe04ebf7d",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-07-31",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325004923/f8k_073125.htm",
+      "source_sha256": "8ac8d3280d2cc98af2923a36278a5bfebf7719fa6fdd5a8908819eebe04ebf7d",
+      "ticker": "SLSN",
+      "disposition": "included",
+      "event_id": "slsn-step2-2025-07-31"
+    },
+    {
+      "candidate_id": "0001171843-25-005147",
+      "cik": "0001145986",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "e2ff9ae4574bd351e1862930c6066dd44d5b45db9c3f52e7f22f8a3f6c2d3edd",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1145986/000117184325005147/f8k_080725.htm",
+      "source_sha256": "e2ff9ae4574bd351e1862930c6066dd44d5b45db9c3f52e7f22f8a3f6c2d3edd",
+      "ticker": "ASPN",
+      "disposition": "included",
+      "event_id": "aspn-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0001171843-25-007067",
+      "cik": "0001145986",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "e2ff9ae4574bd351e1862930c6066dd44d5b45db9c3f52e7f22f8a3f6c2d3edd",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1145986/000117184325007067/f8k_110625.htm",
+      "source_sha256": "e2ff9ae4574bd351e1862930c6066dd44d5b45db9c3f52e7f22f8a3f6c2d3edd",
+      "ticker": "ASPN",
+      "disposition": "included",
+      "event_id": "aspn-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001171843-25-007246",
+      "cik": "0000883107",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "8ac8d3280d2cc98af2923a36278a5bfebf7719fa6fdd5a8908819eebe04ebf7d",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-13",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325007246/f8k_111225.htm",
+      "source_sha256": "8ac8d3280d2cc98af2923a36278a5bfebf7719fa6fdd5a8908819eebe04ebf7d",
+      "ticker": "SLSN",
+      "disposition": "included",
+      "event_id": "slsn-step2-2025-11-11"
+    },
+    {
+      "candidate_id": "0001193125-25-173528",
+      "cik": "0000797721",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "e1f1b69d1c4114a2f7c39fa51f7b84ae631d0651f2d1dbdd0b3ac842412bc993",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-05",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312525173528/d908372d8k.htm",
+      "source_sha256": "e1f1b69d1c4114a2f7c39fa51f7b84ae631d0651f2d1dbdd0b3ac842412bc993",
+      "ticker": "VSAT",
+      "disposition": "included",
+      "event_id": "vsat-step2-2025-08-05"
+    },
+    {
+      "candidate_id": "0001193125-25-175567",
+      "cik": "0001681087",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "386b6eaf7d2eb946524a39d8c9ac13e4f5b7d081474726066060bcc97284dd8b",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1681087/000119312525175567/d36621d8k.htm",
+      "source_sha256": "386b6eaf7d2eb946524a39d8c9ac13e4f5b7d081474726066060bcc97284dd8b",
+      "ticker": "TECX",
+      "disposition": "included",
+      "event_id": "tecx-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0001193125-25-256336",
+      "cik": "0000880117",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "90f938a28a6af085fb2b2a4ef8204f52b019fd3bab7b47ff65a35c761177e146",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-10-29",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312525256336/jbss-20251029.htm",
+      "source_sha256": "90f938a28a6af085fb2b2a4ef8204f52b019fd3bab7b47ff65a35c761177e146",
+      "ticker": "JBSS",
+      "disposition": "included",
+      "event_id": "jbss-step2-2025-10-29"
+    },
+    {
+      "candidate_id": "0001193125-25-268056",
+      "cik": "0000949858",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "6a164fbc233da72fa0be4868ee35a9538d2171f24b74946d609e5faef671b696",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/949858/000119312525268056/achv-20251106.htm",
+      "source_sha256": "6a164fbc233da72fa0be4868ee35a9538d2171f24b74946d609e5faef671b696",
+      "ticker": "ACHV",
+      "disposition": "included",
+      "event_id": "achv-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001193125-25-268073",
+      "cik": "0001320350",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "8b91447688329b63eb89bba8bd76977a83053739f2cfbabf43769ca72e180bea",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1320350/000119312525268073/lnsr-20251106.htm",
+      "source_sha256": "8b91447688329b63eb89bba8bd76977a83053739f2cfbabf43769ca72e180bea",
+      "ticker": "LNSR",
+      "disposition": "included",
+      "event_id": "lnsr-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001193125-25-269573",
+      "cik": "0001681087",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "386b6eaf7d2eb946524a39d8c9ac13e4f5b7d081474726066060bcc97284dd8b",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1681087/000119312525269573/tecx-20251106.htm",
+      "source_sha256": "386b6eaf7d2eb946524a39d8c9ac13e4f5b7d081474726066060bcc97284dd8b",
+      "ticker": "TECX",
+      "disposition": "included",
+      "event_id": "tecx-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001193125-25-272331",
+      "cik": "0000797721",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "e1f1b69d1c4114a2f7c39fa51f7b84ae631d0651f2d1dbdd0b3ac842412bc993",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312525272331/d38034d8k.htm",
+      "source_sha256": "e1f1b69d1c4114a2f7c39fa51f7b84ae631d0651f2d1dbdd0b3ac842412bc993",
+      "ticker": "VSAT",
+      "disposition": "included",
+      "event_id": "vsat-step2-2025-11-07"
+    },
+    {
+      "candidate_id": "0001193125-25-274235",
+      "cik": "0001426800",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "a4079fcce8e001ed6c3202b7ab2fc7ae28f2fc610f313fd7f95e2ddad1bae4bc",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-10",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1426800/000119312525274235/asmb-20251110.htm",
+      "source_sha256": "a4079fcce8e001ed6c3202b7ab2fc7ae28f2fc610f313fd7f95e2ddad1bae4bc",
+      "ticker": "ASMB",
+      "disposition": "included",
+      "event_id": "asmb-step2-2025-11-10"
+    },
+    {
+      "candidate_id": "0001193125-25-277750",
+      "cik": "0001873529",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "d3d658d651ce67919aa48602b333fab9b4b93d026326f0b457ec7802fda2c269",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-12",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1873529/000119312525277750/klc-20251112.htm",
+      "source_sha256": "d3d658d651ce67919aa48602b333fab9b4b93d026326f0b457ec7802fda2c269",
+      "ticker": "KLC",
+      "disposition": "included",
+      "event_id": "klc-step2-2025-11-12"
+    },
+    {
+      "candidate_id": "0001289848-25-000189",
+      "cik": "0001289848",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-07-31",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1289848/000128984825000189/hurn-20250731.htm",
+      "source_sha256": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87",
+      "ticker": "HURN",
+      "disposition": "included",
+      "event_id": "hurn-step2-2025-07-31"
+    },
+    {
+      "candidate_id": "0001437749-25-025457",
+      "cik": "0001120914",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "650d3999145280d988b4589dc9c637256954ad664f808818a06cf0c21c005067",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1120914/000143774925025457/pdfs20250530_8k.htm",
+      "source_sha256": "650d3999145280d988b4589dc9c637256954ad664f808818a06cf0c21c005067",
+      "ticker": "PDFS",
+      "disposition": "quarantined",
+      "event_id": null,
+      "reason": "Released exactly at the 16:00:00 ET regular-session close boundary; nre/calendar.py's classify() returns bell_ambiguous, which is not one of the two timing classes event_acquire.validate_spec() accepts at minute precision. Mirrors Milestone 1's own GALT precedent (docs/M1-READINESS-ASSESSMENT.md): left quarantined, not excluded, since this is an unresolved encoding limitation, not a same-day-catalyst or eligibility judgment. Owner confirmed 2026-09-29 (reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json)."
+    },
+    {
+      "candidate_id": "0001437749-25-026189",
+      "cik": "0001697851",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-12",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774925026189/rekr20250811_8k.htm",
+      "source_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a",
+      "ticker": "REKR",
+      "disposition": "included",
+      "event_id": "rekr-step2-2025-08-12"
+    },
+    {
+      "candidate_id": "0001437749-25-030890",
+      "cik": "0001697851",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-10-14",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774925030890/rekr20251013_8k.htm",
+      "source_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a",
+      "ticker": "REKR",
+      "disposition": "excluded",
+      "event_id": null,
+      "reason": "Not a qualifying earnings event: the 8-K's own Item 2.02 text is a preliminary, unaudited guidance-range pre-announcement, not the quarterly results release itself (that release is this issuer's separate, kept 2025-11-13 candidate). reports/m2-step2-eligibility-review-2026-09-28.json."
+    },
+    {
+      "candidate_id": "0001437749-25-033622",
+      "cik": "0001120914",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "650d3999145280d988b4589dc9c637256954ad664f808818a06cf0c21c005067",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1120914/000143774925033622/pdfs20250815_8k.htm",
+      "source_sha256": "650d3999145280d988b4589dc9c637256954ad664f808818a06cf0c21c005067",
+      "ticker": "PDFS",
+      "disposition": "included",
+      "event_id": "pdfs-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001437749-25-034859",
+      "cik": "0001697851",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-13",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "5.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774925034859/rekr20251112_8k.htm",
+      "source_sha256": "749d05be574b4b8c115675c7255b99873e7ad87804fe528d4de070227887961a",
+      "ticker": "REKR",
+      "disposition": "included",
+      "event_id": "rekr-step2-2025-11-13"
+    },
+    {
+      "candidate_id": "0001529274-25-000147",
+      "cik": "0001529274",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "b04d5280f489f241f51b670e01bc148135625221ff007ffaf1f04d30e887fe66",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-07-30",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927425000147/alk-20250730.htm",
+      "source_sha256": "b04d5280f489f241f51b670e01bc148135625221ff007ffaf1f04d30e887fe66",
+      "ticker": "ALKT",
+      "disposition": "included",
+      "event_id": "alkt-step2-2025-07-30"
+    },
+    {
+      "candidate_id": "0001529274-25-000159",
+      "cik": "0001529274",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "b04d5280f489f241f51b670e01bc148135625221ff007ffaf1f04d30e887fe66",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-10-30",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927425000159/alk-20251029.htm",
+      "source_sha256": "b04d5280f489f241f51b670e01bc148135625221ff007ffaf1f04d30e887fe66",
+      "ticker": "ALKT",
+      "disposition": "included",
+      "event_id": "alkt-step2-2025-10-30"
+    },
+    {
+      "candidate_id": "0001558370-25-010405",
+      "cik": "0001845815",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "73a9fbc07bb6e2630e38712e68cba0d62eed8abfc0928322c3b76b04e44cebf0",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1845815/000155837025010405/payo-20250806x8k.htm",
+      "source_sha256": "73a9fbc07bb6e2630e38712e68cba0d62eed8abfc0928322c3b76b04e44cebf0",
+      "ticker": "PAYO",
+      "disposition": "included",
+      "event_id": "payo-step2-2025-08-06"
+    },
+    {
+      "candidate_id": "0001558370-25-010647",
+      "cik": "0001267565",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "7ea3c41af2bdbadf412581db964f8632d36e8ccc696be5b05f2a9cd2c7897c76",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1267565/000155837025010647/coll-20250807x8k.htm",
+      "source_sha256": "7ea3c41af2bdbadf412581db964f8632d36e8ccc696be5b05f2a9cd2c7897c76",
+      "ticker": "COLL",
+      "disposition": "included",
+      "event_id": "coll-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0001573221-25-000070",
+      "cik": "0001573221",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "7c6f7432a254a047c4aa93a96b62cbd8b9382340bd87b47ca825172b1bc2459c",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000157322125000070/real-20250807.htm",
+      "source_sha256": "7c6f7432a254a047c4aa93a96b62cbd8b9382340bd87b47ca825172b1bc2459c",
+      "ticker": "REAL",
+      "disposition": "included",
+      "event_id": "real-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0001573221-25-000076",
+      "cik": "0001573221",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "7c6f7432a254a047c4aa93a96b62cbd8b9382340bd87b47ca825172b1bc2459c",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-10",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000157322125000076/real-20251110.htm",
+      "source_sha256": "7c6f7432a254a047c4aa93a96b62cbd8b9382340bd87b47ca825172b1bc2459c",
+      "ticker": "REAL",
+      "disposition": "included",
+      "event_id": "real-step2-2025-11-10"
+    },
+    {
+      "candidate_id": "0001628280-25-030859",
+      "cik": "0001701758",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-06-12",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828025030859/love-20250612.htm",
+      "source_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48",
+      "ticker": "LOVE",
+      "disposition": "included",
+      "event_id": "love-step2-2025-06-12"
+    },
+    {
+      "candidate_id": "0001628280-25-038398",
+      "cik": "0000016058",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "fb62d7d802ef4889b8ef43619d65017be539c249055d04311f7d31fd2b8e1f4b",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000162828025038398/caci-20250806.htm",
+      "source_sha256": "fb62d7d802ef4889b8ef43619d65017be539c249055d04311f7d31fd2b8e1f4b",
+      "ticker": "CACI",
+      "disposition": "included",
+      "event_id": "caci-step2-2025-08-06"
+    },
+    {
+      "candidate_id": "0001628280-25-038919",
+      "cik": "0000946581",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "eba413eb4e974e7fcc0a596794a3c9255146a3e97b7acf4e646f33ace412be8a",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-07",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/946581/000162828025038919/ttwo-20250807.htm",
+      "source_sha256": "eba413eb4e974e7fcc0a596794a3c9255146a3e97b7acf4e646f33ace412be8a",
+      "ticker": "TTWO",
+      "disposition": "included",
+      "event_id": "ttwo-step2-2025-08-07"
+    },
+    {
+      "candidate_id": "0001628280-25-046762",
+      "cik": "0001289848",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-10-28",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1289848/000162828025046762/hurn-20251028.htm",
+      "source_sha256": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87",
+      "ticker": "HURN",
+      "disposition": "included",
+      "event_id": "hurn-step2-2025-10-28"
+    },
+    {
+      "candidate_id": "0001628280-25-048903",
+      "cik": "0000821483",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "ca702c5d44dd700c5276a1d9c1b56db7e1e29a9aa396c5db1badb63661fb7362",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-04",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/821483/000162828025048903/parr-20251104.htm",
+      "source_sha256": "ca702c5d44dd700c5276a1d9c1b56db7e1e29a9aa396c5db1badb63661fb7362",
+      "ticker": "PARR",
+      "disposition": "included",
+      "event_id": "parr-step2-2025-11-04"
+    },
+    {
+      "candidate_id": "0001628280-25-050182",
+      "cik": "0000946581",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "eba413eb4e974e7fcc0a596794a3c9255146a3e97b7acf4e646f33ace412be8a",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-11-06",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/946581/000162828025050182/ttwo-20251106.htm",
+      "source_sha256": "eba413eb4e974e7fcc0a596794a3c9255146a3e97b7acf4e646f33ace412be8a",
+      "ticker": "TTWO",
+      "disposition": "included",
+      "event_id": "ttwo-step2-2025-11-06"
+    },
+    {
+      "candidate_id": "0001628280-25-056422",
+      "cik": "0001701758",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-12-11",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828025056422/love-20251211.htm",
+      "source_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48",
+      "ticker": "LOVE",
+      "disposition": "included",
+      "event_id": "love-step2-2025-12-11"
+    },
+    {
+      "candidate_id": "0001660134-25-000156",
+      "cik": "0001660134",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "ac2aab0b73eb05081846807099968fcf495f4b57c1602e4aeffd5f121b0b8f0e",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-08-26",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-20250826.htm",
+      "source_sha256": "ac2aab0b73eb05081846807099968fcf495f4b57c1602e4aeffd5f121b0b8f0e",
+      "ticker": "OKTA",
+      "disposition": "included",
+      "event_id": "okta-step2-2025-08-26"
+    },
+    {
+      "candidate_id": "0001660134-25-000170",
+      "cik": "0001660134",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "ac2aab0b73eb05081846807099968fcf495f4b57c1602e4aeffd5f121b0b8f0e",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-12-02",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-20251202.htm",
+      "source_sha256": "ac2aab0b73eb05081846807099968fcf495f4b57c1602e4aeffd5f121b0b8f0e",
+      "ticker": "OKTA",
+      "disposition": "included",
+      "event_id": "okta-step2-2025-12-02"
+    },
+    {
+      "candidate_id": "0001701758-25-000015",
+      "cik": "0001701758",
+      "discovery_submission_representation": "raw",
+      "discovery_submission_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48",
+      "discovery_transport_sha256": null,
+      "filing_date": "2025-09-11",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_review_state": "REQUIRED_POST_FREEZE",
+      "primary_source_sha256": null,
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1701758/000170175825000015/love-20250911.htm",
+      "source_sha256": "34a79b4bdc10fb28a9cd83a77b50a0cab4f449465eb5e88d3c1c40691ae76a48",
+      "ticker": "LOVE",
+      "disposition": "included",
+      "event_id": "love-step2-2025-09-11"
+    }
+  ],
+  "frozen_at": "2026-09-28T09:18:05.716766Z",
+  "membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+  "protocol_sha256": "751c9ba108ae2f724f2d84d3ada02804406d41cc1fe79ebcf88b5d502d969591"
+}

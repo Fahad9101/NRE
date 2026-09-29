@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "proposal": "docs/M2-STEP-2-LABEL-ENGINE-DRY-RUN-SCOPE.md",
+  "decisions": {
+    "pdfs_2025_08_07_disposition": {
+      "owner_reply": "Quarantined, mirroring GALT (Recommended)",
+      "effect": "reports/m2-step2-reviewed-candidate-ledger.json will record PDFS 2025-08-07 as disposition 'quarantined' with a reason and no event_id, matching Milestone 1's GALT precedent (docs/M1-READINESS-ASSESSMENT.md)."
+    },
+    "candidate_source_hashes_archive_gap": {
+      "owner_reply": "Run it now, document the expected gate failure (Recommended)",
+      "effect": "Proceed with the label-engine dry run without first archiving Milestone 2 step 2's raw SEC discovery bytes anywhere durable. A BLOCKED result with candidate_source_hashes as (at minimum) one of the failed gates is expected and will be recorded as a known, pre-identified limitation, not treated as a surprise or as evidence of an error."
+    }
+  },
+  "not_a_claim": [
+    "Not Milestone 2 step 2 acceptance.",
+    "Not a claim that a BLOCKED structural-gate result means the underlying data or review is wrong -- audit_cohort() never sets milestone_accepted true regardless of gate outcome; the owner's own final sign-off is a separate, later decision either way."
+  ]
+}

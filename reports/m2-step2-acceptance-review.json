@@ -1,0 +1,38 @@
+{
+  "_note": "Aggregates evidence already on file across the corporate-action check's 4 batches; nothing here was newly investigated for this file. Owner authorization for this specific step (scope, PDFS disposition, and proceeding without a durable SEC-bytes archive) is reports/m2-step2-label-engine-dry-run-scope-authorization-2026-09-29.json.",
+  "discovery_coverage_evidence": "Candidate membership was frozen on 2026-09-28 (membership SHA256 62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383; 48 candidates across the 23 already-accepted Milestone 1 issuers) by nre.depth_cohort from each issuer's real SEC submissions.json history. docs/MILESTONE-2-STEP-2-PILOT.md; config/m2-step2-frozen-issuer-cohort.json; reports/m2-step2-sec-cohort-freeze.json.",
+  "frozen_membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+  "identity_history_evidence": "For each of the 45 included events, historical security identity (common stock, registered class, ticker, exchange) was established from the event-date 8-K cover page and cross-checked against the prior-quarter 8-K cover page, recorded per batch in reports/m2-step2-batch1-signoff-packet-2026-09-29.json through reports/m2-step2-batch4-signoff-packet-2026-09-29.json, plus a dedicated cross-check against both Milestone 1's own baseline and live SEC data: reports/m2-step2-identity-exchange-reverification-2026-09-28.json.",
+  "prices_first_accessed_at": "2026-09-29T07:18:18Z",
+  "provider_rights_evidence": "Provider-rights-at-scale for step 2 was explicitly re-asked and re-confirmed by the project owner in reports/m2-step2-corporate-action-scope-authorization-2026-09-28.json (batch pacing question), consistent with how Milestone 1 itself re-asked at every size increase rather than treating a standing authorization as automatically extending. The underlying rights review is reports/m1-alpaca-provider-rights-review-2026-09-23.json.",
+  "spot_checks": [
+    {
+      "event_id": "slsn-step2-2025-11-11",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json; reports/m2-step2-batch4-complete-events-2026-09-29.json"
+    },
+    {
+      "event_id": "love-step2-2025-12-11",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json; reports/m2-step2-batch4-complete-events-2026-09-29.json"
+    },
+    {
+      "event_id": "cxt-step2-2025-08-06",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step2-batch1-signoff-packet-2026-09-29.json; reports/m2-step2-batch1-complete-events-2026-09-29.json"
+    },
+    {
+      "event_id": "okta-step2-2025-12-02",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step2-batch4-signoff-packet-2026-09-29.json; reports/m2-step2-batch4-complete-events-2026-09-29.json"
+    }
+  ]
+}
