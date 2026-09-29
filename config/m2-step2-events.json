@@ -20,7 +20,7 @@
       "cluster_id": "love-step2-2025-06-12",
       "candidate_id": "0001628280-25-030859",
       "security": {
-        "security_id": "LOVE-1701758",
+        "security_id": "LOVE-1701758-2025-06-12",
         "company_id": "0001701758",
         "cik": "0001701758",
         "ticker": "LOVE",
@@ -82,7 +82,7 @@
       "cluster_id": "nbix-step2-2025-07-30",
       "candidate_id": "0000914475-25-000157",
       "security": {
-        "security_id": "NBIX-914475",
+        "security_id": "NBIX-914475-2025-07-30",
         "company_id": "0000914475",
         "cik": "0000914475",
         "ticker": "NBIX",
@@ -133,7 +133,7 @@
       "cluster_id": "alkt-step2-2025-07-30",
       "candidate_id": "0001529274-25-000147",
       "security": {
-        "security_id": "ALKT-1529274",
+        "security_id": "ALKT-1529274-2025-07-30",
         "company_id": "0001529274",
         "cik": "0001529274",
         "ticker": "ALKT",
@@ -184,7 +184,7 @@
       "cluster_id": "slsn-step2-2025-07-31",
       "candidate_id": "0001171843-25-004923",
       "security": {
-        "security_id": "SLSN-883107",
+        "security_id": "SLSN-883107-2025-07-31",
         "company_id": "0000883107",
         "cik": "0000883107",
         "ticker": "SLSN",
@@ -235,7 +235,7 @@
       "cluster_id": "hurn-step2-2025-07-31",
       "candidate_id": "0001289848-25-000189",
       "security": {
-        "security_id": "HURN-1289848",
+        "security_id": "HURN-1289848-2025-07-31",
         "company_id": "0001289848",
         "cik": "0001289848",
         "ticker": "HURN",
@@ -301,7 +301,7 @@
       "cluster_id": "vsat-step2-2025-08-05",
       "candidate_id": "0001193125-25-173528",
       "security": {
-        "security_id": "VSAT-797721",
+        "security_id": "VSAT-797721-2025-08-05",
         "company_id": "0000797721",
         "cik": "0000797721",
         "ticker": "VSAT",
@@ -360,7 +360,7 @@
       "cluster_id": "cxt-step2-2025-08-06",
       "candidate_id": "0000025445-25-000081",
       "security": {
-        "security_id": "CXT-25445",
+        "security_id": "CXT-25445-2025-08-06",
         "company_id": "0000025445",
         "cik": "0000025445",
         "ticker": "CXT",
@@ -411,7 +411,7 @@
       "cluster_id": "parr-step2-2025-08-05",
       "candidate_id": "0000821483-25-000024",
       "security": {
-        "security_id": "PARR-821483",
+        "security_id": "PARR-821483-2025-08-05",
         "company_id": "0000821483",
         "cik": "0000821483",
         "ticker": "PARR",
@@ -462,7 +462,7 @@
       "cluster_id": "payo-step2-2025-08-06",
       "candidate_id": "0001558370-25-010405",
       "security": {
-        "security_id": "PAYO-1845815",
+        "security_id": "PAYO-1845815-2025-08-06",
         "company_id": "0001845815",
         "cik": "0001845815",
         "ticker": "PAYO",
@@ -513,7 +513,7 @@
       "cluster_id": "caci-step2-2025-08-06",
       "candidate_id": "0001628280-25-038398",
       "security": {
-        "security_id": "CACI-16058",
+        "security_id": "CACI-16058-2025-08-06",
         "company_id": "0000016058",
         "cik": "0000016058",
         "ticker": "CACI",
@@ -564,7 +564,7 @@
       "cluster_id": "lnsr-step2-2025-08-07",
       "candidate_id": "0000950170-25-104556",
       "security": {
-        "security_id": "LNSR-1320350",
+        "security_id": "LNSR-1320350-2025-08-07",
         "company_id": "0001320350",
         "cik": "0001320350",
         "ticker": "LNSR",
@@ -615,7 +615,7 @@
       "cluster_id": "achv-step2-2025-08-07",
       "candidate_id": "0000950170-25-104569",
       "security": {
-        "security_id": "ACHV-949858",
+        "security_id": "ACHV-949858-2025-08-07",
         "company_id": "0000949858",
         "cik": "0000949858",
         "ticker": "ACHV",
@@ -666,7 +666,7 @@
       "cluster_id": "aspn-step2-2025-08-07",
       "candidate_id": "0001171843-25-005147",
       "security": {
-        "security_id": "ASPN-1145986",
+        "security_id": "ASPN-1145986-2025-08-07",
         "company_id": "0001145986",
         "cik": "0001145986",
         "ticker": "ASPN",
@@ -717,7 +717,7 @@
       "cluster_id": "tecx-step2-2025-08-07",
       "candidate_id": "0001193125-25-175567",
       "security": {
-        "security_id": "TECX-1681087",
+        "security_id": "TECX-1681087-2025-08-07",
         "company_id": "0001681087",
         "cik": "0001681087",
         "ticker": "TECX",
@@ -768,7 +768,7 @@
       "cluster_id": "coll-step2-2025-08-07",
       "candidate_id": "0001558370-25-010647",
       "security": {
-        "security_id": "COLL-1267565",
+        "security_id": "COLL-1267565-2025-08-07",
         "company_id": "0001267565",
         "cik": "0001267565",
         "ticker": "COLL",
@@ -819,7 +819,7 @@
       "cluster_id": "real-step2-2025-08-07",
       "candidate_id": "0001573221-25-000070",
       "security": {
-        "security_id": "REAL-1573221",
+        "security_id": "REAL-1573221-2025-08-07",
         "company_id": "0001573221",
         "cik": "0001573221",
         "ticker": "REAL",
@@ -879,7 +879,7 @@
       "cluster_id": "ttwo-step2-2025-08-07",
       "candidate_id": "0001628280-25-038919",
       "security": {
-        "security_id": "TTWO-946581",
+        "security_id": "TTWO-946581-2025-08-07",
         "company_id": "0000946581",
         "cik": "0000946581",
         "ticker": "TTWO",
@@ -930,7 +930,7 @@
       "cluster_id": "klc-step2-2025-08-12",
       "candidate_id": "0000950170-25-107337",
       "security": {
-        "security_id": "KLC-1873529",
+        "security_id": "KLC-1873529-2025-08-12",
         "company_id": "0001873529",
         "cik": "0001873529",
         "ticker": "KLC",
@@ -981,7 +981,7 @@
       "cluster_id": "rekr-step2-2025-08-12",
       "candidate_id": "0001437749-25-026189",
       "security": {
-        "security_id": "REKR-1697851",
+        "security_id": "REKR-1697851-2025-08-12",
         "company_id": "0001697851",
         "cik": "0001697851",
         "ticker": "REKR",
@@ -1032,7 +1032,7 @@
       "cluster_id": "jbss-step2-2025-08-20",
       "candidate_id": "0000950170-25-110453",
       "security": {
-        "security_id": "JBSS-880117",
+        "security_id": "JBSS-880117-2025-08-20",
         "company_id": "0000880117",
         "cik": "0000880117",
         "ticker": "JBSS",
@@ -1083,7 +1083,7 @@
       "cluster_id": "okta-step2-2025-08-26",
       "candidate_id": "0001660134-25-000156",
       "security": {
-        "security_id": "OKTA-1660134",
+        "security_id": "OKTA-1660134-2025-08-26",
         "company_id": "0001660134",
         "cik": "0001660134",
         "ticker": "OKTA",
@@ -1134,7 +1134,7 @@
       "cluster_id": "love-step2-2025-09-11",
       "candidate_id": "0001701758-25-000015",
       "security": {
-        "security_id": "LOVE-1701758",
+        "security_id": "LOVE-1701758-2025-09-11",
         "company_id": "0001701758",
         "cik": "0001701758",
         "ticker": "LOVE",
@@ -1185,7 +1185,7 @@
       "cluster_id": "caci-step2-2025-10-22",
       "candidate_id": "0000016058-25-000084",
       "security": {
-        "security_id": "CACI-16058",
+        "security_id": "CACI-16058-2025-10-22",
         "company_id": "0000016058",
         "cik": "0000016058",
         "ticker": "CACI",
@@ -1236,7 +1236,7 @@
       "cluster_id": "nbix-step2-2025-10-28",
       "candidate_id": "0000914475-25-000180",
       "security": {
-        "security_id": "NBIX-914475",
+        "security_id": "NBIX-914475-2025-10-28",
         "company_id": "0000914475",
         "cik": "0000914475",
         "ticker": "NBIX",
@@ -1287,7 +1287,7 @@
       "cluster_id": "hurn-step2-2025-10-28",
       "candidate_id": "0001628280-25-046762",
       "security": {
-        "security_id": "HURN-1289848",
+        "security_id": "HURN-1289848-2025-10-28",
         "company_id": "0001289848",
         "cik": "0001289848",
         "ticker": "HURN",
@@ -1338,7 +1338,7 @@
       "cluster_id": "jbss-step2-2025-10-29",
       "candidate_id": "0001193125-25-256336",
       "security": {
-        "security_id": "JBSS-880117",
+        "security_id": "JBSS-880117-2025-10-29",
         "company_id": "0000880117",
         "cik": "0000880117",
         "ticker": "JBSS",
@@ -1389,7 +1389,7 @@
       "cluster_id": "alkt-step2-2025-10-30",
       "candidate_id": "0001529274-25-000159",
       "security": {
-        "security_id": "ALKT-1529274",
+        "security_id": "ALKT-1529274-2025-10-30",
         "company_id": "0001529274",
         "cik": "0001529274",
         "ticker": "ALKT",
@@ -1440,7 +1440,7 @@
       "cluster_id": "parr-step2-2025-11-04",
       "candidate_id": "0001628280-25-048903",
       "security": {
-        "security_id": "PARR-821483",
+        "security_id": "PARR-821483-2025-11-04",
         "company_id": "0000821483",
         "cik": "0000821483",
         "ticker": "PARR",
@@ -1491,7 +1491,7 @@
       "cluster_id": "cxt-step2-2025-11-05",
       "candidate_id": "0000025445-25-000093",
       "security": {
-        "security_id": "CXT-25445",
+        "security_id": "CXT-25445-2025-11-05",
         "company_id": "0000025445",
         "cik": "0000025445",
         "ticker": "CXT",
@@ -1542,7 +1542,7 @@
       "cluster_id": "payo-step2-2025-11-05",
       "candidate_id": "0001104659-25-106667",
       "security": {
-        "security_id": "PAYO-1845815",
+        "security_id": "PAYO-1845815-2025-11-05",
         "company_id": "0001845815",
         "cik": "0001845815",
         "ticker": "PAYO",
@@ -1593,7 +1593,7 @@
       "cluster_id": "coll-step2-2025-11-06",
       "candidate_id": "0001104659-25-107389",
       "security": {
-        "security_id": "COLL-1267565",
+        "security_id": "COLL-1267565-2025-11-06",
         "company_id": "0001267565",
         "cik": "0001267565",
         "ticker": "COLL",
@@ -1644,7 +1644,7 @@
       "cluster_id": "aspn-step2-2025-11-06",
       "candidate_id": "0001171843-25-007067",
       "security": {
-        "security_id": "ASPN-1145986",
+        "security_id": "ASPN-1145986-2025-11-06",
         "company_id": "0001145986",
         "cik": "0001145986",
         "ticker": "ASPN",
@@ -1695,7 +1695,7 @@
       "cluster_id": "achv-step2-2025-11-06",
       "candidate_id": "0001193125-25-268056",
       "security": {
-        "security_id": "ACHV-949858",
+        "security_id": "ACHV-949858-2025-11-06",
         "company_id": "0000949858",
         "cik": "0000949858",
         "ticker": "ACHV",
@@ -1746,7 +1746,7 @@
       "cluster_id": "lnsr-step2-2025-11-06",
       "candidate_id": "0001193125-25-268073",
       "security": {
-        "security_id": "LNSR-1320350",
+        "security_id": "LNSR-1320350-2025-11-06",
         "company_id": "0001320350",
         "cik": "0001320350",
         "ticker": "LNSR",
@@ -1797,7 +1797,7 @@
       "cluster_id": "tecx-step2-2025-11-06",
       "candidate_id": "0001193125-25-269573",
       "security": {
-        "security_id": "TECX-1681087",
+        "security_id": "TECX-1681087-2025-11-06",
         "company_id": "0001681087",
         "cik": "0001681087",
         "ticker": "TECX",
@@ -1848,7 +1848,7 @@
       "cluster_id": "pdfs-step2-2025-11-06",
       "candidate_id": "0001437749-25-033622",
       "security": {
-        "security_id": "PDFS-1120914",
+        "security_id": "PDFS-1120914-2025-11-06",
         "company_id": "0001120914",
         "cik": "0001120914",
         "ticker": "PDFS",
@@ -1899,7 +1899,7 @@
       "cluster_id": "ttwo-step2-2025-11-06",
       "candidate_id": "0001628280-25-050182",
       "security": {
-        "security_id": "TTWO-946581",
+        "security_id": "TTWO-946581-2025-11-06",
         "company_id": "0000946581",
         "cik": "0000946581",
         "ticker": "TTWO",
@@ -1950,7 +1950,7 @@
       "cluster_id": "vsat-step2-2025-11-07",
       "candidate_id": "0001193125-25-272331",
       "security": {
-        "security_id": "VSAT-797721",
+        "security_id": "VSAT-797721-2025-11-07",
         "company_id": "0000797721",
         "cik": "0000797721",
         "ticker": "VSAT",
@@ -2001,7 +2001,7 @@
       "cluster_id": "asmb-step2-2025-11-10",
       "candidate_id": "0001193125-25-274235",
       "security": {
-        "security_id": "ASMB-1426800",
+        "security_id": "ASMB-1426800-2025-11-10",
         "company_id": "0001426800",
         "cik": "0001426800",
         "ticker": "ASMB",
@@ -2052,7 +2052,7 @@
       "cluster_id": "real-step2-2025-11-10",
       "candidate_id": "0001573221-25-000076",
       "security": {
-        "security_id": "REAL-1573221",
+        "security_id": "REAL-1573221-2025-11-10",
         "company_id": "0001573221",
         "cik": "0001573221",
         "ticker": "REAL",
@@ -2103,7 +2103,7 @@
       "cluster_id": "klc-step2-2025-11-12",
       "candidate_id": "0001193125-25-277750",
       "security": {
-        "security_id": "KLC-1873529",
+        "security_id": "KLC-1873529-2025-11-12",
         "company_id": "0001873529",
         "cik": "0001873529",
         "ticker": "KLC",
@@ -2154,7 +2154,7 @@
       "cluster_id": "slsn-step2-2025-11-11",
       "candidate_id": "0001171843-25-007246",
       "security": {
-        "security_id": "SLSN-883107",
+        "security_id": "SLSN-883107-2025-11-11",
         "company_id": "0000883107",
         "cik": "0000883107",
         "ticker": "SLSN",
@@ -2205,7 +2205,7 @@
       "cluster_id": "rekr-step2-2025-11-13",
       "candidate_id": "0001437749-25-034859",
       "security": {
-        "security_id": "REKR-1697851",
+        "security_id": "REKR-1697851-2025-11-13",
         "company_id": "0001697851",
         "cik": "0001697851",
         "ticker": "REKR",
@@ -2256,7 +2256,7 @@
       "cluster_id": "okta-step2-2025-12-02",
       "candidate_id": "0001660134-25-000170",
       "security": {
-        "security_id": "OKTA-1660134",
+        "security_id": "OKTA-1660134-2025-12-02",
         "company_id": "0001660134",
         "cik": "0001660134",
         "ticker": "OKTA",
@@ -2307,7 +2307,7 @@
       "cluster_id": "love-step2-2025-12-11",
       "candidate_id": "0001628280-25-056422",
       "security": {
-        "security_id": "LOVE-1701758",
+        "security_id": "LOVE-1701758-2025-12-11",
         "company_id": "0001701758",
         "cik": "0001701758",
         "ticker": "LOVE",
