@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "purpose": "Worked example: Phase A (nre.corporate_events) normalizing JBSS's two real, separate 8-Ks filed 9 minutes apart on 2025-10-29 -- an earnings release and a special-dividend announcement -- into structured event records. Demonstrates the deliberate design choice to classify each filing's items independently rather than collapsing same-day filings into one event, matching how docs/m2-step2-same-day-8k-sweep-2026-09-28.json already treated these two by hand.",
+  "earnings_8k": [
+    {
+      "candidate_id": "0001193125-25-256336",
+      "cik": "0000880117",
+      "filing_date": "2025-10-29",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312525256336/jbss-20251029.htm",
+      "item": "2.02",
+      "title": "Results of Operations and Financial Condition",
+      "category": "earnings",
+      "subtype": "results"
+    },
+    {
+      "candidate_id": "0001193125-25-256336",
+      "cik": "0000880117",
+      "filing_date": "2025-10-29",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312525256336/jbss-20251029.htm",
+      "item": "9.01",
+      "title": "Financial Statements and Exhibits",
+      "category": "administrative",
+      "subtype": "exhibits_only"
+    }
+  ],
+  "dividend_8k": [
+    {
+      "candidate_id": "0001193125-25-256383",
+      "cik": "0000880117",
+      "filing_date": "2025-10-29",
+      "source_url": null,
+      "item": "8.01",
+      "title": "Other Events",
+      "category": "general_corporate",
+      "subtype": "other"
+    },
+    {
+      "candidate_id": "0001193125-25-256383",
+      "cik": "0000880117",
+      "filing_date": "2025-10-29",
+      "source_url": null,
+      "item": "9.01",
+      "title": "Financial Statements and Exhibits",
+      "category": "administrative",
+      "subtype": "exhibits_only"
+    }
+  ],
+  "not_a_claim": [
+    "Not a claim about materiality or trading significance -- this is structural classification only, using each filing's own SEC Item number."
+  ]
+}
