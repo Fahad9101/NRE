@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-29",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36582085894",
+  "workflow_run_number": 11,
+  "commit": "538ba5c",
+  "trigger": "push (auto-triggered: config/m2-step2-events.json is a watched path)",
+  "result": {
+    "all_ok": true,
+    "batch4_events": 10,
+    "errors": 0
+  },
+  "batch1_3_recheck": "All 35 prior events (batches 1-3) still report labels_match_recorded: true against their pinned labels_sha256.",
+  "every_batch4_event": {
+    "state": "QUARANTINED (all 10)",
+    "reason": "FIRST_PUBLIC_TIME_UNVERIFIED (all 10).",
+    "missing_sessions": "none for any event.",
+    "zero_volume_sessions": "none for any event."
+  },
+  "corporate_actions_found": {},
+  "corporate_actions_clean": [
+    "pdfs-step2-2025-11-06",
+    "ttwo-step2-2025-11-06",
+    "vsat-step2-2025-11-07",
+    "asmb-step2-2025-11-10",
+    "real-step2-2025-11-10",
+    "klc-step2-2025-11-12",
+    "slsn-step2-2025-11-11",
+    "rekr-step2-2025-11-13",
+    "okta-step2-2025-12-02",
+    "love-step2-2025-12-11"
+  ],
+  "raw_per_event": {
+    "pdfs-step2-2025-11-06": {
+      "corporate_actions": []
+    },
+    "ttwo-step2-2025-11-06": {
+      "corporate_actions": []
+    },
+    "vsat-step2-2025-11-07": {
+      "corporate_actions": []
+    },
+    "asmb-step2-2025-11-10": {
+      "corporate_actions": []
+    },
+    "real-step2-2025-11-10": {
+      "corporate_actions": []
+    },
+    "klc-step2-2025-11-12": {
+      "corporate_actions": []
+    },
+    "slsn-step2-2025-11-11": {
+      "corporate_actions": []
+    },
+    "rekr-step2-2025-11-13": {
+      "corporate_actions": []
+    },
+    "okta-step2-2025-12-02": {
+      "corporate_actions": []
+    },
+    "love-step2-2025-12-11": {
+      "corporate_actions": []
+    }
+  },
+  "note": "The cleanest batch of the four -- zero corporate actions found for any of the 10 candidates, unlike every prior batch (each of which had at least one dividend).",
+  "not_a_claim": [
+    "No label was computed or exposed for any candidate."
+  ]
+}
