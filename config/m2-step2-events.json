@@ -653,6 +653,303 @@
         "labels_sha256": "b8e7de2d1ffdabec5efcecc6b80ef591d8ea4a325f1c053ce5f57a9d170eec2c",
         "recorded_in": "reports/m2-step2-batch1-complete-events-2026-09-29.json"
       }
+    },
+    {
+      "event_id": "aspn-step2-2025-08-07",
+      "cluster_id": "aspn-step2-2025-08-07",
+      "candidate_id": "0001171843-25-005147",
+      "security": {
+        "security_id": "ASPN-1145986",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-05-08T00:00:00-04:00",
+        "available_at": "2025-05-08T11:25:26Z"
+      },
+      "source": {
+        "source_id": "aspn-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129016/0/en/Aspen-Aerogels-Inc-Reports-Second-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "Wire release, displayed dateline August 07, 2025 06:30 ET (06:30 ET). https://www.globenewswire.com/news-release/2025/08/07/3129016/0/en/Aspen-Aerogels-Inc-Reports-Second-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2025-08-07T06:31:00-04:00"
+      },
+      "published_at": "2025-08-07T06:30:00-04:00",
+      "cutoff": "2025-08-07T06:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-08-07"
+    },
+    {
+      "event_id": "tecx-step2-2025-08-07",
+      "cluster_id": "tecx-step2-2025-08-07",
+      "candidate_id": "0001193125-25-175567",
+      "security": {
+        "security_id": "TECX-1681087",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-06T00:00:00-04:00",
+        "available_at": "2025-06-06T20:48:02Z"
+      },
+      "source": {
+        "source_id": "tecx-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129619/0/en/Tectonic-Therapeutic-Announces-Second-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "Wire release, displayed dateline August 07, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/08/07/3129619/0/en/Tectonic-Therapeutic-Announces-Second-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2025-08-07T16:02:00-04:00"
+      },
+      "published_at": "2025-08-07T16:01:00-04:00",
+      "cutoff": "2025-08-07T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-08"
+    },
+    {
+      "event_id": "coll-step2-2025-08-07",
+      "cluster_id": "coll-step2-2025-08-07",
+      "candidate_id": "0001558370-25-010647",
+      "security": {
+        "security_id": "COLL-1267565",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-07T00:00:00-04:00",
+        "available_at": "2025-07-07T12:05:48Z"
+      },
+      "source": {
+        "source_id": "coll-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129117/34897/en/collegium-reports-second-quarter-2025-financial-results-raises-2025-outlook.html",
+        "text": "Wire release, displayed dateline August 07, 2025 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2025/08/07/3129117/34897/en/collegium-reports-second-quarter-2025-financial-results-raises-2025-outlook.html",
+        "first_seen_at": "2025-08-07T07:31:00-04:00"
+      },
+      "published_at": "2025-08-07T07:30:00-04:00",
+      "cutoff": "2025-08-07T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-08-07"
+    },
+    {
+      "event_id": "real-step2-2025-08-07",
+      "cluster_id": "real-step2-2025-08-07",
+      "candidate_id": "0001573221-25-000070",
+      "security": {
+        "security_id": "REAL-1573221",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-18T00:00:00-04:00",
+        "available_at": "2025-07-18T20:16:08Z"
+      },
+      "source": {
+        "source_id": "real-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/07/3129634/0/en/The-RealReal-Announces-Second-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline August 07, 2025 16:04 ET (16:04 ET). https://www.globenewswire.com/news-release/2025/08/07/3129634/0/en/The-RealReal-Announces-Second-Quarter-2025-Results.html",
+        "first_seen_at": "2025-08-07T16:05:00-04:00"
+      },
+      "published_at": "2025-08-07T16:04:00-04:00",
+      "cutoff": "2025-08-07T16:07:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:04",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-08"
+    },
+    {
+      "event_id": "ttwo-step2-2025-08-07",
+      "cluster_id": "ttwo-step2-2025-08-07",
+      "candidate_id": "0001628280-25-038919",
+      "security": {
+        "security_id": "TTWO-946581",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-05-22T00:00:00-04:00",
+        "available_at": "2025-05-22T20:15:10Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire",
+        "url": "https://www.businesswire.com/news/home/20250807641889/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-First-Quarter-2026",
+        "text": "Wire release, displayed dateline Aug 7, 2025 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20250807641889/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-First-Quarter-2026",
+        "first_seen_at": "2025-08-07T16:06:00-04:00"
+      },
+      "published_at": "2025-08-07T16:05:00-04:00",
+      "cutoff": "2025-08-07T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-08"
+    },
+    {
+      "event_id": "klc-step2-2025-08-12",
+      "cluster_id": "klc-step2-2025-08-12",
+      "candidate_id": "0000950170-25-107337",
+      "security": {
+        "security_id": "KLC-1873529",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-07-03T00:00:00-04:00",
+        "available_at": "2025-07-03T20:15:31Z"
+      },
+      "source": {
+        "source_id": "klc-wire",
+        "url": "https://www.businesswire.com/news/home/20250812540813/en/KinderCare-Reports-Second-Quarter-2025-Financial-Results",
+        "text": "Wire release, displayed dateline Aug 12, 2025 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20250812540813/en/KinderCare-Reports-Second-Quarter-2025-Financial-Results",
+        "first_seen_at": "2025-08-12T16:16:00-04:00"
+      },
+      "published_at": "2025-08-12T16:15:00-04:00",
+      "cutoff": "2025-08-12T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-13"
+    },
+    {
+      "event_id": "rekr-step2-2025-08-12",
+      "cluster_id": "rekr-step2-2025-08-12",
+      "candidate_id": "0001437749-25-026189",
+      "security": {
+        "security_id": "REKR-1697851",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-06-06T00:00:00-04:00",
+        "available_at": "2025-06-06T11:35:20Z"
+      },
+      "source": {
+        "source_id": "rekr-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/08/12/3132142/0/en/rekor-systems-reports-second-quarter-2025-financial-results.html",
+        "text": "Wire release, displayed dateline August 12, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/08/12/3132142/0/en/rekor-systems-reports-second-quarter-2025-financial-results.html",
+        "first_seen_at": "2025-08-12T16:06:00-04:00"
+      },
+      "published_at": "2025-08-12T16:05:00-04:00",
+      "cutoff": "2025-08-12T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-13"
+    },
+    {
+      "event_id": "jbss-step2-2025-08-20",
+      "cluster_id": "jbss-step2-2025-08-20",
+      "candidate_id": "0000950170-25-110453",
+      "security": {
+        "security_id": "JBSS-880117",
+        "company_id": "0000880117",
+        "cik": "0000880117",
+        "ticker": "JBSS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-18T00:00:00-04:00",
+        "available_at": "2025-08-18T20:15:36Z"
+      },
+      "source": {
+        "source_id": "jbss-wire",
+        "url": "https://www.businesswire.com/news/home/20250820722529/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Fourth-Quarter-and-Full-Year-Results",
+        "text": "Wire release, displayed dateline Aug 20, 2025 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20250820722529/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Fourth-Quarter-and-Full-Year-Results",
+        "first_seen_at": "2025-08-20T16:16:00-04:00"
+      },
+      "published_at": "2025-08-20T16:15:00-04:00",
+      "cutoff": "2025-08-20T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-21"
+    },
+    {
+      "event_id": "okta-step2-2025-08-26",
+      "cluster_id": "okta-step2-2025-08-26",
+      "candidate_id": "0001660134-25-000156",
+      "security": {
+        "security_id": "OKTA-1660134",
+        "company_id": "0001660134",
+        "cik": "0001660134",
+        "ticker": "OKTA",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-14T00:00:00-04:00",
+        "available_at": "2025-08-14T20:09:56Z"
+      },
+      "source": {
+        "source_id": "okta-wire",
+        "url": "https://www.businesswire.com/news/home/20250826751986/en/Okta-Announces-Second-Quarter-Fiscal-Year-2026-Financial-Results",
+        "text": "Wire release, displayed dateline Aug 26, 2025 4:01 PM Eastern Daylight Time (16:01 ET). https://www.businesswire.com/news/home/20250826751986/en/Okta-Announces-Second-Quarter-Fiscal-Year-2026-Financial-Results",
+        "first_seen_at": "2025-08-26T16:02:00-04:00"
+      },
+      "published_at": "2025-08-26T16:01:00-04:00",
+      "cutoff": "2025-08-26T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-08-27"
+    },
+    {
+      "event_id": "love-step2-2025-09-11",
+      "cluster_id": "love-step2-2025-09-11",
+      "candidate_id": "0001701758-25-000015",
+      "security": {
+        "security_id": "LOVE-1701758",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-27T00:00:00-04:00",
+        "available_at": "2025-08-27T11:05:42Z"
+      },
+      "source": {
+        "source_id": "love-wire",
+        "url": "https://www.globenewswire.com/news-release/2025/09/11/3148434/0/en/The-Lovesac-Company-Reports-Second-Quarter-Fiscal-2026-Financial-Results.html",
+        "text": "Wire release, displayed dateline September 11, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/09/11/3148434/0/en/The-Lovesac-Company-Reports-Second-Quarter-Fiscal-2026-Financial-Results.html",
+        "first_seen_at": "2025-09-11T07:01:00-04:00"
+      },
+      "published_at": "2025-09-11T07:00:00-04:00",
+      "cutoff": "2025-09-11T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-09-11"
+    },
+    {
+      "event_id": "caci-step2-2025-10-22",
+      "cluster_id": "caci-step2-2025-10-22",
+      "candidate_id": "0000016058-25-000084",
+      "security": {
+        "security_id": "CACI-16058",
+        "company_id": "0000016058",
+        "cik": "0000016058",
+        "ticker": "CACI",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-08-06T00:00:00-04:00",
+        "available_at": "2025-08-06T20:46:09Z"
+      },
+      "source": {
+        "source_id": "caci-wire",
+        "url": "https://www.businesswire.com/news/home/20251022639545/en/CACI-Reports-Results-for-Its-Fiscal-2026-First-Quarter",
+        "text": "Wire release, displayed dateline Oct 22, 2025 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20251022639545/en/CACI-Reports-Results-for-Its-Fiscal-2026-First-Quarter",
+        "first_seen_at": "2025-10-22T16:16:00-04:00"
+      },
+      "published_at": "2025-10-22T16:15:00-04:00",
+      "cutoff": "2025-10-22T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-10-23"
     }
   ]
 }
