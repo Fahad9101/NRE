@@ -1,10 +1,11 @@
 {
   "schema_version": 1,
   "recorded_on": "2026-09-30",
-  "purpose": "Real result of dispatching .github/workflows/step3-sec-cohort-freeze.yml, twice, for the Milestone 2 step 3 depth extension (2 more prior quarters for the same 23 Milestone 1 issuers).",
+  "purpose": "Real result of dispatching .github/workflows/step3-sec-cohort-freeze.yml, for the Milestone 2 step 3 depth extension (2 more prior quarters for the same 23 Milestone 1 issuers). Owner said \"wait and retry later\" 2026-09-30; a bounded, session-only cron job (every ~6 hours, auto-expires after 7 days) retries automatically and logs each attempt here without messaging the owner unless something actually changes.",
   "runs": [
     {"workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36749655454", "run_number": 1, "commit": "2cdc2fd", "result": "FAILURE", "error": "SourceUnavailable: HTTP_403", "step": "Freeze deterministic targeted candidate membership"},
-    {"workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36749852864", "run_number": 2, "commit": "2cdc2fd", "result": "FAILURE", "error": "SourceUnavailable: HTTP_403", "step": "Freeze deterministic targeted candidate membership"}
+    {"workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36749852864", "run_number": 2, "commit": "2cdc2fd", "result": "FAILURE", "error": "SourceUnavailable: HTTP_403", "step": "Freeze deterministic targeted candidate membership"},
+    {"workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36782293968", "run_number": 3, "commit": "ea5e480", "result": "FAILURE", "error": "SourceUnavailable: HTTP_403", "step": "Freeze deterministic targeted candidate membership", "retrieved_at": "2026-10-01T00:53:47+03:00", "note": "First automated cron retry (job a894c9c2). Identical error to runs 1-2 -- no new information, not surfaced to the owner per the retry job's own instructions."}
   ],
   "finding": "data.sec.gov/submissions/CIK{cik}.json -- the ONE SEC path that has been reliable from GitHub Actions throughout this entire project (Milestone 1's own freeze, all of Milestone 2 step 2's real batches, every fetch-sec dispatch) -- now returns HTTP 403 from GitHub Actions, on the very first issuer processed, in two consecutive real dispatches seconds apart. This is a real escalation beyond what was already known: Milestone 3 Phase B had already found data.sec.gov/api/xbrl/companyconcept/ and the bulk financial-statement-data-sets download both blocked from GitHub Actions (reports/m3-earnings-surprise-workflow-result-2026-09-30.json), but data.sec.gov/submissions/ itself was explicitly confirmed unaffected at that time. This dispatch is the first real evidence that the submissions/ endpoint itself may now be affected too.",
   "not_yet_established": [
