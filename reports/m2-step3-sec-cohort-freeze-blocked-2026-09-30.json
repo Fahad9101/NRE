@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-30",
+  "purpose": "Real result of dispatching .github/workflows/step3-sec-cohort-freeze.yml, twice, for the Milestone 2 step 3 depth extension (2 more prior quarters for the same 23 Milestone 1 issuers).",
+  "runs": [
+    {"workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36749655454", "run_number": 1, "commit": "2cdc2fd", "result": "FAILURE", "error": "SourceUnavailable: HTTP_403", "step": "Freeze deterministic targeted candidate membership"},
+    {"workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36749852864", "run_number": 2, "commit": "2cdc2fd", "result": "FAILURE", "error": "SourceUnavailable: HTTP_403", "step": "Freeze deterministic targeted candidate membership"}
+  ],
+  "finding": "data.sec.gov/submissions/CIK{cik}.json -- the ONE SEC path that has been reliable from GitHub Actions throughout this entire project (Milestone 1's own freeze, all of Milestone 2 step 2's real batches, every fetch-sec dispatch) -- now returns HTTP 403 from GitHub Actions, on the very first issuer processed, in two consecutive real dispatches seconds apart. This is a real escalation beyond what was already known: Milestone 3 Phase B had already found data.sec.gov/api/xbrl/companyconcept/ and the bulk financial-statement-data-sets download both blocked from GitHub Actions (reports/m3-earnings-surprise-workflow-result-2026-09-30.json), but data.sec.gov/submissions/ itself was explicitly confirmed unaffected at that time. This dispatch is the first real evidence that the submissions/ endpoint itself may now be affected too.",
+  "not_yet_established": [
+    "Whether this is a genuine, broad change in SEC's own blocking policy toward GitHub Actions' shared IP infrastructure (consistent with the pattern already seen for the other two sec.gov paths), or a narrower, possibly transient condition (e.g. a temporary block tied to this specific time window, this specific runner IP, or elevated SEC-side load) that could resolve on its own.",
+    "Whether every CIK would be blocked, or only some -- both real failures happened on the very first issuer processed (lowest CIK in the sorted list, CACI, cik 0000016058), so no other issuer in this spec was actually reached by either attempt.",
+    "Whether this affects ALL uses of data.sec.gov/submissions/ going forward, including any future Milestone 1/2/2-step-2-style work, or is scoped to this specific new request pattern somehow."
+  ],
+  "not_attempted": "No further retries beyond the two above, and no attempt to alter headers, timing, User-Agent formatting, or request patterns to work around the block -- this project's own standing rules (and Claude's own safety rules) prohibit anything resembling bot-detection evasion, regardless of how sympathetic the reason. The exact same User-Agent string and URL construction that has worked for every prior real M1/M2/M2-step-2 dispatch was used unchanged here.",
+  "not_a_claim": [
+    "Not a claim that nre.depth_cohort.freeze_targeted_candidates() or its own CLI wiring is incorrect -- both are tested and pass their full real-fixture test suite; this is purely an external access-path result.",
+    "Not a claim that data.sec.gov/submissions/ is now permanently or universally blocked -- only that these two specific real dispatches, seconds apart, both failed identically. Whether this is persistent (like the XBRL/bulk paths) or transient is not yet established and needs the owner's own decision on how to proceed (wait and retry later, or investigate further)."
+  ]
+}
