@@ -225,6 +225,31 @@ def sec_candidates(document, cik):
             "historical_coverage_complete": not bool(filings.get("files"))}
 
 
+def xbrl_company_concept(client, cik, taxonomy, tag, unit, output):
+    """Fetch one XBRL concept's full reported history for a company (data.sec.gov/api/xbrl/
+    companyconcept/), for Milestone 3 Phase B's earnings-surprise computation
+    (nre.earnings_surprise). Returns the raw fact list for `unit` exactly as SEC's own API reports
+    it -- nothing computed or filtered here, that is nre.earnings_surprise's own job. A concept a
+    company has never reported (e.g. the wrong revenue tag) surfaces as SourceUnavailable
+    ("HTTP_404") through `client.fetch()` itself, the same as any other missing public source."""
+    if not str(cik).isdigit():
+        raise DataError("invalid CIK")
+    if not re.fullmatch(r"[a-z-]+", taxonomy) or not re.fullmatch(r"[A-Za-z0-9]+", tag):
+        raise DataError("invalid taxonomy or tag")
+    url = "https://data.sec.gov/api/xbrl/companyconcept/CIK%010d/%s/%s.json" % (int(cik), taxonomy, tag)
+    body, meta = client.fetch(url, output)
+    document = json.loads(body)
+    if document.get("cik") != int(cik):
+        raise DataError("XBRL response CIK does not match the request")
+    units = document.get("units")
+    if not isinstance(units, dict) or unit not in units:
+        raise DataError("XBRL response has no %s facts for this concept" % unit)
+    facts = units[unit]
+    if not isinstance(facts, list) or not all(isinstance(f, dict) for f in facts):
+        raise DataError("XBRL unit facts malformed")
+    return facts, meta
+
+
 def nasdaq_directory(text, available_at):
     timestamp(available_at)
     lines = text.splitlines()
