@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "description": "Connects Milestone 3 Phase C's classifiers (nre.biotech_trials, nre.fda_approvals) to this project's own 23 accepted issuers, for the subset whose real SEC-registered SIC code puts them in drug or medical-device development. None of the 68 real events in config/m2-combined-events.json is itself a clinical-trial-result or FDA-action announcement -- every one is a plain quarterly/annual earnings release (verified by reading each event's own real source.text headline). This mapping is therefore issuer-level, not event-level: for each listed issuer, a real sponsor search discovers whatever trials/applications actually exist, which travel alongside that issuer's earnings-event history as separate, dated regulatory context -- not as a label, score, or reaction driver for any specific M1/M2 event.",
+  "sic_selection": "Every one of the 23 issuers' real SIC codes was read directly from its own cached SEC submissions document (data/m2-step2-freeze/raw/, fetched during Milestone 2 step 2) -- not guessed from company name/ticker familiarity. Exactly 6 of 23 fall in drug or medical-device development SIC ranges (283x Pharmaceutical/Biological/Diagnostic Preparations, or 384x Surgical & Medical Instruments); the other 17 (software, retail, consulting, food, industrial, etc.) have no ClinicalTrials.gov/openFDA presence to discover and are intentionally excluded from this map.",
+  "issuers": [
+    {
+      "ticker": "NBIX", "cik": "0000914475", "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "legal_name": "NEUROCRINE BIOSCIENCES INC",
+      "clinical_trials_sponsor_query": "Neurocrine Biosciences",
+      "fda_sponsor_prefix": "NEUROCRINE",
+      "providers": ["clinical_trials", "fda_drugs"]
+    },
+    {
+      "ticker": "TECX", "cik": "0001681087", "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "legal_name": "Tectonic Therapeutic, Inc.",
+      "clinical_trials_sponsor_query": "Tectonic Therapeutic",
+      "fda_sponsor_prefix": "TECTONIC",
+      "providers": ["clinical_trials", "fda_drugs"]
+    },
+    {
+      "ticker": "COLL", "cik": "0001267565", "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "legal_name": "COLLEGIUM PHARMACEUTICAL, INC",
+      "clinical_trials_sponsor_query": "Collegium Pharmaceutical",
+      "fda_sponsor_prefix": "COLLEGIUM",
+      "providers": ["clinical_trials", "fda_drugs"]
+    },
+    {
+      "ticker": "ASMB", "cik": "0001426800", "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "legal_name": "ASSEMBLY BIOSCIENCES, INC.",
+      "clinical_trials_sponsor_query": "Assembly Biosciences",
+      "fda_sponsor_prefix": "ASSEMBLY",
+      "providers": ["clinical_trials", "fda_drugs"]
+    },
+    {
+      "ticker": "ACHV", "cik": "0000949858", "sic": "2835",
+      "sic_description": "In Vitro & In Vivo Diagnostic Substances",
+      "legal_name": "ACHIEVE LIFE SCIENCES, INC.",
+      "clinical_trials_sponsor_query": "Achieve Life Sciences",
+      "fda_sponsor_prefix": "ACHIEVE",
+      "providers": ["clinical_trials", "fda_drugs"]
+    },
+    {
+      "ticker": "LNSR", "cik": "0001320350", "sic": "3841",
+      "sic_description": "Surgical & Medical Instruments & Apparatus",
+      "legal_name": "LENSAR, Inc.",
+      "clinical_trials_sponsor_query": "LENSAR",
+      "fda_sponsor_prefix": null,
+      "providers": ["clinical_trials"],
+      "note": "Medical device, not a drug company -- Drugs@FDA (NDA/ANDA/BLA) does not apply. A real device clearance/approval (510(k)/PMA, api.fda.gov/device/) is a separate openFDA endpoint nre.fda_approvals does not classify; out of scope here, not fabricated as a drug application."
+    }
+  ]
+}

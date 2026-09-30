@@ -6,7 +6,9 @@ from unittest.mock import patch
 
 from nre import cli
 from nre.core import DataError, canonical, digest
-from nre.ingestion import drugsfda_application
+from nre.ingestion import (
+    SourceUnavailable, drugsfda_application, drugsfda_sponsor_search, clinical_trials_sponsor_search,
+)
 
 
 class FakeClient:
@@ -39,6 +41,22 @@ REAL_CAFCIT_DOCUMENT = {
     }],
 }
 NOT_FOUND_DOCUMENT = {"error": {"code": "NOT_FOUND", "message": "No matches found!"}}
+NOT_FOUND_URL = 'https://api.fda.gov/drug/drugsfda.json?search=application_number:%22NDA999999999%22&limit=1'
+
+# Real, trimmed sponsor-search responses fetched directly on 2026-09-30, used to prove
+# clinical_trials_sponsor_search()/drugsfda_sponsor_search()'s own real, verified behavior:
+# query.spons matches broadly (collaborators too), and openFDA's sponsor_name is a short registered
+# name, not a company's full public name.
+REAL_NEUROCRINE_CT_SEARCH_URL = 'https://clinicaltrials.gov/api/v2/studies?query.spons=Neurocrine+Biosciences&pageSize=5'
+REAL_NEUROCRINE_CT_SEARCH_DOCUMENT = {
+    "studies": [
+        {"protocolSection": {"identificationModule": {"nctId": "NCT06911112", "briefTitle": "NBI-1065845-MDD3025"},
+                              "sponsorCollaboratorsModule": {"leadSponsor": {"name": "Neurocrine Biosciences"}}}},
+        {"protocolSection": {"identificationModule": {"nctId": "NCT05207085", "briefTitle": "Valbenazine for Trichotillomania"},
+                              "sponsorCollaboratorsModule": {"leadSponsor": {"name": "Yale University"}}}},
+    ]
+}
+REAL_ASSEMBLY_FDA_SEARCH_URL = 'https://api.fda.gov/drug/drugsfda.json?search=sponsor_name%3AASSEMBLY%2A&limit=20'
 
 
 class DrugsfdaApplicationTests(unittest.TestCase):
@@ -49,12 +67,20 @@ class DrugsfdaApplicationTests(unittest.TestCase):
         self.assertEqual(client.calls, [REAL_CAFCIT_URL])
         self.assertEqual(meta["url"], REAL_CAFCIT_URL)
 
-    def test_openfda_no_match_body_becomes_a_data_error(self):
-        # openFDA returns HTTP 200 with an {"error": {...}} body for a zero-result search, unlike a
-        # real HTTP error status -- must not be treated as a successful empty result.
+    def test_openfda_200_error_body_becomes_a_data_error(self):
+        # Defensive: if openFDA ever returns 200 with an {"error": {...}} body (not the real 404
+        # behavior verified for a not-found search, but a distinct shape this function also guards
+        # against), it must not be treated as a successful empty result.
         client = FakeClient({REAL_CAFCIT_URL: NOT_FOUND_DOCUMENT})
         with self.assertRaises(DataError):
             drugsfda_application(client, "NDA020793", "/tmp/out")
+
+    def test_openfda_real_404_not_found_becomes_a_data_error(self):
+        # Verified directly against the real API 2026-09-30: a well-formed but nonexistent
+        # application_number gets a real HTTP 404 (not a 200), with an {"error": {...}} body.
+        client = FakeClient(errors={NOT_FOUND_URL: SourceUnavailable("HTTP_404")})
+        with self.assertRaises(DataError):
+            drugsfda_application(client, "NDA999999999", "/tmp/out")
 
     def test_invalid_application_number_format_rejected(self):
         for bad in ("IND012345", "NDA", "020793", "nda020793"):
@@ -66,6 +92,55 @@ class DrugsfdaApplicationTests(unittest.TestCase):
         client = FakeClient({REAL_CAFCIT_URL: wrong})
         with self.assertRaises(DataError):
             drugsfda_application(client, "NDA020793", "/tmp/out")
+
+
+class ClinicalTrialsSponsorSearchTests(unittest.TestCase):
+    def test_real_response_shape_returns_every_protocol_unfiltered(self):
+        # Broad match by design (collaborators too) -- filtering to the real sponsor is the
+        # caller's job, matching what a real check against "Assembly Biosciences" found (an
+        # unrelated sponsor matched on the shared "Bioscience(s)" token).
+        client = FakeClient({REAL_NEUROCRINE_CT_SEARCH_URL: REAL_NEUROCRINE_CT_SEARCH_DOCUMENT})
+        protocols, meta = clinical_trials_sponsor_search(client, "Neurocrine Biosciences", "/tmp/out", page_size=5)
+        self.assertEqual(len(protocols), 2)
+        self.assertEqual(protocols[0]["identificationModule"]["nctId"], "NCT06911112")
+        self.assertEqual(meta["url"], REAL_NEUROCRINE_CT_SEARCH_URL)
+
+    def test_real_zero_result_search_returns_empty_list_not_an_error(self):
+        # Verified directly: a genuinely zero-match sponsor search returns HTTP 200 with an empty
+        # studies list -- a normal outcome, unlike openFDA's exact/prefix lookup below.
+        url = 'https://clinicaltrials.gov/api/v2/studies?query.spons=Zzzznonexistentsponsorxyz123&pageSize=5'
+        client = FakeClient({url: {"studies": []}})
+        protocols, meta = clinical_trials_sponsor_search(client, "Zzzznonexistentsponsorxyz123", "/tmp/out", page_size=5)
+        self.assertEqual(protocols, [])
+
+    def test_empty_sponsor_rejected(self):
+        with self.assertRaises(DataError):
+            clinical_trials_sponsor_search(FakeClient(), "", "/tmp/out")
+
+
+class DrugsfdaSponsorSearchTests(unittest.TestCase):
+    def test_real_zero_result_prefix_search_returns_empty_list_not_an_error(self):
+        # Verified directly against the real API 2026-09-30: Assembly Biosciences (clinical-stage,
+        # nothing FDA-approved yet) gets a real HTTP 404 for this prefix search -- a normal, valid
+        # outcome for a discovery search, never raised as an error.
+        client = FakeClient(errors={REAL_ASSEMBLY_FDA_SEARCH_URL: SourceUnavailable("HTTP_404")})
+        results, meta = drugsfda_sponsor_search(client, "ASSEMBLY", "/tmp/out")
+        self.assertEqual(results, [])
+
+    def test_real_nonzero_result_prefix_search(self):
+        url = 'https://api.fda.gov/drug/drugsfda.json?search=sponsor_name%3ANEUROCRINE%2A&limit=20'
+        document = {"results": [
+            {"application_number": "NDA209241", "sponsor_name": "NEUROCRINE",
+             "products": [{"brand_name": "INGREZZA"}], "submissions": []},
+        ]}
+        client = FakeClient({url: document})
+        results, meta = drugsfda_sponsor_search(client, "NEUROCRINE", "/tmp/out")
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["sponsor_name"], "NEUROCRINE")
+
+    def test_empty_sponsor_prefix_rejected(self):
+        with self.assertRaises(DataError):
+            drugsfda_sponsor_search(FakeClient(), "", "/tmp/out")
 
 
 class CliFdaApprovalTests(unittest.TestCase):

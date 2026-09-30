@@ -66,6 +66,9 @@ def parser():
     fa = sub.add_parser("fda-approval")
     fa.add_argument("--application-number", required=True)
     fa.add_argument("--output", required=True)
+    bss = sub.add_parser("biotech-sponsor-scan")
+    bss.add_argument("--spec", default="config/m3-biotech-sponsor-map.json")
+    bss.add_argument("--output", required=True)
     return p
 
 
@@ -135,6 +138,19 @@ def main(argv=None):
             record = {"application_number": args.application_number, "fetch_metadata": meta, "result": result}
             save_json(Path(args.output) / "fda-approval.json", record)
             print(canonical(result).decode())
+        elif args.command == "biotech-sponsor-scan":
+            from .biotech_sponsor_scan import scan_all
+            from .ingestion import PublicClient
+            client = PublicClient(os.environ.get("SEC_USER_AGENT", ""))
+            spec = json.loads(Path(args.spec).read_text())
+            result = scan_all(client, spec, args.output)
+            save_json(Path(args.output) / "biotech-sponsor-scan.json", result)
+            summary = {"issuer_count": len(result["issuers"]),
+                       "clinical_trials_matched_total": sum(
+                           i["clinical_trials"]["matched_count"] for i in result["issuers"]),
+                       "fda_drugs_matched_total": sum(
+                           i["fda_drugs"].get("matched_count", 0) for i in result["issuers"])}
+            print(canonical(summary).decode())
         elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)
             print(canonical({"snapshot": str(path), "report": report}).decode())

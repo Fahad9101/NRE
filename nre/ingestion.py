@@ -274,14 +274,22 @@ def drugsfda_application(client, application_number, output):
     (api.fda.gov/drug/drugsfda.json -- verified live and free 2026-09-30), for Milestone 3 Phase C's
     biotech catalyst classification (nre.fda_approvals). Returns the raw application document
     exactly as openFDA's own API reports it -- nothing computed or classified here. An application
-    number with no matching record surfaces as DataError, since openFDA returns a 200 with an
-    {"error": {"code": "NOT_FOUND", ...}} body rather than a real HTTP error for a search with zero
-    results (unlike SEC's and ClinicalTrials.gov's own APIs, which use real HTTP status codes)."""
+    number with no matching record surfaces as DataError: verified directly against the real API
+    2026-09-30 (a well-formed but nonexistent application_number, both by itself and re-checked
+    through drugsfda_sponsor_search()'s own zero-result path below) that openFDA returns a real
+    HTTP 404 with an {"error": {"code": "NOT_FOUND", ...}} body -- not a 200, correcting an earlier,
+    never-actually-exercised assumption in this same function (every real dispatch before this had
+    used an application_number that exists, so the not-found path had never been hit for real)."""
     if not re.fullmatch(r"(NDA|ANDA|BLA)\d+", application_number):
         raise DataError("invalid application_number (must start with NDA, ANDA, or BLA)")
     url = "https://api.fda.gov/drug/drugsfda.json?search=application_number:%s&limit=1" % urllib.parse.quote(
         '"' + application_number + '"')
-    body, meta = client.fetch(url, output)
+    try:
+        body, meta = client.fetch(url, output)
+    except SourceUnavailable as exc:
+        if str(exc) == "HTTP_404":
+            raise DataError("openFDA: no application found for " + application_number) from exc
+        raise
     document = json.loads(body)
     if "error" in document:
         raise DataError("openFDA: " + document["error"].get("message", "unknown error"))
@@ -289,6 +297,76 @@ def drugsfda_application(client, application_number, output):
     if not isinstance(results, list) or not results or results[0].get("application_number") != application_number:
         raise DataError("openFDA response application_number does not match the request")
     return results[0], meta
+
+
+def clinical_trials_sponsor_search(client, sponsor, output, page_size=20):
+    """Search real studies by lead sponsor (clinicaltrials.gov/api/v2/studies?query.spons= --
+    verified live 2026-09-30), for discovering a company's own trials without already knowing an
+    NCT id -- Milestone 3's connection of Phase C to this project's own issuers. query.spons matches
+    broadly (collaborators too, sometimes by a stemmed/partial token: a real check against
+    "Assembly Biosciences" also matched unrelated sponsors on the shared token "Bioscience(s)") --
+    callers must check each result's own leadSponsor.name before treating it as that company's
+    trial, the same discipline as an EDGAR self-declaration search (search broadly, then verify the
+    specific record actually says what you are looking for). A zero-result search returns a normal
+    HTTP 200 with an empty studies list (verified directly) -- unlike openFDA's exact/prefix lookup
+    below, no not-found translation is needed here. Returns each matching study's protocolSection,
+    identical in shape to what clinical_trials_study() returns for one id, so
+    nre.biotech_trials.classify_study() applies unchanged to each item."""
+    if not sponsor or not isinstance(sponsor, str):
+        raise DataError("sponsor must be a non-empty string")
+    url = "https://clinicaltrials.gov/api/v2/studies?" + urllib.parse.urlencode(
+        {"query.spons": sponsor, "pageSize": page_size})
+    body, meta = client.fetch(url, output)
+    document = json.loads(body)
+    studies = document.get("studies")
+    if not isinstance(studies, list):
+        raise DataError("ClinicalTrials.gov search response missing studies list")
+    protocols = []
+    for study in studies:
+        protocol = study.get("protocolSection")
+        if not isinstance(protocol, dict):
+            raise DataError("ClinicalTrials.gov search result missing protocolSection")
+        protocols.append(protocol)
+    return protocols, meta
+
+
+def drugsfda_sponsor_search(client, sponsor_prefix, output, limit=20):
+    """Search real Drugs@FDA applications by a sponsor_name prefix (api.fda.gov/drug/drugsfda.json
+    -- verified live 2026-09-30), for discovering a company's own applications without already
+    knowing an application_number. openFDA's own sponsor_name field holds a short registered name,
+    not necessarily a company's full public name (real, verified examples: Neurocrine Biosciences'
+    own applications are filed under just "NEUROCRINE"; Collegium Pharmaceutical's under "COLLEGIUM
+    PHARM INC") -- an exact quoted phrase of the full public name will not match, and an unquoted
+    multi-word query matches ANY word (OR, not AND: a real check on "Assembly Biosciences" matched
+    unrelated sponsors sharing just the "Bioscience(s)" token). A prefix wildcard
+    (sponsor_name:TERM*) is the reliable match verified here, at the cost of the caller supplying a
+    sensible, distinctive prefix. Zero matches is a normal, valid outcome (e.g. a clinical-stage
+    company with nothing FDA-approved yet -- verified real, e.g. for Achieve Life Sciences, Tectonic
+    Therapeutic and Assembly Biosciences) and is returned as an empty list, never raised as an
+    error: openFDA's own real 404-with-error-body for a zero-result search is caught here and
+    translated, the same real behavior drugsfda_application() above now also handles. Returns each
+    matching application dict, identical in shape to what drugsfda_application() returns for one
+    application_number, so nre.fda_approvals.classify_application() applies unchanged to each
+    item."""
+    if not sponsor_prefix or not isinstance(sponsor_prefix, str):
+        raise DataError("sponsor_prefix must be a non-empty string")
+    url = "https://api.fda.gov/drug/drugsfda.json?" + urllib.parse.urlencode(
+        {"search": "sponsor_name:%s*" % sponsor_prefix, "limit": limit})
+    try:
+        body, meta = client.fetch(url, output)
+    except SourceUnavailable as exc:
+        if str(exc) == "HTTP_404":
+            return [], {"url": url, "result_count": 0, "empty_result_reason": "HTTP_404_NOT_FOUND"}
+        raise
+    document = json.loads(body)
+    if "error" in document:
+        if document["error"].get("code") == "NOT_FOUND":
+            return [], meta
+        raise DataError("openFDA: " + document["error"].get("message", "unknown error"))
+    results = document.get("results")
+    if not isinstance(results, list):
+        raise DataError("openFDA search response missing results list")
+    return results, meta
 
 
 def nasdaq_directory(text, available_at):

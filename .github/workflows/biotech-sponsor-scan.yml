@@ -1,0 +1,24 @@
+name: Biotech sponsor scan (Milestone 3 Phase C connection)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/biotech-sponsor-scan.yml'
+      - 'nre/biotech_sponsor_scan.py'
+      - 'config/m3-biotech-sponsor-map.json'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Search and classify each issuer's own real trials/applications
+        env:
+          SEC_USER_AGENT: NRE research contact https://github.com/Fahad9101/NRE
+        run: python -m nre.cli biotech-sponsor-scan --output out
