@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-09-30",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "declare M3",
+  "context": "Made in direct reply to the assistant's own closing status -- \"All five of M3's original scope items now have real, working code... The only thing left is a formal M3 acceptance declaration, whenever you're ready to make it\" -- itself following the owner's own explicit decisions earlier the same session on catalyst-strength's methodology (scope first) and its one open question (stay scoped to Phase A+B only). Recorded verbatim, mirroring exactly how Milestone 1's (reports/m1-acceptance-declaration-2026-09-26.json), Milestone 2 step 2's (reports/m2-step2-acceptance-declaration-2026-09-29.json), and Milestone 2's (reports/m2-acceptance-declaration-2026-09-29.json) own declarations were made.",
+  "status": "MILESTONE_3_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 3 -- News/Catalyst Intelligence",
+  "acceptance_criterion": "\"Raw public announcements reliably become structured machine-readable event features.\" (docs/NRE-1.0-MASTER-PROMPT.md, Milestone 3 -- News/Catalyst Intelligence)",
+  "state_declared": {
+    "repository_head_at_declaration": "d84df6902feceb3fc223ade40e6802ec08a10899",
+    "working_tree_clean_at_declaration": true,
+    "full_test_suite_at_declaration": "479 passed, 4 skipped (the 4 are shell/git-dependent tests CI runs on Linux, by design not run on this Windows machine)",
+    "how_verified": "Unlike Milestone 1's and Milestone 2 step 2's own declarations, there is no single audit_cohort()-style gate-check result to re-verify here -- Milestone 3's five scope items are five separate, independently-classifying modules plus real workflow dispatches, not one gated cohort audit. The same approach Milestone 2's own full declaration used applies here: every cited evidence file was re-hashed directly (sha256 of its own exact committed bytes) at declaration time and matches what sits at the declared repository head.",
+    "evidence_file_hashes_reconfirmed": {
+      "docs/M3-NEWS-CATALYST-INTELLIGENCE-SCOPE.md": "bdd7ca0915b6c2906925eabbb2594211e838598593a54a2452ca1a257a818596",
+      "reports/m3-scope-authorization-2026-09-29.json": "4e1b6dbdcd464f28a1e2ddd083528430b161610dc9ac20e1478ff9d12cc6bef6",
+      "reports/m3-worked-example-jbss-same-day-filings-2026-09-29.json": "6c67591bd2d20451c5234788c511469f32010cb88e6560d325aea5927214da35",
+      "reports/m3-earnings-surprise-workflow-result-2026-09-30.json": "39ec668107f6d645aab7a8fce3d0f205acb777fbd9372110813cf385d6bc5847",
+      "reports/m3-clinical-trial-workflow-result-2026-09-30.json": "bb8cfd312e6485969499ea6b414ec68e68f84fbda6cc76f48c714eddfca3093e",
+      "reports/m3-fda-approval-workflow-result-2026-09-30.json": "6a7281e38c3669b06c0957efff6059c550d1f4048ef086374560d5558d426cc7",
+      "reports/m3-biotech-sponsor-scan-result-2026-09-30.json": "2163845a2633a6b59331a5725846a0f61b048110ec40a635ed837af59f480d12",
+      "config/m3-biotech-sponsor-map.json": "d424b48f014b5a6cd482dadd56f0643a21f14027ba26c4c90280653465cab218",
+      "docs/M3-CATALYST-STRENGTH-SCOPE.md": "3ccd0966025ffa063f0b166c4882ed9f62c493e88869602836707377bc9c2507",
+      "reports/m3-worked-example-jbss-catalyst-features-2026-09-30.json": "0785be058e38f5c58ae893612fc17bf167d63b495c67b15db78e27cc21620cc9"
+    }
+  },
+  "basis": {
+    "dependency_chain": [
+      "Milestone 0/1/2/2-step-2 accepted (reports/m1-acceptance-declaration-2026-09-26.json, reports/m2-acceptance-declaration-2026-09-29.json, reports/m2-step2-acceptance-declaration-2026-09-29.json) -- the 68-event dataset and its own SEC/Alpaca ingestion pipeline M3 extends without modifying.",
+      "M3 scoped 2026-09-29 (docs/M3-NEWS-CATALYST-INTELLIGENCE-SCOPE.md, reports/m3-scope-authorization-2026-09-29.json): owner chose Phase A first, and to skip consensus-based surprise entirely.",
+      "Phase A (corporate-event normalization) built 2026-09-29: nre/corporate_events.py, all 28 real SEC 8-K item codes verified against SEC's own C&DI page plus one real 8-K cover page for Item 5.08.",
+      "Phase B (earnings surprise vs. prior period) built 2026-09-30: nre/earnings_surprise.py, point-in-time-correct, tag-generic (confirmed for both EPS and revenue against real JBSS XBRL facts); live-fetch dispatch confirmed blocked from GitHub Actions (SEC's own XBRL companyconcept API and bulk Financial Statement Data Sets both return HTTP 403) -- a real, external access-path limitation, not a code defect.",
+      "Phase C (biotech/device catalyst classification) built 2026-09-30: nre/biotech_trials.py (ClinicalTrials.gov) and nre/fda_approvals.py (openFDA Drugs@FDA) confirmed genuinely working end-to-end from GitHub Actions on first real dispatch each; nre/device_clearances.py (openFDA device 510(k)/PMA) added the same day.",
+      "Phase C connected to this project's own 23 issuers 2026-09-30 (config/m3-biotech-sponsor-map.json, nre/biotech_sponsor_scan.py): 6 issuers (NBIX/TECX/COLL/ASMB/ACHV drugs, LNSR devices) identified from each issuer's own real SEC SIC code, not guessed; real sponsor-search discovery built and dispatched twice, matched exactly by independent hand-verification both times.",
+      "submission_class_code's real 27-value enum classified 2026-09-30 (24 of 27, each read directly from real submissions' own submission_class_code_description field), verified on a fresh real dispatch.",
+      "Catalyst-strength features scoped 2026-09-30 (docs/M3-CATALYST-STRENGTH-SCOPE.md) before any code -- key finding: the master prompt's own \"Catalyst strength: 92/100\" is a later, calibrated MODEL's output (M4+), not something this phase invents; M3's own job is the structured features such a model would need. Owner decided the scope doc's own open question (\"stay scoped to Phase A+B only\") the same day; nre/catalyst_features.py built and verified against a real JBSS event immediately after."
+    ],
+    "owner_decisions_relied_on": [
+      {"date": "2026-09-29", "decision": "Phase A first; skip consensus-based earnings surprise entirely.", "record": "reports/m3-scope-authorization-2026-09-29.json"},
+      {"date": "2026-09-30", "decision": "Catalyst-strength: scope it first, like Phase A/B/C, rather than build a methodology unilaterally or skip it outright.", "record": "This session's own conversation; docs/M3-CATALYST-STRENGTH-SCOPE.md"},
+      {"date": "2026-09-30", "decision": "Earnings surprise vs. prior guidance: skip it for now, mirroring the consensus decision.", "record": "This session's own conversation; nre/earnings_surprise.py's own module docstring"},
+      {"date": "2026-09-30", "decision": "Catalyst-strength's own open question: stay scoped to Phase A+B only.", "words": "stay scoped to Phase A+B only", "record": "This session's own conversation; docs/M3-CATALYST-STRENGTH-SCOPE.md section 2"}
+    ]
+  },
+  "accepted_scope": "All five of M3's own original scope items (docs/M3-NEWS-CATALYST-INTELLIGENCE-SCOPE.md) now have real, working code: (1) structured event extraction and (2) corporate-event normalization via nre.corporate_events (Phase A); (3) earnings surprise normalization vs. prior period via nre.earnings_surprise, both EPS and revenue (Phase B); (4) biotech/device catalyst extraction via nre.biotech_trials/nre.fda_approvals/nre.device_clearances, connected to 6 of this project's own 23 accepted issuers via nre.biotech_sponsor_scan (Phase C); (5) catalyst-strength features via nre.catalyst_features, combining Phase A+B into structured, auditable signals -- never a combined score (Phase D/catalyst-strength's own subjective dimensions).",
+  "accepted_with_these_stated_limits": [
+    "Phase B's live-fetch stays blocked from GitHub Actions and this local machine alike -- SEC's own XBRL companyconcept API and bulk Financial Statement Data Sets both return HTTP 403 (reports/m3-earnings-surprise-workflow-result-2026-09-30.json). The computation logic is proven correct against real fixture data (both EPS and revenue); it cannot currently run for real in CI. A standing, honestly-documented external limitation, not a code defect -- no bot-detection evasion was attempted or will be.",
+    "Earnings surprise vs. prior guidance and vs. consensus are both out of scope by explicit owner decision, not attempted, not approximated. \"Surprise\" in this project means vs. prior period only, and is never presented as either of those.",
+    "Catalyst-strength features are scoped to Phase A+B only, by explicit owner decision -- Phase C's own real regulatory data (trials/applications/clearances) remains issuer-level context, never fused into any specific event's features. surprise_magnitude_band is deferred: too few real surprise_pct values exist yet (Phase B's live-fetch block) to set a defensible, data-driven bucket boundary from.",
+    "Phase C's connection to this project's own issuers is issuer-level (sponsor/applicant name matching), not event-level -- none of the 68 real M1/M2 events is itself a clinical-trial-result or FDA-action announcement; every one is a plain earnings release (verified by reading each event's own real wire headline before any connection code was written).",
+    "submission_class_code (drugs) has 3 of 27 real values deliberately left unclassified (UNKNOWN, BIOSIMILAR, TYPE 10- BLA -- no sampled real record, up to 50 each, populates their own description field). device_clearances' own 510(k) decision_code similarly leaves DENG unclassified for the same reason; two other real PMA codes (OK30, APCB) are classified from strong real-data correlation rather than an official FDA definition, explicitly noted as such, not asserted as fact.",
+    "Sponsor/applicant discovery searches cap at 20 results per issuer/pathway -- ASMB's own real clinical-trials count is confirmed understated (hit the cap with zero non-matches), not claimed complete.",
+    "openFDA's own official field-reference PDFs were found stale relative to live data during this work (PMA's supplement_type most severely) -- every enum actually used here was verified against the live API directly, never trusted from documentation alone.",
+    "nre/alpaca.py's own latent hardcoded-Calendar() bug (flagged in Milestone 2's own housekeeping, 2026-09-29) remains unfixed -- still not exercised by anything Milestone 3 touches.",
+    "No true out-of-sample validation of anything built here -- same standing limit as every prior milestone; this is structured feature extraction, not a validated model."
+  ],
+  "not_authorized_or_claimed": [
+    "No predictive claim, validated edge, or trading use -- structured features and real classifications, honestly hedged by their own stated limits, are not a forecast. Nothing here predicts, scores, or ranks a candidate.",
+    "Milestone 4 (Baseline Predictive Models) or any later milestone is not authorized by this declaration; each needs the owner's own separate explicit approval, the same as every milestone before it.",
+    "No scope expansion beyond what was already explicitly decided (Phase A-first sequencing, consensus-skip, guidance-skip, Phase A+B-only catalyst-strength) is implied.",
+    "The frozen Milestone 1 BOE/SOE/IEE rules, the frozen 243-candidate Milestone 1 membership, and Milestone 2/2-step-2's own already-declared, already-stated limits remain untouched and unaffected by this declaration.",
+    "The master prompt's own eventual model-output display (section 13's \"Catalyst strength: 92/100\") is explicitly not claimed or approximated here -- that is later, calibrated-model work (M4+), not this milestone's."
+  ],
+  "housekeeping": "Two loose ends carried forward, both explicitly flagged rather than fixed: nre/alpaca.py's own latent 2026-only hardcoded Calendar() (from Milestone 2's own housekeeping, still unfixed); Milestone 2 step 2's own candidate_source_hashes gap (reports/m2-step2-acceptance-declaration-2026-09-29.json). Neither is touched or worsened by Milestone 3."
+}
