@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-30",
+  "purpose": "Real result of dispatching .github/workflows/fda-approval.yml for the first time, for NDA020793 (CAFCIT / caffeine citrate, sponsor HIKMA) -- the same real Drugs@FDA application tests/test_fda_approvals.py and tests/test_fda_ingestion.py already use as ground truth.",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36711270752",
+  "commit": "0b9fa35",
+  "result": "SUCCESS",
+  "computed_output": {
+    "application_number": "NDA020793",
+    "pathway": "new_drug_application",
+    "sponsor_name": "HIKMA",
+    "brand_names": ["CAFCIT"],
+    "submission_count": 9,
+    "submission_status_categories": ["approved"],
+    "submission_type_categories": ["original_application", "supplement"],
+    "original_application_status_date": "19990921"
+  },
+  "context": "Like ClinicalTrials.gov (reports/m3-clinical-trial-workflow-result-2026-09-30.json) and unlike Milestone 3 Phase B's earnings-surprise pipeline (data.sec.gov's own paths confirmed blocked from GitHub Actions with HTTP 403, reports/m3-earnings-surprise-workflow-result-2026-09-30.json), openFDA's drugsfda.json endpoint succeeded on the very first real dispatch -- matching what local testing already predicted before any code was written. This is the second Milestone 3 capability confirmed genuinely runnable end to end against live data from GitHub Actions, not just code-complete.",
+  "not_a_claim": [
+    "Not a claim about CAFCIT's own clinical or commercial significance -- 'approved' describes each submission's own regulatory status only.",
+    "Not a general claim that every openFDA path is unblocked -- only this specific endpoint (drug/drugsfda.json, searched by application_number) has been confirmed working from GitHub Actions so far. submission_class_code's own larger, fragmented enum is deliberately not classified yet (nre/fda_approvals.py's own module docstring).",
+    "Not a claim that this project's own 23 accepted issuers have FDA-approved products in Drugs@FDA -- several smaller/clinical-stage biotech issuers searched during this phase returned no matches, consistent with Drugs@FDA covering only approved applications. NDA020793 was used as an independently verifiable ground-truth example, not as one of this project's own issuers."
+  ]
+}
