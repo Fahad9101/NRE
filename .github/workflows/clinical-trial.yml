@@ -1,0 +1,22 @@
+name: Clinical trial classification (Milestone 3 Phase C)
+on:
+  workflow_dispatch:
+    inputs:
+      nct_id:
+        description: 'ClinicalTrials.gov study id (e.g. NCT03325010)'
+        required: true
+permissions:
+  contents: read
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch real study record and classify its status/phase
+        env:
+          SEC_USER_AGENT: NRE research contact https://github.com/Fahad9101/NRE
+        run: python -m nre.cli clinical-trial --nct-id "${{ inputs.nct_id }}" --output out

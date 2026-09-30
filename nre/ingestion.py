@@ -128,7 +128,8 @@ class PublicClient:
 
     def fetch(self, url, output):
         parsed = urllib.parse.urlparse(url)
-        allowed = {"data.sec.gov", "www.sec.gov", "www.nasdaqtrader.com"}
+        allowed = {"data.sec.gov", "www.sec.gov", "www.nasdaqtrader.com",
+                   "clinicaltrials.gov", "api.fda.gov"}
         if parsed.scheme != "https" or parsed.hostname not in allowed:
             raise DataError("unsupported public source")
         for attempt in range(3):
@@ -248,6 +249,24 @@ def xbrl_company_concept(client, cik, taxonomy, tag, unit, output):
     if not isinstance(facts, list) or not all(isinstance(f, dict) for f in facts):
         raise DataError("XBRL unit facts malformed")
     return facts, meta
+
+
+def clinical_trials_study(client, nct_id, output):
+    """Fetch one real study record by its own NCT id (clinicaltrials.gov/api/v2/studies/{nctId} --
+    verified live and free 2026-09-30), for Milestone 3 Phase C's biotech catalyst classification
+    (nre.biotech_trials). Returns the raw protocolSection document exactly as ClinicalTrials.gov's
+    own API reports it -- nothing computed or classified here. An id with no matching study
+    surfaces as SourceUnavailable ("HTTP_404") through `client.fetch()` itself, the same as any
+    other missing public source."""
+    if not re.fullmatch(r"NCT\d{8}", nct_id):
+        raise DataError("invalid NCT id")
+    url = "https://clinicaltrials.gov/api/v2/studies/%s" % nct_id
+    body, meta = client.fetch(url, output)
+    document = json.loads(body)
+    protocol = document.get("protocolSection")
+    if not isinstance(protocol, dict) or protocol.get("identificationModule", {}).get("nctId") != nct_id:
+        raise DataError("ClinicalTrials.gov response NCT id does not match the request")
+    return protocol, meta
 
 
 def nasdaq_directory(text, available_at):

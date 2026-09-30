@@ -60,6 +60,9 @@ def parser():
     es.add_argument("--tag", default="EarningsPerShareDiluted")
     es.add_argument("--unit", default="USD/shares")
     es.add_argument("--output", required=True)
+    ct = sub.add_parser("clinical-trial")
+    ct.add_argument("--nct-id", required=True)
+    ct.add_argument("--output", required=True)
     return p
 
 
@@ -110,6 +113,15 @@ def main(argv=None):
             record = {"cik": args.cik, "accession": args.accession, "tag": args.tag, "unit": args.unit,
                       "fetch_metadata": meta, "result": result}
             save_json(Path(args.output) / "earnings-surprise.json", record)
+            print(canonical(result).decode())
+        elif args.command == "clinical-trial":
+            from .biotech_trials import classify_study
+            from .ingestion import PublicClient, clinical_trials_study
+            client = PublicClient(os.environ.get("SEC_USER_AGENT", ""))
+            protocol, meta = clinical_trials_study(client, args.nct_id, args.output)
+            result = classify_study(protocol)
+            record = {"nct_id": args.nct_id, "fetch_metadata": meta, "result": result}
+            save_json(Path(args.output) / "clinical-trial.json", record)
             print(canonical(result).decode())
         elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)
