@@ -96,6 +96,18 @@ class ValidateSpecTests(unittest.TestCase):
         self.assertEqual(len(real_spec["issuers"]), 23)
         self.assertEqual(len({i["cik"] for i in real_spec["issuers"]}), 23)
 
+    def test_the_real_step_3_files_validate_and_precede_step_2_with_no_overlap(self):
+        root = Path(__file__).resolve().parent.parent
+        real_protocol = json.loads((root / "config" / "m2-step3-protocol.json").read_text())
+        real_spec = json.loads((root / "config" / "m2-step3-cohort-spec.json").read_text())
+        dc.validate_spec(real_spec, real_protocol)  # no exception
+        self.assertEqual(len(real_spec["issuers"]), 23)
+        self.assertEqual(len({i["cik"] for i in real_spec["issuers"]}), 23)
+        step2_spec = json.loads((root / "config" / "m2-step2-cohort-spec.json").read_text())
+        self.assertLessEqual(real_spec["filing_screen_end"], step2_spec["filing_screen_start"])
+        # Same fixed issuer set as step 2, not a different sample.
+        self.assertEqual({i["cik"] for i in real_spec["issuers"]}, {i["cik"] for i in step2_spec["issuers"]})
+
     def test_a_well_formed_spec_validates(self):
         p = protocol()
         dc.validate_spec(spec(p), p)  # no exception
@@ -263,6 +275,52 @@ class FreezeTargetedCandidatesTests(unittest.TestCase):
             self.assertNotIn("close", text.lower())
             self.assertNotIn("open", text.lower())
         self.assertFalse(report["price_data_accessed_by_this_workflow"])
+
+
+class CliFreezeTargetedCohortTests(unittest.TestCase):
+    """cli.py's own "freeze-targeted-cohort" command, end to end. freeze_targeted_candidates()
+    itself is already thoroughly covered above with a directly-injected FakeClient; this only
+    proves the CLI's own new wiring (arg parsing, file reading, exit code) is correct, by patching
+    the high-level function itself rather than digging into _client()'s own real-PublicClient
+    construction path."""
+
+    def test_spec_and_protocol_files_are_read_and_passed_through(self):
+        from unittest.mock import patch
+        from nre import cli
+        p = protocol()
+        s = spec(p)
+        fake_result = {"state": "FROZEN_CANDIDATE_MEMBERSHIP", "candidate_count": 0}
+        with tempfile.TemporaryDirectory() as tmp:
+            spec_path, protocol_path = Path(tmp) / "spec.json", Path(tmp) / "protocol.json"
+            spec_path.write_text(json.dumps(s), encoding="utf-8")
+            protocol_path.write_text(json.dumps(p), encoding="utf-8")
+            with patch("nre.depth_cohort.freeze_targeted_candidates", return_value=({}, {}, fake_result)) as mocked, \
+                 patch("builtins.print") as output:
+                code = cli.main(["freeze-targeted-cohort", "--spec", str(spec_path),
+                                 "--protocol", str(protocol_path), "--output", tmp])
+                self.assertEqual(code, 0)
+                mocked.assert_called_once()
+                called_spec, called_protocol = mocked.call_args.args[0], mocked.call_args.args[1]
+                self.assertEqual(called_spec, s)
+                self.assertEqual(called_protocol, p)
+                printed = json.loads(output.call_args_list[0].args[0])
+                self.assertEqual(printed["state"], "FROZEN_CANDIDATE_MEMBERSHIP")
+
+    def test_a_non_frozen_state_exits_nonzero(self):
+        from unittest.mock import patch
+        from nre import cli
+        p = protocol()
+        s = spec(p)
+        with tempfile.TemporaryDirectory() as tmp:
+            spec_path, protocol_path = Path(tmp) / "spec.json", Path(tmp) / "protocol.json"
+            spec_path.write_text(json.dumps(s), encoding="utf-8")
+            protocol_path.write_text(json.dumps(p), encoding="utf-8")
+            with patch("nre.depth_cohort.freeze_targeted_candidates",
+                      return_value=({}, {}, {"state": "SOMETHING_ELSE"})), \
+                 patch("builtins.print"):
+                code = cli.main(["freeze-targeted-cohort", "--spec", str(spec_path),
+                                 "--protocol", str(protocol_path), "--output", tmp])
+                self.assertEqual(code, 2)
 
 
 if __name__ == "__main__":

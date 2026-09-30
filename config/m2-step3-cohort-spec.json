@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "selection_mode": "fixed_issuer_set",
+  "protocol_sha256": "20498997aa4fcafd7ecd0aa8aa1eb9dbd74640d7552a5e7b451f6ac13b10b49c",
+  "filing_screen_start": "2024-11-01",
+  "filing_screen_end": "2025-06-01",
+  "event_window_start": "2024-11-01",
+  "event_window_end": "2025-06-01",
+  "allowed_forms": ["8-K", "8-K/A"],
+  "issuers": [
+    {"ticker": "SLSN", "cik": "0000883107"}, {"ticker": "CXT", "cik": "0000025445"}, {"ticker": "ACHV", "cik": "0000949858"},
+    {"ticker": "COLL", "cik": "0001267565"}, {"ticker": "LOVE", "cik": "0001701758"}, {"ticker": "ASPN", "cik": "0001145986"},
+    {"ticker": "LNSR", "cik": "0001320350"}, {"ticker": "ASMB", "cik": "0001426800"}, {"ticker": "TECX", "cik": "0001681087"},
+    {"ticker": "REKR", "cik": "0001697851"}, {"ticker": "TTWO", "cik": "0000946581"}, {"ticker": "JBSS", "cik": "0000880117"},
+    {"ticker": "NBIX", "cik": "0000914475"}, {"ticker": "CACI", "cik": "0000016058"}, {"ticker": "VSAT", "cik": "0000797721"},
+    {"ticker": "HURN", "cik": "0001289848"}, {"ticker": "PARR", "cik": "0000821483"}, {"ticker": "KLC", "cik": "0001873529"},
+    {"ticker": "PDFS", "cik": "0001120914"}, {"ticker": "ALKT", "cik": "0001529274"}, {"ticker": "OKTA", "cik": "0001660134"},
+    {"ticker": "REAL", "cik": "0001573221"}, {"ticker": "PAYO", "cik": "0001845815"}
+  ],
+  "limitations": [
+    "The issuer set is fixed to the 23 already-accepted Milestone 1 issuers; it is not a market sample and no new issuer is added.",
+    "This spec only discovers filing candidates. Primary filing/release archival, first-public timing, identity, corporate-action and provider-rights review all remain unresolved after this step, exactly as in Milestone 1 and Milestone 2 step 2.",
+    "Item 2.02 status alone does not establish an earnings-results release, security eligibility, or first-public timing."
+  ]
+}

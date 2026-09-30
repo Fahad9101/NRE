@@ -41,6 +41,10 @@ def parser():
     f.add_argument("--protocol", required=True)
     f.add_argument("--output", required=True)
     f.add_argument("--frame")
+    ft = sub.add_parser("freeze-targeted-cohort")
+    ft.add_argument("--spec", required=True)
+    ft.add_argument("--protocol", required=True)
+    ft.add_argument("--output", required=True)
     fg = sub.add_parser("fingerprints")
     fg.add_argument("--as-of")
     fg.add_argument("--event")
@@ -94,6 +98,14 @@ def main(argv=None):
             user_agent = os.environ.get("SEC_USER_AGENT", "")
             frame = json.loads(Path(args.frame).read_text()) if args.frame else None
             _, _, result = freeze_sec_cohort(spec, protocol, args.output, user_agent, frame=frame)
+            print(canonical(result).decode())
+            return 0 if result["state"] == "FROZEN_CANDIDATE_MEMBERSHIP" else 2
+        elif args.command == "freeze-targeted-cohort":
+            from .depth_cohort import freeze_targeted_candidates
+            spec = json.loads(Path(args.spec).read_text())
+            protocol = json.loads(Path(args.protocol).read_text())
+            user_agent = os.environ.get("SEC_USER_AGENT", "")
+            _, _, result = freeze_targeted_candidates(spec, protocol, args.output, user_agent)
             print(canonical(result).decode())
             return 0 if result["state"] == "FROZEN_CANDIDATE_MEMBERSHIP" else 2
         elif args.command == "audit-cohort":

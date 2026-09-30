@@ -1,0 +1,29 @@
+{
+  "protocol_version": "m2-step3-depth-extension-v1-2026-09-30",
+  "event_window_start": "2024-11-01",
+  "event_window_end": "2025-06-01",
+  "price_window_end": "2025-09-01",
+  "discovery": "Every Item 2.02 8-K for the 23 already-accepted Milestone 1 issuers, filed in the event window; record every exclusion",
+  "universe": "The 23 issuers with an accepted Milestone 1 event, no others -- see candidate_universe below",
+  "candidate_universe": {
+    "note": "Fixed by the 23 already-accepted Milestone 1 events (config/m1-events.json); not sampled or discovered. Identical issuer set to Milestone 2 step 2's own.",
+    "ciks": ["0000883107", "0000025445", "0000949858", "0001267565", "0001701758", "0001145986", "0001320350", "0001426800",
+             "0001681087", "0001697851", "0000946581", "0000880117", "0000914475", "0000016058", "0000797721", "0001289848",
+             "0000821483", "0001873529", "0001120914", "0001529274", "0001660134", "0001573221", "0001845815"]
+  },
+  "minimum_eligible_events": 1,
+  "minimum_unique_issuers": 1,
+  "minimum_note": "Deliberately minimal, mirroring Milestone 2 step 2's own reasoning: a depth extension to measure real review throughput further back in time, not a coverage target.",
+  "selection": "Enumerate before reading returns; no performance-based sampling",
+  "availability_mode": "historical_reconstruction",
+  "scope": "Daily regular-session previous-close-anchored labels only; intraday events quarantined",
+  "acceptance": "A second depth extension for the same 23 issuers, same full review standard as Milestone 1 and Milestone 2 step 2; not evidence of predictive power",
+  "authorization": {
+    "decision": "Milestone 2 step 3: extend the same 23 issuers by 2 more prior quarters, to build a real per-issuer time series deep enough for Milestone 4's own walk-forward validation. Real data checked before proposing a window: every issuer (including KLC, a 2024 IPO with the shortest real history of the 23) has at least 4 real Item 2.02 filings available before its own already-used earliest event.",
+    "authorized_on": "2026-09-30",
+    "authorized_by": "Fahad9101 (project owner)",
+    "words": "expand the real event dataset first; ... depth: more quarters per existing issuer; ... yes go ahead",
+    "record": "This session's own conversation"
+  },
+  "relationship_to_step_2": "A separate, parallel protocol. It does not amend, extend or touch config/m2-step2-*.json, config/m2-combined-events.json, or any Milestone 1/2/2-step-2 record. Its event window (2024-11-01 to 2025-06-01) ends the day step 2's own begins (2025-06-01), so the two candidate pools cannot overlap."
+}

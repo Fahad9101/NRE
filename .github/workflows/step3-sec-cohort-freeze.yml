@@ -1,0 +1,105 @@
+name: NRE Milestone 2 step 3 SEC Cohort Freeze
+
+# The Milestone 2 step 3 cohort (the same 23 Milestone 1 issuers, 2 more prior quarters each, real
+# window 2024-11-01 to 2025-06-01 -- ends exactly where step 2's own window begins, so the pools
+# cannot overlap) is frozen once. This workflow is kept as the record of how that freeze was
+# produced. It runs only when dispatched by hand, and it stops before touching SEC or the
+# repository whenever any frozen file already exists on main, so no push or dispatch can re-freeze
+# or overwrite the frozen cohort.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nre-m2-step3-sec-cohort-freeze
+  cancel-in-progress: true
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refuse to run while a frozen step-3 cohort file exists on main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          for path in config/m2-step3-frozen-issuer-cohort.json config/m2-step3-frozen-candidate-ledger.json reports/m2-step3-sec-cohort-freeze.json; do
+            found="$(git ls-tree --name-only origin/main -- "$path")"
+            if [ -n "$found" ]; then
+              echo "::error::$path already exists on origin/main. The frozen step-3 cohort is never re-frozen or overwritten."
+              exit 1
+            fi
+          done
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Re-run offline validation before network acquisition
+        run: python -m unittest discover -s tests -v
+
+      - name: Freeze deterministic targeted candidate membership
+        env:
+          SEC_USER_AGENT: NRE research contact https://github.com/Fahad9101/NRE
+        run: |
+          rm -rf /tmp/nre-step3-freeze
+          python -m nre.cli freeze-targeted-cohort --spec config/m2-step3-cohort-spec.json --protocol config/m2-step3-protocol.json --output /tmp/nre-step3-freeze
+
+      - name: Verify freeze result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          spec = json.loads(Path("config/m2-step3-cohort-spec.json").read_text())
+          report = json.loads(Path("/tmp/nre-step3-freeze/discovery-report.json").read_text())
+          ledger = json.loads(Path("/tmp/nre-step3-freeze/candidate-ledger.json").read_text())
+          cohort = json.loads(Path("/tmp/nre-step3-freeze/issuer-cohort.json").read_text())
+          assert report["state"] == "FROZEN_CANDIDATE_MEMBERSHIP", report
+          assert report["price_data_accessed_by_this_workflow"] is False
+          assert report["processed_issuers"] == len(spec["issuers"]) == 23
+          assert ledger["frozen_at"] == report["frozen_at"] == cohort["frozen_at"]
+          assert len(ledger["candidates"]) == report["candidate_count"]
+          print(json.dumps({
+              "state": report["state"],
+              "processed_issuers": report["processed_issuers"],
+              "candidate_count": report["candidate_count"],
+              "candidate_issuers": report["issuers_with_item_2_02_candidates"],
+              "membership_sha256": report["membership_sha256"],
+              "frozen_at": report["frozen_at"],
+          }, sort_keys=True))
+          PY
+
+      - name: Publish frozen metadata only from unchanged source SHA
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          for path in config/m2-step3-frozen-issuer-cohort.json config/m2-step3-frozen-candidate-ledger.json reports/m2-step3-sec-cohort-freeze.json; do
+            found="$(git ls-tree --name-only origin/main -- "$path")"
+            if [ -n "$found" ]; then
+              echo "::error::$path already exists on origin/main. The frozen step-3 cohort is never re-frozen or overwritten."
+              exit 1
+            fi
+          done
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          cp /tmp/nre-step3-freeze/issuer-cohort.json config/m2-step3-frozen-issuer-cohort.json
+          cp /tmp/nre-step3-freeze/candidate-ledger.json config/m2-step3-frozen-candidate-ledger.json
+          cp /tmp/nre-step3-freeze/discovery-report.json reports/m2-step3-sec-cohort-freeze.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/m2-step3-frozen-issuer-cohort.json config/m2-step3-frozen-candidate-ledger.json reports/m2-step3-sec-cohort-freeze.json
+          git diff --cached --quiet && exit 0
+          git commit -m "data: freeze Milestone 2 step 3 targeted SEC cohort"
+          git push origin HEAD:main
+
+      - name: Preserve raw acquisition bytes as audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nre-m2-step3-sec-freeze-raw
+          path: /tmp/nre-step3-freeze/raw
+          if-no-files-found: error
+          retention-days: 30
