@@ -63,6 +63,9 @@ def parser():
     ct = sub.add_parser("clinical-trial")
     ct.add_argument("--nct-id", required=True)
     ct.add_argument("--output", required=True)
+    fa = sub.add_parser("fda-approval")
+    fa.add_argument("--application-number", required=True)
+    fa.add_argument("--output", required=True)
     return p
 
 
@@ -122,6 +125,15 @@ def main(argv=None):
             result = classify_study(protocol)
             record = {"nct_id": args.nct_id, "fetch_metadata": meta, "result": result}
             save_json(Path(args.output) / "clinical-trial.json", record)
+            print(canonical(result).decode())
+        elif args.command == "fda-approval":
+            from .fda_approvals import classify_application
+            from .ingestion import PublicClient, drugsfda_application
+            client = PublicClient(os.environ.get("SEC_USER_AGENT", ""))
+            application, meta = drugsfda_application(client, args.application_number, args.output)
+            result = classify_application(application)
+            record = {"application_number": args.application_number, "fetch_metadata": meta, "result": result}
+            save_json(Path(args.output) / "fda-approval.json", record)
             print(canonical(result).decode())
         elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)

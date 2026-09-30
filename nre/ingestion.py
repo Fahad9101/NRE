@@ -269,6 +269,28 @@ def clinical_trials_study(client, nct_id, output):
     return protocol, meta
 
 
+def drugsfda_application(client, application_number, output):
+    """Fetch one real Drugs@FDA application record by its own application number
+    (api.fda.gov/drug/drugsfda.json -- verified live and free 2026-09-30), for Milestone 3 Phase C's
+    biotech catalyst classification (nre.fda_approvals). Returns the raw application document
+    exactly as openFDA's own API reports it -- nothing computed or classified here. An application
+    number with no matching record surfaces as DataError, since openFDA returns a 200 with an
+    {"error": {"code": "NOT_FOUND", ...}} body rather than a real HTTP error for a search with zero
+    results (unlike SEC's and ClinicalTrials.gov's own APIs, which use real HTTP status codes)."""
+    if not re.fullmatch(r"(NDA|ANDA|BLA)\d+", application_number):
+        raise DataError("invalid application_number (must start with NDA, ANDA, or BLA)")
+    url = "https://api.fda.gov/drug/drugsfda.json?search=application_number:%s&limit=1" % urllib.parse.quote(
+        '"' + application_number + '"')
+    body, meta = client.fetch(url, output)
+    document = json.loads(body)
+    if "error" in document:
+        raise DataError("openFDA: " + document["error"].get("message", "unknown error"))
+    results = document.get("results")
+    if not isinstance(results, list) or not results or results[0].get("application_number") != application_number:
+        raise DataError("openFDA response application_number does not match the request")
+    return results[0], meta
+
+
 def nasdaq_directory(text, available_at):
     timestamp(available_at)
     lines = text.splitlines()

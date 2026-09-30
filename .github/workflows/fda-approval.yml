@@ -1,0 +1,22 @@
+name: FDA approval classification (Milestone 3 Phase C)
+on:
+  workflow_dispatch:
+    inputs:
+      application_number:
+        description: 'Drugs@FDA application number (e.g. NDA020793, ANDA077757, BLA125057)'
+        required: true
+permissions:
+  contents: read
+jobs:
+  classify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch real application record and classify its submissions
+        env:
+          SEC_USER_AGENT: NRE research contact https://github.com/Fahad9101/NRE
+        run: python -m nre.cli fda-approval --application-number "${{ inputs.application_number }}" --output out
