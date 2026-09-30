@@ -61,13 +61,21 @@ LNSR_CT_DOCUMENT = {"studies": [
         "designModule": {},
     }},
 ]}
+LNSR_510K_URL = 'https://api.fda.gov/device/510k.json?search=applicant%3ALENSAR%2A&limit=20'
+# Real, trimmed openFDA device/510k.json record, fetched directly 2026-09-30.
+LNSR_510K_DOCUMENT = {"results": [
+    {"k_number": "K090633", "applicant": "Lensar, Inc.", "device_name": "LENSAR LASER SYSTEM",
+     "decision_code": "SESE", "clearance_type": "Traditional", "openfda": {"device_class": "2"}},
+]}
+LNSR_PMA_URL = 'https://api.fda.gov/device/pma.json?search=applicant%3ALENSAR%2A&limit=20'
 
 NBIX_ENTRY = {"ticker": "NBIX", "cik": "0000914475", "sic": "2836", "legal_name": "NEUROCRINE BIOSCIENCES INC",
               "clinical_trials_sponsor_query": "Neurocrine Biosciences", "fda_sponsor_prefix": "NEUROCRINE",
               "providers": ["clinical_trials", "fda_drugs"]}
 LNSR_ENTRY = {"ticker": "LNSR", "cik": "0001320350", "sic": "3841", "legal_name": "LENSAR, Inc.",
               "clinical_trials_sponsor_query": "LENSAR", "fda_sponsor_prefix": None,
-              "providers": ["clinical_trials"], "note": "Medical device, not a drug company."}
+              "fda_device_applicant_prefix": "LENSAR",
+              "providers": ["clinical_trials", "fda_devices"], "note": "Medical device, not a drug company."}
 
 
 class SponsorMatchesTests(unittest.TestCase):
@@ -100,13 +108,26 @@ class ScanIssuerTests(unittest.TestCase):
         self.assertEqual(result["fda_drugs"]["matched_count"], 1)
         self.assertEqual(result["fda_drugs"]["applications"][0]["classification"]["pathway"], "new_drug_application")
 
-    def test_device_company_skips_fda_drugs_search_entirely(self):
-        client = FakeClient({LNSR_CT_URL: LNSR_CT_DOCUMENT})
+    def test_device_company_skips_fda_drugs_but_scans_fda_devices(self):
+        client = FakeClient({LNSR_CT_URL: LNSR_CT_DOCUMENT, LNSR_510K_URL: LNSR_510K_DOCUMENT},
+                             errors={LNSR_PMA_URL: SourceUnavailable("HTTP_404")})
         result = scan_issuer(client, LNSR_ENTRY, "/tmp/out")
         self.assertEqual(result["fda_drugs"], {"applicable": False, "reason": "Medical device, not a drug company."})
         self.assertEqual(result["clinical_trials"]["matched_count"], 1)
-        # No FDA URL was ever called for a device-only issuer.
-        self.assertTrue(all("clinicaltrials.gov" in u for u in client.calls))
+        # No Drugs@FDA URL was ever called for a device-only issuer.
+        self.assertTrue(all("drugsfda" not in u for u in client.calls))
+        self.assertEqual(result["fda_devices"]["result_count"], 1)
+        self.assertEqual(result["fda_devices"]["matched_count"], 1)
+        device = result["fda_devices"]["devices"][0]
+        self.assertEqual(device["pathway"], "510k")
+        self.assertTrue(device["applicant_match"])
+        self.assertEqual(device["classification"]["decision_category"], "cleared")
+
+    def test_drug_company_has_no_fda_devices_search(self):
+        client = FakeClient({NEUROCRINE_CT_URL: NEUROCRINE_CT_DOCUMENT, NEUROCRINE_FDA_URL: NEUROCRINE_FDA_DOCUMENT})
+        result = scan_issuer(client, NBIX_ENTRY, "/tmp/out")
+        self.assertEqual(result["fda_devices"], {"applicable": False, "reason": "not a device company"})
+        self.assertTrue(all("device" not in u for u in client.calls))
 
     def test_missing_required_field_rejected(self):
         with self.assertRaises(DataError):
@@ -116,7 +137,8 @@ class ScanIssuerTests(unittest.TestCase):
 class ScanAllTests(unittest.TestCase):
     def test_scans_every_issuer_in_order(self):
         client = FakeClient({NEUROCRINE_CT_URL: NEUROCRINE_CT_DOCUMENT, NEUROCRINE_FDA_URL: NEUROCRINE_FDA_DOCUMENT,
-                             LNSR_CT_URL: LNSR_CT_DOCUMENT})
+                             LNSR_CT_URL: LNSR_CT_DOCUMENT, LNSR_510K_URL: LNSR_510K_DOCUMENT},
+                            errors={LNSR_PMA_URL: SourceUnavailable("HTTP_404")})
         result = scan_all(client, {"issuers": [NBIX_ENTRY, LNSR_ENTRY]}, "/tmp/out")
         self.assertEqual([i["ticker"] for i in result["issuers"]], ["NBIX", "LNSR"])
 
@@ -147,10 +169,23 @@ class RealCommittedConfigTests(unittest.TestCase):
                 self.assertIsInstance(entry["fda_sponsor_prefix"], str)
                 self.assertTrue(entry["fda_sponsor_prefix"])
 
-    def test_device_only_issuer_has_no_fda_drugs_provider(self):
+    def test_every_fda_devices_provider_has_a_real_applicant_prefix(self):
+        for entry in self.spec["issuers"]:
+            if "fda_devices" in entry["providers"]:
+                self.assertIsInstance(entry["fda_device_applicant_prefix"], str)
+                self.assertTrue(entry["fda_device_applicant_prefix"])
+
+    def test_device_only_issuer_has_no_fda_drugs_provider_but_has_fda_devices(self):
         lnsr = next(e for e in self.spec["issuers"] if e["ticker"] == "LNSR")
         self.assertNotIn("fda_drugs", lnsr["providers"])
         self.assertIsNone(lnsr["fda_sponsor_prefix"])
+        self.assertIn("fda_devices", lnsr["providers"])
+        self.assertEqual(lnsr["fda_device_applicant_prefix"], "LENSAR")
+
+    def test_drug_only_issuers_have_no_fda_devices_provider(self):
+        for entry in self.spec["issuers"]:
+            if entry["ticker"] != "LNSR":
+                self.assertNotIn("fda_devices", entry["providers"])
 
 
 class CliBiotechSponsorScanTests(unittest.TestCase):
@@ -159,7 +194,8 @@ class CliBiotechSponsorScanTests(unittest.TestCase):
             spec_path = Path(tmp) / "spec.json"
             spec_path.write_text(json.dumps({"issuers": [NBIX_ENTRY, LNSR_ENTRY]}), encoding="utf-8")
             client = FakeClient({NEUROCRINE_CT_URL: NEUROCRINE_CT_DOCUMENT, NEUROCRINE_FDA_URL: NEUROCRINE_FDA_DOCUMENT,
-                                 LNSR_CT_URL: LNSR_CT_DOCUMENT})
+                                 LNSR_CT_URL: LNSR_CT_DOCUMENT, LNSR_510K_URL: LNSR_510K_DOCUMENT},
+                                errors={LNSR_PMA_URL: SourceUnavailable("HTTP_404")})
             with patch("nre.ingestion.PublicClient", return_value=client), patch("builtins.print") as output:
                 code = cli.main(["biotech-sponsor-scan", "--spec", str(spec_path), "--output", tmp])
                 self.assertEqual(code, 0)
@@ -167,6 +203,7 @@ class CliBiotechSponsorScanTests(unittest.TestCase):
                 self.assertEqual(summary["issuer_count"], 2)
                 self.assertEqual(summary["clinical_trials_matched_total"], 2)
                 self.assertEqual(summary["fda_drugs_matched_total"], 1)
+                self.assertEqual(summary["fda_devices_matched_total"], 1)
                 saved = json.loads((Path(tmp) / "biotech-sponsor-scan.json").read_text(encoding="utf-8"))
                 self.assertEqual(len(saved["issuers"]), 2)
 

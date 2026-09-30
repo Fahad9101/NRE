@@ -49,8 +49,9 @@
       "legal_name": "LENSAR, Inc.",
       "clinical_trials_sponsor_query": "LENSAR",
       "fda_sponsor_prefix": null,
-      "providers": ["clinical_trials"],
-      "note": "Medical device, not a drug company -- Drugs@FDA (NDA/ANDA/BLA) does not apply. A real device clearance/approval (510(k)/PMA, api.fda.gov/device/) is a separate openFDA endpoint nre.fda_approvals does not classify; out of scope here, not fabricated as a drug application."
+      "fda_device_applicant_prefix": "LENSAR",
+      "providers": ["clinical_trials", "fda_devices"],
+      "note": "Medical device, not a drug company -- Drugs@FDA (NDA/ANDA/BLA) does not apply, so fda_sponsor_prefix is null and fda_drugs is inapplicable. Its real regulatory record is instead in openFDA's two device datasets (api.fda.gov/device/510k.json, .../pma.json), classified by nre.device_clearances via the fda_devices provider."
     }
   ]
 }

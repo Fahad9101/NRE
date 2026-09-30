@@ -8,8 +8,9 @@ discipline this project already applies to same-day-catalyst caveats: flagged, n
 import re
 from .core import DataError
 from .biotech_trials import classify_study
+from .device_clearances import classify_510k, classify_pma
 from .fda_approvals import classify_application
-from .ingestion import clinical_trials_sponsor_search, drugsfda_sponsor_search
+from .ingestion import clinical_trials_sponsor_search, device_sponsor_search, drugsfda_sponsor_search
 
 _SUFFIX = re.compile(r"[,.]?\s*(inc|incorporated|corp|corporation|co|ltd|llc)\.?\s*$", re.I)
 
@@ -29,10 +30,12 @@ def sponsor_matches(candidate_name, query):
 
 def scan_issuer(client, entry, output):
     """One issuer's own real discovery scan: every study clinical_trials_sponsor_search() finds,
-    classified and tagged with sponsor_matches(); every application drugsfda_sponsor_search()
-    finds, the same way, but only when "fda_drugs" is one of the issuer's own listed providers
-    (a medical-device issuer like LNSR has no Drugs@FDA presence to search -- recorded as
-    inapplicable, not fabricated as an empty drug search)."""
+    classified and tagged with sponsor_matches(); every application drugsfda_sponsor_search() finds
+    (only when "fda_drugs" is one of the issuer's own listed providers -- a medical-device issuer
+    like LNSR has no Drugs@FDA presence to search); every 510(k)/PMA record
+    device_sponsor_search() finds across both real pathways (only when "fda_devices" is listed --
+    a drug company has no device-clearance presence to search). Whichever of fda_drugs/fda_devices
+    does not apply is recorded as inapplicable, never fabricated as an empty search."""
     for key in ("ticker", "cik", "sic", "legal_name", "clinical_trials_sponsor_query", "providers"):
         if key not in entry:
             raise DataError("issuer entry missing its own " + key)
@@ -65,6 +68,22 @@ def scan_issuer(client, entry, output):
                                "applications": apps, "fetch_metadata": fda_meta}
     else:
         result["fda_drugs"] = {"applicable": False, "reason": entry.get("note", "not a drug company")}
+
+    if "fda_devices" in providers:
+        prefix = entry["fda_device_applicant_prefix"]
+        devices = []
+        for pathway, classify in (("510k", classify_510k), ("pma", classify_pma)):
+            records, _meta = device_sponsor_search(client, pathway, prefix, output)
+            for record in records:
+                applicant = record.get("applicant")
+                devices.append({"pathway": pathway, "applicant": applicant,
+                                "applicant_match": sponsor_matches(applicant, prefix),
+                                "classification": classify(record)})
+        result["fda_devices"] = {"applicant_prefix": prefix, "result_count": len(devices),
+                                 "matched_count": sum(1 for d in devices if d["applicant_match"]),
+                                 "devices": devices}
+    else:
+        result["fda_devices"] = {"applicable": False, "reason": entry.get("note", "not a device company")}
     return result
 
 

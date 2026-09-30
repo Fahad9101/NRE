@@ -369,6 +369,39 @@ def drugsfda_sponsor_search(client, sponsor_prefix, output, limit=20):
     return results, meta
 
 
+def device_sponsor_search(client, pathway, applicant_prefix, output, limit=20):
+    """Search real openFDA medical-device records by an applicant prefix, for either pathway --
+    "510k" (api.fda.gov/device/510k.json) or "pma" (.../device/pma.json), verified live 2026-09-30.
+    Both endpoints share the same real applicant field and the same prefix-wildcard/404-as-empty
+    behavior already verified for drugsfda_sponsor_search() above (a genuinely zero-result search
+    returns a real HTTP 404 with an {"error": {...}} body, caught and translated to an empty list
+    here rather than raised, since "this company has no records under this pathway" is a normal,
+    valid outcome -- e.g. LNSR genuinely has zero real PMA records, only 510(k) ones). Returns each
+    matching record dict unchanged, for nre.device_clearances.classify_510k()/classify_pma() to
+    classify per pathway."""
+    if pathway not in ("510k", "pma"):
+        raise DataError('pathway must be "510k" or "pma"')
+    if not applicant_prefix or not isinstance(applicant_prefix, str):
+        raise DataError("applicant_prefix must be a non-empty string")
+    url = "https://api.fda.gov/device/%s.json?" % pathway + urllib.parse.urlencode(
+        {"search": "applicant:%s*" % applicant_prefix, "limit": limit})
+    try:
+        body, meta = client.fetch(url, output)
+    except SourceUnavailable as exc:
+        if str(exc) == "HTTP_404":
+            return [], {"url": url, "result_count": 0, "empty_result_reason": "HTTP_404_NOT_FOUND"}
+        raise
+    document = json.loads(body)
+    if "error" in document:
+        if document["error"].get("code") == "NOT_FOUND":
+            return [], meta
+        raise DataError("openFDA: " + document["error"].get("message", "unknown error"))
+    results = document.get("results")
+    if not isinstance(results, list):
+        raise DataError("openFDA search response missing results list")
+    return results, meta
+
+
 def nasdaq_directory(text, available_at):
     timestamp(available_at)
     lines = text.splitlines()

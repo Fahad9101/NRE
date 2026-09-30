@@ -149,13 +149,17 @@ def main(argv=None):
                           "clinical_trials_matched": i["clinical_trials"]["matched_count"],
                           "clinical_trials_result_count": i["clinical_trials"]["result_count"],
                           "fda_drugs_matched": i["fda_drugs"].get("matched_count"),
-                          "fda_drugs_applicable": i["fda_drugs"].get("applicable", True)}
+                          "fda_drugs_applicable": i["fda_drugs"].get("applicable", True),
+                          "fda_devices_matched": i["fda_devices"].get("matched_count"),
+                          "fda_devices_applicable": i["fda_devices"].get("applicable", True)}
                          for i in result["issuers"]]
             summary = {"issuer_count": len(result["issuers"]), "by_issuer": by_issuer,
                        "clinical_trials_matched_total": sum(
                            i["clinical_trials"]["matched_count"] for i in result["issuers"]),
                        "fda_drugs_matched_total": sum(
-                           i["fda_drugs"].get("matched_count", 0) for i in result["issuers"])}
+                           i["fda_drugs"].get("matched_count", 0) for i in result["issuers"]),
+                       "fda_devices_matched_total": sum(
+                           i["fda_devices"].get("matched_count", 0) for i in result["issuers"])}
             print(canonical(summary).decode())
         elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)
