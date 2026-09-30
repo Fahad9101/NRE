@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-30",
+  "purpose": "Worked example: catalyst_features() (nre.catalyst_features) combining Phase A's real corporate-event classification with Phase B's real earnings-surprise result for the same real JBSS event -- Q1 FY2026, accession 0001193125-25-256336 (earnings 8-K) / 0001193125-25-256406 (the same-day 10-Q carrying the XBRL facts). Scoped to Phase A+B only per the owner's own 2026-09-30 decision on docs/M3-CATALYST-STRENGTH-SCOPE.md section 2's open question. Never a combined score -- every field is an individually real, auditable signal.",
+  "inputs": {
+    "corporate_event_rows": "nre.corporate_events.classify_filing(['2.02', '9.01']) -- the same real item list already normalized in reports/m3-worked-example-jbss-same-day-filings-2026-09-29.json for this exact accession.",
+    "eps_surprise": "Real, already-computed year_over_year_surprise() result from tests/test_earnings_surprise.py's own ground truth: Q1 FY2026 diluted EPS $1.59 vs. $1.00 a year earlier.",
+    "revenue_surprise": "Real, already-computed year_over_year_surprise() result from tests/test_earnings_surprise.py's own RealRevenueDataTests: Q1 FY2026 revenue $298,683,000 vs. $276,196,000 a year earlier."
+  },
+  "computed_output": {
+    "eps": {
+      "corporate_event_category": "earnings",
+      "corporate_event_subtype": "results",
+      "co_filed_items": ["9.01"],
+      "earnings_surprise_state": "COMPUTED",
+      "earnings_surprise_pct": 59.0,
+      "surprise_direction": "positive"
+    },
+    "revenue": {
+      "corporate_event_category": "earnings",
+      "corporate_event_subtype": "results",
+      "co_filed_items": ["9.01"],
+      "earnings_surprise_state": "COMPUTED",
+      "earnings_surprise_pct": 8.1417,
+      "surprise_direction": "positive"
+    }
+  },
+  "context": "catalyst_features() takes one already-computed earnings_surprise_result per call -- it does not automatically fuse EPS and revenue together, since the scope doc's own proposed feature set names a single earnings_surprise_pct/state, not a per-tag structure. Calling it once per real tag (shown here for both EPS and revenue) demonstrates the function is itself tag-agnostic, the same finding already established for nre.earnings_surprise's own computation functions. The real 9.01 item (an exhibit-attachment marker, not a separate event) is correctly surfaced as a co_filed_item rather than merged into or hidden from the earnings classification.",
+  "not_a_claim": [
+    "Not a combined catalyst-strength score of any kind -- corporate_event_category/subtype and earnings_surprise_pct/direction are reported side by side, never weighted together into one number (docs/M3-CATALYST-STRENGTH-SCOPE.md section 4's own explicit non-goal).",
+    "Not a claim that this is available for most real M1/M2 events yet -- Phase B's live-fetch stays blocked from GitHub Actions (SEC's own XBRL API returns HTTP 403), so a real, computed earnings_surprise_result exists for only a handful of worked examples so far, not the full 68-event dataset. Most real events would currently combine with earnings_surprise_state: 'NOT_COMPUTED', which catalyst_features() records honestly rather than guessing a value."
+  ]
+}

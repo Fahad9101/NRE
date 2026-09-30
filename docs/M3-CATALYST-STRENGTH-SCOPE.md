@@ -1,7 +1,11 @@
 # Milestone 3 — Catalyst-strength features scope proposal (for the project owner's review)
 
 **Status: proposed 2026-09-30, following the owner's "continue finishing M3" and the explicit
-choice to scope this before writing any code. Nothing built yet.** Phase A (corporate-event
+choice to scope this before writing any code. Decided and built the same day: the owner answered
+section 2's own open question ("stay scoped to Phase A+B only"), and `nre/catalyst_features.py` now
+implements exactly the section 3 feature set on real JBSS data
+(`reports/m3-worked-example-jbss-catalyst-features-2026-09-30.json`) -- `surprise_magnitude_band`
+remains deferred as this document itself proposed.** Phase A (corporate-event
 normalization), Phase C (biotech/device catalyst classification, now connected to 6 real issuers),
 and Phase B's real, structured earnings-surprise magnitude (EPS and revenue) are the only parts of
 M3 built so far -- catalyst-strength is explicitly the last of M3's five scope items, and the
@@ -51,12 +55,15 @@ clearances are **issuer-level** discoveries (found by searching a company's own 
 any specific M1/M2 event date. So for the 68 real earnings events, only Phase A + Phase B currently
 have anything to attach *to that event* -- Phase C data has no date-anchored link to any of them.
 
-**Open question:** should catalyst-strength features cover only the 68 real earnings events (Phase
-A + Phase B only, leaving Phase C's biotech/device data as separate issuer-level context, not
-fused in), or should this phase also build the date-matching needed to check whether a real Phase C
-regulatory milestone fell inside a specific event's own window (a new capability, not yet built,
-and its own source of false-precision risk if a real trial-status change and an earnings release
-happen to land near each other without being related)?
+**Open question, decided 2026-09-30 ("stay scoped to Phase A+B only"):** should catalyst-strength
+features cover only the 68 real earnings events (Phase A + Phase B only, leaving Phase C's
+biotech/device data as separate issuer-level context, not fused in), or should this phase also
+build the date-matching needed to check whether a real Phase C regulatory milestone fell inside a
+specific event's own window (a new capability, not yet built, and its own source of false-precision
+risk if a real trial-status change and an earnings release happen to land near each other without
+being related)? **Decided: Phase A + Phase B only.** Phase C's own regulatory data stays
+issuer-level context, not fused into any specific event's catalyst features -- revisit only if a
+real, dated linkage is found later, not assumed now.
 
 ## 3. Proposed concrete feature set -- structured signals, not a score
 
