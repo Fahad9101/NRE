@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-09-30",
+  "purpose": "Real result of dispatching .github/workflows/clinical-trial.yml for the first time, for NBIX's (Neurocrine Biosciences, one of this project's own 23 accepted issuers) own real trial NCT03325010.",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36710276934",
+  "commit": "f3af11f",
+  "result": "SUCCESS",
+  "computed_output": {
+    "nct_id": "NCT03325010",
+    "brief_title": "Safety, Tolerability, and Efficacy of NBI-98854 for the Treatment of Pediatric Subjects With Tourette Syndrome",
+    "conditions": ["Tourette Syndrome"],
+    "phases": ["PHASE2"],
+    "sponsor": "Neurocrine Biosciences",
+    "status": "COMPLETED",
+    "status_category": "completed",
+    "status_note": "Finished; whether the primary endpoint was met needs the trial's own separate results data, not this status alone."
+  },
+  "context": "Unlike Milestone 3 Phase B's earnings-surprise pipeline (data.sec.gov's own paths confirmed blocked from GitHub Actions with HTTP 403, reports/m3-earnings-surprise-workflow-result-2026-09-30.json), ClinicalTrials.gov's own API succeeded on the very first real dispatch -- matching what local testing (both bare urllib and the real PublicClient) already predicted. This is the first Milestone 3 capability that is not just code-complete but genuinely, verifiably runnable end to end against live data.",
+  "not_a_claim": [
+    "Not a claim about this trial's own scientific or commercial significance -- status_category 'completed' says only that the study finished; whether its primary endpoint was met needs the trial's own separate results data, which this module does not fetch or interpret (docs/NRE-1.0-MASTER-PROMPT.md section 6's own instruction not to conflate clinical success with economic significance).",
+    "Not a general claim that every ClinicalTrials.gov or openFDA path is unblocked -- only this specific endpoint (api/v2/studies/{nctId}) has been confirmed working from GitHub Actions so far. openFDA itself has been confirmed reachable locally but not yet dispatched for real from GitHub Actions."
+  ]
+}
