@@ -2,7 +2,12 @@
 company-concept facts (data.sec.gov/api/xbrl/companyconcept/CIK.../us-gaap/<tag>.json) -- verified
 live and free 2026-09-30. Never against consensus estimates: no free, legitimate source for those
 exists anywhere this project has checked (docs/M3-NEWS-CATALYST-INTELLIGENCE-SCOPE.md sections 1
-and 4), and the owner's own decision was to skip consensus rather than approximate it.
+and 4), and the owner's own decision was to skip consensus rather than approximate it. Also never
+against prior guidance: that would need extracting a guidance figure from free-text press-release
+prose (a real NLP problem, unlike the structured-XBRL path used here) -- the owner's own decision
+2026-09-30 was to skip this too rather than build fabrication-prone text extraction, mirroring the
+consensus decision's own reasoning. "Prior period" (this module's actual scope) is not the same
+claim as "prior guidance" and is never presented as one.
 
 Pure computation over already-fetched facts -- this module never fetches anything itself, the same
 separation nre.dataset.build() keeps from nre.event_acquire's own fetch layer. A real 10-Q or 10-K
