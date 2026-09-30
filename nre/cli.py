@@ -145,7 +145,13 @@ def main(argv=None):
             spec = json.loads(Path(args.spec).read_text())
             result = scan_all(client, spec, args.output)
             save_json(Path(args.output) / "biotech-sponsor-scan.json", result)
-            summary = {"issuer_count": len(result["issuers"]),
+            by_issuer = [{"ticker": i["ticker"],
+                          "clinical_trials_matched": i["clinical_trials"]["matched_count"],
+                          "clinical_trials_result_count": i["clinical_trials"]["result_count"],
+                          "fda_drugs_matched": i["fda_drugs"].get("matched_count"),
+                          "fda_drugs_applicable": i["fda_drugs"].get("applicable", True)}
+                         for i in result["issuers"]]
+            summary = {"issuer_count": len(result["issuers"]), "by_issuer": by_issuer,
                        "clinical_trials_matched_total": sum(
                            i["clinical_trials"]["matched_count"] for i in result["issuers"]),
                        "fda_drugs_matched_total": sum(
