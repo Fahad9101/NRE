@@ -13,6 +13,21 @@ normally available from one already-known filing with no separate lookup.
 Point-in-time correctness (docs/NRE-1.0-MASTER-PROMPT.md section 16): every fact carries its own
 `filed` date; `known_by` excludes any fact filed after it, so a later restatement of an earlier
 quarter never leaks backward into what "was known" at the time of a given event.
+
+Every function here is tag-generic -- nothing is EPS-specific -- confirmed 2026-09-30 by fetching
+JBSS's own real us-gaap:Revenues facts and running the identical functions unchanged
+(tests/test_earnings_surprise.py's own RealRevenueDataTests). Revenue surprise therefore needed no
+new computation logic, only nre.cli's own already-generic `--tag`/`--unit` args on the
+earnings-surprise command. A real, load-bearing finding from that same check: a single real company
+can report revenue under several different XBRL tags over its own history (JBSS's own real data
+uses RevenueFromContractWithCustomerIncludingAssessedTax, then ...ExcludingAssessedTax, then plain
+Revenues, with real overlapping transition periods between each) -- more fragmented than EPS ever
+was. "Revenues" is the correct, currently-active tag for any of this project's real 2025-2026
+events; a caller reaching further back would need to check which tag was actually in use for that
+period rather than assume one tag always applies. Because facts for one call are always already
+filtered to a single tag (nre.ingestion.xbrl_company_concept fetches one tag at a time), a tag
+transition mid-history surfaces honestly as PRIOR_PERIOD_NOT_FOUND rather than a wrong cross-tag
+match -- no special-casing was needed for this.
 """
 from datetime import date, timedelta
 
