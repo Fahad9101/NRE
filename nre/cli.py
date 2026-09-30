@@ -54,6 +54,12 @@ def parser():
         step.add_argument("--output", required=True)
         for option in ("--spec", "--sector-map", "--policy", "--root", "--calendar"):
             step.add_argument(option)
+    es = sub.add_parser("earnings-surprise")
+    es.add_argument("--cik", required=True)
+    es.add_argument("--accession", required=True)
+    es.add_argument("--tag", default="EarningsPerShareDiluted")
+    es.add_argument("--unit", default="USD/shares")
+    es.add_argument("--output", required=True)
     return p
 
 
@@ -95,6 +101,16 @@ def main(argv=None):
         elif args.command == "analogues":
             from .analogues import analogues_command
             print(canonical(analogues_command(args)).decode())
+        elif args.command == "earnings-surprise":
+            from .earnings_surprise import surprise_for_filing
+            from .ingestion import PublicClient, xbrl_company_concept
+            client = PublicClient(os.environ.get("SEC_USER_AGENT", ""))
+            facts, meta = xbrl_company_concept(client, args.cik, "us-gaap", args.tag, args.unit, args.output)
+            result = surprise_for_filing(facts, args.accession)
+            record = {"cik": args.cik, "accession": args.accession, "tag": args.tag, "unit": args.unit,
+                      "fetch_metadata": meta, "result": result}
+            save_json(Path(args.output) / "earnings-surprise.json", record)
+            print(canonical(result).decode())
         elif args.command == "build":
             path, report = write_snapshot(json.loads(Path(args.input).read_text()), args.output)
             print(canonical({"snapshot": str(path), "report": report}).decode())

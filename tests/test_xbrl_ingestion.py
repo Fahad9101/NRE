@@ -1,6 +1,10 @@
 import json
+import tempfile
 import unittest
+from pathlib import Path
+from unittest.mock import patch
 
+from nre import cli
 from nre.core import DataError, canonical, digest
 from nre.ingestion import SourceUnavailable, xbrl_company_concept
 
@@ -80,6 +84,25 @@ class XbrlCompanyConceptTests(unittest.TestCase):
             xbrl_company_concept(FakeClient(), "880117", "us-gaap; DROP TABLE", "EarningsPerShareDiluted", "USD/shares", "/tmp/out")
         with self.assertRaises(DataError):
             xbrl_company_concept(FakeClient(), "880117", "us-gaap", "../../etc/passwd", "USD/shares", "/tmp/out")
+
+
+class CliEarningsSurpriseTests(unittest.TestCase):
+    """cli.py's own "earnings-surprise" command, end to end, with a faked PublicClient standing in
+    for the real network the same way test_consolidated_audit.py's MainTests fake Alpaca's opener."""
+
+    def test_real_jbss_filing_computed_through_the_cli(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch("nre.ingestion.PublicClient", return_value=FakeClient({REAL_JBSS_URL: REAL_JBSS_DOCUMENT})), \
+             patch("builtins.print") as output:
+            code = cli.main(["earnings-surprise", "--cik", "880117", "--accession", "0001193125-25-256406",
+                             "--output", tmp])
+            self.assertEqual(code, 0)
+            printed = json.loads(output.call_args_list[0].args[0])
+            self.assertEqual(printed["state"], "COMPUTED")
+            self.assertAlmostEqual(printed["surprise_pct"], 59.0, places=4)
+            saved = json.loads((Path(tmp) / "earnings-surprise.json").read_text(encoding="utf-8"))
+            self.assertEqual(saved["cik"], "880117")
+            self.assertEqual(saved["result"]["surprise_pct"], printed["surprise_pct"])
 
 
 if __name__ == "__main__":

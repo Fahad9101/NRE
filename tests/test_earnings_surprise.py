@@ -1,7 +1,7 @@
 import unittest
 
 from nre.core import DataError
-from nre.earnings_surprise import quarterly_actual, year_over_year_surprise
+from nre.earnings_surprise import quarterly_actual, surprise_for_filing, year_over_year_surprise
 
 # Real JBSS (John B. Sanfilippo & Son) us-gaap:EarningsPerShareDiluted facts, fetched directly from
 # data.sec.gov/api/xbrl/companyconcept/CIK0000880117/us-gaap/EarningsPerShareDiluted.json on
@@ -35,6 +35,22 @@ class RealDataTests(unittest.TestCase):
         actual = quarterly_actual(JBSS_EPS_DILUTED, "2025-09-25", "2025-10-29")
         self.assertEqual(actual["value"], 1.59)
         self.assertEqual(actual["accession"], "0001193125-25-256406")
+
+    def test_surprise_for_filing_identifies_its_own_fresh_quarter(self):
+        # Given only the accession -- not the period_end -- surprise_for_filing() must find that
+        # this filing's own fresh quarter is the one ending 2025-09-25 (not the comparative
+        # 2024-09-26 quarter the same accession also repeats), then compute the identical result
+        # year_over_year_surprise() gives when told the period_end directly.
+        result = surprise_for_filing(JBSS_EPS_DILUTED, "0001193125-25-256406")
+        self.assertEqual(result["state"], "COMPUTED")
+        self.assertEqual(result["current"]["value"], 1.59)
+        self.assertEqual(result["prior"]["value"], 1.00)
+        self.assertAlmostEqual(result["surprise_pct"], 59.0, places=4)
+
+    def test_surprise_for_filing_with_no_quarterly_fact_reports_explicitly(self):
+        result = surprise_for_filing(JBSS_EPS_DILUTED, "not-a-real-accession")
+        self.assertEqual(result["state"], "NO_QUARTERLY_FACT_IN_THIS_FILING")
+        self.assertIsNone(result["surprise_pct"])
 
     def test_year_over_year_surprise_matches_the_real_filing(self):
         result = year_over_year_surprise(JBSS_EPS_DILUTED, "2025-09-25", "2025-10-29")

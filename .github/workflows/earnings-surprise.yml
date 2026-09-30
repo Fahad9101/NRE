@@ -1,0 +1,33 @@
+name: Earnings surprise (Milestone 3 Phase B)
+on:
+  workflow_dispatch:
+    inputs:
+      cik:
+        description: 'Issuer CIK (digits only; zero-padding optional)'
+        required: true
+      accession:
+        description: 'The 10-Q/10-K accession that carries the XBRL tag for the quarter in question (often a companion filing to the earnings 8-K itself, filed the same day, not the 8-K''s own accession)'
+        required: true
+      tag:
+        description: 'us-gaap XBRL tag'
+        required: false
+        default: 'EarningsPerShareDiluted'
+      unit:
+        description: 'XBRL unit key for that tag'
+        required: false
+        default: 'USD/shares'
+permissions:
+  contents: read
+jobs:
+  surprise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch real XBRL facts and compute year-over-year earnings surprise
+        env:
+          SEC_USER_AGENT: NRE research contact https://github.com/Fahad9101/NRE
+        run: python -m nre.cli earnings-surprise --cik "${{ inputs.cik }}" --accession "${{ inputs.accession }}" --tag "${{ inputs.tag }}" --unit "${{ inputs.unit }}" --output out

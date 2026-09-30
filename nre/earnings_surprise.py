@@ -81,3 +81,18 @@ def year_over_year_surprise(facts, period_end, known_by):
         return {"state": "PRIOR_PERIOD_ZERO", "current": current, "prior": prior, "surprise_pct": None}
     surprise = (current["value"] - prior["value"]) / abs(prior["value"]) * 100
     return {"state": "COMPUTED", "current": current, "prior": prior, "surprise_pct": round(surprise, 4)}
+
+
+def surprise_for_filing(facts, accession):
+    """Year-over-year surprise for whichever quarter a specific, already-identified filing (its own
+    real SEC accession number -- the 10-Q or 10-K that actually carries the XBRL tag, which is
+    usually a companion filing to the earnings 8-K itself, not the 8-K's own accession) reported.
+    The period being reported is read from that filing's own facts, never assumed: a filing often
+    carries two quarterly facts under one accession (its fresh quarter and the prior-year quarter
+    repeated for comparison); the fresh one is whichever ends latest."""
+    _validate_facts(facts)
+    own_quarterly_facts = [f for f in facts if f["accn"] == accession and _is_quarterly(f)]
+    if not own_quarterly_facts:
+        return {"state": "NO_QUARTERLY_FACT_IN_THIS_FILING", "current": None, "prior": None, "surprise_pct": None}
+    newest = max(own_quarterly_facts, key=lambda f: f["end"])
+    return year_over_year_surprise(facts, newest["end"], newest["filed"])
