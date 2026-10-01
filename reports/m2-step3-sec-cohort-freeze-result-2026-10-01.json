@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-01",
+  "purpose": "Real result of freezing the Milestone 2 step 3 targeted SEC candidate cohort (2 more prior quarters for the same 23 Milestone 1 issuers), after GitHub Actions' own access to data.sec.gov/submissions/ stayed blocked through 6 consecutive real dispatches (reports/m2-step3-sec-cohort-freeze-blocked-2026-09-30.json).",
+  "state": "FROZEN_CANDIDATE_MEMBERSHIP",
+  "commit": "dd70e1b",
+  "transport": "built_in_browser_offline_reprocessed",
+  "how_this_differs_from_every_other_real_freeze_in_this_project": "Every prior real SEC freeze (Milestone 1, Milestone 2 step 2) ran nre.depth_cohort.freeze_targeted_candidates() (or nre.cohort.freeze_sec_cohort()) live, from GitHub Actions, via a real PublicClient making the actual HTTPS requests at freeze time. GitHub Actions' own access to data.sec.gov/submissions/ stayed blocked here (6/6 real dispatches, HTTP_403, 2026-09-30 through 2026-10-01). Rather than keep waiting on an external block the project's own history gives no reason to expect will lift (the two other blocked SEC paths from Milestone 3 Phase B have never un-blocked), the owner chose to fetch the same real, public endpoint through the built-in browser instead -- the same transport this project has used before whenever automated access failed (Milestone 1's own SEC freeze, and multiple M3 real-fixture verifications) -- then ran freeze_targeted_candidates() locally with a custom client backed by that real data. The discovery/screening/dedup/validation logic that actually produced the frozen candidates is the exact same, already-tested code every prior freeze used; only the transport (how the bytes got from SEC to this machine) differs.",
+  "real_data_integrity": "Each of the 23 issuers' real submissions.json was fetched directly from data.sec.gov via the built-in browser, its own real sha256/size recorded (real_source_full_sha256/real_source_full_size in the local, gitignored raw cache), then filtered in-browser to 8-K/8-K-A rows only before being passed to the same real nre.depth_cohort code. The candidate ledger's own discovery_submission_sha256 values describe this filtered, re-serialized form -- labeled explicitly as 'browser_fetched_8k_filtered_subset', never conflated with a hash of SEC's own complete raw response. All 23 fetches were reproduced twice (once for a size check, once for the real run) with byte-identical sha256 hashes both times, confirming the data did not shift between calls.",
+  "computed_output": {
+    "processed_issuers": 23,
+    "candidate_count": 66,
+    "issuers_with_item_2_02_candidates": 23,
+    "membership_sha256": "1ef5476b0628aad4651da42d8737ccc45e37ec9def7083404cc6f192da1fc5c2",
+    "frozen_at": "2026-10-01T18:06:49.970980Z",
+    "filing_date_range": ["2024-11-04", "2025-05-27"],
+    "protocol_window": ["2024-11-01", "2025-06-01"],
+    "candidates_per_issuer": {
+      "ACHV": 3, "ALKT": 2, "ASMB": 3, "ASPN": 3, "CACI": 3, "COLL": 3, "CXT": 3, "HURN": 2,
+      "JBSS": 2, "KLC": 3, "LNSR": 3, "LOVE": 2, "NBIX": 2, "OKTA": 4, "PARR": 3, "PAYO": 3,
+      "PDFS": 3, "REAL": 4, "REKR": 4, "SLSN": 2, "TECX": 3, "TTWO": 3, "VSAT": 3
+    }
+  },
+  "no_continuation_files_needed": "freeze_targeted_candidates() made exactly 23 real client calls (one per issuer) -- confirming none of the 23 issuers needed a continuation file to cover the step-3 window; every real candidate came from each issuer's own 'recent' filings, matching what was predicted when the window was first scoped (every issuer's own real 8-K history reaches comfortably past 2024-11-01).",
+  "what_this_is_not": [
+    "Not yet reviewed for same-day competing catalysts, corporate actions, bell-ambiguous timing, or any of the other by-hand review steps Milestone 1 and Milestone 2 step 2 both required before a candidate becomes an accepted event -- this is discovery only, mirroring exactly what freeze_sec_cohort()/freeze_targeted_candidates() have always produced at this stage.",
+    "Not an accepted event set -- config/m2-step3-events.json does not exist yet; building it (and running it through the same-day-catalyst sweep, batching, quarantine/signoff, and real Alpaca dry-runs) is the next phase, the same process Milestone 2 step 2 followed, and needs its own separate owner authorization before starting, per this project's own standing rule against silently moving to the next phase.",
+    "Not a claim that GitHub Actions' own access to data.sec.gov/submissions/ is resolved -- it is not; this result was produced entirely without using that blocked path. A future workflow needing live, automated data.sec.gov/submissions/ access from GitHub Actions would hit the exact same HTTP_403 today."
+  ]
+}

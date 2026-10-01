@@ -21,5 +21,6 @@
   "not_a_claim": [
     "Not a claim that nre.depth_cohort.freeze_targeted_candidates() or its own CLI wiring is incorrect -- both are tested and pass their full real-fixture test suite; this is purely an external access-path result.",
     "Not a claim that data.sec.gov/submissions/ is now permanently or universally blocked -- only that these two specific real dispatches, seconds apart, both failed identically. Whether this is persistent (like the XBRL/bulk paths) or transient is not yet established and needs the owner's own decision on how to proceed (wait and retry later, or investigate further)."
-  ]
+  ],
+  "resolution": "Superseded 2026-10-01. After 6 consecutive real GitHub Actions dispatches (5 HTTP_403, 1 dispatch-blocked by a browser sign-out), all identical in kind, the owner chose to stop waiting on GitHub Actions' own blocked access and fetch the same real, public data.sec.gov endpoint through the built-in browser instead -- the GitHub Actions path itself was never un-blocked; this does not resolve that specific path, it routes around it via a different, already-established-in-this-project transport. Real result: reports/m2-step3-sec-cohort-freeze-result-2026-10-01.json. This report's own run history stays as the honest record of what GitHub Actions access alone produced."
 }
