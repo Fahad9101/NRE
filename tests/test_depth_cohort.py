@@ -75,6 +75,23 @@ class MergedCalendarTests(unittest.TestCase):
         self.assertEqual(cal.days[boundary:boundary + 2], ["2025-12-31", "2026-01-02"])  # 2026-01-01 is a holiday
         self.assertEqual(cal.offset("2026-01-02", 20), "2026-02-02")
 
+    def test_the_real_2024_and_2025_files_merge_continuously_across_the_year_boundary(self):
+        cal2024 = json.loads((Path(__file__).resolve().parent.parent / "nre" / "calendar-2024.json").read_text())
+        cal2025 = json.loads((Path(__file__).resolve().parent.parent / "nre" / "calendar-2025.json").read_text())
+        cal = Calendar(dc.merged_calendar_spec(cal2024, cal2025))
+        boundary = cal.days.index("2024-12-31")
+        self.assertEqual(cal.days[boundary:boundary + 2], ["2024-12-31", "2025-01-02"])  # 2025-01-01 is a holiday
+        # A real step-3 candidate's own filing date (JBSS-style late-2024 Nov/Dec filing) can reach
+        # a full 20-session forward window without falling off either end of the merged range.
+        self.assertEqual(cal.offset("2024-11-04", 20), "2024-12-03")
+
+    def test_the_real_step_3_merged_calendar_file_matches_a_fresh_merge(self):
+        root = Path(__file__).resolve().parent.parent
+        cal2024 = json.loads((root / "nre" / "calendar-2024.json").read_text())
+        cal2025 = json.loads((root / "nre" / "calendar-2025.json").read_text())
+        committed = json.loads((root / "config" / "m2-step3-merged-calendar.json").read_text())
+        self.assertEqual(committed, dc.merged_calendar_spec(cal2024, cal2025))
+
     def test_rejects_mismatched_timezones_or_conflicting_early_closes_or_too_few_specs(self):
         a = calendar_spec("a", "2025-01-01", "2025-12-31", [])
         b = calendar_spec("b", "2026-01-01", "2026-12-31", [])

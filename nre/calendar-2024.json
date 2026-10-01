@@ -1,0 +1,11 @@
+{
+  "version": "us-equities-2024-v1",
+  "source": "https://www.nyse.com/publicdocs/ICE_NYSE_2024_Yearly_Trading_Calendar.pdf",
+  "reviewed_at": "2026-10-01",
+  "review_note": "Official NYSE/ICE 2024 yearly trading calendar, read directly (not from a search summary). Cross-checked against NYSE Group's own press release of the same calendar (ir.theice.com, 'NYSE Group Announces 2024, 2025 and 2026 Holiday and Early Closings Calendar') and against this project's own already-reviewed nre/calendar-2025.json: same 10-holiday count, same early-close pattern (day before July 4th, day after Thanksgiving, Christmas Eve). The December 24, 2024 early close specifically was independently re-verified via a second real source (a market-hours explainer citing the same NYSE announcement) since it was not explicit in the first search summary consulted.",
+  "start": "2024-01-01",
+  "end": "2024-12-31",
+  "timezone": "America/New_York",
+  "holidays": ["2024-01-01", "2024-01-15", "2024-02-19", "2024-03-29", "2024-05-27", "2024-06-19", "2024-07-04", "2024-09-02", "2024-11-28", "2024-12-25"],
+  "early_closes": {"2024-07-03": "13:00", "2024-11-29": "13:00", "2024-12-24": "13:00"}
+}
