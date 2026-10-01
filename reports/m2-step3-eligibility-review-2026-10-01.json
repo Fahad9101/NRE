@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-01",
+  "context": "While verifying real wire-release timestamps for M2 step-3 batch 1, CACI's own frozen candidate ledger entries showed two filings 1 day apart (2025-04-23, 2025-04-24) where the second is a Form 8-K/A (amendment), unlike every other candidate pair in the 66-candidate step-3 pool. Checked every one of the 66 real frozen candidates' own 'form' field directly: this is the ONLY 8-K/A among them, so it needed its own read rather than a mechanical rule.",
+  "caci_2025_04_24": {
+    "candidate_id": "0000016058-25-000049",
+    "amends": "0000016058-25-000043 (filed 2025-04-23, CACI's real fiscal 2025 third-quarter earnings release)",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000001605825000049/fy25-q3caci20250423ex9918x.htm",
+    "finding": "The 8-K/A's own Explanatory Note states it exists solely to correct the Contract Awards figures in Exhibit 99.1 of the original same-topic 8-K; 'no additional changes to the press release furnished in the Original Report.' Confirmed independently at the wire level: BusinessWire's own page for the original release (businesswire.com/news/home/20250423762294) was overwritten in place the same night with a 'CORRECTING and REPLACING' version (dateline Apr 23, 2025 10:00 PM ET) -- the Wayback Machine's CDX index shows no cached snapshot of the pre-correction page survives anywhere; every capture of that URL is already the corrected version. Both the SEC-level and wire-level record agree this is a same-topic correction, not a new disclosure.",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "not_a_qualifying_earnings_event: typo correction (8-K/A) to an already-counted earnings release, not an independent event. The original 2025-04-23 release (0000016058-25-000043) remains the sole real event for this disclosure and is the one built into config/m2-step3-events.json as caci-step3-2025-04-23.",
+    "distinct_from": "This is NOT a same-day-competing-catalyst exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md doesn't apply -- there is no second, different disclosure here) -- it's an event-type eligibility exclusion, same category as REKR's 2025-10-14 pre-announcement exclusion in step 2 (reports/m2-step2-eligibility-review-2026-09-28.json)."
+  },
+  "net_effect": {
+    "newly_excluded": [
+      "CACI 2025-04-24 (8-K/A, duplicate correction of the 2025-04-23 candidate)"
+    ],
+    "running_excluded_total_step3": [
+      "CACI 2025-04-24 (not a qualifying earnings event)"
+    ]
+  },
+  "not_a_claim": "Excluding CACI 2025-04-24 does not mark any remaining batch-1 candidate 'included' -- the corporate-action check, identity/exchange re-verification, and a label-engine dry run are still pending for every step-3 candidate, including the other 9 in batch 1."
+}

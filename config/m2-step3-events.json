@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "provider": {
+    "provider_id": "alpaca-market-data",
+    "terms_url": "https://alpaca.markets/disclosures",
+    "session_scope": "us_equities_regular_and_extended",
+    "feeds": [
+      "bars",
+      "corporate_actions"
+    ],
+    "research_permitted": false
+  },
+  "events": [
+    {
+      "event_id": "caci-step3-2025-01-22",
+      "cluster_id": "caci-step3-2025-01-22",
+      "candidate_id": "0000016058-25-000028",
+      "security": {
+        "security_id": "CACI-16058-2025-01-22",
+        "company_id": "0000016058",
+        "cik": "0000016058",
+        "ticker": "CACI",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-10-23T00:00:00-04:00",
+        "available_at": "2024-10-23T20:00:00Z"
+      },
+      "source": {
+        "source_id": "caci-wire-2025-01-22",
+        "url": "https://www.businesswire.com/news/home/20250122810137/en/CACI-Reports-Results-for-Its-Fiscal-2025-Second-Quarter-and-Raises-Fiscal-Year-Guidance",
+        "text": "Wire release, displayed dateline Jan 22, 2025 4:15 PM Eastern Standard Time (16:15 ET). https://www.businesswire.com/news/home/20250122810137/en/CACI-Reports-Results-for-Its-Fiscal-2025-Second-Quarter-and-Raises-Fiscal-Year-Guidance",
+        "first_seen_at": "2025-01-22T16:16:00-05:00"
+      },
+      "published_at": "2025-01-22T16:15:00-05:00",
+      "cutoff": "2025-01-22T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-01-23"
+    },
+    {
+      "event_id": "caci-step3-2025-04-23",
+      "cluster_id": "caci-step3-2025-04-23",
+      "candidate_id": "0000016058-25-000043",
+      "security": {
+        "security_id": "CACI-16058-2025-04-23",
+        "company_id": "0000016058",
+        "cik": "0000016058",
+        "ticker": "CACI",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-01-22T00:00:00-05:00",
+        "available_at": "2025-01-22T20:00:00Z"
+      },
+      "source": {
+        "source_id": "caci-sec-2025-04-23",
+        "url": "https://www.sec.gov/Archives/edgar/data/16058/000001605825000043/",
+        "text": "SEC EDGAR acceptance time 2025-04-23 16:31:00 ET (16:31 ET), used in place of the wire's own displayed dateline because BusinessWire overwrote this release in place the same night with a CORRECTING-and-REPLACING correction (confirmed via the Wayback Machine CDX index: no cached snapshot of the pre-correction page survives at businesswire.com/news/home/20250423762294 -- earliest real-content capture is 2025-04-24, already showing the corrected title). The correction, issued 10:00 PM ET the same night, fixed only a Contract Awards typo; this candidate's own substance (revenue/EPS/guidance) is unaffected. https://www.sec.gov/Archives/edgar/data/16058/000001605825000043/",
+        "first_seen_at": "2025-04-23T16:32:00-04:00"
+      },
+      "published_at": "2025-04-23T16:31:00-04:00",
+      "cutoff": "2025-04-23T16:34:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:31",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-04-24"
+    },
+    {
+      "event_id": "parr-step3-2024-11-04",
+      "cluster_id": "parr-step3-2024-11-04",
+      "candidate_id": "0000821483-24-000025",
+      "security": {
+        "security_id": "PARR-821483-2024-11-04",
+        "company_id": "0000821483",
+        "cik": "0000821483",
+        "ticker": "PARR",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-06T00:00:00-04:00",
+        "available_at": "2024-08-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "parr-wire-2024-11-04",
+        "url": "https://www.globenewswire.com/news-release/2024/11/04/2974474/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2024-Results.html",
+        "text": "Wire release, displayed dateline November 04, 2024 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2024/11/04/2974474/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2024-Results.html",
+        "first_seen_at": "2024-11-04T16:16:00-05:00"
+      },
+      "published_at": "2024-11-04T16:15:00-05:00",
+      "cutoff": "2024-11-04T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-05"
+    },
+    {
+      "event_id": "parr-step3-2025-02-25",
+      "cluster_id": "parr-step3-2025-02-25",
+      "candidate_id": "0000821483-25-000002",
+      "security": {
+        "security_id": "PARR-821483-2025-02-25",
+        "company_id": "0000821483",
+        "cik": "0000821483",
+        "ticker": "PARR",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-04T00:00:00-05:00",
+        "available_at": "2024-11-04T20:00:00Z"
+      },
+      "source": {
+        "source_id": "parr-wire-2025-02-25",
+        "url": "https://www.globenewswire.com/news-release/2025/02/25/3032452/0/en/Par-Pacific-Reports-Fourth-Quarter-and-2024-Results.html",
+        "text": "Wire release, displayed dateline February 25, 2025 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2025/02/25/3032452/0/en/Par-Pacific-Reports-Fourth-Quarter-and-2024-Results.html",
+        "first_seen_at": "2025-02-25T16:16:00-05:00"
+      },
+      "published_at": "2025-02-25T16:15:00-05:00",
+      "cutoff": "2025-02-25T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-26"
+    },
+    {
+      "event_id": "parr-step3-2025-05-06",
+      "cluster_id": "parr-step3-2025-05-06",
+      "candidate_id": "0000821483-25-000014",
+      "security": {
+        "security_id": "PARR-821483-2025-05-06",
+        "company_id": "0000821483",
+        "cik": "0000821483",
+        "ticker": "PARR",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-25T00:00:00-05:00",
+        "available_at": "2025-02-25T20:00:00Z"
+      },
+      "source": {
+        "source_id": "parr-wire-2025-05-06",
+        "url": "https://www.globenewswire.com/news-release/2025/05/06/3075573/0/en/Par-Pacific-Holdings-Reports-First-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline May 06, 2025 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2025/05/06/3075573/0/en/Par-Pacific-Holdings-Reports-First-Quarter-2025-Results.html",
+        "first_seen_at": "2025-05-06T16:16:00-04:00"
+      },
+      "published_at": "2025-05-06T16:15:00-04:00",
+      "cutoff": "2025-05-06T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-07"
+    },
+    {
+      "event_id": "nbix-step3-2025-02-06",
+      "cluster_id": "nbix-step3-2025-02-06",
+      "candidate_id": "0000914475-25-000034",
+      "security": {
+        "security_id": "NBIX-914475-2025-02-06",
+        "company_id": "0000914475",
+        "cik": "0000914475",
+        "ticker": "NBIX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-10-30T00:00:00-04:00",
+        "available_at": "2024-10-30T20:00:00Z"
+      },
+      "source": {
+        "source_id": "nbix-wire-2025-02-06",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-fourth-quarter-and-fiscal-2024-financial-results-and-provides-financial-expectations-for-2025-302370642.html",
+        "text": "Wire release, displayed dateline Feb 06, 2025, 16:01 ET (16:01 ET). https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-fourth-quarter-and-fiscal-2024-financial-results-and-provides-financial-expectations-for-2025-302370642.html",
+        "first_seen_at": "2025-02-06T16:02:00-05:00"
+      },
+      "published_at": "2025-02-06T16:01:00-05:00",
+      "cutoff": "2025-02-06T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-07"
+    },
+    {
+      "event_id": "nbix-step3-2025-05-05",
+      "cluster_id": "nbix-step3-2025-05-05",
+      "candidate_id": "0000914475-25-000099",
+      "security": {
+        "security_id": "NBIX-914475-2025-05-05",
+        "company_id": "0000914475",
+        "cik": "0000914475",
+        "ticker": "NBIX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-06T00:00:00-05:00",
+        "available_at": "2025-02-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "nbix-wire-2025-05-05",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-first-quarter-2025-financial-results-and-reaffirms-2025-financial-guidance-302446324.html",
+        "text": "Wire release, displayed dateline May 05, 2025, 16:01 ET (16:01 ET). https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-first-quarter-2025-financial-results-and-reaffirms-2025-financial-guidance-302446324.html",
+        "first_seen_at": "2025-05-05T16:02:00-04:00"
+      },
+      "published_at": "2025-05-05T16:01:00-04:00",
+      "cutoff": "2025-05-05T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-06"
+    },
+    {
+      "event_id": "lnsr-step3-2024-11-07",
+      "cluster_id": "lnsr-step3-2024-11-07",
+      "candidate_id": "0000950170-24-122790",
+      "security": {
+        "security_id": "LNSR-1320350-2024-11-07",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-08T00:00:00-04:00",
+        "available_at": "2024-08-08T20:00:00Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire-2024-11-07",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2976485/0/en/LENSAR-Reports-Third-Quarter-2024-Results-and-Provides-Business-Update.html",
+        "text": "Wire release, displayed dateline November 07, 2024 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2024/11/07/2976485/0/en/LENSAR-Reports-Third-Quarter-2024-Results-and-Provides-Business-Update.html",
+        "first_seen_at": "2024-11-07T07:01:00-05:00"
+      },
+      "published_at": "2024-11-07T07:00:00-05:00",
+      "cutoff": "2024-11-07T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2024-11-07"
+    },
+    {
+      "event_id": "achv-step3-2024-11-07",
+      "cluster_id": "achv-step3-2024-11-07",
+      "candidate_id": "0000950170-24-123334",
+      "security": {
+        "security_id": "ACHV-949858-2024-11-07",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-13T00:00:00-04:00",
+        "available_at": "2024-08-13T20:00:00Z"
+      },
+      "source": {
+        "source_id": "achv-wire-2024-11-07",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977184/0/en/Achieve-Life-Sciences-Reports-Financial-Results-for-Third-Quarter-2024-and-Provides-Corporate-Update.html",
+        "text": "Wire release, displayed dateline November 07, 2024 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2024/11/07/2977184/0/en/Achieve-Life-Sciences-Reports-Financial-Results-for-Third-Quarter-2024-and-Provides-Corporate-Update.html",
+        "first_seen_at": "2024-11-07T16:06:00-05:00"
+      },
+      "published_at": "2024-11-07T16:05:00-05:00",
+      "cutoff": "2024-11-07T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-08"
+    },
+    {
+      "event_id": "asmb-step3-2024-11-07",
+      "cluster_id": "asmb-step3-2024-11-07",
+      "candidate_id": "0000950170-24-123355",
+      "security": {
+        "security_id": "ASMB-1426800-2024-11-07",
+        "company_id": "0001426800",
+        "cik": "0001426800",
+        "ticker": "ASMB",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-08T00:00:00-04:00",
+        "available_at": "2024-08-08T20:00:00Z"
+      },
+      "source": {
+        "source_id": "asmb-wire-2024-11-07",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977161/16259/en/Assembly-Biosciences-Reports-Third-Quarter-2024-Financial-Results-and-Recent-Updates.html",
+        "text": "Wire release, displayed dateline November 07, 2024 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2024/11/07/2977161/16259/en/Assembly-Biosciences-Reports-Third-Quarter-2024-Financial-Results-and-Recent-Updates.html",
+        "first_seen_at": "2024-11-07T16:06:00-05:00"
+      },
+      "published_at": "2024-11-07T16:05:00-05:00",
+      "cutoff": "2024-11-07T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-08"
+    }
+  ]
+}
