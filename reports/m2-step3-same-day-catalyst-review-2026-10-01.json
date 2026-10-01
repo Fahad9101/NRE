@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-01",
+  "policy": "docs/SAME-DAY-COMPETING-CATALYST-POLICY.md",
+  "owner_confirmation": "Owner's \"yes go\" to the proposed next-step sequence: \"Same-day-competing-catalyst sweep... then batch... then signoff... then attest.\"",
+  "sweep_method": "For each of the 66 real frozen step-3 candidates (config/m2-step3-frozen-candidate-ledger.json), checked whether the same issuer filed any OTHER real 8-K/8-K-A on the identical calendar filing_date, using each issuer's own real, already-fetched full 'recent' filing history (the same browser-fetched data the freeze itself used). 4 of 66 candidates (6%) had another same-day filing; the other 62 had none and are unaffected by this policy. Each of the 4 was read in full from its own real primary document on sec.gov before applying the three-part test -- no verdict was made from the item number alone.",
+  "same_day_catalyst_test_applied": [
+    {
+      "ticker": "ASMB",
+      "candidate_id": "0000950170-24-123355",
+      "filing_date": "2024-11-07",
+      "competing_item": "Item 1.01 -- Open Market Sale Agreement (ATM equity program) with Jefferies LLC",
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "detail_dissemination": "No press release exhibit anywhere in the filing -- only legal exhibits (the Sale Agreement itself, a Skadden Arps legal opinion, and XBRL data). No Item 7.01 Reg FD reference either.",
+      "fresh_independently_material_content": false,
+      "detail_content": "An enabling, open-ended ATM facility with no dollar size disclosed and no commitment to sell any shares (\"the Company will set the parameters... from time to time\"); routine ongoing capital-markets housekeeping for a clinical-stage biotech, not a specific, weighty new development.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails conditions 2 and 3 -- no independent dissemination and no fresh, sized, material content. A different real ASMB same-day situation from the one excluded in step 2 (2025-08-06, Phase 1a clinical data) -- that exclusion is unaffected and unrelated.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending the corporate-action check, identity/exchange re-verification, and a label-engine dry run -- none of which have run for any step-3 candidate yet."
+    },
+    {
+      "ticker": "LNSR",
+      "candidate_id": "0000950170-25-066375",
+      "filing_date": "2025-05-08",
+      "competing_item": "Item 9.01 only (8-K/A Amendment No. 1) -- corrected earnings release exhibit",
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "detail_dissemination": "Not a separate disclosure at all -- the Explanatory Note states this amendment exists solely \"to correct errors in the earnings release attached as Exhibit 99.1\" to the original same-day filing: the narrative description of total revenue and net loss had referred to the wrong periods.",
+      "fresh_independently_material_content": false,
+      "detail_content": "This is not a competing catalyst by definition -- it is a corrected version of the exact same earnings release the candidate itself already represents, not independent new information.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Does not meet the policy's own premise of a competing disclosure -- it is an erratum to the candidate's own earnings release, not a second, different item. Recorded as a caveat since a reader of the real primary document should know the originally-filed earnings release had a since-corrected narrative error.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending remaining gates. Caveat: use the corrected (8-K/A) earnings release text, not the original, if filing text is read again later."
+    },
+    {
+      "ticker": "LOVE",
+      "candidate_id": "0001628280-24-050869",
+      "filing_date": "2024-12-12",
+      "competing_item": "Item 7.01 -- Regulation FD Disclosure (upcoming Investor Day)",
+      "same_reaction_day": true,
+      "independently_disseminated": true,
+      "detail_dissemination": "Separate Exhibit 99.1 press release announcing the event, same day as the Item 2.02 earnings release.",
+      "fresh_independently_material_content": false,
+      "detail_content": "The filing's own first sentence: \"As previously announced, the Lovesac Company... will host its 2024 Investor Day on Tuesday, December 17, 2024.\" This is a compliance-driven Reg FD notice ahead of an already-disclosed future webcast, not new information disclosed for the first time that day.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails condition 3 -- same-day and separately disseminated, but explicitly not fresh (\"as previously announced\"). The policy's own orderly/already-telegraphed exclusion applies directly.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending remaining gates."
+    },
+    {
+      "ticker": "CXT",
+      "candidate_id": "0001628280-25-005148",
+      "filing_date": "2025-02-12",
+      "competing_item": "Item 5.02 -- departure of SVP/Chief Human Resources Officer (Jennifer Kartono)",
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "detail_dissemination": "No press release exhibit or Item 7.01 reference anywhere in the filing -- only the 8-K itself and the separation agreement as a legal exhibit.",
+      "fresh_independently_material_content": false,
+      "detail_content": "A standard, orderly separation: effective date more than two weeks out (March 1, cessation of employment April 25), a conventional severance package (one year's base salary, incentive-plan payout, one year of COBRA) -- no disagreement, no \"for cause\" language, and a non-C-suite role (CHRO, not CEO/CFO/COO).",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails conditions 2 and 3, directly matching this project's own established OKTA precedent (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md's own worked comparison) for an orderly, non-C-suite officer change.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending remaining gates."
+    }
+  ],
+  "net_effect_on_the_66_candidates": {
+    "excluded": [],
+    "same_day_catalyst_check_clear_but_other_gates_still_pending": [
+      "ASMB 2024-11-07",
+      "LNSR 2025-05-08",
+      "LOVE 2024-12-12",
+      "CXT 2025-02-12"
+    ],
+    "unaffected_by_this_review": 62
+  },
+  "not_a_claim": [
+    "Not a final disposition for any of the 4 flagged candidates -- only the same-day-competing-catalyst axis is resolved. They, and all 62 unaffected candidates, still need the corporate-action check, identity/exchange re-verification, and a label-engine dry run before any can honestly be marked 'included'.",
+    "Not a claim that every possible same-day issue is caught by this sweep -- it checks for another real 8-K/8-K-A filed by the same issuer on the same calendar day only. A competing catalyst disclosed through a different channel entirely (e.g. only a standalone wire release with no corresponding 8-K at all) would not be surfaced by this specific check; none of this project's own prior exclusions (MEI, ASMB step-2) were of that kind, so this is consistent with precedent, not a newly-discovered gap."
+  ]
+}
