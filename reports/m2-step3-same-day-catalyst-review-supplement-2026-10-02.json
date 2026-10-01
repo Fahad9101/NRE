@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "While building the batch-1 signoff packet for config/m2-step3-events.json, found a real same-day filing for PARR's 2025-05-06 candidate (0000821483-25-000014) that reports/m2-step3-same-day-catalyst-review-2026-10-01.json's own sweep did not catch.",
+  "methodology_gap_found": "The original sweep (reports/m2-step3-same-day-catalyst-review-2026-10-01.json) matched same-day pairs on each candidate's recorded filing_date from config/m2-step3-frozen-candidate-ledger.json. For PARR's three candidates, EDGAR's own filingDate field lags the true release date by one calendar day whenever SEC acceptance happens after 5:30 PM ET (EDGAR's 'deemed filed next business day' rule): PARR 0000821483-25-000014 carries filing_date 2025-05-07, but the true release and SEC acceptance both happened 2025-05-06 (accepted 2025-05-06T21:45:55Z = 17:45:55 ET, after the 17:30 cutoff). A same-day 8-K filed and accepted earlier the same real day -- 0001437749-25-014660, Item 5.07, filingDate 2025-05-06, accepted 2025-05-06T14:28:24Z = 10:28:24 ET -- shares the true calendar day but not the recorded filing_date, so it fell outside the original sweep's matching key.",
+  "scope_of_gap": "Confirmed this does not change PARR's other two step-3 candidates: 0000821483-24-000025 (true/accepted 2024-11-04, filing_date 2024-11-05 -- same deeming pattern, but no other PARR filing shares acceptanceDateTime 2024-11-04) and 0000821483-25-000002 (SEC acceptance itself happened the next calendar morning, 2025-02-26T14:41:29Z, not a same-evening deeming case, so filing_date and acceptance day coincide and the original sweep's key was correct for it). Not yet checked against the other 55 step-3 candidates outside batch 1 -- flagged below as a recommendation, not performed here.",
+  "new_same_day_catalyst_test_applied": [
+    {
+      "ticker": "PARR",
+      "candidate_id": "0000821483-25-000014",
+      "true_release_date": "2025-05-06",
+      "competing_filing": "0001437749-25-014660, Item 5.07 -- Submission of Matters to a Vote of Security Holders (2025 Annual Meeting, held 2025-05-01, results reported 2025-05-06 10:28 ET)",
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "detail_dissemination": "Read the filing's own cover and body directly (sec.gov/Archives/edgar/data/821483/000143774925014660/parr20250505_8k.htm): no press release exhibit, no Item 7.01 Reg FD reference -- only the 8-K itself (director election and auditor-ratification vote tallies) and XBRL.",
+      "fresh_independently_material_content": false,
+      "detail_content": "Routine annual-meeting voting results (ten director nominees elected, Deloitte & Touche ratification) filed 5 hours before the 16:15 ET earnings release; a purely procedural, orderly, already-scheduled corporate-governance filing, not new information about the business.",
+      "verdict": "NOT EXCLUDED",
+      "reasoning": "Fails conditions 2 and 3 -- no independent dissemination and no fresh, material content. Same category as this project's own established OKTA/CXT Item-5.07-and-5.02 precedent for orderly, non-business disclosures.",
+      "disposition": "same_day_catalyst_check_clear",
+      "disposition_note": "Not excluded on this basis. Full disposition still pending the corporate-action check, identity/exchange re-verification, and a label-engine dry run -- the corporate-action check and dry run already ran clean for this candidate (reports/m2-step3-batch1-signoff-packet-2026-10-02.json); identity re-verification is in that same packet."
+    }
+  ],
+  "net_effect": {
+    "newly_cleared": [
+      "PARR 2025-05-06 (same-day Item 5.07, not excluded)"
+    ],
+    "excluded": [],
+    "running_excluded_total_step3": [
+      "CACI 2025-04-24 (not a qualifying earnings event -- reports/m2-step3-eligibility-review-2026-10-01.json)"
+    ]
+  },
+  "recommendation": "When batching candidates 2 through 6 of the remaining 55 step-3 candidates, match same-day pairs on each candidate's true release date (as independently verified per-candidate), not on the frozen ledger's filing_date field -- re-check any candidate whose own filing_date already differs from its verified true release date, the same way this gap was found for PARR.",
+  "not_a_claim": "Does not mark PARR's 2025-05-06 candidate, or any other batch-1 candidate, 'included' -- see reports/m2-step3-batch1-signoff-packet-2026-10-02.json for what remains pending."
+}

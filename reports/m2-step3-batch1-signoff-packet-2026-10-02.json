@@ -1,0 +1,521 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-02",
+  "purpose": "Evidence for the project owner to sign off, or not, on ten candidate events for Milestone 2 step 3 (batch 1 of 7, the first ~11 of 66 surviving step-3 candidates by filing date). Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "Batch 1 is the first 11 of the 66 frozen step-3 candidates by filing date (CACI 2025-01-22 through ASMB 2024-11-07 -- the pool itself spans 2024-11-01 through 2025-06-01 and is not sorted by date, so 'batch 1' is simply the first 11 rows worked through). One of the 11, CACI's 2025-04-24 Form 8-K/A, was excluded as a duplicate correction of the 2025-04-23 candidate (reports/m2-step3-eligibility-review-2026-10-01.json) -- the only 8-K/A among all 66 real candidates. The remaining 10 are built into config/m2-step3-events.json. All 66 had already passed the same-day-competing-catalyst policy (reports/m2-step3-same-day-catalyst-review-2026-10-01.json, supplemented below) and a real browser-fetched SEC cohort freeze (reports/m2-step3-sec-cohort-freeze.json) before any of these 10 were selected for this check.",
+  "dry_run": {
+    "workflow": "depth3-event-acquire.yml",
+    "run_id": 36925339728,
+    "commit": "4fbf542",
+    "result": "All 10 pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels. All 10 showed all required sessions present, no zero-volume days, and an EMPTY real Alpaca corporate-actions response -- cleaner than step 2's own batch 1, which had one real dividend (CXT). No candidate in this batch needs its own corporate-actions exception."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below, including the residual gap that open-web search cannot close (a live or unrecorded earlier disclosure), and the one same-day finding below (PARR) assessed under docs/SAME-DAY-COMPETING-CATALYST-POLICY.md.",
+    "corporate_actions": "For all 10 candidates: accept two independent clean signals -- no Item 3.03/5.03 8-K on the event date itself in the shown history, and Alpaca's real, fully paginated corporate-actions response empty for the window. No exceptions in this batch."
+  },
+  "candidates": [
+    {
+      "event_id": "caci-step3-2025-01-22",
+      "candidate_id": "0000016058-25-000028",
+      "ticker": "CACI",
+      "company": "CACI International Inc",
+      "cik": "0000016058",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250122810137/en/CACI-Reports-Results-for-Its-Fiscal-2025-Second-Quarter-and-Raises-Fiscal-Year-Guidance",
+        "displayed_stamp_et": "Jan 22, 2025 4:15 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2025-01-22T16:15:00-05:00",
+        "sec_8k_accepted_et": "2025-01-22 16:24:05",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-01-22",
+      "reaction_session": "2025-01-23",
+      "twentieth_reaction_session": "2025-02-20",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | CACI | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000016058-24-000196",
+          "accepted_et": "2024-10-23 16:25:27"
+        },
+        "spec_valid_from": "2024-10-23T00:00:00-04:00",
+        "spec_available_at": "2024-10-23T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-02 5.02 (x2, separate director filings)",
+          "2024-08-07 2.02,9.01",
+          "2024-09-16 1.01,7.01,9.01",
+          "2024-10-23 5.07",
+          "2024-10-23 2.02,9.01 (prior quarter, anchor)",
+          "2024-11-05 1.01,2.03,7.01,9.01",
+          "2024-12-27 1.01,2.03,9.01",
+          "2025-01-22 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's (2024-10-23), and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's own anchor filing (2024-10-23) is itself a same-day pair (a separate 5.07 annual-meeting-results 8-K filed hours earlier) -- a recurring pattern for this issuer already assessed and not excluded in step 2 (reports/m2-step2-batch1-signoff-packet-2026-09-29.json's own CACI entry). Not this candidate's own event date, so not re-assessed here."
+    },
+    {
+      "event_id": "caci-step3-2025-04-23",
+      "candidate_id": "0000016058-25-000043",
+      "ticker": "CACI",
+      "company": "CACI International Inc",
+      "cik": "0000016058",
+      "release": {
+        "wire": "SEC EDGAR acceptance time (wire unavailable)",
+        "url": "https://www.sec.gov/Archives/edgar/data/16058/000001605825000043/",
+        "displayed_stamp_et": "SEC EDGAR acceptance 2025-04-23 16:31:00 ET -- BusinessWire's own page (businesswire.com/news/home/20250423762294) was overwritten in place the same night with a CORRECTING-and-REPLACING version (dateline Apr 23, 2025 10:00 PM ET); the Wayback Machine CDX index shows no cached snapshot of the pre-correction page survives anywhere, so the SEC acceptance time is used as the real anchor instead of a wire-displayed stamp.",
+        "minute_encoded_in_spec": "2025-04-23T16:31:00-04:00",
+        "sec_8k_accepted_et": "2025-04-23 16:31:00",
+        "sec_acceptance_not_before_wire_minute": "not applicable -- SEC acceptance time IS the timestamp evidence for this one candidate"
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-04-23",
+      "reaction_session": "2025-04-24",
+      "twentieth_reaction_session": "2025-05-21",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | CACI | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000016058-25-000028",
+          "accepted_et": "2025-01-22 16:24:05"
+        },
+        "spec_valid_from": "2025-01-22T00:00:00-05:00",
+        "spec_available_at": "2025-01-22T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-01-22 2.02,9.01 (prior quarter)",
+          "2025-04-23 2.02,9.01 <EVENT>",
+          "2025-04-24 2.02,9.01 (8-K/A -- EXCLUDED, Contract Awards typo correction only, reports/m2-step3-eligibility-review-2026-10-01.json)",
+          "2025-05-20 8.01,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-05-20 8-K Item 8.01,9.01 (content not opened; falls on the 20th and final reaction session)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["session_20_close_return"],
+        "note": "An Item 8.01 8-K was filed 2025-05-20, landing on session 20 (the last reaction session) itself; content not opened."
+      },
+      "additional_note": "This is the one candidate in the step-3 pool with a real same-topic 8-K/A (see chronology above); the correction's own substance (a Contract Awards typo) does not affect this event's own release."
+    },
+    {
+      "event_id": "parr-step3-2024-11-04",
+      "candidate_id": "0000821483-24-000025",
+      "ticker": "PARR",
+      "company": "Par Pacific Holdings, Inc.",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/04/2974474/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2024-Results.html",
+        "displayed_stamp_et": "November 04, 2024 16:15 ET",
+        "minute_encoded_in_spec": "2024-11-04T16:15:00-05:00",
+        "sec_8k_accepted_et": "2024-11-04 17:44:56",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-04",
+      "reaction_session": "2024-11-05",
+      "twentieth_reaction_session": "2024-12-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.01 par value | PARR | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000821483-24-000018",
+          "accepted_et": "2024-08-06 17:23:56"
+        },
+        "spec_valid_from": "2024-08-06T00:00:00-04:00",
+        "spec_available_at": "2024-08-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-06 2.02,9.01 (prior quarter, anchor)",
+          "2024-11-04 2.02,9.01 <EVENT> (EDGAR filingDate recorded as 2024-11-05, one day later -- accepted 17:44:56 ET, after the 17:30 deemed-next-business-day cutoff; true release and SEC acceptance both happened 2024-11-04)",
+          "2024-11-12 5.02",
+          "2024-11-18 1.01,2.03,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2024-11-12 8-K Item 5.02 (officer/director change; content not opened)",
+        "2024-11-18 8-K Item 1.01,2.03,9.01 (new financing agreement; content not opened)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["session_6_close_return", "session_7_close_return", "session_8_close_return", "session_9_close_return", "session_10_close_return", "session_11_close_return", "session_12_close_return", "session_13_close_return", "session_14_close_return", "session_15_close_return", "session_16_close_return", "session_17_close_return", "session_18_close_return", "session_19_close_return", "session_20_close_return"],
+        "note": "An Item 5.02 8-K was filed 2024-11-12 (session 6) and an Item 1.01/2.03 8-K on 2024-11-18 (session 10), both inside the window before session 20; content not opened for either."
+      },
+      "additional_note": "This issuer's own SEC filingDate metadata field lags its true after-hours release by one calendar day for all three of its step-3 candidates (confirmed for this one and the other two below) -- an EDGAR 'deemed filed next business day' processing convention for acceptances after 17:30 ET, not a second disclosure or any data problem. published_at in the spec uses the true release date/time, not the SEC filingDate. This same lag caused the original same-day-catalyst sweep to miss a real same-day pairing for this issuer's 2025-05-06 candidate -- see reports/m2-step3-same-day-catalyst-review-supplement-2026-10-02.json."
+    },
+    {
+      "event_id": "parr-step3-2025-02-25",
+      "candidate_id": "0000821483-25-000002",
+      "ticker": "PARR",
+      "company": "Par Pacific Holdings, Inc.",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/25/3032452/0/en/Par-Pacific-Reports-Fourth-Quarter-and-2024-Results.html",
+        "displayed_stamp_et": "February 25, 2025 16:15 ET",
+        "minute_encoded_in_spec": "2025-02-25T16:15:00-05:00",
+        "sec_8k_accepted_et": "2025-02-26 09:41:29",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-25",
+      "reaction_session": "2025-02-26",
+      "twentieth_reaction_session": "2025-03-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.01 par value | PARR | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000821483-24-000025",
+          "accepted_et": "2024-11-04 17:44:56"
+        },
+        "spec_valid_from": "2024-11-04T00:00:00-05:00",
+        "spec_available_at": "2024-11-04T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-04 2.02,9.01 (prior quarter)",
+          "2024-11-12 5.02",
+          "2024-11-18 1.01,2.03,9.01",
+          "2025-01-06 9.01 (8-K/A, exhibits only -- not opened, no 2.02)",
+          "2025-02-25 2.02,9.01 <EVENT> (EDGAR filingDate recorded as 2025-02-26, one day later; here SEC's own acceptance happened the next calendar morning, 09:41:29 ET, not a same-evening deeming case)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above (the 2025-01-06 filing is itself a 9.01-only 8-K/A, not independently opened, and well outside this event's own anchor/reaction window).",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    },
+    {
+      "event_id": "parr-step3-2025-05-06",
+      "candidate_id": "0000821483-25-000014",
+      "ticker": "PARR",
+      "company": "Par Pacific Holdings, Inc.",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/05/06/3075573/0/en/Par-Pacific-Holdings-Reports-First-Quarter-2025-Results.html",
+        "displayed_stamp_et": "May 06, 2025 16:15 ET",
+        "minute_encoded_in_spec": "2025-05-06T16:15:00-04:00",
+        "sec_8k_accepted_et": "2025-05-06 17:45:55",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-05-06",
+      "reaction_session": "2025-05-07",
+      "twentieth_reaction_session": "2025-06-04",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.01 par value | PARR | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000821483-25-000002",
+          "accepted_et": "2025-02-26 09:41:29"
+        },
+        "spec_valid_from": "2025-02-25T00:00:00-05:00",
+        "spec_available_at": "2025-02-25T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-02-25 2.02,9.01 (prior quarter)",
+          "2025-05-06 5.07 (same day, 10:28 ET -- annual meeting results, see same-day assessment below)",
+          "2025-05-06 2.02,9.01 <EVENT> (16:15 ET; EDGAR filingDate recorded as 2025-05-07, accepted 17:45:55 ET, after the 17:30 deemed-next-business-day cutoff)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "same_day_competing_catalyst": "A same-day Item 5.07 8-K (0001437749-25-014660, 2025 Annual Meeting voting results, filed/accepted 10:28 ET, 5 hours before this event's own release) was assessed under docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and NOT EXCLUDED -- routine, no press release, no Item 7.01. Full 3-part test in reports/m2-step3-same-day-catalyst-review-supplement-2026-10-02.json. This pairing was missed by the original step-3 same-day sweep because that sweep matched on this candidate's recorded filing_date (2025-05-07), one day after the true release date (2025-05-06) that the 5.07 filing actually shares -- see the supplement for the full explanation.",
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "See parr-step3-2024-11-04's additional_note for this issuer's recurring filingDate-lag pattern."
+    },
+    {
+      "event_id": "nbix-step3-2025-02-06",
+      "candidate_id": "0000914475-25-000034",
+      "ticker": "NBIX",
+      "company": "Neurocrine Biosciences, Inc.",
+      "cik": "0000914475",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-fourth-quarter-and-fiscal-2024-financial-results-and-provides-financial-expectations-for-2025-302370642.html",
+        "displayed_stamp_et": "Feb 06, 2025, 16:01 ET",
+        "minute_encoded_in_spec": "2025-02-06T16:01:00-05:00",
+        "sec_8k_accepted_et": "2025-02-06 16:04:44",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-06",
+      "reaction_session": "2025-02-07",
+      "twentieth_reaction_session": "2025-03-07",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value | NBIX | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000914475-24-000210",
+          "accepted_et": "2024-10-30 07:02:54"
+        },
+        "spec_valid_from": "2024-10-30T00:00:00-04:00",
+        "spec_available_at": "2024-10-30T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-10-11 5.02",
+          "2024-10-30 2.02,9.01 (prior quarter, anchor)",
+          "2024-11-01 8.01",
+          "2024-12-20 8.01",
+          "2025-01-27 1.01,7.01,9.01",
+          "2025-02-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    },
+    {
+      "event_id": "nbix-step3-2025-05-05",
+      "candidate_id": "0000914475-25-000099",
+      "ticker": "NBIX",
+      "company": "Neurocrine Biosciences, Inc.",
+      "cik": "0000914475",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-first-quarter-2025-financial-results-and-reaffirms-2025-financial-guidance-302446324.html",
+        "displayed_stamp_et": "May 05, 2025, 16:01 ET",
+        "minute_encoded_in_spec": "2025-05-05T16:01:00-04:00",
+        "sec_8k_accepted_et": "2025-05-05 16:02:56",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-05-05",
+      "reaction_session": "2025-05-06",
+      "twentieth_reaction_session": "2025-06-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.001 par value | NBIX | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000914475-25-000034",
+          "accepted_et": "2025-02-06 16:04:44"
+        },
+        "spec_valid_from": "2025-02-06T00:00:00-05:00",
+        "spec_available_at": "2025-02-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2025-02-06 2.02,9.01 (prior quarter)",
+          "2025-04-04 5.02,7.01,9.01",
+          "2025-05-05 2.02,9.01 <EVENT>",
+          "2025-05-22 5.02,5.07",
+          "2025-05-30 5.02,9.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-05-22 8-K Item 5.02,5.07 (officer/director change and annual-meeting results; content not opened)",
+        "2025-05-30 8-K Item 5.02,9.01 (officer/director change; content not opened)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["session_12_close_return", "session_13_close_return", "session_14_close_return", "session_15_close_return", "session_16_close_return", "session_17_close_return", "session_18_close_return", "session_19_close_return", "session_20_close_return"],
+        "note": "An Item 5.02/5.07 8-K was filed 2025-05-22 (session 12) and another Item 5.02 8-K on 2025-05-30 (session 18), both inside the window before session 20; content not opened for either."
+      },
+      "additional_note": "This issuer's OTHER step-3 candidate (2025-02-06, above) also appointed a prior Item 5.02 (2025-04-04) between the two events -- routine officer-change cadence for this issuer, not independently opened."
+    },
+    {
+      "event_id": "lnsr-step3-2024-11-07",
+      "candidate_id": "0000950170-24-122790",
+      "ticker": "LNSR",
+      "company": "LENSAR, Inc.",
+      "cik": "0001320350",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2976485/0/en/LENSAR-Reports-Third-Quarter-2024-Results-and-Provides-Business-Update.html",
+        "displayed_stamp_et": "November 07, 2024 07:00 ET",
+        "minute_encoded_in_spec": "2024-11-07T07:00:00-05:00",
+        "sec_8k_accepted_et": "2024-11-07 07:15:08",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2024-11-06",
+      "reaction_session": "2024-11-07",
+      "twentieth_reaction_session": "2024-12-05",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.01 per share | LNSR | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000950170-24-093326",
+          "accepted_et": "2024-08-08 07:30:09"
+        },
+        "spec_valid_from": "2024-08-08T00:00:00-04:00",
+        "spec_available_at": "2024-08-08T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-08 1.02,2.02,9.01 (prior quarter, anchor -- cover page's own 'date of earliest event reported' reads August 05, 2024, the Item 1.02 contract-termination date; the Item 2.02 earnings text inside the same filing separately states August 8)",
+          "2024-11-07 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "The anchor filing's own cover-page 'date of earliest event reported' (August 05, 2024) is the Item 1.02 agreement-termination date, not the Item 2.02 earnings date (August 8) -- a single 8-K reporting two items dated days apart uses the earliest item's date on the cover by SEC convention. Read in full; the termination (an Oertli development-agreement wind-down) is unrelated to this event's own disclosure."
+    },
+    {
+      "event_id": "achv-step3-2024-11-07",
+      "candidate_id": "0000950170-24-123334",
+      "ticker": "ACHV",
+      "company": "Achieve Life Sciences, Inc.",
+      "cik": "0000949858",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977184/0/en/Achieve-Life-Sciences-Reports-Financial-Results-for-Third-Quarter-2024-and-Provides-Corporate-Update.html",
+        "displayed_stamp_et": "November 07, 2024 16:05 ET",
+        "minute_encoded_in_spec": "2024-11-07T16:05:00-05:00",
+        "sec_8k_accepted_et": "2024-11-07 16:11:06",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-07",
+      "reaction_session": "2024-11-08",
+      "twentieth_reaction_session": "2024-12-06",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 per share | ACHV | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000950170-24-096171",
+          "accepted_et": "2024-08-13 16:06:08"
+        },
+        "spec_valid_from": "2024-08-13T00:00:00-04:00",
+        "spec_available_at": "2024-08-13T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-07-29 1.01,2.03,3.02,9.01",
+          "2024-08-13 2.02,9.01 (prior quarter, anchor)",
+          "2024-08-26 5.02,8.01",
+          "2024-09-27 1.01,9.01",
+          "2024-11-07 2.02,9.01 <EVENT>",
+          "2024-12-09 5.02 (falls just outside the 20th reaction session, 2024-12-06)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "2024-12-09's Item 5.02 (officer/director change) was checked against the real calendar: it lands one trading session after this event's own 20th reaction session (2024-12-06), so it is outside the labeled window and is not a competing_catalysts_inside_window entry."
+    },
+    {
+      "event_id": "asmb-step3-2024-11-07",
+      "candidate_id": "0000950170-24-123355",
+      "ticker": "ASMB",
+      "company": "Assembly Biosciences, Inc.",
+      "cik": "0001426800",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977161/16259/en/Assembly-Biosciences-Reports-Third-Quarter-2024-Financial-Results-and-Recent-Updates.html",
+        "displayed_stamp_et": "November 07, 2024 16:05 ET",
+        "minute_encoded_in_spec": "2024-11-07T16:05:00-05:00",
+        "sec_8k_accepted_et": "2024-11-07 16:14:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-07",
+      "reaction_session": "2024-11-08",
+      "twentieth_reaction_session": "2024-12-06",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 | ASMB | The Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0000950170-24-093946",
+          "accepted_et": "2024-08-08 16:10:09"
+        },
+        "spec_valid_from": "2024-08-08T00:00:00-04:00",
+        "spec_available_at": "2024-08-08T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-08 2.02,9.01 (prior quarter, anchor)",
+          "2024-09-23 8.01,9.01",
+          "2024-11-07 1.01,9.01 (same day, 16:50 ET -- Jefferies Open Market Sale Agreement; already assessed NOT EXCLUDED, reports/m2-step3-same-day-catalyst-review-2026-10-01.json)",
+          "2024-11-07 2.02,9.01 <EVENT> (16:14 ET)",
+          "2024-12-13 5.03,9.01 (falls just outside the 20th reaction session, 2024-12-06)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K on or before the event date. One Item 5.03 8-K (2024-12-13, charter/bylaw-type amendment, content not opened) falls just outside the 20th reaction session (2024-12-06) -- outside the labeled window, consistent with Alpaca's own empty real corporate-actions response.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36925339728)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36925339728). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "The same-day Item 1.01 filing (Jefferies ATM agreement, 16:50 ET, 36 minutes after this event's own 16:14 ET acceptance) was already assessed under docs/SAME-DAY-COMPETING-CATALYST-POLICY.md and NOT EXCLUDED in reports/m2-step3-same-day-catalyst-review-2026-10-01.json -- not re-assessed here."
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": ["lnsr-step3-2024-11-07"],
+    "after_hours": ["caci-step3-2025-01-22", "caci-step3-2025-04-23", "parr-step3-2024-11-04", "parr-step3-2025-02-25", "parr-step3-2025-05-06", "nbix-step3-2025-02-06", "nbix-step3-2025-05-05", "achv-step3-2024-11-07", "asmb-step3-2024-11-07"]
+  },
+  "flagged_not_a_blanket_clean_signoff": {
+    "caci-step3-2025-04-23": "No wire-displayed timestamp survives (BusinessWire overwrote the page in place with a same-night correction); SEC EDGAR's own acceptance time is used as the real anchor instead. Also carries a same-day-adjacent (session 20) competing 8-K caveat.",
+    "parr-step3-2024-11-04": "Two competing 8-Ks (officer change, new financing) inside the 20-session window; caveat spans sessions 6-20.",
+    "parr-step3-2025-05-06": "A real same-day Item 5.07 filing missed by the original same-day sweep (methodology gap, now documented and corrected going forward) -- assessed fresh here and NOT EXCLUDED.",
+    "nbix-step3-2025-05-05": "Two competing 8-Ks (officer changes) inside the 20-session window; caveat spans sessions 12-20.",
+    "asmb-step3-2024-11-07": "Carries the already-reviewed same-day Item 1.01 filing (Jefferies ATM agreement) -- assessed and NOT EXCLUDED in reports/m2-step3-same-day-catalyst-review-2026-10-01.json, not re-assessed here."
+  },
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all ten', or a list of event_ids/decisions. Then the attestations are added for the signed-off candidates, the workflow runs for real, and each result is recorded with a pinned label digest.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- content was not opened for any of the caveated items (CACI, PARR x2 sets, NBIX) beyond what's already in chronology_evidence."
+  ]
+}
