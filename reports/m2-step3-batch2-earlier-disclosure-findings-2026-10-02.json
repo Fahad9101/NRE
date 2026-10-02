@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Every batch-1 and batch-2 candidate's chronology_evidence carries an 'earlier_disclosure_of_these_results' field that has read 'None found' for every candidate so far. While verifying batch 2's real SEC filing histories, two candidates (REAL, ASPN) turned up a genuine, material earlier disclosure of the same quarter's real figures. Recorded here in full rather than folded into the usual boilerplate, since the finding itself -- not just its absence -- is what matters this time.",
+  "findings": [
+    {
+      "ticker": "REAL",
+      "candidate_id": "0001573221-24-000124",
+      "candidate_date": "2024-11-04",
+      "earlier_filing": "0001193125-24-244731, filed/accepted 2024-10-28 08:35:30 ET, items 2.02/5.02/9.01",
+      "earlier_filing_headline": "The RealReal Appoints Rati Sahi Levesque as Chief Executive Officer -- a CEO-change 8-K (John Koryl departed, Rati Sahi Levesque appointed) that ALSO carries its own 'Preliminary Third Quarter 2024 Financial Results and Updated Full Year 2024 Guidance' section.",
+      "comparison": {
+        "preliminary_2024_10_28": {"GMV": "$433.1 million", "total_revenue": "$147.8 million", "adjusted_ebitda": "$2.3 million", "net_loss": "$(17.938) million"},
+        "final_2024_11_04": {"total_revenue": "$148 million", "net_loss": "$(18) million", "adjusted_ebitda": "$2.3 million"}
+      },
+      "assessment": "The preliminary figures and the final figures are the same quarter's results to within ordinary rounding -- the market already knew Q3 2024 revenue, net loss, and Adjusted EBITDA a full week before this candidate's own release. Not a same-day-competing-catalyst question (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md doesn't apply -- different days) and not an eligibility exclusion (0001193125-24-244731 predates the step-3 window, 2024-11-01, so it was never itself a pool candidate to exclude, the same structural situation as step 2's REKR precedent where the earlier pre-announcement stayed out of the frozen pool on its own terms). This candidate (2024-11-04) remains the real, complete, full-detail earnings release and is not excluded -- but its own day-1/session price reaction should be read knowing most of the quarter's headline numbers were already public.",
+      "disposition": "not_excluded_caveat_recorded"
+    },
+    {
+      "ticker": "ASPN",
+      "candidate_id": "0001171843-24-006061",
+      "candidate_date": "2024-11-06",
+      "earlier_filing": "0001171843-24-005651, filed 2024-10-16, items 2.02/7.01/8.01/9.01",
+      "earlier_filing_headline": "Aspen Aerogels, Inc. Receives Conditional Commitment for Proposed DOE Loan and Provides Q3 2024 Preliminary Financial Results",
+      "comparison": {
+        "preliminary_2024_10_16": {"revenue": "$117 million", "adjusted_ebitda": "$25 million", "net_loss": "$13 million"},
+        "final_2024_11_06": {"revenue": "$117.3 million", "net_loss": "$13.0 million", "adjusted_ebitda": "$25.4 million"}
+      },
+      "assessment": "Same pattern as REAL above, three weeks earlier: a DOE-loan announcement bundled with preliminary Q3 revenue/EBITDA/net-loss figures that match the final release almost exactly. 0001171843-24-005651 (2024-10-16) predates the step-3 window and was never a pool candidate. This candidate (2024-11-06) remains the real, complete earnings release and is not excluded, with the same caveat as REAL.",
+      "disposition": "not_excluded_caveat_recorded"
+    }
+  ],
+  "pattern_note": "Both pre-announcements were bundled with a different Item 8.01/5.02/7.01 disclosure (a CEO change for REAL, a DOE loan commitment for ASPN) rather than issued as a standalone earnings pre-release -- in each case the company appears to have used an already-scheduled material announcement as the occasion to also flag that the quarter was tracking ahead of guidance. Worth checking for the same pattern when working through batches 3-6: a same-quarter earlier disclosure can hide inside an 8-K whose headline item has nothing to do with earnings.",
+  "not_a_claim": "Does not mark either candidate 'included' -- the corporate-action check, identity/exchange re-verification, and a label-engine dry run are still pending, same as every other step-3 candidate."
+}

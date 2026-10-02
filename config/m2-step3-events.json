@@ -524,6 +524,303 @@
         "labels_sha256": "9718975ff9f865eb28b97052f44b9b0a841d975019fd02d866bab3e2f82b201f",
         "recorded_in": "reports/m2-step3-batch1-complete-events-2026-10-02.json"
       }
+    },
+    {
+      "event_id": "real-step3-2024-11-04",
+      "cluster_id": "real-step3-2024-11-04",
+      "candidate_id": "0001573221-24-000124",
+      "security": {
+        "security_id": "REAL-1573221-2024-11-04",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-06T00:00:00-04:00",
+        "available_at": "2024-08-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "real-wire-2024-11-04",
+        "url": "https://www.globenewswire.com/news-release/2024/11/04/2974426/0/en/The-RealReal-Announces-Third-Quarter-2024-Results.html",
+        "text": "Wire release, displayed dateline November 04, 2024 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2024/11/04/2974426/0/en/The-RealReal-Announces-Third-Quarter-2024-Results.html",
+        "first_seen_at": "2024-11-04T16:06:00-05:00"
+      },
+      "published_at": "2024-11-04T16:05:00-05:00",
+      "cutoff": "2024-11-04T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-05"
+    },
+    {
+      "event_id": "payo-step3-2024-11-05",
+      "cluster_id": "payo-step3-2024-11-05",
+      "candidate_id": "0001558370-24-014329",
+      "security": {
+        "security_id": "PAYO-1845815-2024-11-05",
+        "company_id": "0001845815",
+        "cik": "0001845815",
+        "ticker": "PAYO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-07T00:00:00-04:00",
+        "available_at": "2024-08-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "payo-wire-2024-11-05",
+        "url": "https://www.businesswire.com/news/home/20241105351426/en/Payoneer-Reports-Third-Quarter-2024-Financial-Results",
+        "text": "Wire release, displayed dateline Nov 5, 2024 7:30 AM Eastern Standard Time (07:30 ET). https://www.businesswire.com/news/home/20241105351426/en/Payoneer-Reports-Third-Quarter-2024-Financial-Results",
+        "first_seen_at": "2024-11-05T07:31:00-05:00"
+      },
+      "published_at": "2024-11-05T07:30:00-05:00",
+      "cutoff": "2024-11-05T07:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2024-11-05"
+    },
+    {
+      "event_id": "aspn-step3-2024-11-06",
+      "cluster_id": "aspn-step3-2024-11-06",
+      "candidate_id": "0001171843-24-006061",
+      "security": {
+        "security_id": "ASPN-1145986-2024-11-06",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-07T00:00:00-04:00",
+        "available_at": "2024-08-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "aspn-wire-2024-11-06",
+        "url": "https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-third-quarter-2024-financial-results-and-recent-business-highlights-302298009.html",
+        "text": "Wire release, displayed dateline Nov 06, 2024, 16:30 ET (16:30 ET). https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-third-quarter-2024-financial-results-and-recent-business-highlights-302298009.html",
+        "first_seen_at": "2024-11-06T16:31:00-05:00"
+      },
+      "published_at": "2024-11-06T16:30:00-05:00",
+      "cutoff": "2024-11-06T16:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:30",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-07"
+    },
+    {
+      "event_id": "vsat-step3-2024-11-06",
+      "cluster_id": "vsat-step3-2024-11-06",
+      "candidate_id": "0001193125-24-252046",
+      "security": {
+        "security_id": "VSAT-797721-2024-11-06",
+        "company_id": "0000797721",
+        "cik": "0000797721",
+        "ticker": "VSAT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-07T00:00:00-04:00",
+        "available_at": "2024-08-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "vsat-sec-2024-11-06",
+        "url": "https://www.sec.gov/Archives/edgar/data/797721/000119312524252046/",
+        "text": "SEC EDGAR acceptance within the 16:11 ET minute (exact acceptance 16:11:33, rounded down to the minute per this spec's own minute precision), used in place of a wire-displayed stamp. The release went out via PRNewswire (confirmed from the exhibit's own dateline and investors.viasat.com's own article tag) but no independently dated PRNewswire-hosted copy of this specific release could be located after a real search -- only undated secondary copies (company IR page, aggregator summaries). https://www.sec.gov/Archives/edgar/data/797721/000119312524252046/",
+        "first_seen_at": "2024-11-06T16:12:00-05:00"
+      },
+      "published_at": "2024-11-06T16:11:00-05:00",
+      "cutoff": "2024-11-06T16:14:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:11",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-07"
+    },
+    {
+      "event_id": "ttwo-step3-2024-11-06",
+      "cluster_id": "ttwo-step3-2024-11-06",
+      "candidate_id": "0001628280-24-045720",
+      "security": {
+        "security_id": "TTWO-946581-2024-11-06",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-08T00:00:00-04:00",
+        "available_at": "2024-08-08T20:00:00Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire-2024-11-06",
+        "url": "https://www.businesswire.com/news/home/20241106543274/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Second-Quarter-2025",
+        "text": "Wire release, displayed dateline Nov 6, 2024 4:05 PM Eastern Standard Time (16:05 ET). https://www.businesswire.com/news/home/20241106543274/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Second-Quarter-2025",
+        "first_seen_at": "2024-11-06T16:06:00-05:00"
+      },
+      "published_at": "2024-11-06T16:05:00-05:00",
+      "cutoff": "2024-11-06T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-07"
+    },
+    {
+      "event_id": "cxt-step3-2024-11-06",
+      "cluster_id": "cxt-step3-2024-11-06",
+      "candidate_id": "0001628280-24-045736",
+      "security": {
+        "security_id": "CXT-25445-2024-11-06",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-07T00:00:00-04:00",
+        "available_at": "2024-08-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "cxt-wire-2024-11-06",
+        "url": "https://www.globenewswire.com/news-release/2024/11/06/2976035/0/en/Crane-NXT-Co-Reports-Third-Quarter-2024-Results.html",
+        "text": "Wire release, displayed dateline November 06, 2024 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2024/11/06/2976035/0/en/Crane-NXT-Co-Reports-Third-Quarter-2024-Results.html",
+        "first_seen_at": "2024-11-06T16:06:00-05:00"
+      },
+      "published_at": "2024-11-06T16:05:00-05:00",
+      "cutoff": "2024-11-06T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-07"
+    },
+    {
+      "event_id": "tecx-step3-2024-11-07",
+      "cluster_id": "tecx-step3-2024-11-07",
+      "candidate_id": "0000950170-24-123411",
+      "security": {
+        "security_id": "TECX-1681087-2024-11-07",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-14T00:00:00-04:00",
+        "available_at": "2024-08-14T20:00:00Z"
+      },
+      "source": {
+        "source_id": "tecx-wire-2024-11-07",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977091/0/en/tectonic-therapeutic-announces-third-quarter-2024-financial-results-and-recent-business-highlights.html",
+        "text": "Wire release, displayed dateline November 07, 2024 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2024/11/07/2977091/0/en/tectonic-therapeutic-announces-third-quarter-2024-financial-results-and-recent-business-highlights.html",
+        "first_seen_at": "2024-11-07T16:02:00-05:00"
+      },
+      "published_at": "2024-11-07T16:01:00-05:00",
+      "cutoff": "2024-11-07T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-08"
+    },
+    {
+      "event_id": "coll-step3-2024-11-07",
+      "cluster_id": "coll-step3-2024-11-07",
+      "candidate_id": "0001104659-24-115287",
+      "security": {
+        "security_id": "COLL-1267565-2024-11-07",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-08T00:00:00-04:00",
+        "available_at": "2024-08-08T20:00:00Z"
+      },
+      "source": {
+        "source_id": "coll-wire-2024-11-07",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977103/34897/en/Collegium-Reports-Record-Third-Quarter-2024-Financial-Results.html",
+        "text": "Wire release, displayed dateline November 07, 2024 16:02 ET (16:02 ET). https://www.globenewswire.com/news-release/2024/11/07/2977103/34897/en/Collegium-Reports-Record-Third-Quarter-2024-Financial-Results.html",
+        "first_seen_at": "2024-11-07T16:03:00-05:00"
+      },
+      "published_at": "2024-11-07T16:02:00-05:00",
+      "cutoff": "2024-11-07T16:05:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:02",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-08"
+    },
+    {
+      "event_id": "pdfs-step3-2024-11-07",
+      "cluster_id": "pdfs-step3-2024-11-07",
+      "candidate_id": "0001558370-24-014874",
+      "security": {
+        "security_id": "PDFS-1120914-2024-11-07",
+        "company_id": "0001120914",
+        "cik": "0001120914",
+        "ticker": "PDFS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-08T00:00:00-04:00",
+        "available_at": "2024-08-08T20:00:00Z"
+      },
+      "source": {
+        "source_id": "pdfs-wire-2024-11-07",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977245/7239/en/PDF-Solutions-Reports-Third-Quarter-2024-Results.html",
+        "text": "Wire release, displayed dateline November 07, 2024 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2024/11/07/2977245/7239/en/PDF-Solutions-Reports-Third-Quarter-2024-Results.html",
+        "first_seen_at": "2024-11-07T16:16:00-05:00"
+      },
+      "published_at": "2024-11-07T16:15:00-05:00",
+      "cutoff": "2024-11-07T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-08"
+    },
+    {
+      "event_id": "rekr-step3-2024-11-14",
+      "cluster_id": "rekr-step3-2024-11-14",
+      "candidate_id": "0001437749-24-035298",
+      "security": {
+        "security_id": "REKR-1697851-2024-11-14",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-14T00:00:00-04:00",
+        "available_at": "2024-08-14T20:00:00Z"
+      },
+      "source": {
+        "source_id": "rekr-wire-2024-11-14",
+        "url": "https://www.globenewswire.com/news-release/2024/11/14/2981598/0/en/Rekor-Systems-Reports-Third-Quarter-2024-Financial-Results.html",
+        "text": "Wire release, displayed dateline November 14, 2024 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2024/11/14/2981598/0/en/Rekor-Systems-Reports-Third-Quarter-2024-Financial-Results.html",
+        "first_seen_at": "2024-11-14T16:06:00-05:00"
+      },
+      "published_at": "2024-11-14T16:05:00-05:00",
+      "cutoff": "2024-11-14T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-15"
+    },
+    {
+      "event_id": "klc-step3-2024-11-20",
+      "cluster_id": "klc-step3-2024-11-20",
+      "candidate_id": "0000950170-24-129261",
+      "security": {
+        "security_id": "KLC-1873529-2024-11-20",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-10-08T00:00:00-04:00",
+        "available_at": "2024-10-08T20:00:00Z"
+      },
+      "source": {
+        "source_id": "klc-wire-2024-11-20",
+        "url": "https://www.businesswire.com/news/home/20241120924541/en/KinderCare-Reports-Third-Quarter-2024-Financial-Results",
+        "text": "Wire release, displayed dateline Nov 20, 2024 4:15 PM Eastern Standard Time (16:15 ET). https://www.businesswire.com/news/home/20241120924541/en/KinderCare-Reports-Third-Quarter-2024-Financial-Results",
+        "first_seen_at": "2024-11-20T16:16:00-05:00"
+      },
+      "published_at": "2024-11-20T16:15:00-05:00",
+      "cutoff": "2024-11-20T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-11-21"
     }
   ]
 }
