@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-02",
+  "purpose": "Evidence for the project owner to sign off, or not, on nine candidate events for Milestone 2 step 3 (batch 4 of 6, the next candidates of the 33 that remained after batches 1-3; earlier packets said 'of 7' on an assumed smaller batch size -- at 11 per batch it is 6). Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "Batch 4 is the next 11 candidates by filing date after batches 1-3 (HURN 2025-02-25 through TECX 2025-03-20). Two of the 11 are excluded (reports/m2-step3-batch4-eligibility-review-2026-10-02.json): ALKT 2025-02-27 under the project's own same-day competing-catalyst policy (a separate PRNewswire release for a $400 million acquisition went out in the same displayed minute as the earnings release -- all three conditions hold, the same case as Milestone 1's MEI) and REKR 2025-03-17 as an explicit preliminary pre-announcement (self-labelled 'preliminary and unaudited', with a CEO resignation in the same release) -- leaving 9 genuine candidates built here. The ALKT exclusion is a policy judgment the owner may disagree with; see what_a_sign_off_would_look_like.",
+  "dry_run": {
+    "workflow": "depth3-event-acquire.yml",
+    "run_id": 37004597885,
+    "commit": "16be4a3",
+    "result": "All 9 pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels, no error, empty corporate_actions, no missing_sessions and no zero_volume_sessions. All 30 earlier attested events re-confirmed state MAPPED with labels_match_recorded true (the only non-empty corporate_actions in the whole run are the two already-accepted CXT dividends). The prior push (ca4b1cb, run 37003018750) had separately re-confirmed all 30 earlier events after the caveat/validator change."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below. HURN is the one first-ever issuer in this batch: its identity anchor is its real prior-quarter release (2024-10-29), whose cover page was read directly; the other eight chain to the same issuer's own earlier, already-accepted step-3 event. OKTA's chain skips the excluded 2025-02-04 candidate and anchors to its 2024-12-03 event.",
+    "corporate_actions": "For all 9 candidates: accept two independent clean signals -- no Item 3.03/5.03 8-K on the event date itself, and Alpaca's real, fully paginated corporate-actions response empty. Two issuers have a pre-event Item 5.03 8-K that was read and is benign (PAYO 2025-02-24 board-size bylaw; ASMB 2024-12-13 advance-notice bylaws)."
+  },
+  "candidates": [
+    {
+      "event_id": "hurn-step3-2025-02-25",
+      "candidate_id": "0001289848-25-000031",
+      "ticker": "HURN",
+      "company": "Huron Consulting Group Inc.",
+      "cik": "0001289848",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250225576320/en/Huron-Announces-Record-Fourth-Quarter-2024-Financial-Results-and-Provides-2025-Guidance",
+        "displayed_stamp_et": "Feb 25, 2025 4:05 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2025-02-25T16:05:00-05:00",
+        "sec_8k_accepted_et": "2025-02-25 16:21:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-25",
+      "reaction_session": "2025-02-26",
+      "twentieth_reaction_session": "2025-03-25",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | HURN | Nasdaq Global Select Market",
+        "prior_filing_cover_identical": "true -- read directly this time, not presumed: the prior 8-K's own cover reads 'Common Stock, par value $0.01 per share | HURN | NASDAQ Global Select Market' (capitalization of 'Nasdaq' only)",
+        "prior_8k": {
+          "accession": "0001289848-24-000208",
+          "accepted_et": "2024-10-29 16:25:12",
+          "note": "First-ever step-3 event for this issuer, so the identity anchor is its real prior-quarter earnings 8-K (Items 2.02,9.01)."
+        },
+        "spec_valid_from": "2024-10-29T00:00:00-04:00",
+        "spec_available_at": "2024-10-29T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-10-29 2.02,9.01 (prior quarter, anchor)",
+          "2024-12-16 8.01,9.01 (17:19 ET -- board Chair transition announced; read in full; before this event)",
+          "2025-02-25 2.02,9.01 <EVENT> (wire 16:05 ET)",
+          "2025-03-14 8.01 (12:04 ET, session 13 -- the Board authorized a $200 million increase to the share repurchase program, to $700 million in total, and extended it through 2026-12-31; read in full)",
+          "2025-03-25 7.01,9.01 (09:05 ET, session 20, the last session of the window -- Investor Day press release and presentation introducing financial goals through 2029; read)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, the one other pre-event 8-K (2024-12-16) is a board-chair transition, and a web search for earlier or preliminary Q4/FY2024 results located none. Absence of evidence, not proof."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-03-14 8-K Item 8.01 (read in full: $200 million buyback increase to $700 million in total; lands on session 13)",
+        "2025-03-25 8-K Items 7.01,9.01 (read: Investor Day press release and presentation with financial goals through 2029; lands on session 20, the last session)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "Item 8.01 8-K (read in full: the Board authorized a $200 million increase to the share repurchase program, to $700 million in total, and extended it through 2026-12-31) was filed 2025-03-14 (session 13 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 13 are listed (20). Items 7.01,9.01 8-K (read: the Investor Day press release and presentation, introducing financial goals through 2029; it lands on the last session of the window) was filed 2025-03-25 (session 20 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 20 are listed (20).",
+        "carried_in": "config/m2-step3-events.json (caveats array of this event)"
+      },
+      "additional_note": "SEC acceptance is 16 minutes after the wire's own displayed stamp."
+    },
+    {
+      "event_id": "coll-step3-2025-02-27",
+      "candidate_id": "0001558370-25-001799",
+      "ticker": "COLL",
+      "company": "Collegium Pharmaceutical, Inc.",
+      "cik": "0001267565",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/27/3034273/34897/en/Collegium-Reports-Record-Fourth-Quarter-and-Full-Year-2024-Financial-Results.html",
+        "displayed_stamp_et": "February 27, 2025 16:01 ET",
+        "minute_encoded_in_spec": "2025-02-27T16:01:00-05:00",
+        "sec_8k_accepted_et": "2025-02-27 16:01:24",
+        "sec_acceptance_not_before_wire_minute": "SEC acceptance landed 24 seconds into the same minute as the wire's own displayed stamp -- not before it."
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-27",
+      "reaction_session": "2025-02-28",
+      "twentieth_reaction_session": "2025-03-27",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.001 per share | COLL | The NASDAQ Global Select Market",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0001104659-24-115287",
+          "accepted_et": "2024-11-07 16:01:24",
+          "note": "This issuer's own step-3 batch-2 candidate (coll-step3-2024-11-07)."
+        },
+        "spec_valid_from": "2024-11-07T00:00:00-05:00",
+        "spec_available_at": "2024-11-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-07 2.02,5.02,7.01,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2024-11-14 9.01 (8-K/A, Ironshore pro-forma financial statements only; before this event)",
+          "2025-01-08 7.01,9.01 (08:05 ET -- FY2025 financial guidance and a business update; read: guidance only, no preliminary 2024 results; before this event)",
+          "2025-02-05 5.02 (08:05 ET -- a new director appointed; read; before this event)",
+          "2025-02-27 2.02,5.02,7.01,9.01 <EVENT> (wire 16:01 ET; the Item 5.02 is the step-down of the EVP, Chief Administrative Officer, General Counsel & Secretary effective 2025-03-07, announced inside this 8-K itself)",
+          "2025-03-17 5.02,8.01 (07:05 ET, session 12 -- a director nomination, the Chairman and one other director not standing for re-election, and a new EVP and General Counsel; read in full)"
+        ],
+        "earlier_disclosure_of_these_results": "None found of these Q4/FY2024 results. The 2025-01-08 8-K (FY2025 guidance) precedes it and this release reaffirms that guidance -- guidance, not results; the exhibit was read and carries no preliminary 2024 figures. Absence of evidence otherwise, not proof."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-03-17 8-K Items 5.02,8.01 (read in full: orderly governance changes -- board refresh, chair succession, a new general counsel; lands on session 12)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "Items 5.02,8.01 8-K (read in full: a director nomination, the Chairman and one other director not standing for re-election, and a new EVP and General Counsel -- orderly governance changes) was filed 2025-03-17 (session 12 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 12 are listed (20).",
+        "carried_in": "config/m2-step3-events.json (caveats array of this event)"
+      },
+      "additional_note": "This candidate's own 8-K bundles an Item 5.02 officer departure (Shirley Kuhlmann, EVP/CAO/General Counsel/Secretary), but the filing carries only two exhibits -- the earnings release (99.1) and the earnings presentation (99.2) -- no separate press release for the departure, so it fails condition 2 of the same-day policy and is not excluded. Same bundled-in-its-own-filing pattern this project already accepted for this issuer's 2024-11-07 CEO appointment."
+    },
+    {
+      "event_id": "lnsr-step3-2025-02-27",
+      "candidate_id": "0000950170-25-028363",
+      "ticker": "LNSR",
+      "company": "LENSAR, Inc.",
+      "cik": "0001320350",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/27/3033705/0/en/LENSAR-Reports-Fourth-Quarter-and-Full-Year-2024-Results-and-Provides-Business-Update.html",
+        "displayed_stamp_et": "February 27, 2025 07:00 ET",
+        "minute_encoded_in_spec": "2025-02-27T07:00:00-05:00",
+        "sec_8k_accepted_et": "2025-02-27 07:30:08",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-02-26",
+      "reaction_session": "2025-02-27",
+      "twentieth_reaction_session": "2025-03-26",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.01 per share | LNSR | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0000950170-24-122790",
+          "accepted_et": "2024-11-07 07:15:08",
+          "note": "This issuer's own step-3 batch-1 candidate (lnsr-step3-2024-11-07)."
+        },
+        "spec_valid_from": "2024-11-07T00:00:00-05:00",
+        "spec_available_at": "2024-11-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-07 2.02,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2025-02-27 2.02,9.01 <EVENT> (wire 07:00 ET)",
+          "2025-03-24 1.01,7.01,8.01,9.01 (08:11 ET, session 18 -- an Agreement and Plan of Merger with Alcon Research, LLC entered 2025-03-23: $14.00 per share in cash plus one contingent value right of $2.75 per share; read)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, there is no 8-K at all between it and this event, and a web search for preliminary Q4/FY2024 results located none. Absence of evidence, not proof."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-03-24 8-K Items 1.01,7.01,8.01,9.01 (read: definitive merger agreement with Alcon, $14.00 cash plus one $2.75 CVR per share; lands on session 18)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": [
+          "session_20_close_return"
+        ],
+        "note": "Items 1.01,7.01,8.01,9.01 8-K (read: a definitive Agreement and Plan of Merger with Alcon Research, LLC at $14.00 per share in cash plus one contingent value right of $2.75 per share -- announced take-out; the session-20 close reflects the announced deal, not just the earnings reaction) was filed 2025-03-24 (session 18 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 18 are listed (20).",
+        "carried_in": "config/m2-step3-events.json (caveats array of this event)"
+      },
+      "additional_note": "The most important flag in this batch. The announced Alcon take-out lands on session 18, so session_20_close_return (the only label measured after it) will mostly reflect the deal price, not the earnings reaction; day1 and sessions 2/5/10 all precede it. Also: this 8-K's own Exhibit 99.1 dateline reads 'ORLANDO, Fla. (February 27, 2024)' -- a typo for 2025 (the wire's own displayed stamp, the 8-K's Date of Report and the SEC acceptance time all say 2025-02-27). The wire stamp governs first_public_time; the typo is recorded, not relied on."
+    },
+    {
+      "event_id": "payo-step3-2025-02-27",
+      "candidate_id": "0001558370-25-001686",
+      "ticker": "PAYO",
+      "company": "Payoneer Global Inc.",
+      "cik": "0001845815",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250227134799/en/Payoneer-Reports-Fourth-Quarter-and-Full-Year-2024-Financial-Results",
+        "displayed_stamp_et": "Feb 27, 2025 7:30 AM Eastern Standard Time",
+        "minute_encoded_in_spec": "2025-02-27T07:30:00-05:00",
+        "sec_8k_accepted_et": "2025-02-27 07:35:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-02-26",
+      "reaction_session": "2025-02-27",
+      "twentieth_reaction_session": "2025-03-26",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | PAYO | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0001558370-24-014329",
+          "accepted_et": "2024-11-05 07:35:33",
+          "note": "This issuer's own step-3 batch-1 candidate (payo-step3-2024-11-05)."
+        },
+        "spec_valid_from": "2024-11-05T00:00:00-05:00",
+        "spec_available_at": "2024-11-05T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-05 2.02,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2024-12-30 8.01 (16:33 ET -- the Board intends to propose governance changes at the 2025 annual meeting: phase out the classified board, remove supermajority thresholds, majority voting; read; before this event)",
+          "2025-02-24 5.02,5.03,7.01,9.01 (16:34 ET -- a new director (Barak Eilam) and a bylaw amendment raising the maximum board size to ten, with a press release; read in full; three days before this event)",
+          "2025-02-27 2.02,9.01 <EVENT> (wire 07:30 ET)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, the two intervening 8-Ks are governance items, and a web search for preliminary Q4/FY2024 results located none. Absence of evidence, not proof."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K on the event date itself. One Item 5.03 8-K exists three days earlier (2025-02-24, read in full: a bylaw amendment raising the maximum board size to ten -- not a share-structure, split, or dividend action).",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Nothing found inside the 20-session window; this issuer's next 8-K after the event is the next quarter's own earnings 8-K (2025-05-07)."
+    },
+    {
+      "event_id": "okta-step3-2025-03-03",
+      "candidate_id": "0001660134-25-000043",
+      "ticker": "OKTA",
+      "company": "Okta, Inc.",
+      "cik": "0001660134",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250302847108/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2025-Financial-Results",
+        "displayed_stamp_et": "Mar 3, 2025 4:01 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2025-03-03T16:01:00-05:00",
+        "sec_8k_accepted_et": "2025-03-03 16:02:06",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-03-03",
+      "reaction_session": "2025-03-04",
+      "twentieth_reaction_session": "2025-03-31",
+      "identity_evidence": {
+        "event_filing_cover": "Class A common stock, par value $0.0001 per share | OKTA | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0001660134-24-000165",
+          "accepted_et": "2024-12-03 16:02:30",
+          "note": "This issuer's own step-3 batch-3 candidate (okta-step3-2024-12-03); the excluded 2025-02-04 candidate sits between them and is skipped as the anchor."
+        },
+        "spec_valid_from": "2024-12-03T00:00:00-05:00",
+        "spec_available_at": "2024-12-03T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-12-03 2.02,7.01,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2025-02-04 2.02,8.01 (08:38 ET -- EXCLUDED as its own candidate: a pure guidance reaffirmation plus a ~3% workforce reduction; reports/m2-step3-batch3-eligibility-review-2026-10-02.json)",
+          "2025-02-10 5.02,9.01 (08:37 ET -- officer/director change; before this event)",
+          "2025-03-03 2.02,7.01,9.01 <EVENT> (wire 16:01 ET; the Item 7.01 is only 'supplemental investor materials' posted to the investor site)"
+        ],
+        "earlier_disclosure_of_these_results": "None of these results found earlier. The 2025-02-04 8-K reaffirmed guidance already given on 2024-12-03 and disclosed a workforce reduction -- no new quarterly results, so no freshness caveat is proposed. Absence of evidence otherwise, not proof."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "SEC's own filing-index page shows acceptance at 16:02:06 ET; the data.sec.gov submissions JSON clock for this filer shows 21:02:06 ET (shifted by the UTC offset) -- the index page governs. Nothing found inside the 20-session window; this issuer's next 8-K after the event is 2025-05-27."
+    },
+    {
+      "event_id": "achv-step3-2025-03-11",
+      "candidate_id": "0000950170-25-036830",
+      "ticker": "ACHV",
+      "company": "Achieve Life Sciences, Inc.",
+      "cik": "0000949858",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/03/11/3040444/0/en/achieve-life-sciences-reports-financial-results-for-fourth-quarter-and-year-end-2024-and-provides-update-on-the-cytisinicline-development-program.html",
+        "displayed_stamp_et": "March 11, 2025 07:30 ET",
+        "minute_encoded_in_spec": "2025-03-11T07:30:00-04:00",
+        "sec_8k_accepted_et": "2025-03-11 07:35:08",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2025-03-10",
+      "reaction_session": "2025-03-11",
+      "twentieth_reaction_session": "2025-04-07",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 per share | ACHV | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0000950170-24-123334",
+          "accepted_et": "2024-11-07 16:11:06",
+          "note": "This issuer's own step-3 batch-1 candidate (achv-step3-2024-11-07)."
+        },
+        "spec_valid_from": "2024-11-07T00:00:00-05:00",
+        "spec_available_at": "2024-11-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-07 2.02,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2024-12-09 5.02 (officer/director change; content not opened; before this event)",
+          "2025-01-10 5.02 (officer/director change; content not opened; before this event)",
+          "2025-02-10 8.01,9.01 (16:10 ET -- the Data Safety Monitoring Committee's second review of the ORCA-OL trial found no unexpected adverse events; read; before this event)",
+          "2025-03-11 2.02,9.01 <EVENT> (wire 07:30 ET)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's; the intervening 8-Ks are officer changes and a clinical safety-review update, not financial results. Absence of evidence, not proof."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "SEC's own filing-index page shows acceptance at 07:35:08 ET; the data.sec.gov submissions JSON clock for this filer shows 11:35:08 (shifted by the UTC offset) -- the index page governs. Nothing found inside the 20-session window; this issuer's next 8-K after the event is 2025-05-13."
+    },
+    {
+      "event_id": "asmb-step3-2025-03-20",
+      "candidate_id": "0000950170-25-042660",
+      "ticker": "ASMB",
+      "company": "Assembly Biosciences, Inc.",
+      "cik": "0001426800",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/03/20/3046702/0/en/Assembly-Biosciences-Reports-Year-End-2024-Financial-Results-and-Recent-Highlights.html",
+        "displayed_stamp_et": "March 20, 2025 16:05 ET",
+        "minute_encoded_in_spec": "2025-03-20T16:05:00-04:00",
+        "sec_8k_accepted_et": "2025-03-20 16:10:11",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-03-20",
+      "reaction_session": "2025-03-21",
+      "twentieth_reaction_session": "2025-04-17",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.001 | ASMB | The Nasdaq Global Select Market",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0000950170-24-123355",
+          "accepted_et": "2024-11-07 16:14:14",
+          "note": "This issuer's own step-3 batch-1 candidate (asmb-step3-2024-11-07)."
+        },
+        "spec_valid_from": "2024-11-07T00:00:00-05:00",
+        "spec_available_at": "2024-11-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-07 2.02,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2024-11-07 1.01,9.01 (16:50 ET -- the ATM program already assessed in reports/m2-step3-same-day-catalyst-review-2026-10-01.json; before this event)",
+          "2024-12-13 5.03,9.01 (bylaw amendment on advance-notice provisions only; read; before this event)",
+          "2024-12-19 1.01,3.02,9.01 (Gilead collaboration amendment, $10.0 million payment and an additional Gilead share purchase at a 35% premium; read; before this event)",
+          "2024-12-26 8.01,9.01 (interim Phase 1b clinical results; read; before this event)",
+          "2025-01-03 1.01,2.03,9.01 (sublease amendment; read; before this event)",
+          "2025-02-20 8.01,9.01 (16:05 ET -- interim Phase 1a results for ABI-1179; read; before this event)",
+          "2025-03-20 2.02,9.01 <EVENT> (wire 16:05 ET)"
+        ],
+        "earlier_disclosure_of_these_results": "None found of these financial results. The intervening 8-Ks are clinical-data updates, a collaboration amendment, a sublease, and bylaw changes; none discloses Q4/FY2024 financial results. Absence of evidence otherwise, not proof."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K on the event date itself. One Item 5.03 8-K exists 3 months earlier (2024-12-13, read: advance-notice bylaw provisions only -- not a share-structure or split action).",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Nothing found inside the 20-session window; this issuer's next 8-K after the event is 2025-05-08."
+    },
+    {
+      "event_id": "klc-step3-2025-03-20",
+      "candidate_id": "0000950170-25-042670",
+      "ticker": "KLC",
+      "company": "KinderCare Learning Companies, Inc.",
+      "cik": "0001873529",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250320019070/en/KinderCare-Reports-Fourth-Quarter-2024-Financial-Results",
+        "displayed_stamp_et": "Mar 20, 2025 4:15 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2025-03-20T16:15:00-04:00",
+        "sec_8k_accepted_et": "2025-03-20 16:15:12",
+        "sec_acceptance_not_before_wire_minute": "SEC acceptance landed 12 seconds into the same minute as the wire's own displayed stamp -- not before it."
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-03-20",
+      "reaction_session": "2025-03-21",
+      "twentieth_reaction_session": "2025-04-17",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | KLC | New York Stock Exchange",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0000950170-24-129261",
+          "accepted_et": "2024-11-20 16:15:09",
+          "note": "This issuer's own step-3 batch-2 candidate (klc-step3-2024-11-20)."
+        },
+        "spec_valid_from": "2024-11-20T00:00:00-05:00",
+        "spec_available_at": "2024-11-20T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-20 2.02,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2025-02-11 1.01,2.03 (16:30 ET -- a $22.5 million incremental increase to the revolving credit commitments and a $5.0 million reclassification/extension, $262.5 million in total; read; before this event)",
+          "2025-03-20 2.02,9.01 <EVENT> (wire 16:15 ET)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and the one intervening 8-K is a revolver upsizing. Absence of evidence, not proof."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Nothing found inside the 20-session window; this issuer's next 8-K after the event is 2025-05-13."
+    },
+    {
+      "event_id": "tecx-step3-2025-03-20",
+      "candidate_id": "0000950170-25-042630",
+      "ticker": "TECX",
+      "company": "Tectonic Therapeutic, Inc.",
+      "cik": "0001681087",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/03/20/3046690/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2024-Financial-Results-and-Recent-Business-Highlights.html",
+        "displayed_stamp_et": "March 20, 2025 16:01 ET",
+        "minute_encoded_in_spec": "2025-03-20T16:01:00-04:00",
+        "sec_8k_accepted_et": "2025-03-20 16:02:45",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-03-20",
+      "reaction_session": "2025-03-21",
+      "twentieth_reaction_session": "2025-04-17",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.0001 par value per share | TECX | The Nasdaq Global Market",
+        "prior_filing_cover_identical": "true -- compared against the cover row recorded for this issuer's own earlier step-3 event (read in full when that event was packeted); identical",
+        "prior_8k": {
+          "accession": "0000950170-24-123411",
+          "accepted_et": "2024-11-07 16:27:33",
+          "note": "This issuer's own step-3 batch-1 candidate (tecx-step3-2024-11-07)."
+        },
+        "spec_valid_from": "2024-11-07T00:00:00-05:00",
+        "spec_available_at": "2024-11-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-07 2.02,9.01 (this issuer's own prior step-3 event, anchor)",
+          "2025-01-13 7.01,9.01 (16:03 ET -- an updated corporate presentation; read; before this event)",
+          "2025-01-30 7.01,8.01,9.01 (06:35 ET -- TX45 Phase 1b interim data release; read; before this event)",
+          "2025-02-03 1.01,3.02,7.01,9.01 (06:30 ET -- a $185.0 million private placement; read, and its press release carries no December 31, 2024 financial figures; before this event)",
+          "2025-03-20 2.02,9.01 <EVENT> (wire 16:01 ET)"
+        ],
+        "earlier_disclosure_of_these_results": "None found of these financial results. The intervening 8-Ks are a presentation update, clinical data, and a financing; the financing's press release was searched and carries no preliminary year-end figures. Absence of evidence otherwise, not proof."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 37004597885)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 37004597885). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Nothing found inside the 20-session window; this issuer's next 8-K after the event is 2025-05-08."
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": [
+      "lnsr-step3-2025-02-27",
+      "payo-step3-2025-02-27",
+      "achv-step3-2025-03-11"
+    ],
+    "after_hours": [
+      "hurn-step3-2025-02-25",
+      "coll-step3-2025-02-27",
+      "okta-step3-2025-03-03",
+      "asmb-step3-2025-03-20",
+      "klc-step3-2025-03-20",
+      "tecx-step3-2025-03-20"
+    ]
+  },
+  "flagged_not_a_blanket_clean_signoff": {
+    "lnsr-step3-2025-02-27": "The most important flag: an announced Alcon take-out ($14.00 cash plus a $2.75 CVR per share) lands on session 18, so session_20_close_return reflects the deal, not the earnings reaction. Every earlier label precedes it.",
+    "hurn-step3-2025-02-25": "Two inside-window items, both read: a $200 million buyback increase (session 13) and the Investor Day with financial goals through 2029 (session 20, the last session). Both reach only session_20_close_return.",
+    "coll-step3-2025-02-27": "A bundled Item 5.02 officer departure inside the event's own 8-K (no separate press release, so it fails condition 2 of the same-day policy), plus orderly board and general-counsel changes at session 12.",
+    "okta-step3-2025-03-03": "The identity anchor chains over the excluded 2025-02-04 candidate; that candidate's guidance reaffirmation disclosed no new results, so no freshness caveat is proposed.",
+    "alkt-and-rekr-exclusions": "ALKT 2025-02-27 is excluded under the same-day policy (its first real application since MEI) and REKR 2025-03-17 as a preliminary pre-announcement -- reports/m2-step3-batch4-eligibility-review-2026-10-02.json. REKR's later 2025-03-31 candidate will need a freshness caveat when its batch is built."
+  },
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all nine', or a list of event_ids/decisions -- including, if you would rather, a decision to include ALKT 2025-02-27 with a caveat instead of excluding it (it would then be built as a tenth event of this batch). Then the attestations are added for the signed-off candidates, the workflow runs for real, and each result is recorded with a pinned label digest.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- each read item is described, none is resolved here, and they travel with the computed labels (config/m2-step3-events.json carries them).",
+    "Chronology is built from each issuer's 8-K filing history plus targeted web searches; other SEC forms (prospectus supplements, Schedule 13D/G, Form 4) and press releases that never became an 8-K are not swept -- the same residual gap as batches 1-3.",
+    "Prior-quarter identity for the eight chain-anchored issuers is compared against the cover row recorded in each issuer's own earlier packet, not re-fetched; HURN's prior cover was read directly."
+  ]
+}
