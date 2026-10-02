@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "proposal": "docs/M2-STEP-3-LABEL-ENGINE-DRY-RUN-SCOPE.md",
+  "context": "All six step-3 batches finished on 2026-10-02: 60 events attested, computed and pinned, 6 excluded, all 66 frozen candidates dispositioned. Claude's closing message (assistant message at 2026-10-02T18:20:10.619Z) named the remaining work and then said, verbatim: \"The `depth3-consolidated-audit.yml` workflow doesn't exist yet. Step 2's `depth-consolidated-audit.yml` is the model for it, so building it would be the next piece of work.\n\nThe audit will probably be blocked on the `candidate_source_hashes` gate, as step 2's was. Step 3's candidate list came from a browser-fetched, filtered subset of SEC data rather than raw bytes, so there's nothing durable to hash against. If you want it, I'd put a short scope proposal in front of you first, as I did for step 2, before building anything. Say \"start the step-3 audit\" and I'll do that. M4 stays unauthorized.\"",
+  "decisions": {
+    "build_the_step3_audit": {
+      "owner_reply": "yes build it",
+      "owner_reply_at": "2026-10-02T18:21:39.299Z",
+      "owner_reply_source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl), not from a summary",
+      "how_it_was_read": "The offer above had two parts -- build the workflow, or first show a short scope proposal and wait for the words \"start the step-3 audit\". The reply used neither of those exact words. Claude read \"yes build it\" as a go-ahead to build directly: the workflow, the reviewed candidate ledger, the acceptance review and the label-engine dry run, with docs/M2-STEP-3-LABEL-ENGINE-DRY-RUN-SCOPE.md written as the record of what was built rather than as a proposal ahead of it. If a proposal first was meant, nothing here is accepted by having been built and every piece is reversible by reverting the commits.",
+      "effect": "Claude builds .github/workflows/depth3-consolidated-audit.yml, reports/m2-step3-reviewed-candidate-ledger.json, reports/m2-step3-acceptance-review.json and tests/test_step3_audit.py, runs the audit once the workflow exists on main (standalone, under step 3's own protocol, as step 2's was), and records the real result. It authorizes nothing else: not acceptance of step 3, not any declaration record, not Milestone 4 or anything beyond it."
+    },
+    "candidate_source_hashes_archive": {
+      "owner_reply": null,
+      "status": "Claude's own implementation choice inside the authorized build. The owner was not asked and did not decide it. Flagged for the owner to confirm or reverse.",
+      "correction_of_an_earlier_claim": "Claude's message above said there was \"nothing durable to hash against\" for step 3's candidate source hashes. That overstated the problem and had not been checked: the exact 23 filtered 8-K payloads that the cohort freeze hashed still existed in the session's scratch space (not in the repository) and reproduce all 23 candidate source_sha256 values byte for byte.",
+      "effect": "Those 23 payloads are committed under archive/m2-step3-sec-freeze/nre-sec-freeze/raw/ (the layout nre.consolidated_audit.archive_sources() reads; under archive/, not the gitignored data/), and the workflow passes --archive-dir archive/m2-step3-sec-freeze, so the candidate_source_hashes gate can be evaluated instead of failing for want of bytes.",
+      "what_a_pass_means": "That the archived bytes are the bytes the freeze hashed, so the ledger's source hashes are reproducible rather than merely asserted.",
+      "what_a_pass_does_not_mean": "That those bytes equal SEC's raw submissions.json. The freeze used a browser-fetched, filtered, re-serialized 8-K subset (source_representation browser_fetched_8k_filtered_subset) because data.sec.gov/submissions returned HTTP 403 from GitHub Actions in all six dispatches; each payload's metadata says so and records SEC's full-response hash and size separately. Milestone 1's archive held the real raw bytes, so an all-gates-passed step-3 result is a weaker statement on this gate than Milestone 1's was, and step 2 was accepted with this gate knowingly failing.",
+      "to_reverse": "Delete archive/m2-step3-sec-freeze/ and the --archive-dir argument in .github/workflows/depth3-consolidated-audit.yml (and the tests that read the archive). The audit then fails exactly one gate, candidate_source_hashes, as step 2's did; tests/test_step3_audit.py::AuditTests::test_only_the_archive_gate_fails_without_the_archive shows this offline."
+    }
+  },
+  "not_a_claim": [
+    "Not Milestone 2 step 3 acceptance. The owner's own acceptance decision, and any declaration record for it, remain a separate, later step that needs the owner's explicit word.",
+    "Not Milestone 4 or anything past it, which stay unauthorized (master prompt section 41: do not silently move to the next milestone).",
+    "Not a claim about the audit's outcome. audit_cohort() never sets milestone_accepted true regardless of gate results, and a clean result is explicitly 'review required'."
+  ]
+}

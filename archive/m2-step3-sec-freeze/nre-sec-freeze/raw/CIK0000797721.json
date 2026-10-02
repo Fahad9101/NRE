@@ -1,0 +1,11 @@
+{
+  "payload_file": "CIK0000797721.payload",
+  "sha256": "3a7d73c17c8828a863a3fb5cb342e4da85ea54e4fa1be57ba329ab3e238e7681",
+  "size": 18319,
+  "url": "https://data.sec.gov/submissions/CIK0000797721.json",
+  "retrieved_at": "2026-10-01T18:05:53.304Z",
+  "source_representation": "browser_fetched_8k_filtered_subset",
+  "real_source_full_sha256": "e1f1b69d1c4114a2f7c39fa51f7b84ae631d0651f2d1dbdd0b3ac842412bc993",
+  "real_source_full_size": 155966,
+  "note": "This payload is the filtered, re-serialized 8-K/8-K-A subset of the issuer's submissions.json that the cohort freeze hashed (reports/m2-step3-sec-cohort-freeze-result-2026-10-01.json) -- NOT a byte-for-byte copy of SEC's raw response, whose own hash and size are recorded separately in real_source_full_sha256 / real_source_full_size."
+}

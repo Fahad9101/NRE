@@ -1,0 +1,39 @@
+{
+  "_note": "Aggregates evidence already on file across the six batches, plus one new piece of work done for this file: an independent re-verification of the first-public timestamps of the four spot-checked events against a third source (reports/m2-step3-independent-timing-spot-checks-2026-10-02.json). That re-verification was performed by Claude (the assistant) on 2026-10-02 after the owner's batch-6 sign-off; the owner did not review it and it is not part of what the owner signed off on. The reviewer named on each spot check is the project owner, whose review is the 'yes go ahead' sign-off on the batch-6 signoff packet that contains these four events -- the same basis step 2's review used. The owner's authorization to build this audit is reports/m2-step3-label-engine-dry-run-scope-authorization-2026-10-02.json ('yes build it'). The choice to archive the exact freeze payloads, so that the candidate_source_hashes gate can be evaluated, was Claude's own implementation decision inside that build: it is flagged there for the owner to confirm or reverse and was not an owner decision.",
+  "discovery_coverage_evidence": "Candidate membership was frozen on 2026-10-01T18:06:49Z (membership SHA256 1ef5476b0628aad4651da42d8737ccc45e37ec9def7083404cc6f192da1fc5c2; 66 candidates across the 23 already-accepted Milestone 1 issuers) by nre.depth_cohort from each issuer's real SEC submissions.json 8-K history, fetched through the built-in browser because data.sec.gov/submissions was blocked (HTTP 403) from GitHub Actions in all 6 real dispatches (reports/m2-step3-sec-cohort-freeze-blocked-2026-09-30.json); full reasoning in reports/m2-step3-sec-cohort-freeze-result-2026-10-01.json; also config/m2-step3-frozen-issuer-cohort.json, config/m2-step3-frozen-candidate-ledger.json and reports/m2-step3-sec-cohort-freeze.json. The exact 23 payloads the freeze hashed are archived in archive/m2-step3-sec-freeze/ and reproduce every candidate's source hash; they are the filtered 8-K subset the freeze hashed, not SEC's raw bytes (each payload's metadata records SEC's full-response hash and size).",
+  "frozen_membership_sha256": "1ef5476b0628aad4651da42d8737ccc45e37ec9def7083404cc6f192da1fc5c2",
+  "identity_history_evidence": "For each of the 60 included events, historical security identity (common stock, registered class, ticker, exchange) was established from the event-date 8-K cover page and cross-checked against the issuer's own prior-quarter or earlier-event cover, recorded per batch in reports/m2-step3-batch1-signoff-packet-2026-10-02.json through reports/m2-step3-batch6-signoff-packet-2026-10-02.json (batches 5 and 6 compared each chain-anchored cover row programmatically against the row recorded in the same issuer's own earlier packet). Special cases documented in the packets: SLSN 2025-05-05 (OTCQB:NANX until the Nasdaq uplisting at the open of 2025-04-08, so its identity floor is the listing date, backed by Form 8-A12B, the Nasdaq certification, the uplisting release and the 12(b) file number; its own 8-K cover table is stale), KLC (IPO 2024-10-10, its first event anchored to its IPO 8-K), TECX's cover-wording change, and the 2025-01-09 calendar closure correction (reports/m2-step3-calendar-2025-01-09-correction-2026-10-02.json). Scope exclusion applied: SLSN 2025-03-26, an OTCQB common stock (reports/m2-step3-batch5-eligibility-review-2026-10-02.json).",
+  "prices_first_accessed_at": "2026-10-01T20:57:25Z",
+  "prices_first_accessed_at_basis": "Creation time of the first real dry run that fetched Alpaca bars for step-3 events (depth3-event-acquire.yml run #2, https://github.com/Fahad9101/NRE/actions/runs/36925339728). Run #1 (2026-10-01T20:11:22Z) failed in 8 seconds before any acquisition because config/m2-step3-events.json did not yet exist at its commit, so it accessed no prices. The cohort freeze (frozen_at 2026-10-01T18:06:49Z) precedes both.",
+  "provider_rights_evidence": "Provider-rights-at-scale for step 3 was explicitly re-asked and re-confirmed by the project owner for up to 66 events in reports/m2-step3-provider-scope-authorization-2026-10-02.json, consistent with how Milestone 1 and step 2 re-asked at every size increase rather than treating a standing authorization as automatically extending; the provider block in config/m2-step3-events.json mirrors step 2's real values. The underlying rights review is reports/m1-alpaca-provider-rights-review-2026-09-23.json.",
+  "spot_checks": [
+    {
+      "event_id": "lnsr-step3-2025-05-08",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step3-batch6-signoff-packet-2026-10-02.json; reports/m2-step3-batch6-complete-events-2026-10-02.json; reports/m2-step3-independent-timing-spot-checks-2026-10-02.json"
+    },
+    {
+      "event_id": "achv-step3-2025-05-13",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step3-batch6-signoff-packet-2026-10-02.json; reports/m2-step3-batch6-complete-events-2026-10-02.json; reports/m2-step3-independent-timing-spot-checks-2026-10-02.json"
+    },
+    {
+      "event_id": "vsat-step3-2025-05-20",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step3-batch6-signoff-packet-2026-10-02.json; reports/m2-step3-batch6-complete-events-2026-10-02.json; reports/m2-step3-independent-timing-spot-checks-2026-10-02.json"
+    },
+    {
+      "event_id": "okta-step3-2025-05-27",
+      "reviewers": [
+        "Fahad9101"
+      ],
+      "evidence": "reports/m2-step3-batch6-signoff-packet-2026-10-02.json; reports/m2-step3-batch6-complete-events-2026-10-02.json; reports/m2-step3-independent-timing-spot-checks-2026-10-02.json"
+    }
+  ]
+}

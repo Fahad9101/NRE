@@ -1,0 +1,30 @@
+name: Consolidated cohort audit (Milestone 2 step 3)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/depth3-consolidated-audit.yml'
+      - 'nre/consolidated_audit.py'
+      - 'nre/acceptance.py'
+      - 'config/m2-step3-protocol.json'
+      - 'reports/m2-step3-reviewed-candidate-ledger.json'
+      - 'reports/m2-step3-acceptance-review.json'
+      - 'archive/m2-step3-sec-freeze/**'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run the formal cohort audit over Milestone 2 step 3's 60 accepted events
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: python -m nre.consolidated_audit --spec config/m2-step3-events.json --protocol config/m2-step3-protocol.json --ledger reports/m2-step3-reviewed-candidate-ledger.json --review reports/m2-step3-acceptance-review.json --calendar config/m2-step3-merged-calendar.json --archive-dir archive/m2-step3-sec-freeze

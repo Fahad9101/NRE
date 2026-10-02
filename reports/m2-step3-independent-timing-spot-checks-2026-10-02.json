@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "purpose": "Independent re-verification of the first-public timestamps of the four events named as spot checks in reports/m2-step3-acceptance-review.json, against a source that none of the original per-event evidence used. Each event's packet already cross-checks the wire-displayed stamp against the SEC filing's own acceptance time; this adds a third, separate source per event.",
+  "selection_rule": "Fixed before looking at any outcome and applied mechanically: of the 57 events whose session_20_close_return is non-null (the audit's own 'complete' definition), the two latest by published_at in each release-timing class -- premarket: LNSR 2025-05-08 07:00 ET and ACHV 2025-05-13 07:30 ET; after_hours: VSAT 2025-05-20 16:05 ET and OKTA 2025-05-27 16:01 ET.",
+  "checks": [
+    {
+      "event_id": "lnsr-step3-2025-05-08",
+      "timing_class": "premarket",
+      "recorded": {"wire": "GlobeNewswire 'May 08, 2025 07:00 ET'", "published_at": "2025-05-08T07:00:00-04:00", "sec_8k_accepted_et": "2025-05-08 07:15:09"},
+      "independent_sources": [
+        "Company investor-relations newsroom page title: 'LENSAR Reports First Quarter 2025 Results and Provides Business Update - Thu, 05/08/2025 - 07:00' (https://ir.lensar.com/news-releases/news-release-details/lensar-reports-first-quarter-2025-results-and-provides-business)",
+        "Yahoo Finance syndication copy, whose URL carries a UTC creation stamp of 11:00:00.305 = 07:00:00 EDT (https://finance.yahoo.com/news/lensar-reports-first-quarter-2025-110000305.html)"
+      ],
+      "result": "AGREES -- 07:00 ET on 2025-05-08, ahead of the 07:15:09 SEC acceptance.",
+      "note": "The same-day Form 8-K/A (accepted 16:01:08 ET) corrects narrative errors in this release; it does not move the first public time."
+    },
+    {
+      "event_id": "achv-step3-2025-05-13",
+      "timing_class": "premarket",
+      "recorded": {"wire": "GlobeNewswire 'May 13, 2025 07:30 ET'", "published_at": "2025-05-13T07:30:00-04:00", "sec_8k_accepted_et": "2025-05-13 07:34:08"},
+      "independent_sources": [
+        "Company investor-relations newsroom page: 'May 13, 2025 7:30am EDT' (https://ir.achievelifesciences.com/news-events/press-releases/detail/226/achieve-life-sciences-reports-first-quarter-2025-financial-results-and-highlights-updates-in-cytisinicline-program)"
+      ],
+      "result": "AGREES -- 07:30 ET on 2025-05-13, ahead of the 07:34:08 SEC acceptance.",
+      "note": "SEC's filing-index page (07:34:08 ET) governs over the submissions JSON clock for this filer, which runs ahead by the UTC offset."
+    },
+    {
+      "event_id": "vsat-step3-2025-05-20",
+      "timing_class": "after_hours",
+      "recorded": {"wire": "GlobeNewswire 'May 20, 2025 16:05 ET'", "published_at": "2025-05-20T16:05:00-04:00", "sec_8k_accepted_et": "2025-05-20 16:05:29"},
+      "independent_sources": [
+        "Yahoo Finance syndication copy, whose URL carries a UTC creation stamp of 20:05:00.883 = 16:05:00 EDT (https://finance.yahoo.com/news/viasat-releases-fourth-quarter-fiscal-200500883.html)",
+        "Company investor-relations release page (https://investors.viasat.com/news-releases/news-release-details/viasat-releases-fourth-quarter-and-fiscal-year-2025-financial) confirms the date, 2025-05-20; it displays no time of day, so it does not corroborate the minute."
+      ],
+      "result": "AGREES -- 16:05 ET on 2025-05-20, 29 seconds before the SEC acceptance.",
+      "note": "The release is a short notice that the results are in a shareholder letter posted to the investor site at the same time (the 8-K's Exhibit 99.2)."
+    },
+    {
+      "event_id": "okta-step3-2025-05-27",
+      "timing_class": "after_hours",
+      "recorded": {"wire": "BusinessWire 'May 27, 2025 4:01 PM Eastern Daylight Time'", "published_at": "2025-05-27T16:01:00-04:00", "sec_8k_accepted_et": "2025-05-27 16:06:33"},
+      "independent_sources": [
+        "Yahoo Finance syndication copy, whose URL carries a UTC creation stamp of 20:01:00.906 = 16:01:00 EDT (https://finance.yahoo.com/news/okta-announces-first-quarter-fiscal-200100906.html)",
+        "Company investor-relations release page (https://investor.okta.com/news-and-events/news-releases/news-details/2025/Okta-Announces-First-Quarter-Fiscal-Year-2026-Financial-Results/default.aspx) confirms the date, 2025-05-27; it displays no time of day, so it does not corroborate the minute."
+      ],
+      "result": "AGREES -- 16:01 ET on 2025-05-27, ahead of the 16:06:33 SEC acceptance.",
+      "note": "SEC's filing-index page (16:06:33 ET) governs over the submissions JSON clock for this filer, which runs ahead by the UTC offset."
+    }
+  ],
+  "limits": [
+    "Yahoo Finance's syndication URLs embed a UTC HHMMSSmmm creation stamp; reading it as the release time is an inference from the URL pattern, used only as a corroborating signal. It agreed with the wire stamp everywhere it was looked at in this project (HURN, COLL, PAYO and KLC in earlier batches, and the three above).",
+    "For VSAT and OKTA the company pages show only the date, so the minute is corroborated by one secondary source, not two.",
+    "A re-verification of four events, not of all 60: every event's packet carries its own wire-versus-SEC-acceptance cross-check."
+  ],
+  "not_a_claim": "Not a verification that any first-public time is the earliest possible: absence of an earlier disclosure is still a residual gap each packet states."
+}
