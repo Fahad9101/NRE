@@ -128,6 +128,16 @@ class SpecTests(unittest.TestCase):
         self.rejects(lambda s: s["events"][0]["source"].update(text="no time shown https://example.com"),
                      "not found in source text")
 
+    def test_a_caveat_cannot_name_a_label_the_pipeline_never_computes(self):
+        self.rejects(lambda s: s["events"][0].update(
+            caveats=[{"labels": ["session_6_close_return"], "note": "x"}]), "never computes: session_6_close_return")
+
+    def test_every_shipped_caveat_names_only_real_labels(self):
+        for name in ("m1-events.json", "m2-step2-events.json", "m2-combined-events.json", "m2-step3-events.json"):
+            for event in json.loads((ROOT / "config" / name).read_text(encoding="utf-8"))["events"]:
+                for caveat in event.get("caveats", []):
+                    self.assertLessEqual(set(caveat["labels"]), ea.LABEL_NAMES | {"all"}, name + " " + event["event_id"])
+
     def test_expected_timing_and_session_must_agree_with_calendar(self):
         self.rejects(lambda s: s["events"][0].update(expected_release_timing="after_hours"), "release timing")
         self.rejects(lambda s: s["events"][0].update(expected_reaction_session="2026-04-01"), "reaction session")
@@ -449,6 +459,9 @@ class RunEventTests(unittest.TestCase):
     def test_caveats_travel_with_the_report(self):
         caveat = run(CXT)["caveats"][0]
         self.assertEqual(caveat["labels"], ["session_10_close_return", "session_20_close_return"])
+
+    def test_label_names_constant_matches_what_the_pipeline_computes(self):
+        self.assertEqual(set(run(SLSN)["computed_outcome"]["labels"]), ea.LABEL_NAMES)
 
     def test_recorded_labels_pin(self):
         event = event_copy(SLSN)

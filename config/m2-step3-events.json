@@ -115,7 +115,15 @@
       "recorded_result": {
         "labels_sha256": "5a314ceb0a36f6aad3d3988f963d8a2ca3ee646fd4d5f11d0b687f9a1b030893",
         "recorded_in": "reports/m2-step3-batch1-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 8.01,9.01 8-K was filed 2025-05-20 (session 19 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 19 are listed (20)."
+        }
+      ]
     },
     {
       "event_id": "parr-step3-2024-11-04",
@@ -166,7 +174,23 @@
       "recorded_result": {
         "labels_sha256": "7b2ddb65e86563a62a4f78a94155444289eba0ba8d768081ebc3a280dc88dd8e",
         "recorded_in": "reports/m2-step3-batch1-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02 8-K (officer/director change) was filed 2024-11-12 (session 6 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 6 are listed (10, 20)."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 1.01,2.03,9.01 8-K (new financing agreement) was filed 2024-11-18 (session 10 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 10 are listed (10, 20)."
+        }
+      ]
     },
     {
       "event_id": "parr-step3-2025-02-25",
@@ -370,7 +394,21 @@
       "recorded_result": {
         "labels_sha256": "2c213e4f830091812d3642c38c9b3c69a78a53a6dcd7a8a6a0a0d56297306ad4",
         "recorded_in": "reports/m2-step3-batch1-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02,5.07 8-K (officer/director change and annual-meeting results) was filed 2025-05-22 (session 13 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 13 are listed (20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02,9.01 8-K (officer/director change) was filed 2025-05-30 (session 18 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 18 are listed (20)."
+        }
+      ]
     },
     {
       "event_id": "lnsr-step3-2024-11-07",
@@ -574,7 +612,22 @@
       "recorded_result": {
         "labels_sha256": "bcf7f0826e5d42cc96010704f91f14da579da75bc6d2480593700b27aacd05a6",
         "recorded_in": "reports/m2-step3-batch2-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return",
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Most of this quarter's headline figures were already public via the 2024-10-28 pre-announcement (reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json); this event's own reaction likely reflects confirmation of already-known numbers rather than a fresh surprise. Applies to every computed label."
+        }
+      ]
     },
     {
       "event_id": "payo-step3-2024-11-05",
@@ -676,7 +729,29 @@
       "recorded_result": {
         "labels_sha256": "16e0a8945fd4f649931c565ec9e67641da76eaec4d99e1d1594b19fbb1e1b315",
         "recorded_in": "reports/m2-step3-batch2-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return",
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Most of this quarter's headline figures were already public via the 2024-10-16 pre-announcement, three weeks before this release (reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json). Applies to every computed label."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 5.05 8-K (Code of Ethics amendment/waiver) was filed 2024-11-19 (session 9 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 9 are listed (10, 20)."
+        }
+      ]
     },
     {
       "event_id": "vsat-step3-2024-11-06",
@@ -1033,7 +1108,22 @@
       "recorded_result": {
         "labels_sha256": "aec0e8ed4de011e5548dabdf1795fe259544f6e0a697bfb702eed96f574955e0",
         "recorded_in": "reports/m2-step3-batch2-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return",
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02 8-K (officer/director change) was filed 2024-11-15 (session 1 of this event's window); content not opened. it lands on the reaction session itself, so every computed label is listed."
+        }
+      ]
     },
     {
       "event_id": "klc-step3-2024-11-20",
@@ -1186,7 +1276,17 @@
       "recorded_result": {
         "labels_sha256": "2f4862e29558cf40830e031105cc1a5de6fdec54f9241fab6934351de50c696d",
         "recorded_in": "reports/m2-step3-batch3-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Two Item 7.01,9.01 8-Ks (the Investor Day itself) was filed 2024-12-17 (session 4 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 4 are listed (5, 10, 20)."
+        }
+      ]
     },
     {
       "event_id": "jbss-step3-2025-01-29",
@@ -1288,7 +1388,15 @@
       "recorded_result": {
         "labels_sha256": "ec9084c15795effc196df8b681d469d340ce99f987e3adcbcae88e21a81249a9",
         "recorded_in": "reports/m2-step3-batch3-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02 8-K (officer/director change) was filed 2025-03-07 (session 20 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 20 are listed (20)."
+        }
+      ]
     },
     {
       "event_id": "ttwo-step3-2025-02-06",
@@ -1390,7 +1498,22 @@
       "recorded_result": {
         "labels_sha256": "375b5bde156377adc5952759cae06ae9c529443893997fa14e1ec8d7765f1b3e",
         "recorded_in": "reports/m2-step3-batch3-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return",
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "This quarter was preliminarily pre-announced 10 days earlier (2025-02-10, excluded as its own candidate, reports/m2-step3-batch3-eligibility-review-2026-10-02.json) alongside a real debt-exchange transaction -- the third instance of this exact pattern for this issuer. Applies to every computed label."
+        }
+      ]
     },
     {
       "event_id": "aspn-step3-2025-02-12",
@@ -1441,7 +1564,21 @@
       "recorded_result": {
         "labels_sha256": "5d8d94dcb75ea55936ccdc5116087b918e8b6da2474e2f7dc8d25e4bb99b86a1",
         "recorded_in": "reports/m2-step3-batch3-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02 8-K (officer/director change) was filed 2025-03-06 (session 15 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 15 are listed (20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.02,9.01 8-K (officer/director change) was filed 2025-03-07 (session 16 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 16 are listed (20)."
+        }
+      ]
     },
     {
       "event_id": "cxt-step3-2025-02-12",
@@ -1543,7 +1680,23 @@
       "recorded_result": {
         "labels_sha256": "a3430bdfb1fbe970bdd4fa546f5640a8c825f7f4254e57a5d26d309b7622bf05",
         "recorded_in": "reports/m2-step3-batch3-complete-events-2026-10-02.json"
-      }
+      },
+      "caveats": [
+        {
+          "labels": [
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 1.01,9.01 8-K (new material agreement) was filed 2025-02-19 (session 3 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 3 are listed (5, 10, 20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 1.01,2.01,2.03,9.01 8-K (new $70M Wells Fargo credit facility, read in full) was filed 2025-03-07 (session 15 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 15 are listed (20)."
+        }
+      ]
     }
   ]
 }

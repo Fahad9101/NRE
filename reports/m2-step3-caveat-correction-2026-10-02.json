@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Found while starting batch 4, in this project's own earlier step-3 work (batches 1-3). Two defects, both mine, both in how label caveats were handled.",
+  "defect_1_caveats_never_reached_the_events_file": "Every step-3 signoff record (reports/m2-step3-batch1-signoff-2026-10-02.json, ...batch2..., ...batch3...) says the proposed label caveats 'travel with the computed labels'. Step 2 honored that by writing a 'caveats' array into each affected event in config/m2-step2-events.json (4 of its 45 events). Step 3 did not: all 30 events built across batches 1-3 carried zero caveats, so the caveats existed only in the signoff packets. Caveats do not affect any computed label or labels_sha256 (the digest covers label values/reasons only), so no result was ever wrong -- but the metadata the owner approved was missing from the data.",
+  "defect_2_packet_caveats_named_labels_that_do_not_exist": "Three proposed_label_caveat lists in the signoff packets named labels nre/dataset.py never computes -- the same class of error step 2 already found and corrected for its HURN caveat (commit 8daed6f) and that this project's memory already recorded as a rule (only day1_open/high/low/close_return and session_2/5/10/20_close_return are valid; never build a list from a numeric range). The rule was written down and I did not apply it. Affected packets: reports/m2-step3-batch1-signoff-packet-2026-10-02.json (parr-step3-2024-11-04 listed session_6..session_20; nbix-step3-2025-05-05 listed session_12..session_20) and reports/m2-step3-batch3-signoff-packet-2026-10-02.json (aspn-step3-2025-02-12 listed session_15 and session_20). Two session positions were also miscounted in prose: nbix's 2025-05-22 filing is session 13 (packet said 12); caci-step3-2025-04-23's 2025-05-20 filing is session 19 (packet said it lands on session 20). The packets are left exactly as the owner reviewed them; this record is the correction.",
+  "what_changed": {
+    "events_file": "config/m2-step3-events.json: 'caveats' arrays added to 11 events, using only real label names, with each inside-window item's session position computed from the real corrected calendar (nre.event_acquire.event_window), not counted by hand. Rule used (same as step 2's own caveats): an item on session k lists the session-milestone labels at or after k (day1_* are listed only when k == 1, i.e. the item lands on the reaction session itself); 'freshness' caveats for REAL x2 and ASPN list all 8 return labels.",
+    "validator": "nre/event_acquire.py: new LABEL_NAMES constant (the engine's real 16 label names) and a check in _validate_event that every caveat label is one of them or the M1 sentinel 'all' (used by M1's accepted SLSN/LNSR events). tests/test_event_acquire.py: a test that a fabricated name is rejected, a test that LABEL_NAMES equals what the pipeline actually computes for a MAPPED event (so the constant cannot silently drift from the engine), and a test that every caveat in all four shipped events files uses only real names. All four shipped events files (M1, step 2, combined, step 3) validate under the new check; full suite green."
+  },
+  "corrected_caveats": [
+    {"event_id": "caci-step3-2025-04-23", "item": "2025-05-20 Item 8.01,9.01", "session": 19, "labels": ["session_20_close_return"]},
+    {"event_id": "parr-step3-2024-11-04", "item": "2024-11-12 Item 5.02", "session": 6, "labels": ["session_10_close_return", "session_20_close_return"]},
+    {"event_id": "parr-step3-2024-11-04", "item": "2024-11-18 Item 1.01,2.03,9.01", "session": 10, "labels": ["session_10_close_return", "session_20_close_return"]},
+    {"event_id": "nbix-step3-2025-05-05", "item": "2025-05-22 Item 5.02,5.07", "session": 13, "labels": ["session_20_close_return"]},
+    {"event_id": "nbix-step3-2025-05-05", "item": "2025-05-30 Item 5.02,9.01", "session": 18, "labels": ["session_20_close_return"]},
+    {"event_id": "rekr-step3-2024-11-14", "item": "2024-11-15 Item 5.02", "session": 1, "labels": "all 8 return labels"},
+    {"event_id": "aspn-step3-2024-11-06", "item": "2024-11-19 Item 5.05 (the filing batch 2's own packet missed, reports/m2-step3-batch2-competing-catalyst-correction-2026-10-02.json)", "session": 9, "labels": ["session_10_close_return", "session_20_close_return"]},
+    {"event_id": "love-step3-2024-12-12", "item": "2024-12-17 Investor Day 7.01,9.01 x2", "session": 4, "labels": ["session_5_close_return", "session_10_close_return", "session_20_close_return"]},
+    {"event_id": "vsat-step3-2025-02-06", "item": "2025-03-07 Item 5.02", "session": 20, "labels": ["session_20_close_return"]},
+    {"event_id": "aspn-step3-2025-02-12", "item": "2025-03-06 Item 5.02 and 2025-03-07 Item 5.02,9.01", "session": "15 and 16", "labels": ["session_20_close_return"]},
+    {"event_id": "pdfs-step3-2025-02-13", "item": "2025-02-19 Item 1.01,9.01", "session": 3, "labels": ["session_5_close_return", "session_10_close_return", "session_20_close_return"]},
+    {"event_id": "pdfs-step3-2025-02-13", "item": "2025-03-07 Item 1.01,2.01,2.03,9.01 (new $70M credit facility)", "session": 15, "labels": ["session_20_close_return"]},
+    {"event_id": "real-step3-2024-11-04", "item": "freshness (2024-10-28 pre-announcement)", "labels": "all 8 return labels"},
+    {"event_id": "aspn-step3-2024-11-06", "item": "freshness (2024-10-16 pre-announcement)", "labels": "all 8 return labels"},
+    {"event_id": "real-step3-2025-02-20", "item": "freshness (2025-02-10 preliminary, excluded candidate)", "labels": "all 8 return labels"}
+  ],
+  "effect_on_results": "None. No computed label, label_reasons, or labels_sha256 changed or could change: caveats are metadata outside the digest. The 30 pinned results are re-checked by the same push's real workflow run.",
+  "not_a_claim": "Not a new owner signoff: the owner's three batch signoffs accepted these caveats as informational ('travel with the computed labels'); this implements that, with corrected label names. If the owner would rather these caveats not be carried, the 11 'caveats' arrays are the only thing to remove."
+}

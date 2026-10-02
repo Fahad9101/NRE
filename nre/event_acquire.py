@@ -25,6 +25,10 @@ ACTIONS_ENDPOINT = "https://data.alpaca.markets/v1/corporate-actions"
 REACTION_SESSIONS = 20
 TIMINGS = {"premarket", "after_hours"}
 ATTESTATIONS = {"first_public_time", "historical_identity", "corporate_actions"}
+LABEL_NAMES = frozenset(["day1_%s_return" % f for f in ("open", "high", "low", "close")]
+                        + ["gap_ge_%dpct" % t for t in (3, 5, 10, 15, 20, 30)]
+                        + ["positive_gap_retained_half", "positive_gap_filled"]
+                        + ["session_%d_close_return" % n for n in (2, 5, 10, 20)])
 EVENT_CATEGORY, EVENT_SUBTYPE = "earnings", "results"
 TICKER = re.compile(r"^[A-Z][A-Z0-9.]{0,9}$")
 SECURITY_KEYS = ("security_id", "company_id", "cik", "ticker", "exchange", "security_type", "valid_from", "available_at")
@@ -119,6 +123,9 @@ def _validate_event(event, calendar, root):
     for caveat in event.get("caveats", []):
         if not isinstance(caveat, dict) or not isinstance(caveat.get("labels"), list) or not isinstance(caveat.get("note"), str):
             raise DataError(name + ": each caveat needs a labels list and a note")
+        unknown = [label for label in caveat["labels"] if label not in LABEL_NAMES and label != "all"]
+        if unknown:
+            raise DataError(name + ": caveat names labels the pipeline never computes: " + ", ".join(map(str, unknown)))
 
 
 def validate_spec(spec, calendar, root=ROOT):
