@@ -1697,6 +1697,279 @@
           "note": "Item 1.01,2.01,2.03,9.01 8-K (new $70M Wells Fargo credit facility, read in full) was filed 2025-03-07 (session 15 of this event's window); content not opened. day1 itself precedes it and is unaffected -- only the real session-milestone labels at or after session 15 are listed (20)."
         }
       ]
+    },
+    {
+      "event_id": "hurn-step3-2025-02-25",
+      "cluster_id": "hurn-step3-2025-02-25",
+      "candidate_id": "0001289848-25-000031",
+      "security": {
+        "security_id": "HURN-1289848-2025-02-25",
+        "company_id": "0001289848",
+        "cik": "0001289848",
+        "ticker": "HURN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-10-29T00:00:00-04:00",
+        "available_at": "2024-10-29T20:00:00Z"
+      },
+      "source": {
+        "source_id": "hurn-wire-2025-02-25",
+        "url": "https://www.businesswire.com/news/home/20250225576320/en/Huron-Announces-Record-Fourth-Quarter-2024-Financial-Results-and-Provides-2025-Guidance",
+        "text": "Wire release, displayed dateline Feb 25, 2025 4:05 PM Eastern Standard Time (16:05 ET). https://www.businesswire.com/news/home/20250225576320/en/Huron-Announces-Record-Fourth-Quarter-2024-Financial-Results-and-Provides-2025-Guidance",
+        "first_seen_at": "2025-02-25T16:06:00-05:00"
+      },
+      "published_at": "2025-02-25T16:05:00-05:00",
+      "cutoff": "2025-02-25T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-26",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 8.01 8-K (read in full: the Board authorized a $200 million increase to the share repurchase program, to $700 million in total, and extended it through 2026-12-31) was filed 2025-03-14 (session 13 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 13 are listed (20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 7.01,9.01 8-K (read: the Investor Day press release and presentation, introducing financial goals through 2029; it lands on the last session of the window) was filed 2025-03-25 (session 20 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 20 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "coll-step3-2025-02-27",
+      "cluster_id": "coll-step3-2025-02-27",
+      "candidate_id": "0001558370-25-001799",
+      "security": {
+        "security_id": "COLL-1267565-2025-02-27",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-07T00:00:00-05:00",
+        "available_at": "2024-11-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "coll-wire-2025-02-27",
+        "url": "https://www.globenewswire.com/news-release/2025/02/27/3034273/34897/en/Collegium-Reports-Record-Fourth-Quarter-and-Full-Year-2024-Financial-Results.html",
+        "text": "Wire release, displayed dateline February 27, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/02/27/3034273/34897/en/Collegium-Reports-Record-Fourth-Quarter-and-Full-Year-2024-Financial-Results.html",
+        "first_seen_at": "2025-02-27T16:02:00-05:00"
+      },
+      "published_at": "2025-02-27T16:01:00-05:00",
+      "cutoff": "2025-02-27T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-28",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 5.02,8.01 8-K (read in full: a director nomination, the Chairman and one other director not standing for re-election, and a new EVP and General Counsel -- orderly governance changes) was filed 2025-03-17 (session 12 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 12 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "lnsr-step3-2025-02-27",
+      "cluster_id": "lnsr-step3-2025-02-27",
+      "candidate_id": "0000950170-25-028363",
+      "security": {
+        "security_id": "LNSR-1320350-2025-02-27",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-07T00:00:00-05:00",
+        "available_at": "2024-11-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire-2025-02-27",
+        "url": "https://www.globenewswire.com/news-release/2025/02/27/3033705/0/en/LENSAR-Reports-Fourth-Quarter-and-Full-Year-2024-Results-and-Provides-Business-Update.html",
+        "text": "Wire release, displayed dateline February 27, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/02/27/3033705/0/en/LENSAR-Reports-Fourth-Quarter-and-Full-Year-2024-Results-and-Provides-Business-Update.html",
+        "first_seen_at": "2025-02-27T07:01:00-05:00"
+      },
+      "published_at": "2025-02-27T07:00:00-05:00",
+      "cutoff": "2025-02-27T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-02-27",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 1.01,7.01,8.01,9.01 8-K (read: a definitive Agreement and Plan of Merger with Alcon Research, LLC at $14.00 per share in cash plus one contingent value right of $2.75 per share -- announced take-out; the session-20 close reflects the announced deal, not just the earnings reaction) was filed 2025-03-24 (session 18 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 18 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "payo-step3-2025-02-27",
+      "cluster_id": "payo-step3-2025-02-27",
+      "candidate_id": "0001558370-25-001686",
+      "security": {
+        "security_id": "PAYO-1845815-2025-02-27",
+        "company_id": "0001845815",
+        "cik": "0001845815",
+        "ticker": "PAYO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-05T00:00:00-05:00",
+        "available_at": "2024-11-05T20:00:00Z"
+      },
+      "source": {
+        "source_id": "payo-wire-2025-02-27",
+        "url": "https://www.businesswire.com/news/home/20250227134799/en/Payoneer-Reports-Fourth-Quarter-and-Full-Year-2024-Financial-Results",
+        "text": "Wire release, displayed dateline Feb 27, 2025 7:30 AM Eastern Standard Time (07:30 ET). https://www.businesswire.com/news/home/20250227134799/en/Payoneer-Reports-Fourth-Quarter-and-Full-Year-2024-Financial-Results",
+        "first_seen_at": "2025-02-27T07:31:00-05:00"
+      },
+      "published_at": "2025-02-27T07:30:00-05:00",
+      "cutoff": "2025-02-27T07:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-02-27"
+    },
+    {
+      "event_id": "okta-step3-2025-03-03",
+      "cluster_id": "okta-step3-2025-03-03",
+      "candidate_id": "0001660134-25-000043",
+      "security": {
+        "security_id": "OKTA-1660134-2025-03-03",
+        "company_id": "0001660134",
+        "cik": "0001660134",
+        "ticker": "OKTA",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-12-03T00:00:00-05:00",
+        "available_at": "2024-12-03T20:00:00Z"
+      },
+      "source": {
+        "source_id": "okta-wire-2025-03-03",
+        "url": "https://www.businesswire.com/news/home/20250302847108/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2025-Financial-Results",
+        "text": "Wire release, displayed dateline Mar 3, 2025 4:01 PM Eastern Standard Time (16:01 ET). https://www.businesswire.com/news/home/20250302847108/en/Okta-Announces-Fourth-Quarter-And-Fiscal-Year-2025-Financial-Results",
+        "first_seen_at": "2025-03-03T16:02:00-05:00"
+      },
+      "published_at": "2025-03-03T16:01:00-05:00",
+      "cutoff": "2025-03-03T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-03-04"
+    },
+    {
+      "event_id": "achv-step3-2025-03-11",
+      "cluster_id": "achv-step3-2025-03-11",
+      "candidate_id": "0000950170-25-036830",
+      "security": {
+        "security_id": "ACHV-949858-2025-03-11",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-07T00:00:00-05:00",
+        "available_at": "2024-11-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "achv-wire-2025-03-11",
+        "url": "https://www.globenewswire.com/news-release/2025/03/11/3040444/0/en/achieve-life-sciences-reports-financial-results-for-fourth-quarter-and-year-end-2024-and-provides-update-on-the-cytisinicline-development-program.html",
+        "text": "Wire release, displayed dateline March 11, 2025 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2025/03/11/3040444/0/en/achieve-life-sciences-reports-financial-results-for-fourth-quarter-and-year-end-2024-and-provides-update-on-the-cytisinicline-development-program.html",
+        "first_seen_at": "2025-03-11T07:31:00-04:00"
+      },
+      "published_at": "2025-03-11T07:30:00-04:00",
+      "cutoff": "2025-03-11T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-03-11"
+    },
+    {
+      "event_id": "asmb-step3-2025-03-20",
+      "cluster_id": "asmb-step3-2025-03-20",
+      "candidate_id": "0000950170-25-042660",
+      "security": {
+        "security_id": "ASMB-1426800-2025-03-20",
+        "company_id": "0001426800",
+        "cik": "0001426800",
+        "ticker": "ASMB",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-07T00:00:00-05:00",
+        "available_at": "2024-11-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "asmb-wire-2025-03-20",
+        "url": "https://www.globenewswire.com/news-release/2025/03/20/3046702/0/en/Assembly-Biosciences-Reports-Year-End-2024-Financial-Results-and-Recent-Highlights.html",
+        "text": "Wire release, displayed dateline March 20, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/03/20/3046702/0/en/Assembly-Biosciences-Reports-Year-End-2024-Financial-Results-and-Recent-Highlights.html",
+        "first_seen_at": "2025-03-20T16:06:00-04:00"
+      },
+      "published_at": "2025-03-20T16:05:00-04:00",
+      "cutoff": "2025-03-20T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-03-21"
+    },
+    {
+      "event_id": "klc-step3-2025-03-20",
+      "cluster_id": "klc-step3-2025-03-20",
+      "candidate_id": "0000950170-25-042670",
+      "security": {
+        "security_id": "KLC-1873529-2025-03-20",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-20T00:00:00-05:00",
+        "available_at": "2024-11-20T20:00:00Z"
+      },
+      "source": {
+        "source_id": "klc-wire-2025-03-20",
+        "url": "https://www.businesswire.com/news/home/20250320019070/en/KinderCare-Reports-Fourth-Quarter-2024-Financial-Results",
+        "text": "Wire release, displayed dateline Mar 20, 2025 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20250320019070/en/KinderCare-Reports-Fourth-Quarter-2024-Financial-Results",
+        "first_seen_at": "2025-03-20T16:16:00-04:00"
+      },
+      "published_at": "2025-03-20T16:15:00-04:00",
+      "cutoff": "2025-03-20T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-03-21"
+    },
+    {
+      "event_id": "tecx-step3-2025-03-20",
+      "cluster_id": "tecx-step3-2025-03-20",
+      "candidate_id": "0000950170-25-042630",
+      "security": {
+        "security_id": "TECX-1681087-2025-03-20",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-07T00:00:00-05:00",
+        "available_at": "2024-11-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "tecx-wire-2025-03-20",
+        "url": "https://www.globenewswire.com/news-release/2025/03/20/3046690/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2024-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "Wire release, displayed dateline March 20, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/03/20/3046690/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2024-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2025-03-20T16:02:00-04:00"
+      },
+      "published_at": "2025-03-20T16:01:00-04:00",
+      "cutoff": "2025-03-20T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-03-21"
     }
   ]
 }

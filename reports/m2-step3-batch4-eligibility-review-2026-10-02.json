@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Two of batch 4's 11 nominal candidates (by filing date, ALKT 2025-02-27 and REKR 2025-03-17) were found, on reading their own real primary documents, not to be qualifying earnings events. ALKT is excluded under this project's own adopted same-day competing-catalyst policy (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md); REKR is excluded in the same category as step 2's REKR (reports/m2-step2-eligibility-review-2026-09-28.json) and batch 3's REAL 2025-02-10 (reports/m2-step3-batch3-eligibility-review-2026-10-02.json). Leaves 9 genuine candidates in batch 4. A first pass during evidence gathering had considered carrying ALKT as a flagged confound instead of excluding it; the policy's three-part test, applied as written below, requires exclusion, so that first pass is superseded here.",
+  "alkt_2025_02_27": {
+    "candidate_id": "0001529274-25-000028",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927425000028/alk-20250227.htm",
+    "true_release_date": "2025-02-27",
+    "earnings_release": "PRNewswire 'Alkami Announces Fourth Quarter 2024 Financial Results' (https://www.prnewswire.com/news-releases/alkami-announces-fourth-quarter-2024-financial-results-302387917.html), displayed 'Feb 27, 2025, 16:05 ET'; SEC 8-K accepted 2025-02-27 16:10:21 ET.",
+    "competing_item": "PRNewswire 'Alkami to Acquire MANTL to Expand Account Opening Capabilities' (https://www.prnewswire.com/news-releases/alkami-to-acquire-mantl-to-expand-account-opening-capabilities-302387918.html), displayed 'Feb 27, 2025, 16:05 ET' -- the same displayed minute as the earnings release, with the next consecutive PRNewswire release number. Filed as Exhibit 99.3 of the same 8-K, whose Item 1.01 reports the Agreement and Plan of Merger (Exhibit 2.1) and a Third Amendment to the revolving credit agreement (Exhibit 10.1), and whose Item 8.01 carries the announcement.",
+    "same_reaction_day": true,
+    "detail_same_day": "Both releases went out at 16:05 ET on 2025-02-27, after the close, so both land on the identical reaction session (2025-02-28). The earnings release's own subtitle reads 'Alkami Today Also Announced Its Intent to Acquire MANTL' and its Full Year 2024 highlights restate the acquisition.",
+    "independently_disseminated": true,
+    "detail_dissemination": "A separate PRNewswire press release with its own headline, URL and release number, plus its own exhibit (99.3) in the 8-K -- not merely a paragraph inside the earnings release.",
+    "fresh_independently_material_content": true,
+    "detail_content": "New as of that day: a signed definitive agreement to acquire Fin Technologies, Inc. (MANTL) for a $400 million enterprise value, to be funded with approximately $380 million of cash plus about $13 million of replacement RSUs, with no financing contingency (8-K Item 1.01) and the same-day credit amendment raising the revolving commitment by $100 million to $225 million. For scale, the same earnings release reports FY2024 GAAP total revenue of $333.8 million and Adjusted EBITDA of $26.9 million -- the purchase price is larger than the company's entire FY2024 revenue.",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "same_day_competing_catalyst: all three conditions of the policy hold -- the same case as Milestone 1's excluded MEI (a separate divestiture release the same evening as its earnings release). The earnings release itself is a real, full quarterly release (unlike REKR/REAL pre-announcements), so this is excluded purely on the policy's test, not because it fails to be an earnings release. No label computed from this event could separate the earnings reaction from the acquisition reaction.",
+    "distinct_from": "Not the same situation as COLL's bundled Item 5.02 items (2024-11-07 CEO appointment, 2025-02-27 officer departure), which appear only inside the 8-K/earnings release itself with no separate wire release and so fail condition 2. ALKT's other step-3 candidate (0001529274-25-000070, 2025-04-30, Items 2.02,5.02,7.01,9.01) is a different quarter and is not affected by this finding; its own bundled Item 5.02 has not been read yet."
+  },
+  "rekr_2025_03_17": {
+    "candidate_id": "0001437749-25-007823",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774925007823/ex_790810.htm",
+    "finding": "The release's own headline reads 'Rekor Systems Provides Guidance on Financial Results and Updates on Operational and Management Realignments', and its text says the company 'provided insights into its preliminary year-end 2024 results', 'Based on preliminary and unaudited financial results, full-year 2024 revenue is expected to be above $45.5 million', and 'This financial information is preliminary and subject to change in connection with the completion of our financial statement audit'. The 8-K's own Item 2.02 text says the press release announces 'certain preliminary unaudited financial results for the Company's fourth quarter and the full year ended December 31, 2024'. The same release announces the CEO's resignation (Item 5.02). The real final Q4/FY2024 results followed on 2025-03-31 (candidate 0001437749-25-010184, Items 2.02,9.01, SEC-accepted 16:07:08 ET), which stays in the candidate pool.",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "not_a_qualifying_earnings_event: an explicit preliminary pre-announcement of the results the 2025-03-31 candidate later reports in full -- the same exclusion category as step 2's REKR and batch 3's REAL 2025-02-10, self-identified by the issuer's own headline and text. Also bundled with a CEO resignation.",
+    "distinct_from": "The CEO resignation in the same release is a real, material corporate event, but it is a management change, not an earnings result -- not built as a separate candidate, noted for completeness.",
+    "consequence_for_the_later_candidate": "The 2025-03-31 REKR candidate will carry a freshness caveat on all 8 return labels (its headline revenue/EBITDA figures were already public from 2025-03-17), and its valid_from chains to the issuer's preceding BUILT step-3 event (rekr-step3-2024-11-14), skipping this excluded candidate -- to be handled when that candidate's batch is built."
+  },
+  "bundled_items_sweep": "While applying the policy, swept all 66 frozen candidates' own recorded Item lists for anything beyond 2.02/7.01/9.01 bundled into the candidate's own 8-K (the earlier same-day sweep, reports/m2-step3-same-day-catalyst-review-2026-10-01.json, matched only OTHER 8-K filings on the same date, so it could not see a catalyst bundled inside the candidate's own filing). Seven candidates have such items: COLL 2024-11-07 (built in batch 2; CEO appointment bundled in the release itself, handled in that batch's packet), OKTA 2025-02-04 (excluded, batch 3), REAL 2025-02-10 (excluded, batch 3), ALKT 2025-02-27 (excluded here), COLL 2025-02-27 (built in this batch; officer departure inside the 8-K only, no separate release, not excluded), REKR 2025-03-17 (excluded here), ALKT 2025-04-30 (unbuilt; to be read when its batch is built).",
+  "net_effect": {
+    "newly_excluded": [
+      "ALKT 2025-02-27 (same-day competing catalyst: a separate, same-minute $400 million MANTL acquisition release)",
+      "REKR 2025-03-17 (preliminary pre-announcement, superseded by the 2025-03-31 candidate)"
+    ],
+    "running_excluded_total_step3": [
+      "CACI 2025-04-24 (8-K/A, not a qualifying earnings event -- reports/m2-step3-eligibility-review-2026-10-01.json)",
+      "OKTA 2025-02-04 (guidance reaffirmation, not a qualifying earnings event)",
+      "REAL 2025-02-10 (preliminary pre-announcement, not a qualifying earnings event)",
+      "ALKT 2025-02-27 (same-day competing catalyst)",
+      "REKR 2025-03-17 (preliminary pre-announcement, not a qualifying earnings event)"
+    ]
+  },
+  "not_a_claim": "Does not mark any of batch 4's remaining 9 candidates 'included' -- the corporate-action check, identity/exchange re-verification, and a label-engine dry run are still pending, same as every other step-3 candidate. Not a judgment that the ALKT acquisition was a good or bad deal or that it moved price; only that, by the project's own adopted test, a second independent, fresh, material disclosure shares the earnings release's reaction session."
+}
