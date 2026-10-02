@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-10-02",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "Keep the 23 archived payloads, accept step 3, and do the rest as you recommended",
+  "exact_words_at": "2026-10-02T18:55:54.262Z",
+  "exact_words_source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC), not from a summary",
+  "context": "Made in reply to the assistant's own status message (2026-10-02T18:54:05.767Z, quoted verbatim in assistant_message_replied_to), which listed what remained for step 3, named accepting it as the owner's decision, and recommended keeping the archive and accepting. Recorded verbatim, mirroring how Milestone 1's, Milestone 2 step 2's, Milestone 2's and Milestone 3's declarations were made.",
+  "assistant_message_replied_to": "Step 3's work is finished. What's left is decisions, plus one follow-up I'd recommend.\n\n**Needs you**\n1. **The archive choice.** Keep the 23 archived payloads, or drop them and let `candidate_source_hashes` fail as it did in step 2. This has been my call so far, not yours.\n2. **Whether to accept step 3.** Only you can decide this; the engine never sets it. Before deciding, you may want to skim `reports/m2-step3-acceptance-review.json`, since three gates only check that its evidence statements exist. You also haven't seen my independent timestamp check.\n\n**Mine, once you say so**\n3. **The declaration record,** mirroring step 2's. I'd re-hash the inputs fresh, diff the repo head against the audited commit `bf4f53b`, and write the limits in.\n4. **Measure what step 3 bought.** Run fingerprints/analogues on all 128 events (23 + 45 + 60). It's offline, uses no prices, and is the same run we did after step 2.\n\n**Parked, not started**\n- M4 and later milestones are not authorized.\n- Step 2's own `candidate_source_hashes` gap. Its raw bytes exist locally and are gitignored, and could probably be archived the same way; I haven't checked.\n- The latent hardcoded 2026-only calendar in `nre/alpaca.py`.\n\n**Recommended next step:** decide 1 and 2, then let me do 4. I'd keep the archive with its \"filtered subset, not SEC raw bytes\" caveat carried into the declaration, and accept step 3. Nothing I found argues against accepting, and the limits are the same kind step 2 was accepted with.\n\nI checked the issuer counts, and they show why 4 matters. With step 3, 21 of 23 issuers have at least 5 events (none did before), which is the threshold for reporting proportions. No issuer reaches the 10 events needed for issuer-level mean/median, or the 20 for quantiles; the most any has is 6. These are event counts, not per-label counts, so for sparse labels the real number will be lower. That result is what you'd need to choose between another depth step and scoping M4.\n\nI've saved \"after every step, say what remains and recommend the next one\" as a standing rule.",
+  "how_the_words_were_read": [
+    "'Keep the 23 archived payloads' answers item 1 of that message (the archive choice, which Claude had made without asking): keep it.",
+    "'accept step 3' answers item 2 (whether to accept step 3): read as the owner's declaration that Milestone 2 step 3 is accepted, with the same meaning as step 2's 'declare Milestone 2 step 2 accepted'. The wording differs; the context is the same -- a reply to the assistant's own message naming acceptance as the owner's decision.",
+    "'do the rest as you recommended' covers items 3 and 4 of that message: this declaration record, and running the fingerprints/analogues machinery on all 128 events (recorded separately). It does not cover what that message listed as parked and not started: Milestone 4 and later, step 2's own candidate_source_hashes gap, and nre/alpaca.py's latent calendar. They stay so."
+  ],
+  "status": "MILESTONE_2_STEP_3_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 2 step 3 -- data depth extension (a third, earlier and non-overlapping window of quarterly earnings cycles, 2024-11-01 to 2025-06-01, for the same 23 Milestone-1-accepted issuers)",
+  "acceptance_criterion": {
+    "protocol_statement": "A second depth extension for the same 23 issuers, same full review standard as Milestone 1 and Milestone 2 step 2; not evidence of predictive power",
+    "stated_purpose": "Milestone 2 step 3: extend the same 23 issuers by 2 more prior quarters, to build a real per-issuer time series deep enough for Milestone 4's own walk-forward validation. Real data checked before proposing a window: every issuer (including KLC, a 2024 IPO with the shortest real history of the 23) has at least 4 real Item 2.02 filings available before its own already-used earliest event.",
+    "what_step_3_actually_is": "A data-depth precondition, not a capability: it extends the dataset the already-accepted fingerprints/analogues machinery can draw on, to a per-issuer time series for Milestone 4's walk-forward validation to use. Declaring it accepted is declaring this data real, attested and structurally sound. It is not a claim that the purpose is met (see accepted_with_these_stated_limits), and it does not start, scope or authorize Milestone 4."
+  },
+  "governing_protocol": {
+    "file": "config/m2-step3-protocol.json",
+    "protocol_version": "m2-step3-depth-extension-v1-2026-09-30",
+    "protocol_sha256": "20498997aa4fcafd7ecd0aa8aa1eb9dbd74640d7552a5e7b451f6ac13b10b49c",
+    "frozen_membership_sha256": "1ef5476b0628aad4651da42d8737ccc45e37ec9def7083404cc6f192da1fc5c2",
+    "relationship_to_prior_steps": "A separate, parallel protocol. It does not amend, extend or touch config/m2-step2-*.json, config/m2-combined-events.json, or any Milestone 1/2/2-step-2 record. Its event window (2024-11-01 to 2025-06-01) ends the day step 2's own begins (2025-06-01), so the two candidate pools cannot overlap."
+  },
+  "state_declared": {
+    "repository_head_at_declaration": "89fdeb84293afd296e26718377cb1ec5a61daa0b",
+    "working_tree_clean_at_declaration": true,
+    "audited_commit": "bf4f53b6a639ef7dc64c254a2578eb73d49ea8b6",
+    "audit_inputs_unchanged_since_the_audit": true,
+    "files_changed_since_the_audited_commit": [
+      "docs/M2-STEP-3-LABEL-ENGINE-DRY-RUN-SCOPE.md",
+      "reports/m2-step3-label-engine-dry-run-result-2026-10-02.json",
+      "reports/m2-step3-label-engine-dry-run-scope-authorization-2026-10-02.json",
+      "tests/test_step3_audit.py"
+    ],
+    "how_verified": "At declaration time the tree was clean and equal to origin/main. git diff between the audited commit and the head lists only the files named above (the audit's own result record, its binding test, and two additive notes recording the owner's decision); nre/, config/m2-step3-*.json, the reviewed ledger, the acceptance review, archive/m2-step3-sec-freeze/ and depth3-consolidated-audit.yml are unchanged. The protocol, ledger, review and membership hashes were recomputed directly with nre.core.canonical/digest from the committed files and equal those the audit recorded. input_sha256 covers the real fetched prices and the run's retrieval time, so it can only be produced inside GitHub Actions and is taken from the audit.",
+    "audit_input_hashes": {
+      "input_sha256": "a8ab9eae10bdb75c0869f7debb6d9f744dd566aa743c987924d5a015b75b0fd3",
+      "ledger_sha256": "a0f557e89a2ac9f4730c9b9ee8b68bfde190061e45b3135ab3d04c1070e8352f",
+      "membership_sha256": "1ef5476b0628aad4651da42d8737ccc45e37ec9def7083404cc6f192da1fc5c2",
+      "protocol_sha256": "20498997aa4fcafd7ecd0aa8aa1eb9dbd74640d7552a5e7b451f6ac13b10b49c",
+      "review_sha256": "5a715860bea64ade666160224bb92b6ef3abe31f85c32449e4be790120c4df32"
+    },
+    "full_test_suite_at_declaration": "504 tests OK, 4 skipped",
+    "skipped_tests_reasons": [
+      "skipped 'needs bash and git; CI runs it on Linux, NRE_SHELL_TESTS=1 forces it elsewhere'"
+    ],
+    "evidence_file_hashes_reconfirmed": {
+      ".github/workflows/depth3-consolidated-audit.yml": "fea931b02b30ee236a305f869a5e53ccd068d7fc31215307344e263127690dfc",
+      ".github/workflows/depth3-event-acquire.yml": "7b6a98aa9ecab019c63ca8eae38d39c57b831a598455306cefcda852e1092124",
+      "config/m2-step3-cohort-spec.json": "85f6ce4677592af49b03dfbf251570871affcd60deaf83b7e7d8b2f1eb8a38ab",
+      "config/m2-step3-events.json": "d6ceaff43022b62e55523985f1c6a0b3f07aa75d761688dc09d490ff3a56000c",
+      "config/m2-step3-frozen-candidate-ledger.json": "4ab85da7e89913d5c1eeae6ef4a02c8c899dc0312125aeb1879a96127794e603",
+      "config/m2-step3-frozen-issuer-cohort.json": "a842b7cbc4bbd5982b05f6825c0568a8b1625a79dea5c812e8f96836e48ed448",
+      "config/m2-step3-merged-calendar.json": "c147d1d78abbadfadb61e9fef933fb739c51c055ae5a6b8fa462c49d66ef71f0",
+      "config/m2-step3-protocol.json": "dc8d26bd7a0051485af6af3f542421b897ac9798fb3d129bc59bc76513f57f65",
+      "docs/M2-STEP-3-LABEL-ENGINE-DRY-RUN-SCOPE.md": "08d2341b7e4f9e325dd76e53547a86145a0def322043c12adc1fc1be437cf885",
+      "reports/m2-step3-acceptance-review.json": "8d724cd5aa97d0341e356dadb2093bc52144a87526030250c42dab61cf986304",
+      "reports/m2-step3-batch1-complete-events-2026-10-02.json": "c2f5a06ca096425ee39c3a18b327bbaeec50591c0e2642860f5227d01fffa12b",
+      "reports/m2-step3-batch1-signoff-2026-10-02.json": "99d9e800d52aa57b56149f3fc6a4f4f2fc6017578bbc2abd52161b496b99c222",
+      "reports/m2-step3-batch1-signoff-packet-2026-10-02.json": "1bc419dec015408ceeb7b29009a2770ad024f4065ec5aecd498b906eed4335a0",
+      "reports/m2-step3-batch2-competing-catalyst-correction-2026-10-02.json": "f48f8e0a820bfba64ecf26d154de0c2d8298031c820199eaba0eda4bc4fa22a7",
+      "reports/m2-step3-batch2-complete-events-2026-10-02.json": "2fc7ec4993867838c0fd7194d74d8484cd31c8a8769674f1ec822f0030323f72",
+      "reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json": "c7be5ab64c50f5c2cff2b487f9948265bfa82980f62e73fc45390e7e1991374b",
+      "reports/m2-step3-batch2-signoff-2026-10-02.json": "904356ae5478f946a8220ad9cc7e15842584dc02fa19ea4f5c6129e9f4ed2cbd",
+      "reports/m2-step3-batch2-signoff-packet-2026-10-02.json": "61997efba05fb00656f470bdc3ca68c45d4f574e4299c35ed870262a7f4d4f6f",
+      "reports/m2-step3-batch3-complete-events-2026-10-02.json": "3ec8d38eab045267a889f5ff4abfb7d42453affae2cd1bd95e55aa5ec17afb5c",
+      "reports/m2-step3-batch3-eligibility-review-2026-10-02.json": "2d9c287be32abcd5996d7c4c5a901329b70001edee69e1fa5e6760b9cd2aebd7",
+      "reports/m2-step3-batch3-signoff-2026-10-02.json": "25cfb7c96a2d8943fc8baa7baf073ba0dd1b1a4f4f535eacfb3e4324c985beda",
+      "reports/m2-step3-batch3-signoff-packet-2026-10-02.json": "9024a0dedd1e557bd75339c249efe03b17b7a417b8e69cfe0c0e7f2b2399933d",
+      "reports/m2-step3-batch4-complete-events-2026-10-02.json": "b823500de11606ff20aa9768ed35261e459999b693220e371a6bb59fdd6fd85d",
+      "reports/m2-step3-batch4-eligibility-review-2026-10-02.json": "6f0a66cd879bcf9e2a5d58501f016fbeaf6ab0cf1d7dc40ff046e70e35145f01",
+      "reports/m2-step3-batch4-signoff-2026-10-02.json": "379ccada4a7e75860fd7676fb0ed979b4632d86d2f29c40f5fdd623738b221a3",
+      "reports/m2-step3-batch4-signoff-packet-2026-10-02.json": "f7fc32f63e69547e525dea07acc31d250c0ee0a7975ce3bd6d7bbf12f4e0b07d",
+      "reports/m2-step3-batch5-complete-events-2026-10-02.json": "759f66e370240b802a17ba2feb7d7e14d8256088b2f7830bdd57c578d038e365",
+      "reports/m2-step3-batch5-eligibility-review-2026-10-02.json": "6df741a20673e014d34a5bd74fee43b7ab8e9ab8fe47f217814668b7b5fe8b2c",
+      "reports/m2-step3-batch5-signoff-2026-10-02.json": "a1c63852491ca44c46883f51424454f29682bc87919832694996e11f0eb5486b",
+      "reports/m2-step3-batch5-signoff-packet-2026-10-02.json": "36e1da7805f86e52ff1fff1d58f5bbbd71ea3ee1e1848d3b84e40192058f00f3",
+      "reports/m2-step3-batch6-complete-events-2026-10-02.json": "024c0510770289370631e5358f7a15e687047f5215e9924ea961270dea0292e7",
+      "reports/m2-step3-batch6-signoff-2026-10-02.json": "65351e9112381e801fbff4366a1c2b965454dcbc30e51b5aa255708f4b336509",
+      "reports/m2-step3-batch6-signoff-packet-2026-10-02.json": "a6fc639d62a4c768ab69dc3b233e3dc14a27c79f5b8de383a853e8518a93e3a2",
+      "reports/m2-step3-calendar-2025-01-09-correction-2026-10-02.json": "957976bbbb276de84bfc7a8a4efa246c084b4d4b437887593e3d1cee085995e4",
+      "reports/m2-step3-caveat-correction-2026-10-02.json": "9e9f45903dc7b31bd2b6596d829f7ebe639f36fe7b87ed7d34fb4a09877e849b",
+      "reports/m2-step3-eligibility-review-2026-10-01.json": "4263d4350a7dd39b8fecfbbda6997e90319befc69b0769c13c66457519803bd5",
+      "reports/m2-step3-independent-timing-spot-checks-2026-10-02.json": "251abeffe90228c95b07e96992b1d667d5387bc7cdf05e256e084c4bc6b2bf45",
+      "reports/m2-step3-label-engine-dry-run-result-2026-10-02.json": "bc8e924eb786b06b15d2c0de453e67884b3a7523c3c125efbec702bfcf602f4c",
+      "reports/m2-step3-label-engine-dry-run-scope-authorization-2026-10-02.json": "e25339a5d9725d2b004b2fda9431501e48f6e3fffabea4f98efe1ef215abb8d1",
+      "reports/m2-step3-provider-scope-authorization-2026-10-02.json": "1ecd208b89b44b15a6103a752d16c83ecf69de9724f834396514628c380e6c72",
+      "reports/m2-step3-reviewed-candidate-ledger.json": "955babf74e45b38071130e78ef3e0ec5cac092d00755cf263749c8fb21c755f0",
+      "reports/m2-step3-same-day-catalyst-review-2026-10-01.json": "ee5fc704aec79f8823aae7bad1487aecbbb778b43a2bfbad4b7e6e377c878197",
+      "reports/m2-step3-same-day-catalyst-review-supplement-2026-10-02.json": "bc0d2484076fc40cc15214b8f3fdfe10dfe499c5a13761472253a1e701ffdc62",
+      "reports/m2-step3-sec-cohort-freeze-blocked-2026-09-30.json": "9db6f0c2bef0360685a3106ac338fa6cbb0c0e8abe0744b0ce7b2d7b2744dbc2",
+      "reports/m2-step3-sec-cohort-freeze-result-2026-10-01.json": "534376633cbc65ab6d8c3e770241db623909d7c8df694e66fa71dd5f0315110e",
+      "reports/m2-step3-sec-cohort-freeze.json": "c904747ec3387d9915c7fe5b04f0de931205a94ef59bc8b05e935a8d7426364b",
+      "tests/test_step3_audit.py": "3039b1c8cbba88d0d274e803683bc2243a1a38c9d55b51dfc980fbe5e996e9a9"
+    },
+    "evidence_file_hashes_note": "sha256 of each file's committed bytes (git blob) at the repository head recorded above; covers every reports/m2-step3-*, config/m2-step3-* and docs/M2-STEP-3-* file, both step-3 workflows and tests/test_step3_audit.py. The archive's 23 payloads are not listed individually: each one's sha256 equals a distinct frozen candidate's source_sha256 (checked from the committed blobs), which the ledger and the audit already bind."
+  },
+  "basis": {
+    "final_audit": {
+      "record": "reports/m2-step3-label-engine-dry-run-result-2026-10-02.json",
+      "workflow_run": 37048630945,
+      "workflow_run_number": 1,
+      "commit": "bf4f53b6a639ef7dc64c254a2578eb73d49ea8b6",
+      "all_16_gates_pass": true,
+      "gates_passed": 16,
+      "gates_failed": [],
+      "status": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED",
+      "counts": {
+        "candidates": 66,
+        "dispositions": {
+          "excluded": 6,
+          "included": 60
+        },
+        "eligible_complete_events": 57,
+        "events": 60,
+        "unique_issuers": 22
+      },
+      "spot_checked_events_by_timing": {
+        "after_hours": 2,
+        "premarket": 2
+      },
+      "prior_audit_attempts": "None: the audit passed on its first real run. Step 2's took five runs, the first four each exposing a real bug (id collisions across merged events; a spot check on a dividend-suppressed event); step 3 built those lessons in and ran the same merge offline over all 60 events and all 16 gates (tests/test_step3_audit.py) before pushing.",
+      "why_candidate_source_hashes_passes": "The 23 payloads the cohort freeze hashed are committed under archive/m2-step3-sec-freeze/ and the workflow passes --archive-dir. This was Claude's own implementation choice, flagged to the owner, who decided to keep it (see accepted_with_these_stated_limits, first item)."
+    },
+    "reproducibility": [
+      "Each accepted event's derived labels are pinned by digest in config/m2-step3-events.json's own recorded_result field (labels_sha256), matching config/m1-events.json's and config/m2-step2-events.json's convention.",
+      "All 60 events were re-confirmed labels_match_recorded: true against freshly refetched real Alpaca data after the last batch was pinned (depth3-event-acquire.yml run 22, https://github.com/Fahad9101/NRE/actions/runs/37046464595). Each earlier batch's pinning push re-confirmed everything pinned up to that point (runs 5, 8, 12, 16 and 19: 10, 21, 30, 39 and 49 events).",
+      "The consolidated audit itself recomputed every label from a freshly assembled, freshly refetched merged bundle with nre.dataset.build() (workflow run 37048630945).",
+      "An independent post-hoc cross-check recomputed the eight return labels of batches 4-6 (30 of the 60 events) from Yahoo's public daily bars: 70 of 72, 68 of 79 and 82 of 88 comparable values agree to better than 1e-5, and the remaining differences (at most 1.7e-3) are, in the batch records' own words, consistent with sub-cent price-precision differences between Alpaca's four-decimal SIP bars and Yahoo's rounded prices, not data discrepancies. Batches 1-3 were not cross-checked this way.",
+      "Full test suite green throughout every step of this work; 504 tests OK, 4 skipped at declaration."
+    ],
+    "owner_decisions_relied_on": [
+      {
+        "date": "2026-09-30",
+        "decision": "Milestone 2 step 3 scope: extend the same 23 issuers further back in time -- more quarters per existing issuer -- to build a per-issuer time series deep enough for Milestone 4's own walk-forward validation",
+        "words": [
+          {
+            "at": "2026-09-30T17:00:59.934Z",
+            "text": "expand the real event dataset first"
+          },
+          {
+            "at": "2026-09-30T17:01:33.119Z",
+            "text": "\"Which axis should the expansion prioritize?\"=\"Depth: more quarters per existing issuer (Recommended)\"",
+            "kind": "the owner's answer to the assistant's question, as recorded in the transcript"
+          },
+          {
+            "at": "2026-09-30T17:04:19.566Z",
+            "text": "yes go ahead"
+          }
+        ],
+        "record": "config/m2-step3-protocol.json (its authorization block)"
+      },
+      {
+        "date": "2026-10-01",
+        "decision": "Fetch the cohort's real SEC submissions through the built-in browser, after GitHub Actions' access to data.sec.gov/submissions returned HTTP 403 in six real dispatches, and freeze the candidates from that data",
+        "words": "yes go ahead with your recommendation",
+        "at": "2026-10-01T18:01:34.084Z",
+        "record": "reports/m2-step3-sec-cohort-freeze-result-2026-10-01.json (and reports/m2-step3-sec-cohort-freeze-blocked-2026-09-30.json)"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "The Alpaca provider-rights authorization extends to step 3's scale (up to 66 events)",
+        "words": "\"Does the Alpaca provider research authorization extend to step 3's scale (up to 66 events, same redacted-derived-data-only use as every prior milestone)?\"=\"Yes, provider rights fine\"",
+        "at": "2026-10-02T06:15:17.270Z",
+        "kind": "the owner's answer to the assistant's question, as recorded in the transcript",
+        "record": "reports/m2-step3-provider-scope-authorization-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Batch 1 sign-off (10 events built; CACI 2025-04-24 excluded)",
+        "words": "yes go ahead on all 10",
+        "at": "2026-10-02T06:12:35.380Z",
+        "packet": "reports/m2-step3-batch1-signoff-packet-2026-10-02.json",
+        "record": "reports/m2-step3-batch1-signoff-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Batch 2 sign-off (11 events built, including CXT's first dividend)",
+        "words": "yes go ahead on all 11",
+        "at": "2026-10-02T07:16:31.526Z",
+        "packet": "reports/m2-step3-batch2-signoff-packet-2026-10-02.json",
+        "record": "reports/m2-step3-batch2-signoff-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Batch 3 sign-off (9 events built; OKTA 2025-02-04 and REAL 2025-02-10 excluded; 2025-01-09 calendar closure fixed)",
+        "words": "yes go ahead",
+        "at": "2026-10-02T10:06:27.890Z",
+        "packet": "reports/m2-step3-batch3-signoff-packet-2026-10-02.json",
+        "record": "reports/m2-step3-batch3-signoff-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Batch 4 sign-off (9 events built; ALKT 2025-02-27 and REKR 2025-03-17 excluded)",
+        "words": "غثس لخ شاثشي",
+        "at": "2026-10-02T13:45:20.616Z",
+        "packet": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
+        "record": "reports/m2-step3-batch4-signoff-2026-10-02.json",
+        "words_note": "Arrived as Arabic-layout keystrokes for 'yes go ahead' and, four seconds later, as the plain text; the record keeps both as received (owner_reply_exact_as_received)."
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Batch 5 sign-off (10 events built; SLSN 2025-03-26 excluded as OTCQB; the packet flagged SLSN 2025-05-05's uplisting identity treatment for the owner's decision, and the reply named no hold)",
+        "words": "yes go ahead",
+        "at": "2026-10-02T17:22:46.266Z",
+        "packet": "reports/m2-step3-batch5-signoff-packet-2026-10-02.json",
+        "record": "reports/m2-step3-batch5-signoff-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Batch 6 sign-off (11 events built, the last batch; no exclusions)",
+        "words": "yes go ahead",
+        "at": "2026-10-02T18:14:19.957Z",
+        "packet": "reports/m2-step3-batch6-signoff-packet-2026-10-02.json",
+        "record": "reports/m2-step3-batch6-signoff-2026-10-02.json"
+      },
+      {
+        "date": "2026-10-02",
+        "decision": "Build the step-3 consolidated audit (workflow, reviewed candidate ledger, acceptance review, label-engine dry run)",
+        "words": "yes build it",
+        "at": "2026-10-02T18:21:39.299Z",
+        "record": "reports/m2-step3-label-engine-dry-run-scope-authorization-2026-10-02.json"
+      }
+    ]
+  },
+  "accepted_scope": "The 60 recorded events (57 eligible complete events across 22 issuers, plus CXT's three events, included but not eligible under this gate's own count) drawn from the frozen cohort of 66 candidates across the same 23 Milestone-1-accepted issuers, under Milestone 2 step 3's own protocol: daily regular-session, previous-close-anchored reaction labels (day-1 open/high/low/close, gap thresholds, gap fill and retention, closes at sessions 2, 5, 10 and 20) for 11 premarket and 49 after-hours earnings releases from 2024-11-04 to 2025-05-27, computed from Alpaca SIP raw daily bars with explicit corporate-action handling and published only as derived values -- identical methodology to Milestone 1 and step 2, extended to a third protocol covering an earlier, non-overlapping window.",
+  "accepted_with_these_stated_limits": [
+    "candidate_source_hashes passes, on a weaker basis than Milestone 1's. The 23 archived payloads (archive/m2-step3-sec-freeze/) are the browser-fetched, filtered, re-serialized 8-K subset that the cohort freeze hashed -- not SEC's raw bytes (each payload's metadata records SEC's full-response hash and size separately). Milestone 1's pass rested on the real raw bytes, and step 2 was accepted with this gate failing. The archive was Claude's own implementation choice inside the authorized build; the owner, told exactly this, decided to keep it (\"Keep the 23 archived payloads\", 2026-10-02T18:55:54.262Z). To reverse: delete archive/m2-step3-sec-freeze/ and the --archive-dir argument in .github/workflows/depth3-consolidated-audit.yml; the audit then fails exactly this one gate, as step 2's did.",
+    "discovery_coverage_review, identity_history_review and provider_rights_review pass when the review file holds a non-empty evidence statement (nre/acceptance.py); they do not test whether the statements are true. The statements in reports/m2-step3-acceptance-review.json were assembled by Claude from evidence already on file. The owner was told this before accepting; this declaration does not claim the owner separately re-reviewed them.",
+    "The four timing spot checks (ACHV 2025-05-13 and LNSR 2025-05-08, premarket; OKTA 2025-05-27 and VSAT 2025-05-20, after hours) name the project owner as reviewer on the basis of the owner's batch-6 sign-off, as step 2's did. The additional third-source re-verification of those four timestamps (reports/m2-step3-independent-timing-spot-checks-2026-10-02.json) was done by Claude after that sign-off and was not reviewed by the owner; for VSAT and OKTA the company pages show only a date, so the minute rests on one secondary source.",
+    "The chronology gap search cannot close: the absence of an earlier public disclosure is evidenced by wire pages and SEC filing history, never proved -- identical to Milestone 1's and step 2's stated limit. Two real earlier disclosures were found and carried as caveats (REAL and ASPN, each a prior-quarter pre-announcement bundled inside an unrelated 8-K).",
+    "One named reviewer, the project owner, throughout -- no independent second review, carrying forward Milestone 1's 2026-09-22 amendment.",
+    "Candidate discovery used SEC submissions data fetched through the built-in browser and filtered to 8-K/8-K-A rows, because data.sec.gov/submissions returned HTTP 403 from GitHub Actions in all six real dispatches (reports/m2-step3-sec-cohort-freeze-blocked-2026-09-30.json). The owner chose that transport on 2026-10-01 (\"yes go ahead with your recommendation\"). GitHub Actions' own access to that path is still unresolved: a future workflow that needs it would meet the same block.",
+    "Six of the 66 frozen candidates were excluded as not qualifying earnings events: CACI 2025-04-24 (Form 8-K/A amendment), OKTA 2025-02-04 (pure guidance reaffirmation), REAL 2025-02-10 and REKR 2025-03-17 (explicit preliminary pre-announcements), ALKT 2025-02-27 (same-day competing catalyst, the policy's three-part test applied as written) and SLSN 2025-03-26 (OTCQB common stock, outside the exchange scope). Each was set out in a signoff packet the owner approved; ALKT 2025-02-27 is the one the batch-4 packet called \"a policy judgment the owner may disagree with\", offering to include it with a caveat instead; the reply did not take that option, and it stays excluded unless the owner later instructs otherwise.",
+    "Label-level caveats travel with their events: 27 of the 60 events (19 issuers) carry 40 caveat items in config/m2-step3-events.json, each naming the real labels it touches; competing in-window items were carried as caveats, not excluded.",
+    "CXT's three real cash dividends (ex-dates 2024-11-29, 2025-02-28 and 2025-05-30) each null exactly their own session_20_close_return (CORPORATE_ACTION_IN_WINDOW), leaving eligible_complete_events at 57, not 60, and unique_issuers at 22, not 23 -- a property of the accepted dataset, not a limitation of the review.",
+    "Same-day competing-catalyst screening matched other 8-K filings and read each candidate's own 8-K items; wire releases that carry no 8-K were checked per candidate in the packets but not swept exhaustively. The original sweep matched on filing_date, which lags the true release date after 17:30 ET; the resulting gap (PARR 2025-05-06) was found and assessed (reports/m2-step3-same-day-catalyst-review-supplement-2026-10-02.json).",
+    "The independent post-hoc price cross-check against Yahoo's public daily bars exists for batches 4-6 only (30 of the 60 events); batches 1-3 have none. It changes no label. Every event's labels are pinned and were recomputed by the audit from freshly fetched Alpaca bars.",
+    "The provider-rights authorization covers derived ratios, booleans, counts and hashes only, re-confirmed at step 3's scale on 2026-10-02 (\"Yes, provider rights fine\"); no raw prices are committed or printed.",
+    "This remains an engineering data extension, per config/m2-step3-protocol.json's own acceptance and minimum_note -- not evidence of predictive power.",
+    "Whether step 3 achieved its stated purpose -- a per-issuer time series deep enough for Milestone 4's walk-forward validation -- is not decided by this declaration. By event count, 21 of 23 issuers now have at least 5 events (none had before step 3) and none has 10; the most any issuer has is 6. Those are event counts, not per-label counts.",
+    "The engine's own stated limit stands: \"Hashes and declarations establish internal consistency, not genuine publication, permission or review. Independent evidence sign-off is still required.\""
+  ],
+  "not_authorized_or_claimed": [
+    "Milestone 4 or any later milestone is not authorized, scoped or started (master prompt section 41: do not silently move to the next milestone). Accepting step 3 as the data-depth precondition the owner asked for before Milestone 4 does not authorize it; that needs its own explicit word.",
+    "This declaration does not amend, re-open or extend the acceptance of Milestone 1, Milestone 2 step 2, Milestone 2 or Milestone 3, and claims no new capability.",
+    "No predictive claim, validated edge, score, ranking, model or trading use -- same as every earlier milestone.",
+    "The frozen Milestone 1 BOE, SOE and IEE rules, the frozen 243-candidate membership, and Milestone 2 step 2's records remain untouched.",
+    "Step 2's own open gate (candidate_source_hashes) was accepted as failing in its own declaration; nothing here changes that record or its audit.",
+    "milestone_accepted stays false in nre.acceptance.audit_cohort()'s own output regardless of this declaration, by design -- acceptance is a human record outside the code. This file is that record."
+  ],
+  "note_for_future_planning": "With step 3 the dataset holds 128 pinned events across the same 23 issuers (23 from Milestone 1, 45 from step 2, 60 from step 3). By event count, 21 of 23 issuers now have at least 5 events, the policy's threshold (proportion.report_from_n) for reporting issuer-level proportions; none has the 10 needed for mean/median or the 20 for quantiles, and the most is 6. Running the fingerprints/analogues machinery on all 128 events, requested in the same message as this declaration, measures what that does and does not unlock per label; it is recorded separately.",
+  "housekeeping": [
+    "Step 2's own candidate_source_hashes gap can now be closed on real raw bytes: data/m2-step2-freeze/raw/ (gitignored) still exists locally and all 23 distinct source hashes in step 2's frozen ledger are reproduced by files there (checked read-only on 2026-10-02). Archiving them under archive/ and adding --archive-dir to depth-consolidated-audit.yml, as step 3's workflow does, would let step 2's audit pass that gate on the raw bytes. Not done: it would change step 2's accepted audit result and needs the owner's decision.",
+    "nre/alpaca.py still has the latent hardcoded 2026-only Calendar() carried from Milestone 2; nothing in step 3 uses it.",
+    "Editing any watched input of depth3-consolidated-audit.yml (the protocol, the reviewed ledger, the acceptance review, the archive, the workflow, nre/acceptance.py, nre/consolidated_audit.py) re-runs the audit and must be followed by an updated reports/m2-step3-label-engine-dry-run-result-2026-10-02.json; tests/test_step3_audit.py fails until it is."
+  ]
+}

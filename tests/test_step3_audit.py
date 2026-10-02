@@ -152,6 +152,23 @@ class RecordsTests(unittest.TestCase):
         annotation = json.dumps(result, sort_keys=True, separators=(",", ":"))
         self.assertEqual(digest(annotation.encode("utf-8")), record["result_source"]["annotation_sha256"])
 
+    def test_acceptance_declaration_binds_to_the_audit_and_carries_the_owner_words(self):
+        declaration = load("reports/m2-step3-acceptance-declaration-2026-10-02.json")
+        recorded = load("reports/m2-step3-label-engine-dry-run-result-2026-10-02.json")
+        self.assertEqual(declaration["status"], "MILESTONE_2_STEP_3_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER")
+        self.assertEqual(declaration["declared_by"], "Fahad9101 (project owner)")
+        self.assertEqual(declaration["exact_words"], "Keep the 23 archived payloads, accept step 3, and do the rest as you recommended")
+        self.assertEqual(declaration["state_declared"]["audit_input_hashes"], recorded["result"]["hashes"])
+        self.assertTrue(declaration["state_declared"]["audited_commit"].startswith(recorded["commit"]))
+        final = declaration["basis"]["final_audit"]
+        self.assertEqual((final["status"], final["gates_failed"], final["gates_passed"], final["all_16_gates_pass"]),
+                         ("STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED", [], 16, True))
+        self.assertEqual(final["counts"], recorded["result"]["counts"])
+        for entry in declaration["basis"]["owner_decisions_relied_on"]:
+            for key in ("packet", "record"):
+                if entry.get(key, "").endswith(".json"):
+                    self.assertTrue((ROOT / entry[key]).is_file(), entry[key])
+
     def test_workflow_audits_the_step3_files(self):
         text = (ROOT / ".github" / "workflows" / "depth3-consolidated-audit.yml").read_text(encoding="utf-8")
         for fragment in ("python -m nre.consolidated_audit", "--spec config/m2-step3-events.json",
