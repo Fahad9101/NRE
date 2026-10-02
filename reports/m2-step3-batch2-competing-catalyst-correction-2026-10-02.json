@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "While building batch 3's own competing-catalysts-inside-window checks, re-fetching ASPN's real filing history (now extended through 2025-03-20 to cover batch 3's own aspn-step3-2025-02-12 candidate) surfaced a real filing that should have appeared in batch 2's own signoff packet for aspn-step3-2024-11-06 but did not: reports/m2-step3-batch2-signoff-packet-2026-10-02.json listed aspn-step3-2024-11-06's competing_catalysts_inside_window as empty.",
+  "finding": {
+    "ticker": "ASPN",
+    "event_id": "aspn-step3-2024-11-06",
+    "window": "2024-11-07 (reaction_session) through 2024-12-05 (20th reaction session)",
+    "missed_filing": "0000950170-24-128314, filed 2024-11-19, Item 5.05 (Amendments to the Registrant's Code of Ethics, or Waiver of a Provision of the Code of Ethics)",
+    "why_missed": "The batch-2 chronology check for ASPN was built from a submissions query capped at 2025-01-15, which does include 2024-11-19 -- this was a real oversight in reading that result, not a data-availability gap. Caught only because batch 3's own fresh fetch for a later ASPN candidate re-surfaced the same filing history.",
+    "materiality": "Item 5.05 is near-uniformly administrative (an ethics-code text amendment or a waiver for a specific officer/director) and is not treated as a corporate action by Alpaca's own real response (aspn-step3-2024-11-06's corporate_actions was empty in the real dry run, workflow run 36974765261, and that result is unaffected by this filing either way). Does not change anything about the already-attested and pinned result for this event -- the real computed labels came from Alpaca's own price/corporate-action data, not from this packet's own prose."
+  },
+  "disposition": "Documented as a caveat, not reopened. aspn-step3-2024-11-06 keeps its existing attestations and recorded_result (reports/m2-step3-batch2-complete-events-2026-10-02.json, labels_sha256 16e0a8945fd4f649931c565ec9e67641da76eaec4d99e1d1594b19fbb1e1b315) -- the real computed labels are unaffected by this correction, only the written chronology evidence was incomplete.",
+  "process_note": "Going forward, build each candidate's own chronology query window wide enough up front to cover its full 20-session reaction window (not just through a round cutoff date chosen for convenience), and double check it against the specific candidate being signed off, not just skim for same-day pairs."
+}

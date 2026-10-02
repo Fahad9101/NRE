@@ -1085,6 +1085,249 @@
         "labels_sha256": "aabcf4f59fbff1714ec9b4c9cd082caa432e550c4351add3e72b760eb4032ae8",
         "recorded_in": "reports/m2-step3-batch2-complete-events-2026-10-02.json"
       }
+    },
+    {
+      "event_id": "okta-step3-2024-12-03",
+      "cluster_id": "okta-step3-2024-12-03",
+      "candidate_id": "0001660134-24-000165",
+      "security": {
+        "security_id": "OKTA-1660134-2024-12-03",
+        "company_id": "0001660134",
+        "cik": "0001660134",
+        "ticker": "OKTA",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-08-28T00:00:00-04:00",
+        "available_at": "2024-08-28T20:00:00Z"
+      },
+      "source": {
+        "source_id": "okta-wire-2024-12-03",
+        "url": "https://www.businesswire.com/news/home/20241202763952/en/Okta-Announces-Third-Quarter-Fiscal-Year-2025-Financial-Results",
+        "text": "Wire release, displayed dateline Dec 3, 2024 4:01 PM Eastern Standard Time (16:01 ET). https://www.businesswire.com/news/home/20241202763952/en/Okta-Announces-Third-Quarter-Fiscal-Year-2025-Financial-Results",
+        "first_seen_at": "2024-12-03T16:02:00-05:00"
+      },
+      "published_at": "2024-12-03T16:01:00-05:00",
+      "cutoff": "2024-12-03T16:04:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2024-12-04"
+    },
+    {
+      "event_id": "love-step3-2024-12-12",
+      "cluster_id": "love-step3-2024-12-12",
+      "candidate_id": "0001628280-24-050869",
+      "security": {
+        "security_id": "LOVE-1701758-2024-12-12",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-09-12T00:00:00-04:00",
+        "available_at": "2024-09-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "love-wire-2024-12-12",
+        "url": "https://www.globenewswire.com/news-release/2024/12/12/2996053/0/en/The-Lovesac-Company-Reports-Third-Quarter-Fiscal-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline December 12, 2024 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2024/12/12/2996053/0/en/The-Lovesac-Company-Reports-Third-Quarter-Fiscal-2025-Financial-Results.html",
+        "first_seen_at": "2024-12-12T07:01:00-05:00"
+      },
+      "published_at": "2024-12-12T07:00:00-05:00",
+      "cutoff": "2024-12-12T07:03:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2024-12-12"
+    },
+    {
+      "event_id": "jbss-step3-2025-01-29",
+      "cluster_id": "jbss-step3-2025-01-29",
+      "candidate_id": "0000950170-25-010562",
+      "security": {
+        "security_id": "JBSS-880117-2025-01-29",
+        "company_id": "0000880117",
+        "cik": "0000880117",
+        "ticker": "JBSS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-10-30T00:00:00-04:00",
+        "available_at": "2024-10-30T20:00:00Z"
+      },
+      "source": {
+        "source_id": "jbss-wire-2025-01-29",
+        "url": "https://www.businesswire.com/news/home/20250129828592/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Second-Quarter-Results",
+        "text": "Wire release, displayed dateline Jan 29, 2025 4:56 PM Eastern Standard Time (16:56 ET). https://www.businesswire.com/news/home/20250129828592/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Second-Quarter-Results",
+        "first_seen_at": "2025-01-29T16:57:00-05:00"
+      },
+      "published_at": "2025-01-29T16:56:00-05:00",
+      "cutoff": "2025-01-29T16:59:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:56",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-01-30"
+    },
+    {
+      "event_id": "vsat-step3-2025-02-06",
+      "cluster_id": "vsat-step3-2025-02-06",
+      "candidate_id": "0001193125-25-021810",
+      "security": {
+        "security_id": "VSAT-797721-2025-02-06",
+        "company_id": "0000797721",
+        "cik": "0000797721",
+        "ticker": "VSAT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-06T00:00:00-05:00",
+        "available_at": "2024-11-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "vsat-wire-2025-02-06",
+        "url": "https://www.globenewswire.com/news-release/2025/02/06/3022476/0/en/Viasat-Releases-Third-Quarter-Fiscal-Year-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline February 06, 2025 16:32 ET (16:32 ET). https://www.globenewswire.com/news-release/2025/02/06/3022476/0/en/Viasat-Releases-Third-Quarter-Fiscal-Year-2025-Financial-Results.html",
+        "first_seen_at": "2025-02-06T16:33:00-05:00"
+      },
+      "published_at": "2025-02-06T16:32:00-05:00",
+      "cutoff": "2025-02-06T16:35:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:32",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-07"
+    },
+    {
+      "event_id": "ttwo-step3-2025-02-06",
+      "cluster_id": "ttwo-step3-2025-02-06",
+      "candidate_id": "0001628280-25-004262",
+      "security": {
+        "security_id": "TTWO-946581-2025-02-06",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-06T00:00:00-05:00",
+        "available_at": "2024-11-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire-2025-02-06",
+        "url": "https://www.businesswire.com/news/home/20250206999431/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2025",
+        "text": "Wire release, displayed dateline Feb 6, 2025 4:05 PM Eastern Standard Time (16:05 ET). https://www.businesswire.com/news/home/20250206999431/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2025",
+        "first_seen_at": "2025-02-06T16:06:00-05:00"
+      },
+      "published_at": "2025-02-06T16:05:00-05:00",
+      "cutoff": "2025-02-06T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-07"
+    },
+    {
+      "event_id": "real-step3-2025-02-20",
+      "cluster_id": "real-step3-2025-02-20",
+      "candidate_id": "0001573221-25-000005",
+      "security": {
+        "security_id": "REAL-1573221-2025-02-20",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-04T00:00:00-05:00",
+        "available_at": "2024-11-04T20:00:00Z"
+      },
+      "source": {
+        "source_id": "real-wire-2025-02-20",
+        "url": "https://www.globenewswire.com/news-release/2025/02/20/3030092/0/en/the-realreal-announces-fourth-quarter-and-full-year-2024-results.html",
+        "text": "Wire release, displayed dateline February 20, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/02/20/3030092/0/en/the-realreal-announces-fourth-quarter-and-full-year-2024-results.html",
+        "first_seen_at": "2025-02-20T16:06:00-05:00"
+      },
+      "published_at": "2025-02-20T16:05:00-05:00",
+      "cutoff": "2025-02-20T16:08:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-21"
+    },
+    {
+      "event_id": "aspn-step3-2025-02-12",
+      "cluster_id": "aspn-step3-2025-02-12",
+      "candidate_id": "0001171843-25-000772",
+      "security": {
+        "security_id": "ASPN-1145986-2025-02-12",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-06T00:00:00-05:00",
+        "available_at": "2024-11-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "aspn-wire-2025-02-12",
+        "url": "https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-fourth-quarter-and-fiscal-year-2024-financial-results-and-recent-business-highlights-302375296.html",
+        "text": "Wire release, displayed dateline Feb 12, 2025, 16:30 ET (16:30 ET). https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-fourth-quarter-and-fiscal-year-2024-financial-results-and-recent-business-highlights-302375296.html",
+        "first_seen_at": "2025-02-12T16:31:00-05:00"
+      },
+      "published_at": "2025-02-12T16:30:00-05:00",
+      "cutoff": "2025-02-12T16:33:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:30",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-13"
+    },
+    {
+      "event_id": "cxt-step3-2025-02-12",
+      "cluster_id": "cxt-step3-2025-02-12",
+      "candidate_id": "0001628280-25-005148",
+      "security": {
+        "security_id": "CXT-25445-2025-02-12",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-06T00:00:00-05:00",
+        "available_at": "2024-11-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "cxt-wire-2025-02-12",
+        "url": "https://www.globenewswire.com/news-release/2025/02/12/3025444/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2024-Results-Raises-Annual-Dividend-by-6.html",
+        "text": "Wire release, displayed dateline February 12, 2025 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2025/02/12/3025444/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2024-Results-Raises-Annual-Dividend-by-6.html",
+        "first_seen_at": "2025-02-12T16:16:00-05:00"
+      },
+      "published_at": "2025-02-12T16:15:00-05:00",
+      "cutoff": "2025-02-12T16:18:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-13"
+    },
+    {
+      "event_id": "pdfs-step3-2025-02-13",
+      "cluster_id": "pdfs-step3-2025-02-13",
+      "candidate_id": "0001558370-25-000950",
+      "security": {
+        "security_id": "PDFS-1120914-2025-02-13",
+        "company_id": "0001120914",
+        "cik": "0001120914",
+        "ticker": "PDFS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-07T00:00:00-05:00",
+        "available_at": "2024-11-07T20:00:00Z"
+      },
+      "source": {
+        "source_id": "pdfs-wire-2025-02-13",
+        "url": "https://www.globenewswire.com/news-release/2025/02/13/3026351/0/en/PDF-Solutions-Announces-Record-2024-Fourth-Quarter-and-Full-Year-Total-Revenues.html",
+        "text": "Wire release, displayed dateline February 13, 2025 17:17 ET (17:17 ET). https://www.globenewswire.com/news-release/2025/02/13/3026351/0/en/PDF-Solutions-Announces-Record-2024-Fourth-Quarter-and-Full-Year-Total-Revenues.html",
+        "first_seen_at": "2025-02-13T17:18:00-05:00"
+      },
+      "published_at": "2025-02-13T17:17:00-05:00",
+      "cutoff": "2025-02-13T17:20:00-05:00",
+      "precision": "minute",
+      "timestamp_evidence": "17:17",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-02-14"
     }
   ]
 }

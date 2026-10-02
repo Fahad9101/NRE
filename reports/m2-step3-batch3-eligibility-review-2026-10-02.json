@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Two of batch 3's 11 nominal candidates (by filing date, OKTA 2025-02-04 and REAL 2025-02-10) were found, on reading their own real primary documents, not to be qualifying earnings events -- the same category as step 2's REKR exclusion (reports/m2-step2-eligibility-review-2026-09-28.json) and step 3's own CACI 8-K/A exclusion (reports/m2-step3-eligibility-review-2026-10-01.json). Leaves 9 genuine candidates in batch 3.",
+  "okta_2025_02_04": {
+    "candidate_id": "0001660134-25-000015",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+    "finding": "The filing's own Item 2.02 text reads in full: 'Okta, Inc. (the Company) reaffirms its financial guidance for the fourth quarter and fiscal year ending January 31, 2025, as provided in a press release issued December 3, 2024' -- no new financial results of any kind, purely a restatement of guidance already given in this same batch's own okta-step3-2024-12-03 candidate. The filing's real substance is a separate, genuine disclosure under Item 8.01: a restructuring plan announced to employees the same day, reducing headcount by approximately 180 full-time employees (~3%), with an estimated $11 million of restructuring charges.",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "not_a_qualifying_earnings_event: a pure guidance reaffirmation (no new quarterly results), not the kind of event this study measures. Mechanically passed the Item 2.02 screen because 'reaffirms financial guidance' still falls under 'Results of Operations and Financial Condition' by SEC's own item-number convention.",
+    "distinct_from": "The real restructuring disclosure (Item 8.01, ~3% workforce reduction) inside this same filing is itself a genuine, material corporate event -- but it is a workforce/cost action, not an earnings result, and this milestone's scope is earnings-reaction events specifically. Not built as a separate candidate; noted here for completeness, not swept under the exclusion."
+  },
+  "real_2025_02_10": {
+    "candidate_id": "0001193125-25-023641",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000119312525023641/d929762dex991.htm",
+    "finding": "The release's own headline reads 'The RealReal Reports Strong Preliminary Fourth Quarter and Full Year 2024 Results...' -- explicitly labeled preliminary, bundled with a real strategic debt-exchange transaction (2028 Convertible Notes, ~$37 million of debt reduced). The preliminary figures (Q4 GMV $503.5M, Total Revenue $163.1-164.1M, Adjusted EBITDA $10.7-11.2M) match this same batch's own real-step3-2025-02-20 candidate's final figures (Q4 revenue $164M, Adjusted EBITDA $11M) almost exactly. This is the THIRD time this same issuer has produced this exact pattern in this project's own real data (2024-10-28 preliminary Q3 -- predates the step-3 window, not a pool candidate; this 2025-02-10 preliminary Q4/FY -- inside the window, IS a pool candidate and must be dispositioned; a later full/final release each time).",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "not_a_qualifying_earnings_event: explicitly a preliminary pre-announcement of the same results the real-step3-2025-02-20 candidate later reports in full -- the same exclusion category as step 2's REKR (reports/m2-step2-eligibility-review-2026-09-28.json), this time self-identified by the issuer's own headline rather than inferred.",
+    "distinct_from": "The debt-exchange transaction bundled into this filing (items 1.01/2.03/3.02) is real and material, but it is a financing event, not an earnings result -- not built as a separate candidate, noted for completeness."
+  },
+  "net_effect": {
+    "newly_excluded": [
+      "OKTA 2025-02-04 (pure guidance reaffirmation, not a qualifying earnings event)",
+      "REAL 2025-02-10 (preliminary pre-announcement, superseded by real-step3-2025-02-20)"
+    ],
+    "running_excluded_total_step3": [
+      "CACI 2025-04-24 (8-K/A, not a qualifying earnings event -- reports/m2-step3-eligibility-review-2026-10-01.json)",
+      "OKTA 2025-02-04 (guidance reaffirmation, not a qualifying earnings event)",
+      "REAL 2025-02-10 (preliminary pre-announcement, not a qualifying earnings event)"
+    ]
+  },
+  "not_a_claim": "Does not mark any of batch 3's remaining 9 candidates 'included' -- the corporate-action check, identity/exchange re-verification, and a label-engine dry run are still pending, same as every other step-3 candidate."
+}
