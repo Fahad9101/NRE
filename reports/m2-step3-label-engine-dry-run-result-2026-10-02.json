@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/37048630945",
+  "workflow_run_number": 1,
+  "commit": "bf4f53b",
+  "trigger": "push (auto-triggered by the very commit that added the workflow: the workflow file and several watched paths were in it, so no manual dispatch was needed)",
+  "context": "The real result of Milestone 2 step 3's label-engine dry run -- the cohort-level formal audit (nre.acceptance.audit_cohort(), the same machinery Milestone 1 and step 2 used), run standalone under step 3's own protocol over the 60 attested, pinned events. Built on the owner's \"yes build it\" (reports/m2-step3-label-engine-dry-run-scope-authorization-2026-10-02.json; what was built and which choices were Claude's own: docs/M2-STEP-3-LABEL-ENGINE-DRY-RUN-SCOPE.md). The run refetched real Alpaca bars and corporate actions for all 60 events inside GitHub Actions and printed only gates, counts and hashes.",
+  "path_to_this_result": "First attempt, with no code or data bug surfaced. Step 2 needed five attempts, each exposing a real bug (source_id, bars/actions source-id and security_id collisions once all events were merged into one bundle; a spot check on a dividend-suppressed event). Step 3 built those lessons in: ids were date/event-suffixed at build time, the spot checks were chosen among events with a non-null session_20_close_return, and tests/test_step3_audit.py ran the same 60-event merge and all 16 gates offline over synthetic flat bars before the push. The continuous-integration run on the same commit (NRE Milestone 1 #198, https://github.com/Fahad9101/NRE/actions/runs/37048630850) also passed on Python 3.12 and 3.13.",
+  "result_source": {
+    "what": "The result below is the workflow's own 'NRE cohort audit' notice annotation (nre.consolidated_audit.summarize()), read from the run page. The full stdout JSON, with the per-gate dictionary, is in the job log, which the built-in browser cannot read without a GitHub sign-in; passed_gates lists all 16 gate names and failed_gates is empty, so the per-gate dictionary is fully determined.",
+    "annotation_characters": 1266,
+    "annotation_sha256": "3cdaf27b5ec0fa0fc2023e075d6ff3c63f278e804679c233a3509095d70ac40e",
+    "annotation_sha256_note": "sha256 of the annotation's JSON text, computed in the browser over the text on the run page and re-checked against the copy recorded here."
+  },
+  "result": {
+    "archive_observations": 23,
+    "counts": {
+      "candidates": 66,
+      "dispositions": {
+        "excluded": 6,
+        "included": 60
+      },
+      "eligible_complete_events": 57,
+      "events": 60,
+      "unique_issuers": 22
+    },
+    "failed_gates": [],
+    "hashes": {
+      "input_sha256": "a8ab9eae10bdb75c0869f7debb6d9f744dd566aa743c987924d5a015b75b0fd3",
+      "ledger_sha256": "a0f557e89a2ac9f4730c9b9ee8b68bfde190061e45b3135ab3d04c1070e8352f",
+      "membership_sha256": "1ef5476b0628aad4651da42d8737ccc45e37ec9def7083404cc6f192da1fc5c2",
+      "protocol_sha256": "20498997aa4fcafd7ecd0aa8aa1eb9dbd74640d7552a5e7b451f6ac13b10b49c",
+      "review_sha256": "5a715860bea64ade666160224bb92b6ef3abe31f85c32449e4be790120c4df32"
+    },
+    "invalid_candidate_dispositions": 0,
+    "milestone_accepted": false,
+    "passed_gates": [
+      "all_events_in_window",
+      "availability_mode",
+      "candidate_accounting",
+      "candidate_source_hashes",
+      "discovery_coverage_review",
+      "earnings_results_only",
+      "frozen_membership_hash",
+      "identity_history_review",
+      "independent_timing_spot_checks",
+      "issuer_identity",
+      "minimum_events",
+      "minimum_issuers",
+      "protocol_hash",
+      "provider_rights_review",
+      "real_data",
+      "selection_frozen_before_prices"
+    ],
+    "spot_checked_events_by_timing": {
+      "after_hours": [
+        "okta-step3-2025-05-27",
+        "vsat-step3-2025-05-20"
+      ],
+      "premarket": [
+        "achv-step3-2025-05-13",
+        "lnsr-step3-2025-05-08"
+      ]
+    },
+    "status": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED"
+  },
+  "verification_of_the_reported_hashes": "protocol_sha256, ledger_sha256, review_sha256 and membership_sha256 were recomputed locally with nre.core.canonical/digest from the files as committed at bf4f53b and reproduce the run's values, so the run audited exactly the committed files. input_sha256 covers the real fetched prices and the run's retrieval timestamp, so it can only be produced inside Actions.",
+  "reading": {
+    "status": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED: all 16 gates passed and failed_gates is empty. The status's own words matter: 'review required'. It says the records are mutually consistent, not that they are true.",
+    "candidate_source_hashes_now_passes": "Step 2's run failed this gate (its raw SEC bytes were never archived) and was accepted with it failing. Here it passes because the 23 payloads the cohort freeze hashed are committed under archive/m2-step3-sec-freeze/ -- a choice that was Claude's own, flagged for the owner to confirm or reverse, not an owner decision. The pass means the archived bytes are the bytes the freeze hashed. It does NOT mean they are SEC's raw submissions.json: they are the browser-fetched, filtered, re-serialized 8-K subset (SEC's own full-response hash and size are recorded per payload). Milestone 1's pass on this gate rested on real raw bytes, so this pass is a weaker statement than Milestone 1's.",
+    "gates_that_only_test_for_presence": "discovery_coverage_review, identity_history_review and provider_rights_review pass when the review file holds a non-empty evidence statement (nre/acceptance.py: bool(review.get(...))); they do not test whether the statements are true. Claude wrote those statements, pointing at evidence already on file; whether that evidence suffices is for the owner. The same was true of step 2.",
+    "independent_timing_spot_checks": "Passes with 2 premarket (ACHV 2025-05-13, LNSR 2025-05-08) and 2 after-hours (OKTA 2025-05-27, VSAT 2025-05-20) complete events, each with an evidence string and a named reviewer. The named reviewer is the owner, on the basis of the owner's batch-6 sign-off, as in step 2. Claude's separate re-verification of those four timestamps against a third source is in reports/m2-step3-independent-timing-spot-checks-2026-10-02.json; the owner has not reviewed it.",
+    "eligible_complete_events_57_not_60": "CXT's three real cash dividends (ex-dates 2024-11-29, 2025-02-28, 2025-05-30) each null exactly their own session_20_close_return (CORPORATE_ACTION_IN_WINDOW), so none of CXT's three events counts as 'complete' under this gate's definition (a non-null session_20). They are still real, attested, MAPPED events with pinned labels_sha256. Correspondingly unique_issuers is 22, not 23.",
+    "what_the_audit_recomputed": "Labels were rebuilt from freshly fetched bars (nre.dataset.build) and used for the completeness test (state MAPPED, non-null session_20). The audit does not compare them with the pinned labels_sha256 values; that comparison is what the per-event workflow's follow-up run #22 did, re-confirming all 60 events labels_match_recorded: true.",
+    "candidate_accounting": "All 66 frozen candidates reconciled: 60 included, each matching a real event_id in the spec, and 6 excluded, each with a reason and no event_id; none quarantined (invalid_candidate_dispositions: 0).",
+    "milestone_accepted_is_always_false": "audit_cohort() never sets this true regardless of gate outcome, by design. The owner's own final decision on step 3, and any declaration record for it, is a separate, later step that needs the owner's explicit word."
+  },
+  "not_a_claim": [
+    "Not Milestone 2 step 3 acceptance.",
+    "Not Milestone 4 or anything past it, which remain unauthorized.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that the archived payloads are SEC's raw bytes, or that all 16 gates passing here is as strong a statement as Milestone 1's all-16 pass was.",
+    "Not independent review: a clean structural result is explicitly 'review required', and the reviewed ledger, acceptance review and evidence statements it checks were assembled by Claude from evidence on file."
+  ]
+}

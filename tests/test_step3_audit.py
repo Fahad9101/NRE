@@ -138,6 +138,20 @@ class RecordsTests(unittest.TestCase):
         for check in report["checks"]:
             self.assertTrue(check["result"].startswith("AGREES"), check["event_id"])
 
+    def test_recorded_audit_result_binds_to_the_committed_inputs(self):
+        # The real run's result is only meaningful for the exact files it audited: editing the ledger, review or protocol
+        # without a fresh audit (the workflow re-runs on those paths) and an updated record must fail here.
+        record = load("reports/m2-step3-label-engine-dry-run-result-2026-10-02.json")
+        result = record["result"]
+        self.assertEqual(result["hashes"]["ledger_sha256"], digest(canonical(LEDGER)))
+        self.assertEqual(result["hashes"]["review_sha256"], digest(canonical(REVIEW)))
+        self.assertEqual(result["hashes"]["protocol_sha256"], digest(canonical(PROTOCOL)))
+        self.assertEqual(result["hashes"]["membership_sha256"], REVIEW["frozen_membership_sha256"])
+        self.assertEqual((result["status"], result["failed_gates"], result["milestone_accepted"]),
+                         ("STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED", [], False))
+        annotation = json.dumps(result, sort_keys=True, separators=(",", ":"))
+        self.assertEqual(digest(annotation.encode("utf-8")), record["result_source"]["annotation_sha256"])
+
     def test_workflow_audits_the_step3_files(self):
         text = (ROOT / ".github" / "workflows" / "depth3-consolidated-audit.yml").read_text(encoding="utf-8")
         for fragment in ("python -m nre.consolidated_audit", "--spec config/m2-step3-events.json",
