@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Reply to the batch-4 signoff request built from reports/m2-step3-batch4-signoff-packet-2026-10-02.json -- nine real events (HURN, COLL, LNSR, PAYO, OKTA, ACHV, ASMB, KLC, TECX), all quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with a clean real dry run (workflow run 37004597885), plus flagged findings: two sibling exclusions in the same batch (ALKT 2025-02-27 under the same-day competing-catalyst policy, REKR 2025-03-17 as a preliminary pre-announcement), the announced Alcon take-out inside LNSR's window (session 18), HURN's two inside-window items (buyback increase on session 13, Investor Day on session 20), and COLL's inside-window governance 8-K (session 12) plus the officer departure bundled inside its own event 8-K.",
+  "owner_reply": "yes go ahead",
+  "owner_reply_exact_as_received": [
+    {
+      "transcript_timestamp_utc": "2026-10-02T13:45:20.616Z",
+      "text": "غثس لخ شاثشي",
+      "reading": "Arabic-layout keystrokes; decoded by physical key position on the standard Arabic layout (غ=y ث=e س=s, ل=g خ=o, ش=a ا=h ث=e ش=a ي=d) to 'yes go ahead' -- the same kind of reading this project already uses for this owner's short replies typed on the wrong keyboard layout."
+    },
+    {
+      "transcript_timestamp_utc": "2026-10-02T13:45:24.796Z",
+      "text": "yes go ahead",
+      "reading": "Plain-text repeat of the same reply, delivered four seconds later as a mid-turn message; removes any doubt about the decoded reading above."
+    }
+  ],
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 9 candidates in reports/m2-step3-batch4-signoff-packet-2026-10-02.json: hurn-step3-2025-02-25, coll-step3-2025-02-27, lnsr-step3-2025-02-27, payo-step3-2025-02-27, okta-step3-2025-03-03, achv-step3-2025-03-11, asmb-step3-2025-03-20, klc-step3-2025-03-20, tecx-step3-2025-03-20. The packet offered the owner the alternative of including ALKT 2025-02-27 with a caveat; the reply did not take it, so the exclusion recommended in reports/m2-step3-batch4-eligibility-review-2026-10-02.json stands.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance, not step-3 acceptance.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- LNSR's announced Alcon take-out (session 18), HURN's buyback increase (session 13) and Investor Day (session 20), and COLL's governance 8-K (session 12) all travel with the computed labels (config/m2-step3-events.json carries them as caveats) rather than being resolved here.",
+    "Not a permanent ruling on ALKT 2025-02-27: it stays excluded under the project's own same-day competing-catalyst policy unless the owner later instructs otherwise explicitly.",
+    "Not a re-fetch of the eight chain-anchored issuers' prior-quarter covers -- each was compared against the cover row recorded in that issuer's own earlier packet; HURN's prior cover was read directly."
+  ]
+}
