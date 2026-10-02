@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Reply to the batch-1 signoff request built from reports/m2-step3-batch1-signoff-packet-2026-10-02.json -- ten real events (CACI x2, PARR x3, NBIX x2, LNSR, ACHV, ASMB), all quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with a clean real dry run (zero corporate actions, no missing/zero-volume sessions), plus two flagged findings: CACI's duplicate 8-K/A exclusion and a real same-day Item 5.07 filing for PARR's 2025-05-06 candidate that the original same-day sweep had missed (assessed fresh, NOT EXCLUDED).",
+  "owner_reply": "yes go ahead on all 10",
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 10 candidates in reports/m2-step3-batch1-signoff-packet-2026-10-02.json: caci-step3-2025-01-22, caci-step3-2025-04-23, parr-step3-2024-11-04, parr-step3-2025-02-25, parr-step3-2025-05-06, nbix-step3-2025-02-06, nbix-step3-2025-05-05, lnsr-step3-2024-11-07, achv-step3-2024-11-07, asmb-step3-2024-11-07.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance, not step-3 acceptance.",
+    "Not a claim that any proposed_label_caveat's underlying item (CACI's session-20 8-K, PARR's two inside-window 8-Ks, NBIX's two inside-window 8-Ks) is or is not disqualifying -- those caveats travel with the computed labels rather than being resolved here, same as step 2's own LOVE/VSAT/HURN precedent.",
+    "Not a re-examination of the other 55 step-3 candidates for the same same-day-sweep filing_date-vs-true-date gap found for PARR -- carried forward as a recommendation for batches 2-6, not performed here."
+  ]
+}
