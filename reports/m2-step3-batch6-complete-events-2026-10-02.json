@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/37046149666",
+  "workflow_run_number": 21,
+  "commit": "08ebc94",
+  "trigger": "push (auto-triggered: config/m2-step3-events.json is a watched path)",
+  "context": "First real, attested result for Milestone 2 step 3 batch 6, the last batch: all 11 batch-6 candidates now carry first_public_time, historical_identity, and corporate_actions attestations (reports/m2-step3-batch6-signoff-2026-10-02.json, owner reply \"yes go ahead\"). All eleven reached MAPPED with no error, no corporate action, no missing session and no zero-volume session. ACHV's session_2_close_return is exactly 0.0 (its session-2 close equals the baseline close), stored here as the float the pipeline computed. Caveats carried in config/m2-step3-events.json: TTWO's equity offering (session_5/10/20), VSAT's stockholder agreements (session_5/10/20) and Ligado settlement (session_20), LNSR's day-1 labels (corrected release) and FTC Second Request (session_20), TECX's clinical-data release (session_10/20), COLL's repurchase (session_2/5/10/20) and annual meeting (session_10/20), REKR's three items, and ACHV's and KLC's session_20 items. With this batch every one of the 66 frozen step-3 candidates has a recorded disposition: 60 computed events and 6 exclusions. No raw OHLCV was ever committed here, only the derived returns/booleans the pipeline computed.",
+  "result": {
+    "all_ok": true,
+    "total_events": 11,
+    "errors": 0,
+    "all_mapped": true,
+    "events_in_the_whole_run": 60,
+    "earlier_events_reconfirmed_labels_match_recorded": 49
+  },
+  "independent_cross_check": "After the run, all 11 events' 8 return labels were recomputed from Yahoo Finance's public daily bars, independent of Alpaca (88 values): 82 agree to better than 1e-5, 48 of them (all of COLL, LNSR, REAL, TTWO, VSAT and OKTA) to better than 1e-7. The other 6 differ by at most 1.7e-3: ACHV day1_low (1.7e-3 on a roughly $2.50 stock), PDFS day1_high and day1_low (9.2e-5 and 2.6e-4), TECX day1_low (2.4e-4), KLC day1_high (1.5e-5) and REKR session_5 (2.9e-4 on a roughly $1 stock) -- each equal to a price difference of well under a cent, consistent with Alpaca's four-decimal SIP bars versus Yahoo's rounded prices, not data discrepancies. A post-hoc QA check only: it changes no label, digest, or selection, and the pipeline's own Alpaca-derived values remain the recorded results.",
+  "computed_events": {
+    "achv-step3-2025-05-13": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.06854838709677424,
+        "day1_high_return": 0.0766129032258065,
+        "day1_low_return": 0.0022983870967741016,
+        "day1_open_return": 0.032258064516129004,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.27419354838709675,
+        "session_20_close_return": 0.4879032258064515,
+        "session_2_close_return": 0.0,
+        "session_5_close_return": 0.33467741935483875
+      },
+      "labels_sha256": "0c3c53961a65d85ea4c89f1e9df51182c55ffe898bdb249c0051764bd5a73816"
+    },
+    "coll-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.05940594059405946,
+        "day1_high_return": 0.0876420975430876,
+        "day1_low_return": 0.020902090209020896,
+        "day1_open_return": 0.0876420975430876,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.0568390172350568,
+        "session_20_close_return": 0.10744407774110742,
+        "session_2_close_return": 0.08397506417308387,
+        "session_5_close_return": 0.07590759075907583
+      },
+      "labels_sha256": "43620f937b0f18f6f9e04d1d5f2a885616cace6cdbb94a690f12275690a12fb5"
+    },
+    "klc-step3-2025-05-13": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.08543833580980686,
+        "day1_high_return": -0.010386329866270527,
+        "day1_low_return": -0.1456166419019317,
+        "day1_open_return": -0.04234769687964346,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.0780089153046063,
+        "session_20_close_return": -0.20133729569093617,
+        "session_2_close_return": -0.0898959881129272,
+        "session_5_close_return": -0.1248142644873701
+      },
+      "labels_sha256": "ae11c8802e08aa224bee4e9f0460794330d04d3eefb52d77ba146aed0af595e1"
+    },
+    "lnsr-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.001446131597975353,
+        "day1_high_return": 0.005061460592914013,
+        "day1_low_return": -0.010845986984815648,
+        "day1_open_return": -0.002169197396963085,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.010845986984815648,
+        "session_20_close_return": -0.05567606652205348,
+        "session_2_close_return": 0.006507592190889255,
+        "session_5_close_return": 0.025307302964569844
+      },
+      "labels_sha256": "3349b4256a77dd01a5bd096b796b504ab91286ac57a9a5f3282468bf6e92d8a7"
+    },
+    "okta-step3-2025-05-27": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.16155378486055783,
+        "day1_high_return": -0.10693227091633473,
+        "day1_low_return": -0.16159362549800793,
+        "day1_open_return": -0.1302788844621513,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.1969721115537848,
+        "session_20_close_return": -0.2174501992031873,
+        "session_2_close_return": -0.15035856573705186,
+        "session_5_close_return": -0.1746613545816733
+      },
+      "labels_sha256": "48cfca79dd0a6541c99c66e230328c7795ec5f2c49d9765039967125fe2d7544"
+    },
+    "pdfs-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.06071428571428572,
+        "day1_high_return": -0.02101020408163279,
+        "day1_low_return": -0.09872448979591852,
+        "day1_open_return": -0.053061224489796,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.044897959183673564,
+        "session_20_close_return": -0.017857142857142905,
+        "session_2_close_return": -0.014285714285714346,
+        "session_5_close_return": 0.045408163265306056
+      },
+      "labels_sha256": "32e65978a68aeb6501c749e479f30cc3be6ce2bcfc646ad7023768597bda6988"
+    },
+    "real-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.3072702331961592,
+        "day1_high_return": -0.1632373113854596,
+        "day1_low_return": -0.3388203017832647,
+        "day1_open_return": -0.1632373113854596,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.2812071330589849,
+        "session_20_close_return": -0.21673525377229086,
+        "session_2_close_return": -0.2318244170096022,
+        "session_5_close_return": -0.2770919067215364
+      },
+      "labels_sha256": "f4297306e69015c1d51a7c656b3117106aa208226157d7ac8c651232ab16447a"
+    },
+    "rekr-step3-2025-05-14": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": 0.009803921568627416,
+        "day1_high_return": 0.009803921568627416,
+        "day1_low_return": -0.1470588235294118,
+        "day1_open_return": -0.11764705882352944,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.13725490196078427,
+        "session_20_close_return": 0.3431372549019609,
+        "session_2_close_return": 0.05882352941176472,
+        "session_5_close_return": -0.01990196078431372
+      },
+      "labels_sha256": "3b20ad890bf2663885a5fce1678827854c0b4e5868b76a8d3993ade5bfa2fb60"
+    },
+    "tecx-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.05994291151284481,
+        "day1_high_return": 0.02901998097050429,
+        "day1_low_return": -0.08016175071360598,
+        "day1_open_return": 0.008087535680304514,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": 0.056137012369172234,
+        "session_20_close_return": 0.09705042816365372,
+        "session_2_close_return": -0.014747859181731604,
+        "session_5_close_return": -0.015699333967649776
+      },
+      "labels_sha256": "8323bd7fabb7c62c037f50448e8a192dd3bf1dd3b3ed205bd8e13c34b593573e"
+    },
+    "ttwo-step3-2025-05-15": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.024102608246535207,
+        "day1_high_return": 0.03632607385727815,
+        "day1_low_return": -0.02681415167427037,
+        "day1_open_return": 0.01824911767237669,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": -0.026082465352500694,
+        "session_20_close_return": -0.009081518464319593,
+        "session_2_close_return": 0.0099853662735645,
+        "session_5_close_return": -0.02724455539295867
+      },
+      "labels_sha256": "c6299ee9c0dc8573fdd6694c7067394db79f78db2cce2354bb49405b46708781"
+    },
+    "vsat-step3-2025-05-20": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.04938271604938271,
+        "day1_high_return": 0.054131054131054235,
+        "day1_low_return": -0.0883190883190883,
+        "day1_open_return": -0.006647673314339797,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.15574548907882235,
+        "session_20_close_return": 0.2640075973409308,
+        "session_2_close_return": -0.042735042735042694,
+        "session_5_close_return": -0.12250712250712248
+      },
+      "labels_sha256": "4e409707466c38d6076a0d5f1d5bd3ffd1dafabe3223b6ccbeb9805456f9a6be"
+    }
+  }
+}
