@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-02",
+  "purpose": "Evidence for the project owner to sign off, or not, on nine candidate events for Milestone 2 step 3 (batch 3 of 7, the next candidates of the 44 that remained after batches 1-2). Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "Batch 3 is the next 11 candidates by filing date after batches 1-2 (OKTA 2024-12-03 through REAL 2025-02-20). Two of the 11 are excluded as not qualifying earnings events (reports/m2-step3-batch3-eligibility-review-2026-10-02.json) -- OKTA's 2025-02-04 filing (pure guidance reaffirmation) and REAL's 2025-02-10 filing (explicitly 'preliminary', superseded by this batch's own 2025-02-20 candidate) -- leaving 9 genuine candidates built here.",
+  "dry_run": {
+    "workflow": "depth3-event-acquire.yml",
+    "run_id": 36979627599,
+    "commit": "77ae2f7",
+    "result": "All 9 pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels. All 21 of batches 1-2's already-attested events re-confirmed state MAPPED. CXT shows a second real cash dividend (ex-date 2025-02-28, following the one already accepted for its 2024-11-06 candidate). The other 8 of 9 are clean (empty corporate_actions). A real missing_sessions gap was initially found for love-step3-2024-12-12 (2025-01-09) -- see the calendar correction below; re-ran clean after the fix."
+  },
+  "real_calendar_correction": "This batch's own dry run surfaced a genuine bug: 2025-01-09 (NYSE/Nasdaq's real, one-time closure for President Carter's National Day of Mourning) was missing from nre/calendar-2025.json, because that file was built from the official yearly calendar PDF, published before the closure was announced. Fixed and scoped before this packet was finalized -- full detail in reports/m2-step3-calendar-2025-01-09-correction-2026-10-02.json. Checked against every already-built event in this project; only love-step3-2024-12-12 (built in this same batch) was affected, and it had not yet been attested when found.",
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below. Two candidates (OKTA, REAL) carry a sibling exclusion in this same batch rather than the usual 'none found' gap -- see each one's own entry.",
+    "corporate_actions": "For 8 of 9 candidates: accept two independent clean signals -- no Item 3.03/5.03 8-K on the event date itself, and Alpaca's real, fully paginated corporate-actions response empty. CXT is the exception -- a second real cash dividend (ex-date 2025-02-28), the same issuer and treatment already accepted for its first step-3 candidate."
+  },
+  "candidates": [
+    {
+      "event_id": "okta-step3-2024-12-03",
+      "candidate_id": "0001660134-24-000165",
+      "ticker": "OKTA",
+      "company": "Okta, Inc.",
+      "cik": "0001660134",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20241202763952/en/Okta-Announces-Third-Quarter-Fiscal-Year-2025-Financial-Results",
+        "displayed_stamp_et": "Dec 3, 2024 4:01 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2024-12-03T16:01:00-05:00",
+        "sec_8k_accepted_et": "2024-12-03 16:02:30",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-12-03",
+      "reaction_session": "2024-12-04",
+      "twentieth_reaction_session": "2025-01-02",
+      "identity_evidence": {
+        "event_filing_cover": "Class A common stock, par value $0.0001 per share | OKTA | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "presumed true from the prior filing's own exhibit masthead (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001660134-24-000134",
+          "accepted_et": "2024-08-28 (real wire 2024-08-28; SEC acceptance date confirmed via real submissions history)"
+        },
+        "spec_valid_from": "2024-08-28T00:00:00-04:00",
+        "spec_available_at": "2024-08-28T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-28 2.02,7.01,9.01 (prior quarter, anchor)",
+          "2024-12-03 2.02,7.01,9.01 <EVENT>",
+          "2025-02-04 2.02,8.01 (EXCLUDED as its own candidate -- pure guidance reaffirmation + a real, separate workforce-reduction disclosure; reports/m2-step3-batch3-eligibility-review-2026-10-02.json)",
+          "2025-02-10 5.02,9.01 (officer/director change, well outside this event's own window)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's own 2025-02-04 filing (excluded, see above) is the direct basis for this project's first qualifying-event exclusion of a pure guidance reaffirmation; its real substance (a ~3% workforce reduction) is unrelated to this candidate's own event."
+    },
+    {
+      "event_id": "love-step3-2024-12-12",
+      "candidate_id": "0001628280-24-050869",
+      "ticker": "LOVE",
+      "company": "The Lovesac Company",
+      "cik": "0001701758",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/12/12/2996053/0/en/The-Lovesac-Company-Reports-Third-Quarter-Fiscal-2025-Financial-Results.html",
+        "displayed_stamp_et": "December 12, 2024 07:00 ET",
+        "minute_encoded_in_spec": "2024-12-12T07:00:00-05:00",
+        "sec_8k_accepted_et": "2024-12-12 07:01:20",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2024-12-11",
+      "reaction_session": "2024-12-12",
+      "twentieth_reaction_session": "2025-01-13",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.00001 per share | LOVE | The NASDAQ Stock Market LLC",
+        "prior_filing_cover_identical": "presumed true from the prior filing's own exhibit masthead (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001628280-24-040188",
+          "accepted_et": "2024-09-12 07:01:03"
+        },
+        "spec_valid_from": "2024-09-12T00:00:00-04:00",
+        "spec_available_at": "2024-09-12T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-09-12 2.02,9.01 (prior quarter, anchor)",
+          "2024-12-12 7.01,9.01 (SAME DAY, 16:30 ET -- Investor Day Reg FD notice; already assessed NOT EXCLUDED, reports/m2-step3-same-day-catalyst-review-2026-10-01.json)",
+          "2024-12-12 2.02,9.01 <EVENT> (07:00 ET)",
+          "2024-12-17 7.01,9.01 (09:01 ET -- the Investor Day event itself)",
+          "2024-12-17 7.01,9.01 (separate filing, 12:31 ET -- also Investor Day related)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2024-12-17 8-K Item 7.01,9.01 x2 (the Investor Day itself -- the 2024-12-12 same-day notice had already told the market this was coming, but the Investor Day's own real content was not opened; lands on session 3)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present after the real calendar correction below; no zero-volume session (real dry run, workflow run 36979627599).",
+      "proposed_label_caveat": {
+        "labels": ["session_5_close_return", "session_10_close_return", "session_20_close_return"],
+        "note": "The 2024-12-17 Investor Day (session 3) falls before sessions 5/10/20; content not opened, so any new strategic or financial detail presented there is not accounted for in this event's own chronology."
+      },
+      "additional_note": "This candidate's own dry run first reported a real missing_sessions gap (2025-01-09) caused by a genuine, project-wide calendar-file bug -- NYSE/Nasdaq's real one-time closure for President Carter's National Day of Mourning was missing from nre/calendar-2025.json. Fixed before this packet was finalized; full detail in reports/m2-step3-calendar-2025-01-09-correction-2026-10-02.json. The fix changes this candidate's own 20th reaction session from the (wrong) 2025-01-10 to the (correct) 2025-01-13; no other already-built event in this project was affected."
+    },
+    {
+      "event_id": "jbss-step3-2025-01-29",
+      "candidate_id": "0000950170-25-010562",
+      "ticker": "JBSS",
+      "company": "John B. Sanfilippo & Son, Inc.",
+      "cik": "0000880117",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250129828592/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Second-Quarter-Results",
+        "displayed_stamp_et": "Jan 29, 2025 4:56 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2025-01-29T16:56:00-05:00",
+        "sec_8k_accepted_et": "2025-01-29 16:59:57",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-01-29",
+      "reaction_session": "2025-01-30",
+      "twentieth_reaction_session": "2025-02-27",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $.01 par value per share | JBSS | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "presumed true from the prior filing's own exhibit masthead (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0000950170-24-119038",
+          "accepted_et": "2024-10-30 16:28:49"
+        },
+        "spec_valid_from": "2024-10-30T00:00:00-04:00",
+        "spec_available_at": "2024-10-30T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-20 2.02 (fiscal 2024 Q4/annual, well before this event's own anchor)",
+          "2024-08-29 7.01,9.01",
+          "2024-10-30 2.02,9.01 (prior quarter, anchor)",
+          "2024-10-31 5.07,8.01",
+          "2025-01-29 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    },
+    {
+      "event_id": "vsat-step3-2025-02-06",
+      "candidate_id": "0001193125-25-021810",
+      "ticker": "VSAT",
+      "company": "Viasat, Inc.",
+      "cik": "0000797721",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/06/3022476/0/en/Viasat-Releases-Third-Quarter-Fiscal-Year-2025-Financial-Results.html",
+        "displayed_stamp_et": "February 06, 2025 16:32 ET",
+        "minute_encoded_in_spec": "2025-02-06T16:32:00-05:00",
+        "sec_8k_accepted_et": "2025-02-06 16:30:17",
+        "sec_acceptance_not_before_wire_minute": "SEC acceptance landed 2 minutes before the wire's own displayed stamp -- within ordinary clock-sync tolerance."
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-06",
+      "reaction_session": "2025-02-07",
+      "twentieth_reaction_session": "2025-03-07",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.0001 per share | VSAT | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-24-252046",
+          "accepted_et": "2024-11-06 16:11:33 (this issuer's own step-3 batch-2 candidate, vsat-step3-2024-11-06)"
+        },
+        "spec_valid_from": "2024-11-06T00:00:00-05:00",
+        "spec_available_at": "2024-11-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-06 2.02,9.01 (this issuer's own prior step-3 candidate)",
+          "2025-01-22 5.02,9.01 (officer/director change, well before this event's own window)",
+          "2025-02-06 2.02,9.01 <EVENT>",
+          "2025-03-07 5.02 (lands on this event's own 20th and final reaction session)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-03-07 8-K Item 5.02 (officer/director change; content not opened; lands exactly on session 20, the last reaction session)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["session_20_close_return"],
+        "note": "An Item 5.02 8-K was filed 2025-03-07, landing exactly on session 20; content not opened."
+      },
+      "additional_note": "Identity anchor chains directly to this issuer's own batch-2 candidate (vsat-step3-2024-11-06) -- same real cover table, re-confirmed true rather than presumed."
+    },
+    {
+      "event_id": "ttwo-step3-2025-02-06",
+      "candidate_id": "0001628280-25-004262",
+      "ticker": "TTWO",
+      "company": "Take-Two Interactive Software, Inc.",
+      "cik": "0000946581",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20250206999431/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Third-Quarter-2025",
+        "displayed_stamp_et": "Feb 6, 2025 4:05 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2025-02-06T16:05:00-05:00",
+        "sec_8k_accepted_et": "2025-02-06 16:11:34",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-06",
+      "reaction_session": "2025-02-07",
+      "twentieth_reaction_session": "2025-03-07",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.01 par value | TTWO | NASDAQ Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001628280-24-045720",
+          "accepted_et": "2024-11-06 16:15:50 (this issuer's own step-3 batch-2 candidate, ttwo-step3-2024-11-06)"
+        },
+        "spec_valid_from": "2024-11-06T00:00:00-05:00",
+        "spec_available_at": "2024-11-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-06 2.02,9.01 (this issuer's own prior step-3 candidate)",
+          "2025-02-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Identity anchor chains directly to this issuer's own batch-2 candidate (ttwo-step3-2024-11-06) -- same real cover table, re-confirmed true rather than presumed."
+    },
+    {
+      "event_id": "aspn-step3-2025-02-12",
+      "candidate_id": "0001171843-25-000772",
+      "ticker": "ASPN",
+      "company": "Aspen Aerogels, Inc.",
+      "cik": "0001145986",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-fourth-quarter-and-fiscal-year-2024-financial-results-and-recent-business-highlights-302375296.html",
+        "displayed_stamp_et": "Feb 12, 2025, 16:30 ET",
+        "minute_encoded_in_spec": "2025-02-12T16:30:00-05:00",
+        "sec_8k_accepted_et": "2025-02-12 16:30:37",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-12",
+      "reaction_session": "2025-02-13",
+      "twentieth_reaction_session": "2025-03-13",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | ASPN | The New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001171843-24-006061",
+          "accepted_et": "2024-11-06 16:30:28 (this issuer's own step-3 batch-2 candidate, aspn-step3-2024-11-06)"
+        },
+        "spec_valid_from": "2024-11-06T00:00:00-05:00",
+        "spec_available_at": "2024-11-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-06 2.02,7.01,9.01 (this issuer's own prior step-3 candidate)",
+          "2024-11-19 5.05 (Code of Ethics amendment/waiver -- found only after this packet's own chronology window was re-pulled for this candidate; a real correction to aspn-step3-2024-11-06's own already-attested packet is recorded in reports/m2-step3-batch2-competing-catalyst-correction-2026-10-02.json, not reopened)",
+          "2025-02-12 2.02,7.01,9.01 <EVENT>",
+          "2025-03-06 5.02 (officer/director change; lands inside this event's own window)",
+          "2025-03-07 5.02,9.01 (officer/director change; lands inside this event's own window)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-03-06 8-K Item 5.02 (officer/director change; content not opened)",
+        "2025-03-07 8-K Item 5.02,9.01 (officer/director change; content not opened)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["session_15_close_return", "session_20_close_return"],
+        "note": "Two Item 5.02 8-Ks landed 2025-03-06 and 2025-03-07 (officer/director changes), both inside the window; content not opened for either. Approximate session count given both filings' exact session position was not individually recomputed beyond confirming they fall inside the 20-session window."
+      },
+      "additional_note": "Identity anchor chains directly to this issuer's own batch-2 candidate (aspn-step3-2024-11-06) -- same real cover table, re-confirmed true rather than presumed. See also reports/m2-step3-batch2-competing-catalyst-correction-2026-10-02.json for the real 2024-11-19 filing missed in that earlier candidate's own packet."
+    },
+    {
+      "event_id": "cxt-step3-2025-02-12",
+      "candidate_id": "0001628280-25-005148",
+      "ticker": "CXT",
+      "company": "Crane NXT, Co.",
+      "cik": "0000025445",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/12/3025444/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2024-Results-Raises-Annual-Dividend-by-6.html",
+        "displayed_stamp_et": "February 12, 2025 16:15 ET",
+        "minute_encoded_in_spec": "2025-02-12T16:15:00-05:00",
+        "sec_8k_accepted_et": "2025-02-12 16:28:36",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-12",
+      "reaction_session": "2025-02-13",
+      "twentieth_reaction_session": "2025-03-13",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $1.00 | CXT | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001628280-24-045736",
+          "accepted_et": "2024-11-06 16:22:14 (this issuer's own step-3 batch-2 candidate, cxt-step3-2024-11-06)"
+        },
+        "spec_valid_from": "2024-11-06T00:00:00-05:00",
+        "spec_available_at": "2024-11-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-06 2.02,9.01 (this issuer's own prior step-3 candidate)",
+          "2024-12-11 1.01,2.03,9.01 (new debt agreement; outside this event's own window, before it)",
+          "2025-02-12 5.02,9.01 (SAME DAY -- departure of SVP/CHRO; already assessed NOT EXCLUDED, reports/m2-step3-same-day-catalyst-review-2026-10-01.json)",
+          "2025-02-12 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K on the event date itself -- but see corporate_actions below: a second real cash dividend for this same issuer, consistent with 'Raises Annual Dividend by 6%' in this release's own headline.",
+        "alpaca_real_response": "NOT EMPTY -- [{\"ex_date\": \"2025-02-28\", \"id\": \"083d7be2-dfe6-4232-9905-1332d343a370\", \"type\": \"cash_dividends\"}] (real dry run). This is the SAME issuer's second real dividend in this project (the first already accepted for cxt-step3-2024-11-06). Recommend the same treatment: accept, expecting CORPORATE_ACTION_IN_WINDOW to suppress exactly the labels it crosses."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Identity anchor chains directly to this issuer's own batch-2 candidate (cxt-step3-2024-11-06) -- same real cover table, re-confirmed true rather than presumed."
+    },
+    {
+      "event_id": "pdfs-step3-2025-02-13",
+      "candidate_id": "0001558370-25-000950",
+      "ticker": "PDFS",
+      "company": "PDF Solutions, Inc.",
+      "cik": "0001120914",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/13/3026351/0/en/PDF-Solutions-Announces-Record-2024-Fourth-Quarter-and-Full-Year-Total-Revenues.html",
+        "displayed_stamp_et": "February 13, 2025 17:17 ET",
+        "minute_encoded_in_spec": "2025-02-13T17:17:00-05:00",
+        "sec_8k_accepted_et": "2025-02-13 16:46:26",
+        "sec_acceptance_not_before_wire_minute": "SEC accepted 31 minutes BEFORE the wire's own displayed stamp this time -- unusual direction, but both happened well after market close and neither is a real ordering problem (no other filing or disclosure sits between them)."
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-13",
+      "reaction_session": "2025-02-14",
+      "twentieth_reaction_session": "2025-03-14",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.00015 par value | PDFS | The NASDAQ Stock Market LLC",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001558370-24-014874",
+          "accepted_et": "2024-11-07 16:21:17 (this issuer's own step-3 batch-2 candidate, pdfs-step3-2024-11-07)"
+        },
+        "spec_valid_from": "2024-11-07T00:00:00-05:00",
+        "spec_available_at": "2024-11-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-07 2.02,9.01 (this issuer's own prior step-3 candidate)",
+          "2025-02-13 2.02,9.01 <EVENT>",
+          "2025-02-19 1.01,9.01 (new agreement; lands inside this event's own window)",
+          "2025-03-07 1.01,2.01,2.03,9.01 (new $45M revolving + $25M term loan credit facility with Wells Fargo; read in full; lands inside this event's own window)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above."
+      },
+      "competing_catalysts_inside_window": [
+        "2025-02-19 8-K Item 1.01,9.01 (new material agreement; content not opened)",
+        "2025-03-07 8-K Item 1.01,2.01,2.03,9.01 (new $70M credit facility with Wells Fargo -- revolving $45M + term loan $25M; read in full)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["session_5_close_return", "session_10_close_return", "session_20_close_return"],
+        "note": "A new material agreement was filed 2025-02-19 and a new $70M credit facility on 2025-03-07, both inside the window. The credit facility's own content was read and confirmed to be ordinary financing (not a sign of distress -- new revolving + term loan capacity), but its market effect on later sessions is not separately isolated here."
+      },
+      "additional_note": "Identity anchor chains directly to this issuer's own batch-2 candidate (pdfs-step3-2024-11-07) -- same real cover table, re-confirmed true rather than presumed. Checked specifically against this project's own established PDFS bell-boundary caution (a later, different quarter released exactly at 16:00:00 ET) -- this candidate's own release (17:17 ET) is clear of that boundary."
+    },
+    {
+      "event_id": "real-step3-2025-02-20",
+      "candidate_id": "0001573221-25-000005",
+      "ticker": "REAL",
+      "company": "The RealReal, Inc.",
+      "cik": "0001573221",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2025/02/20/3030092/0/en/the-realreal-announces-fourth-quarter-and-full-year-2024-results.html",
+        "displayed_stamp_et": "February 20, 2025 16:05 ET",
+        "minute_encoded_in_spec": "2025-02-20T16:05:00-05:00",
+        "sec_8k_accepted_et": "2025-02-20 16:11:23",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2025-02-20",
+      "reaction_session": "2025-02-21",
+      "twentieth_reaction_session": "2025-03-20",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.00001 par value | REAL | The Nasdaq Global Select Market",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001573221-24-000124",
+          "accepted_et": "2024-11-04 16:13:17 (this issuer's own step-3 batch-2 candidate, real-step3-2024-11-04)"
+        },
+        "spec_valid_from": "2024-11-04T00:00:00-05:00",
+        "spec_available_at": "2024-11-04T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-11-04 2.02,9.01 (this issuer's own prior step-3 candidate)",
+          "2025-02-10 1.01,2.02,2.03,3.02,7.01,9.01 (EXCLUDED as its own candidate -- explicitly 'preliminary' Q4/FY2024 results bundled with a real debt-exchange transaction; reports/m2-step3-batch3-eligibility-review-2026-10-02.json)",
+          "2025-02-20 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "FOUND, not the usual 'none found' -- but the earlier disclosure is itself this batch's own excluded 2025-02-10 candidate, not an out-of-pool pre-announcement like REAL's two earlier instances of this pattern (2024-10-28, 2024-08-16-equivalent not applicable here). The preliminary figures (Q4 GMV $503.5M, Revenue $163.1-164.1M, Adjusted EBITDA $10.7-11.2M) match this candidate's own final figures (Revenue $164M, Adjusted EBITDA $11M) closely. Caveat applies for the same reason as every one of this issuer's prior preliminary/final pairs."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above (the excluded 2025-02-10 filing carries Item 2.03, a new financial obligation from the debt exchange, but not 3.03/5.03).",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36979627599)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36979627599). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["day1_close_return", "day1_high_return", "day1_low_return", "day1_open_return", "session_2_close_return", "session_5_close_return", "session_10_close_return", "session_20_close_return"],
+        "note": "This candidate's own quarter was preliminarily pre-announced 10 days earlier (2025-02-10, excluded as its own candidate) alongside a real debt-exchange transaction. Third instance of this exact pattern for this issuer in this project's real data (see reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json and reports/m2-step3-batch3-eligibility-review-2026-10-02.json). Caveat applies to every computed label."
+      },
+      "additional_note": "Identity anchor chains directly to this issuer's own batch-2 candidate (real-step3-2024-11-04) -- same real cover table, re-confirmed true rather than presumed, skipping the excluded 2025-02-10 filing in the chain as established precedent (CACI's own excluded 8-K/A in batch 1 was skipped the same way)."
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": ["love-step3-2024-12-12"],
+    "after_hours": ["okta-step3-2024-12-03", "jbss-step3-2025-01-29", "vsat-step3-2025-02-06", "ttwo-step3-2025-02-06", "aspn-step3-2025-02-12", "cxt-step3-2025-02-12", "pdfs-step3-2025-02-13", "real-step3-2025-02-20"]
+  },
+  "flagged_not_a_blanket_clean_signoff": {
+    "love-step3-2024-12-12": "Triggered the real calendar-gap finding (2025-01-09, now fixed). Also carries an inside-window caveat for the 2024-12-17 Investor Day itself.",
+    "vsat-step3-2025-02-06": "An officer-change 8-K lands exactly on session 20.",
+    "aspn-step3-2025-02-12": "Two officer-change 8-Ks land inside the window. Also the subject of a real correction to its own OWN earlier (batch-2) candidate's packet -- see reports/m2-step3-batch2-competing-catalyst-correction-2026-10-02.json.",
+    "cxt-step3-2025-02-12": "A second real cash dividend for this same issuer (ex-date 2025-02-28) -- same treatment as already accepted once before.",
+    "pdfs-step3-2025-02-13": "Two inside-window items, one a new $70M credit facility read in full and confirmed benign.",
+    "real-step3-2025-02-20": "The third instance of this issuer's own preliminary/final pre-announcement pattern; every computed label carries a freshness caveat."
+  },
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all nine', or a list of event_ids/decisions. Then the attestations are added for the signed-off candidates, the workflow runs for real, and each result is recorded with a pinned label digest.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- content was opened for PDFS's credit facility and confirmed benign; the rest were not opened.",
+    "Not a re-verification of OKTA's, LOVE's, and JBSS's own prior-quarter filing covers beyond the event-day cover itself -- each prior-quarter identity match is presumed from that filing's own exhibit masthead rather than a second direct fetch of its cover page, same discipline as batch 2's own packet."
+  ]
+}
