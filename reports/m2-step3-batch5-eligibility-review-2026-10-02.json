@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "One of batch 5's 11 nominal candidates (by filing date, SLSN 2025-03-26) was found, on reading its own real primary documents, to be outside the project's security scope: the issuer's common stock was quoted on the OTCQB, not on NASDAQ, NYSE or NYSE American, at that release. Leaves 10 genuine candidates in batch 5. This review also closes the open item left in reports/m2-step3-batch4-eligibility-review-2026-10-02.json (ALKT 2025-04-30's bundled Item 5.02, now read).",
+  "slsn_2025_03_26": {
+    "candidate_id": "0001171843-25-001738",
+    "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184325001738/f8k_032625.htm",
+    "finding": "The wire release (GlobeNewswire, https://www.globenewswire.com/news-release/2025/03/26/3050145/12101/en/Sol%C3%A9sence-Reports-Record-Fourth-Quarter-and-Full-Year-2024-Financial-Results.html, displayed 'March 26, 2025 16:24 ET') opens 'Solésence, Inc. (OTCQB: NANX)' and says the company 'has decided to pursue an uplisting to the NASDAQ market in 2025, subject to eligibility'. The 8-K's own cover lists no security under Section 12(b) ('N/A N/A N/A') and carries Commission file number 000-22333 (the 12(g) format). The issuer's later uplisting release (GlobeNewswire 2025-04-07 16:05 ET) states 'Prior to listing on Nasdaq, the Company's shares traded on the OTCQB' and that trading on the Nasdaq Capital Market begins at the open of 2025-04-08 under the new ticker SLSN; the issuer's Form 8-A12B and a Nasdaq certification were both filed 2025-04-07, and from then on its filings carry the 12(b) file number 001-42589.",
+    "verdict": "EXCLUDE",
+    "disposition": "excluded",
+    "disposition_reason": "EXCHANGE_OUTSIDE_SCOPE: the project's scope basis is 'Contemporaneously evidenced US common shares on NASDAQ, NYSE or NYSE American' (reports/m1-security-scope-review.json, which excluded ELTP, an OTCQB common stock, on this same code), and nre/dataset.py's own gate rejects any exchange outside NASDAQ, NYSE and NYSE American. The issuer was also still named Nanophase Technologies in SEC records until the 2025-03-31 name change took effect, so even the ticker and name differ from the security the later events describe.",
+    "distinct_from": "SLSN's other step-3 candidate (0001171843-25-002902, true release 2025-05-05 16:01 ET, filed 2025-05-07) comes after the uplisting, states 'Nasdaq: SLSN', and is built in this batch with an identity floor of the Nasdaq listing date (2025-04-08) rather than a prior-quarter release, because the prior-quarter release describes an OTCQB security. Its own filing's cover table was never updated (it still says 'None' under Section 12(b)); that is documented in its signoff-packet entry, not hidden."
+  },
+  "alkt_2025_04_30_item_5_02_now_read": {
+    "candidate_id": "0001529274-25-000070",
+    "finding": "Item 5.02 reports that CFO Bryan Hill notified the company on 2025-04-25 that he intends to retire on the earlier of 2026-02-27 or 15 days after his successor is hired, with a consulting agreement (Exhibit 10.1) running to 2026-12-15. It is announced in the earnings release's own subtitle ('Company Also Announces Planned Retirement of CFO Bryan Hill', PRNewswire 'Apr 30, 2025, 16:05 ET') and in the 8-K; the filing's exhibits are the consulting agreement, the earnings release and the investor presentation -- no separate press release.",
+    "same_day_policy_test": {
+      "same_reaction_day": true,
+      "independently_disseminated": false,
+      "fresh_independently_material_content": false
+    },
+    "verdict": "NOT EXCLUDED",
+    "reasoning": "Fails conditions 2 and 3 of docs/SAME-DAY-COMPETING-CATALYST-POLICY.md: no separate wire release, and an orderly, long-telegraphed succession nearly a year out is the policy's own example of content that does not meet the 'fresh, independently material' bar. Recorded in the candidate's packet entry; no label caveat is proposed, matching how this project handled COLL's bundled officer items."
+  },
+  "net_effect": {
+    "newly_excluded": [
+      "SLSN 2025-03-26 (OTCQB: NANX at the time -- exchange outside scope)"
+    ],
+    "running_excluded_total_step3": [
+      "CACI 2025-04-24 (8-K/A, not a qualifying earnings event -- reports/m2-step3-eligibility-review-2026-10-01.json)",
+      "OKTA 2025-02-04 (guidance reaffirmation, not a qualifying earnings event)",
+      "REAL 2025-02-10 (preliminary pre-announcement, not a qualifying earnings event)",
+      "ALKT 2025-02-27 (same-day competing catalyst)",
+      "REKR 2025-03-17 (preliminary pre-announcement, not a qualifying earnings event)",
+      "SLSN 2025-03-26 (OTCQB common stock, exchange outside scope)"
+    ]
+  },
+  "not_a_claim": "Does not mark any of batch 5's remaining 10 candidates 'included' -- the corporate-action check, identity/exchange re-verification, and a label-engine dry run are still pending, same as every other step-3 candidate. Not a judgment about SLSN as an issuer; only that its 2025-03-26 release concerns an OTC-quoted security that this project's own scope rules do not cover."
+}

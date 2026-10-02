@@ -2186,6 +2186,336 @@
         "labels_sha256": "9e406ac57e7f9c27e607dc4fb84ba94fe00b967898386807c14187ba4fd3a452",
         "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
+    },
+    {
+      "event_id": "rekr-step3-2025-03-31",
+      "cluster_id": "rekr-step3-2025-03-31",
+      "candidate_id": "0001437749-25-010184",
+      "security": {
+        "security_id": "REKR-1697851-2025-03-31",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-11-14T00:00:00-05:00",
+        "available_at": "2024-11-14T20:00:00Z"
+      },
+      "source": {
+        "source_id": "rekr-wire-2025-03-31",
+        "url": "https://www.globenewswire.com/news-release/2025/03/31/3052762/0/en/Rekor-Systems-Reports-Strong-2024-Financial-Results-Highlighted-by-Record-Revenue-and-Significant-Operational-Improvements.html",
+        "text": "Wire release, displayed dateline March 31, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/03/31/3052762/0/en/Rekor-Systems-Reports-Strong-2024-Financial-Results-Highlighted-by-Record-Revenue-and-Significant-Operational-Improvements.html",
+        "first_seen_at": "2025-03-31T16:06:00-04:00"
+      },
+      "published_at": "2025-03-31T16:05:00-04:00",
+      "cutoff": "2025-03-31T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-04-01",
+      "caveats": [
+        {
+          "labels": [
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return",
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "This is the final Q4/FY2024 release. Its headline figures were already public from the explicitly 'preliminary and unaudited' 2025-03-17 release (excluded as its own candidate, reports/m2-step3-batch4-eligibility-review-2026-10-02.json): preliminary FY2024 revenue 'above $45.5 million', Q4 'above $12.5 million' and a Q4 Adjusted EBITDA loss of $5.0 million, versus the final $46.0 million, $13.3 million and $4.7 million. This event's own reaction likely reflects confirmation of already-known numbers rather than a fresh surprise. Applies to every computed label."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 8.01 8-K (read: the company disclosed a significant accumulation of its common stock, about 14% of shares outstanding, held through a single Depository Trust Company participant, with no Schedule 13D/13G, 13F or Section 16 filing; accepted 16:08 ET, after that session's close) was filed 2025-04-14 (session 10 of this event's window). Filed after that session's close, so the first close that can reflect it is session 11; only the real session-milestone labels at or after session 11 are listed (20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 4.01,9.01 8-K (read: the independent auditor Marcum resigned, its report on the 2024 and 2023 statements carrying a going-concern paragraph; accepted 16:30 ET, after that session's close) was filed 2025-04-22 (session 15 of this event's window). Filed after that session's close, so the first close that can reflect it is session 16; only the real session-milestone labels at or after session 16 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "love-step3-2025-04-10",
+      "cluster_id": "love-step3-2025-04-10",
+      "candidate_id": "0001628280-25-017238",
+      "security": {
+        "security_id": "LOVE-1701758-2025-04-10",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2024-12-12T00:00:00-05:00",
+        "available_at": "2024-12-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "love-wire-2025-04-10",
+        "url": "https://www.globenewswire.com/news-release/2025/04/10/3059124/0/en/The-Lovesac-Company-Reports-Fourth-Quarter-And-Fiscal-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline April 10, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/04/10/3059124/0/en/The-Lovesac-Company-Reports-Fourth-Quarter-And-Fiscal-2025-Financial-Results.html",
+        "first_seen_at": "2025-04-10T07:01:00-04:00"
+      },
+      "published_at": "2025-04-10T07:00:00-04:00",
+      "cutoff": "2025-04-10T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-04-10"
+    },
+    {
+      "event_id": "hurn-step3-2025-04-29",
+      "cluster_id": "hurn-step3-2025-04-29",
+      "candidate_id": "0001289848-25-000131",
+      "security": {
+        "security_id": "HURN-1289848-2025-04-29",
+        "company_id": "0001289848",
+        "cik": "0001289848",
+        "ticker": "HURN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-25T00:00:00-05:00",
+        "available_at": "2025-02-25T20:00:00Z"
+      },
+      "source": {
+        "source_id": "hurn-wire-2025-04-29",
+        "url": "https://www.businesswire.com/news/home/20250429503314/en/Huron-Announces-First-Quarter-2025-Financial-Results-and-Reaffirms-2025-Guidance",
+        "text": "Wire release, displayed dateline Apr 29, 2025 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20250429503314/en/Huron-Announces-First-Quarter-2025-Financial-Results-and-Reaffirms-2025-Guidance",
+        "first_seen_at": "2025-04-29T16:06:00-04:00"
+      },
+      "published_at": "2025-04-29T16:05:00-04:00",
+      "cutoff": "2025-04-29T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-04-30",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Items 5.02,5.07,9.01 8-K (read: annual-meeting results, including approval of a 900,000-share increase to the 2012 Omnibus Incentive Plan; accepted 15:58 ET, before that session's close) was filed 2025-05-13 (session 10 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 10 are listed (10, 20)."
+        }
+      ]
+    },
+    {
+      "event_id": "alkt-step3-2025-04-30",
+      "cluster_id": "alkt-step3-2025-04-30",
+      "candidate_id": "0001529274-25-000070",
+      "security": {
+        "security_id": "ALKT-1529274-2025-04-30",
+        "company_id": "0001529274",
+        "cik": "0001529274",
+        "ticker": "ALKT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-27T00:00:00-05:00",
+        "available_at": "2025-02-27T20:00:00Z"
+      },
+      "source": {
+        "source_id": "alkt-wire-2025-04-30",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2025-financial-results-302443206.html",
+        "text": "Wire release, displayed dateline Apr 30, 2025, 16:05 ET (16:05 ET). https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2025-financial-results-302443206.html",
+        "first_seen_at": "2025-04-30T16:06:00-04:00"
+      },
+      "published_at": "2025-04-30T16:05:00-04:00",
+      "cutoff": "2025-04-30T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-01",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.07 8-K (read: 2025 annual-meeting results; accepted 16:04 ET, after that session's close) was filed 2025-05-15 (session 11 of this event's window). Filed after that session's close, so the first close that can reflect it is session 12; only the real session-milestone labels at or after session 12 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "jbss-step3-2025-04-30",
+      "cluster_id": "jbss-step3-2025-04-30",
+      "candidate_id": "0000950170-25-061065",
+      "security": {
+        "security_id": "JBSS-880117-2025-04-30",
+        "company_id": "0000880117",
+        "cik": "0000880117",
+        "ticker": "JBSS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-01-29T00:00:00-05:00",
+        "available_at": "2025-01-29T20:00:00Z"
+      },
+      "source": {
+        "source_id": "jbss-wire-2025-04-30",
+        "url": "https://www.businesswire.com/news/home/20250430373035/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Third-Quarter-Results",
+        "text": "Wire release, displayed dateline Apr 30, 2025 4:10 PM Eastern Daylight Time (16:10 ET). https://www.businesswire.com/news/home/20250430373035/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Third-Quarter-Results",
+        "first_seen_at": "2025-04-30T16:11:00-04:00"
+      },
+      "published_at": "2025-04-30T16:10:00-04:00",
+      "cutoff": "2025-04-30T16:13:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-01"
+    },
+    {
+      "event_id": "cxt-step3-2025-05-07",
+      "cluster_id": "cxt-step3-2025-05-07",
+      "candidate_id": "0001628280-25-023189",
+      "security": {
+        "security_id": "CXT-25445-2025-05-07",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-12T00:00:00-05:00",
+        "available_at": "2025-02-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "cxt-wire-2025-05-07",
+        "url": "https://www.globenewswire.com/news-release/2025/05/07/3076595/0/en/Crane-NXT-Reports-First-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline May 07, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/05/07/3076595/0/en/Crane-NXT-Reports-First-Quarter-2025-Results.html",
+        "first_seen_at": "2025-05-07T16:06:00-04:00"
+      },
+      "published_at": "2025-05-07T16:05:00-04:00",
+      "cutoff": "2025-05-07T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-08",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 5.07,9.01 8-K (read: 2025 annual-meeting results; accepted 16:12 ET, after that session's close) was filed 2025-05-27 (session 13 of this event's window). Filed after that session's close, so the first close that can reflect it is session 14; only the real session-milestone labels at or after session 14 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "payo-step3-2025-05-07",
+      "cluster_id": "payo-step3-2025-05-07",
+      "candidate_id": "0001558370-25-006610",
+      "security": {
+        "security_id": "PAYO-1845815-2025-05-07",
+        "company_id": "0001845815",
+        "cik": "0001845815",
+        "ticker": "PAYO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-27T00:00:00-05:00",
+        "available_at": "2025-02-27T20:00:00Z"
+      },
+      "source": {
+        "source_id": "payo-wire-2025-05-07",
+        "url": "https://www.businesswire.com/news/home/20250507107308/en/Payoneer-Reports-First-Quarter-2025-Financial-Results",
+        "text": "Wire release, displayed dateline May 7, 2025 7:30 AM Eastern Daylight Time (07:30 ET). https://www.businesswire.com/news/home/20250507107308/en/Payoneer-Reports-First-Quarter-2025-Financial-Results",
+        "first_seen_at": "2025-05-07T07:31:00-04:00"
+      },
+      "published_at": "2025-05-07T07:30:00-04:00",
+      "cutoff": "2025-05-07T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-05-07"
+    },
+    {
+      "event_id": "slsn-step3-2025-05-05",
+      "cluster_id": "slsn-step3-2025-05-05",
+      "candidate_id": "0001171843-25-002902",
+      "security": {
+        "security_id": "SLSN-883107-2025-05-05",
+        "company_id": "0000883107",
+        "cik": "0000883107",
+        "ticker": "SLSN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-04-08T00:00:00-04:00",
+        "available_at": "2025-04-07T20:05:00Z"
+      },
+      "source": {
+        "source_id": "slsn-wire-2025-05-05",
+        "url": "https://www.globenewswire.com/news-release/2025/05/05/3074487/12101/en/Sol%C3%A9sence-Reports-Record-First-Quarter-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline May 05, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/05/05/3074487/12101/en/Sol%C3%A9sence-Reports-Record-First-Quarter-2025-Financial-Results.html",
+        "first_seen_at": "2025-05-05T16:02:00-04:00"
+      },
+      "published_at": "2025-05-05T16:01:00-04:00",
+      "cutoff": "2025-05-05T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-06",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 1.01,7.01,9.01 8-K (read: amendments to three loan agreements with affiliates of the controlling shareholder, lifting maximum borrowing capacity from $14.2 million to $23.0 million and extending maturities to 2027-04-30, with a press release 'Sol\u00e9sence Expands Debt Facilities'; accepted 06:00 ET, before that session's open) was filed 2025-06-02 (session 19 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 19 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "asmb-step3-2025-05-08",
+      "cluster_id": "asmb-step3-2025-05-08",
+      "candidate_id": "0000950170-25-066946",
+      "security": {
+        "security_id": "ASMB-1426800-2025-05-08",
+        "company_id": "0001426800",
+        "cik": "0001426800",
+        "ticker": "ASMB",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-03-20T00:00:00-04:00",
+        "available_at": "2025-03-20T20:00:00Z"
+      },
+      "source": {
+        "source_id": "asmb-wire-2025-05-08",
+        "url": "https://www.globenewswire.com/news-release/2025/05/08/3077684/16259/en/Assembly-Biosciences-Reports-First-Quarter-2025-Financial-Results-and-Recent-Updates.html",
+        "text": "Wire release, displayed dateline May 08, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/05/08/3077684/16259/en/Assembly-Biosciences-Reports-First-Quarter-2025-Financial-Results-and-Recent-Updates.html",
+        "first_seen_at": "2025-05-08T16:06:00-04:00"
+      },
+      "published_at": "2025-05-08T16:05:00-04:00",
+      "cutoff": "2025-05-08T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-09"
+    },
+    {
+      "event_id": "aspn-step3-2025-05-08",
+      "cluster_id": "aspn-step3-2025-05-08",
+      "candidate_id": "0001171843-25-002948",
+      "security": {
+        "security_id": "ASPN-1145986-2025-05-08",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-12T00:00:00-05:00",
+        "available_at": "2025-02-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "aspn-wire-2025-05-08",
+        "url": "https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-first-quarter-2025-financial-results-and-recent-business-highlights-302449529.html",
+        "text": "Wire release, displayed dateline May 08, 2025, 06:30 ET (06:30 ET). https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-first-quarter-2025-financial-results-and-recent-business-highlights-302449529.html",
+        "first_seen_at": "2025-05-08T06:31:00-04:00"
+      },
+      "published_at": "2025-05-08T06:30:00-04:00",
+      "cutoff": "2025-05-08T06:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-05-08"
     }
   ]
 }
