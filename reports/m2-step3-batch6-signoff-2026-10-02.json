@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Reply to the batch-6 signoff request built from reports/m2-step3-batch6-signoff-packet-2026-10-02.json -- the last eleven real candidates (COLL, LNSR, PDFS, REAL, TECX 2025-05-08; ACHV, KLC 2025-05-13; REKR 2025-05-14; TTWO 2025-05-15; VSAT 2025-05-20; OKTA 2025-05-27), all quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with a clean real dry run (workflow run 37041768503) and no exclusions, plus flagged findings: TTWO's roughly $1.2 billion common-stock offering launched and priced three sessions after its event (and the Grand Theft Auto VI release-date change 13 days before it); VSAT's Inmarsat-Ligado settlement (session 17) and new stockholder agreements (session 2); LNSR's original release carrying narrative errors corrected by a same-day 8-K/A after the reaction session's close (a day-1-labels caveat) and an FTC Second Request on its pending Alcon merger; TECX's complete clinical-data release dated Saturday 2025-05-17 and its changed cover-page exchange wording; COLL's $25 million accelerated share repurchase at session 2; REKR's three inside-window 8-Ks; and benign late-window governance 8-Ks for ACHV, KLC, TECX and OKTA (the TECX and OKTA ones accepted after the last session's close).",
+  "owner_reply": "yes go ahead",
+  "owner_reply_exact_as_received": [
+    {
+      "transcript_timestamp_utc": "2026-10-02T18:14:19.957Z",
+      "text": "yes go ahead",
+      "reading": "Plain text, sent in direct reply to the batch-6 packet message, which offered 'sign off on all 11, or name any to hold back'."
+    }
+  ],
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 11 candidates in reports/m2-step3-batch6-signoff-packet-2026-10-02.json: coll-step3-2025-05-08, lnsr-step3-2025-05-08, pdfs-step3-2025-05-08, real-step3-2025-05-08, tecx-step3-2025-05-08, achv-step3-2025-05-13, klc-step3-2025-05-13, rekr-step3-2025-05-14, ttwo-step3-2025-05-15, vsat-step3-2025-05-20, okta-step3-2025-05-27. The reply named no event to hold back, so TECX's cover-wording difference is accepted as the packet described it (same security, symbol and Nasdaq exchange). This is the last batch: with it, every one of the 66 frozen step-3 candidates has a recorded disposition (60 built and attested, 6 excluded).",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance, not step-3 acceptance -- the consolidated audit, the reviewed candidate ledger and the owner's own acceptance decision remain, and Milestone 4 is not authorized.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- TTWO's equity offering, VSAT's Ligado settlement and stockholder agreements, LNSR's FTC Second Request and corrected-release day-1 caveat, TECX's clinical-data release, COLL's repurchase, REKR's three 8-Ks, and the ACHV and KLC governance 8-Ks all travel with the computed labels (config/m2-step3-events.json carries them as caveats) rather than being resolved here.",
+    "Not a re-fetch of the eleven issuers' prior-quarter covers -- each was compared against the cover row recorded in that issuer's own earlier packet; TECX's differs in wording only.",
+    "Not a sweep of every possible disclosure: chronology is built from each issuer's 8-K filing history plus targeted web searches (and TTWO's two Form 424B5 filings); other SEC forms and press releases that never became an 8-K are not swept beyond those named in the packet."
+  ]
+}
