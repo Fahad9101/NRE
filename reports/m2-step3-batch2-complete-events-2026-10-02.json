@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/36977777606",
+  "workflow_run_number": 7,
+  "commit": "97d28b4",
+  "trigger": "push (auto-triggered: config/m2-step3-events.json is a watched path)",
+  "context": "First real, attested result for Milestone 2 step 3 batch 2: all 11 batch-2 candidates now carry first_public_time, historical_identity, and corporate_actions attestations (reports/m2-step3-batch2-signoff-2026-10-02.json, owner reply \"yes go ahead on all 11\"). CXT real cash dividend (ex-date 2024-11-29) correctly suppressed only session_20_close_return via CORPORATE_ACTION_IN_WINDOW, the same mechanism already proven for this same issuer in M1 and step 2. No raw OHLCV was ever committed here, only the derived returns/booleans the pipeline computed.",
+  "result": {
+    "all_ok": true,
+    "total_events": 11,
+    "errors": 0,
+    "all_mapped": true
+  },
+  "computed_events": {
+    "aspn-step3-2024-11-06": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.005338078291814985,
+        "day1_high_return": 0.12307236061684446,
+        "day1_low_return": -0.029655990510083052,
+        "day1_open_return": 0.11388493475682093,
+        "gap_ge_10pct": true,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": -0.17081850533807819,
+        "session_20_close_return": -0.20047449584816124,
+        "session_2_close_return": -0.021945432977461543,
+        "session_5_close_return": -0.07829181494661919
+      },
+      "labels_sha256": "16e0a8945fd4f649931c565ec9e67641da76eaec4d99e1d1594b19fbb1e1b315"
+    },
+    "coll-step3-2024-11-07": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.07346585998271404,
+        "day1_high_return": -0.01728608470181503,
+        "day1_low_return": -0.08470181503889374,
+        "day1_open_return": -0.04868913857677892,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.12388360702967449,
+        "session_20_close_return": -0.13656006914433882,
+        "session_2_close_return": -0.07288965715932016,
+        "session_5_close_return": -0.1279170267934313
+      },
+      "labels_sha256": "3d384d348ba4ba258ea91a3663422eaeed96cb6c4b34b8c8c07759ae8adf6c41"
+    },
+    "cxt-step3-2024-11-06": {
+      "corporate_actions": [
+        {
+          "ex_date": "2024-11-29",
+          "id": "45885089-9b30-4cf6-875d-bdf4bff6a4ac",
+          "type": "cash_dividends"
+        }
+      ],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"
+      },
+      "labels": {
+        "day1_close_return": -0.0017537706068047054,
+        "day1_high_return": 0.019949140652402608,
+        "day1_low_return": -0.032970887407927085,
+        "day1_open_return": -0.0003507541213609855,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.00280603297088744,
+        "session_20_close_return": null,
+        "session_2_close_return": -0.005962820063135754,
+        "session_5_close_return": -0.02420203437390389
+      },
+      "labels_sha256": "6a00be6deb38ca055be20d88e7c3169e424503ec5640b80ff99d29d32374fb6b"
+    },
+    "klc-step3-2024-11-20": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.15043859649122804,
+        "day1_high_return": 0.0052631578947368585,
+        "day1_low_return": -0.1657894736842106,
+        "day1_open_return": -0.03508771929824561,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.0030701754385964453,
+        "session_20_close_return": -0.2315789473684211,
+        "session_2_close_return": -0.08464912280701753,
+        "session_5_close_return": 0.020614035087719307
+      },
+      "labels_sha256": "aabcf4f59fbff1714ec9b4c9cd082caa432e550c4351add3e72b760eb4032ae8"
+    },
+    "payo-step3-2024-11-05": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.20892018779342747,
+        "day1_high_return": 0.21478873239436624,
+        "day1_low_return": 0.03521126760563398,
+        "day1_open_return": 0.09330985915492951,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.24882629107981225,
+        "session_20_close_return": 0.251173708920188,
+        "session_2_close_return": 0.21478873239436624,
+        "session_5_close_return": 0.21948356807511749
+      },
+      "labels_sha256": "85ca0a5658b992138d177d28f048fef45aec9969557312b8478f33fdd5316cfc"
+    },
+    "pdfs-step3-2024-11-07": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": 0.03237858032378571,
+        "day1_high_return": 0.03673723536737228,
+        "day1_low_return": -0.0691158156911581,
+        "day1_open_return": -0.06600249066002484,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.04140722291407217,
+        "session_20_close_return": -0.05915317559153177,
+        "session_2_close_return": 0.03549190535491897,
+        "session_5_close_return": -0.032067247820672384
+      },
+      "labels_sha256": "7258f366bbbd656b3b70103fc267af765c0a8508bb39d3aa1e4c2a38e47c75a3"
+    },
+    "real-step3-2024-11-04": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.20000000000000018,
+        "day1_high_return": 0.22622950819672139,
+        "day1_low_return": 0.04262295081967227,
+        "day1_open_return": 0.06557377049180335,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.3147540983606558,
+        "session_20_close_return": 0.9344262295081969,
+        "session_2_close_return": 0.23606557377049198,
+        "session_5_close_return": 0.23278688524590163
+      },
+      "labels_sha256": "bcf7f0826e5d42cc96010704f91f14da579da75bc6d2480593700b27aacd05a6"
+    },
+    "rekr-step3-2024-11-14": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.17129629629629628,
+        "day1_high_return": -0.04629629629629628,
+        "day1_low_return": -0.1770370370370371,
+        "day1_open_return": -0.05555555555555558,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.10037037037037044,
+        "session_20_close_return": -0.21759259259259267,
+        "session_2_close_return": -0.23888888888888893,
+        "session_5_close_return": -0.10046296296296298
+      },
+      "labels_sha256": "aec0e8ed4de011e5548dabdf1795fe259544f6e0a697bfb702eed96f574955e0"
+    },
+    "tecx-step3-2024-11-07": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.030222810500772024,
+        "day1_high_return": -0.017445400397087973,
+        "day1_low_return": -0.1608206485771012,
+        "day1_open_return": -0.03154643723803219,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.009706596073240648,
+        "session_20_close_return": 0.13545113611294957,
+        "session_2_close_return": 0.016324729759541245,
+        "session_5_close_return": -0.04566512243547316
+      },
+      "labels_sha256": "2e44a27abdbf62cfac68fe19961e588c44ae01c1ab4eb139b5de3a24f6ee4406"
+    },
+    "ttwo-step3-2024-11-06": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.07532108990517328,
+        "day1_high_return": 0.08348337534509653,
+        "day1_low_return": 0.02868803264914166,
+        "day1_open_return": 0.04429240187252437,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.11331172728363947,
+        "session_20_close_return": 0.14049933981514817,
+        "session_2_close_return": 0.06769895570759821,
+        "session_5_close_return": 0.09152562717560908
+      },
+      "labels_sha256": "35252c5643ff9031c6d3bb90b2132a08b64595121fc54864603c810694f5882d"
+    },
+    "vsat-step3-2024-11-06": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.0778210116731517,
+        "day1_high_return": 0.035019455252918386,
+        "day1_low_return": -0.10408560311284032,
+        "day1_open_return": 0.035019455252918386,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": -0.3258754863813229,
+        "session_20_close_return": -0.14980544747081703,
+        "session_2_close_return": -0.12548638132295709,
+        "session_5_close_return": -0.2315175097276264
+      },
+      "labels_sha256": "2733ee330c9956449ff6ba5a5e62d07425210238ad1549c0bee94c027304dfe0"
+    }
+  }
+}
