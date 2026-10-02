@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Batch 1's real dry run (workflow run 36972550288, commit 5e5275f) quarantined all 10 events on PROVIDER_USE_UNVERIFIED after the per-event attestations were added -- nre/dataset.py's own separate provider-level gate requires research_permitted:true plus its own attestation, independent of first_public_time/historical_identity/corporate_actions. config/m2-step3-events.json's provider block had been built from scratch with placeholder values rather than mirroring the real Alpaca account already in use throughout this project; reports/m2-step2-corporate-action-scope-authorization-2026-09-28.json's own authorization is explicitly scoped to step 2's up-to-46-event scale and does not, on its own words, extend to step 3's up-to-66-event scale -- re-confirmation needed, matching how this project re-confirmed scope at every prior scale-up (M1's 2->10, 10->23; step 2's own 46).",
+  "questions_and_answers": [
+    {
+      "question": "Does the Alpaca provider research authorization extend to step 3's scale (up to 66 events, same redacted-derived-data-only use as every prior milestone)?",
+      "owner_selected": "Yes, provider rights fine",
+      "selected_option_description": "Confirms the standing authorization (redacted derived ratios/booleans/counts/hashes only, never raw prices) covers step 3's scale, matching how the owner confirmed it at M1's 10- and 23-event thresholds and at step 2's 46-event threshold."
+    }
+  ],
+  "scope_of_this_authorization": "research_permitted:true for Alpaca, for this project's specific, current use (redacted derived ratios/booleans/counts/hashes only, never raw prices), extended to cover Milestone 2 step 3's up-to-66-event scale. Does not authorize any prediction, score, ranking or model -- those remain separately gated. Does not itself attest any individual candidate's first_public_time, historical_identity, or corporate_actions -- those are added per batch, after that batch's own signoff packet (already done for batch 1, reports/m2-step3-batch1-signoff-2026-10-02.json).",
+  "provider_block_correction": "config/m2-step3-events.json's provider block is also corrected in the same commit to mirror config/m2-step2-events.json's real values exactly (provider_id 'alpaca', terms_url the real Alpaca TermsAndConditions.pdf, feeds ['sip'], session_scope 'regular') rather than the placeholder values it was first built with -- same real Alpaca account and feed used throughout this entire project, not a different one."
+}

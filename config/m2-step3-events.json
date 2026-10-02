@@ -1,14 +1,18 @@
 {
   "schema_version": 1,
   "provider": {
-    "provider_id": "alpaca-market-data",
-    "terms_url": "https://alpaca.markets/disclosures",
-    "session_scope": "us_equities_regular_and_extended",
+    "provider_id": "alpaca",
+    "research_permitted": true,
+    "terms_url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
     "feeds": [
-      "bars",
-      "corporate_actions"
+      "sip"
     ],
-    "research_permitted": false
+    "session_scope": "regular",
+    "attestation": {
+      "reviewer": "Fahad9101",
+      "date": "2026-10-02",
+      "record": "reports/m2-step3-provider-scope-authorization-2026-10-02.json"
+    }
   },
   "events": [
     {
