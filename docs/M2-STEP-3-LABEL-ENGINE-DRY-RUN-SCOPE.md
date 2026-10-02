@@ -6,6 +6,11 @@ are dispositioned: 60 are attested, computed and pinned, 6 are excluded. This do
 built; it claims no audit result. The real result is recorded separately, after the workflow has run, in
 `reports/m2-step3-label-engine-dry-run-result-2026-10-02.json`.**
 
+**Update 2026-10-02, after the audit ran:** the owner decided the flagged choice in section 2.B ("Keep the
+23 archived payloads", 2026-10-02T18:55:54.262Z) and, in the same message, accepted step 3; both are
+recorded in `reports/m2-step3-acceptance-declaration-2026-10-02.json`. Sections 2.A to 2.D below are left
+as written.
+
 ## Summary
 
 Milestone 1's order, repeated for step 2 and again here: per-event acquisition and attestation (the six

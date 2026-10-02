@@ -18,7 +18,14 @@
       "effect": "Those 23 payloads are committed under archive/m2-step3-sec-freeze/nre-sec-freeze/raw/ (the layout nre.consolidated_audit.archive_sources() reads; under archive/, not the gitignored data/), and the workflow passes --archive-dir archive/m2-step3-sec-freeze, so the candidate_source_hashes gate can be evaluated instead of failing for want of bytes.",
       "what_a_pass_means": "That the archived bytes are the bytes the freeze hashed, so the ledger's source hashes are reproducible rather than merely asserted.",
       "what_a_pass_does_not_mean": "That those bytes equal SEC's raw submissions.json. The freeze used a browser-fetched, filtered, re-serialized 8-K subset (source_representation browser_fetched_8k_filtered_subset) because data.sec.gov/submissions returned HTTP 403 from GitHub Actions in all six dispatches; each payload's metadata says so and records SEC's full-response hash and size separately. Milestone 1's archive held the real raw bytes, so an all-gates-passed step-3 result is a weaker statement on this gate than Milestone 1's was, and step 2 was accepted with this gate knowingly failing.",
-      "to_reverse": "Delete archive/m2-step3-sec-freeze/ and the --archive-dir argument in .github/workflows/depth3-consolidated-audit.yml (and the tests that read the archive). The audit then fails exactly one gate, candidate_source_hashes, as step 2's did; tests/test_step3_audit.py::AuditTests::test_only_the_archive_gate_fails_without_the_archive shows this offline."
+      "to_reverse": "Delete archive/m2-step3-sec-freeze/ and the --archive-dir argument in .github/workflows/depth3-consolidated-audit.yml (and the tests that read the archive). The audit then fails exactly one gate, candidate_source_hashes, as step 2's did; tests/test_step3_audit.py::AuditTests::test_only_the_archive_gate_fails_without_the_archive shows this offline.",
+      "resolved_by": {
+        "note": "Added after the fact. The owner_reply: null and the status above describe this entry as it stood when the record was written, before the owner decided; they are left as written.",
+        "owner_reply": "Keep the 23 archived payloads, accept step 3, and do the rest as you recommended",
+        "owner_reply_at": "2026-10-02T18:55:54.262Z",
+        "decision": "keep the archive",
+        "recorded_in": "reports/m2-step3-acceptance-declaration-2026-10-02.json"
+      }
     }
   },
   "not_a_claim": [
