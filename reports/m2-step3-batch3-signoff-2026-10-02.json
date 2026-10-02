@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Reply to the batch-3 signoff request built from reports/m2-step3-batch3-signoff-packet-2026-10-02.json -- nine real events (OKTA, LOVE, JBSS, VSAT, TTWO, ASPN, CXT, PDFS, REAL), all quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with a clean real dry run, plus flagged findings: two sibling exclusions in the same batch (OKTA 2025-02-04, REAL 2025-02-10), a real calendar-file gap found and fixed (2025-01-09, NYSE/Nasdaq's one-time closure for the National Day of Mourning for President Carter), a second real dividend for CXT, REAL's third preliminary/final pre-announcement pair, and several narrower inside-window caveats (LOVE, VSAT, ASPN, PDFS).",
+  "owner_reply": "yes go ahead",
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 9 candidates in reports/m2-step3-batch3-signoff-packet-2026-10-02.json: okta-step3-2024-12-03, love-step3-2024-12-12, jbss-step3-2025-01-29, vsat-step3-2025-02-06, ttwo-step3-2025-02-06, aspn-step3-2025-02-12, cxt-step3-2025-02-12, pdfs-step3-2025-02-13, real-step3-2025-02-20.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance, not step-3 acceptance.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- LOVE's Investor Day, VSAT's and ASPN's officer-change 8-Ks, PDFS's credit facility, and REAL's preliminary/final pattern all travel with the computed labels rather than being resolved here.",
+    "Not a claim that CXT's second real dividend is immaterial -- accepted on the same basis as its first (cxt-step3-2024-11-06), trusting nre/dataset.py's own tested CORPORATE_ACTION_IN_WINDOW label-suppression logic.",
+    "Not a re-examination of M1's or M2 step 2's already-accepted calendar files for the 2025-01-09 gap -- scoped and deliberately left untouched in reports/m2-step3-calendar-2025-01-09-correction-2026-10-02.json."
+  ]
+}
