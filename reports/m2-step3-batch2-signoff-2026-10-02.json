@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Reply to the batch-2 signoff request built from reports/m2-step3-batch2-signoff-packet-2026-10-02.json -- eleven real events (REAL, PAYO, ASPN, VSAT, TTWO, CXT, TECX, COLL, PDFS, REKR, KLC), all quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with a clean real dry run, plus three flagged findings: REAL and ASPN each carry a real earlier-disclosure caveat, CXT carries a real cash dividend (the same issuer/pattern already accepted twice before), REKR and COLL each carry a narrower inside-window caveat.",
+  "owner_reply": "yes go ahead on all 11",
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 11 candidates in reports/m2-step3-batch2-signoff-packet-2026-10-02.json: real-step3-2024-11-04, payo-step3-2024-11-05, aspn-step3-2024-11-06, vsat-step3-2024-11-06, ttwo-step3-2024-11-06, cxt-step3-2024-11-06, tecx-step3-2024-11-07, coll-step3-2024-11-07, pdfs-step3-2024-11-07, rekr-step3-2024-11-14, klc-step3-2024-11-20.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance, not step-3 acceptance.",
+    "Not a claim that REAL's or ASPN's own reaction is invalid or unusable -- the freshness caveat travels with the computed labels rather than being resolved here.",
+    "Not a claim that CXT's real dividend is immaterial -- accepted on the same basis as the identical finding already accepted twice before for this same issuer (M1, step 2 batch 1), trusting nre/dataset.py's own tested CORPORATE_ACTION_IN_WINDOW label-suppression logic rather than withholding attestation.",
+    "Not a claim that REKR's or COLL's inside-window items are or are not disqualifying -- REKR's was not opened; COLL's was opened and confirmed benign (standard post-acquisition pro-forma financials)."
+  ]
+}
