@@ -2756,6 +2756,411 @@
         "labels_sha256": "b07968785461e9c28ec0368d0f3f500b967eec282d12bbea5ff067dec2f49a64",
         "recorded_in": "reports/m2-step3-batch5-complete-events-2026-10-02.json"
       }
+    },
+    {
+      "event_id": "coll-step3-2025-05-08",
+      "cluster_id": "coll-step3-2025-05-08",
+      "candidate_id": "0001558370-25-006957",
+      "security": {
+        "security_id": "COLL-1267565-2025-05-08",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-27T00:00:00-05:00",
+        "available_at": "2025-02-27T20:00:00Z"
+      },
+      "source": {
+        "source_id": "coll-wire-2025-05-08",
+        "url": "https://www.globenewswire.com/news-release/2025/05/08/3077666/34897/en/Collegium-Reports-First-Quarter-2025-Financial-Results-and-Highlights-Recent-Company-Progress.html",
+        "text": "Wire release, displayed dateline May 08, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/05/08/3077666/34897/en/Collegium-Reports-First-Quarter-2025-Financial-Results-and-Highlights-Recent-Company-Progress.html",
+        "first_seen_at": "2025-05-08T16:02:00-04:00"
+      },
+      "published_at": "2025-05-08T16:01:00-04:00",
+      "cutoff": "2025-05-08T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-09",
+      "caveats": [
+        {
+          "labels": [
+            "session_2_close_return",
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 8.01 8-K (read: execution of a $25 million accelerated share repurchase agreement with Jefferies, an initial delivery of 692,281 shares, its authorization already described in the earnings release; accepted 08:10 ET, before that session's open) was filed 2025-05-12 (session 2 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 2 are listed (2, 5, 10, 20)."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Items 5.02,5.07,9.01 8-K (read: 2025 annual-meeting results and shareholder approval of the 2025 Equity Incentive Plan; accepted 16:05 ET, after that session's close) was filed 2025-05-19 (session 7 of this event's window). Filed after that session's close, so the first close that can reflect it is session 8; only the real session-milestone labels at or after session 8 are listed (10, 20)."
+        }
+      ]
+    },
+    {
+      "event_id": "lnsr-step3-2025-05-08",
+      "cluster_id": "lnsr-step3-2025-05-08",
+      "candidate_id": "0000950170-25-066375",
+      "security": {
+        "security_id": "LNSR-1320350-2025-05-08",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-27T00:00:00-05:00",
+        "available_at": "2025-02-27T20:00:00Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire-2025-05-08",
+        "url": "https://www.globenewswire.com/news-release/2025/05/08/3077092/0/en/LENSAR-Reports-First-Quarter-2025-Results-and-Provides-Business-Update.html",
+        "text": "Wire release, displayed dateline May 08, 2025 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2025/05/08/3077092/0/en/LENSAR-Reports-First-Quarter-2025-Results-and-Provides-Business-Update.html",
+        "first_seen_at": "2025-05-08T07:01:00-04:00"
+      },
+      "published_at": "2025-05-08T07:00:00-04:00",
+      "cutoff": "2025-05-08T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-05-08",
+      "caveats": [
+        {
+          "labels": [
+            "day1_open_return",
+            "day1_high_return",
+            "day1_low_return",
+            "day1_close_return"
+          ],
+          "note": "The original earnings release (wire 07:00 ET, 8-K accepted 07:15 ET) carried errors in its narrative description of total revenue and net loss, which 'inadvertently referred to incorrect periods'; Amendment No. 1 on Form 8-K/A, accepted 16:01 ET the same day -- after the reaction session's close -- furnished a corrected release and states that no other change was made. The day-1 reaction was therefore formed on the uncorrected text. Only the four day-1 labels are listed."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 8.01 8-K (read: on 2025-05-21 the FTC issued a Second Request on the pending Alcon merger, extending the HSR waiting period, with completion still expected in the second half of 2025; accepted 16:43 ET, after that session's close) was filed 2025-05-22 (session 11 of this event's window). Filed after that session's close, so the first close that can reflect it is session 12; only the real session-milestone labels at or after session 12 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "pdfs-step3-2025-05-08",
+      "cluster_id": "pdfs-step3-2025-05-08",
+      "candidate_id": "0001558370-25-006976",
+      "security": {
+        "security_id": "PDFS-1120914-2025-05-08",
+        "company_id": "0001120914",
+        "cik": "0001120914",
+        "ticker": "PDFS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-13T00:00:00-05:00",
+        "available_at": "2025-02-13T20:00:00Z"
+      },
+      "source": {
+        "source_id": "pdfs-wire-2025-05-08",
+        "url": "https://www.globenewswire.com/news-release/2025/05/08/3077677/0/en/PDF-Solutions-Announces-First-Quarter-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline May 08, 2025 16:03 ET (16:03 ET). https://www.globenewswire.com/news-release/2025/05/08/3077677/0/en/PDF-Solutions-Announces-First-Quarter-2025-Financial-Results.html",
+        "first_seen_at": "2025-05-08T16:04:00-04:00"
+      },
+      "published_at": "2025-05-08T16:03:00-04:00",
+      "cutoff": "2025-05-08T16:06:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:03",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-09"
+    },
+    {
+      "event_id": "real-step3-2025-05-08",
+      "cluster_id": "real-step3-2025-05-08",
+      "candidate_id": "0001573221-25-000045",
+      "security": {
+        "security_id": "REAL-1573221-2025-05-08",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-20T00:00:00-05:00",
+        "available_at": "2025-02-20T20:00:00Z"
+      },
+      "source": {
+        "source_id": "real-wire-2025-05-08",
+        "url": "https://www.globenewswire.com/news-release/2025/05/08/3077738/0/en/The-RealReal-Announces-First-Quarter-2025-Results.html",
+        "text": "Wire release, displayed dateline May 08, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/05/08/3077738/0/en/The-RealReal-Announces-First-Quarter-2025-Results.html",
+        "first_seen_at": "2025-05-08T16:06:00-04:00"
+      },
+      "published_at": "2025-05-08T16:05:00-04:00",
+      "cutoff": "2025-05-08T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-09"
+    },
+    {
+      "event_id": "tecx-step3-2025-05-08",
+      "cluster_id": "tecx-step3-2025-05-08",
+      "candidate_id": "0000950170-25-066932",
+      "security": {
+        "security_id": "TECX-1681087-2025-05-08",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-03-20T00:00:00-04:00",
+        "available_at": "2025-03-20T20:00:00Z"
+      },
+      "source": {
+        "source_id": "tecx-wire-2025-05-08",
+        "url": "https://www.globenewswire.com/news-release/2025/05/08/3077662/0/en/Tectonic-Therapeutic-Announces-First-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "text": "Wire release, displayed dateline May 08, 2025 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2025/05/08/3077662/0/en/Tectonic-Therapeutic-Announces-First-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html",
+        "first_seen_at": "2025-05-08T16:02:00-04:00"
+      },
+      "published_at": "2025-05-08T16:01:00-04:00",
+      "cutoff": "2025-05-08T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-09",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Items 8.01,9.01 8-K (read: a press release dated Saturday 2025-05-17 presenting complete Phase 1b Part A results for TX45 in Group 2 PH-HFpEF at ESC Heart Failure 2025, so the first tradable session is Monday 2025-05-19; the 8-K itself was accepted 16:56 ET) was filed 2025-05-19 (session 7 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 7 are listed (10, 20)."
+        }
+      ]
+    },
+    {
+      "event_id": "achv-step3-2025-05-13",
+      "cluster_id": "achv-step3-2025-05-13",
+      "candidate_id": "0000950170-25-069804",
+      "security": {
+        "security_id": "ACHV-949858-2025-05-13",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-03-11T00:00:00-04:00",
+        "available_at": "2025-03-11T20:00:00Z"
+      },
+      "source": {
+        "source_id": "achv-wire-2025-05-13",
+        "url": "https://www.globenewswire.com/news-release/2025/05/13/3079992/0/en/Achieve-Life-Sciences-Reports-First-Quarter-2025-Financial-Results-and-Highlights-Updates-in-Cytisinicline-Program.html",
+        "text": "Wire release, displayed dateline May 13, 2025 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2025/05/13/3079992/0/en/Achieve-Life-Sciences-Reports-First-Quarter-2025-Financial-Results-and-Highlights-Updates-in-Cytisinicline-Program.html",
+        "first_seen_at": "2025-05-13T07:31:00-04:00"
+      },
+      "published_at": "2025-05-13T07:30:00-04:00",
+      "cutoff": "2025-05-13T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2025-05-13",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Item 5.07 8-K (read: 2025 annual-meeting results; accepted 16:53 ET, after that session's close) was filed 2025-06-06 (session 18 of this event's window). Filed after that session's close, so the first close that can reflect it is session 19; only the real session-milestone labels at or after session 19 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "klc-step3-2025-05-13",
+      "cluster_id": "klc-step3-2025-05-13",
+      "candidate_id": "0000950170-25-070373",
+      "security": {
+        "security_id": "KLC-1873529-2025-05-13",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2025-03-20T00:00:00-04:00",
+        "available_at": "2025-03-20T20:00:00Z"
+      },
+      "source": {
+        "source_id": "klc-wire-2025-05-13",
+        "url": "https://www.businesswire.com/news/home/20250513231474/en/KinderCare-Reports-First-Quarter-2025-Financial-Results",
+        "text": "Wire release, displayed dateline May 13, 2025 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20250513231474/en/KinderCare-Reports-First-Quarter-2025-Financial-Results",
+        "first_seen_at": "2025-05-13T16:16:00-04:00"
+      },
+      "published_at": "2025-05-13T16:15:00-04:00",
+      "cutoff": "2025-05-13T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-14",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 5.02,5.07 8-K (read: a director's resignation 'not as a result of any disagreement' and 2025 annual-meeting results; accepted 16:45 ET, after that session's close) was filed 2025-06-09 (session 18 of this event's window). Filed after that session's close, so the first close that can reflect it is session 19; only the real session-milestone labels at or after session 19 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "rekr-step3-2025-05-14",
+      "cluster_id": "rekr-step3-2025-05-14",
+      "candidate_id": "0001437749-25-016845",
+      "security": {
+        "security_id": "REKR-1697851-2025-05-14",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-03-31T00:00:00-04:00",
+        "available_at": "2025-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "rekr-wire-2025-05-14",
+        "url": "https://www.globenewswire.com/news-release/2025/05/14/3081580/0/en/Rekor-Systems-Reports-First-Quarter-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline May 14, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/05/14/3081580/0/en/Rekor-Systems-Reports-First-Quarter-2025-Financial-Results.html",
+        "first_seen_at": "2025-05-14T16:06:00-04:00"
+      },
+      "published_at": "2025-05-14T16:05:00-04:00",
+      "cutoff": "2025-05-14T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-15",
+      "caveats": [
+        {
+          "labels": [
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Item 5.07 8-K (read: 2025 annual-meeting results; accepted 16:48 ET, after that session's close) was filed 2025-05-16 (session 2 of this event's window). Filed after that session's close, so the first close that can reflect it is session 3; only the real session-milestone labels at or after session 3 are listed (5, 10, 20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 8.01,9.01 8-K (read: a press release announcing selection by the Texas Department of Transportation for a multi-year statewide contract to implement Rekor Command; accepted 07:35 ET, before that session's open) was filed 2025-06-03 (session 13 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 13 are listed (20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 8.01,9.01 8-K (read: a press release dated 2025-06-05 announcing selection by a Sun Belt state transportation agency to deploy 150 Rekor Discover systems under a one-year, $1.2 million contract; accepted 07:35 ET) was filed 2025-06-06 (session 16 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 16 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "ttwo-step3-2025-05-15",
+      "cluster_id": "ttwo-step3-2025-05-15",
+      "candidate_id": "0001628280-25-025900",
+      "security": {
+        "security_id": "TTWO-946581-2025-05-15",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-06T00:00:00-05:00",
+        "available_at": "2025-02-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire-2025-05-15",
+        "url": "https://www.businesswire.com/news/home/20250515273132/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fourth-Quarter-and-Fiscal-Year-2025",
+        "text": "Wire release, displayed dateline May 15, 2025 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20250515273132/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fourth-Quarter-and-Fiscal-Year-2025",
+        "first_seen_at": "2025-05-15T16:06:00-04:00"
+      },
+      "published_at": "2025-05-15T16:05:00-04:00",
+      "cutoff": "2025-05-15T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-16",
+      "caveats": [
+        {
+          "labels": [
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Public offering of common stock (read: the preliminary prospectus supplement was accepted 16:05 ET on 2025-05-20, after that session's close, and the offering priced that evening -- 4,750,000 shares at $225.00 with the underwriters exercising their option for 712,500 more on 2025-05-21, net proceeds of about $1.04 billion rising to $1.19 billion; the Item 8.01 8-K reporting it was accepted 2025-05-22 16:15 ET) was filed 2025-05-20 (session 3 of this event's window). Filed after that session's close, so the first close that can reflect it is session 4; only the real session-milestone labels at or after session 4 are listed (5, 10, 20)."
+        }
+      ]
+    },
+    {
+      "event_id": "vsat-step3-2025-05-20",
+      "cluster_id": "vsat-step3-2025-05-20",
+      "candidate_id": "0001193125-25-123143",
+      "security": {
+        "security_id": "VSAT-797721-2025-05-20",
+        "company_id": "0000797721",
+        "cik": "0000797721",
+        "ticker": "VSAT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-02-06T00:00:00-05:00",
+        "available_at": "2025-02-06T20:00:00Z"
+      },
+      "source": {
+        "source_id": "vsat-wire-2025-05-20",
+        "url": "https://www.globenewswire.com/news-release/2025/05/20/3085277/0/en/Viasat-Releases-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results.html",
+        "text": "Wire release, displayed dateline May 20, 2025 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2025/05/20/3085277/0/en/Viasat-Releases-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results.html",
+        "first_seen_at": "2025-05-20T16:06:00-04:00"
+      },
+      "published_at": "2025-05-20T16:05:00-04:00",
+      "cutoff": "2025-05-20T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-21",
+      "caveats": [
+        {
+          "labels": [
+            "session_5_close_return",
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "Items 1.01,1.02,5.02,9.01 8-K (read: new stockholder agreements with the four 'Former Sellers' (affiliates of WP, Apax, CPP and OTPP) replacing the Former Stockholders Agreement, and a director's resignation; accepted 16:19 ET, after that session's close) was filed 2025-05-22 (session 2 of this event's window). Filed after that session's close, so the first close that can reflect it is session 3; only the real session-milestone labels at or after session 3 are listed (5, 10, 20)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "Items 7.01,9.01 8-K (read: a press release announcing a binding settlement term sheet between Inmarsat and Ligado Networks under which Viasat anticipates receiving about $568 million in its fiscal year ending 2026; accepted 08:31 ET, before that session's open) was filed 2025-06-13 (session 17 of this event's window). Day1 and every session milestone before it are unaffected -- only the real session-milestone labels at or after session 17 are listed (20)."
+        }
+      ]
+    },
+    {
+      "event_id": "okta-step3-2025-05-27",
+      "cluster_id": "okta-step3-2025-05-27",
+      "candidate_id": "0001660134-25-000091",
+      "security": {
+        "security_id": "OKTA-1660134-2025-05-27",
+        "company_id": "0001660134",
+        "cik": "0001660134",
+        "ticker": "OKTA",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2025-03-03T00:00:00-05:00",
+        "available_at": "2025-03-03T20:00:00Z"
+      },
+      "source": {
+        "source_id": "okta-wire-2025-05-27",
+        "url": "https://www.businesswire.com/news/home/20250523850212/en/Okta-Announces-First-Quarter-Fiscal-Year-2026-Financial-Results",
+        "text": "Wire release, displayed dateline May 27, 2025 4:01 PM Eastern Daylight Time (16:01 ET). https://www.businesswire.com/news/home/20250523850212/en/Okta-Announces-First-Quarter-Fiscal-Year-2026-Financial-Results",
+        "first_seen_at": "2025-05-27T16:02:00-04:00"
+      },
+      "published_at": "2025-05-27T16:01:00-04:00",
+      "cutoff": "2025-05-27T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2025-05-28"
     }
   ]
 }
