@@ -133,7 +133,8 @@ class SpecTests(unittest.TestCase):
             caveats=[{"labels": ["session_6_close_return"], "note": "x"}]), "never computes: session_6_close_return")
 
     def test_every_shipped_caveat_names_only_real_labels(self):
-        for name in ("m1-events.json", "m2-step2-events.json", "m2-combined-events.json", "m2-step3-events.json"):
+        for name in ("m1-events.json", "m2-step2-events.json", "m2-combined-events.json", "m2-step3-events.json",
+                     "m2-step3-combined-events.json"):
             for event in json.loads((ROOT / "config" / name).read_text(encoding="utf-8"))["events"]:
                 for caveat in event.get("caveats", []):
                     self.assertLessEqual(set(caveat["labels"]), ea.LABEL_NAMES | {"all"}, name + " " + event["event_id"])

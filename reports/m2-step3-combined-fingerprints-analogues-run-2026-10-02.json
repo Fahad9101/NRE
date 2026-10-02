@@ -1,0 +1,612 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "purpose": "Running the already-accepted fingerprints/analogues machinery on all 128 accepted events (23 from Milestone 1, 45 from Milestone 2 step 2, 60 from Milestone 2 step 3) to measure what step 3 added. Entirely local and offline -- neither module touches the network, prices or credentials; both read only already-committed derived records. This is the follow-up the assistant recommended after the audit and the project owner asked for in the same message that declared step 3 accepted.",
+  "authorization": {
+    "owner_words": "Keep the 23 archived payloads, accept step 3, and do the rest as you recommended",
+    "at": "2026-10-02T18:55:54.262Z",
+    "scope": "'do the rest as you recommended' covered, besides the declaration record, this run on all 128 events. It did not cover Milestone 4 or anything the assistant had listed as parked.",
+    "declaration": "reports/m2-step3-acceptance-declaration-2026-10-02.json"
+  },
+  "code_fixes_needed": "None. The 68-event run needed two additive fixes (a --calendar option on fingerprints/analogues, and support for batch-record shapes); both were already in place, and step 3's batch reports use the same computed_events shape as step 2's. No nre/ module was changed.",
+  "combined_dataset": {
+    "file": "config/m2-step3-combined-events.json",
+    "note": "A new, parallel file: config/m1-events.json, config/m2-step2-events.json, config/m2-step3-events.json and config/m2-combined-events.json are untouched. Holds only the events that already carry a recorded_result in each source file, copied unchanged; no quarantined or excluded candidate is included.",
+    "composition": {
+      "milestone_1": 23,
+      "milestone_2_step_2": 45,
+      "milestone_2_step_3": 60,
+      "total": 128,
+      "unique_issuers": 23
+    },
+    "provider": "Copied from config/m2-step3-events.json's own provider block (the newest owner-confirmed one, 2026-10-02); its core terms are identical to the blocks in the other files. validate_spec() needs only one, and this run fetches nothing.",
+    "calendar_used": "config/m2-merged-calendar-2024-2026.json, new: nre/calendar-2024.json, calendar-2025.json and calendar-2026.json merged with nre.depth_cohort.merged_calendar_spec(). It includes the 2025-01-09 closure that config/m2-step2-merged-calendar.json (used for the 68-event run) lacks; no Milestone 1 or step 2 event spans that date, and the 68-event outputs reproduce identically under the current code.",
+    "sector_map": "config/sector-map.json, unchanged (each issuer's SIC as read on 2026-09-26)",
+    "policy": {
+      "file": "config/fingerprint-policy.json",
+      "version": "m2-fingerprint-policy-v2-amended-2026-09-27",
+      "sha256": "9a2193a0077a9377f581c7b82b3a6c4dea15337735d6f0edcbf71efaae3db188",
+      "note": "unchanged since the 68-event run"
+    },
+    "as_of": "2026-04-29T20:01:00Z"
+  },
+  "outputs": {
+    "reaction_fingerprint_table": {
+      "file": "reports/m2-step3-combined-fingerprint-table-2026-10-02.json",
+      "report_sha256": "3cf449e97503bda5fe46baf61083d07f4cc6ab842c9bd9b3d59a80641f02eea2"
+    },
+    "analogue_pool_report": {
+      "file": "reports/m2-step3-combined-analogue-pool-report-2026-10-02.json",
+      "report_sha256": "cf822258b2a74f2bd9cdb548919e9bc7fdd8f513596fcb8fb2c1f4cf1c795270"
+    },
+    "report_sha256_note": "digest(canonical(report)) as nre.fingerprints.write_report returns it; independent of line endings and formatting."
+  },
+  "baseline_check": "Milestone 1 alone and the 68-event dataset were recomputed with the current code and equal the 2026-09-29 record (reports/m2-combined-fingerprints-analogues-run-2026-09-29.json); the whole 68-event pool report and fingerprint table reproduce identically. The committed 128-event outputs equal a fresh recomputation. So the comparisons below are like for like.",
+  "what_step_3_added": {
+    "how_to_read_this": "The pool report treats every event as a target at its own recorded cutoff and counts the other events whose labels had already matured and exist. Step 3's 60 events are the earliest in the dataset (2024-11-04 to 2025-05-27), so they mostly add history behind the 68 events that were already there, while as targets they have only each other's earlier events behind them. Totals over 23, 68 and 128 targets therefore have different denominators and are not a fair comparison; the first two blocks below separate the two effects.",
+    "the_original_68_targets_before_and_after": {
+      "before_pool_of_68": {
+        "day1_close_return": {
+          "targets": 68,
+          "with_5_or_more": 63,
+          "with_10_or_more": 54,
+          "with_20_or_more": 48,
+          "with_none": 1,
+          "analogues_found": 49
+        },
+        "session_2_close_return": {
+          "targets": 68,
+          "with_5_or_more": 63,
+          "with_10_or_more": 51,
+          "with_20_or_more": 48,
+          "with_none": 1,
+          "analogues_found": 48
+        },
+        "session_5_close_return": {
+          "targets": 68,
+          "with_5_or_more": 54,
+          "with_10_or_more": 49,
+          "with_20_or_more": 47,
+          "with_none": 1,
+          "analogues_found": 46
+        },
+        "session_10_close_return": {
+          "targets": 68,
+          "with_5_or_more": 49,
+          "with_10_or_more": 49,
+          "with_20_or_more": 47,
+          "with_none": 1,
+          "analogues_found": 45
+        },
+        "session_20_close_return": {
+          "targets": 68,
+          "with_5_or_more": 47,
+          "with_10_or_more": 47,
+          "with_20_or_more": 46,
+          "with_none": 1,
+          "analogues_found": 44
+        },
+        "positive_gap_retained_half": {
+          "targets": 68,
+          "with_5_or_more": 54,
+          "with_10_or_more": 51,
+          "with_20_or_more": 34,
+          "with_none": 8,
+          "analogues_found": 33
+        },
+        "positive_gap_filled": {
+          "targets": 68,
+          "with_5_or_more": 54,
+          "with_10_or_more": 51,
+          "with_20_or_more": 34,
+          "with_none": 8,
+          "analogues_found": 33
+        }
+      },
+      "after_pool_of_128": {
+        "day1_close_return": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 68
+        },
+        "session_2_close_return": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 68
+        },
+        "session_5_close_return": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 68
+        },
+        "session_10_close_return": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 68
+        },
+        "session_20_close_return": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 68
+        },
+        "positive_gap_retained_half": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 65
+        },
+        "positive_gap_filled": {
+          "targets": 68,
+          "with_5_or_more": 68,
+          "with_10_or_more": 68,
+          "with_20_or_more": 68,
+          "with_none": 0,
+          "analogues_found": 65
+        }
+      },
+      "reading": "Every one of the 68 events already in the dataset now has at least 20 matured, same-label events to draw on, for every one of the seven labels, and analogues are found for all 68 on all five return labels (before: 44 to 49 of 68) and for 65 of 68 on the two positive-gap labels (before: 33 of 68). For session_20_close_return, analogues found went from 44 to 68 of 68."
+    },
+    "the_60_new_targets": {
+      "pool_of_128": {
+        "day1_close_return": {
+          "targets": 60,
+          "with_5_or_more": 52,
+          "with_10_or_more": 47,
+          "with_20_or_more": 38,
+          "with_none": 3,
+          "analogues_found": 42
+        },
+        "session_2_close_return": {
+          "targets": 60,
+          "with_5_or_more": 47,
+          "with_10_or_more": 47,
+          "with_20_or_more": 38,
+          "with_none": 3,
+          "analogues_found": 41
+        },
+        "session_5_close_return": {
+          "targets": 60,
+          "with_5_or_more": 47,
+          "with_10_or_more": 47,
+          "with_20_or_more": 36,
+          "with_none": 13,
+          "analogues_found": 41
+        },
+        "session_10_close_return": {
+          "targets": 60,
+          "with_5_or_more": 46,
+          "with_10_or_more": 45,
+          "with_20_or_more": 34,
+          "with_none": 14,
+          "analogues_found": 38
+        },
+        "session_20_close_return": {
+          "targets": 60,
+          "with_5_or_more": 44,
+          "with_10_or_more": 44,
+          "with_20_or_more": 28,
+          "with_none": 15,
+          "analogues_found": 37
+        },
+        "positive_gap_retained_half": {
+          "targets": 60,
+          "with_5_or_more": 52,
+          "with_10_or_more": 32,
+          "with_20_or_more": 16,
+          "with_none": 3,
+          "analogues_found": 25
+        },
+        "positive_gap_filled": {
+          "targets": 60,
+          "with_5_or_more": 52,
+          "with_10_or_more": 32,
+          "with_20_or_more": 16,
+          "with_none": 3,
+          "analogues_found": 25
+        }
+      },
+      "reading": "The new events, as targets, have only the earlier events of the dataset behind them: for session_20_close_return, analogues are found for 37 of 60, 28 of 60 have at least 20 matured events and 15 have none. This is structural, the earliest events cannot have history, and it is also what a walk-forward over this dataset would meet at its start."
+    },
+    "all_targets_for_reference": {
+      "per_pool": {
+        "milestone_1_alone": {
+          "day1_close_return": {
+            "targets": 23,
+            "with_5_or_more": 17,
+            "with_10_or_more": 13,
+            "with_20_or_more": 3,
+            "with_none": 1,
+            "analogues_found": 6
+          },
+          "session_2_close_return": {
+            "targets": 23,
+            "with_5_or_more": 16,
+            "with_10_or_more": 10,
+            "with_20_or_more": 3,
+            "with_none": 1,
+            "analogues_found": 4
+          },
+          "session_5_close_return": {
+            "targets": 23,
+            "with_5_or_more": 16,
+            "with_10_or_more": 8,
+            "with_20_or_more": 0,
+            "with_none": 1,
+            "analogues_found": 4
+          },
+          "session_10_close_return": {
+            "targets": 23,
+            "with_5_or_more": 10,
+            "with_10_or_more": 7,
+            "with_20_or_more": 0,
+            "with_none": 3,
+            "analogues_found": 3
+          },
+          "session_20_close_return": {
+            "targets": 23,
+            "with_5_or_more": 7,
+            "with_10_or_more": 4,
+            "with_20_or_more": 0,
+            "with_none": 7,
+            "analogues_found": 1
+          },
+          "positive_gap_retained_half": {
+            "targets": 23,
+            "with_5_or_more": 13,
+            "with_10_or_more": 3,
+            "with_20_or_more": 0,
+            "with_none": 1,
+            "analogues_found": 0
+          },
+          "positive_gap_filled": {
+            "targets": 23,
+            "with_5_or_more": 13,
+            "with_10_or_more": 3,
+            "with_20_or_more": 0,
+            "with_none": 1,
+            "analogues_found": 0
+          }
+        },
+        "m1_plus_step2_68_events": {
+          "day1_close_return": {
+            "targets": 68,
+            "with_5_or_more": 63,
+            "with_10_or_more": 54,
+            "with_20_or_more": 48,
+            "with_none": 1,
+            "analogues_found": 49
+          },
+          "session_2_close_return": {
+            "targets": 68,
+            "with_5_or_more": 63,
+            "with_10_or_more": 51,
+            "with_20_or_more": 48,
+            "with_none": 1,
+            "analogues_found": 48
+          },
+          "session_5_close_return": {
+            "targets": 68,
+            "with_5_or_more": 54,
+            "with_10_or_more": 49,
+            "with_20_or_more": 47,
+            "with_none": 1,
+            "analogues_found": 46
+          },
+          "session_10_close_return": {
+            "targets": 68,
+            "with_5_or_more": 49,
+            "with_10_or_more": 49,
+            "with_20_or_more": 47,
+            "with_none": 1,
+            "analogues_found": 45
+          },
+          "session_20_close_return": {
+            "targets": 68,
+            "with_5_or_more": 47,
+            "with_10_or_more": 47,
+            "with_20_or_more": 46,
+            "with_none": 1,
+            "analogues_found": 44
+          },
+          "positive_gap_retained_half": {
+            "targets": 68,
+            "with_5_or_more": 54,
+            "with_10_or_more": 51,
+            "with_20_or_more": 34,
+            "with_none": 8,
+            "analogues_found": 33
+          },
+          "positive_gap_filled": {
+            "targets": 68,
+            "with_5_or_more": 54,
+            "with_10_or_more": 51,
+            "with_20_or_more": 34,
+            "with_none": 8,
+            "analogues_found": 33
+          }
+        },
+        "all_128_events": {
+          "day1_close_return": {
+            "targets": 128,
+            "with_5_or_more": 120,
+            "with_10_or_more": 115,
+            "with_20_or_more": 106,
+            "with_none": 3,
+            "analogues_found": 110
+          },
+          "session_2_close_return": {
+            "targets": 128,
+            "with_5_or_more": 115,
+            "with_10_or_more": 115,
+            "with_20_or_more": 106,
+            "with_none": 3,
+            "analogues_found": 109
+          },
+          "session_5_close_return": {
+            "targets": 128,
+            "with_5_or_more": 115,
+            "with_10_or_more": 115,
+            "with_20_or_more": 104,
+            "with_none": 13,
+            "analogues_found": 109
+          },
+          "session_10_close_return": {
+            "targets": 128,
+            "with_5_or_more": 114,
+            "with_10_or_more": 113,
+            "with_20_or_more": 102,
+            "with_none": 14,
+            "analogues_found": 106
+          },
+          "session_20_close_return": {
+            "targets": 128,
+            "with_5_or_more": 112,
+            "with_10_or_more": 112,
+            "with_20_or_more": 96,
+            "with_none": 15,
+            "analogues_found": 105
+          },
+          "positive_gap_retained_half": {
+            "targets": 128,
+            "with_5_or_more": 120,
+            "with_10_or_more": 100,
+            "with_20_or_more": 84,
+            "with_none": 3,
+            "analogues_found": 90
+          },
+          "positive_gap_filled": {
+            "targets": 128,
+            "with_5_or_more": 120,
+            "with_10_or_more": 100,
+            "with_20_or_more": 84,
+            "with_none": 3,
+            "analogues_found": 90
+          }
+        }
+      },
+      "note": "Different denominators (23, 68, 128), and the 128 includes the 60 earliest events; see how_to_read_this."
+    },
+    "pooled_cells": {
+      "before_cells_that_reported_nothing": {
+        "of_22_sector_and_timing_cells": 14,
+        "sic_divisions": [
+          "B",
+          "E",
+          "F"
+        ],
+        "sic_major_groups": [
+          "13",
+          "20",
+          "34",
+          "36",
+          "38",
+          "48",
+          "50",
+          "57",
+          "59",
+          "83",
+          "87"
+        ]
+      },
+      "after_cells_that_reported_nothing": 0,
+      "timing_cells_events": {
+        "premarket": {
+          "before": 21,
+          "after": 32
+        },
+        "after_hours": {
+          "before": 47,
+          "after": 96
+        }
+      },
+      "all_cell": {
+        "events": 128,
+        "issuers": 23,
+        "reaction_sessions": 73,
+        "day1_close_return": {
+          "before_n68": {
+            "mean": -0.0237199368,
+            "median": -0.0173201192
+          },
+          "after_n128": {
+            "mean": -0.0238620919,
+            "median": -0.0236661411
+          }
+        },
+        "session_20_close_return": {
+          "n": 122,
+          "absent": 6,
+          "absent_reason": "CORPORATE_ACTION_IN_WINDOW (all six are CXT's dividend-suppressed events)"
+        }
+      },
+      "reading": "Before step 3, 14 of the 22 sector and timing cells (3 SIC divisions and 11 SIC major groups) reported nothing; now all 22 report. Pooled counts rose to 32 premarket and 96 after-hours events (from 21 and 47). These describe the accepted sample, not base rates."
+    },
+    "issuer_cells": {
+      "events_per_issuer_before": {
+        "2": 2,
+        "3": 20,
+        "4": 1
+      },
+      "events_per_issuer_after": {
+        "4": 2,
+        "5": 6,
+        "6": 15
+      },
+      "before": "all 23 issuer cells reported no statistic",
+      "after": {
+        "reported_unreliable": {
+          "labels": [
+            "gap_ge_10pct",
+            "gap_ge_15pct",
+            "gap_ge_20pct",
+            "gap_ge_30pct",
+            "gap_ge_3pct",
+            "gap_ge_5pct"
+          ],
+          "issuers_each": 21,
+          "why_unreliable": "5 or 6 events, below the 10 from which a proportion counts as reliable",
+          "pooled_weight_on_own_history_gap_ge_5pct": {
+            "min": 0.3333,
+            "max": 0.375
+          }
+        },
+        "still_withheld_entirely": [
+          "SLSN (4 events)",
+          "ALKT (4 events)"
+        ],
+        "return_label_statistics": "all 504 (mean, median, quantiles for 8 return labels in the 21 issuer cells that report anything) remain WITHHELD: the most any issuer has is 6 events against the policy's minimums of 10 (mean, median) and 20 (quantiles)",
+        "positive_gap_labels": "WITHHELD everywhere. Issuer cells by the number of their events that opened at least 0.5% above the prior close (events: cells) {\"0\": 1, \"1\": 3, \"2\": 3, \"3\": 7, \"4\": 7}; the minimum is 5."
+      },
+      "reading": "At the issuer level step 3 bought only the six gap-threshold proportions, and only as REPORTED_UNRELIABLE, for 21 of 23 issuers. Issuer-level mean, median and quantile statistics, and both positive-gap labels, are still out of reach."
+    },
+    "series_shape": {
+      "events_per_issuer": {
+        "4": 2,
+        "5": 6,
+        "6": 15
+      },
+      "span": {
+        "first_event": "2024-11-04",
+        "last_event": "2026-03-31"
+      },
+      "spacing_between_consecutive_events_days": {
+        "count": 105,
+        "min": 44,
+        "median": 91,
+        "max": 186
+      },
+      "gaps_over_135_days": [
+        {
+          "ticker": "ASMB",
+          "days": 186,
+          "from": "2025-05-08",
+          "to": "2025-11-10"
+        },
+        {
+          "ticker": "PDFS",
+          "days": 182,
+          "from": "2025-05-08",
+          "to": "2025-11-06"
+        },
+        {
+          "ticker": "LNSR",
+          "days": 145,
+          "from": "2025-11-06",
+          "to": "2026-03-31"
+        },
+        {
+          "ticker": "SLSN",
+          "days": 140,
+          "from": "2025-11-11",
+          "to": "2026-03-31"
+        },
+        {
+          "ticker": "ACHV",
+          "days": 138,
+          "from": "2025-11-06",
+          "to": "2026-03-24"
+        },
+        {
+          "ticker": "REKR",
+          "days": 138,
+          "from": "2025-11-13",
+          "to": "2026-03-31"
+        },
+        {
+          "ticker": "REKR",
+          "days": 137,
+          "from": "2024-11-14",
+          "to": "2025-03-31"
+        }
+      ],
+      "gap_notes": "Two gaps run to about two quarters and each spans a candidate that was excluded or quarantined in step 2: ASMB (186 days, spans 2025-08-06, excluded as a same-day competing catalyst) and PDFS (182 days, spans 2025-08-07, quarantined as bell-ambiguous). The other five (137 to 145 days) are longer than the 91-day median but under two quarters; their cause was not investigated.",
+      "issuers_whose_series_starts_after_2024-12-15": [
+        {
+          "ticker": "ALKT",
+          "first_event": "2025-04-30"
+        },
+        {
+          "ticker": "CACI",
+          "first_event": "2025-01-22"
+        },
+        {
+          "ticker": "HURN",
+          "first_event": "2025-02-25"
+        },
+        {
+          "ticker": "JBSS",
+          "first_event": "2025-01-29"
+        },
+        {
+          "ticker": "NBIX",
+          "first_event": "2025-02-06"
+        },
+        {
+          "ticker": "SLSN",
+          "first_event": "2025-05-05"
+        }
+      ],
+      "late_start_notes": "ALKT's 2025-02-27 candidate was excluded (same-day catalyst) and SLSN traded OTCQB before its April 2025 uplisting; the other four were not investigated (their earlier release dates may fall before the window opened on 2024-11-01)."
+    }
+  },
+  "facts_bearing_on_the_purpose_step_3_was_given": {
+    "purpose": "a per-issuer time series deep enough for Milestone 4's own walk-forward validation (config/m2-step3-protocol.json)",
+    "facts": [
+      "4 to 6 events per issuer, spanning 2024-11-04 to 2026-03-31, with a median of 91 days between consecutive events.",
+      "All 22 sector and timing cells now report; at the issuer level only gap-threshold proportions report, and as unreliable.",
+      "The original 68 events now all have at least 20 matured same-label events behind them for every label; the 60 earliest have thin pools by construction.",
+      "Two issuers have a gap of about two quarters in their series (ASMB, PDFS) and six start after 2024-12-15."
+    ],
+    "not_decided_here": "Whether that is deep enough depends on how Milestone 4 would use it, and Milestone 4 has not been scoped or authorized. The step-3 declaration states the same."
+  },
+  "limits_and_wording": [
+    "The reports' own scope_note field still reads: \"These figures describe the accepted Milestone 1 events only: a convenience sample chosen because a minute-stamped wire release and a clean SEC neighbourhood existed, one event per issuer. They are not market base rates, and nothing here predicts, scores or ranks.\" That boilerplate (SCOPE_NOTE in nre/fingerprints.py) predates the multi-event, multi-protocol datasets and is not accurate for these 128 events; the 68-event reports carry the same text. Not changed here: it is shared by every committed report and changing it would alter their provenance.",
+    "The fingerprints/analogues machinery never reads event caveats. 38 of the 128 events carry caveats (7 from Milestone 1, 4 from step 2, 27 from step 3), naming 105 distinct event-label pairs plus 2 caveat items that use the 'all' sentinel; those labels enter every pool and statistic unmodified, like any other. The 68-event reports share this limit.",
+    "Counts and intervals treat events as independent (the tables' own limit). With 4 to 6 sequential events per issuer, and 128 events sharing 73 reaction sessions, that is a weaker assumption than it was at one event per issuer.",
+    "SIC codes are each issuer's assignment as read on 2026-09-26, not the one in force at the event's date; labels are raw, not market-adjusted.",
+    "Analogue retrieval is categorical only (release timing, sector) and never by outcome; an analogue's own reaction never influences whether it is selected."
+  ],
+  "not_a_claim": [
+    "Nothing here predicts, scores or ranks. These figures describe the accepted events only; they are not market base rates.",
+    "Not a new milestone, acceptance or authorization: this exercises machinery accepted with Milestone 2 on data accepted by the step-3 declaration. No Milestone 4 work was started or implied.",
+    "Not a judgment that step 3 reached the purpose its protocol stated for Milestone 4; see facts_bearing_on_the_purpose_step_3_was_given.not_decided_here.",
+    "Not evidence of any predictive edge."
+  ]
+}
