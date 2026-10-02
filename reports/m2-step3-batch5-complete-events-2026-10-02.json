@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/37040387672",
+  "workflow_run_number": 18,
+  "commit": "79448c6",
+  "trigger": "push (auto-triggered: config/m2-step3-events.json is a watched path)",
+  "context": "First real, attested result for Milestone 2 step 3 batch 5: all 10 batch-5 candidates now carry first_public_time, historical_identity, and corporate_actions attestations (reports/m2-step3-batch5-signoff-2026-10-02.json, owner reply \"yes go ahead\"). All ten reached MAPPED with no error, no missing session and no zero-volume session. CXT's third real cash dividend (ex-date 2025-05-30, session 16) correctly nulled only session_20_close_return via CORPORATE_ACTION_IN_WINDOW, the same mechanism as its first two. SLSN 2025-05-05 computed from Alpaca SIP bars for its whole window, consistent with its Nasdaq listing from 2025-04-08. Caveats carried in config/m2-step3-events.json: REKR's freshness caveat on every label plus its two session_20 items, HURN's session_10/session_20 item, ALKT's, CXT's and SLSN's session_20 items. Excluded in the same batch: SLSN 2025-03-26 (reports/m2-step3-batch5-eligibility-review-2026-10-02.json). No raw OHLCV was ever committed here, only the derived returns/booleans the pipeline computed.",
+  "result": {
+    "all_ok": true,
+    "total_events": 10,
+    "errors": 0,
+    "all_mapped": true,
+    "events_in_the_whole_run": 49,
+    "earlier_events_reconfirmed_labels_match_recorded": 39
+  },
+  "independent_cross_check": "After the run, all 10 events' 8 return labels were recomputed from Yahoo Finance's public daily bars, independent of Alpaca (CXT's null session_20 skipped, so 79 comparable values): 68 agree to better than 1e-5, 47 of those to better than 1e-7 (all of LOVE, ALKT, PAYO, SLSN, ASPN and CXT's seven). The other 11 differ by at most 6.4e-4: all eight REKR values (REKR trades under $1, so a price difference of about $0.0005 moves a return by that much) and one value each for HURN (1.3e-5), JBSS (7.1e-5) and ASMB (1.7e-4) -- consistent with sub-cent price-precision differences between Alpaca's four-decimal SIP bars and Yahoo's rounded prices, not data discrepancies. A post-hoc QA check only: it changes no label, digest, or selection, and the pipeline's own Alpaca-derived values remain the recorded results.",
+  "computed_events": {
+    "alkt-step3-2025-04-30": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.02322967403521925,
+        "day1_high_return": 0.08692394155114269,
+        "day1_low_return": -0.05264143874110161,
+        "day1_open_return": 0.08692394155114269,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": 0.1536155863619333,
+        "session_20_close_return": 0.07455976020981625,
+        "session_2_close_return": 0.011240164855751189,
+        "session_5_close_return": 0.04908205320344683
+      },
+      "labels_sha256": "6ee6c1a6f7b82fdea7fa82d3b5c535068549052c19938e0071ca9f079fb086cc"
+    },
+    "asmb-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.0497427101200687,
+        "day1_high_return": 0.13996569468267572,
+        "day1_low_return": -0.0017152658662091813,
+        "day1_open_return": 0.029159519725557415,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.16295025728988,
+        "session_20_close_return": 0.39279588336192095,
+        "session_2_close_return": 0.05917667238421953,
+        "session_5_close_return": 0.07204116638078895
+      },
+      "labels_sha256": "34c627279e2323f3028f0ba686b79f75a58ad44f8eb099b098c556b6bd351afe"
+    },
+    "aspn-step3-2025-05-08": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.24253075571177518,
+        "day1_high_return": -0.16344463971880496,
+        "day1_low_return": -0.2688927943760985,
+        "day1_open_return": -0.24692442882249566,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.07029876977152894,
+        "session_20_close_return": 0.017574692442882123,
+        "session_2_close_return": -0.1300527240773287,
+        "session_5_close_return": 0.007029876977152849
+      },
+      "labels_sha256": "b07968785461e9c28ec0368d0f3f500b967eec282d12bbea5ff067dec2f49a64"
+    },
+    "cxt-step3-2025-05-07": {
+      "corporate_actions": [
+        {
+          "ex_date": "2025-05-30",
+          "id": "69802071-8085-4a3d-8d99-7fa0a713b5b2",
+          "type": "cash_dividends"
+        }
+      ],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"
+      },
+      "labels": {
+        "day1_close_return": 0.06968933669185562,
+        "day1_high_return": 0.08480268681780023,
+        "day1_low_return": -0.028757346767422254,
+        "day1_open_return": -0.028757346767422254,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.09676742233417301,
+        "session_20_close_return": null,
+        "session_2_close_return": 0.10831234256926936,
+        "session_5_close_return": 0.15470193115029374
+      },
+      "labels_sha256": "c6e2546265829e211e0fd5fed1c5cf8196bbb4404efbe582b31241fa3cf671dd"
+    },
+    "hurn-step3-2025-04-29": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.008459614535824667,
+        "day1_high_return": -0.004045902604090101,
+        "day1_low_return": -0.10017801971457996,
+        "day1_open_return": -0.04148889215830498,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.101956745623069,
+        "session_20_close_return": 0.024201853759011183,
+        "session_2_close_return": 0.03663380903339708,
+        "session_5_close_return": 0.09805796675003697
+      },
+      "labels_sha256": "989e56bf1d0f325e979ba8a06162ffd9fb513e0c17e603a820634bcc06797f59"
+    },
+    "jbss-step3-2025-04-30": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.05100347065036959,
+        "day1_high_return": -0.00580503998792814,
+        "day1_low_return": -0.09461294703485734,
+        "day1_open_return": -0.011317338162064261,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.07725969518635878,
+        "session_20_close_return": -0.06322619586539913,
+        "session_2_close_return": -0.07469443186962421,
+        "session_5_close_return": -0.11090991398822991
+      },
+      "labels_sha256": "24bfa9b8abae8c3e7a6cf1aa6f85a92ae9a20bae514966e7dd13ce79e1f05758"
+    },
+    "love-step3-2025-04-10": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.16070307595731315,
+        "day1_high_return": 0.21155053358443188,
+        "day1_low_return": 0.030759573132454587,
+        "day1_open_return": 0.15003138731952292,
+        "gap_ge_10pct": true,
+        "gap_ge_15pct": true,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.3151286880100439,
+        "session_20_close_return": 0.31261770244821085,
+        "session_2_close_return": 0.15128688010043945,
+        "session_5_close_return": 0.22975517890772124
+      },
+      "labels_sha256": "84cb9087ef715e0a57337220dc3c469d3adf5a0f4ede979dcc0df7d5e6a43115"
+    },
+    "payo-step3-2025-05-07": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.13604488078541366,
+        "day1_high_return": -0.032258064516129004,
+        "day1_low_return": -0.16549789621318367,
+        "day1_open_return": -0.0974754558204769,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.008415147265077305,
+        "session_20_close_return": -0.05049088359046283,
+        "session_2_close_return": -0.11220196353436185,
+        "session_5_close_return": 0.04628330995792429
+      },
+      "labels_sha256": "a195afbe3c36fa4a0c2707a39532da8d8cc5180f0a813091e6fd840cfde7d502"
+    },
+    "rekr-step3-2025-03-31": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": 0.014886658396300989,
+        "day1_high_return": 0.014999436111424291,
+        "day1_low_return": -0.10702605165219359,
+        "day1_open_return": -0.006428329762039109,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.11210104883275074,
+        "session_20_close_return": 0.16161046577196347,
+        "session_2_close_return": -0.058193301003721776,
+        "session_5_close_return": -0.14040825532874712
+      },
+      "labels_sha256": "2850fe0c40496f7cc4fae3e00a795ce4e4a3f9fdeec93c2acb3f4294188c0e11"
+    },
+    "slsn-step3-2025-05-05": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.08737864077669899,
+        "day1_high_return": -0.03883495145631055,
+        "day1_low_return": -0.16504854368932032,
+        "day1_open_return": -0.14563106796116498,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": 0.23948220064724923,
+        "session_20_close_return": 0.3495145631067962,
+        "session_2_close_return": -0.016181229773462702,
+        "session_5_close_return": 0.10032362459546929
+      },
+      "labels_sha256": "1f5f2b4b2b53788de7d5c90940e22c00c50cff9b2901ddac8294ee1d380c24c4"
+    }
+  }
+}
