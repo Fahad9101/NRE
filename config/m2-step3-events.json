@@ -1744,6 +1744,10 @@
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
       },
+      "recorded_result": {
+        "labels_sha256": "4b3ba051f9925c87ef8c5969669227f96b5ff254921c344b2537f95ebbbe0e1d",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
+      },
       "caveats": [
         {
           "labels": [
@@ -1805,6 +1809,10 @@
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
       },
+      "recorded_result": {
+        "labels_sha256": "0d469ec5d73e04c46e75a825a50f125c8645e97e9eb76e0c01a2847ff735bcf2",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
+      },
       "caveats": [
         {
           "labels": [
@@ -1860,6 +1868,10 @@
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
       },
+      "recorded_result": {
+        "labels_sha256": "d4da49466ae2e3638120a15e8c42fd15a4be3df782c6bace03fa1b7ea8965016",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
+      },
       "caveats": [
         {
           "labels": [
@@ -1914,6 +1926,10 @@
           "record": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "3f6494e96f4876b717099689c97288e4ab5e69a3cc2f652865cb09931ef46298",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
     },
     {
@@ -1961,6 +1977,10 @@
           "record": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "d60262f1657dcfd98a30072fc9f2dfee232e03c9e3beb1f026e433bf77feb379",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
     },
     {
@@ -2008,6 +2028,10 @@
           "record": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "bdab2ac28d3b69fb72da887324c0b30222600e9a744ca0af0480e6eda754caf6",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
     },
     {
@@ -2055,6 +2079,10 @@
           "record": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "04b0e2b8ad38a01d2cb615e2553aabcdbf455e90075b40e396dcb30a6bc6e7fa",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
     },
     {
@@ -2102,6 +2130,10 @@
           "record": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "6b08b28c47b62d7987cb4617ca171ac54f948fb97664426072ea0d9c2e2d7695",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
     },
     {
@@ -2149,6 +2181,10 @@
           "record": "reports/m2-step3-batch4-signoff-packet-2026-10-02.json",
           "basis": "Owner sign-off (\"yes go ahead\", 2026-10-02) on the recommendation in reports/m2-step3-batch4-signoff-2026-10-02.json."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "9e406ac57e7f9c27e607dc4fb84ba94fe00b967898386807c14187ba4fd3a452",
+        "recorded_in": "reports/m2-step3-batch4-complete-events-2026-10-02.json"
       }
     }
   ]

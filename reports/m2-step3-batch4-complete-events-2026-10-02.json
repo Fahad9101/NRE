@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/37015275523",
+  "workflow_run_number": 15,
+  "commit": "0718121",
+  "trigger": "push (auto-triggered: config/m2-step3-events.json is a watched path)",
+  "context": "First real, attested result for Milestone 2 step 3 batch 4: all 9 batch-4 candidates now carry first_public_time, historical_identity, and corporate_actions attestations (reports/m2-step3-batch4-signoff-2026-10-02.json, owner reply \"yes go ahead\"). No corporate action was found for any of the nine, every required session was present, and no session had zero volume. LNSR's window contains the announced Alcon take-out (session 18, reports/m2-step3-batch4-signoff-packet-2026-10-02.json), so its session_20_close_return reflects the deal price rather than only the earnings reaction -- carried as a caveat on that event in config/m2-step3-events.json, as are HURN's two inside-window items and COLL's governance 8-K. Excluded in the same batch: ALKT 2025-02-27 and REKR 2025-03-17 (reports/m2-step3-batch4-eligibility-review-2026-10-02.json). No raw OHLCV was ever committed here, only the derived returns/booleans the pipeline computed.",
+  "result": {
+    "all_ok": true,
+    "total_events": 9,
+    "errors": 0,
+    "all_mapped": true,
+    "events_in_the_whole_run": 39,
+    "earlier_events_reconfirmed_labels_match_recorded": 30
+  },
+  "independent_cross_check": "After the run, all 9 events' 8 return labels (day1 open/high/low/close, session 2/5/10/20 closes) were recomputed from Yahoo Finance's public daily bars, independent of Alpaca: 70 of 72 values agree to better than 1e-7. The other two are ACHV's day1_low_return (2.3e-4 apart) and session_20_close_return (1.6e-3 apart): both equal sub-cent price differences ($0.0007 and $0.005) on a roughly $3 stock, because the pipeline's Alpaca SIP bars carry four-decimal prices (e.g. an implied $2.2250 close) where Yahoo shows two decimals -- not a data discrepancy. A post-hoc QA check only: it changes no label, digest, or selection, and the pipeline's own Alpaca-derived values remain the recorded results.",
+  "computed_events": {
+    "achv-step3-2025-03-11": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.045751633986928164,
+        "day1_high_return": -0.006535947712418277,
+        "day1_low_return": -0.0585947712418301,
+        "day1_open_return": -0.006535947712418277,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.02941176470588236,
+        "session_20_close_return": -0.2728758169934641,
+        "session_2_close_return": -0.13398692810457524,
+        "session_5_close_return": -0.04901960784313719
+      },
+      "labels_sha256": "bdab2ac28d3b69fb72da887324c0b30222600e9a744ca0af0480e6eda754caf6"
+    },
+    "asmb-step3-2025-03-20": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.029934518241347075,
+        "day1_high_return": 0.05706267539756804,
+        "day1_low_return": 0.00093545369504211,
+        "day1_open_return": 0.028999064546304965,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": -0.12909260991580906,
+        "session_20_close_return": -0.06173994387277837,
+        "session_2_close_return": 0.04022450888681006,
+        "session_5_close_return": 0.019644527595884087
+      },
+      "labels_sha256": "04b0e2b8ad38a01d2cb615e2553aabcdbf455e90075b40e396dcb30a6bc6e7fa"
+    },
+    "coll-step3-2025-02-27": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.022167487684729092,
+        "day1_high_return": 0.10626319493314562,
+        "day1_low_return": 0.013722730471498856,
+        "day1_open_return": 0.06720619282195628,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": 0.02392681210415204,
+        "session_20_close_return": 0.04011259676284307,
+        "session_2_close_return": 0.0007037297677692234,
+        "session_5_close_return": 0.04855735397607308
+      },
+      "labels_sha256": "0d469ec5d73e04c46e75a825a50f125c8645e97e9eb76e0c01a2847ff735bcf2"
+    },
+    "hurn-step3-2025-02-25": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.18231867868826312,
+        "day1_high_return": 0.2269209287481051,
+        "day1_low_return": 0.0640708529482168,
+        "day1_open_return": 0.07117210564110743,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.15886060799489354,
+        "session_20_close_return": 0.15694566344849603,
+        "session_2_close_return": 0.1934891885422485,
+        "session_5_close_return": 0.1779302641027687
+      },
+      "labels_sha256": "4b3ba051f9925c87ef8c5969669227f96b5ff254921c344b2537f95ebbbe0e1d"
+    },
+    "klc-step3-2025-03-20": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.22171945701357465,
+        "day1_high_return": -0.12330316742081449,
+        "day1_low_return": -0.23472850678733037,
+        "day1_open_return": -0.16289592760180993,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.36708144796380093,
+        "session_20_close_return": -0.3631221719457014,
+        "session_2_close_return": -0.2166289592760181,
+        "session_5_close_return": -0.28054298642533937
+      },
+      "labels_sha256": "6b08b28c47b62d7987cb4617ca171ac54f948fb97664426072ea0d9c2e2d7695"
+    },
+    "lnsr-step3-2025-02-27": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.14783526927138313,
+        "day1_high_return": 0.3336853220696938,
+        "day1_low_return": 0.03273495248152036,
+        "day1_open_return": 0.03273495248152036,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.6198521647307285,
+        "session_20_close_return": 0.49313621964097143,
+        "session_2_close_return": 0.37275607180570214,
+        "session_5_close_return": 0.6198521647307285
+      },
+      "labels_sha256": "d4da49466ae2e3638120a15e8c42fd15a4be3df782c6bace03fa1b7ea8965016"
+    },
+    "okta-step3-2025-03-03": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": 0.24265718219366694,
+        "day1_high_return": 0.24598439651216153,
+        "day1_low_return": 0.11977971546581001,
+        "day1_open_return": 0.1479463056447914,
+        "gap_ge_10pct": true,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": true,
+        "positive_gap_filled": false,
+        "positive_gap_retained_half": true,
+        "session_10_close_return": 0.3267553923818265,
+        "session_20_close_return": 0.20720513997246437,
+        "session_2_close_return": 0.3344424047728316,
+        "session_5_close_return": 0.20686094538779254
+      },
+      "labels_sha256": "d60262f1657dcfd98a30072fc9f2dfee232e03c9e3beb1f026e433bf77feb379"
+    },
+    "payo-step3-2025-02-27": {
+      "corporate_actions": [],
+      "label_reasons": {
+        "positive_gap_filled": "NOT_POSITIVE_GAP_GE_0_5PCT",
+        "positive_gap_retained_half": "NOT_POSITIVE_GAP_GE_0_5PCT"
+      },
+      "labels": {
+        "day1_close_return": -0.1473477406679764,
+        "day1_high_return": -0.09724950884086447,
+        "day1_low_return": -0.16699410609037324,
+        "day1_open_return": -0.15913555992141448,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": false,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": null,
+        "positive_gap_retained_half": null,
+        "session_10_close_return": -0.28978388998035354,
+        "session_20_close_return": -0.2554027504911591,
+        "session_2_close_return": -0.1601178781925343,
+        "session_5_close_return": -0.1807465618860511
+      },
+      "labels_sha256": "3f6494e96f4876b717099689c97288e4ab5e69a3cc2f652865cb09931ef46298"
+    },
+    "tecx-step3-2025-03-20": {
+      "corporate_actions": [],
+      "label_reasons": {},
+      "labels": {
+        "day1_close_return": -0.04643823264201985,
+        "day1_high_return": 0.039675383228133354,
+        "day1_low_return": -0.08250676284941383,
+        "day1_open_return": 0.039675383228133354,
+        "gap_ge_10pct": false,
+        "gap_ge_15pct": false,
+        "gap_ge_20pct": false,
+        "gap_ge_30pct": false,
+        "gap_ge_3pct": true,
+        "gap_ge_5pct": false,
+        "positive_gap_filled": true,
+        "positive_gap_retained_half": false,
+        "session_10_close_return": -0.24842200180342644,
+        "session_20_close_return": -0.23264201983769162,
+        "session_2_close_return": -0.035166816952209246,
+        "session_5_close_return": -0.14743011722272314
+      },
+      "labels_sha256": "9e406ac57e7f9c27e607dc4fb84ba94fe00b967898386807c14187ba4fd3a452"
+    }
+  }
+}
