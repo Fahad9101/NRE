@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-02",
+  "context": "Reply to the batch-5 signoff request built from reports/m2-step3-batch5-signoff-packet-2026-10-02.json -- ten real events (REKR 2025-03-31, LOVE, HURN, ALKT 2025-04-30, JBSS, CXT, PAYO, SLSN 2025-05-05, ASMB, ASPN), all quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with a clean real dry run (workflow run 37028994370), plus flagged findings: the SLSN 2025-03-26 exclusion (OTCQB: NANX, exchange outside scope); SLSN 2025-05-05's identity (Nasdaq-listing floor of 2025-04-08, a stale 8-K cover table, a true release date two days before the ledger's filing_date) which the packet asked the owner to decide on specifically; REKR's freshness caveat on every label plus a 14%-single-holder disclosure and an auditor resignation; CXT's third real cash dividend (ex-date 2025-05-30); HURN's inside-window annual-meeting 8-K (session 10); ALKT's identity anchor on its excluded 2025-02-27 candidate's 8-K and its bundled CFO-retirement Item 5.02 (read, not excluded); and LOVE's director-resignation 8-K accepted the evening before its premarket release.",
+  "owner_reply": "yes go ahead",
+  "owner_reply_exact_as_received": [
+    {
+      "transcript_timestamp_utc": "2026-10-02T17:22:46.266Z",
+      "text": "yes go ahead",
+      "reading": "Plain text, sent in direct reply to the batch-5 packet message, which offered 'sign off on all 10, or name any to hold back'."
+    }
+  ],
+  "scope": "first_public_time, historical_identity, and corporate_actions attestations for all 10 candidates in reports/m2-step3-batch5-signoff-packet-2026-10-02.json: rekr-step3-2025-03-31, love-step3-2025-04-10, hurn-step3-2025-04-29, alkt-step3-2025-04-30, jbss-step3-2025-04-30, cxt-step3-2025-05-07, payo-step3-2025-05-07, slsn-step3-2025-05-05, asmb-step3-2025-05-08, aspn-step3-2025-05-08. The reply named no event to hold back, so SLSN 2025-05-05 is included on the identity evidence the packet set out, and CXT's third dividend is accepted on the same basis as its first two. The SLSN 2025-03-26 exclusion stands as recommended (the reply did not ask to include it).",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance, not step-3 acceptance.",
+    "Not a claim that any proposed_label_caveat's underlying item is or is not disqualifying -- REKR's pre-announcement/freshness pattern, its 14%-single-holder 8-K and auditor resignation, HURN's annual-meeting 8-K, ALKT's and CXT's annual-meeting 8-Ks, and SLSN's related-party loan 8-K all travel with the computed labels (config/m2-step3-events.json carries them as caveats) rather than being resolved here.",
+    "Not a claim that SLSN 2025-05-05's identity is established by a clean filing cover table: it rests on the Form 8-A12B, the Nasdaq certification, the uplisting release, the SEC header's 12(b) file number and the event's own wire release, as laid out in the packet; this 8-K's own cover table remains stale.",
+    "Not a claim that CXT's third real dividend is immaterial -- accepted on the same basis as its first two (cxt-step3-2024-11-06, cxt-step3-2025-02-12), trusting nre/dataset.py's own tested CORPORATE_ACTION_IN_WINDOW label-suppression logic.",
+    "Not a permanent ruling on SLSN 2025-03-26: it stays excluded under the project's scope rule (OTCQB common stock) unless the owner later instructs otherwise explicitly."
+  ]
+}
