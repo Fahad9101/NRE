@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-02",
+  "purpose": "Evidence for the project owner to sign off, or not, on eleven candidate events for Milestone 2 step 3 (batch 2 of 7, the next 11 of the 55 remaining step-3 candidates by filing date). Nothing here is an acceptance: each event stays quarantined, and no label is computed, until the corresponding attestations are added.",
+  "how_candidates_were_chosen": "Batch 2 is the next 11 of the 55 remaining step-3 candidates by filing date (REAL 2024-11-04 through KLC 2024-11-20) after batch 1's 11. All 66 had already passed the same-day-competing-catalyst policy and a real browser-fetched SEC cohort freeze before any of these 11 were selected for this check.",
+  "dry_run": {
+    "workflow": "depth3-event-acquire.yml",
+    "run_id": 36974765261,
+    "commit": "8642296",
+    "result": "All 11 pending events ran with no attestations: every event quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with no labels. All 10 of batch 1's already-attested events re-confirmed state MAPPED and labels_match_recorded: true. One real corporate action found: CXT shows a real cash dividend, ex-date 2024-11-29 -- see CXT's entry below. The other 10 of 11 are clean (empty corporate_actions, no missing/zero-volume sessions)."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the chronology and identity evidence per candidate below, including the residual gap that open-web search cannot close (a live or unrecorded earlier disclosure) -- except REAL and ASPN, where a real earlier disclosure WAS found and is recorded in full in reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json rather than left as the usual 'none found'.",
+    "corporate_actions": "For 10 of 11 candidates: accept two independent clean signals -- no Item 3.03/5.03 8-K on the event date itself in the shown history, and Alpaca's real, fully paginated corporate-actions response empty for the window. CXT is the exception -- its Alpaca response is NOT empty (a real cash dividend, ex-date 2024-11-29, the same issuer and the same kind of finding already accepted twice before: once in step 2's own batch 1, once in Milestone 1); needs its own explicit decision, not a blanket sign-off."
+  },
+  "candidates": [
+    {
+      "event_id": "real-step3-2024-11-04",
+      "candidate_id": "0001573221-24-000124",
+      "ticker": "REAL",
+      "company": "The RealReal, Inc.",
+      "cik": "0001573221",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/04/2974426/0/en/The-RealReal-Announces-Third-Quarter-2024-Results.html",
+        "displayed_stamp_et": "November 04, 2024 16:05 ET",
+        "minute_encoded_in_spec": "2024-11-04T16:05:00-05:00",
+        "sec_8k_accepted_et": "2024-11-04 16:13:17",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-04",
+      "reaction_session": "2024-11-05",
+      "twentieth_reaction_session": "2024-12-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, $0.00001 par value | REAL | The Nasdaq Global Select Market",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001573221-24-000105",
+          "accepted_et": "2024-08-06 20:14:08"
+        },
+        "spec_valid_from": "2024-08-06T00:00:00-04:00",
+        "spec_available_at": "2024-08-06T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-14 5.07,9.01",
+          "2024-08-06 2.02,7.01,9.01 (prior quarter, anchor)",
+          "2024-10-28 2.02,5.02,9.01 (CEO change + a real preliminary-results disclosure -- see earlier_disclosure_of_these_results below)",
+          "2024-11-04 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "FOUND, not the usual 'none found'. The 2024-10-28 8-K (primarily a CEO-change announcement) also disclosed preliminary Q3 2024 GMV ($433.1M), Total Revenue ($147.8M), Adjusted EBITDA ($2.3M), and Net Loss ($(17.938)M) -- effectively the same figures as this candidate's own final numbers (Revenue $148M, Net Loss $(18)M, Adjusted EBITDA $2.3M). Full detail in reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json. The 2024-10-28 filing itself predates the step-3 window (2024-11-01) and was never a pool candidate -- not an exclusion question, a freshness caveat on this candidate's own reaction."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["day1_close_return", "day1_high_return", "day1_low_return", "day1_open_return", "session_2_close_return", "session_5_close_return", "session_10_close_return", "session_20_close_return"],
+        "note": "Most of this quarter's headline figures were already public via the 2024-10-28 pre-announcement; this candidate's own reaction likely reflects confirmation of already-known numbers (plus the CEO-change aftermath) rather than a fresh surprise. Caveat applies to every computed label, not a specific session range."
+      },
+      "additional_note": "The CEO-change portion of the 2024-10-28 filing (John Koryl's departure, Rati Sahi Levesque's appointment) is itself real and material, but it is 7 trading days before this candidate's own anchor session and outside any reaction window this candidate defines -- noted for context, not assessed as a same-day or inside-window item."
+    },
+    {
+      "event_id": "payo-step3-2024-11-05",
+      "candidate_id": "0001558370-24-014329",
+      "ticker": "PAYO",
+      "company": "Payoneer Global Inc.",
+      "cik": "0001845815",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20241105351426/en/Payoneer-Reports-Third-Quarter-2024-Financial-Results",
+        "displayed_stamp_et": "Nov 5, 2024 7:30 AM Eastern Standard Time",
+        "minute_encoded_in_spec": "2024-11-05T07:30:00-05:00",
+        "sec_8k_accepted_et": "2024-11-05 07:35:33",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2024-11-04",
+      "reaction_session": "2024-11-05",
+      "twentieth_reaction_session": "2024-12-03",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | PAYO | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001558370-24-011207",
+          "accepted_et": "2024-08-07 07:35:16"
+        },
+        "spec_valid_from": "2024-08-07T00:00:00-04:00",
+        "spec_available_at": "2024-08-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-03 5.07",
+          "2024-08-07 2.02,9.01 (prior quarter, anchor)",
+          "2024-08-12 8.01,9.01",
+          "2024-09-10 3.03,8.01,9.01",
+          "2024-11-05 2.02,9.01 <EVENT>",
+          "2024-12-30 8.01"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "One Item 3.03 8-K in the shown history (2024-09-10) -- well before this event's own window, read as part of chronology only, not inside the reaction window.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer's own wire distributor varies by quarter (BusinessWire here; GlobeNewswire or PRNewswire in other quarters per this project's own already-recorded wire-service caveat) -- re-confirmed each candidate's own wire URL independently rather than assuming a pattern."
+    },
+    {
+      "event_id": "aspn-step3-2024-11-06",
+      "candidate_id": "0001171843-24-006061",
+      "ticker": "ASPN",
+      "company": "Aspen Aerogels, Inc.",
+      "cik": "0001145986",
+      "release": {
+        "wire": "PRNewswire",
+        "url": "https://www.prnewswire.com/news-releases/aspen-aerogels-inc-reports-third-quarter-2024-financial-results-and-recent-business-highlights-302298009.html",
+        "displayed_stamp_et": "Nov 06, 2024, 16:30 ET",
+        "minute_encoded_in_spec": "2024-11-06T16:30:00-05:00",
+        "sec_8k_accepted_et": "2024-11-06 16:30:28",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-06",
+      "reaction_session": "2024-11-07",
+      "twentieth_reaction_session": "2024-12-05",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock | ASPN | The New York Stock Exchange",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001171843-24-004523",
+          "accepted_et": "2024-08-07 20:30:39"
+        },
+        "spec_valid_from": "2024-08-07T00:00:00-04:00",
+        "spec_available_at": "2024-08-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-08-07 2.02,7.01,9.01 (prior quarter, anchor)",
+          "2024-08-15 5.02,9.01",
+          "2024-08-19 1.01,1.02,2.03,9.01",
+          "2024-09-03 5.02,9.01",
+          "2024-10-16 2.02,7.01,8.01,9.01 (DOE loan + a real preliminary-results disclosure -- see earlier_disclosure_of_these_results below)",
+          "2024-10-22 1.01,8.01,9.01",
+          "2024-11-06 2.02,7.01,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "FOUND, not the usual 'none found'. The 2024-10-16 8-K (primarily a DOE conditional-loan-commitment announcement) also disclosed preliminary Q3 2024 revenue ($117M), Adjusted EBITDA ($25M), and net loss ($13M) -- effectively the same figures as this candidate's own final numbers (revenue $117.3M, net loss $13.0M, Adjusted EBITDA $25.4M). Full detail in reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json. The 2024-10-16 filing itself predates the step-3 window (2024-11-01) and was never a pool candidate -- not an exclusion question, a freshness caveat on this candidate's own reaction."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["day1_close_return", "day1_high_return", "day1_low_return", "day1_open_return", "session_2_close_return", "session_5_close_return", "session_10_close_return", "session_20_close_return"],
+        "note": "Most of this quarter's headline figures were already public via the 2024-10-16 pre-announcement, three weeks before this release. Caveat applies to every computed label, not a specific session range."
+      },
+      "additional_note": "The 2024-08-19 and 2024-10-22 filings (debt/financing agreements) and the 2024-08-15/2024-09-03 officer changes are all real but fall outside any reaction window this candidate defines -- noted for context only."
+    },
+    {
+      "event_id": "vsat-step3-2024-11-06",
+      "candidate_id": "0001193125-24-252046",
+      "ticker": "VSAT",
+      "company": "Viasat, Inc.",
+      "cik": "0000797721",
+      "release": {
+        "wire": "SEC EDGAR acceptance time (no independently dated wire copy found)",
+        "url": "https://www.sec.gov/Archives/edgar/data/797721/000119312524252046/",
+        "displayed_stamp_et": "SEC EDGAR acceptance within the 16:11 ET minute (exact acceptance 16:11:33). Distributed via PRNewswire per the exhibit's own dateline and the IR page's own /PRNewswire/ tag, but no independently dated PRNewswire-hosted copy of this specific release could be located after a real search -- only undated secondary copies (company IR page, StockTitan, aggregator summaries).",
+        "minute_encoded_in_spec": "2024-11-06T16:11:00-05:00",
+        "sec_8k_accepted_et": "2024-11-06 16:11:33",
+        "sec_acceptance_not_before_wire_minute": "not applicable -- SEC acceptance time IS the timestamp evidence for this one candidate"
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-06",
+      "reaction_session": "2024-11-07",
+      "twentieth_reaction_session": "2024-12-05",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.0001 per share | VSAT | The Nasdaq Stock Market LLC",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001193125-24-195897",
+          "accepted_et": "2024-08-07 20:15:59"
+        },
+        "spec_valid_from": "2024-08-07T00:00:00-04:00",
+        "spec_available_at": "2024-08-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-07-25 7.01,9.01",
+          "2024-08-07 2.02,9.01 (prior quarter, anchor)",
+          "2024-08-28 5.02,9.01",
+          "2024-09-09 5.02,5.07,9.01",
+          "2024-09-09 7.01,8.01,9.01 (separate same-day filing)",
+          "2024-09-11 8.01,9.01",
+          "2024-09-25 8.01,9.01",
+          "2024-10-01 1.01,1.02,2.03,9.01",
+          "2024-11-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above. One Item 1.02/2.03 8-K (2024-10-01, debt-related) well before this event's own window.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "Two separate 8-Ks were both accepted 2024-09-09 (5.02/5.07/9.01 at one time, 7.01/8.01/9.01 at another) -- a real same-day pair for this issuer, but both fall well outside any reaction window this candidate defines, so not assessed under the same-day-competing-catalyst policy."
+    },
+    {
+      "event_id": "ttwo-step3-2024-11-06",
+      "candidate_id": "0001628280-24-045720",
+      "ticker": "TTWO",
+      "company": "Take-Two Interactive Software, Inc.",
+      "cik": "0000946581",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20241106543274/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-Second-Quarter-2025",
+        "displayed_stamp_et": "Nov 6, 2024 4:05 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2024-11-06T16:05:00-05:00",
+        "sec_8k_accepted_et": "2024-11-06 16:15:50",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-06",
+      "reaction_session": "2024-11-07",
+      "twentieth_reaction_session": "2024-12-05",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.01 par value | TTWO | NASDAQ Global Select Market",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001628280-24-036152",
+          "accepted_et": "2024-08-08 20:15:55"
+        },
+        "spec_valid_from": "2024-08-08T00:00:00-04:00",
+        "spec_available_at": "2024-08-08T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-12 1.01,2.03,8.01,9.01",
+          "2024-06-14 8.01,9.01",
+          "2024-08-08 2.02,9.01 (prior quarter, anchor)",
+          "2024-09-16 8.01",
+          "2024-09-23 5.07",
+          "2024-11-06 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": null
+    },
+    {
+      "event_id": "cxt-step3-2024-11-06",
+      "candidate_id": "0001628280-24-045736",
+      "ticker": "CXT",
+      "company": "Crane NXT, Co.",
+      "cik": "0000025445",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/06/2976035/0/en/Crane-NXT-Co-Reports-Third-Quarter-2024-Results.html",
+        "displayed_stamp_et": "November 06, 2024 16:05 ET",
+        "minute_encoded_in_spec": "2024-11-06T16:05:00-05:00",
+        "sec_8k_accepted_et": "2024-11-06 16:22:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-06",
+      "reaction_session": "2024-11-07",
+      "twentieth_reaction_session": "2024-12-05",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $1.00 | CXT | New York Stock Exchange",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001628280-24-035646",
+          "accepted_et": "2024-08-07 16:21:10"
+        },
+        "spec_valid_from": "2024-08-07T00:00:00-04:00",
+        "spec_available_at": "2024-08-07T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-20 5.02,9.01",
+          "2024-08-07 2.02,9.01 (prior quarter, anchor)",
+          "2024-11-06 2.02,9.01 <EVENT>",
+          "2024-12-11 1.01,2.03,9.01 (falls just outside the 20th reaction session, 2024-12-05)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the filing history above -- but see corporate_actions below: Alpaca's real corporate-actions response is NOT empty for this candidate, the only one in this batch. A routine dividend declaration commonly carries no 8-K at all, so a clean 8-K history here is not itself evidence the dividend claim is wrong.",
+        "alpaca_real_response": "NOT EMPTY -- [{\"ex_date\": \"2024-11-29\", \"id\": \"45885089-9b30-4cf6-875d-bdf4bff6a4ac\", \"type\": \"cash_dividends\"}] (real dry run). This is the SAME issuer (CXT) that already had a real dividend accepted twice before -- once in Milestone 1 (quarantined on CORPORATE_ACTION_AUDIT_MISSING, later resolved) and once in Milestone 2 step 2's own batch 1 (accepted, suppressing only session_20_close_return). Recommend the same treatment as step 2's own precedent: accept, expecting the pipeline's own CORPORATE_ACTION_IN_WINDOW logic to suppress exactly the labels this dividend's ex-date crosses."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "2024-12-11's new debt agreement (Item 1.01/2.03) was checked against the real calendar: it lands one trading session after this event's own 20th reaction session (2024-12-05), so it is outside the labeled window."
+    },
+    {
+      "event_id": "tecx-step3-2024-11-07",
+      "candidate_id": "0000950170-24-123411",
+      "ticker": "TECX",
+      "company": "Tectonic Therapeutic, Inc.",
+      "cik": "0001681087",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977091/0/en/tectonic-therapeutic-announces-third-quarter-2024-financial-results-and-recent-business-highlights.html",
+        "displayed_stamp_et": "November 07, 2024 16:01 ET",
+        "minute_encoded_in_spec": "2024-11-07T16:01:00-05:00",
+        "sec_8k_accepted_et": "2024-11-07 16:27:33",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-07",
+      "reaction_session": "2024-11-08",
+      "twentieth_reaction_session": "2024-12-06",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.0001 par value per share | TECX | The Nasdaq Global Market",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001193125-24-200629",
+          "accepted_et": "2024-08-14 16:11:59"
+        },
+        "spec_valid_from": "2024-08-14T00:00:00-04:00",
+        "spec_available_at": "2024-08-14T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-04 8.01",
+          "2024-06-11 5.07",
+          "2024-06-14 8.01",
+          "2024-06-18 8.01 (8-K/A)",
+          "2024-06-20 1.01,2.01,2.02,3.02,3.03,4.01,5.01,5.02,5.03,5.06,8.01,9.01 (de-SPAC completion -- see additional_note)",
+          "2024-06-26 7.01,8.01,9.01",
+          "2024-07-05 5.02,9.01",
+          "2024-07-30 7.01,8.01,9.01",
+          "2024-08-14 2.02,9.01 (prior quarter, anchor)",
+          "2024-09-19 7.01,9.01",
+          "2024-11-07 2.02,9.01 <EVENT>",
+          "2025-01-13 7.01,9.01 (falls just outside the 20th reaction session, 2024-12-06)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K on or after the anchor session -- the one 2024-06-20 filing with items 3.03/5.03 (among many others) is the de-SPAC completion itself, well before this event's own window.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This issuer completed a de-SPAC merger (one 8-K carrying 12 different item numbers at once, 2024-06-20) roughly 7 weeks before this candidate's own anchor session -- the company's real public-market history under ticker TECX starts there. Not inside any window this candidate defines."
+    },
+    {
+      "event_id": "coll-step3-2024-11-07",
+      "candidate_id": "0001104659-24-115287",
+      "ticker": "COLL",
+      "company": "Collegium Pharmaceutical, Inc.",
+      "cik": "0001267565",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977103/34897/en/Collegium-Reports-Record-Third-Quarter-2024-Financial-Results.html",
+        "displayed_stamp_et": "November 07, 2024 16:02 ET",
+        "minute_encoded_in_spec": "2024-11-07T16:02:00-05:00",
+        "sec_8k_accepted_et": "2024-11-07 16:01:24",
+        "sec_acceptance_not_before_wire_minute": "SEC acceptance landed 1 minute before the wire's own displayed stamp -- within ordinary clock-sync tolerance, not a real ordering problem."
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-07",
+      "reaction_session": "2024-11-08",
+      "twentieth_reaction_session": "2024-12-06",
+      "identity_evidence": {
+        "event_filing_cover": "Common stock, par value $0.001 per share | COLL | The NASDAQ Global Select Market",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001558370-24-011583",
+          "accepted_et": "2024-08-08 16:01:35"
+        },
+        "spec_valid_from": "2024-08-08T00:00:00-04:00",
+        "spec_available_at": "2024-08-08T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-13 8.01,9.01",
+          "2024-07-29 1.01,2.02,2.03,5.02,7.01,9.01 (real-time earnings reiterated alongside a new credit agreement and CFO change -- same real pattern, different quarter, not this candidate's own date)",
+          "2024-08-08 2.02,7.01,9.01 (prior quarter, anchor)",
+          "2024-09-04 2.01,2.03,7.01,9.01 (completion of the Ironshore acquisition, already disclosed again inside this candidate's own release)",
+          "2024-11-07 2.02,5.02,7.01,9.01 <EVENT> (bundles the CEO appointment announced in the release itself, not a separate filing)",
+          "2024-11-14 9.01 (8-K/A, Amendment No. 1 -- Ironshore pro-forma financial statements only, read in full; the standard Item 9.01 75-day post-acquisition filing, not a new disclosure)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2024-11-14 8-K/A Item 9.01 (Ironshore acquisition pro-forma financial statements; read in full, confirmed benign -- the standard post-acquisition financial-statements amendment, not a new disclosure)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This candidate's own release already bundles its CEO appointment (Vikram Karnani) and the Ironshore acquisition completion -- both are part of THIS filing's own Item 5.02/2.02 disclosure, not a separate same-day or inside-window item."
+    },
+    {
+      "event_id": "pdfs-step3-2024-11-07",
+      "candidate_id": "0001558370-24-014874",
+      "ticker": "PDFS",
+      "company": "PDF Solutions, Inc.",
+      "cik": "0001120914",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/07/2977245/7239/en/PDF-Solutions-Reports-Third-Quarter-2024-Results.html",
+        "displayed_stamp_et": "November 07, 2024 16:15 ET",
+        "minute_encoded_in_spec": "2024-11-07T16:15:00-05:00",
+        "sec_8k_accepted_et": "2024-11-07 16:21:17",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-07",
+      "reaction_session": "2024-11-08",
+      "twentieth_reaction_session": "2024-12-06",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.00015 par value | PDFS | The NASDAQ Stock Market LLC",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001558370-24-011596",
+          "accepted_et": "2024-08-08 16:09:32"
+        },
+        "spec_valid_from": "2024-08-08T00:00:00-04:00",
+        "spec_available_at": "2024-08-08T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-25 5.07,9.01",
+          "2024-08-08 2.02,9.01 (prior quarter, anchor)",
+          "2024-11-07 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "This project's own memory flagged PDFS specifically because a LATER quarter (2025-08-07) released exactly at the 16:00:00 ET bell boundary, which calendar.classify() cannot label (bell_ambiguous). This candidate's own release (16:15 ET) is clear of that boundary -- checked explicitly, not assumed clear by association."
+    },
+    {
+      "event_id": "rekr-step3-2024-11-14",
+      "candidate_id": "0001437749-24-035298",
+      "ticker": "REKR",
+      "company": "Rekor Systems, Inc.",
+      "cik": "0001697851",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2024/11/14/2981598/0/en/Rekor-Systems-Reports-Third-Quarter-2024-Financial-Results.html",
+        "displayed_stamp_et": "November 14, 2024 16:05 ET",
+        "minute_encoded_in_spec": "2024-11-14T16:05:00-05:00",
+        "sec_8k_accepted_et": "2024-11-14 16:06:29",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-14",
+      "reaction_session": "2024-11-15",
+      "twentieth_reaction_session": "2024-12-13",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, $0.0001 par value per share | REKR | The Nasdaq Stock Market",
+        "prior_filing_cover_identical": "presumed true from the exhibit masthead on the prior filing (not re-read as its own cover page in this pass)",
+        "prior_8k": {
+          "accession": "0001654954-24-010641",
+          "accepted_et": "2024-08-14 16:06:15"
+        },
+        "spec_valid_from": "2024-08-14T00:00:00-04:00",
+        "spec_available_at": "2024-08-14T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-06-26 1.01,3.02,9.01",
+          "2024-08-14 1.01,9.01 (separate same-day filing, 20:15:53 ET)",
+          "2024-08-14 2.02,9.01 (prior quarter, anchor, 20:06:15 ET)",
+          "2024-10-22 1.01,9.01",
+          "2024-11-14 2.02,9.01 <EVENT>",
+          "2024-11-15 5.02 (officer/director change)",
+          "2025-01-06 8.01,9.01 (falls just outside the 20th reaction session, 2024-12-13)"
+        ],
+        "earlier_disclosure_of_these_results": "None found. The only prior Item 2.02 8-K in the filing history is the previous quarter's, and no other 8-K or wire release located announces these results earlier than the stamp above. That is absence of evidence, not proof; it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        "2024-11-15 8-K Item 5.02 (officer/director change; content not opened; lands on session 1, the reaction day itself)"
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K anywhere in the filing history above.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": {
+        "labels": ["day1_close_return", "day1_high_return", "day1_low_return", "day1_open_return", "session_2_close_return", "session_5_close_return", "session_10_close_return", "session_20_close_return"],
+        "note": "An Item 5.02 8-K was filed 2024-11-15, the reaction day itself (session 1); content not opened. Every computed label falls on or after session 1, so the caveat applies to all of them."
+      },
+      "additional_note": "This issuer's own anchor filing (2024-08-14) is itself a same-day pair with a separate Item 1.01 8-K filed 9 minutes later -- not this candidate's own event date, not re-assessed here."
+    },
+    {
+      "event_id": "klc-step3-2024-11-20",
+      "candidate_id": "0000950170-24-129261",
+      "ticker": "KLC",
+      "company": "KinderCare Learning Companies, Inc.",
+      "cik": "0001873529",
+      "release": {
+        "wire": "BusinessWire",
+        "url": "https://www.businesswire.com/news/home/20241120924541/en/KinderCare-Reports-Third-Quarter-2024-Financial-Results",
+        "displayed_stamp_et": "Nov 20, 2024 4:15 PM Eastern Standard Time",
+        "minute_encoded_in_spec": "2024-11-20T16:15:00-05:00",
+        "sec_8k_accepted_et": "2024-11-20 16:15:09",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2024-11-20",
+      "reaction_session": "2024-11-21",
+      "twentieth_reaction_session": "2024-12-19",
+      "identity_evidence": {
+        "event_filing_cover": "Common Stock, par value $0.01 per share | KLC | New York Stock Exchange",
+        "prior_filing_cover_identical": true,
+        "prior_8k": {
+          "accession": "0001193125-24-237635",
+          "accepted_et": "2024-10-15 16:45:02",
+          "note": "Not a prior-quarter earnings 8-K -- this candidate is the company's FIRST quarterly earnings release as a public company. KLC completed its IPO 2024-10-10; this prior filing (date of earliest event reported: 2024-10-08) covers the Registration Rights Agreement and Stockholders Agreement entered into in connection with the IPO, and carries the identical identity table, confirmed by reading its own cover page in full."
+        },
+        "spec_valid_from": "2024-10-08T00:00:00-04:00",
+        "spec_available_at": "2024-10-08T20:00:00Z"
+      },
+      "chronology_evidence": {
+        "sec_8k_history": [
+          "2024-10-15 1.01,2.03,3.03,5.02,5.03,8.01,9.01 (IPO-related, date of earliest event reported 2024-10-08)",
+          "2024-10-31 1.01,2.03 (new credit agreement)",
+          "2024-11-20 2.02,9.01 <EVENT>"
+        ],
+        "earlier_disclosure_of_these_results": "None found -- and structurally cannot be, since this is the company's first-ever quarterly earnings release. No Item 2.02 8-K exists anywhere in this issuer's real filing history before this one."
+      },
+      "competing_catalysts_inside_window": [],
+      "corporate_actions": {
+        "sec_8k_items": "The 2024-10-15 filing carries Items 3.03/5.03 (charter/bylaw changes), but this is the IPO-registration filing itself, weeks before this event's own anchor session -- not inside any window this candidate defines.",
+        "alpaca_real_response": "Empty and fully paginated for the whole window (real dry run, workflow run 36974765261)."
+      },
+      "data_availability": "All required sessions present; no zero-volume session (real dry run, workflow run 36974765261). No return was computed or viewed.",
+      "proposed_label_caveat": null,
+      "additional_note": "KLC completed its IPO 2024-10-10, six weeks before this candidate's own release -- this project's own memory already flagged KLC as '2024 IPO with the shortest real history of the 23' issuers. This is genuinely the first identity-floor anchor in this whole project that is NOT a prior quarterly earnings release."
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": ["payo-step3-2024-11-05"],
+    "after_hours": ["real-step3-2024-11-04", "aspn-step3-2024-11-06", "vsat-step3-2024-11-06", "ttwo-step3-2024-11-06", "cxt-step3-2024-11-06", "tecx-step3-2024-11-07", "coll-step3-2024-11-07", "pdfs-step3-2024-11-07", "rekr-step3-2024-11-14", "klc-step3-2024-11-20"]
+  },
+  "flagged_not_a_blanket_clean_signoff": {
+    "real-step3-2024-11-04": "A real, material earlier disclosure of the same quarter's figures was found (2024-10-28, one week earlier) -- not excluded, but every computed label carries a freshness caveat. See reports/m2-step3-batch2-earlier-disclosure-findings-2026-10-02.json.",
+    "aspn-step3-2024-11-06": "Same situation as REAL above, three weeks earlier (2024-10-16). Not excluded; every computed label carries the same freshness caveat.",
+    "vsat-step3-2024-11-06": "No independently dated wire-service copy survives for this specific release; the real anchor is SEC EDGAR's own acceptance time instead of a wire-displayed stamp.",
+    "cxt-step3-2024-11-06": "Real cash dividend found (ex-date 2024-11-29), the same issuer and the same kind of finding already accepted in both Milestone 1 and step 2's own batch 1 -- recommend the same treatment here rather than attesting corporate_actions for this one candidate specifically.",
+    "rekr-step3-2024-11-14": "A real same-day-adjacent officer-change 8-K lands on session 1 itself; caveat spans every computed label.",
+    "coll-step3-2024-11-07": "A 9.01-only 8-K/A (Ironshore pro-forma financials) lands inside the window; read in full and confirmed benign, carried as context rather than a label caveat."
+  },
+  "what_a_sign_off_would_look_like": "For example: 'sign off on all eleven except CXT', or a list of event_ids/decisions. Then the attestations are added for the signed-off candidates, the workflow runs for real, and each result is recorded with a pinned label digest.",
+  "not_a_claim": [
+    "Not Milestone 2 acceptance.",
+    "Not evidence of any predictive edge.",
+    "Not a claim that REAL's or ASPN's own reaction is invalid or unusable -- the pre-announced figures still needed formal confirmation, and markets regularly still react to confirmation of good news. The caveat exists so a future reader of these labels knows to expect a muted reaction, not to treat the finding as disqualifying.",
+    "Not a re-verification of every candidate's prior-quarter filing cover beyond the event-day cover itself -- each prior-quarter identity match is presumed from that filing's own exhibit masthead (already read while finding its real timestamp) rather than a second direct fetch of its cover page. Flagged rather than silently assumed, same discipline as batch 1's own correction."
+  ]
+}
