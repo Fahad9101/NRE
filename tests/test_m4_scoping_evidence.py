@@ -129,6 +129,22 @@ class RealDataTests(unittest.TestCase):
             committed["inputs"].pop(key)
         self.assertEqual(canonical(fresh), canonical(committed))
 
+    def test_the_scope_proposal_quotes_the_evidence_it_rests_on(self):
+        # The proposal's figures are generated from the two evidence reports; this fails if either is regenerated without regenerating the proposal.
+        doc = (ROOT / "docs" / "M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md").read_text(encoding="utf-8")
+        rows = {r["target"]: r for r in self.report["targets"]}
+        for target in ("gap_ge_3pct", "gap_ge_5pct", "gap_ge_10pct", "gap_ge_15pct", "gap_ge_20pct", "gap_ge_30pct", "loses_half_of_gap", "full_gap_fill"):
+            self.assertIn("| `%s` |" % target, doc)
+            self.assertIn("| %d | %d | " % (rows[target]["n_defined"], rows[target]["positives"]), doc, target)
+        plan = self.report["walk_forward"]["if_the_last_block_is_the_final_holdout"]
+        self.assertIn("%d development test events" % plan["development_test_events"], doc)
+        self.assertIn("a holdout of %d" % plan["holdout_events"], doc)
+        for block in self.report["time_structure"]["blocks"]:
+            self.assertIn("| %d | %s to %s | %d |" % (block["block"], block["first_reaction_session"], block["last_reaction_session"], block["events"]), doc)
+        caveats = load("reports/m4-caveat-sensitivity-2026-10-03.json")
+        self.assertIn("%d of the 128 events carry label-level caveats" % caveats["inventory"]["events_with_caveats"], doc)
+        self.assertIn("no model code", doc)
+
     def test_the_report_claims_nothing_beyond_description(self):
         self.assertTrue(any("Not a model" in line for line in self.report["not_a_claim"]))
 
