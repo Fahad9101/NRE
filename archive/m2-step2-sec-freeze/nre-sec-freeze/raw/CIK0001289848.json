@@ -1,0 +1,10 @@
+{
+  "payload_file": "CIK0001289848.payload",
+  "sha256": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87",
+  "size": 156096,
+  "url": "https://data.sec.gov/submissions/CIK0001289848.json",
+  "retrieved_at": "2026-09-28T09:17:26.853Z",
+  "raw_file_in_original_freeze_output": "36f0d5b9a4f8598fb7634c1fc35cd3932d3720e6a834679fbb1233e25a91ad87.raw",
+  "source_representation": "raw_sec_response",
+  "note": "SEC's own response for this URL, as the Milestone 2 step 2 cohort freeze fetched and hashed it (reports/m2-step2-sec-cohort-freeze.json; sec_transport 'direct'; every step-2 frozen candidate records discovery_submission_representation 'raw'). The payload is copied unchanged from the freeze output's raw/ directory, kept locally under data/m2-step2-freeze/raw/ (gitignored). Only this metadata file differs from the original: the original names the payload under raw_file, while nre.consolidated_audit.archive_sources() reads payload_file."
+}
