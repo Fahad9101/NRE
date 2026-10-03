@@ -136,7 +136,7 @@
       "vsat-step3-2025-05-20": "4e409707466c38d6076a0d5f1d5bd3ffd1dafabe3223b6ccbeb9805456f9a6be"
     }
   },
-  "scope_note": "These figures describe the accepted Milestone 1 events only: a convenience sample chosen because a minute-stamped wire release and a clean SEC neighbourhood existed, one event per issuer. They are not market base rates, and nothing here predicts, scores or ranks.",
+  "scope_note": "These figures describe the 128 accepted events in this spec: 23 from Milestone 1, 45 from Milestone 2 step 2 and 60 from Milestone 2 step 3, for the same 23 issuers (4 to 6 events each, 2024-11-04 to 2026-03-31). It is a convenience sample: the issuers were fixed by Milestone 1's selection (one event per issuer, chosen because a minute-stamped wire release and a clean SEC neighbourhood existed), and Milestone 2 steps 2 and 3 added those issuers' other earnings releases in two earlier windows, less the candidates excluded or quarantined. They are not market base rates, and nothing here predicts, scores or ranks.",
   "limits": [
     "SIC codes are each issuer's assignment when read on 2026-09-26, not the one in force at the event's date.",
     "Labels are raw daily returns, not market-adjusted, and events on one reaction session share market moves; reaction sessions are counted beside events.",

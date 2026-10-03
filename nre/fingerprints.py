@@ -44,6 +44,26 @@ COUNT_UNITS = ("event", "reaction_session")
 REPORTED, UNRELIABLE, WITHHELD = "REPORTED", "REPORTED_UNRELIABLE", "WITHHELD"
 SCOPE_NOTE = ("These figures describe the accepted Milestone 1 events only: a convenience sample chosen because a minute-stamped wire release "
               "and a clean SEC neighbourhood existed, one event per issuer. They are not market base rates, and nothing here predicts, scores or ranks.")
+SCOPE_NOTE_REQUIRED = ("not market base rates", "predicts, scores or ranks")
+
+
+def spec_scope_note(spec):
+    """An event spec may describe its own sample, so that a report is not stamped with a description of some other dataset.
+
+    Absent, SCOPE_NOTE applies, which is what every report written before this key existed carries and still reproduces. A spec's own note
+    may say anything about the sample but must keep the two statements the note exists to make.
+    """
+    note = spec.get("scope_note")
+    if note is None:
+        return None
+    if not isinstance(note, str) or not note.strip():
+        raise DataError("scope_note must be a non-empty string")
+    missing = [phrase for phrase in SCOPE_NOTE_REQUIRED if phrase not in note]
+    if missing:
+        raise DataError("scope_note must keep the statements: " + ", ".join(missing))
+    return note
+
+
 POLICY_KEYS = ("schema_version", "policy_version", "confirmed_by", "count_unit", "wilson_confidence", "proportion", "mean_median",
                "quantiles", "pooling", "analogues")
 
@@ -248,11 +268,12 @@ def load_inputs(spec_path=None, sector_map_path=None, policy_path=None, root=Non
     """Everything step 1 reads, validated and hashed. Nothing here touches the network."""
     calendar = Calendar(spec=json.loads(Path(calendar_path).read_text(encoding="utf-8"))) if calendar_path else Calendar()
     spec = json.loads(Path(spec_path or ea.DEFAULT_SPEC).read_text(encoding="utf-8"))
+    scope_note = spec_scope_note(spec)
     sectors, sector_sha, sector_read_on = load_sector_map(sector_map_path or DEFAULT_SECTOR_MAP)
     policy, policy_sha = load_policy(policy_path or DEFAULT_POLICY)
     events = load_events(spec, sectors, calendar, root or ROOT)
     return {"events": events, "policy": policy, "policy_sha256": policy_sha, "sectors": sectors, "sector_map_sha256": sector_sha,
-            "sector_read_on": sector_read_on, "calendar": calendar}
+            "sector_read_on": sector_read_on, "calendar": calendar, "scope_note": scope_note}
 
 
 def event_order(event):
@@ -448,7 +469,7 @@ def provenance(inputs, kind):
             "policy": {"version": policy["policy_version"], "sha256": inputs["policy_sha256"], "count_unit": policy["count_unit"]},
             "inputs": {"event_table_sha256": digest(canonical(table)), "sector_map_sha256": inputs["sector_map_sha256"],
                        "event_labels_sha256": {e["event_id"]: e["labels_sha256"] for e in sorted(events, key=lambda e: e["event_id"])}},
-            "scope_note": SCOPE_NOTE,
+            "scope_note": inputs.get("scope_note") or SCOPE_NOTE,
             "limits": ["SIC codes are each issuer's assignment when read on %s, not the one in force at the event's date." % inputs["sector_read_on"],
                        "Labels are raw daily returns, not market-adjusted, and events on one reaction session share market moves; "
                        "reaction sessions are counted beside events.",

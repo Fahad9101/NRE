@@ -33,11 +33,11 @@
   "outputs": {
     "reaction_fingerprint_table": {
       "file": "reports/m2-step3-combined-fingerprint-table-2026-10-02.json",
-      "report_sha256": "3cf449e97503bda5fe46baf61083d07f4cc6ab842c9bd9b3d59a80641f02eea2"
+      "report_sha256": "2d082ef1b1ca94fc190eada3566744a1e0c0d685f92386a40e067dc371c2ada0"
     },
     "analogue_pool_report": {
       "file": "reports/m2-step3-combined-analogue-pool-report-2026-10-02.json",
-      "report_sha256": "cf822258b2a74f2bd9cdb548919e9bc7fdd8f513596fcb8fb2c1f4cf1c795270"
+      "report_sha256": "bca4595fd097f17f3489ec0864ac6ad317f855436c70bcee2734c90da83522d3"
     },
     "report_sha256_note": "digest(canonical(report)) as nre.fingerprints.write_report returns it; independent of line endings and formatting."
   },
@@ -597,7 +597,7 @@
     "not_decided_here": "Whether that is deep enough depends on how Milestone 4 would use it, and Milestone 4 has not been scoped or authorized. The step-3 declaration states the same."
   },
   "limits_and_wording": [
-    "The reports' own scope_note field still reads: \"These figures describe the accepted Milestone 1 events only: a convenience sample chosen because a minute-stamped wire release and a clean SEC neighbourhood existed, one event per issuer. They are not market base rates, and nothing here predicts, scores or ranks.\" That boilerplate (SCOPE_NOTE in nre/fingerprints.py) predates the multi-event, multi-protocol datasets and is not accurate for these 128 events; the 68-event reports carry the same text. Not changed here: it is shared by every committed report and changing it would alter their provenance.",
+    "The two outputs' scope_note field was first written with the tool's boilerplate, \"These figures describe the accepted Milestone 1 events only: a convenience sample ... one event per issuer\", which was not accurate for these 128 events. Amended 2026-10-03: an event spec can now carry its own scope_note (an optional key, nre.fingerprints.spec_scope_note), config/m2-step3-combined-events.json does, and the two outputs were regenerated, so this dataset's reports describe it correctly. Nothing else in them changed (verified: with scope_note removed they are canonically identical to the first versions). Reports written before the key existed, including the 68-event ones of 2026-09-29, keep the old text and still reproduce unchanged.",
     "The fingerprints/analogues machinery never reads event caveats. 38 of the 128 events carry caveats (7 from Milestone 1, 4 from step 2, 27 from step 3), naming 105 distinct event-label pairs plus 2 caveat items that use the 'all' sentinel; those labels enter every pool and statistic unmodified, like any other. The 68-event reports share this limit.",
     "Counts and intervals treat events as independent (the tables' own limit). With 4 to 6 sequential events per issuer, and 128 events sharing 73 reaction sessions, that is a weaker assumption than it was at one event per issuer.",
     "SIC codes are each issuer's assignment as read on 2026-09-26, not the one in force at the event's date; labels are raw, not market-adjusted.",
@@ -608,5 +608,17 @@
     "Not a new milestone, acceptance or authorization: this exercises machinery accepted with Milestone 2 on data accepted by the step-3 declaration. No Milestone 4 work was started or implied.",
     "Not a judgment that step 3 reached the purpose its protocol stated for Milestone 4; see facts_bearing_on_the_purpose_step_3_was_given.not_decided_here.",
     "Not evidence of any predictive edge."
+  ],
+  "amendments": [
+    {
+      "on": "2026-10-03",
+      "what": "scope_note of the fingerprint table and the analogue pool report corrected for this dataset; the two outputs' report_sha256 values and this report's outputs and limits_and_wording entries were updated to match",
+      "why": "the first versions carried the tool's Milestone-1-only boilerplate, which misdescribed a 128-event, three-protocol dataset (disclosed in the first version of this report)",
+      "recorded_in": "reports/m4-scoping-authorization-2026-10-03.json (the scope-note fix was one of the items covered)",
+      "first_version_report_sha256": {
+        "reaction_fingerprint_table": "3cf449e97503bda5fe46baf61083d07f4cc6ab842c9bd9b3d59a80641f02eea2",
+        "analogue_pool_report": "cf822258b2a74f2bd9cdb548919e9bc7fdd8f513596fcb8fb2c1f4cf1c795270"
+      }
+    }
   ]
 }

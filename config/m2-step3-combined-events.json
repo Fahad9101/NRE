@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "scope_note": "These figures describe the 128 accepted events in this spec: 23 from Milestone 1, 45 from Milestone 2 step 2 and 60 from Milestone 2 step 3, for the same 23 issuers (4 to 6 events each, 2024-11-04 to 2026-03-31). It is a convenience sample: the issuers were fixed by Milestone 1's selection (one event per issuer, chosen because a minute-stamped wire release and a clean SEC neighbourhood existed), and Milestone 2 steps 2 and 3 added those issuers' other earnings releases in two earlier windows, less the candidates excluded or quarantined. They are not market base rates, and nothing here predicts, scores or ranks.",
   "provider": {
     "provider_id": "alpaca",
     "research_permitted": true,
