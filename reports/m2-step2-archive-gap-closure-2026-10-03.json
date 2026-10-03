@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-03",
+  "purpose": "Closes the one gap Milestone 2 step 2's declaration named: its audit failed candidate_source_hashes because step 2's raw SEC discovery bytes were never archived anywhere durable (reports/m2-step2-acceptance-declaration-2026-09-29.json, housekeeping). The bytes still existed locally, so they were archived in the repository, the audit workflow was pointed at them, and the audit was run again for real.",
+  "authorization": {
+    "owner_words": [
+      "ok authorize m4 scoping",
+      "not only scoping everything you recomended"
+    ],
+    "record": "reports/m4-scoping-authorization-2026-10-03.json",
+    "reading": "The second message was read as covering the items the assistant's previous message offered under 'Mine, once you say so', which included closing step 2's archive gap. That reading is recorded in the authorization record."
+  },
+  "what_was_done": {
+    "commit": "d3214894a098dd2674cc72ed10b199b1ae736720",
+    "archive": "archive/m2-step2-sec-freeze/nre-sec-freeze/raw/ (23 CIK<cik>.payload files and 23 CIK<cik>.json observation records)",
+    "workflow": "depth-consolidated-audit.yml now passes --archive-dir archive/m2-step2-sec-freeze and watches that directory, so the push that added the archive ran the audit. Its protocol, spec, calendar, reviewed ledger and acceptance review are unchanged.",
+    "test": "tests/test_step2_audit.py: offline, over the real records and flat synthetic bars, without the archive it reproduces the recorded 2026-09-29 BLOCKED result exactly, with it all 16 gates pass."
+  },
+  "archive": {
+    "payloads": 23,
+    "bytes": 3005744,
+    "representation": "SEC's own raw responses (sec_transport 'direct'; every step-2 frozen candidate records discovery_submission_representation 'raw')",
+    "hash_check": "Each payload's sha256 equals a distinct frozen candidate's source_sha256 (23 of 23), also the reviewed ledger's, computed from the committed git blobs at the audited commit. No payload contains a CR or LF byte or a BOM, so git cannot alter it.",
+    "unchanged_original": "The payloads are the files in data/m2-step2-freeze/raw/ (gitignored, kept locally), copied unchanged; only the metadata file differs (payload_file instead of raw_file, plus a note).",
+    "strength": "The same strength as Milestone 1's archive, and stronger than step 3's, whose archive is a filtered subset because data.sec.gov was unreachable from GitHub Actions when step 3's cohort was frozen."
+  },
+  "workflow_run": "https://github.com/Fahad9101/NRE/actions/runs/37105623166",
+  "workflow_run_number": 6,
+  "commit": "d3214894a098dd2674cc72ed10b199b1ae736720",
+  "trigger": "push (the commit that added the archive changed the workflow file and the archive, both watched paths)",
+  "result_source": {
+    "what": "The workflow's own 'NRE cohort audit' notice annotation (nre.consolidated_audit.summarize()), read from the run page; the full stdout is in the job log, which the built-in browser cannot read without a GitHub sign-in. passed_gates lists all 16 gate names and failed_gates is empty.",
+    "annotation_characters": 1282,
+    "annotation_sha256": "e39f28b7fe91ebb1d84d9d87b5dd908b92f981b067f85de5ae9a2de256d49411",
+    "annotation_sha256_note": "sha256 of the annotation's JSON text, computed in the browser over the text on the run page and re-checked against the copy recorded here."
+  },
+  "result": {
+    "archive_observations": 23,
+    "counts": {
+      "candidates": 48,
+      "dispositions": {
+        "excluded": 2,
+        "included": 45,
+        "quarantined": 1
+      },
+      "eligible_complete_events": 43,
+      "events": 45,
+      "unique_issuers": 22
+    },
+    "failed_gates": [],
+    "hashes": {
+      "input_sha256": "54e37559a7151a23215703885c65c1c50284fa9398829c48a2e9eed9a0cbb9d2",
+      "ledger_sha256": "b608905edf6fdc90552ff2056cf4d068d54758106627cc29edcd0a03fbdca127",
+      "membership_sha256": "62150f194f03448498a619a23470c1d94b9fd95d2e35f0fb30dfe27094a0e383",
+      "protocol_sha256": "751c9ba108ae2f724f2d84d3ada02804406d41cc1fe79ebcf88b5d502d969591",
+      "review_sha256": "87c0627145e8c853bcc0550afe1204ceec7d936db13ea2b71457c456bde71041"
+    },
+    "invalid_candidate_dispositions": 0,
+    "milestone_accepted": false,
+    "passed_gates": [
+      "all_events_in_window",
+      "availability_mode",
+      "candidate_accounting",
+      "candidate_source_hashes",
+      "discovery_coverage_review",
+      "earnings_results_only",
+      "frozen_membership_hash",
+      "identity_history_review",
+      "independent_timing_spot_checks",
+      "issuer_identity",
+      "minimum_events",
+      "minimum_issuers",
+      "protocol_hash",
+      "provider_rights_review",
+      "real_data",
+      "selection_frozen_before_prices"
+    ],
+    "spot_checked_events_by_timing": {
+      "after_hours": [
+        "okta-step2-2025-12-02",
+        "ttwo-step2-2025-11-06"
+      ],
+      "premarket": [
+        "love-step2-2025-12-11",
+        "slsn-step2-2025-11-11"
+      ]
+    },
+    "status": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED"
+  },
+  "verification_of_the_reported_hashes": "protocol_sha256, ledger_sha256, review_sha256 and membership_sha256 were recomputed with nre.core.canonical/digest from the files as committed at the audited commit and equal the run's values. input_sha256 covers the real fetched prices and the run's retrieval time, so it can only be produced inside GitHub Actions.",
+  "comparison_with_the_2026_09_29_result": {
+    "record": "reports/m2-step2-label-engine-dry-run-result-2026-09-29.json (workflow run 5, commit c277729)",
+    "status": {
+      "then": "BLOCKED",
+      "now": "STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED"
+    },
+    "failed_gates": {
+      "then": [
+        "candidate_source_hashes"
+      ],
+      "now": []
+    },
+    "unchanged": "counts (48 candidates, 45 events, 43 eligible complete events, 22 issuers, dispositions 45 included / 2 excluded / 1 quarantined), the four spot-checked events, and the protocol, ledger, review and membership hashes are all identical.",
+    "differs": "input_sha256 (it covers the run's retrieval time and the refetched prices).",
+    "audit_inputs_changed_since_the_2026_09_29_audited_commit": "none (the spec, protocol, calendar, ledger, review and the two audit modules are byte-identical)"
+  },
+  "what_this_changes": "A re-run of step 2's audit now passes all 16 gates, so the gap its declaration accepted is closed on real raw bytes, the same basis as Milestone 1's own pass.",
+  "what_this_does_not_change": [
+    "Step 2's declaration (reports/m2-step2-acceptance-declaration-2026-09-29.json) and the 2026-09-29 result record are left exactly as they were: step 2 was declared accepted on the strength of the audit as it stood then, with this gate failing and said so. This record adds a later fact; it does not rewrite that one.",
+    "The owner's acceptance of step 2 is not re-declared or re-opened, and nothing about its accepted scope changes.",
+    "milestone_accepted stays false in the engine's output regardless, by design; the clean result is still 'review required'.",
+    "The three evidence-presence gates and the spot-check attribution carry the same limits step 2's declaration stated."
+  ],
+  "not_a_claim": [
+    "Not a new acceptance of step 2, and not evidence of any predictive edge.",
+    "Not a claim that the review evidence is true: a clean structural result establishes internal consistency only."
+  ]
+}

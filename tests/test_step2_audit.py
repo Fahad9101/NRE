@@ -16,7 +16,7 @@ from nre import consolidated_audit as ca
 from nre import event_acquire as ea
 from nre.acceptance import audit_cohort
 from nre.calendar import Calendar
-from nre.core import digest
+from nre.core import canonical, digest
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -153,6 +153,25 @@ class AuditTests(unittest.TestCase):
 
     def test_milestone_is_never_accepted_by_the_engine(self):
         self.assertIs(self.with_archive["milestone_accepted"], False)
+
+
+class ClosureRecordTests(unittest.TestCase):
+    def test_the_rerun_record_binds_to_the_committed_inputs_and_the_2026_09_29_result(self):
+        # The re-run's result only means something for the exact files it audited: editing the ledger, review or protocol without a fresh audit
+        # (the workflow re-runs on those paths) and an updated record must fail here.
+        record = load("reports/m2-step2-archive-gap-closure-2026-10-03.json")
+        result = record["result"]
+        self.assertEqual(result["hashes"]["ledger_sha256"], digest(canonical(LEDGER)))
+        self.assertEqual(result["hashes"]["review_sha256"], digest(canonical(REVIEW)))
+        self.assertEqual(result["hashes"]["protocol_sha256"], digest(canonical(PROTOCOL)))
+        self.assertEqual(result["hashes"]["membership_sha256"], REVIEW["frozen_membership_sha256"])
+        for key in ("protocol_sha256", "ledger_sha256", "review_sha256", "membership_sha256"):
+            self.assertEqual(result["hashes"][key], RECORDED[key], key)
+        self.assertEqual((result["status"], result["failed_gates"], result["milestone_accepted"], result["archive_observations"]),
+                         ("STRUCTURAL_GATES_PASSED_REVIEW_REQUIRED", [], False, 23))
+        self.assertEqual(result["counts"], RECORDED["counts"])
+        annotation = json.dumps(result, sort_keys=True, separators=(",", ":"))
+        self.assertEqual(digest(annotation.encode("utf-8")), record["result_source"]["annotation_sha256"])
 
 
 class MainTests(unittest.TestCase):
