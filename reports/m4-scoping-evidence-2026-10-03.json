@@ -1,0 +1,1165 @@
+{
+  "schema_version": 1,
+  "kind": "m4_scoping_evidence",
+  "purpose": "Descriptive evidence for the Milestone 4 scope proposal: counts, structure and uncertainty over the accepted events. No model, no prediction, no score and no ranking; nothing is fitted.",
+  "inputs": {
+    "spec": "config/m2-step3-combined-events.json",
+    "calendar": "config/m2-merged-calendar-2024-2026.json",
+    "events": 128,
+    "policy_sha256": "9a2193a0077a9377f581c7b82b3a6c4dea15337735d6f0edcbf71efaae3db188",
+    "event_table_sha256": "3a9b3b286e35c6aaa4227596d6d689b66f3f6cab0a8e52b047a7d39bffc423a1"
+  },
+  "declared_yardsticks": {
+    "block_gap_days": 28,
+    "min_train_events": 40,
+    "bucket_positives_and_negatives": {
+      "estimable_at_or_above": 30,
+      "thin_at_or_above": 10
+    },
+    "note": "Declared before any result was looked at; to be fixed, or replaced, in the pre-registered protocol."
+  },
+  "targets": [
+    {
+      "target": "gap_ge_3pct",
+      "family": "opening_gap",
+      "definition": "opening gap O/Cprev - 1 >= 3%",
+      "n_defined": 128,
+      "positives": 40,
+      "negatives": 88,
+      "base_rate": 0.3125,
+      "wilson_low": 0.238655,
+      "wilson_high": 0.397271,
+      "positives_by_timing": {
+        "premarket": 11,
+        "after_hours": 29
+      },
+      "positive_reaction_sessions": 30,
+      "positive_issuers": 20,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        8,
+        13,
+        8,
+        6,
+        5
+      ],
+      "bucket": "estimable_with_wide_uncertainty"
+    },
+    {
+      "target": "gap_ge_5pct",
+      "family": "opening_gap",
+      "definition": "opening gap O/Cprev - 1 >= 5%",
+      "n_defined": 128,
+      "positives": 29,
+      "negatives": 99,
+      "base_rate": 0.226562,
+      "wilson_low": 0.162632,
+      "wilson_high": 0.306427,
+      "positives_by_timing": {
+        "premarket": 9,
+        "after_hours": 20
+      },
+      "positive_reaction_sessions": 26,
+      "positive_issuers": 17,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        5,
+        9,
+        5,
+        5,
+        5
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "gap_ge_10pct",
+      "family": "opening_gap",
+      "definition": "opening gap O/Cprev - 1 >= 10%",
+      "n_defined": 128,
+      "positives": 14,
+      "negatives": 114,
+      "base_rate": 0.109375,
+      "wilson_low": 0.066279,
+      "wilson_high": 0.175234,
+      "positives_by_timing": {
+        "premarket": 4,
+        "after_hours": 10
+      },
+      "positive_reaction_sessions": 14,
+      "positive_issuers": 9,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        2,
+        3,
+        2,
+        4,
+        3
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "gap_ge_15pct",
+      "family": "opening_gap",
+      "definition": "opening gap O/Cprev - 1 >= 15%",
+      "n_defined": 128,
+      "positives": 5,
+      "negatives": 123,
+      "base_rate": 0.039062,
+      "wilson_low": 0.016799,
+      "wilson_high": 0.088187,
+      "positives_by_timing": {
+        "premarket": 2,
+        "after_hours": 3
+      },
+      "positive_reaction_sessions": 5,
+      "positive_issuers": 3,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        0,
+        1,
+        1,
+        2,
+        1
+      ],
+      "bucket": "insufficient"
+    },
+    {
+      "target": "gap_ge_20pct",
+      "family": "opening_gap",
+      "definition": "opening gap O/Cprev - 1 >= 20%",
+      "n_defined": 128,
+      "positives": 3,
+      "negatives": 125,
+      "base_rate": 0.023438,
+      "wilson_low": 0.008002,
+      "wilson_high": 0.066644,
+      "positives_by_timing": {
+        "premarket": 1,
+        "after_hours": 2
+      },
+      "positive_reaction_sessions": 3,
+      "positive_issuers": 2,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "bucket": "insufficient"
+    },
+    {
+      "target": "gap_ge_30pct",
+      "family": "opening_gap",
+      "definition": "opening gap O/Cprev - 1 >= 30%",
+      "n_defined": 128,
+      "positives": 0,
+      "negatives": 128,
+      "base_rate": 0.0,
+      "wilson_low": 0.0,
+      "wilson_high": 0.029137,
+      "positives_by_timing": {
+        "premarket": 0,
+        "after_hours": 0
+      },
+      "positive_reaction_sessions": 0,
+      "positive_issuers": 0,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bucket": "insufficient"
+    },
+    {
+      "target": "day1_high_ge_10pct",
+      "family": "day1",
+      "definition": "event-relative day-1 high H/P0 - 1 >= 10%",
+      "n_defined": 128,
+      "positives": 33,
+      "negatives": 95,
+      "base_rate": 0.257812,
+      "wilson_low": 0.189869,
+      "wilson_high": 0.339869,
+      "positives_by_timing": {
+        "premarket": 10,
+        "after_hours": 23
+      },
+      "positive_reaction_sessions": 28,
+      "positive_issuers": 16,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        5,
+        11,
+        5,
+        7,
+        5
+      ],
+      "bucket": "estimable_with_wide_uncertainty"
+    },
+    {
+      "target": "day1_high_ge_20pct",
+      "family": "day1",
+      "definition": "event-relative day-1 high H/P0 - 1 >= 20%",
+      "n_defined": 128,
+      "positives": 12,
+      "negatives": 116,
+      "base_rate": 0.09375,
+      "wilson_low": 0.054444,
+      "wilson_high": 0.15673,
+      "positives_by_timing": {
+        "premarket": 5,
+        "after_hours": 7
+      },
+      "positive_reaction_sessions": 11,
+      "positive_issuers": 7,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        3,
+        4,
+        2,
+        2,
+        1
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "day1_high_ge_30pct",
+      "family": "day1",
+      "definition": "event-relative day-1 high H/P0 - 1 >= 30%",
+      "n_defined": 128,
+      "positives": 5,
+      "negatives": 123,
+      "base_rate": 0.039062,
+      "wilson_low": 0.016799,
+      "wilson_high": 0.088187,
+      "positives_by_timing": {
+        "premarket": 2,
+        "after_hours": 3
+      },
+      "positive_reaction_sessions": 5,
+      "positive_issuers": 3,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        1,
+        1,
+        2,
+        1,
+        0
+      ],
+      "bucket": "insufficient"
+    },
+    {
+      "target": "day1_close_ge_10pct",
+      "family": "day1",
+      "definition": "event-relative day-1 close C/P0 - 1 >= 10%",
+      "n_defined": 128,
+      "positives": 22,
+      "negatives": 106,
+      "base_rate": 0.171875,
+      "wilson_low": 0.116331,
+      "wilson_high": 0.24654,
+      "positives_by_timing": {
+        "premarket": 8,
+        "after_hours": 14
+      },
+      "positive_reaction_sessions": 19,
+      "positive_issuers": 12,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        3,
+        7,
+        4,
+        5,
+        3
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "day1_close_ge_20pct",
+      "family": "day1",
+      "definition": "event-relative day-1 close C/P0 - 1 >= 20%",
+      "n_defined": 128,
+      "positives": 6,
+      "negatives": 122,
+      "base_rate": 0.046875,
+      "wilson_low": 0.021658,
+      "wilson_high": 0.098498,
+      "positives_by_timing": {
+        "premarket": 2,
+        "after_hours": 4
+      },
+      "positive_reaction_sessions": 5,
+      "positive_issuers": 5,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "bucket": "insufficient"
+    },
+    {
+      "target": "extension_after_open_ge_5pct",
+      "family": "continuation",
+      "definition": "opening-anchored day-1 high H/O - 1 >= 5%",
+      "n_defined": 128,
+      "positives": 54,
+      "negatives": 74,
+      "base_rate": 0.421875,
+      "wilson_low": 0.339821,
+      "wilson_high": 0.508482,
+      "positives_by_timing": {
+        "premarket": 16,
+        "after_hours": 38
+      },
+      "positive_reaction_sessions": 44,
+      "positive_issuers": 22,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        5,
+        20,
+        7,
+        11,
+        11
+      ],
+      "bucket": "estimable_with_wide_uncertainty"
+    },
+    {
+      "target": "extension_after_open_ge_10pct",
+      "family": "continuation",
+      "definition": "opening-anchored day-1 high H/O - 1 >= 10%",
+      "n_defined": 128,
+      "positives": 23,
+      "negatives": 105,
+      "base_rate": 0.179688,
+      "wilson_low": 0.122825,
+      "wilson_high": 0.255216,
+      "positives_by_timing": {
+        "premarket": 6,
+        "after_hours": 17
+      },
+      "positive_reaction_sessions": 21,
+      "positive_issuers": 15,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        4,
+        9,
+        2,
+        6,
+        2
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "session5_close_ge_10pct",
+      "family": "continuation",
+      "definition": "close of reaction session 5 / P0 - 1 >= 10%",
+      "n_defined": 128,
+      "positives": 27,
+      "negatives": 101,
+      "base_rate": 0.210938,
+      "wilson_low": 0.149213,
+      "wilson_high": 0.289507,
+      "positives_by_timing": {
+        "premarket": 9,
+        "after_hours": 18
+      },
+      "positive_reaction_sessions": 23,
+      "positive_issuers": 16,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        3,
+        9,
+        4,
+        4,
+        7
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "session5_close_ge_20pct",
+      "family": "continuation",
+      "definition": "close of reaction session 5 / P0 - 1 >= 20%",
+      "n_defined": 128,
+      "positives": 16,
+      "negatives": 112,
+      "base_rate": 0.125,
+      "wilson_low": 0.078426,
+      "wilson_high": 0.193426,
+      "positives_by_timing": {
+        "premarket": 9,
+        "after_hours": 7
+      },
+      "positive_reaction_sessions": 15,
+      "positive_issuers": 10,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        3,
+        5,
+        3,
+        2,
+        3
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "loses_half_of_gap",
+      "family": "fade",
+      "definition": "positive gaps of at least 0.5% only: the day-1 close keeps less than half of the gap",
+      "n_defined": 60,
+      "positives": 25,
+      "negatives": 35,
+      "base_rate": 0.416667,
+      "wilson_low": 0.300643,
+      "wilson_high": 0.542719,
+      "positives_by_timing": {
+        "premarket": 5,
+        "after_hours": 20
+      },
+      "positive_reaction_sessions": 19,
+      "positive_issuers": 15,
+      "defined_by_block": [
+        8,
+        17,
+        13,
+        10,
+        12
+      ],
+      "positives_by_block": [
+        4,
+        6,
+        7,
+        5,
+        3
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "full_gap_fill",
+      "family": "fade",
+      "definition": "positive gaps of at least 0.5% only: the day-1 low reaches the previous close",
+      "n_defined": 60,
+      "positives": 28,
+      "negatives": 32,
+      "base_rate": 0.466667,
+      "wilson_low": 0.346279,
+      "wilson_high": 0.591066,
+      "positives_by_timing": {
+        "premarket": 7,
+        "after_hours": 21
+      },
+      "positive_reaction_sessions": 19,
+      "positive_issuers": 17,
+      "defined_by_block": [
+        8,
+        17,
+        13,
+        10,
+        12
+      ],
+      "positives_by_block": [
+        3,
+        6,
+        7,
+        4,
+        8
+      ],
+      "bucket": "thin"
+    },
+    {
+      "target": "closes_below_open",
+      "family": "fade",
+      "definition": "day-1 close below the day-1 open, C/O - 1 < 0",
+      "n_defined": 128,
+      "positives": 72,
+      "negatives": 56,
+      "base_rate": 0.5625,
+      "wilson_low": 0.475981,
+      "wilson_high": 0.645377,
+      "positives_by_timing": {
+        "premarket": 18,
+        "after_hours": 54
+      },
+      "positive_reaction_sessions": 49,
+      "positive_issuers": 23,
+      "defined_by_block": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "positives_by_block": [
+        11,
+        24,
+        13,
+        12,
+        12
+      ],
+      "bucket": "estimable_with_wide_uncertainty"
+    }
+  ],
+  "regression_targets": {
+    "day1_open_return": {
+      "n": 128,
+      "mean": -0.01335,
+      "sd": 0.105925,
+      "standard_error_of_mean": 0.009363,
+      "p10": -0.147731,
+      "median": -0.000954,
+      "p90": 0.103394
+    },
+    "day1_high_return": {
+      "n": 128,
+      "mean": 0.040453,
+      "sd": 0.120783,
+      "standard_error_of_mean": 0.010676,
+      "p10": -0.117361,
+      "median": 0.032145,
+      "p90": 0.191965
+    },
+    "day1_close_return": {
+      "n": 128,
+      "mean": -0.023862,
+      "sd": 0.13616,
+      "standard_error_of_mean": 0.012035,
+      "p10": -0.189198,
+      "median": -0.023666,
+      "p90": 0.143428
+    },
+    "session_5_close_return": {
+      "n": 128,
+      "mean": -0.004513,
+      "sd": 0.171584,
+      "standard_error_of_mean": 0.015166,
+      "p10": -0.187384,
+      "median": -0.017352,
+      "p90": 0.222565
+    },
+    "session_20_close_return": {
+      "n": 122,
+      "mean": 0.024123,
+      "sd": 0.226805,
+      "standard_error_of_mean": 0.020534,
+      "p10": -0.247451,
+      "median": -0.004541,
+      "p90": 0.322577
+    }
+  },
+  "time_structure": {
+    "block_rule": "reaction sessions are cut into blocks wherever two consecutive ones are more than 28 calendar days apart (the longest label horizon, 20 sessions, is a little under that)",
+    "blocks": [
+      {
+        "block": 1,
+        "first_reaction_session": "2024-11-05",
+        "last_reaction_session": "2024-12-12",
+        "events": 17,
+        "by_source": {
+          "milestone_2_step_3": 17
+        },
+        "by_timing": {
+          "after_hours": 14,
+          "premarket": 3
+        }
+      },
+      {
+        "block": 2,
+        "first_reaction_session": "2025-01-23",
+        "last_reaction_session": "2025-06-12",
+        "events": 44,
+        "by_source": {
+          "milestone_2_step_2": 1,
+          "milestone_2_step_3": 43
+        },
+        "by_timing": {
+          "after_hours": 35,
+          "premarket": 9
+        }
+      },
+      {
+        "block": 3,
+        "first_reaction_session": "2025-07-31",
+        "last_reaction_session": "2025-09-11",
+        "events": 21,
+        "by_source": {
+          "milestone_2_step_2": 21
+        },
+        "by_timing": {
+          "after_hours": 15,
+          "premarket": 6
+        }
+      },
+      {
+        "block": 4,
+        "first_reaction_session": "2025-10-23",
+        "last_reaction_session": "2025-12-11",
+        "events": 23,
+        "by_source": {
+          "milestone_2_step_2": 23
+        },
+        "by_timing": {
+          "after_hours": 16,
+          "premarket": 7
+        }
+      },
+      {
+        "block": 5,
+        "first_reaction_session": "2026-01-22",
+        "last_reaction_session": "2026-04-01",
+        "events": 23,
+        "by_source": {
+          "milestone_1": 23
+        },
+        "by_timing": {
+          "after_hours": 16,
+          "premarket": 7
+        }
+      }
+    ],
+    "boundaries": [
+      {
+        "between_blocks": [
+          1,
+          2
+        ],
+        "latest_session_20_label_available": "2025-01-13T21:01:00Z",
+        "earliest_next_cutoff": "2025-01-22T21:18:00Z",
+        "slack_days": 9.01,
+        "needs_purge_for_the_20_session_horizon": false
+      },
+      {
+        "between_blocks": [
+          2,
+          3
+        ],
+        "latest_session_20_label_available": "2025-07-11T20:01:00Z",
+        "earliest_next_cutoff": "2025-07-30T20:04:00Z",
+        "slack_days": 19.0,
+        "needs_purge_for_the_20_session_horizon": false
+      },
+      {
+        "between_blocks": [
+          3,
+          4
+        ],
+        "latest_session_20_label_available": "2025-10-08T20:01:00Z",
+        "earliest_next_cutoff": "2025-10-22T20:18:00Z",
+        "slack_days": 14.01,
+        "needs_purge_for_the_20_session_horizon": false
+      },
+      {
+        "between_blocks": [
+          4,
+          5
+        ],
+        "latest_session_20_label_available": "2026-01-09T21:01:00Z",
+        "earliest_next_cutoff": "2026-01-21T21:20:00Z",
+        "slack_days": 12.01,
+        "needs_purge_for_the_20_session_horizon": false
+      }
+    ]
+  },
+  "walk_forward": {
+    "expanding_window_folds": [
+      {
+        "test_block": 2,
+        "train_blocks": [
+          1
+        ],
+        "train_events": 17,
+        "test_events": 44,
+        "train_events_with_session_20_label_mature_at_the_first_test_cutoff": 17,
+        "enough_training_events_to_fit_anything": false,
+        "targets": {
+          "gap_ge_3pct": {
+            "train_defined": 17,
+            "train_positives": 8,
+            "test_defined": 44,
+            "test_positives": 13
+          },
+          "gap_ge_5pct": {
+            "train_defined": 17,
+            "train_positives": 5,
+            "test_defined": 44,
+            "test_positives": 9
+          },
+          "gap_ge_10pct": {
+            "train_defined": 17,
+            "train_positives": 2,
+            "test_defined": 44,
+            "test_positives": 3
+          },
+          "day1_close_ge_10pct": {
+            "train_defined": 17,
+            "train_positives": 3,
+            "test_defined": 44,
+            "test_positives": 7
+          },
+          "session5_close_ge_10pct": {
+            "train_defined": 17,
+            "train_positives": 3,
+            "test_defined": 44,
+            "test_positives": 9
+          },
+          "loses_half_of_gap": {
+            "train_defined": 8,
+            "train_positives": 4,
+            "test_defined": 17,
+            "test_positives": 6
+          },
+          "full_gap_fill": {
+            "train_defined": 8,
+            "train_positives": 3,
+            "test_defined": 17,
+            "test_positives": 6
+          }
+        }
+      },
+      {
+        "test_block": 3,
+        "train_blocks": [
+          1,
+          2
+        ],
+        "train_events": 61,
+        "test_events": 21,
+        "train_events_with_session_20_label_mature_at_the_first_test_cutoff": 61,
+        "enough_training_events_to_fit_anything": true,
+        "targets": {
+          "gap_ge_3pct": {
+            "train_defined": 61,
+            "train_positives": 21,
+            "test_defined": 21,
+            "test_positives": 8
+          },
+          "gap_ge_5pct": {
+            "train_defined": 61,
+            "train_positives": 14,
+            "test_defined": 21,
+            "test_positives": 5
+          },
+          "gap_ge_10pct": {
+            "train_defined": 61,
+            "train_positives": 5,
+            "test_defined": 21,
+            "test_positives": 2
+          },
+          "day1_close_ge_10pct": {
+            "train_defined": 61,
+            "train_positives": 10,
+            "test_defined": 21,
+            "test_positives": 4
+          },
+          "session5_close_ge_10pct": {
+            "train_defined": 61,
+            "train_positives": 12,
+            "test_defined": 21,
+            "test_positives": 4
+          },
+          "loses_half_of_gap": {
+            "train_defined": 25,
+            "train_positives": 10,
+            "test_defined": 13,
+            "test_positives": 7
+          },
+          "full_gap_fill": {
+            "train_defined": 25,
+            "train_positives": 9,
+            "test_defined": 13,
+            "test_positives": 7
+          }
+        }
+      },
+      {
+        "test_block": 4,
+        "train_blocks": [
+          1,
+          2,
+          3
+        ],
+        "train_events": 82,
+        "test_events": 23,
+        "train_events_with_session_20_label_mature_at_the_first_test_cutoff": 82,
+        "enough_training_events_to_fit_anything": true,
+        "targets": {
+          "gap_ge_3pct": {
+            "train_defined": 82,
+            "train_positives": 29,
+            "test_defined": 23,
+            "test_positives": 6
+          },
+          "gap_ge_5pct": {
+            "train_defined": 82,
+            "train_positives": 19,
+            "test_defined": 23,
+            "test_positives": 5
+          },
+          "gap_ge_10pct": {
+            "train_defined": 82,
+            "train_positives": 7,
+            "test_defined": 23,
+            "test_positives": 4
+          },
+          "day1_close_ge_10pct": {
+            "train_defined": 82,
+            "train_positives": 14,
+            "test_defined": 23,
+            "test_positives": 5
+          },
+          "session5_close_ge_10pct": {
+            "train_defined": 82,
+            "train_positives": 16,
+            "test_defined": 23,
+            "test_positives": 4
+          },
+          "loses_half_of_gap": {
+            "train_defined": 38,
+            "train_positives": 17,
+            "test_defined": 10,
+            "test_positives": 5
+          },
+          "full_gap_fill": {
+            "train_defined": 38,
+            "train_positives": 16,
+            "test_defined": 10,
+            "test_positives": 4
+          }
+        }
+      },
+      {
+        "test_block": 5,
+        "train_blocks": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "train_events": 105,
+        "test_events": 23,
+        "train_events_with_session_20_label_mature_at_the_first_test_cutoff": 105,
+        "enough_training_events_to_fit_anything": true,
+        "targets": {
+          "gap_ge_3pct": {
+            "train_defined": 105,
+            "train_positives": 35,
+            "test_defined": 23,
+            "test_positives": 5
+          },
+          "gap_ge_5pct": {
+            "train_defined": 105,
+            "train_positives": 24,
+            "test_defined": 23,
+            "test_positives": 5
+          },
+          "gap_ge_10pct": {
+            "train_defined": 105,
+            "train_positives": 11,
+            "test_defined": 23,
+            "test_positives": 3
+          },
+          "day1_close_ge_10pct": {
+            "train_defined": 105,
+            "train_positives": 19,
+            "test_defined": 23,
+            "test_positives": 3
+          },
+          "session5_close_ge_10pct": {
+            "train_defined": 105,
+            "train_positives": 20,
+            "test_defined": 23,
+            "test_positives": 7
+          },
+          "loses_half_of_gap": {
+            "train_defined": 48,
+            "train_positives": 22,
+            "test_defined": 12,
+            "test_positives": 3
+          },
+          "full_gap_fill": {
+            "train_defined": 48,
+            "train_positives": 20,
+            "test_defined": 12,
+            "test_positives": 8
+          }
+        }
+      }
+    ],
+    "folds_with_enough_training_events": [
+      3,
+      4,
+      5
+    ],
+    "if_the_last_block_is_the_final_holdout": {
+      "holdout_block": 5,
+      "holdout_events": 23,
+      "development_test_blocks": [
+        3,
+        4
+      ],
+      "development_test_events": 44
+    },
+    "yardstick_note": "MIN_TRAIN_EVENTS is a declared yardstick for 'enough events to fit anything at all', not a statistical result."
+  },
+  "uncertainty": {
+    "wilson_confidence": 0.95,
+    "halfwidth_of_an_observed_proportion_by_sample_size": {
+      "128": {
+        "0.1": 0.0529,
+        "0.25": 0.0743,
+        "0.5": 0.0853
+      },
+      "103": {
+        "0.1": 0.058,
+        "0.25": 0.0829,
+        "0.5": 0.0948
+      },
+      "82": {
+        "0.1": 0.0653,
+        "0.25": 0.0916,
+        "0.5": 0.1058
+      },
+      "61": {
+        "0.1": 0.0763,
+        "0.25": 0.1059,
+        "0.5": 0.1217
+      },
+      "44": {
+        "0.1": 0.0878,
+        "0.25": 0.1243,
+        "0.5": 0.1417
+      },
+      "23": {
+        "0.1": 0.1219,
+        "0.25": 0.1696,
+        "0.5": 0.189
+      }
+    },
+    "sample_size_needed_for_a_halfwidth_at_an_observed_proportion_of_0.5": {
+      "0.1": 93,
+      "0.15": 39,
+      "0.2": 21
+    },
+    "smallest_precision_at_k_whose_lower_bound_clears_the_base_rate": {
+      "gap_ge_3pct": {
+        "base_rate": 0.3125,
+        "if_the_top_k_events_are_selected": {
+          "10": {
+            "hits_needed": 6,
+            "precision_needed": 0.6,
+            "lift_over_base_rate": 1.92
+          },
+          "20": {
+            "hits_needed": 11,
+            "precision_needed": 0.55,
+            "lift_over_base_rate": 1.76
+          },
+          "40": {
+            "hits_needed": 19,
+            "precision_needed": 0.475,
+            "lift_over_base_rate": 1.52
+          }
+        }
+      },
+      "gap_ge_5pct": {
+        "base_rate": 0.226562,
+        "if_the_top_k_events_are_selected": {
+          "10": {
+            "hits_needed": 5,
+            "precision_needed": 0.5,
+            "lift_over_base_rate": 2.207
+          },
+          "20": {
+            "hits_needed": 9,
+            "precision_needed": 0.45,
+            "lift_over_base_rate": 1.986
+          },
+          "40": {
+            "hits_needed": 15,
+            "precision_needed": 0.375,
+            "lift_over_base_rate": 1.655
+          }
+        }
+      },
+      "gap_ge_10pct": {
+        "base_rate": 0.109375,
+        "if_the_top_k_events_are_selected": {
+          "10": {
+            "hits_needed": 4,
+            "precision_needed": 0.4,
+            "lift_over_base_rate": 3.657
+          },
+          "20": {
+            "hits_needed": 5,
+            "precision_needed": 0.25,
+            "lift_over_base_rate": 2.286
+          },
+          "40": {
+            "hits_needed": 9,
+            "precision_needed": 0.225,
+            "lift_over_base_rate": 2.057
+          }
+        }
+      }
+    },
+    "note": "Interval widths for a plain binomial sample; events are not independent (see dependence), so real intervals are wider. The last block answers: with K events selected, what observed precision is needed before its interval excludes the base rate."
+  },
+  "dependence": {
+    "events": 128,
+    "issuers": 23,
+    "distinct_reaction_sessions": 73,
+    "reaction_sessions_by_number_of_events": {
+      "1": 44,
+      "2": 14,
+      "3": 10,
+      "5": 4,
+      "6": 1
+    },
+    "most_events_on_one_reaction_session": 6,
+    "events_per_issuer": {
+      "4": 2,
+      "5": 6,
+      "6": 15
+    },
+    "events_by_sic_division": {
+      "B": 6,
+      "D": 55,
+      "E": 6,
+      "F": 6,
+      "G": 12,
+      "I": 43
+    },
+    "two_largest_sic_major_groups": {
+      "73": 32,
+      "28": 32
+    },
+    "share_of_events_in_the_two_largest_groups": 0.5
+  },
+  "selection": {
+    "milestone_1": {
+      "candidates": 243,
+      "candidate_issuers": 215,
+      "included": 23,
+      "excluded": 15,
+      "quarantined": 205,
+      "included_share": 0.0947
+    },
+    "milestone_2_step_2": {
+      "candidates": 48,
+      "candidate_issuers": 23,
+      "included": 45,
+      "excluded": 2,
+      "quarantined": 1,
+      "included_share": 0.9375
+    },
+    "milestone_2_step_3": {
+      "candidates": 66,
+      "candidate_issuers": 23,
+      "included": 60,
+      "excluded": 6,
+      "quarantined": 0,
+      "included_share": 0.9091
+    }
+  },
+  "not_a_claim": [
+    "Not a model, a prediction or a score.",
+    "Not market base rates: the events are a convenience sample (see selection).",
+    "Not evidence of any predictive edge."
+  ]
+}
