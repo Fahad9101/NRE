@@ -153,8 +153,7 @@ class RealDataTests(unittest.TestCase):
         self.assertTrue(any(line.startswith("Phase 0") for line in record["not_authorized_by_these_answers"]))
         doc = (ROOT / "docs" / "M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md").read_text(encoding="utf-8")
         self.assertIn("reports/m4-scope-decisions-2026-10-03.json", doc)
-        self.assertIn("**Phase 0 is not yet authorized and
-nothing is built.**", doc)
+        self.assertIn("Phase 0 is not yet authorized and nothing is built.", " ".join(doc.split()))  # the sentence wraps across lines in the document
 
     def test_the_report_claims_nothing_beyond_description(self):
         self.assertTrue(any("Not a model" in line for line in self.report["not_a_claim"]))
