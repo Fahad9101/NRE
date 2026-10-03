@@ -145,6 +145,17 @@ class RealDataTests(unittest.TestCase):
         self.assertIn("%d of the 128 events carry label-level caveats" % caveats["inventory"]["events_with_caveats"], doc)
         self.assertIn("no model code", doc)
 
+    def test_the_decisions_record_matches_the_proposal_and_authorizes_nothing_further(self):
+        record = load("reports/m4-scope-decisions-2026-10-03.json")
+        self.assertEqual(sorted(d["proposal_section_6_decision"] for d in record["decisions"].values()), ["1", "3", "4", "5"])
+        self.assertTrue(all(d["was_the_recommended_default"] for d in record["decisions"].values()))
+        self.assertEqual(record["left_open"]["proposal_section_6_decision"], "2")
+        self.assertTrue(any(line.startswith("Phase 0") for line in record["not_authorized_by_these_answers"]))
+        doc = (ROOT / "docs" / "M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md").read_text(encoding="utf-8")
+        self.assertIn("reports/m4-scope-decisions-2026-10-03.json", doc)
+        self.assertIn("**Phase 0 is not yet authorized and
+nothing is built.**", doc)
+
     def test_the_report_claims_nothing_beyond_description(self):
         self.assertTrue(any("Not a model" in line for line in self.report["not_a_claim"]))
 

@@ -4,7 +4,13 @@
 (`reports/m4-scoping-authorization-2026-10-03.json`, which also says how those words were read). Nothing for Milestone 4 is built: this
 document and the descriptive evidence beneath it are all that exists. Milestones 0 to 3 and Milestone 2 steps 2 and 3 are the only ones
 declared accepted. The evidence is `reports/m4-scoping-evidence-2026-10-03.json` and `reports/m4-caveat-sensitivity-2026-10-03.json`; both
-reproduce from committed inputs, read labels and never prices, and fit nothing. Every decision in section 6 is still open.**
+reproduce from committed inputs, read labels and never prices, and fit nothing. Every decision in section 6 was open when this was written.**
+
+**Update 2026-10-03, after the owner answered section 6** (`reports/m4-scope-decisions-2026-10-03.json`): decisions 1, 3, 4 and 5 were put to the
+owner and each recommended default was chosen: all four families with rare targets as `INSUFFICIENT_DATA`; block 5 sealed as the final holdout;
+clean-window and all-event results reported side by side, with the clean-window version driving model selection; the existing 128 events, labels
+only. Decision 2, the primary-target list, was not asked and stays the recommended default until Phase 0. **Phase 0 is not yet authorized and
+nothing is built.** The text below is left as written.
 
 ## Summary
 
@@ -243,6 +249,9 @@ ensembles (Milestone 5), compute a reaction gap (Milestone 6), make a live predi
 4. **Caveats.** Recommended: report clean-window (caveated labels and their derived labels treated as absent) and all-event results side by side, with the
    clean-window version as the one that drives model selection. Alternatives: all-event primary, or drop caveated events.
 5. **Data.** Recommended: Option A, the existing events, labels only.
+
+*Status 2026-10-03: decisions 1, 3, 4 and 5 were decided as recommended; decision 2 stays open until Phase 0
+(`reports/m4-scope-decisions-2026-10-03.json`).*
 
 ## 7. What this document does not do
 

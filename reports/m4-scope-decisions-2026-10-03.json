@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-03",
+  "proposal": "docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md",
+  "proposal_commit": "909fea3",
+  "asked_at": "2026-10-03T07:40:32.077Z",
+  "source": "the owner's answers to the assistant's questions, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, tool result, timestamps UTC)",
+  "decisions": {
+    "shape_of_milestone_4": {
+      "proposal_section_6_decision": "1",
+      "question": "How should Milestone 4 be shaped?",
+      "owner_answer": "All four families (Recommended)",
+      "was_the_recommended_default": true,
+      "effect": "If built, Milestone 4 covers all four families (opening gap, Day-1, gap retention, continuation/fade). A target below the declared positive-count thresholds is reported as INSUFFICIENT_DATA and is not modelled."
+    },
+    "final_holdout": {
+      "proposal_section_6_decision": "3",
+      "question": "Which period should be the sealed final holdout?",
+      "owner_answer": "Block 5: Milestone 1 events (Recommended)",
+      "was_the_recommended_default": true,
+      "effect": "Block 5, the 23 Milestone 1 events (reaction sessions 2026-01-22 to 2026-04-01), is the sealed final holdout, looked at once. Its different selection regime is disclosed with every result, and results are also reported by source."
+    },
+    "caveats": {
+      "proposal_section_6_decision": "4",
+      "question": "How should caveated labels be treated in Milestone 4 results?",
+      "owner_answer": "Report both; clean-window drives (Recommended)",
+      "was_the_recommended_default": true,
+      "effect": "Every result is reported clean-window and all-event side by side. The clean-window version (caveated labels and the labels derived from them treated as absent) drives model selection."
+    },
+    "data": {
+      "proposal_section_6_decision": "5",
+      "question": "Which data should Milestone 4 use?",
+      "owner_answer": "Existing events, labels only (Recommended)",
+      "was_the_recommended_default": true,
+      "effect": "Milestone 4 uses the 128 accepted events, labels only: no new acquisition and no new provider terms."
+    }
+  },
+  "left_open": {
+    "proposal_section_6_decision": "2",
+    "what": "The primary-target list was not put to the owner. The recommended default stands until Phase 0, where the owner may edit it: gap_ge_3pct, gap_ge_5pct, the Day-1 close return, extension_after_open_ge_5pct, loses_half_of_gap; everything else descriptive."
+  },
+  "not_authorized_by_these_answers": [
+    "Phase 0 (the pre-registration document) or any later phase. The answers settle scope questions; they do not ask for Phase 0 to start, and the assistant's recommended next step was to authorize it separately.",
+    "Building any Milestone 4 model, baseline fit, prediction, score, ranking or candidate list.",
+    "Any new data acquisition or provider.",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later."
+  ],
+  "not_a_claim": [
+    "Not Milestone 4 acceptance, and not a start of Milestone 4 building.",
+    "Not a claim that the data supports any predictive model; the proposal states its limits."
+  ]
+}
