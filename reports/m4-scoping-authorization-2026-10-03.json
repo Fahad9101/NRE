@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-03",
+  "context": "Milestone 2 step 3 was declared accepted on 2026-10-02 (reports/m2-step3-acceptance-declaration-2026-10-02.json) and the 128-event fingerprints/analogues run was done the same day. The assistant's closing message, quoted verbatim in assistant_message_replied_to, listed what was remaining and recommended authorizing Milestone 4 scoping.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-02T19:14:09.939Z",
+    "text": "Step 3 is accepted, the archive is kept, and the 128-event follow-up run is done. Everything is pushed (`2c835cb`), CI passed on every push, and no workflow re-ran the audit.\n\n**Done**\n- **Archive kept.** Your decision is added to the earlier records as a pointer, and the original text is unchanged.\n- **Step 3 accepted.** `reports/m2-step3-acceptance-declaration-2026-10-02.json` quotes your words and our exchange from the transcript. It re-checks the audit inputs against the committed files and carries the limits we discussed. It states that whether step 3 gives Milestone 4 enough depth is not decided.\n- **128-event fingerprints/analogues run** (23 + 45 + 60 events). It is offline and needed no code changes. I took \"the rest\" to mean only the declaration and this run.\n\n**What the run showed**\n- **The 68 older events:** each now has at least 20 matured comparable events behind it on every label. Analogues are found for all 68 on the return labels (it was 44–49) and for 65 on the positive-gap labels (it was 33).\n- **The 60 step-3 events:** they are the earliest, so as targets they have little history behind them. That is built in, not a flaw.\n- **Sector and timing groups:** all 22 now report; 14 reported nothing before.\n- **Per-issuer statistics:** still thin. Only gap-threshold proportions report, flagged unreliable, for 21 of 23 issuers. Mean, median and quantiles stay withheld everywhere, because the most any issuer has is 6 events against minimums of 10 and 20.\n\n**Two problems I found and did not fix**\n- The tool's built-in scope note still says \"Milestone 1 events only … one event per issuer\", and it appears on every report.\n- The tool never reads event caveats, so 38 of the 128 events (105 flagged event-label pairs) are pooled as if clean.\n\n**Remaining**\n- **Needs you:**\n  - Whether to scope M4 or deepen the data again first.\n  - Optionally, how caveated labels should be treated in the pools.\n  - Optionally, whether to close step 2's archive gap. I checked read-only that its raw SEC bytes still exist locally and match all 23 hashes, so it could pass on real bytes.\n- **Mine, once you say so:** the caveat check, the scope-note fix, and the step 2 archive.\n- **Parked:** M4 and later are not authorized. `nre/alpaca.py` still has its old 2026-only calendar bug.\n\n**Recommended next step:** authorize M4 scoping, meaning a proposal document only with no model code, as with every earlier milestone. The data supports pooled baselines but not per-issuer ones, and scoping will show whether more depth is needed, which is better than adding another window blindly. I'd have it start by comparing the pools with and without the caveated labels, since baselines would learn from them."
+  },
+  "owner_messages": [
+    {
+      "text": "ok authorize m4 scoping",
+      "at": "2026-10-03T07:05:32.296Z",
+      "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC)"
+    },
+    {
+      "text": "not only scoping everything you recomended",
+      "sent_at": "2026-10-03T07:06:51.672Z",
+      "absorbed_into_the_running_turn_at": "2026-10-03T07:06:53.168Z",
+      "source": "the project owner's chat message, sent while the assistant was working and absorbed mid-turn; quoted from the transcript's queue records. The spelling 'recomended' is the owner's."
+    }
+  ],
+  "how_the_words_were_read": [
+    "'ok authorize m4 scoping' answers the assistant's recommendation to authorize Milestone 4 scoping 'meaning a proposal document only with no model code, as with every earlier milestone'. It authorizes the scoping proposal, nothing built.",
+    "'not only scoping everything you recomended' was read as extending that go-ahead beyond scoping to the other items the same message put on the table under 'Mine, once you say so': the caveat check, the scope-note fix and closing step 2's archive gap, plus the with-and-without-caveats comparison the recommendation said the scoping would start with.",
+    "It was NOT read as authorizing Milestone 4 model-building. The recommendation the owner pointed to said 'a proposal document only with no model code', and models, predictions, scores, rankings and candidate lists stay separately gated (master prompt section 41, and this project's standing rule). If model-building was meant, it needs to be said explicitly.",
+    "The 'Parked' items in that message (Milestone 4 itself beyond scoping, and nre/alpaca.py's latent 2026-only calendar) were not recommended work and are not done. How caveated labels should be treated in the pools was listed under 'Needs you': only the check is done, and no policy change is made to the machinery."
+  ],
+  "authorized_and_done_under_these_words": [
+    "The Milestone 4 scope proposal: docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md, with the offline, descriptive evidence it rests on (no model, no prediction, no score, no ranking).",
+    "The caveat check: an offline with-and-without-caveated-labels comparison of the pools, as analysis code plus a report.",
+    "The scope-note fix: an additive, spec-level scope_note for fingerprints/analogues reports; historical reports are left as they were.",
+    "Closing step 2's candidate_source_hashes gap: archiving the real raw SEC bytes, adding --archive-dir to depth-consolidated-audit.yml, running the audit and recording the result."
+  ],
+  "not_authorized_by_these_words": [
+    "Building any Milestone 4 model, baseline fit, prediction, score, ranking or candidate list.",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later.",
+    "Changing how caveated labels are treated in the fingerprints/analogues machinery (an owner decision, informed by the check).",
+    "Any new data acquisition or provider.",
+    "Fixing nre/alpaca.py."
+  ],
+  "not_a_claim": [
+    "Not Milestone 4 acceptance, and not a start of Milestone 4 building.",
+    "Not a claim that the data supports any predictive model: that is what the scoping proposal examines, with its limits."
+  ]
+}
