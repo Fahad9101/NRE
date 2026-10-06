@@ -1,0 +1,755 @@
+{
+  "protocol_id": "nre-m4-baseline-evaluation",
+  "protocol_version": "1",
+  "title": "NRE Milestone 4 baseline models: pre-registered evaluation protocol",
+  "purpose": "Fixes, before any baseline or model is fitted or evaluated, how simple baselines will be evaluated on the 128 accepted earnings events: the targets, clocks, features, folds, sealed holdout, caveat rule, metrics, intervals, decision rule and the thresholds below which a target is reported as INSUFFICIENT_DATA. It measures what the data can and cannot show. It is not designed to demonstrate, and does not claim, a predictive edge.",
+  "expected_outcome_stated_in_advance": "For most targets the result is expected to be NOT_DISTINGUISHABLE from the pooled base rate, and the final holdout is expected to support counts only for most targets. Both are acceptable, reportable outcomes of this protocol.",
+  "authority": {
+    "scope_proposal": "docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md",
+    "scope_authorization": "reports/m4-scoping-authorization-2026-10-03.json",
+    "scope_decisions": "reports/m4-scope-decisions-2026-10-03.json",
+    "phase_0_authorization": "reports/m4-phase0-authorization-2026-10-03.json",
+    "master_prompt_sections": [
+      "Milestone 4 text",
+      "12",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "24",
+      "25",
+      "27",
+      "28",
+      "34",
+      "35",
+      "39",
+      "40",
+      "44"
+    ],
+    "technical_contract_sections": [
+      "2",
+      "5",
+      "6",
+      "10",
+      "11",
+      "13",
+      "14"
+    ]
+  },
+  "owner_decisions_encoded": {
+    "shape": "All four families of the master prompt's Milestone 4 text (opening gap, Day-1 move, gap retention, continuation/fade). A target below the thresholds is INSUFFICIENT_DATA and is not modelled.",
+    "holdout": "Block 5, the 23 Milestone 1 events, sealed and looked at once.",
+    "caveats": "Clean-window and all-event results side by side; the clean-window version drives any selection and the claim rule.",
+    "data": "The 128 accepted events, labels only. No acquisition and no new provider terms.",
+    "left_to_the_assistant_and_open_to_review": "The primary-target list (the owner was not asked) and every numeric constant in this protocol are the assistant's defaults; see disclosures.numeric_constants_chosen_by_the_assistant."
+  },
+  "phase_boundary": "This protocol is Phase 0. It runs nothing. The harness and its leakage tests (Phase 1), every baseline (Phases 2 and 3) and the holdout look (Phase 4) each need the owner's go-ahead.",
+  "inputs": {
+    "events_spec": {
+      "path": "config/m2-step3-combined-events.json",
+      "canonical_sha256": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+      "events": 128,
+      "issuers": 23
+    },
+    "event_table_sha256": "3a9b3b286e35c6aaa4227596d6d689b66f3f6cab0a8e52b047a7d39bffc423a1",
+    "event_labels_sha256": "14ff8c442e26187d0cbb8e47356df4f7ac973738126414ae71fd617fbaa582fa",
+    "calendar": {
+      "path": "config/m2-merged-calendar-2024-2026.json",
+      "canonical_sha256": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5"
+    },
+    "fingerprint_policy": {
+      "path": "config/fingerprint-policy.json",
+      "canonical_sha256": "9a2193a0077a9377f581c7b82b3a6c4dea15337735d6f0edcbf71efaae3db188",
+      "wilson_confidence": 0.95,
+      "pooling_prior_strength": 10
+    },
+    "sector_map": {
+      "path": "config/sector-map.json",
+      "canonical_sha256": "775b39cb312d96943109851f815172157f727a11e086728dff7fbe11d3195ae8",
+      "sic_read_on": "2026-09-26"
+    },
+    "block_assignment_sha256": "7c3843f19d2b142cf7a858e9d0fb477a1024ce9757804a5f2063fe02414844d3",
+    "caveated_labels": {
+      "as_recorded_sha256": "75f1e6dde7eaf4a74e358d2ab2ebc5c9743cbdea8bc864541a2ef8ff0fbea73b",
+      "with_derived_labels_sha256": "dd652b02da63e6313607ade71bf1f422556f9815cb83e5eea18e6051aea9f9e3",
+      "events_with_caveats": 38
+    },
+    "scoping_evidence": {
+      "path": "reports/m4-scoping-evidence-2026-10-03.json",
+      "canonical_sha256": "122189e553b570e4befec7f72ba98e5a962be0b51d712117aceab0f21ce1bd8e"
+    },
+    "caveat_check": {
+      "path": "reports/m4-caveat-sensitivity-2026-10-03.json",
+      "canonical_sha256": "5452a015dac84108ecd2e7b3807efd45f28d7c3b9ce2eb4def586cb3edd7c36b"
+    },
+    "labels": "Derived label values only, as pinned per event by labels_sha256. No prices, no raw data, no new fetch.",
+    "implementation_language": "Python 3.12 standard library only (the repository's rule); the models below are specified so that they need nothing else."
+  },
+  "clocks": {
+    "B": {
+      "name": "B: news reaction at the release",
+      "prediction_time": "the event's cutoff: its release time plus three minutes for 106 events and five minutes for 22",
+      "information": "the features listed under features.B_and_C0, computed only from events in the fold's training blocks",
+      "targets": [
+        "gap_ge_3pct",
+        "gap_ge_5pct",
+        "day1_close_return"
+      ],
+      "eligible_events": "all 128 (every release precedes the next regular open: 96 after hours, 32 premarket)"
+    },
+    "C0": {
+      "name": "C0: continuation/fade at the regular open",
+      "prediction_time": "the regular open of the reaction session. The opening print, as day1_open_return, is known; the day's high, low and close are not.",
+      "information": "B information plus the feature open_gap",
+      "targets": [
+        "extension_after_open_ge_5pct",
+        "loses_half_of_gap"
+      ],
+      "eligible_events": "extension_after_open_ge_5pct: all events; loses_half_of_gap: events with a positive gap of at least 0.5%",
+      "relation_to_the_contract": "A separately registered clock, not Model C. Model C's clock is the open plus 15 minutes and needs intraday bars; daily bars cannot establish post-09:45 ordering (technical contract, sections 2 and 6)."
+    },
+    "not_built": {
+      "A": "needs a catalyst schedule known at the clock; none has been captured for any event",
+      "C": "needs intraday bars, which this dataset does not have"
+    }
+  },
+  "features": {
+    "feature_version": "m4-features-v1",
+    "B_and_C0": {
+      "after_hours": "1 if release_timing is after_hours, else 0",
+      "sector_group": "from the SIC division in config/sector-map.json: D (manufacturing), I (services) or other (divisions B, E, F and G); coded as two indicators is_I and is_other with D as the reference. SIC codes were read on 2026-09-26, not as of the event dates, so each model is also run without this feature (a pre-registered sensitivity).",
+      "issuer_history_rate": {
+        "meaning": "the issuer's own earlier outcomes on the same target, shrunk toward a group prior",
+        "history": "events of the same issuer (the same CIK) in the fold's TRAINING blocks whose reaction session precedes this event's and whose target labels were available at this event's cutoff, with the target defined (and not caveated, in the clean-window version)",
+        "formula": "(k + m * p) / (n + m), with k = positives and n = count in that history, m = 10 (the fingerprint policy's pooling prior strength)",
+        "group_prior_p": "the pooled rate, over training-block events earlier than this event with the target defined, of events in the same SIC major group if there are at least 10 of them, else of all such events; if no such event exists, p = 0.5",
+        "used_in_the_model_as": "logit of the rate clipped to [0.01, 0.99]",
+        "regression_analogue": "the same with means: (sum of y + m * mu) / (n + m), mu the group (else pooled) mean of y, used as is",
+        "test_events": "use training-block history only; no label from the test block is used for any feature"
+      },
+      "open_gap": "C0 only: day1_open_return of the event, as a continuous feature",
+      "standardization": "every non-intercept feature is standardized with the mean and standard deviation of the training events; a feature with zero standard deviation is dropped and the drop is logged"
+    },
+    "no_other_features": "No other feature may enter any M4 model: no earnings surprise (not computed for these events), consensus, volume, momentum, volatility, float, short interest, market-structure or regime feature, and no feature built from the event's own outcome labels."
+  },
+  "targets": {
+    "primary": [
+      {
+        "id": "gap_ge_3pct",
+        "role": "primary",
+        "master_prompt_family": "opening gap",
+        "clock": "B",
+        "kind": "binary",
+        "eligible_events": "all events",
+        "source_labels": [
+          "gap_ge_3pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 3%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 40,
+          "negatives": 88
+        }
+      },
+      {
+        "id": "gap_ge_5pct",
+        "role": "primary",
+        "master_prompt_family": "opening gap",
+        "clock": "B",
+        "kind": "binary",
+        "eligible_events": "all events",
+        "source_labels": [
+          "gap_ge_5pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 5%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 29,
+          "negatives": 99
+        }
+      },
+      {
+        "id": "day1_close_return",
+        "role": "primary",
+        "master_prompt_family": "Day-1 move",
+        "clock": "B",
+        "kind": "regression",
+        "eligible_events": "all events",
+        "source_labels": [
+          "day1_close_return"
+        ],
+        "definition": "day-1 close return C/P0 - 1 (the label day1_close_return), predicted as the 10th, 50th and 90th percentiles",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128
+        }
+      },
+      {
+        "id": "extension_after_open_ge_5pct",
+        "role": "primary",
+        "master_prompt_family": "continuation/fade",
+        "clock": "C0",
+        "kind": "binary",
+        "eligible_events": "all events",
+        "source_labels": [
+          "day1_open_return",
+          "day1_high_return"
+        ],
+        "definition": "opening-anchored day-1 high H/O - 1 >= 5%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 54,
+          "negatives": 74
+        }
+      },
+      {
+        "id": "loses_half_of_gap",
+        "role": "primary",
+        "master_prompt_family": "gap retention",
+        "clock": "C0",
+        "kind": "binary",
+        "eligible_events": "events whose opening gap is at least 0.5% (positive_gap_retained_half is defined)",
+        "source_labels": [
+          "positive_gap_retained_half"
+        ],
+        "definition": "positive gaps of at least 0.5% only: the day-1 close keeps less than half of the gap",
+        "counts_at_freeze_all_event": {
+          "n_defined": 60,
+          "positives": 25,
+          "negatives": 35
+        }
+      }
+    ],
+    "descriptive_only": [
+      {
+        "id": "gap_ge_10pct",
+        "family": "opening_gap",
+        "definition": "opening gap O/Cprev - 1 >= 10%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 14,
+          "negatives": 114
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "day1_high_ge_10pct",
+        "family": "day1",
+        "definition": "event-relative day-1 high H/P0 - 1 >= 10%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 33,
+          "negatives": 95
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "day1_high_ge_20pct",
+        "family": "day1",
+        "definition": "event-relative day-1 high H/P0 - 1 >= 20%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 12,
+          "negatives": 116
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "day1_close_ge_10pct",
+        "family": "day1",
+        "definition": "event-relative day-1 close C/P0 - 1 >= 10%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 22,
+          "negatives": 106
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "extension_after_open_ge_10pct",
+        "family": "continuation",
+        "definition": "opening-anchored day-1 high H/O - 1 >= 10%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 23,
+          "negatives": 105
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "session5_close_ge_10pct",
+        "family": "continuation",
+        "definition": "close of reaction session 5 / P0 - 1 >= 10%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 27,
+          "negatives": 101
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "session5_close_ge_20pct",
+        "family": "continuation",
+        "definition": "close of reaction session 5 / P0 - 1 >= 20%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 16,
+          "negatives": 112
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "full_gap_fill",
+        "family": "fade",
+        "definition": "positive gaps of at least 0.5% only: the day-1 low reaches the previous close",
+        "counts_at_freeze_all_event": {
+          "n_defined": 60,
+          "positives": 28,
+          "negatives": 32
+        },
+        "role": "descriptive_only"
+      },
+      {
+        "id": "closes_below_open",
+        "family": "fade",
+        "definition": "day-1 close below the day-1 open, C/O - 1 < 0",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 72,
+          "negatives": 56
+        },
+        "role": "descriptive_only"
+      }
+    ],
+    "insufficient_data_by_rule": [
+      {
+        "id": "gap_ge_15pct",
+        "family": "opening_gap",
+        "definition": "opening gap O/Cprev - 1 >= 15%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 5,
+          "negatives": 123
+        },
+        "role": "insufficient_data_by_rule"
+      },
+      {
+        "id": "gap_ge_20pct",
+        "family": "opening_gap",
+        "definition": "opening gap O/Cprev - 1 >= 20%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 3,
+          "negatives": 125
+        },
+        "role": "insufficient_data_by_rule"
+      },
+      {
+        "id": "gap_ge_30pct",
+        "family": "opening_gap",
+        "definition": "opening gap O/Cprev - 1 >= 30%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 0,
+          "negatives": 128
+        },
+        "role": "insufficient_data_by_rule"
+      },
+      {
+        "id": "day1_high_ge_30pct",
+        "family": "day1",
+        "definition": "event-relative day-1 high H/P0 - 1 >= 30%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 5,
+          "negatives": 123
+        },
+        "role": "insufficient_data_by_rule"
+      },
+      {
+        "id": "day1_close_ge_20pct",
+        "family": "day1",
+        "definition": "event-relative day-1 close C/P0 - 1 >= 20%",
+        "counts_at_freeze_all_event": {
+          "n_defined": 128,
+          "positives": 6,
+          "negatives": 122
+        },
+        "role": "insufficient_data_by_rule"
+      }
+    ],
+    "descriptive_regression_labels": [
+      "day1_open_return",
+      "day1_high_return",
+      "session_5_close_return",
+      "session_20_close_return"
+    ],
+    "descriptive_only_note": "Reported with counts, base rates, Wilson intervals and per-block counts. No predictor is fitted for them and no statement about skill is made.",
+    "insufficient_data_note": "State INSUFFICIENT_DATA for modelling. Counts, the base rate and its Wilson interval are still reported. Not modelled: with fewer than 10 positives or fewer than 10 negatives there are too few events of the rarer class to fit a model on or to evaluate one."
+  },
+  "blocks_and_folds": {
+    "block_rule": "Order the events by reaction session and start a new block wherever two consecutive reaction sessions are more than 28 calendar days apart. The longest label horizon (20 sessions) is a little under 28 days.",
+    "expected_blocks": {
+      "sizes": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "block_assignment_sha256": "7c3843f19d2b142cf7a858e9d0fb477a1024ce9757804a5f2063fe02414844d3",
+      "first_and_last_reaction_session": [
+        [
+          "2024-11-05",
+          "2024-12-12"
+        ],
+        [
+          "2025-01-23",
+          "2025-06-12"
+        ],
+        [
+          "2025-07-31",
+          "2025-09-11"
+        ],
+        [
+          "2025-10-23",
+          "2025-12-11"
+        ],
+        [
+          "2026-01-22",
+          "2026-04-01"
+        ]
+      ]
+    },
+    "design": "expanding window over blocks; events of one reaction session and of one block are never split between training and test",
+    "development_folds": [
+      {
+        "test_block": 3,
+        "train_blocks": [
+          1,
+          2
+        ]
+      },
+      {
+        "test_block": 4,
+        "train_blocks": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "development_folds_note": "Test block 2 (trained on block 1, 17 events) is not used: it is below the 40 training events needed to fit anything. Blocks 1 and 2 are training-only.",
+    "final_holdout_fold": {
+      "test_block": 5,
+      "train_blocks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source": "the 23 Milestone 1 events"
+    },
+    "minimum_training_events_to_fit": 40,
+    "embargo_and_purge": "None is applied, because none is needed: at each of the four block boundaries every training event's longest label (session 20) is available before the next block's first cutoff, with 9 to 19 days to spare. The harness must assert this for every fold and every target before it fits anything.",
+    "pooled_development_predictions": "metrics are computed on the out-of-fold predictions of the two development folds pooled (44 events); per-fold values are reported for transparency only",
+    "reported_by": "every metric is also reported by block and by source (Milestone 2 step 2 events in the development folds, Milestone 1 events in the holdout)"
+  },
+  "holdout": {
+    "block": 5,
+    "one_look": "The final holdout is evaluated once, with every pre-registered predictor and target together, trained on blocks 1 to 4 and under this protocol version. No predictor is selected for it: all are evaluated and all are reported.",
+    "sealing": "No predictor is fitted, scored or tuned on any block-5 outcome before the look. Every read of a block-5 outcome by the harness is logged to the holdout access log.",
+    "a_technical_rerun": "If the look fails for a technical reason, the fix must not depend on any holdout result. Each rerun is a further logged access, and the report states the number of accesses.",
+    "not_blind_to_counts": "Descriptive counts of block-5 outcomes, including positives per target, were already visible in the scoping evidence before this protocol was frozen. The holdout is sealed against model selection and tuning, not against knowledge of its base rates.",
+    "selection_regime": "Block 5 is entirely Milestone 1 events, which were selected very differently from the rest (23 of 243 candidates kept, against 91% to 94% for steps 2 and 3). Time and selection regime are confounded in it; every holdout result carries that statement.",
+    "what_it_is_for": "a replication check on direction and a single, logged exposure of the frozen pipeline to data it was not developed on; not a source of statistical power"
+  },
+  "caveats": {
+    "two_versions": "Every target, predictor, fold and metric is computed twice: all_event (every label as recorded) and clean_window.",
+    "clean_window_definition": "The (event, label) pairs named by the events' recorded caveats, with 'all' meaning every label of that event, plus the labels derived from them, are treated as absent: for the target, for training, for test outcomes, and for issuer-history features.",
+    "derived_labels": {
+      "day1_open_return": [
+        "gap_ge_3pct",
+        "gap_ge_5pct",
+        "gap_ge_10pct",
+        "gap_ge_15pct",
+        "gap_ge_20pct",
+        "gap_ge_30pct",
+        "positive_gap_retained_half",
+        "positive_gap_filled"
+      ],
+      "day1_close_return": [
+        "positive_gap_retained_half"
+      ],
+      "day1_low_return": [
+        "positive_gap_filled"
+      ]
+    },
+    "composite_targets": "a target built from several labels is absent for an event if any of its source labels (after the derivation above) is caveated",
+    "pinned_by": "inputs.caveated_labels (hashes of the caveated pairs as recorded and with derived labels). A caveat added or removed later requires a new protocol version.",
+    "clean_window_drives": "Where a choice must be made, it is made on the clean-window version: the claim rule below is evaluated on it, and any selection would use its pooled development out-of-fold log-loss. No hyperparameter is tuned and no predictor is selected in this protocol, so the second case does not arise.",
+    "all_event_role": "always reported beside the clean-window version; it can only disagree with a claim, never create one",
+    "contract_basis": "technical contract section 5: clean-window and all-event sensitivities without cherry-picking"
+  },
+  "predictors": {
+    "binary_targets": {
+      "C1_pooled_rate": "the rate of the target among the training events with the target defined (the pooled base rate); the headline comparator",
+      "C2_timing_rate": "the training rate within the event's release timing; the pooled rate if that cell has fewer than 10 defined training events",
+      "C3_sector_group_rate": "the training rate within the event's sector group; the pooled rate if that cell has fewer than 10 defined training events",
+      "C4_issuer_history_rate": "the issuer_history_rate defined under features, used directly as the probability",
+      "M2_logistic": {
+        "features": "after_hours, is_I, is_other, logit(issuer_history_rate); for the C0 targets also open_gap",
+        "objective": "minimise the negative log-likelihood plus (lambda / 2) times the sum of squared coefficients, the intercept not penalised, lambda = 1, on standardized features",
+        "solver": "Newton-Raphson (iteratively reweighted least squares); converged when the largest absolute coefficient change is below 1e-8, at most 100 iterations; otherwise the state is MODEL_FIT_FAILED and nothing is substituted",
+        "tuning": "none: lambda is fixed",
+        "monotonic_repair": "predictions for nested thresholds are made monotone by capping the gap_ge_5pct probability at the gap_ge_3pct probability for the same event; every repair is counted and logged"
+      },
+      "M2_without_sector": "M2_logistic without is_I and is_other (the sensitivity for the sector feature's point-in-time limitation)",
+      "random_ranking": "a seeded random ranking of the same events, used only for ranking metrics"
+    },
+    "regression_target": {
+      "C1_pooled_quantiles": "the 10th, 50th and 90th percentiles of the target among training events (type 7 interpolation, as nre.fingerprints.quantile)",
+      "C2_timing_quantiles": "the same within the event's release timing; pooled if the cell has fewer than 10 training events",
+      "C3_sector_group_quantiles": "the same within the event's sector group; pooled if the cell has fewer than 10 training events",
+      "M3_ridge_linear": {
+        "features": "after_hours, is_I, is_other, the regression issuer-history mean",
+        "fit": "ridge linear regression, lambda = 1, intercept not penalised, standardized features, closed form",
+        "quantile_outputs": "the fitted mean plus the 10th, 50th and 90th percentiles of the training residuals (type 7)",
+        "tuning": "none"
+      },
+      "M3_without_sector": "M3_ridge_linear without is_I and is_other"
+    },
+    "calibration": "No calibration transform (Platt scaling, isotonic regression) is fitted in Milestone 4: with 61 to 105 training events and 9 to 43 positives it could be neither fitted nor validated. Calibration is assessed with reliability bins and Brier score, not applied. The master prompt's calibration methods belong with a larger sample.",
+    "ladder": "Milestone 4 covers the first three rungs of the contract's ladder only (base rates, logistic, linear/quantile). No trees, ensembles or deep models.",
+    "what_these_are_not": "research baselines evaluated on historical events; none is a production model, and none generates a candidate list or a ranking beyond what an evaluation metric needs"
+  },
+  "metrics": {
+    "binary_primary_metric": "Brier score, mean of (p - y)^2 on pooled development out-of-fold predictions; the contrast is Brier(M2) minus Brier(C1), lower is better",
+    "regression_primary_metric": "mean pinball loss over the 10th, 50th and 90th percentiles; the contrast is loss(M3) minus loss(C1), lower is better",
+    "binary_secondary": {
+      "log_loss": "with probabilities clipped to [1e-6, 1 - 1e-6]",
+      "pr_auc": "average precision on the pooled predictions; only if the pooled positives are at least 10",
+      "precision_at_k": "per development fold for K = 5 and K = 10, and pooled for K = 10 and K = 20, only where the fold or pool has at least 2K events; with the lift over the pooled training base rate and over the seeded random ranking",
+      "reliability": "equal-frequency bins on the pooled predictions, the number of bins min(4, floor(n / 10)), each bin reporting n, mean prediction, observed rate and its Wilson interval",
+      "false_positives_and_negatives": "at the threshold 'predicted probability at least the fold's pooled training base rate', pooled; counts, FPR and FNR",
+      "expected_return_by_tercile": "the mean day-1 close return of the events in each tercile of predicted probability, with counts (descriptive). Terciles replace the contract's deciles, which are not estimable at these sizes."
+    },
+    "regression_secondary": {
+      "interval_coverage": "the share of outcomes inside the predicted 10th to 90th percentile interval (nominal 80%)",
+      "mae_of_the_median": "mean absolute error of the 50th percentile forecast"
+    },
+    "always_reported_with": "the number of events, the positives and negatives, the number of reaction sessions and issuers, and the version (all_event or clean_window)",
+    "not_used": "raw accuracy is not a metric here"
+  },
+  "intervals": {
+    "headline_interval_for_the_primary_contrast": {
+      "method": "percentile bootstrap that resamples clusters with replacement over the pooled development out-of-fold predictions, predictions held fixed; 5000 replicates, enough to place a 99% tail",
+      "clusterings": [
+        "reaction_session",
+        "issuer"
+      ],
+      "headline": "the wider of the two intervals",
+      "levels": {
+        "reporting": 0.95,
+        "claims": 0.99
+      },
+      "why_99": "five primary targets, one pre-registered contrast each: Bonferroni, 1 - 0.05 / 5",
+      "what_it_covers": "uncertainty from the finite test sample and its clustering; it does not cover variability of the fitted models across training sets"
+    },
+    "rates_and_bin_rates": "Wilson intervals at 95%",
+    "random_ranking": "1000 seeded random rankings; the mean and the 2.5th to 97.5th percentile range of the metric are reported"
+  },
+  "decision_rule": {
+    "confirmatory_contrast": "exactly one per primary target: M2_logistic (binary) or M3_ridge_linear (regression) against C1 on the primary metric, clean-window version",
+    "evaluated_only_if": "the pooled development test set passes the thresholds under insufficient_data for that version",
+    "statuses": {
+      "DISTINGUISHABLE_BETTER": "the 99% headline interval of the clean-window contrast lies entirely below 0 AND the all-event contrast's point estimate is below 0",
+      "DISTINGUISHABLE_WORSE": "the 99% headline interval lies entirely above 0 AND the all-event point estimate is above 0",
+      "NOT_DISTINGUISHABLE": "anything else that was evaluated",
+      "INSUFFICIENT_DATA": "the thresholds were not met for the clean-window version (the all-event result is then exploratory)"
+    },
+    "everything_else": "every other contrast (against C2, C3, C4, the sensitivities, the secondary metrics, each fold, each block) is reported with its interval and labelled exploratory; none can support a claim",
+    "holdout_use": "After the one look: where the holdout thresholds are met, report the contrast and its 95% interval and state whether its sign matches the development result; where they are not met, COUNTS_ONLY. The holdout alone never creates a claim.",
+    "no_edge_claim": "no status in this protocol, including DISTINGUISHABLE_BETTER, is a claim of a tradable or production-ready edge"
+  },
+  "insufficient_data": {
+    "target_level": {
+      "rule": "fewer than 10 positives or fewer than 10 negatives among the target's defined events (all-event version)",
+      "result": "INSUFFICIENT_DATA for modelling: not modelled; counts, the base rate and its Wilson interval are still reported",
+      "applies_to": [
+        "gap_ge_15pct",
+        "gap_ge_20pct",
+        "gap_ge_30pct",
+        "day1_high_ge_30pct",
+        "day1_close_ge_20pct"
+      ]
+    },
+    "fold_level": {
+      "rule": "fewer than 10 positives or fewer than 10 negatives among a fold's training events with the target defined, in the version being run",
+      "result": "no predictor, comparators included, is evaluated for that target and fold in that version, so that predictors are always compared on the same events; the fold is marked INSUFFICIENT_DATA in the log and excluded from the pooled predictions of that version"
+    },
+    "pooled_test_level": {
+      "rule": "fewer than 10 positives or fewer than 10 negatives among the pooled development test events with the target defined, in the version being run",
+      "result": "INSUFFICIENT_DATA for every ratio-type metric of that target and version; counts only"
+    },
+    "holdout_level": {
+      "rule": "fewer than 10 positives or fewer than 10 negatives among the holdout test events with the target defined, in the version being run",
+      "result": "COUNTS_ONLY"
+    },
+    "regression_level": {
+      "rule": "fewer than 40 training events in a fold, or fewer than 20 test events with the target defined in the pooled development set or in the holdout",
+      "result": "INSUFFICIENT_DATA in the development folds; COUNTS_ONLY in the holdout"
+    },
+    "metric_level": {
+      "pr_auc": "needs at least 10 pooled positives",
+      "precision_at_k": "needs at least 2K events in the fold or pool",
+      "reliability": "needs at least 10 predictions per bin; at least one bin"
+    },
+    "descriptive_buckets": {
+      "estimable_with_wide_uncertainty": "at least 30 positives and 30 negatives",
+      "thin": "at least 10 and fewer than 30 of either",
+      "insufficient": "fewer than 10 of either"
+    },
+    "never": "A result that cannot be computed under these rules is reported as missing or INSUFFICIENT_DATA and is never filled in with a default, a pooled value or a zero. The fallback of C2 and C3 to the pooled rate for a small cell is part of those predictors' definition, not a filled-in result, and each use is counted and logged."
+  },
+  "response_states": {
+    "every_prediction_record_carries": {
+      "response_state": "MODEL_NOT_VALIDATED",
+      "opportunity_state": "NO_QUALIFIED_OPPORTUNITY",
+      "confidence_tier": "VERY_LOW"
+    },
+    "reasons": "recorded with each: no calibration has been shown, the sample is small and clustered, and no confidence threshold has been validated",
+    "never_emitted": "QUALIFIED, and any confidence tier above VERY_LOW",
+    "also_used": [
+      "INSUFFICIENT_DATA",
+      "MODEL_FIT_FAILED"
+    ],
+    "contract_basis": "technical contract section 13: a model score alone cannot generate HIGH confidence; thresholds must be validated later"
+  },
+  "experiment_log": {
+    "files": {
+      "experiments": "reports/m4-experiment-log.jsonl",
+      "holdout_access": "reports/m4-holdout-access-log.jsonl"
+    },
+    "append_only": "each line is one JSON record; each record carries the sha256 of the previous line of its file, so the log is tamper-evident",
+    "experiment_record_fields": [
+      "experiment_id",
+      "protocol_sha256",
+      "harness_commit",
+      "target_id",
+      "clock",
+      "predictor_id",
+      "version",
+      "fold",
+      "train_event_ids_sha256",
+      "test_event_ids_sha256",
+      "features_version",
+      "parameters_sha256",
+      "predictions_sha256",
+      "metrics_with_counts",
+      "interval_method",
+      "seed",
+      "state",
+      "created_at",
+      "previous_record_sha256"
+    ],
+    "holdout_access_record_fields": [
+      "access_number",
+      "protocol_sha256",
+      "harness_commit",
+      "reason",
+      "events_read",
+      "created_at",
+      "previous_record_sha256"
+    ],
+    "prediction_record_fields": [
+      "model_version",
+      "feature_version",
+      "training_window_dates",
+      "data_snapshot_sha256",
+      "model_checksum",
+      "prediction_time",
+      "generated_at"
+    ],
+    "model_versions": "m4-<predictor_id>-v1; any change to a predictor is a new version and needs a protocol amendment"
+  },
+  "seeds": {
+    "bootstrap_reaction_session": 410001,
+    "bootstrap_issuer": 410002,
+    "random_ranking": 410003,
+    "rule": "fixed here, before any outcome-based computation exists; no seed is searched or changed"
+  },
+  "required_leakage_and_integrity_tests": [
+    "Label maturity: for every fold and every target, every training event's target labels are available before the fold's first test cutoff (the harness asserts the block-boundary slack).",
+    "Injected future: changing the labels of any later event changes no earlier prediction.",
+    "History features: an event's issuer_history_rate uses only training-block events whose labels were available at its cutoff; none uses a test-block label.",
+    "Holdout sealing: no code path reads a block-5 outcome except the single look, and every read is logged.",
+    "Protocol integrity: every run first recomputes this file's canonical sha256 and the pinned input hashes, and refuses to run on any mismatch.",
+    "Determinism: the same inputs and seeds give identical canonical outputs and hashes.",
+    "Clusters: no reaction session or block is split between training and test.",
+    "Abstention: INSUFFICIENT_DATA and MODEL_FIT_FAILED produce null predictions with reasons, never substitutes."
+  ],
+  "acceptance_of_the_m4_report": {
+    "meaning": "The report is acceptable when: this protocol was frozen before evaluation; the integrity tests above pass; every output reproduces deterministically from committed inputs; every target is reported with counts and cluster-aware intervals or as INSUFFICIENT_DATA; every predictor is compared with the pooled comparator C1 and, for binary targets, the seeded random ranking, clean-window and all-event side by side; calibration is shown with coarse bins and their counts; the holdout was looked at once; and the limits are stated. The acceptance decision is the owner's.",
+    "does_not_require": "that any predictor beats the base rate",
+    "cannot_establish": [
+      "stability across market regimes (one regime in the span)",
+      "performance after execution costs (no execution data)",
+      "high-confidence precision (no validated confidence threshold)"
+    ]
+  },
+  "amendments": {
+    "version_1": "this file",
+    "procedure": "Any change to this file is a new protocol version with its own hash, committed with a record that says what changed, why, and what had been looked at. Before any development fold has been evaluated it needs the owner's instruction. After a development fold has been evaluated, a change must also state that results of the earlier version were seen. After the holdout look, the holdout result is reported under the version in force at the look.",
+    "history": []
+  },
+  "integrity": {
+    "hash_definition": "The protocol's hash is the sha256 of nre.core.canonical applied to this file parsed as JSON: keys sorted, compact separators, UTF-8, no NaN. It is recorded outside this file, in the freeze record, because a file cannot contain its own hash.",
+    "freeze_record": "reports/m4-protocol-freeze-2026-10-06.json",
+    "human_readable_note": "docs/M4-PROTOCOL.md (a summary; where it and this file differ, this file governs)"
+  },
+  "disclosures": {
+    "seen_before_freezing": [
+      "reports/m4-scoping-evidence-2026-10-03.json: counts of positives and negatives per target, per block and per fold, including block 5; the block structure; interval widths",
+      "reports/m4-caveat-sensitivity-2026-10-03.json: how pooled statistics move when caveated labels are treated as absent",
+      "reports/m2-step3-combined-fingerprints-analogues-run-2026-10-02.json: pooled fingerprint statistics and analogue pool health over all 128 events",
+      "No baseline, model or predictor has been fitted, scored or evaluated on any event, and no development fold or the holdout has been evaluated."
+    ],
+    "informed_by_counts": "The primary-target list and the thresholds were chosen knowing the positive counts, and the thresholds were fixed at the yardsticks the scoping evidence declared before the clean-window fold counts were computed.",
+    "limits": [
+      "A convenience sample of 23 issuers, conditioned on survival to 2026 and on reviewability; not a market sample, and no base rate here is a market base rate",
+      "SIC codes read on 2026-09-26, not as of the event dates",
+      "Time and selection regime are confounded in block 5",
+      "Events share 73 reaction sessions and come from 23 issuers; intervals are cluster-aware but remain approximate at these sizes",
+      "One market regime in the span; no execution data",
+      "Rare large moves (gaps of 15% and more) are out of reach of this dataset; it contains earnings releases only"
+    ],
+    "known_consequences_stated_in_advance": [
+      "In the clean-window version, loses_half_of_gap has 9 training positives in development fold 3 (threshold 10): that fold is INSUFFICIENT_DATA for it, its pooled development test set is then fold 4 alone (10 events), and so loses_half_of_gap is INSUFFICIENT_DATA for the clean-window claim rule. Its all-event results are still reported, as exploratory.",
+      "gap_ge_5pct has exactly 10 positives in the pooled development test set in both versions, the minimum that passes.",
+      "In the holdout, gap_ge_3pct, gap_ge_5pct and loses_half_of_gap have 3 to 5 positives in both versions and so are COUNTS_ONLY; extension_after_open_ge_5pct and day1_close_return meet their thresholds.",
+      "With 43 or 44 pooled test events and a 99% interval, a DISTINGUISHABLE_BETTER status needs a very large improvement over the base rate; most primaries are expected to be NOT_DISTINGUISHABLE."
+    ],
+    "numeric_constants_chosen_by_the_assistant": [
+      "28-day block gap; 40 training events to fit; 10 positives and 10 negatives as the target, fold, pooled-test and holdout thresholds; 30 and 30 for the estimable bucket",
+      "ridge lambda 1; prior strength m 10 (from the policy); clipping bounds 0.01 and 0.99 for the issuer rate and 1e-6 for log-loss; the C2 and C3 cell minimum of 10",
+      "5000 bootstrap replicates; reporting level 95%; claim level 99%; K of 5, 10 and 20; 1000 random rankings; at most 4 reliability bins of at least 10; terciles",
+      "quantile levels 0.1, 0.5 and 0.9; seeds 410001 to 410003"
+    ],
+    "to_review": [
+      "Whether the two thin primaries (gap_ge_5pct with 29 positives, loses_half_of_gap with 25) belong among the primaries",
+      "The 99% claim level, which makes any claim very hard at these sample sizes",
+      "That the holdout will mostly be counts-only",
+      "The issuer-history and sector features, given the point-in-time limits and small cells"
+    ]
+  },
+  "out_of_scope": [
+    "Any ranking or candidate list; any trading, sizing, backtest or execution modelling (Milestones 7 and 8)",
+    "Trees, ensembles, text or deep models (Milestone 5)",
+    "Reaction gap (Milestone 6)",
+    "Live or forward predictions",
+    "Any new data, provider or acquisition",
+    "Any claim of a predictive edge"
+  ]
+}

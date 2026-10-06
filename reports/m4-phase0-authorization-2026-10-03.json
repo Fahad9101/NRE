@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-06",
+  "context": "Milestone 4 scoping was authorized on 2026-10-03 and four of the five scope decisions were made (reports/m4-scope-decisions-2026-10-03.json). The assistant's closing message, quoted verbatim below, said Phase 0 was not started and recommended that the owner authorize it. The record is dated for the owner's words; it was written on 2026-10-06, when the protocol was frozen. No baseline, model or harness exists and nothing was evaluated in between.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-03T07:43:47.582Z",
+    "text": "Your four answers are recorded as the recommended defaults and pushed, and the repo is clean at `ca6d4f5` with CI green. Phase 0 is not started, because your answers settled scope but didn't ask me to begin it.\n\n**Decisions recorded** (`reports/m4-scope-decisions-2026-10-03.json`, with your answers quoted from the transcript):\n- **Shape:** all four families, with rare targets reported as `INSUFFICIENT_DATA` and not modelled.\n- **Holdout:** block 5 (Milestone 1's 23 events), sealed.\n- **Caveats:** clean-window and all-event results side by side, with clean-window driving model selection.\n- **Data:** the existing 128 events, labels only.\n\nThe fifth decision, the primary-target list, wasn't asked and stays at my default until Phase 0: the 3% and 5% gaps, the Day-1 close return, extension after the open, and loses-half-of-gap. The proposal carries an update note.\n\n**One mistake of mine:** CI was red on commit `a1033b2` for about two minutes. I'd piped the test run through `tail` inside a command chain, which hid the failure, so a test file with a syntax error got committed and pushed. `ca6d4f5` fixes it. I've saved the lesson: commits are now gated on the real test exit status.\n\n**Remaining**\n- **Needs you:** the go-ahead for Phase 0, if you want it.\n- **Mine after that:** Phase 1, the harness and leakage tests. It needs its own go-ahead.\n- **Parked:** M4 building is still not authorized, and `nre/alpaca.py` still has its old calendar bug.\n\n**Recommended next step:** authorize Phase 0. It is a document only, with no code: a frozen, hashed protocol covering the targets, folds, holdout, metrics, caveat rule and `INSUFFICIENT_DATA` thresholds. It fixes everything before any result is seen, which is where this data most needs protecting from over-reading."
+  },
+  "owner_message": {
+    "text": "okay authorize Phase 0. It is a document only, with no code: a frozen, hashed protocol covering the targets, folds, holdout, metrics, caveat rule and INSUFFICIENT_DATA thresholds.",
+    "at": "2026-10-03T08:08:11.537Z",
+    "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC)"
+  },
+  "how_the_words_were_read": [
+    "'authorize Phase 0' authorizes Phase 0 as the scope proposal defined it (docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md, section 3): a pre-registration, documents only, hashed and committed before any fold is evaluated.",
+    "'a frozen, hashed protocol covering the targets, folds, holdout, metrics, caveat rule and INSUFFICIENT_DATA thresholds' is the deliverable. The protocol (config/m4-protocol.json) covers those and also the clocks, features, predictors, comparators, intervals, decision rule, seeds and logs, because a pre-registration that leaves those open leaves room to tune them later.",
+    "'frozen' was read as: version 1 is hashed and committed, and any later change is a new numbered version with its own hash, a record of what changed and why, and a statement of what had been looked at. The owner was not shown the protocol before it was frozen, so the amendment procedure allows changes on the owner's instruction at any time before a development fold is evaluated.",
+    "'with no code' was read as: no Milestone 4 harness, model, analysis or evaluation code. The one code addition is a guard test (tests/test_m4_protocol.py) that fails if the frozen file or the inputs it pins change, and that checks the protocol's stated counts against the committed evidence. It implements no Milestone 4 logic. If 'no code' was meant to exclude even that, deleting that one file removes it, and the freeze record's hash stays verifiable by hand."
+  ],
+  "authorized_and_done_under_these_words": [
+    "config/m4-protocol.json: the pre-registered protocol, version 1",
+    "reports/m4-protocol-freeze-2026-10-06.json: the freeze record with the protocol's hash, the pinned inputs, what had been seen before freezing and the pre-freeze count check",
+    "docs/M4-PROTOCOL.md: a readable summary of what is frozen",
+    "tests/test_m4_protocol.py: the guard test described above"
+  ],
+  "not_authorized_by_these_words": [
+    "Phase 1 (the harness and leakage tests) or any later phase",
+    "Fitting, scoring or evaluating any baseline or model on any event, or any access to the sealed holdout",
+    "Any new data acquisition or provider",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later"
+  ],
+  "not_a_claim": [
+    "Not Milestone 4 acceptance and not a start of Milestone 4 building.",
+    "Not a claim that the data supports any predictive model: the protocol states in advance that most targets are expected to be NOT_DISTINGUISHABLE and the holdout mostly counts-only."
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-06",
+  "frozen_at": "2026-10-06T14:45:11Z",
+  "protocol": {
+    "path": "config/m4-protocol.json",
+    "protocol_id": "nre-m4-baseline-evaluation",
+    "protocol_version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "hash_definition": "The protocol's hash is the sha256 of nre.core.canonical applied to this file parsed as JSON: keys sorted, compact separators, UTF-8, no NaN. It is recorded outside this file, in the freeze record, because a file cannot contain its own hash."
+  },
+  "authorization": {
+    "owner_words": "okay authorize Phase 0. It is a document only, with no code: a frozen, hashed protocol covering the targets, folds, holdout, metrics, caveat rule and INSUFFICIENT_DATA thresholds.",
+    "at": "2026-10-03T08:08:11.537Z",
+    "record": "reports/m4-phase0-authorization-2026-10-03.json"
+  },
+  "state_at_freeze": {
+    "repository_head_before_this_commit": "ca6d4f59a3abe6489e90de555b7e32883e920c78",
+    "a_baseline_model_or_harness_exists": false,
+    "any_predictor_fitted_scored_or_evaluated": false,
+    "any_development_fold_evaluated": false,
+    "any_holdout_access": false,
+    "note": "The only code added with the freeze is tests/test_m4_protocol.py, a guard test; it implements no Milestone 4 logic."
+  },
+  "inputs_pinned": {
+    "events_spec": {
+      "path": "config/m2-step3-combined-events.json",
+      "canonical_sha256": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+      "events": 128,
+      "issuers": 23
+    },
+    "event_table_sha256": "3a9b3b286e35c6aaa4227596d6d689b66f3f6cab0a8e52b047a7d39bffc423a1",
+    "event_labels_sha256": "14ff8c442e26187d0cbb8e47356df4f7ac973738126414ae71fd617fbaa582fa",
+    "calendar": {
+      "path": "config/m2-merged-calendar-2024-2026.json",
+      "canonical_sha256": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5"
+    },
+    "fingerprint_policy": {
+      "path": "config/fingerprint-policy.json",
+      "canonical_sha256": "9a2193a0077a9377f581c7b82b3a6c4dea15337735d6f0edcbf71efaae3db188",
+      "wilson_confidence": 0.95,
+      "pooling_prior_strength": 10
+    },
+    "sector_map": {
+      "path": "config/sector-map.json",
+      "canonical_sha256": "775b39cb312d96943109851f815172157f727a11e086728dff7fbe11d3195ae8",
+      "sic_read_on": "2026-09-26"
+    },
+    "block_assignment_sha256": "7c3843f19d2b142cf7a858e9d0fb477a1024ce9757804a5f2063fe02414844d3",
+    "caveated_labels": {
+      "as_recorded_sha256": "75f1e6dde7eaf4a74e358d2ab2ebc5c9743cbdea8bc864541a2ef8ff0fbea73b",
+      "with_derived_labels_sha256": "dd652b02da63e6313607ade71bf1f422556f9815cb83e5eea18e6051aea9f9e3",
+      "events_with_caveats": 38
+    },
+    "scoping_evidence": {
+      "path": "reports/m4-scoping-evidence-2026-10-03.json",
+      "canonical_sha256": "122189e553b570e4befec7f72ba98e5a962be0b51d712117aceab0f21ce1bd8e"
+    },
+    "caveat_check": {
+      "path": "reports/m4-caveat-sensitivity-2026-10-03.json",
+      "canonical_sha256": "5452a015dac84108ecd2e7b3807efd45f28d7c3b9ce2eb4def586cb3edd7c36b"
+    },
+    "labels": "Derived label values only, as pinned per event by labels_sha256. No prices, no raw data, no new fetch.",
+    "implementation_language": "Python 3.12 standard library only (the repository's rule); the models below are specified so that they need nothing else."
+  },
+  "seen_before_freezing": [
+    "reports/m4-scoping-evidence-2026-10-03.json: counts of positives and negatives per target, per block and per fold, including block 5; the block structure; interval widths",
+    "reports/m4-caveat-sensitivity-2026-10-03.json: how pooled statistics move when caveated labels are treated as absent",
+    "reports/m2-step3-combined-fingerprints-analogues-run-2026-10-02.json: pooled fingerprint statistics and analogue pool health over all 128 events",
+    "No baseline, model or predictor has been fitted, scored or evaluated on any event, and no development fold or the holdout has been evaluated."
+  ],
+  "pre_freeze_revisions": {
+    "what": "The protocol was written, read through once in full, and revised before this freeze. The revisions were wording, consistency and rigor fixes found on that read; none was prompted by any model result, because none exists.",
+    "changes": [
+      "reconciled the rule that a missing result is never filled with a pooled value with the C2 and C3 small-cell fallback (the fallback is part of the predictor's definition, counted and logged)",
+      "target-level INSUFFICIENT_DATA now says counts, the base rate and its Wilson interval are still reported: what is insufficient is modelling",
+      "fold-level INSUFFICIENT_DATA applies to every predictor, comparators included, so predictors are always compared on the same events",
+      "the regression threshold states whether it applies to training, to the pooled development test set or to the holdout, and that the holdout result is COUNTS_ONLY",
+      "bootstrap replicates raised from 2000 to 5000 so that a 99% tail is placed on more than ten resamples",
+      "added a calibration policy: no Platt or isotonic transform is fitted in Milestone 4; calibration is assessed, not applied",
+      "stated that terciles replace the contract's deciles; added 'same CIK' to the issuer-history definition; fixed the comparator wording in the acceptance text; added the integrity block"
+    ]
+  },
+  "pre_freeze_count_check": {
+    "what": "Counts only, from labels, fitting nothing: for each primary target, version and fold, the training and test events with the target defined, positives and negatives, against the protocol's threshold of 10 and 10.",
+    "threshold": 10,
+    "counts": {
+      "all_event": {
+        "gap_ge_3pct": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 61,
+                "pos": 21,
+                "neg": 40
+              },
+              "test": {
+                "defined": 21,
+                "pos": 8,
+                "neg": 13
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 82,
+                "pos": 29,
+                "neg": 53
+              },
+              "test": {
+                "defined": 23,
+                "pos": 6,
+                "neg": 17
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 105,
+                "pos": 35,
+                "neg": 70
+              },
+              "test": {
+                "defined": 23,
+                "pos": 5,
+                "neg": 18
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 44,
+            "pos": 14,
+            "neg": 30
+          },
+          "pooled_meets_threshold": true
+        },
+        "gap_ge_5pct": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 61,
+                "pos": 14,
+                "neg": 47
+              },
+              "test": {
+                "defined": 21,
+                "pos": 5,
+                "neg": 16
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 82,
+                "pos": 19,
+                "neg": 63
+              },
+              "test": {
+                "defined": 23,
+                "pos": 5,
+                "neg": 18
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 105,
+                "pos": 24,
+                "neg": 81
+              },
+              "test": {
+                "defined": 23,
+                "pos": 5,
+                "neg": 18
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 44,
+            "pos": 10,
+            "neg": 34
+          },
+          "pooled_meets_threshold": true
+        },
+        "extension_after_open_ge_5pct": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 61,
+                "pos": 25,
+                "neg": 36
+              },
+              "test": {
+                "defined": 21,
+                "pos": 7,
+                "neg": 14
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 82,
+                "pos": 32,
+                "neg": 50
+              },
+              "test": {
+                "defined": 23,
+                "pos": 11,
+                "neg": 12
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 105,
+                "pos": 43,
+                "neg": 62
+              },
+              "test": {
+                "defined": 23,
+                "pos": 11,
+                "neg": 12
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 44,
+            "pos": 18,
+            "neg": 26
+          },
+          "pooled_meets_threshold": true
+        },
+        "loses_half_of_gap": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 25,
+                "pos": 10,
+                "neg": 15
+              },
+              "test": {
+                "defined": 13,
+                "pos": 7,
+                "neg": 6
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 38,
+                "pos": 17,
+                "neg": 21
+              },
+              "test": {
+                "defined": 10,
+                "pos": 5,
+                "neg": 5
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 48,
+                "pos": 22,
+                "neg": 26
+              },
+              "test": {
+                "defined": 12,
+                "pos": 3,
+                "neg": 9
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 23,
+            "pos": 12,
+            "neg": 11
+          },
+          "pooled_meets_threshold": true
+        },
+        "day1_close_return": {
+          "train_defined": {
+            "dev_test_block_3": 61,
+            "dev_test_block_4": 82,
+            "holdout_test_block_5": 105
+          },
+          "test_defined": {
+            "dev_test_block_3": 21,
+            "dev_test_block_4": 23,
+            "holdout_test_block_5": 23
+          },
+          "pooled_development_test": 44
+        }
+      },
+      "clean_window": {
+        "gap_ge_3pct": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 55,
+                "pos": 19,
+                "neg": 36
+              },
+              "test": {
+                "defined": 20,
+                "pos": 8,
+                "neg": 12
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 75,
+                "pos": 27,
+                "neg": 48
+              },
+              "test": {
+                "defined": 23,
+                "pos": 6,
+                "neg": 17
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 98,
+                "pos": 33,
+                "neg": 65
+              },
+              "test": {
+                "defined": 21,
+                "pos": 4,
+                "neg": 17
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 43,
+            "pos": 14,
+            "neg": 29
+          },
+          "pooled_meets_threshold": true
+        },
+        "gap_ge_5pct": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 55,
+                "pos": 12,
+                "neg": 43
+              },
+              "test": {
+                "defined": 20,
+                "pos": 5,
+                "neg": 15
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 75,
+                "pos": 17,
+                "neg": 58
+              },
+              "test": {
+                "defined": 23,
+                "pos": 5,
+                "neg": 18
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 98,
+                "pos": 22,
+                "neg": 76
+              },
+              "test": {
+                "defined": 21,
+                "pos": 4,
+                "neg": 17
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 43,
+            "pos": 10,
+            "neg": 33
+          },
+          "pooled_meets_threshold": true
+        },
+        "extension_after_open_ge_5pct": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 55,
+                "pos": 24,
+                "neg": 31
+              },
+              "test": {
+                "defined": 20,
+                "pos": 7,
+                "neg": 13
+              },
+              "train_meets_fit_threshold": true
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 75,
+                "pos": 31,
+                "neg": 44
+              },
+              "test": {
+                "defined": 23,
+                "pos": 11,
+                "neg": 12
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 98,
+                "pos": 42,
+                "neg": 56
+              },
+              "test": {
+                "defined": 21,
+                "pos": 10,
+                "neg": 11
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 43,
+            "pos": 18,
+            "neg": 25
+          },
+          "pooled_meets_threshold": true
+        },
+        "loses_half_of_gap": {
+          "folds": {
+            "dev_test_block_3": {
+              "train": {
+                "defined": 23,
+                "pos": 9,
+                "neg": 14
+              },
+              "test": {
+                "defined": 13,
+                "pos": 7,
+                "neg": 6
+              },
+              "train_meets_fit_threshold": false
+            },
+            "dev_test_block_4": {
+              "train": {
+                "defined": 36,
+                "pos": 16,
+                "neg": 20
+              },
+              "test": {
+                "defined": 10,
+                "pos": 5,
+                "neg": 5
+              },
+              "train_meets_fit_threshold": true
+            },
+            "holdout_test_block_5": {
+              "train": {
+                "defined": 46,
+                "pos": 21,
+                "neg": 25
+              },
+              "test": {
+                "defined": 10,
+                "pos": 3,
+                "neg": 7
+              },
+              "train_meets_fit_threshold": true
+            }
+          },
+          "pooled_development_test_over_fitted_folds": {
+            "defined": 10,
+            "pos": 5,
+            "neg": 5
+          },
+          "pooled_meets_threshold": false
+        },
+        "day1_close_return": {
+          "train_defined": {
+            "dev_test_block_3": 55,
+            "dev_test_block_4": 75,
+            "holdout_test_block_5": 98
+          },
+          "test_defined": {
+            "dev_test_block_3": 20,
+            "dev_test_block_4": 23,
+            "holdout_test_block_5": 21
+          },
+          "pooled_development_test": 43
+        }
+      }
+    },
+    "resulting_status": {
+      "all_event": {
+        "gap_ge_3pct": {
+          "development": "EVALUABLE",
+          "holdout": "COUNTS_ONLY"
+        },
+        "gap_ge_5pct": {
+          "development": "EVALUABLE",
+          "holdout": "COUNTS_ONLY"
+        },
+        "extension_after_open_ge_5pct": {
+          "development": "EVALUABLE",
+          "holdout": "EVALUABLE"
+        },
+        "loses_half_of_gap": {
+          "development": "EVALUABLE",
+          "holdout": "COUNTS_ONLY"
+        },
+        "day1_close_return": {
+          "development": "EVALUABLE",
+          "holdout": "EVALUABLE"
+        }
+      },
+      "clean_window": {
+        "gap_ge_3pct": {
+          "development": "EVALUABLE",
+          "holdout": "COUNTS_ONLY"
+        },
+        "gap_ge_5pct": {
+          "development": "EVALUABLE",
+          "holdout": "COUNTS_ONLY"
+        },
+        "extension_after_open_ge_5pct": {
+          "development": "EVALUABLE",
+          "holdout": "EVALUABLE"
+        },
+        "loses_half_of_gap": {
+          "development": "INSUFFICIENT_DATA",
+          "holdout": "COUNTS_ONLY"
+        },
+        "day1_close_return": {
+          "development": "EVALUABLE",
+          "holdout": "EVALUABLE"
+        }
+      }
+    },
+    "reading": "Development: every primary is EVALUABLE in both versions except loses_half_of_gap in the clean-window version, which is INSUFFICIENT_DATA (9 training positives in development fold 3, so its pooled development test set is fold 4 alone). Holdout: gap_ge_3pct, gap_ge_5pct and loses_half_of_gap are COUNTS_ONLY in both versions (3 to 5 positives); extension_after_open_ge_5pct and day1_close_return are EVALUABLE.",
+    "thresholds_not_adjusted_after_this_check": "The thresholds are the yardsticks declared in the scoping evidence before the clean-window fold counts were computed. They were not changed to rescue the cases above; the protocol states those consequences in advance."
+  },
+  "how_to_verify": [
+    "Recompute the protocol's hash: sha256 of nre.core.canonical applied to config/m4-protocol.json parsed as JSON; it must equal protocol.canonical_sha256 above.",
+    "Recompute each pinned input's hash the same way (the files named in inputs_pinned) and the block assignment from the 28-day rule; tests/test_m4_protocol.py does all of this.",
+    "git log -- config/m4-protocol.json shows every version of the protocol; a change without a new version record is a breach of this freeze."
+  ],
+  "amendments": "see config/m4-protocol.json, amendments; none at version 1",
+  "not_a_claim": [
+    "Not a result: nothing has been evaluated.",
+    "Not Milestone 4 acceptance, and not a start of Phase 1 or any later phase.",
+    "Not evidence that the data supports any predictive model; the protocol says in advance that most targets are expected to be NOT_DISTINGUISHABLE."
+  ]
+}
