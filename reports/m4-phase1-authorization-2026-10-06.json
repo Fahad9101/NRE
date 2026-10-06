@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-06",
+  "context": "Milestone 4's protocol version 1 was frozen on 2026-10-06 (reports/m4-protocol-freeze-2026-10-06.json). The assistant's closing message, quoted verbatim below, named Phase 1, the harness and its leakage tests, as the owner's decision, and recommended authorizing it after reading the protocol.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-06T14:50:15.233Z",
+    "text": "Phase 0 is done. Protocol version 1 is frozen and pushed (`7dc900b`, plus a status note in `aef4acc`), and CI is green on both. Its hash is `a2e1a987…`, and I checked that the committed file hashes to exactly that value.\n\n**What's frozen** (`config/m4-protocol.json`; `docs/M4-PROTOCOL.md` is the readable version)\n- **Targets:** five primaries across the four families. The 3% and 5% opening gaps and the Day-1 close return are predicted at the release. Extension after the open and loses-half-of-gap are predicted at the regular open.\n- **Folds:** blocks 3 and 4 are for development, and block 5 (Milestone 1's 23 events) is sealed for one look.\n- **Also fixed:** the caveat rule, the predictors and comparators, the metrics, cluster-aware intervals, the `INSUFFICIENT_DATA` thresholds at every level, and the logs and seeds.\n- **State:** nothing has been fitted or evaluated, and the holdout is untouched.\n\n**Stated in advance**\n- Most targets are expected to come out \"not distinguishable\" from the base rate.\n- The holdout will mostly support counts only: three of the five targets have 3 to 5 positives there.\n- `loses_half_of_gap` has 9 training positives in one clean-window fold, one under the threshold of 10. I did not move the threshold to rescue it, so it can't support a clean-window claim.\n\n**Two things to check**\n- **No code:** I read \"no code\" as no M4 harness or model code. The only code added is a guard test that fails if the frozen file or its inputs change. Delete it if you meant none.\n- **Frozen before you saw it:** the protocol was frozen before you'd seen it, as you asked. The primary-target list and every numeric constant, including the 99% claim level, are my defaults, listed in the file. Any change is a new version, which is cheap until a fold is evaluated.\n\n**Remaining**\n- **Needs you:** reading the protocol, and the go-ahead for Phase 1 if you're content.\n- **Mine after that:** Phase 1, the harness and its leakage tests, with no model beyond the pooled base rate. It would refuse to run if the protocol hash didn't match.\n- **Parked:** the model-fitting phases (2 to 4), and `nre/alpaca.py`'s old calendar bug.\n\n**Recommended next step:** skim `docs/M4-PROTOCOL.md`; section 9 lists what to review. Then authorize Phase 1."
+  },
+  "owner_message": {
+    "text": "okay authorize Phase 1",
+    "at": "2026-10-06T15:15:07.205Z",
+    "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC)"
+  },
+  "how_the_words_were_read": [
+    "'authorize Phase 1' authorizes Phase 1 as the scope proposal and the frozen protocol define it: the evaluation harness and the leakage and integrity tests the protocol requires before any evaluation (config/m4-protocol.json, required_leakage_and_integrity_tests), stdlib-only code with tests.",
+    "The proposal said 'no model beyond the pooled base rate yet'. That was read as a ceiling, not an instruction to run it. The harness contains the pooled base rate (C1), the comparator every other predictor is measured against, and is tested on synthetic data. It was NOT run on the real development folds: doing so would be the first development-fold evaluation, which the protocol's amendment procedure treats as a line to cross deliberately. Instead the harness is run on the real inputs as a dry run that verifies the protocol and pinned inputs, builds the folds, asserts label maturity and reports fold sizes and thresholds, scoring nothing.",
+    "The sealed holdout stays sealed: block-5 labels are replaced by an object that raises on access, the dry run reads no block-5 outcome, and the holdout access log records none.",
+    "The protocol was not read as amendable by this authorization. Where the frozen protocol is silent on a detail the code must decide (tie-breaking, for example), the decision is outcome-independent, documented, and listed for the owner as a candidate protocol amendment before Phase 2; none is applied silently."
+  ],
+  "authorized_and_done_under_these_words": [
+    "The harness modules nre/m4_protocol.py, m4_data.py, m4_features.py, m4_metrics.py, m4_registry.py and m4_harness.py (stdlib only)",
+    "The eight leakage and integrity tests the protocol requires, plus tests of the metrics, intervals, decision rule, registry and holdout gate, on synthetic data",
+    "A dry run on the real inputs (verify, plan and dry-run commands) that evaluates no predictor and reads no holdout outcome, with its report",
+    "The hash-chained experiment and holdout-access logs, each begun with a genesis record",
+    "docs/M4-HARNESS.md"
+  ],
+  "not_authorized_by_these_words": [
+    "Fitting, scoring or evaluating any predictor, the pooled base rate included, on any real event, or any real development-fold evaluation",
+    "Any access to the holdout's outcomes",
+    "Phase 2 (C2, C3, C4, the logistic and ridge models) or any later phase",
+    "Any amendment to the frozen protocol, any new data, or any provider",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later"
+  ],
+  "not_a_claim": [
+    "Not a result: nothing is evaluated on real data.",
+    "Not Milestone 4 acceptance."
+  ]
+}
