@@ -12,6 +12,11 @@ clean-window and all-event results reported side by side, with the clean-window 
 only. Decision 2, the primary-target list, was not asked and stays the recommended default until Phase 0. **Phase 0 is not yet authorized and
 nothing is built.** The text below is left as written.
 
+**Update 2026-10-06, after Phase 0:** the owner authorized Phase 0 (`reports/m4-phase0-authorization-2026-10-03.json`) and the protocol was frozen as
+version 1 (`config/m4-protocol.json`, summarized in `docs/M4-PROTOCOL.md`; hash and pre-freeze count check in `reports/m4-protocol-freeze-2026-10-06.json`).
+Decision 2 was encoded as the recommended default and remains open to the owner's review. Phase 1 is not yet authorized, and nothing has been fitted,
+scored or evaluated.
+
 ## Summary
 
 - **What Milestone 4 is.** The master prompt's section, in full: "Build baseline models for: opening gap, Day-1 move, gap retention,
