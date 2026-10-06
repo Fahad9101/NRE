@@ -1,0 +1,1516 @@
+{
+  "schema_version": 1,
+  "kind": "m4_harness_dry_run",
+  "purpose": "Run the Milestone 4 harness on the real inputs without evaluating anything: verify the frozen protocol and every pinned input, build the folds, assert that no fold leaks, and report fold sizes and which thresholds are met. No predictor is fitted or scored and no holdout outcome is read.",
+  "protocol": {
+    "id": "nre-m4-baseline-evaluation",
+    "version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9"
+  },
+  "integrity_checks": [
+    {
+      "check": "protocol_hash",
+      "ok": true,
+      "detail": "computed a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9, recorded a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9"
+    },
+    {
+      "check": "protocol_version",
+      "ok": true,
+      "detail": "protocol 1, freeze record 1"
+    },
+    {
+      "check": "freeze_record_pins_the_protocol_inputs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "derived_labels_map",
+      "ok": true,
+      "detail": "the code's derivation map must be the protocol's"
+    },
+    {
+      "check": "constants_match_the_protocol_text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "pinned_file:events_spec",
+      "ok": true,
+      "detail": "config/m2-step3-combined-events.json"
+    },
+    {
+      "check": "pinned_file:calendar",
+      "ok": true,
+      "detail": "config/m2-merged-calendar-2024-2026.json"
+    },
+    {
+      "check": "pinned_file:fingerprint_policy",
+      "ok": true,
+      "detail": "config/fingerprint-policy.json"
+    },
+    {
+      "check": "pinned_file:sector_map",
+      "ok": true,
+      "detail": "config/sector-map.json"
+    },
+    {
+      "check": "pinned_file:scoping_evidence",
+      "ok": true,
+      "detail": "reports/m4-scoping-evidence-2026-10-03.json"
+    },
+    {
+      "check": "pinned_file:caveat_check",
+      "ok": true,
+      "detail": "reports/m4-caveat-sensitivity-2026-10-03.json"
+    },
+    {
+      "check": "event_table",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "event_labels",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "block_assignment",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "block_sizes",
+      "ok": true,
+      "detail": "[17, 44, 21, 23, 23]"
+    },
+    {
+      "check": "caveated_labels_as_recorded",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "caveated_labels_with_derived",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "events_with_caveats",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "integrity_ok": true,
+  "plan": {
+    "blocks": {
+      "block_rule": "reaction sessions are cut into blocks wherever two consecutive ones are more than 28 calendar days apart (the longest label horizon, 20 sessions, is a little under that)",
+      "blocks": [
+        {
+          "block": 1,
+          "first_reaction_session": "2024-11-05",
+          "last_reaction_session": "2024-12-12",
+          "events": 17,
+          "by_source": {
+            "milestone_2_step_3": 17
+          },
+          "by_timing": {
+            "after_hours": 14,
+            "premarket": 3
+          }
+        },
+        {
+          "block": 2,
+          "first_reaction_session": "2025-01-23",
+          "last_reaction_session": "2025-06-12",
+          "events": 44,
+          "by_source": {
+            "milestone_2_step_2": 1,
+            "milestone_2_step_3": 43
+          },
+          "by_timing": {
+            "after_hours": 35,
+            "premarket": 9
+          }
+        },
+        {
+          "block": 3,
+          "first_reaction_session": "2025-07-31",
+          "last_reaction_session": "2025-09-11",
+          "events": 21,
+          "by_source": {
+            "milestone_2_step_2": 21
+          },
+          "by_timing": {
+            "after_hours": 15,
+            "premarket": 6
+          }
+        },
+        {
+          "block": 4,
+          "first_reaction_session": "2025-10-23",
+          "last_reaction_session": "2025-12-11",
+          "events": 23,
+          "by_source": {
+            "milestone_2_step_2": 23
+          },
+          "by_timing": {
+            "after_hours": 16,
+            "premarket": 7
+          }
+        },
+        {
+          "block": 5,
+          "first_reaction_session": "2026-01-22",
+          "last_reaction_session": "2026-04-01",
+          "events": 23,
+          "by_source": {
+            "milestone_1": 23
+          },
+          "by_timing": {
+            "after_hours": 16,
+            "premarket": 7
+          }
+        }
+      ],
+      "boundaries": [
+        {
+          "between_blocks": [
+            1,
+            2
+          ],
+          "latest_session_20_label_available": "2025-01-13T21:01:00Z",
+          "earliest_next_cutoff": "2025-01-22T21:18:00Z",
+          "slack_days": 9.01,
+          "needs_purge_for_the_20_session_horizon": false
+        },
+        {
+          "between_blocks": [
+            2,
+            3
+          ],
+          "latest_session_20_label_available": "2025-07-11T20:01:00Z",
+          "earliest_next_cutoff": "2025-07-30T20:04:00Z",
+          "slack_days": 19.0,
+          "needs_purge_for_the_20_session_horizon": false
+        },
+        {
+          "between_blocks": [
+            3,
+            4
+          ],
+          "latest_session_20_label_available": "2025-10-08T20:01:00Z",
+          "earliest_next_cutoff": "2025-10-22T20:18:00Z",
+          "slack_days": 14.01,
+          "needs_purge_for_the_20_session_horizon": false
+        },
+        {
+          "between_blocks": [
+            4,
+            5
+          ],
+          "latest_session_20_label_available": "2026-01-09T21:01:00Z",
+          "earliest_next_cutoff": "2026-01-21T21:20:00Z",
+          "slack_days": 12.01,
+          "needs_purge_for_the_20_session_horizon": false
+        }
+      ]
+    },
+    "targets": {
+      "gap_ge_3pct": {
+        "role": "primary",
+        "kind": "binary",
+        "clock": "B",
+        "source_labels": [
+          "gap_ge_3pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 3%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 35,
+          "negatives": 70
+        },
+        "all_event": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 61,
+                "positives": 21,
+                "negatives": 40
+              },
+              "test": {
+                "defined": 21,
+                "positives": 8,
+                "negatives": 13
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 82,
+                "positives": 29,
+                "negatives": 53
+              },
+              "test": {
+                "defined": 23,
+                "positives": 6,
+                "negatives": 17
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 105,
+                "positives": 35,
+                "negatives": 70
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 44,
+              "positives": 14,
+              "negatives": 30
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 33,
+          "negatives": 65
+        },
+        "clean_window": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 55,
+                "positives": 19,
+                "negatives": 36
+              },
+              "test": {
+                "defined": 20,
+                "positives": 8,
+                "negatives": 12
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 75,
+                "positives": 27,
+                "negatives": 48
+              },
+              "test": {
+                "defined": 23,
+                "positives": 6,
+                "negatives": 17
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 98,
+                "positives": 33,
+                "negatives": 65
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 43,
+              "positives": 14,
+              "negatives": 29
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        }
+      },
+      "gap_ge_5pct": {
+        "role": "primary",
+        "kind": "binary",
+        "clock": "B",
+        "source_labels": [
+          "gap_ge_5pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 5%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 24,
+          "negatives": 81
+        },
+        "all_event": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 61,
+                "positives": 14,
+                "negatives": 47
+              },
+              "test": {
+                "defined": 21,
+                "positives": 5,
+                "negatives": 16
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 82,
+                "positives": 19,
+                "negatives": 63
+              },
+              "test": {
+                "defined": 23,
+                "positives": 5,
+                "negatives": 18
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 105,
+                "positives": 24,
+                "negatives": 81
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 44,
+              "positives": 10,
+              "negatives": 34
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 22,
+          "negatives": 76
+        },
+        "clean_window": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 55,
+                "positives": 12,
+                "negatives": 43
+              },
+              "test": {
+                "defined": 20,
+                "positives": 5,
+                "negatives": 15
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 75,
+                "positives": 17,
+                "negatives": 58
+              },
+              "test": {
+                "defined": 23,
+                "positives": 5,
+                "negatives": 18
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 98,
+                "positives": 22,
+                "negatives": 76
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 43,
+              "positives": 10,
+              "negatives": 33
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        }
+      },
+      "day1_close_return": {
+        "role": "primary",
+        "kind": "regression",
+        "clock": "B",
+        "source_labels": [
+          "day1_close_return"
+        ],
+        "definition": "day-1 close return C/P0 - 1 (the label day1_close_return), predicted as the 10th, 50th and 90th percentiles",
+        "blocks_1_to_4_all_event": {
+          "defined": 105
+        },
+        "all_event": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 61
+              },
+              "test": {
+                "defined": 21
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 82
+              },
+              "test": {
+                "defined": 23
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 105
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 44
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98
+        },
+        "clean_window": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 55
+              },
+              "test": {
+                "defined": 20
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 75
+              },
+              "test": {
+                "defined": 23
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 98
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 43
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        }
+      },
+      "extension_after_open_ge_5pct": {
+        "role": "primary",
+        "kind": "binary",
+        "clock": "C0",
+        "source_labels": [
+          "day1_open_return",
+          "day1_high_return"
+        ],
+        "definition": "opening-anchored day-1 high H/O - 1 >= 5%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 43,
+          "negatives": 62
+        },
+        "all_event": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 61,
+                "positives": 25,
+                "negatives": 36
+              },
+              "test": {
+                "defined": 21,
+                "positives": 7,
+                "negatives": 14
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 82,
+                "positives": 32,
+                "negatives": 50
+              },
+              "test": {
+                "defined": 23,
+                "positives": 11,
+                "negatives": 12
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 105,
+                "positives": 43,
+                "negatives": 62
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 44,
+              "positives": 18,
+              "negatives": 26
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 42,
+          "negatives": 56
+        },
+        "clean_window": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 55,
+                "positives": 24,
+                "negatives": 31
+              },
+              "test": {
+                "defined": 20,
+                "positives": 7,
+                "negatives": 13
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 75,
+                "positives": 31,
+                "negatives": 44
+              },
+              "test": {
+                "defined": 23,
+                "positives": 11,
+                "negatives": 12
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 98,
+                "positives": 42,
+                "negatives": 56
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 43,
+              "positives": 18,
+              "negatives": 25
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        }
+      },
+      "loses_half_of_gap": {
+        "role": "primary",
+        "kind": "binary",
+        "clock": "C0",
+        "source_labels": [
+          "positive_gap_retained_half"
+        ],
+        "definition": "positive gaps of at least 0.5% only: the day-1 close keeps less than half of the gap",
+        "blocks_1_to_4_all_event": {
+          "defined": 48,
+          "positives": 22,
+          "negatives": 26
+        },
+        "all_event": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 25,
+                "positives": 10,
+                "negatives": 15
+              },
+              "test": {
+                "defined": 13,
+                "positives": 7,
+                "negatives": 6
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 38,
+                "positives": 17,
+                "negatives": 21
+              },
+              "test": {
+                "defined": 10,
+                "positives": 5,
+                "negatives": 5
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 48,
+                "positives": 22,
+                "negatives": 26
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "EVALUABLE",
+            "reason": null,
+            "test": {
+              "defined": 23,
+              "positives": 12,
+              "negatives": 11
+            },
+            "folds_included": [
+              "dev_test_block_3",
+              "dev_test_block_4"
+            ]
+          }
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 46,
+          "positives": 21,
+          "negatives": 25
+        },
+        "clean_window": {
+          "folds": {
+            "dev_test_block_3": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2
+              ],
+              "test_block": 3,
+              "train_events": 61,
+              "test_events": 21,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 19.0,
+                "this_target": 48.0
+              },
+              "state": "INSUFFICIENT_DATA",
+              "reason": "9 positives among 23 defined events (at least 10 needed)",
+              "train": {
+                "defined": 23,
+                "positives": 9,
+                "negatives": 14
+              },
+              "test": {
+                "defined": 13,
+                "positives": 7,
+                "negatives": 6
+              }
+            },
+            "dev_test_block_4": {
+              "role": "development",
+              "train_blocks": [
+                1,
+                2,
+                3
+              ],
+              "test_block": 4,
+              "train_events": 82,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 14.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 36,
+                "positives": 16,
+                "negatives": 20
+              },
+              "test": {
+                "defined": 10,
+                "positives": 5,
+                "negatives": 5
+              }
+            },
+            "holdout_test_block_5": {
+              "role": "holdout",
+              "train_blocks": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "test_block": 5,
+              "train_events": 105,
+              "test_events": 23,
+              "smallest_label_slack_days": {
+                "all_sixteen_labels": 12.01,
+                "this_target": 41.01
+              },
+              "state": "EVALUABLE",
+              "reason": null,
+              "train": {
+                "defined": 46,
+                "positives": 21,
+                "negatives": 25
+              },
+              "test": "SEALED: the holdout's own counts are read only at the logged look"
+            }
+          },
+          "pooled_development_test": {
+            "state": "INSUFFICIENT_DATA",
+            "reason": "5 positives among 10 defined events (at least 10 needed)",
+            "test": {
+              "defined": 10,
+              "positives": 5,
+              "negatives": 5
+            },
+            "folds_included": [
+              "dev_test_block_4"
+            ]
+          }
+        }
+      },
+      "gap_ge_10pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "gap_ge_10pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 10%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 11,
+          "negatives": 94
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 10,
+          "negatives": 88
+        }
+      },
+      "day1_high_ge_10pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_high_return"
+        ],
+        "definition": "event-relative day-1 high H/P0 - 1 >= 10%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 28,
+          "negatives": 77
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 26,
+          "negatives": 72
+        }
+      },
+      "day1_high_ge_20pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_high_return"
+        ],
+        "definition": "event-relative day-1 high H/P0 - 1 >= 20%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 11,
+          "negatives": 94
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 10,
+          "negatives": 88
+        }
+      },
+      "day1_close_ge_10pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_close_return"
+        ],
+        "definition": "event-relative day-1 close C/P0 - 1 >= 10%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 19,
+          "negatives": 86
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 18,
+          "negatives": 80
+        }
+      },
+      "extension_after_open_ge_10pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_open_return",
+          "day1_high_return"
+        ],
+        "definition": "opening-anchored day-1 high H/O - 1 >= 10%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 21,
+          "negatives": 84
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 20,
+          "negatives": 78
+        }
+      },
+      "session5_close_ge_10pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "session_5_close_return"
+        ],
+        "definition": "close of reaction session 5 / P0 - 1 >= 10%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 20,
+          "negatives": 85
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 92,
+          "positives": 19,
+          "negatives": 73
+        }
+      },
+      "session5_close_ge_20pct": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "session_5_close_return"
+        ],
+        "definition": "close of reaction session 5 / P0 - 1 >= 20%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 13,
+          "negatives": 92
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 92,
+          "positives": 12,
+          "negatives": 80
+        }
+      },
+      "full_gap_fill": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "positive_gap_filled"
+        ],
+        "definition": "positive gaps of at least 0.5% only: the day-1 low reaches the previous close",
+        "blocks_1_to_4_all_event": {
+          "defined": 48,
+          "positives": 20,
+          "negatives": 28
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 46,
+          "positives": 19,
+          "negatives": 27
+        }
+      },
+      "closes_below_open": {
+        "role": "descriptive_only",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_open_return",
+          "day1_close_return"
+        ],
+        "definition": "day-1 close below the day-1 open, C/O - 1 < 0",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 60,
+          "negatives": 45
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 56,
+          "negatives": 42
+        }
+      },
+      "gap_ge_15pct": {
+        "role": "insufficient_data_by_rule",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "gap_ge_15pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 15%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 4,
+          "negatives": 101
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 4,
+          "negatives": 94
+        }
+      },
+      "gap_ge_20pct": {
+        "role": "insufficient_data_by_rule",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "gap_ge_20pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 20%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 2,
+          "negatives": 103
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 2,
+          "negatives": 96
+        }
+      },
+      "gap_ge_30pct": {
+        "role": "insufficient_data_by_rule",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "gap_ge_30pct"
+        ],
+        "definition": "opening gap O/Cprev - 1 >= 30%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 0,
+          "negatives": 105
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 0,
+          "negatives": 98
+        }
+      },
+      "day1_high_ge_30pct": {
+        "role": "insufficient_data_by_rule",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_high_return"
+        ],
+        "definition": "event-relative day-1 high H/P0 - 1 >= 30%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 5,
+          "negatives": 100
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 5,
+          "negatives": 93
+        }
+      },
+      "day1_close_ge_20pct": {
+        "role": "insufficient_data_by_rule",
+        "kind": "binary",
+        "clock": null,
+        "source_labels": [
+          "day1_close_return"
+        ],
+        "definition": "event-relative day-1 close C/P0 - 1 >= 20%",
+        "blocks_1_to_4_all_event": {
+          "defined": 105,
+          "positives": 5,
+          "negatives": 100
+        },
+        "blocks_1_to_4_clean_window": {
+          "defined": 98,
+          "positives": 4,
+          "negatives": 94
+        }
+      }
+    },
+    "events_whose_labels_were_available": 105
+  },
+  "agreement_with_the_freeze_record": {
+    "compared": "fold counts and development statuses for the five primary targets in both versions",
+    "disagreements": []
+  },
+  "holdout": {
+    "sealed_events": 23,
+    "denied_reads": 0,
+    "unsealed_loads": 0,
+    "access_log_records_after_genesis": 0
+  },
+  "evaluated": {
+    "predictors_fitted": 0,
+    "predictions_made": 0,
+    "metrics_computed": 0
+  },
+  "not_a_claim": [
+    "Not a result: nothing was evaluated.",
+    "Not Milestone 4 acceptance.",
+    "Not evidence that any predictor beats the base rate."
+  ]
+}

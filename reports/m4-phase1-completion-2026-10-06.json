@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-06",
+  "what": "Closing record of Milestone 4 Phase 1: the evaluation harness and the leakage and integrity tests the frozen protocol requires. Nothing was evaluated on real data.",
+  "authorization": {
+    "record": "reports/m4-phase1-authorization-2026-10-06.json",
+    "commit": "f9ce00af1ce3f13997d0bf5bfc49073b7688b402",
+    "owner_words": "okay authorize Phase 1",
+    "at": "2026-10-06T15:15:07.205Z"
+  },
+  "protocol": {
+    "path": "config/m4-protocol.json",
+    "version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "amended": false
+  },
+  "built": {
+    "commit": "a1f6c2c139233aabe1a5b598b2121fbd4e67a94d",
+    "modules": [
+      "nre/m4_protocol.py",
+      "nre/m4_data.py",
+      "nre/m4_features.py",
+      "nre/m4_metrics.py",
+      "nre/m4_registry.py",
+      "nre/m4_harness.py"
+    ],
+    "tests": [
+      "tests/m4_support.py",
+      "tests/test_m4_metrics.py",
+      "tests/test_m4_registry.py",
+      "tests/test_m4_data_features.py",
+      "tests/test_m4_harness.py",
+      "tests/test_m4_phase1_record.py"
+    ],
+    "tool": "scripts/m4_mutation_check.py",
+    "doc": "docs/M4-HARNESS.md",
+    "predictors": [
+      "C1_pooled_rate",
+      "C1_pooled_quantiles"
+    ],
+    "language": "Python standard library only"
+  },
+  "tests": {
+    "suite_tests_run": 742,
+    "skipped": 4,
+    "result": "OK, exit status 0",
+    "the_eight_tests_the_protocol_requires": "one or more tests each, in tests/test_m4_harness.py (RequiredTests)",
+    "mutation_check": {
+      "script": "scripts/m4_mutation_check.py",
+      "deliberate_defects": 45,
+      "caught": 45,
+      "not_caught_on_the_first_run_then_given_tests": [
+        "history ignores the earlier-session rule",
+        "the holdout block is the first block",
+        "a log may start without a genesis",
+        "the derived-labels map is not checked"
+      ]
+    }
+  },
+  "run_on_the_real_inputs": {
+    "commands": [
+      "verify",
+      "plan",
+      "dry-run"
+    ],
+    "integrity_checks": 18,
+    "integrity_ok": true,
+    "dry_run_report": "reports/m4-harness-dry-run-2026-10-06.json",
+    "dry_run_report_canonical_sha256": "5f99b88c16007b7ce4f5dfa9b4843b765189d5f6fe0ba62d7757d66d98fc0d46",
+    "disagreements_with_the_freeze_record": 0,
+    "evaluated": {
+      "predictors_fitted": 0,
+      "predictions_made": 0,
+      "metrics_computed": 0
+    },
+    "holdout": {
+      "sealed_events": 23,
+      "denied_reads": 0,
+      "unsealed_loads": 0,
+      "access_log_records_after_genesis": 0
+    },
+    "smallest_label_slack_days_over_folds": 12.01
+  },
+  "logs": {
+    "experiments": {
+      "path": "reports/m4-experiment-log.jsonl",
+      "records": 1,
+      "genesis_created_at": "2026-10-06T15:57:13Z",
+      "genesis_harness_commit": "a1f6c2c139233aabe1a5b598b2121fbd4e67a94d",
+      "genesis_line_sha256": "b04ca54f1f4eb4182f2affd153225aacbb9b44ecef6cf241ebf204e5a7a827e4"
+    },
+    "holdout_access": {
+      "path": "reports/m4-holdout-access-log.jsonl",
+      "records": 1,
+      "genesis_created_at": "2026-10-06T15:57:13Z",
+      "genesis_harness_commit": "a1f6c2c139233aabe1a5b598b2121fbd4e67a94d",
+      "genesis_line_sha256": "e613722808a639603fd1255cba25c6a44802d24734772fd97685ece9029c30f2"
+    }
+  },
+  "tripwires": {
+    "ALLOW_REAL_EVALUATION": false,
+    "ALLOW_HOLDOUT_LOOK": false,
+    "meaning": "Both False: the real inputs support verify, plan and dry-run only. Phase 2 and Phase 4 each turn one on, in a commit of its own."
+  },
+  "decisions_where_the_protocol_is_silent": {
+    "listed_in": "docs/M4-HARNESS.md, section 5",
+    "could_move_a_result": [
+      "the headline interval is the wider of the two by width (reaction_session on a tie)",
+      "regression history mean with no earlier event: ProtocolGap, no default",
+      "standardization: population or sample standard deviation (not implemented yet)",
+      "a predictor that fails in one fold takes that state for its whole pooled result",
+      "the group prior obeys the same maturity and earlier-session rules as the issuer's own history"
+    ],
+    "presentational_or_minor": [
+      "ties by event id",
+      "lift base for pooled K",
+      "seeds and random draws per context",
+      "40 training events counted with the target defined",
+      "unnamed sector divisions are a ProtocolGap",
+      "a pooled test below its thresholds makes no predictions",
+      "tercile and C0 prediction-time conventions"
+    ],
+    "owner_action": "confirm or amend (a new protocol version, with a record) before Phase 2"
+  },
+  "not_done_and_not_authorized": [
+    "Fitting, scoring or evaluating any predictor on any real event, the pooled base rate included",
+    "Any read of a holdout outcome",
+    "Phase 2 (C2, C3, C4, the logistic and ridge models and their sensitivities), Phase 3 (the C0 baselines), Phase 4 (the holdout look and the report)",
+    "Any amendment to the frozen protocol, new data, or a new provider",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later"
+  ],
+  "not_a_claim": [
+    "Not a result: nothing was evaluated on real data.",
+    "Not Milestone 4 acceptance.",
+    "Not evidence that any predictor beats the base rate."
+  ]
+}

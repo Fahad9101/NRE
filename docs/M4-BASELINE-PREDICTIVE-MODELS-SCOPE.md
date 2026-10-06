@@ -17,6 +17,11 @@ version 1 (`config/m4-protocol.json`, summarized in `docs/M4-PROTOCOL.md`; hash 
 Decision 2 was encoded as the recommended default and remains open to the owner's review. Phase 1 is not yet authorized, and nothing has been fitted,
 scored or evaluated.
 
+**Update 2026-10-06, after Phase 1:** the owner authorized Phase 1 (`reports/m4-phase1-authorization-2026-10-06.json`) and the harness was built (`nre/m4_*.py`,
+described in `docs/M4-HARNESS.md`). It was run on the real inputs only as a dry run (`reports/m4-harness-dry-run-2026-10-06.json`): the protocol and every pinned input verify, the
+fold counts agree with the freeze record, and no holdout outcome was read. Only the pooled base rate (C1) exists, and only synthetic data has been scored. Phases 2 to 4 are not
+authorized. The harness decided a handful of details the protocol is silent on; they are listed in section 5 of `docs/M4-HARNESS.md` for the owner to confirm or amend before Phase 2.
+
 ## Summary
 
 - **What Milestone 4 is.** The master prompt's section, in full: "Build baseline models for: opening gap, Day-1 move, gap retention,
