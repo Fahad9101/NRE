@@ -392,7 +392,7 @@ class OneShotRunTests(unittest.TestCase):
     def test_it_starts_only_from_logs_holding_their_genesis(self):
         record = reg.experiment_record(PROTOCOL, COMMIT, WHEN, 1, "gap_ge_3pct", "B", "C1_pooled_rate", "all_event", "f", [], [], "m4-features-v1", {}, [], {}, "none", {}, "EVALUATED")
         reg.append(self.experiments, "experiments", record, PROTOCOL)
-        with self.assertRaisesRegex(DataError, "more than its genesis"):
+        with self.assertRaisesRegex(DataError, "logs are not as Phase 2 expects"):
             self.go()
 
     def test_it_refuses_to_record_two_evaluations_that_differ(self):

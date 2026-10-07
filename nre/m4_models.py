@@ -116,8 +116,12 @@ def fit_ridge(z, y):
 
 
 def open_gap(event):
-    """The C0 feature: the event's opening return, from the test view or, for a training event, from its own labels."""
-    return event["open_gap"] if "open_gap" in event else event["labels"]["day1_open_return"]["value"]
+    """The C0 feature: the event's opening return, from the test view or, for a training event, from its own labels. An event that has none is a gap in the protocol,
+    which gives no default and no rule for leaving the row out (the audit counts these before the run)."""
+    value = event["open_gap"] if "open_gap" in event else event["labels"]["day1_open_return"]["value"]
+    if value is None:
+        raise ProtocolGap("event %s has no opening return, which M2 takes as a feature on the C0 clock, and the protocol gives it no default" % event["event_id"])
+    return value
 
 
 # ---- the cell baselines: C2 (release timing) and C3 (sector group) --------------------------------------------------------------------------

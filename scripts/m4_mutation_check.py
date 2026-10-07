@@ -19,9 +19,12 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TESTS = ["tests.test_m4_harness", "tests.test_m4_data_features", "tests.test_m4_metrics", "tests.test_m4_registry", "tests.test_m4_models", "tests.test_m4_phase2"]
+TESTS = ["tests.test_m4_harness", "tests.test_m4_data_features", "tests.test_m4_metrics", "tests.test_m4_registry", "tests.test_m4_models", "tests.test_m4_phase2",
+         "tests.test_m4_phase3"]
 # a defect in one of these files can only be seen by the test modules that use it, so only those are run for it (any other file's defects get every module)
-TESTS_FOR = {"nre/m4_models.py": ["tests.test_m4_models", "tests.test_m4_phase2"], "nre/m4_phase2.py": ["tests.test_m4_phase2"]}
+TESTS_FOR = {"nre/m4_models.py": ["tests.test_m4_models", "tests.test_m4_phase2", "tests.test_m4_phase3"],
+             "nre/m4_phase2.py": ["tests.test_m4_phase2", "tests.test_m4_phase3", "tests.test_m4_phase3_record"],
+             "nre/m4_phase3.py": ["tests.test_m4_phase3", "tests.test_m4_phase3_record"]}
 COPIED = ("nre", "tests", "config", "reports")
 
 MUTATIONS = [
@@ -142,14 +145,44 @@ MUTATIONS = [
     ("diagnostics are not collected", "nre/m4_harness.py", '"diagnostics": dict(getattr(model, "diagnostics", None) or {}), "rows": rows}', '"diagnostics": {}, "rows": rows}'),
     ("the guard ignores the list of authorized targets", "nre/m4_harness.py", "        if self.real and target_id not in REAL_EVALUATION_TARGETS:", "        if False:"),
     ("every model's contrast against C1 is confirmatory", "nre/m4_harness.py",
-     '                role = "exploratory"\n                if pid == CONFIRMATORY[target.kind]:', '                role = "confirmatory"\n                if pid == CONFIRMATORY[target.kind]:'),
-    ("the all-event contrast is confirmatory too", "nre/m4_harness.py", 'role = "confirmatory" if version == "clean_window" else "companion_of_the_confirmatory_contrast"', 'role = "confirmatory"'),
+     '                role, note = "exploratory", {}\n                if pid == CONFIRMATORY[target.kind]:', '                role, note = "confirmatory", {}\n                if pid == CONFIRMATORY[target.kind]:'),
+    ("the all-event contrast is confirmatory too", "nre/m4_harness.py", '                    elif clean_evaluable:\n                        role = "companion_of_the_confirmatory_contrast"',
+     '                    elif clean_evaluable:\n                        role = "confirmatory"'),
     ("the 5pct models are not capped", "nre/m4_phase2.py", "            if target_id in NESTED:", "            if False:"),
     ("a clean tree is not required", "nre/m4_phase2.py", "    if not clean:", "    if False:"),
     ("an earlier output is overwritten", "nre/m4_phase2.py", "        if path.exists():", "        if False:"),
     ("two differing evaluations are recorded", "nre/m4_phase2.py", "    if first_digest != digest(", "    if False and first_digest != digest("),
     ("the records name the harness's own commit", "nre/m4_phase2.py", "    harness.commit = lambda: commit\n", "    pass\n"),
     ("the structure audit reads an outcome", "nre/m4_phase2.py", '                train = [e for e in train if target.function(e["labels"]) is not None]', '                train = [e for e in train if target.function(e["labels"])]'),
+    # Phase 3: the C0 clock, and the runner for a later phase
+    ("the companion role ignores whether the clean-window version can be evaluated", "nre/m4_harness.py", "                    elif clean_evaluable:\n", "                    elif True:\n"),
+    ("the companion role is given when the clean-window version cannot be evaluated", "nre/m4_harness.py",
+     'self._prepare(target, "clean_window")[0]["pooled_development_test"]["state"] == d.EVALUABLE', 'self._prepare(target, "clean_window")[0]["pooled_development_test"]["state"] != d.EVALUABLE'),
+    ("the clean-window check looks at the all-event version", "nre/m4_harness.py",
+     'self._prepare(target, "clean_window")[0]["pooled_development_test"]["state"] == d.EVALUABLE', 'self._prepare(target, "all_event")[0]["pooled_development_test"]["state"] == d.EVALUABLE'),
+    ("the all-event contrast is confirmatory when the clean-window one cannot be", "nre/m4_harness.py",
+     '                    if version == "clean_window":\n                        role = "confirmatory"', '                    if version == "clean_window" or not clean_evaluable:\n                        role = "confirmatory"'),
+    ("an exploratory contrast does not say why", "nre/m4_harness.py", '{"role": role, **note, "baseline": COMPARATOR[target.kind],', '{"role": role, "baseline": COMPARATOR[target.kind],'),
+    ("an absent opening return is accepted", "nre/m4_models.py", '    if value is None:\n        raise ProtocolGap("event %s has no opening return', '    if False:\n        raise ProtocolGap("event %s has no opening return'),
+    ("a label wins over the supplied opening gap", "nre/m4_models.py", '    value = event["open_gap"] if "open_gap" in event else event["labels"]["day1_open_return"]["value"]',
+     '    value = event["labels"]["day1_open_return"]["value"] if "labels" in event else event["open_gap"]'),
+    ("M2 leaves the opening gap out on the C0 clock", "nre/m4_models.py", '        if target.clock == "C0":\n            row.append(open_gap(event))', '        if False:\n            row.append(open_gap(event))'),
+    ("M2 names the opening gap on the B clock too", "nre/m4_models.py", '+ (["open_gap"] if target.clock == "C0" else []))', '+ (["open_gap"]))'),
+    ("a later phase starts from a log of any length", "nre/m4_phase2.py", "    if len(experiments) != phase.log_records_before or len(accesses) != 1:", "    if len(accesses) != 1:"),
+    ("a later phase ignores experiments on other targets", "nre/m4_phase2.py", '    if {record["target_id"] for record, _ in experiments[1:]} - set(phase.earlier_targets):', "    if False:"),
+    ("a later phase names its outputs as Phase 2's", "nre/m4_phase2.py", '("m4-phase%d-results-%s.json" % (phase.number, date))', '("m4-phase%d-results-%s.json" % (2, date))'),
+    ("a later phase evaluates Phase 2's targets", "nre/m4_phase2.py", "    first = run_all(harness, phase.targets)", "    first = run_all(harness, TARGETS)"),
+    ("the C0 audit facts are reported for the B clock too", "nre/m4_phase2.py", '                if target.clock == "C0":  # M2 takes the opening gap', '                if True:  # M2 takes the opening gap'),
+    ("the audit counts training rows from the test block", "nre/m4_phase2.py",
+     '"training_rows_with_an_undefined_opening_gap"] = sum(1 for e in train if', '"training_rows_with_an_undefined_opening_gap"] = sum(1 for e in test if'),
+    ("the audit counts the events that have an opening gap", "nre/m4_phase2.py",
+     '"test_events_with_an_undefined_opening_gap"] = sum(1 for e in test if e["labels"]["day1_open_return"]["value"] is None)',
+     '"test_events_with_an_undefined_opening_gap"] = sum(1 for e in test if e["labels"]["day1_open_return"]["value"] is not None)'),
+    ("Phase 3 evaluates one of its two targets", "nre/m4_phase3.py", 'TARGETS = ("extension_after_open_ge_5pct", "loses_half_of_gap")', 'TARGETS = ("extension_after_open_ge_5pct",)'),
+    ("Phase 3 expects the wrong number of earlier records", "nre/m4_phase3.py", "3, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,", "3, TARGETS, 1 + 2 * (18 + 18), p2.TARGETS,"),
+    ("Phase 3 expects no earlier targets", "nre/m4_phase3.py", "3, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,", "3, TARGETS, 1 + 2 * (18 + 18 + 15), (),"),
+    ("Phase 3 is numbered Phase 2", "nre/m4_phase3.py", "3, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,", "2, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,"),
+    ("Phase 3's command line runs Phase 2", "nre/m4_phase3.py", "    return p2.main(argv, phase=PHASE_3)", "    return p2.main(argv)"),
 ]
 
 

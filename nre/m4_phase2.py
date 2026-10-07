@@ -1,17 +1,20 @@
-"""Phase 2 of Milestone 4: the baselines beyond the pooled rate, on the B-clock primary targets, on the development folds, in both versions.
+"""Phases 2 and 3 of Milestone 4: the baselines beyond the pooled rate, on the primary targets, on the development folds, in both versions.
 
     python -m nre.m4_phase2 audit [--output PATH]     the structure of the real development folds (cell sizes, events without history): reads which labels are
                                                        defined, never an outcome, and evaluates nothing
     python -m nre.m4_phase2 run --date YYYY-MM-DD      the evaluation itself: needs ALLOW_REAL_EVALUATION, a clean committed tree and no earlier Phase 2 output
+    python -m nre.m4_phase3 audit | run                the same for Phase 3 (nre/m4_phase3.py)
 
-The targets are gap_ge_3pct, gap_ge_5pct and day1_close_return (the C0-clock primaries are Phase 3). For each target and version every predictor is fitted
-on each development fold's training blocks and scored on its test block; the results are pooled over the folds; every experiment is appended to the
-hash-chained experiment log; and the statuses follow the protocol's decision rule. The holdout is not touched. A status is never a claim of an edge.
+Phase 2's targets are gap_ge_3pct, gap_ge_5pct and day1_close_return, decided at the release (the B clock); Phase 3's are extension_after_open_ge_5pct and
+loses_half_of_gap, decided at the regular open (the C0 clock). For each target and version every predictor is fitted on each development fold's training
+blocks and scored on its test block; the results are pooled over the folds; every experiment is appended to the hash-chained experiment log; and the
+statuses follow the protocol's decision rule. The holdout is not touched. A status is never a claim of an edge.
 """
 import argparse
 import json
 import sys
 from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 
 from . import m4_data as d
@@ -25,6 +28,28 @@ from .core import DataError, canonical, digest
 TARGETS = ("gap_ge_3pct", "gap_ge_5pct", "day1_close_return")
 NESTED = {"gap_ge_5pct": "gap_ge_3pct"}  # the threshold whose probability caps this one's (M2's monotone repair)
 CAPPED = ("M2_logistic", "M2_without_sector")
+
+
+@dataclass(frozen=True)
+class Phase:
+    """What distinguishes one phase's run: its targets, and the words and starting point of its reports."""
+    number: int
+    targets: tuple
+    log_records_before: int  # the experiment log's records when the phase starts: its genesis and every earlier phase's experiments
+    earlier_targets: tuple  # the targets those earlier experiments are on
+    audit_purpose: str
+    results_purpose: str
+
+
+PHASE_2 = Phase(
+    2, TARGETS, 1, (),
+    ("The structure of the real development folds, taken before any Phase 2 predictor is evaluated: how many training events fall in each cell the C2 and C3 baselines will use, "
+     "which cells have too few and so fall back to the pooled value, and how many training rows and test events have no earlier matured event to learn from (the ridge "
+     "model leaves those training rows out; a test event without one would stop the run). It counts which labels are defined and reads no outcome value: no rate, "
+     "no positive count, no return."),
+    ("The Milestone 4 baselines beyond the pooled rate, fitted on each development fold's training blocks and scored on its test block, for the three B-clock "
+     "primary targets in both versions (all_event and clean_window). The holdout is sealed and the C0-clock targets are not run. Every contrast is model minus "
+     "comparator, lower is better. A status is never a claim of a tradable or production-ready edge."))
 
 
 def predictors_for(target, caps=None):
@@ -108,31 +133,27 @@ def structure_audit(harness, targets=TARGETS):
                     "test_events_with_no_earlier_matured_event": sum(1 for e in test if not feat.history(e, train, target)),
                     "test_events_with_no_earlier_event_of_their_own_issuer": sum(1 for e in test if not own_history(e)),
                     "indicator_features_constant_in_training": sorted(name for name in ("after_hours", "is_I", "is_other") if len({row[name] for row in indicators}) < 2)}
+                if target.clock == "C0":  # M2 takes the opening gap: whether it is defined needs no value
+                    folds[fold.name]["training_rows_with_an_undefined_opening_gap"] = sum(1 for e in train if e["labels"]["day1_open_return"]["value"] is None)
+                    folds[fold.name]["test_events_with_an_undefined_opening_gap"] = sum(1 for e in test if e["labels"]["day1_open_return"]["value"] is None)
             out[target_id][version] = folds
     return out
 
 
-def audit_report(harness):
-    return {"schema_version": 1, "kind": "m4_phase2_structure_audit",
-            "purpose": ("The structure of the real development folds, taken before any Phase 2 predictor is evaluated: how many training events fall in each cell the C2 and C3 baselines will use, "
-                        "which cells have too few and so fall back to the pooled value, and how many training rows and test events have no earlier matured event to learn from (the ridge "
-                        "model leaves those training rows out; a test event without one would stop the run). It counts which labels are defined and reads no outcome value: no rate, "
-                        "no positive count, no return."),
+def audit_report(harness, phase=PHASE_2):
+    return {"schema_version": 1, "kind": "m4_phase%d_structure_audit" % phase.number, "purpose": phase.audit_purpose,
             "protocol": {"id": harness.protocol["protocol_id"], "version": harness.protocol["protocol_version"], "canonical_sha256": pr.protocol_sha256(harness.protocol)},
-            "targets": structure_audit(harness), "holdout": harness.holdout_status(),
+            "targets": structure_audit(harness, phase.targets), "holdout": harness.holdout_status(),
             "not_a_claim": ["Not a result: nothing was fitted, scored or evaluated.", "Not Milestone 4 acceptance."]}
 
 
 # ---- the run ---------------------------------------------------------------------------------------------------------------------------------
 
-def results_report(harness, evaluations, status_by_target, digest_of_evaluations):
-    runs = {t: {v: without_rows(evaluations[(t, v)]) for v in d.VERSIONS} for t in TARGETS}
-    return {"schema_version": 1, "kind": "m4_phase2_results",
-            "purpose": ("The Milestone 4 baselines beyond the pooled rate, fitted on each development fold's training blocks and scored on its test block, for the three B-clock "
-                        "primary targets in both versions (all_event and clean_window). The holdout is sealed and the C0-clock targets are not run. Every contrast is model minus "
-                        "comparator, lower is better. A status is never a claim of a tradable or production-ready edge."),
+def results_report(harness, evaluations, status_by_target, digest_of_evaluations, phase=PHASE_2):
+    runs = {t: {v: without_rows(evaluations[(t, v)]) for v in d.VERSIONS} for t in phase.targets}
+    return {"schema_version": 1, "kind": "m4_phase%d_results" % phase.number, "purpose": phase.results_purpose,
             "protocol": {"id": harness.protocol["protocol_id"], "version": harness.protocol["protocol_version"], "canonical_sha256": pr.protocol_sha256(harness.protocol)},
-            "scope": {"targets": list(TARGETS), "versions": list(d.VERSIONS), "development_folds": [f.name for f in harness.folds if f.role == "development"],
+            "scope": {"targets": list(phase.targets), "versions": list(d.VERSIONS), "development_folds": [f.name for f in harness.folds if f.role == "development"],
                       "confirmatory_models": h.CONFIRMATORY, "comparators": h.COMPARATOR, "predictors": {
                           "binary": [p.id for p in models.binary_predictors()], "regression": [p.id for p in models.regression_predictors()]}},
             "determinism": {"evaluated_twice_from_scratch": True, "identical": True, "evaluations_canonical_sha256": digest_of_evaluations},
@@ -141,16 +162,16 @@ def results_report(harness, evaluations, status_by_target, digest_of_evaluations
                             "Not evidence about any market: the events are a convenience sample of 23 issuers."]}
 
 
-def prediction_lines(harness, evaluations, generated_at):
+def prediction_lines(harness, evaluations, generated_at, phase=PHASE_2):
     lines = []
-    for target_id in TARGETS:
+    for target_id in phase.targets:
         for version in d.VERSIONS:
             lines += [canonical(r).decode("utf-8") for r in harness.prediction_records(evaluations[(target_id, version)], generated_at)]
     return lines
 
 
-def run(harness, date, root=pr.ROOT, commit_state=None):
-    """The real evaluation. Refuses unless it is authorized, the tree is clean, and neither the logs nor the outputs show an earlier Phase 2 run.
+def run(harness, date, root=pr.ROOT, commit_state=None, phase=PHASE_2):
+    """The real evaluation. Refuses unless it is authorized, the tree is clean, and neither the logs nor the outputs show an earlier run of this phase.
 
     `commit_state` is (HEAD's hash, whether the tree is clean); it is read from git unless a test supplies it."""
     if not h.ALLOW_REAL_EVALUATION:
@@ -160,26 +181,31 @@ def run(harness, date, root=pr.ROOT, commit_state=None):
     if not clean:
         raise DataError("the working tree has uncommitted changes; commit first so that every record names the code that produced it")
     reports = root / "reports"
-    results_path, predictions_path = reports / ("m4-phase2-results-%s.json" % date), reports / ("m4-phase2-predictions-%s.jsonl" % date)
+    results_path = reports / ("m4-phase%d-results-%s.json" % (phase.number, date))
+    predictions_path = reports / ("m4-phase%d-predictions-%s.jsonl" % (phase.number, date))
     for path in (results_path, predictions_path):
         if path.exists():
-            raise DataError("%s exists; Phase 2 is run once" % path.name)
+            raise DataError("%s exists; Phase %d is run once" % (path.name, phase.number))
     reg.verify_chain(harness.experiment_log, "experiments", harness.protocol)
     reg.verify_chain(harness.holdout_log, "holdout_access", harness.protocol)
-    if len(reg.read(harness.experiment_log)) != 1 or len(reg.read(harness.holdout_log)) != 1:
-        raise DataError("a log holds more than its genesis record: Phase 2 starts from empty logs")
-    first = run_all(harness)
-    second = run_all(harness)
+    experiments, accesses = reg.read(harness.experiment_log), reg.read(harness.holdout_log)
+    if len(experiments) != phase.log_records_before or len(accesses) != 1:
+        raise DataError("the logs are not as Phase %d expects: the experiment log holds %d records (expected %d: its genesis and the earlier phases' experiments) and the holdout "
+                        "log %d (expected 1: its genesis only)" % (phase.number, len(experiments), phase.log_records_before, len(accesses)))
+    if {record["target_id"] for record, _ in experiments[1:]} - set(phase.earlier_targets):
+        raise DataError("the experiment log holds experiments on targets that no earlier phase evaluated")
+    first = run_all(harness, phase.targets)
+    second = run_all(harness, phase.targets)
     first_digest = digest(canonical({"%s|%s" % k: plain(v) for k, v in first.items()}))
     if first_digest != digest(canonical({"%s|%s" % k: plain(v) for k, v in second.items()})):
         raise DataError("two evaluations of the same inputs and seeds differ; refusing to record either")
-    status_by_target = statuses(harness, first)
-    report = results_report(harness, first, status_by_target, first_digest)
+    status_by_target = statuses(harness, first, phase.targets)
+    report = results_report(harness, first, status_by_target, first_digest, phase)
     generated_at = reg.now()
-    lines = prediction_lines(harness, first, generated_at)
+    lines = prediction_lines(harness, first, generated_at, phase)
     harness.commit = lambda: commit
     appended = 0
-    for target_id in TARGETS:
+    for target_id in phase.targets:
         for version in d.VERSIONS:
             appended += len(harness.record_experiments(first[(target_id, version)]))
     h.write_report(results_path, report)
@@ -188,15 +214,16 @@ def run(harness, date, root=pr.ROOT, commit_state=None):
             "predictions": str(predictions_path), "results_canonical_sha256": digest(canonical(report)), "statuses": status_by_target}
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description="Milestone 4 Phase 2: the structure audit and the development-fold evaluation of the B-clock baselines.")
+def main(argv=None, phase=PHASE_2):
+    parser = argparse.ArgumentParser(description="Milestone 4 Phase %d: the structure audit and the development-fold evaluation of the baselines on %s." % (
+        phase.number, ", ".join(phase.targets)))
     parser.add_argument("command", choices=("audit", "run"))
     parser.add_argument("--output", help="audit: write the report here")
     parser.add_argument("--date", help="run: the date to name the outputs (YYYY-MM-DD)")
     args = parser.parse_args(argv)
     harness = h.Harness.from_repository()
     if args.command == "audit":
-        report = audit_report(harness)
+        report = audit_report(harness, phase)
         summary = {"state": "AUDIT", "report_sha256": digest(canonical(report))}
         if args.output:
             summary["output"] = args.output
@@ -205,7 +232,7 @@ def main(argv=None):
         return 0
     if not args.date:
         parser.error("run needs --date")
-    print(json.dumps(run(harness, args.date), sort_keys=True))
+    print(json.dumps(run(harness, args.date, phase=phase), sort_keys=True))
     return 0
 
 

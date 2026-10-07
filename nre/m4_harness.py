@@ -282,12 +282,19 @@ class Harness:
         runs = result["predictors"]
         comparator = runs.get(COMPARATOR[target.kind])
         evaluated = lambda run: run is not None and run["state"] == EVALUATED  # noqa: E731
+        # the all-event contrast of the confirmatory model accompanies the clean-window one, so it needs the clean-window version to be evaluable
+        clean_evaluable = version == "clean_window" or self._prepare(target, "clean_window")[0]["pooled_development_test"]["state"] == d.EVALUABLE
         for pid, run in runs.items():
             if evaluated(comparator) and pid != COMPARATOR[target.kind] and evaluated(run):
-                role = "exploratory"
+                role, note = "exploratory", {}
                 if pid == CONFIRMATORY[target.kind]:
-                    role = "confirmatory" if version == "clean_window" else "companion_of_the_confirmatory_contrast"
-                result["contrasts"][pid] = {"role": role, "baseline": COMPARATOR[target.kind], **self._contrast(target, run["rows"], comparator["rows"])}
+                    if version == "clean_window":
+                        role = "confirmatory"
+                    elif clean_evaluable:
+                        role = "companion_of_the_confirmatory_contrast"
+                    else:
+                        note = {"role_note": "the clean-window version is INSUFFICIENT_DATA, so there is no confirmatory contrast for this one to accompany"}
+                result["contrasts"][pid] = {"role": role, **note, "baseline": COMPARATOR[target.kind], **self._contrast(target, run["rows"], comparator["rows"])}
         for model_id, baseline_id in OTHER_CONTRASTS[target.kind]:
             if evaluated(runs.get(model_id)) and evaluated(runs.get(baseline_id)):
                 result["other_contrasts"]["%s_vs_%s" % (model_id, baseline_id)] = {

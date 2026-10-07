@@ -428,6 +428,95 @@ class LogisticTests(unittest.TestCase):
         self.assertEqual(model["rows"], len(self.defined))
 
 
+class OpeningGapTests(unittest.TestCase):
+    """The C0 clock: the logistic model also takes the event's opening gap, which is known at the regular open. The cell baselines and the issuer rate never do."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.events, cls.spec = S.dataset(sizes=(24, 44, 36, 36, 20))
+        cls.blocks = ev.assign_blocks(cls.events)
+        cls.target = TARGETS["extension_after_open_ge_5pct"]
+        cls.train, cls.test = d.split(cls.events, cls.blocks, FOLDS["dev_test_block_3"])
+        cls.defined = [e for e in cls.train if cls.target.function(e["labels"]) is not None]
+        cls.views = [{k: v for k, v in e.items() if k not in ("labels", "labels_sha256")} for e in cls.test if cls.target.function(e["labels"]) is not None]
+        for view, event in zip(cls.views, [e for e in cls.test if cls.target.function(e["labels"]) is not None]):
+            view["open_gap"] = event["labels"]["day1_open_return"]["value"]
+
+    def test_the_opening_gap_is_the_last_feature_of_both_c0_variants_and_of_no_b_clock_model(self):
+        b_target = TARGETS["gap_ge_3pct"]
+        for with_sector in (True, False):
+            predictor = mm.Logistic(with_sector)
+            names = predictor.names(self.target)
+            self.assertEqual(names[-1], "open_gap")
+            self.assertEqual(len(predictor.raw(self.defined[10], self.defined, self.target)), len(names))
+            self.assertNotIn("open_gap", predictor.names(b_target))
+        self.assertEqual(mm.Logistic(True).names(self.target), ["after_hours", "is_I", "is_other", "logit_issuer_history_rate", "open_gap"])
+        self.assertEqual(mm.Logistic(False).names(self.target), ["after_hours", "logit_issuer_history_rate", "open_gap"])
+
+    def test_a_training_events_opening_gap_is_its_own_opening_return_and_a_test_events_is_the_one_supplied(self):
+        event = self.defined[10]
+        self.assertEqual(mm.Logistic().raw(event, self.defined, self.target)[-1], event["labels"]["day1_open_return"]["value"])
+        view = {**self.views[0], "open_gap": 0.0123}
+        self.assertEqual(mm.Logistic().raw(view, self.defined, self.target)[-1], 0.0123)
+        self.assertEqual(mm.open_gap({"open_gap": 0.5, "labels": {"day1_open_return": {"value": -0.9}}}), 0.5)  # a supplied gap wins over a label
+
+    def test_the_c0_fit_satisfies_the_optimality_conditions_with_the_gap_standardized_like_the_other_features(self):
+        predictor = mm.Logistic()
+        model = predictor.fit(self.defined, self.target)
+        raw = [predictor.raw(e, self.defined, self.target) for e in self.defined]
+        means, sds, kept, dropped = mm.standardization(raw)
+        self.assertEqual((kept, dropped), ([0, 1, 2, 3, 4], []))
+        z = [mm.standardized(row, means, sds, kept) for row in raw]
+        self.assertAlmostEqual(sum(row[-1] for row in z) / len(z), 0.0, places=9)  # the gap column is centred...
+        self.assertAlmostEqual(math.sqrt(sum(row[-1] ** 2 for row in z) / len(z)), 1.0, places=9)  # ...and scaled by its population standard deviation
+        y = [1.0 if self.target.function(e["labels"]) else 0.0 for e in self.defined]
+        self.assertLess(max(abs(g) for g in gradient_of(z, y, model.context["beta"])), 1e-7)
+        for got, want in zip(model.context["beta"], reference_logistic(z, y)):
+            self.assertAlmostEqual(got, want, places=7)
+        self.assertEqual(model["features"][-1], "open_gap")
+        self.assertEqual(len(model["coefficients"]), 5)
+
+    def test_the_prediction_moves_with_the_opening_gap_and_a_b_clock_prediction_ignores_one(self):
+        predictor = mm.Logistic()
+        model = predictor.fit(self.defined, self.target)
+        low, high = predictor.predict(model, {**self.views[0], "open_gap": -0.05}), predictor.predict(model, {**self.views[0], "open_gap": 0.05})
+        self.assertNotEqual(low, high)
+        b_target = TARGETS["gap_ge_3pct"]
+        b_defined = [e for e in self.train if b_target.function(e["labels"]) is not None]
+        b_model = predictor.fit(b_defined, b_target)
+        view = {k: v for k, v in self.test[0].items() if k not in ("labels", "labels_sha256")}
+        self.assertEqual(predictor.predict(b_model, {**view, "open_gap": -0.05}), predictor.predict(b_model, {**view, "open_gap": 0.05}))
+
+    def test_the_baselines_never_use_the_opening_gap(self):
+        for predictor in (mm.timing_rate(), mm.sector_group_rate(), mm.IssuerHistoryRate()):
+            model = predictor.fit(self.defined, self.target)
+            self.assertEqual(predictor.predict(model, {**self.views[0], "open_gap": -0.3}), predictor.predict(model, {**self.views[0], "open_gap": 0.3}), predictor.id)
+
+    def test_a_c0_view_without_the_opening_gap_fails_loudly_rather_than_being_given_one(self):
+        predictor = mm.Logistic()
+        model = predictor.fit(self.defined, self.target)
+        view = {k: v for k, v in self.views[0].items() if k != "open_gap"}
+        with self.assertRaises(KeyError):
+            predictor.predict(model, view)
+
+    def test_an_event_with_no_opening_return_stops_the_fit_and_the_prediction_instead_of_being_left_out_or_given_one(self):
+        predictor = mm.Logistic()
+        half = TARGETS["loses_half_of_gap"]  # defined from a derived label, so an event can have this target and no opening return (extension_after_open_ge_5pct needs the open)
+        in_half = [e for e in self.train if half.function(e["labels"]) is not None]
+        victim = in_half[3]
+        without = [{**e, "labels": {**e["labels"], "day1_open_return": {"value": None, "reason": "TEST_ABSENT"}}} if e is victim else e for e in in_half]
+        self.assertIsNotNone(half.function(without[3]["labels"]))
+        with self.assertRaisesRegex(d.ProtocolGap, "%s has no opening return" % victim["event_id"]):
+            predictor.fit(without, half)
+        predictor.fit(in_half, half)  # the same events with their opening returns fit
+        model = predictor.fit(self.defined, self.target)
+        with self.assertRaisesRegex(d.ProtocolGap, "has no opening return"):
+            predictor.predict(model, {**self.views[0], "open_gap": None})
+        with self.assertRaises(d.ProtocolGap):
+            mm.open_gap({"event_id": "x", "labels": {"day1_open_return": {"value": None, "reason": "TEST_ABSENT"}}})
+        self.assertEqual(mm.open_gap({"event_id": "x", "open_gap": 0.0, "labels": {}}), 0.0)  # a gap of exactly zero is a gap, not an absent one
+
+
 class RidgeTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
