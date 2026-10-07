@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-07",
+  "context": "Milestone 4's Phase 3 (the baselines on the C0 clock, development folds) was closed on 2026-10-07 (reports/m4-phase3-completion-2026-10-07.json): extension_after_open_ge_5pct was NOT_DISTINGUISHABLE and loses_half_of_gap INSUFFICIENT_DATA. The assistant's closing message, quoted verbatim below, listed the one logged look at block 5, the descriptive report and the Milestone 4 report as the owner's decision, recommended authorizing Phase 4 after reading the results note, said the look is one-way and would mostly give counts, and said the recommendation authorizes nothing.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-07T12:12:38.658Z",
+    "text": "Phase 3 is done. The two C0-clock targets ran on the development folds only, from a clean tree at `14e3e1d`, under the unchanged frozen protocol. No status is a claim of an edge.\n\n| Target | Status | What happened |\n|---|---|---|\n| `extension_after_open_ge_5pct` | `NOT_DISTINGUISHABLE` | The clean-window model, which also gets the opening gap, scored worse than the pooled base rate. The Brier difference is +0.0283 with a 99% interval of −0.0345 to +0.0885, so it's within noise. |\n| `loses_half_of_gap` | `INSUFFICIENT_DATA` | The clean-window fold 3 has 9 training positives where 10 are needed, which leaves 10 pooled test events (5 and 5). The all-event version (23 events) ran as exploratory: the model was again worse than the base rate, and only the issuer-history rate beat it, by 0.007 with an interval spanning zero. |\n\nNone of the 27 pooled contrasts and none of the 6 per-fold contrasts excludes zero. With Phase 2, that makes four primaries `NOT_DISTINGUISHABLE` and one `INSUFFICIENT_DATA`, which is what the protocol said to expect.\n\n**Checks**\n- **Independent recomputation:** I recomputed scores, contrasts and bootstrap intervals from labels, then the predictions and model fits themselves. That is 45 + 48 checks with no differences. The same check on Phase 2's outputs also came out clean (86 + 64).\n- **Standing test:** I moved that recomputation into the repo as a test helper (`tests/m4_independent.py`), so it now runs on every CI for both phases.\n- **Tests and mutation check:** the suite has 896 tests, all passing. All 101 deliberate defects are caught.\n- **CI:** it passed on all five Phase 3 pushes (runs 223–227).\n- **Holdout:** untouched. Block 5 was never read and its access log holds only its genesis record.\n- **My own slips:** I made several this phase: a wrong record count in a test, two mutation-check entries that went stale, a test that didn't test what its name said, and an unguarded missing opening gap in the model. All were caught and fixed before any commit, and none touched a result.\n\n`full_gap_fill` was not modelled, because the frozen protocol makes it descriptive-only. That was recorded before the run.\n\n**What's remaining**\n- **You:**\n  - Decide on Phase 4: the one logged look at block 5, the descriptive report, and the Milestone 4 report.\n  - Answer the review items from earlier. The protocol-silent details in `docs/M4-HARNESS.md` §5 and the 99% claim level can no longer change without a new protocol version, because results now exist.\n  - The thin-primaries question is now concrete: `loses_half_of_gap` cannot reach a status on the development folds, and block 5 will hold only about 12 such events.\n  - Later, decide whether to accept Milestone 4.\n- **Me:** nothing is queued. Phase 4 starts only after you authorize it. The latent 2026-only calendar in `nre/alpaca.py` stays parked.\n\n**Recommended next step:** read `docs/M4-PHASE3-RESULTS.md` in the NRE repo, then, if you're content with how the five primaries were handled, authorize Phase 4. It completes the pre-registered protocol, but the look at block 5 is one-way, and with 23 events it will mostly give counts, not evidence. This is a recommendation only; it authorizes nothing."
+  },
+  "owner_message": {
+    "text": "authorize phase 4",
+    "at": "2026-10-07T12:16:31.579Z",
+    "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC)"
+  },
+  "how_the_words_were_read": [
+    "'authorize phase 4' authorizes Phase 4 as the frozen protocol (its holdout section) and the scope proposal (docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md) define it: one look at the sealed holdout (block 5, the 23 Milestone 1 events), the descriptive report with block-5 counts, and the Milestone 4 report. It is the three things the assistant's message asked the owner to decide.",
+    "The look is the protocol's: every pre-registered predictor and target evaluated together and once, trained on blocks 1 to 4 under protocol version 1, nothing selected, all reported, every read of a block-5 outcome logged to the holdout access log. Where the holdout thresholds are not met the result is COUNTS_ONLY. The protocol stated in advance that gap_ge_3pct, gap_ge_5pct and loses_half_of_gap would be COUNTS_ONLY in the holdout (3 to 5 positives) and that extension_after_open_ge_5pct and day1_close_return would meet their thresholds; the look will show whether that held.",
+    "The words do not authorize a second look beyond a technical rerun that does not depend on any holdout result (each such rerun is a further logged access and is counted), any selection, tuning or change made after seeing a holdout result, or any protocol amendment. They do not declare Milestone 4 accepted: the protocol makes the acceptance decision the owner's, separately.",
+    "The reply did not address the review items the assistant listed (the protocol-silent details in docs/M4-HARNESS.md section 5, the 99% claim level, the thin primaries, the counts-only holdout). It was not read as an amendment or as an answer to them: the protocol stays version 1 and its hash is unchanged, and the defaults stay in force (P4-14). The details Phases 2 and 3 settled (P2-1 to P2-10, P3-1 to P3-7) carry over, and the details this phase settles are listed below and committed BEFORE any Phase 4 code and before any block-5 outcome is read.",
+    "Until the tripwire commit the holdout stays sealed: ALLOW_HOLDOUT_LOOK stays False, no block-5 outcome is read by any code, and the access log keeps only its genesis record. Building and testing the Phase 4 machinery uses synthetic labels only."
+  ],
+  "authorized_under_these_words": [
+    "Building the Phase 4 machinery: the holdout evaluation in the harness, the one-look runner, the pre-look structure audit, the descriptive report, the Milestone 4 report assembly, tests (including a dress rehearsal on the real events with synthetic block-5 labels and the real block-5 records absent), mutation checks of the new code, and the method note, all without reading a block-5 outcome",
+    "A structure audit of the holdout fold before the look, reading no outcome",
+    "Turning ALLOW_HOLDOUT_LOOK on in a commit of its own, and off again in a commit of its own after the look",
+    "The one look: exactly one logged access of all 23 events (and any technical rerun, each logged and counted), the evaluation of every pre-registered predictor on the five primary targets in both versions, the descriptive report, writing the outputs, and appending the holdout experiments to reports/m4-experiment-log.jsonl",
+    "The Milestone 4 report, a plain-language results note and the closing record, with the evidence for each of the protocol's acceptance criteria"
+  ],
+  "not_authorized_by_these_words": [
+    "A second look at the holdout other than a technical rerun that does not depend on any holdout result; any selection, tuning, re-run with other settings or change made after a holdout result is seen",
+    "Any amendment to the frozen protocol (a new version), any new data or provider, any change to a predictor",
+    "Any status, claim or edge statement derived from the holdout (the holdout alone never creates a claim)",
+    "Milestone 5 (trees, ensembles) or later, any ranking, candidate list, trading, sizing or backtest modelling",
+    "Declaring Milestone 4 accepted (the owner's separate decision)"
+  ],
+  "details_settled_before_the_look": {
+    "status": "Settled by the assistant, outcome-independently, before any Phase 4 code exists and before any block-5 outcome has been read, real or otherwise. Not protocol amendments: where the protocol speaks, the detail follows it. Each is open to the owner's review; changing any now would be a new protocol version stated to follow results of the earlier phases (the development results already exist). Further details that arise during the build are added in a further record committed before the tripwire.",
+    "new_in_phase_4": [
+      {
+        "id": "P4-1",
+        "could_move_a_result": false,
+        "detail": "Scope of the look. It evaluates, together and once, every pre-registered predictor on each of the five primary targets in both versions (all_event and clean_window), trained on blocks 1 to 4 as the version sees them: six predictors for a binary target (C1, C2, C3, C4, M2_logistic, M2_without_sector) and five for the regression target (C1, C2, C3, M3_ridge_linear, M3_without_sector), the sensitivities and the cell baselines included. No predictor, target or version is selected or left out. The descriptive report covers all 19 targets in both versions."
+      },
+      {
+        "id": "P4-2",
+        "could_move_a_result": false,
+        "detail": "COUNTS_ONLY. A target-version whose holdout test events (block 5, with the target defined in that version) have fewer than 10 positives or fewer than 10 negatives (the regression target: fewer than 20 events) is COUNTS_ONLY, as the protocol says: no predictor is fitted or scored for it and no prediction is made, and the report gives the counts, the base rate and its Wilson 95% interval. Every predictor still gets an experiment-log record for it, with the state COUNTS_ONLY and no predictions, so that every cell of the pre-registered grid is accounted for. A target-version whose holdout fold fails the fold-level rule on its training events is INSUFFICIENT_DATA in the same way."
+      },
+      {
+        "id": "P4-3",
+        "could_move_a_result": true,
+        "detail": "Evaluable target-versions. The metrics are the development ones, computed on the holdout fold alone: precision at K for K = 5 and 10 (the fold values; K = 20 needs 40 events and the fold has 23), reliability in min(4, floor(n / 10)) equal-frequency bins, the contrast of every predictor against C1 and of the pairs the harness lists, by the cluster bootstrap with the protocol's seeds and 5000 replicates, reported at the 95% reporting level (the wider of the reaction-session and issuer intervals, as in the development folds). The same function also computes the 99% level; it is not a holdout statement. Every holdout result carries the protocol's selection-regime statement, and none is a claim."
+      },
+      {
+        "id": "P4-4",
+        "could_move_a_result": true,
+        "detail": "The sign check. For the confirmatory model against C1 (M2_logistic, or M3_ridge_linear for the regression target) the report states, per version, whether the sign of the holdout estimate equals the sign of the development estimate of the same version (the pooled development out-of-fold contrast in reports/m4-phase2-results-2026-10-07.json or reports/m4-phase3-results-2026-10-07.json). An estimate of exactly zero has no sign. Where the development result is INSUFFICIENT_DATA there is nothing to compare, and the report says so. The check is a statement about direction, not a status."
+      },
+      {
+        "id": "P4-5",
+        "could_move_a_result": false,
+        "detail": "One look, in order. Before any block-5 outcome is read the runner checks the tripwires, a clean committed tree, the protocol and input hashes, that both logs are exactly as Phase 3 left them (the experiment log with 175 records, the holdout log with its genesis only) and that no Phase 4 output exists. It then calls Harness.look once; the access record is written before anything is unsealed. Everything after that is a pure function of the unsealed events: the evaluation is made twice and the two must be identical, with no second access. No Phase 4 code calls unseal itself."
+      },
+      {
+        "id": "P4-6",
+        "could_move_a_result": false,
+        "detail": "Technical failure. If the run fails after the look, the access stays on the record. The runner refuses to start unless the holdout log holds only its genesis, so a rerun needs a code change in a commit of its own whose message says it is a technical rerun; the fix must not depend on any holdout result; the rerun is a further logged access and is counted in the report (the protocol's a_technical_rerun). There is no automatic retry."
+      },
+      {
+        "id": "P4-7",
+        "could_move_a_result": false,
+        "detail": "Dress rehearsal. Before the tripwire is turned on, the whole pipeline (the look, the evaluation, the descriptive report, the report assembly, the logging) is exercised on the real inputs with the real block-5 record files absent and the block-5 labels replaced by seeded synthetic ones, in two regimes (one in which every target meets the holdout thresholds, one in which most do not), against temporary logs and a temporary output directory. It is a test that runs on every CI and reads no block-5 outcome."
+      },
+      {
+        "id": "P4-8",
+        "could_move_a_result": false,
+        "detail": "Pre-look audit. A structure audit of the holdout fold, taken before the look and reading no outcome: for each primary target and version, the training cells and which fall back to the pooled value, the earlier matured history available to each of the 23 test events (and to the regression target's issuer-history mean), constant indicator features, and the counts of the test events by release timing and sector group, over all 23 test events whether or not the target is defined for them (that depends on outcomes). A test changes every label value and gets the identical audit."
+      },
+      {
+        "id": "P4-9",
+        "could_move_a_result": false,
+        "detail": "Descriptive report. For all 19 targets in both versions: defined events, positives, negatives, the base rate with its Wilson 95% interval, the protocol's bucket, positives by release timing, issuers and reaction sessions, and defined events and positives by block (1 to 5); for the five regression labels n, mean, standard deviation, standard error and the 10th, 50th and 90th percentiles; and the block table by source. It is computed from the 105 visible events and the 23 events unsealed in the one look. It states what the protocol states: block 5's counts of positives were visible in the scoping evidence before the freeze, so the holdout is sealed against model selection and tuning, not against its base rates."
+      },
+      {
+        "id": "P4-10",
+        "could_move_a_result": false,
+        "detail": "Holdout records. One experiment-log record per predictor, target and version on the fold holdout_test_block_5: 58 records (four binary targets x six predictors x two versions, and the regression target x five predictors x two versions), each with the state EVALUATED, COUNTS_ONLY, INSUFFICIENT_DATA or MODEL_FIT_FAILED, appended after the evaluation has passed its determinism check; the experiment log goes from 175 to 233 records and the holdout log from 1 to 2. Predictions are written for the evaluated cells only, as protocol prediction records timed at the cutoff (B clock) or the regular open (C0 clock)."
+      },
+      {
+        "id": "P4-11",
+        "could_move_a_result": false,
+        "detail": "The tripwire. ALLOW_HOLDOUT_LOOK is turned on in a commit of its own after the build is committed, pushed and green, and turned off again in a commit of its own after the look. Tests pin the holdout log at its genesis plus exactly one access and the tripwire off. Verification after the look replays the look through Harness.look against temporary logs; it never touches the real access log, and no test or script reads a block-5 outcome any other way."
+      },
+      {
+        "id": "P4-12",
+        "could_move_a_result": false,
+        "detail": "No selection. The look is a replication check on direction and one logged exposure of the frozen pipeline. Whatever the holdout shows, nothing is selected, tuned, re-run with other settings or amended; every predictor is reported; a result that disagrees with the development result is reported as it is. The holdout alone never creates a claim, and no status is assigned from it."
+      },
+      {
+        "id": "P4-13",
+        "could_move_a_result": false,
+        "detail": "The report. The Milestone 4 report (docs/M4-REPORT.md, and reports/m4-report-2026-10-07.json assembled by code from the committed artifacts) states what was estimable and what was not, every interval with its counts, the number of holdout accesses, the protocol's limits and disclosures, the review items still open for the owner, and, criterion by criterion, the evidence for the protocol's acceptance_of_the_m4_report. It does not declare Milestone 4 accepted: that decision is the owner's."
+      },
+      {
+        "id": "P4-14",
+        "could_move_a_result": false,
+        "detail": "Open review items. The owner's reply did not address the review items the assistant listed in its closing message (the protocol-silent details in docs/M4-HARNESS.md section 5, the 99% claim level, the thin primaries, the counts-only holdout; the protocol's disclosures.to_review). They stay as they are: the defaults in force, protocol version 1 unchanged, and the report lists them as open for the owner."
+      }
+    ]
+  },
+  "not_a_claim": [
+    "Not a result: no block-5 outcome has been read when this record is written.",
+    "Not Milestone 4 acceptance.",
+    "Not a statement that any predictor will beat the base rate on the holdout: the protocol expects the holdout to support counts only for most targets."
+  ]
+}
