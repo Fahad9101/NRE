@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-07",
+  "context": "Milestone 4's Phase 1 (the harness and its leakage and integrity tests) was closed on 2026-10-06 (reports/m4-phase1-completion-2026-10-06.json). The assistant's closing message, quoted verbatim below, named Phase 2 as the owner's decision, listed what it would contain and the details the frozen protocol is silent on (docs/M4-HARNESS.md section 5), and recommended reading that section before deciding. Recommending was not authorizing.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-06T16:10:16.453Z",
+    "text": "Phase 1 is done: the evaluation harness is built, tested, and run on the real inputs as a dry run only. Nothing was fitted, scored or evaluated on any real event, and no holdout outcome was read. The work is in two commits in the NRE repo, `a1f6c2c` (code and tests) and `200a4ea` (logs, report, docs). CI passed on Python 3.12 and 3.13 for both. Locally the full suite is 742 tests, exit status 0, 4 skipped as before.\n\n**What the dry run showed** (`reports/m4-harness-dry-run-2026-10-06.json`):\n- All 18 integrity checks on the protocol and its pinned inputs pass.\n- Fold counts and development statuses agree exactly with the freeze record, with no disagreement.\n- The two consequences the protocol stated in advance reproduce: `loses_half_of_gap` is `INSUFFICIENT_DATA` in the clean-window version, and `gap_ge_5pct` has exactly 10 pooled positives.\n- Every fold has 12.01 to 19.0 days of label-maturity slack, so no purge is needed.\n- The holdout shows 23 events sealed, 0 refused reads and 0 loads. The experiment and holdout-access logs hold only their genesis records.\n\n**How the tests were checked:**\n- The eight tests the protocol requires are in `tests/test_m4_harness.py`.\n- I broke the harness on purpose in 45 ways, and every one makes a test fail. Four were missed on the first run, so I added tests for them. `scripts/m4_mutation_check.py` reproduces this.\n\n**Corrections to myself:**\n- A few of my own test expectations were wrong (an average-precision value, a misquoted protocol phrase). The code was right each time.\n- A Python patch script again put a real newline into a test line, for the second time. I caught it by running the module straight away, and it is now saved in memory.\n\n**Two things you should know about the holdout:**\n- The ordinary loader would have opened all 23 block-5 label files just to check their hashes. I built a separate loader that never opens them. A test destroys all 23 files and the dry run is byte-identical, so the line in the authorization record that the dry run reads no block-5 outcome is literally true.\n- The seal is a process control, not secrecy. Anyone can open the files. What it guarantees is that no harness code path reads them except the logged look. Two switches, `ALLOW_REAL_EVALUATION` and `ALLOW_HOLDOUT_LOOK`, are both `False`, and a test fails if either is turned on without that test being changed too.\n\n**Where the protocol was silent:** the code had to settle 12 details, listed in section 5 of `docs/M4-HARNESS.md`. None depends on an outcome. Five could move a result:\n- the \"wider of the two\" headline interval is read as greater width;\n- the regression issuer-history mean has no default when no earlier event exists, so the code stops, and the ridge model cannot be finished until you decide;\n- whether standardization uses the population or sample standard deviation;\n- a predictor that fails in one fold takes that state for its whole pooled result;\n- the group prior follows the same maturity and earlier-session rules as the issuer's own history.\n\n**What remains:**\n- **You:** decide on those five (accept the defaults, or amend the protocol as a new version before Phase 2). The earlier review items still stand: the two thin primary targets, the 99% claim level, and a counts-only holdout.\n- **Me, not authorized yet:**\n  - Phase 2: the other baselines (C2, C3, C4, the logistic and ridge models and their without-sector variants).\n  - Phase 3: the C0-clock baselines.\n  - Phase 4: the single holdout look, the descriptive report that includes block-5 counts, and the Milestone 4 report. Accepting Milestone 4 is your decision.\n\nMy recommended next step is that you read section 5 of `docs/M4-HARNESS.md` (about ten minutes), start with the regression-mean default, and then decide whether to authorize Phase 2. Recommending it does not authorize it.\n\nDetails are in `docs/M4-HARNESS.md` and `reports/m4-phase1-completion-2026-10-06.json`."
+  },
+  "owner_message": {
+    "text": "authorize phase 2",
+    "at": "2026-10-07T04:40:50.937Z",
+    "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC)"
+  },
+  "how_the_words_were_read": [
+    "'authorize phase 2' authorizes Phase 2 as the scope proposal (docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md) and the frozen protocol define it and as the closing message of Phase 1 described it: the baselines beyond the pooled rate on the B clock, evaluated on the development folds only. Those are C2 (timing), C3 (sector group), C4 (the issuer's own shrunk history), M2 (the ridge-penalized logistic regression) and its without-sector sensitivity for the binary targets, and C2, C3, M3 (ridge linear regression with residual quantiles) and its without-sector sensitivity for the Day-1 return, with the seeded random ranking for ranking metrics.",
+    "The targets are the three B-clock primaries of the frozen protocol: gap_ge_3pct, gap_ge_5pct and day1_close_return. The two C0-clock primaries (extension_after_open_ge_5pct and loses_half_of_gap) belong to Phase 3 in the scope proposal and in the closing message, and are not covered by these words. If the owner meant both phases, the owner can say so; nothing is run on the C0 targets in the meantime.",
+    "Every predictor is evaluated in both versions, all_event and clean_window, as the protocol requires, and each target gets its status under the decision rule (DISTINGUISHABLE_BETTER, DISTINGUISHABLE_WORSE, NOT_DISTINGUISHABLE or INSUFFICIENT_DATA). No status is a claim of a tradable or production-ready edge.",
+    "The reply did not address the details the protocol is silent on, which the closing message had asked the owner to read first. It was not read as an amendment: the protocol stays version 1 and its hash is unchanged, and an amendment needs the owner's explicit instruction. It was read as: proceed under protocol version 1, with the outcome-independent defaults already documented in docs/M4-HARNESS.md section 5, plus the further details this phase had to settle, which are listed below and committed BEFORE the first real evaluation so that the record shows they preceded every result. Once a development fold has been evaluated these choices cannot be changed without stating that results of the earlier version were seen (the protocol's amendment procedure); the closing message of this phase says so plainly.",
+    "The sealed holdout stays sealed. ALLOW_HOLDOUT_LOOK stays False, block-5 labels are never read, and the holdout access log keeps only its genesis record."
+  ],
+  "authorized_under_these_words": [
+    "Building the baselines and the Phase 2 runner (nre/m4_models.py, nre/m4_phase2.py, extensions to nre/m4_harness.py), stdlib only, with tests on synthetic data and mutation checks",
+    "A structure-only audit of the real development folds before anything is evaluated (cell sizes, events without earlier history; it counts which labels are defined and reads no outcome value)",
+    "Turning on ALLOW_REAL_EVALUATION in a commit of its own, restricted to the three B-clock primary targets",
+    "Running the real development-fold evaluation of those predictors in both versions from a clean committed tree; appending every experiment to reports/m4-experiment-log.jsonl; writing the results report, the predictions file and a plain-language results note"
+  ],
+  "not_authorized_by_these_words": [
+    "Any access to the holdout's outcomes, or turning on ALLOW_HOLDOUT_LOOK (Phase 4)",
+    "The C0-clock targets extension_after_open_ge_5pct and loses_half_of_gap (Phase 3), or any predictor for a descriptive-only or INSUFFICIENT_DATA target or for the 5-session returns",
+    "Any amendment to the frozen protocol, any new data or provider",
+    "Trees, ensembles or deep models (Milestone 5), any ranking, candidate list, trading, sizing or backtest modelling",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later"
+  ],
+  "details_settled_before_any_evaluation": {
+    "status": "Settled by the assistant, outcome-independently, before any predictor beyond the pooled rate has been fitted or scored and before any real development fold has been evaluated. Not protocol amendments. Each is open to the owner's review; changing any now would be a new protocol version stated to follow results of the earlier one.",
+    "already_in_force_from_phase_1": "docs/M4-HARNESS.md section 5, items 1 to 12 (the headline interval is the wider by width; ties by event id; the group prior obeys the same maturity rules; and so on)",
+    "new_in_phase_2": [
+      {
+        "id": "P2-1",
+        "detail": "Standardization uses the population standard deviation (divide by n). A feature whose standard deviation is zero, to within floating-point rounding (1e-12), is dropped and the drop is logged.",
+        "could_move_a_result": true
+      },
+      {
+        "id": "P2-2",
+        "detail": "The regression issuer-history mean has no default when no earlier event exists (the protocol gives only the binary rate p = 0.5). M3 is fitted on the training events with the target defined AND an issuer-history mean; the few earliest training events with no earlier matured event are left out of the fit, counted and logged for each fold, and nothing is substituted for them. They still count as history for later events. Every test event has a history mean (checked by the structure audit before the run); if one did not, the run would stop.",
+        "could_move_a_result": true
+      },
+      {
+        "id": "P2-3",
+        "detail": "The history features of a training row are computed point-in-time inside the training set (earlier, matured training events only), exactly as for a test event.",
+        "could_move_a_result": true
+      },
+      {
+        "id": "P2-4",
+        "detail": "Newton-Raphson starts at the zero vector. Linear systems are solved by Gaussian elimination with partial pivoting, and a pivot below 1e-12 in absolute value is MODEL_FIT_FAILED. Convergence (largest absolute coefficient change below 1e-8) and the 100-iteration limit are the protocol's; failure is MODEL_FIT_FAILED and nothing is substituted.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P2-5",
+        "detail": "Predictions and fitted parameters are rounded to 12 decimal places when produced, so that results reproduce across platforms (the C libraries behind exp and log can differ in the last bit). Metrics are computed from the rounded predictions.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P2-6",
+        "detail": "The monotone repair caps each M2 variant's gap_ge_5pct probability at that same variant's gap_ge_3pct probability for the same event (M2_logistic by its own, M2_without_sector by its own). A missing 3% prediction makes the 5% model MODEL_FIT_FAILED. Every repair is counted and logged for each fold.",
+        "could_move_a_result": true
+      },
+      {
+        "id": "P2-7",
+        "detail": "Contrasts reported: every predictor against C1; M2 against C2, C3, C4 and M2_without_sector; M3 against C2, C3 and M3_without_sector; and M2 or M3 against C1 in each development fold. The one confirmatory contrast per primary target is the clean-window M2_logistic (binary) or M3_ridge_linear (regression) against C1; the all-event contrast of the same pair is its companion in the status rule. Every other contrast is labelled exploratory.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P2-8",
+        "detail": "Each use of the C2 or C3 fallback to the pooled value (a cell with fewer than 10 defined training events) is counted for each fold and for each test event, and logged.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P2-9",
+        "detail": "The without-sector sensitivities remove only the two sector indicators, as the protocol defines them. The issuer-history feature's group prior still uses the SIC major group where at least 10 earlier events share it, so a sector dependence remains in M2_without_sector and M3_without_sector.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P2-10",
+        "detail": "Only the three B-clock primaries can be evaluated on the real inputs: the tripwire is restricted to those targets, and a C0 target is refused until Phase 3 is authorized.",
+        "could_move_a_result": false
+      }
+    ]
+  },
+  "not_a_claim": [
+    "Not a result: nothing beyond the pooled base rate on synthetic data has been evaluated when this record is written.",
+    "Not Milestone 4 acceptance.",
+    "Not a statement that any predictor will beat the base rate: the protocol expects most primaries to be NOT_DISTINGUISHABLE."
+  ]
+}
