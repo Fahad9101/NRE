@@ -54,7 +54,8 @@ Scores, lower is better:
 - The pooled scores, the contrasts and the bootstrap intervals were recomputed from the predictions file and the development labels with plain arithmetic, separately from the harness: 45 quantities, no difference. For this phase
   the predictions themselves were recomputed too: C1, C2, C3 and C4 rebuilt from the training events' labels, and for each M2 fit the training means and standard deviations rebuilt, the stored coefficients checked against the
   penalized optimality conditions (the largest gradient component is below 1e-7), and the predictions recomputed from the stored parameters: 48 checks, no difference. The same check also reproduces Phase 2's committed predictions
-  and fits (64 checks, no difference). A test now repeats the score and bootstrap recomputation on every run, and another runs the whole evaluation again from the committed inputs and compares it with the committed results.
+  and fits (64 checks, no difference). Tests now repeat both recomputations on every run (`tests/m4_independent.py`, used by the Phase 2 and Phase 3 results tests), and another runs the whole evaluation again from the
+  committed inputs and compares it with the committed results.
 - The evaluation was run twice from scratch before anything was recorded; the two were identical.
 - All 12 logistic fits converged, in 4 to 6 iterations. No cell baseline fell back to the pooled value for the extension target. For `loses_half_of_gap` (all-event) fold 3, C2 fell back for 5 of 13 test events and C3 for 8 of 13, and in both
   folds 2 test events had no earlier event of their own issuer (C4 then uses the group or pooled prior alone), exactly as the structure audit had counted before anything was evaluated.

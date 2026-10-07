@@ -3,11 +3,14 @@ reproduced by running the evaluation again, and the holdout still sealed. Nothin
 import json
 import math
 import random
+import sys
 import unittest
 from pathlib import Path
 
-from nre import m4_data as d
-from nre import m4_harness as h
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import m4_independent as independent  # noqa: E402
+from nre import m4_data as d  # noqa: E402
+from nre import m4_harness as h  # noqa: E402
 from nre import m4_metrics as m
 from nre import m4_phase2 as p2
 from nre import m4_protocol as pr
@@ -114,6 +117,11 @@ class ResultsTests(unittest.TestCase):
                     a, b = losses[(target_id, version, predictor)], losses[(target_id, version, comparator)]
                     self.assertEqual(list(a), list(b))
                     self.assertAlmostEqual(math.fsum(a[e] - b[e] for e in a) / len(a), contrast["estimate"], places=9)
+
+    def test_the_predictions_and_the_m2_fits_recompute_from_the_training_labels(self):
+        problems, checked = independent.check(h.Harness.from_repository(), self.report, self.by_key)
+        self.assertEqual(problems, [])
+        self.assertEqual(checked, 2 * 2 * 6 * 2 + 2 * 2 * 2 * 2)  # the two binary targets in both versions: every predictor's predictions in both folds, and each M2 variant's fit as well
 
     def test_the_confirmatory_bootstrap_intervals_recompute_from_the_seeds(self):
         for target_id in p2.TARGETS:

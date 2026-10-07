@@ -3,11 +3,14 @@ reproduced by running the evaluation again, and the holdout still sealed. Nothin
 import json
 import math
 import random
+import sys
 import unittest
 from collections import Counter
 from pathlib import Path
 
-from nre import m4_data as d
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import m4_independent as independent  # noqa: E402
+from nre import m4_data as d  # noqa: E402
 from nre import m4_harness as h
 from nre import m4_metrics as m
 from nre import m4_phase2 as p2
@@ -165,6 +168,11 @@ class ResultsTests(unittest.TestCase):
                     got = contrast["by_clustering"][name]["intervals"]["%g" % level]
                     self.assertAlmostEqual(quantile(replicates, tail), got[0], places=9, msg=(target_id, version, name, level))
                     self.assertAlmostEqual(quantile(replicates, 1 - tail), got[1], places=9, msg=(target_id, version, name, level))
+
+    def test_the_predictions_and_the_m2_fits_recompute_from_the_training_labels(self):
+        problems, checked = independent.check(h.Harness.from_repository(), self.report, self.by_key)
+        self.assertEqual(problems, [])
+        self.assertEqual(checked, 3 * 6 * 2 + 3 * 2 * 2)  # every predictor's predictions in each fold of the three evaluated versions, and each M2 variant's fit as well
 
     # ---- the decision rule and the roles --------------------------------------------------------------------------------------------------------
 

@@ -10,6 +10,11 @@ every other predictor will be measured against, which is exercised on synthetic 
 `REAL_EVALUATION_TARGETS` (every other target is still refused on the real inputs), and the harness has evaluated real events. `ALLOW_HOLDOUT_LOOK` is still `False`, the holdout is still sealed (23 events,
 no read, no load), and the details in section 5 are in force as written. The protocol is unchanged.
 
+**Update 2026-10-07, after Phase 3:** the owner authorized Phase 3 and the harness now also evaluates the two C0-clock primaries (`docs/M4-PHASE3.md`, results in `docs/M4-PHASE3-RESULTS.md`).
+`REAL_EVALUATION_TARGETS` lists all five primaries; the nine descriptive-only and five `INSUFFICIENT_DATA` targets are still refused on the real inputs. Two harness behaviours changed for this phase:
+an all-event contrast is labelled the confirmatory contrast's companion only where the clean-window version can be evaluated (otherwise it is exploratory and says why), and M2 stops with a `ProtocolGap` naming any
+event that has no opening return instead of failing on `None`. `ALLOW_HOLDOUT_LOOK` is still `False` and the holdout still sealed (23 events, no read, no load). The protocol is unchanged.
+
 ## 1. What it is
 
 ```

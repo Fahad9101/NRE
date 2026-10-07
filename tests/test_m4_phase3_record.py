@@ -7,10 +7,12 @@ from nre import m4_harness as h
 from nre import m4_phase2 as p2
 from nre import m4_phase3 as p3
 from nre import m4_protocol as pr
+from nre import m4_registry as reg
 from nre.core import canonical, digest
 
 ROOT = Path(__file__).resolve().parent.parent
 AUTHORIZATION = ROOT / "reports" / "m4-phase3-authorization-2026-10-07.json"
+PHASE_2_RECORDS = 2 * (18 + 18 + 15)  # the experiments Phase 2 left in the log after its genesis
 
 
 class AuthorizationRecordTests(unittest.TestCase):
@@ -98,6 +100,53 @@ class StructureAuditReportTests(unittest.TestCase):
         self.assertIn("not the value of the opening gap", self.committed["purpose"])
         self.assertIn("Not a result: nothing was fitted, scored or evaluated.", self.committed["not_a_claim"])
         self.assertEqual(self.committed["holdout"], {"sealed_events": 23, "denied_reads": 0, "unsealed_loads": 0, "access_log_records_after_genesis": 0})
+
+
+class CompletionRecordTests(unittest.TestCase):
+    """The closing record is a snapshot of Phase 3; these check it against the artifacts it names, not against the code as later phases change it."""
+    RECORD = ROOT / "reports" / "m4-phase3-completion-2026-10-07.json"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.record = json.loads(cls.RECORD.read_text(encoding="utf-8"))
+
+    def test_the_record_names_the_artifacts_it_describes_and_their_hashes_match(self):
+        record = self.record
+        results = json.loads((ROOT / record["evaluation"]["results"]).read_text(encoding="utf-8"))
+        self.assertEqual(record["evaluation"]["results_canonical_sha256"], digest(canonical(results)))
+        self.assertEqual(record["protocol"]["canonical_sha256"], pr.protocol_sha256(pr.load_json(pr.PROTOCOL_PATH)))
+        log = reg.read(reg.EXPERIMENT_LOG)
+        first, count = 1 + PHASE_2_RECORDS, record["evaluation"]["experiment_records"]
+        self.assertEqual(record["evaluation"]["experiment_log_last_record_sha256"], log[first + count - 1][1])  # the last of the Phase 3 records
+        self.assertEqual({r["harness_commit"] for r, _ in log[first:first + count]}, {record["evaluation"]["commit"]})
+        for name in record["built"]["modules"] + record["built"]["tests"] + record["built"]["docs"] + [record["built"]["audit"], record["evaluation"]["predictions"]]:
+            self.assertTrue((ROOT / name).is_file(), name)
+        for commit in list(record["built"]["commits"].values()) + [record["evaluation"]["commit"], record["authorization"]["commit"]]:
+            self.assertRegex(commit, r"^[0-9a-f]{40}$")
+
+    def test_the_record_says_what_was_found_and_that_the_holdout_was_untouched(self):
+        record = self.record
+        self.assertEqual(record["evaluation"]["statuses"], {"extension_after_open_ge_5pct": {"M2_logistic": "NOT_DISTINGUISHABLE"}, "loses_half_of_gap": {"M2_logistic": "INSUFFICIENT_DATA"}})
+        brief = record["results_in_brief"]
+        self.assertEqual((brief["pooled_contrasts_with_an_interval_excluding_zero"]["count"], brief["pooled_contrasts_with_an_interval_excluding_zero"]["of"]), (0, 27))
+        self.assertEqual((brief["development_fold_contrasts_with_a_95_interval_excluding_zero"]["count"], brief["development_fold_contrasts_with_a_95_interval_excluding_zero"]["of"]), (0, 6))
+        self.assertEqual(len(brief["contrasts_of_m2_against_c1"]), 3)
+        self.assertEqual(record["evaluation"]["experiment_records"], 72)
+        self.assertEqual((record["holdout"]["denied_reads"], record["holdout"]["unsealed_loads"], record["holdout"]["access_log_records"]), (0, 0, 1))
+        self.assertEqual(record["verification"]["independent_recomputation"]["problems"], 0)
+        self.assertEqual(record["verification"]["the_same_check_on_phase_2s_outputs"]["problems"], 0)
+        self.assertTrue(record["evaluation"]["evaluated_twice_from_scratch_and_identical"])
+        self.assertEqual(record["tests"]["mutation_check"]["caught"], record["tests"]["mutation_check"]["deliberate_defects"])
+        self.assertEqual(record["tests"]["mutation_check"]["deliberate_defects"], 101)
+        self.assertFalse(record["protocol"]["amended"])
+        self.assertEqual((record["tripwires"]["ALLOW_REAL_EVALUATION"], record["tripwires"]["ALLOW_HOLDOUT_LOOK"]), (True, False))
+        self.assertEqual(len(record["tripwires"]["REAL_EVALUATION_TARGETS"]), 5)
+
+    def test_what_is_not_authorized_is_listed(self):
+        text = " ".join(self.record["not_done_and_not_authorized"])
+        for phrase in ("Phase 4", "holdout", "amendment", "Milestone 4 accepted", "Milestone 5"):
+            self.assertIn(phrase, text)
+        self.assertIn("Not Milestone 4 acceptance.", self.record["not_a_claim"])
 
 
 if __name__ == "__main__":

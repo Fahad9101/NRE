@@ -26,6 +26,11 @@ authorized. The harness decided a handful of details the protocol is silent on; 
 (`docs/M4-PHASE2.md`) and evaluated on the real development folds in both versions (`docs/M4-PHASE2-RESULTS.md`, `reports/m4-phase2-results-2026-10-07.json`). All three primary targets are
 `NOT_DISTINGUISHABLE` from the pooled base rate, as the protocol expected. The protocol is unchanged, the holdout is untouched, and Phases 3 and 4 are not authorized.
 
+**Update 2026-10-07, after Phase 3:** the owner authorized Phase 3 (`reports/m4-phase3-authorization-2026-10-07.json`). The same baselines were evaluated on the two C0-clock primaries, `extension_after_open_ge_5pct` and
+`loses_half_of_gap`, with M2 also taking the opening gap (`docs/M4-PHASE3.md`, `docs/M4-PHASE3-RESULTS.md`, `reports/m4-phase3-results-2026-10-07.json`). `extension_after_open_ge_5pct` is `NOT_DISTINGUISHABLE`;
+`loses_half_of_gap` is `INSUFFICIENT_DATA` (its clean-window version has 9 training positives in fold 3 where 10 are needed), and its all-event results are exploratory. Phase 3 followed the frozen protocol, which made
+`full_gap_fill` descriptive-only, rather than the text of the Phase 3 bullet in section 5 below, which named it. The protocol is unchanged, the holdout is untouched, and Phase 4 is not authorized.
+
 ## Summary
 
 - **What Milestone 4 is.** The master prompt's section, in full: "Build baseline models for: opening gap, Day-1 move, gap retention,

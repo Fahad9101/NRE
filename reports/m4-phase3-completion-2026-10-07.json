@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-07",
+  "what": "Closing record of Milestone 4 Phase 3: the baselines of Phase 2, with M2 also taking the opening gap, evaluated on the development folds for the two C0-clock primary targets in both versions. The holdout was not touched, and the statuses below are not claims of an edge.",
+  "authorization": {
+    "record": "reports/m4-phase3-authorization-2026-10-07.json",
+    "commit": "f8cf783554c3b0656c0df68daf25989593f7d908",
+    "owner_words": "authorize phase 3",
+    "at": "2026-10-07T11:03:34.484Z"
+  },
+  "protocol": {
+    "path": "config/m4-protocol.json",
+    "version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "amended": false
+  },
+  "built": {
+    "commits": {
+      "build": "2080e0140f93d6cd6923d41c3b4969003850d1cb",
+      "tripwire": "14e3e1dfc2c9467b9d2cb37c952327c09093cf5e",
+      "results": "50086ed01462bf40b5ba90b36b9a400fa00acd29"
+    },
+    "modules": [
+      "nre/m4_phase3.py",
+      "nre/m4_phase2.py",
+      "nre/m4_models.py",
+      "nre/m4_harness.py"
+    ],
+    "tests": [
+      "tests/test_m4_phase3.py",
+      "tests/test_m4_phase3_record.py",
+      "tests/test_m4_phase3_results.py",
+      "tests/m4_independent.py",
+      "tests/test_m4_phase2_results.py",
+      "tests/test_m4_models.py",
+      "tests/test_m4_harness.py"
+    ],
+    "docs": [
+      "docs/M4-PHASE3.md",
+      "docs/M4-PHASE3-RESULTS.md"
+    ],
+    "audit": "reports/m4-phase3-structure-audit-2026-10-07.json"
+  },
+  "evaluation": {
+    "commit": "14e3e1dfc2c9467b9d2cb37c952327c09093cf5e",
+    "date": "2026-10-07",
+    "from_a_clean_committed_tree": true,
+    "experiment_records": 72,
+    "prediction_records": 660,
+    "results": "reports/m4-phase3-results-2026-10-07.json",
+    "results_canonical_sha256": "a1f97f9831573856f96bf64615519a2d3267cc36cd7c52ae2cc7e17158cfe038",
+    "predictions": "reports/m4-phase3-predictions-2026-10-07.jsonl",
+    "evaluated_twice_from_scratch_and_identical": true,
+    "statuses": {
+      "extension_after_open_ge_5pct": {
+        "M2_logistic": "NOT_DISTINGUISHABLE"
+      },
+      "loses_half_of_gap": {
+        "M2_logistic": "INSUFFICIENT_DATA"
+      }
+    },
+    "experiment_log_records_now": 175,
+    "experiment_log_last_record_sha256": "5e88b1d2b1e67d654ba8d6f352b70d170e538e858d156a8b237a77d68802aaff",
+    "experiment_log_records_for_the_insufficient_data_version": 18
+  },
+  "results_in_brief": {
+    "contrasts_of_m2_against_c1": {
+      "extension_after_open_ge_5pct/clean_window": {
+        "role": "confirmatory",
+        "events": 43,
+        "positives": 18,
+        "comparator_score": 0.24500610331651504,
+        "model_score": 0.27335089467534995,
+        "difference": 0.028344791358834873,
+        "interval_95": [
+          -0.02058167358126698,
+          0.07518125804344128
+        ],
+        "interval_99": [
+          -0.03449130698116243,
+          0.08852743603234137
+        ]
+      },
+      "extension_after_open_ge_5pct/all_event": {
+        "role": "companion_of_the_confirmatory_contrast",
+        "events": 44,
+        "positives": 18,
+        "comparator_score": 0.24333826863280797,
+        "model_score": 0.2661625712949172,
+        "difference": 0.022824302662109233,
+        "interval_95": [
+          -0.028843466078325566,
+          0.07424984490264573
+        ],
+        "interval_99": [
+          -0.043596073956086306,
+          0.09109524024992628
+        ]
+      },
+      "loses_half_of_gap/all_event": {
+        "role": "exploratory",
+        "events": 23,
+        "positives": 12,
+        "comparator_score": 0.2612043839575888,
+        "model_score": 0.3193378237920269,
+        "difference": 0.05813343983443807,
+        "interval_95": [
+          -0.028318745353903312,
+          0.14995263367294742
+        ],
+        "interval_99": [
+          -0.054741712260489864,
+          0.17336024666292407
+        ],
+        "role_note": "the clean-window version is INSUFFICIENT_DATA, so there is no confirmatory contrast for this one to accompany"
+      }
+    },
+    "loses_half_of_gap_clean_window": {
+      "state": "INSUFFICIENT_DATA",
+      "reason": "5 positives among 10 defined events (at least 10 needed)",
+      "fold_3_training_positives": 9,
+      "pooled_test": {
+        "defined": 10,
+        "positives": 5,
+        "negatives": 5
+      }
+    },
+    "pooled_contrasts_with_an_interval_excluding_zero": {
+      "of": 27,
+      "count": 0,
+      "which": []
+    },
+    "development_fold_contrasts_with_a_95_interval_excluding_zero": {
+      "of": 6,
+      "count": 0,
+      "which": []
+    }
+  },
+  "verification": {
+    "independent_recomputation": {
+      "quantities_checked": 45,
+      "predictions_and_fits_checked": 48,
+      "problems": 0,
+      "what": "the pooled scores, the contrasts and the bootstrap intervals recomputed from the predictions file and the development labels with plain arithmetic, and the predictions themselves: C1 to C4 from the training labels, and each M2 fit's training statistics, optimality conditions and predictions from its stored parameters"
+    },
+    "the_same_check_on_phase_2s_outputs": {
+      "quantities_checked": 86,
+      "predictions_and_fits_checked": 64,
+      "problems": 0
+    },
+    "reproduced_by_a_test": "tests/test_m4_phase3_results.py runs the evaluation again from the committed inputs and compares it with the committed results, and repeats the independent recomputation of the scores, bootstrap intervals, predictions and M2 fits (tests/m4_independent.py, also used by tests/test_m4_phase2_results.py)"
+  },
+  "tests": {
+    "suite_tests_run": 896,
+    "skipped": 4,
+    "result": "OK, exit status 0",
+    "mutation_check": {
+      "script": "scripts/m4_mutation_check.py",
+      "deliberate_defects": 101,
+      "caught": 101,
+      "run_on": "a snapshot of the committed results state, in five runs that shared the list",
+      "phase_3_defects": 21,
+      "rewritten_for_the_changed_role_logic": [
+        "every model's contrast against C1 is confirmatory",
+        "the all-event contrast is confirmatory too"
+      ],
+      "not_caught_on_the_first_run": []
+    }
+  },
+  "holdout": {
+    "sealed_events": 23,
+    "denied_reads": 0,
+    "unsealed_loads": 0,
+    "access_log_records": 1,
+    "ALLOW_HOLDOUT_LOOK": false
+  },
+  "tripwires": {
+    "ALLOW_REAL_EVALUATION": true,
+    "REAL_EVALUATION_TARGETS": [
+      "gap_ge_3pct",
+      "gap_ge_5pct",
+      "day1_close_return",
+      "extension_after_open_ge_5pct",
+      "loses_half_of_gap"
+    ],
+    "ALLOW_HOLDOUT_LOOK": false
+  },
+  "details_settled_before_any_c0_evaluation": "reports/m4-phase3-authorization-2026-10-07.json (P3-1 to P3-7), committed before the first C0-clock evaluation",
+  "not_done_and_not_authorized": [
+    "Phase 4: any access to the holdout's outcomes, the descriptive report with block-5 counts, and the Milestone 4 report",
+    "Any predictor for a descriptive-only or INSUFFICIENT_DATA target (full_gap_fill among them) or for the five-session returns",
+    "Any amendment to the frozen protocol, new data or a new provider",
+    "Milestone 5 (trees, ensembles) or later, any ranking, candidate list, trading or backtest",
+    "Declaring Milestone 4 accepted"
+  ],
+  "not_a_claim": [
+    "Not a claim of a predictive edge: extension_after_open_ge_5pct is NOT_DISTINGUISHABLE and loses_half_of_gap is INSUFFICIENT_DATA; neither would be a claim.",
+    "Not Milestone 4 acceptance.",
+    "Not evidence about any market: a convenience sample of 23 issuers on one regime."
+  ]
+}
