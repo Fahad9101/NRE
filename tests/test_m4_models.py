@@ -255,6 +255,27 @@ class CellBaselineTests(unittest.TestCase):
         self.assertEqual(model["pooled_quantiles"], [fp.quantile(sorted(e["labels"]["day1_close_return"]["value"] for e in train), q) for q in (0.1, 0.5, 0.9)])
 
 
+class QuantileCellBoundaryTests(unittest.TestCase):
+    TARGET = TARGETS["day1_close_return"]
+
+    def events(self, timing, count, start):
+        return [S.build_event(start + n, day(start + n), timing, "%010d" % (start + n), "2834", "k%d" % (start + n), blank(day1_close_return=0.01 * (start + n)))
+                for n in range(count)]
+
+    def view(self, timing):
+        return {"event_id": "v-" + timing, "release_timing": timing, "sic_division": "D"}
+
+    def test_a_quantile_cell_of_exactly_ten_does_not_fall_back_and_a_cell_of_nine_does(self):
+        predictor = mm.timing_quantiles()
+        model = predictor.fit(self.events("after_hours", 10, 0) + self.events("premarket", 9, 20), self.TARGET)
+        self.assertEqual((model["cells"]["after_hours"]["n"], model["cells"]["premarket"]["n"]), (10, 9))
+        self.assertEqual(predictor.predict(model, self.view("after_hours")), tuple(model["cells"]["after_hours"]["quantiles"]))
+        self.assertEqual(model.diagnostics["fallbacks_to_the_pooled_quantiles"], 0)
+        self.assertEqual(predictor.predict(model, self.view("premarket")), tuple(model["pooled_quantiles"]))
+        self.assertEqual(model.diagnostics["fallbacks_to_the_pooled_quantiles"], 1)
+        self.assertNotEqual(model["cells"]["premarket"]["quantiles"], model["pooled_quantiles"])  # the fallback is a different forecast, not a coincidence
+
+
 class IssuerHistoryTests(unittest.TestCase):
     def test_c4_is_the_issuer_history_rate_used_directly_and_counts_where_its_prior_came_from(self):
         target = TARGETS["gap_ge_3pct"]
@@ -449,6 +470,9 @@ class RidgeTests(unittest.TestCase):
             self.assertAlmostEqual(got, want, places=8)
         residuals = [y - sum(c * x for c, x in zip(model.context["beta"], r)) for r, y in zip(z, ys)]
         self.assertAlmostEqual(sum(residuals), 0.0, places=8)
+        independent = [y - sum(c * x for c, x in zip(cramer(a, b), r)) for r, y in zip(z, ys)]  # the residuals of the independently solved fit
+        for got, level in zip(model.context["residual_quantiles"], (0.1, 0.5, 0.9)):
+            self.assertAlmostEqual(got, fp.quantile(sorted(independent), level), places=8)  # the 10th, 50th and 90th percentiles, type 7
 
     def test_the_quantile_outputs_are_the_fitted_mean_plus_the_training_residual_quantiles(self):
         predictor = mm.Ridge()

@@ -58,14 +58,15 @@ class HarnessExtensionTests(unittest.TestCase):
     def test_on_the_real_inputs_only_the_authorized_targets_can_be_evaluated(self):
         real = harness()
         real.real = True  # the guard, exercised on synthetic data
-        with self.assertRaises(h.EvaluationNotAuthorized):
-            real.evaluate("gap_ge_3pct", "all_event")  # the tripwire is off
+        with mock.patch.object(h, "ALLOW_REAL_EVALUATION", False), mock.patch.object(h, "REAL_EVALUATION_TARGETS", ("gap_ge_3pct",)):
+            with self.assertRaises(h.EvaluationNotAuthorized):
+                real.evaluate("gap_ge_3pct", "all_event")  # the tripwire is off, whatever targets are listed
         with mock.patch.object(h, "ALLOW_REAL_EVALUATION", True), mock.patch.object(h, "REAL_EVALUATION_TARGETS", ("gap_ge_3pct",)):
             real.evaluate("gap_ge_3pct", "all_event")
             for refused in ("gap_ge_5pct", "extension_after_open_ge_5pct", "loses_half_of_gap"):
                 with self.assertRaisesRegex(h.EvaluationNotAuthorized, "not among the targets authorized"):
                     real.evaluate(refused, "all_event")
-        with mock.patch.object(h, "ALLOW_REAL_EVALUATION", True):  # on, but no target authorized
+        with mock.patch.object(h, "ALLOW_REAL_EVALUATION", True), mock.patch.object(h, "REAL_EVALUATION_TARGETS", ()):  # on, but no target authorized
             with self.assertRaises(h.EvaluationNotAuthorized):
                 real.evaluate("gap_ge_3pct", "all_event")
 
@@ -418,7 +419,7 @@ class CommandLineTests(unittest.TestCase):
     def test_run_needs_a_date_and_the_tripwire(self):
         with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
             p2.main(["run"])
-        if not h.ALLOW_REAL_EVALUATION:
+        with mock.patch.object(h, "ALLOW_REAL_EVALUATION", False):  # whatever the real setting, a run with the tripwire off is refused before it reads anything
             with self.assertRaises(h.EvaluationNotAuthorized):
                 p2.main(["run", "--date", "2026-10-07"])
 
