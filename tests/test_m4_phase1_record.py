@@ -1,13 +1,16 @@
 """What Phase 1 committed alongside the harness: the two logs' genesis records, the dry-run report, and the mutation check's source patterns."""
 import importlib.util
 import json
+import sys
 import unittest
 from pathlib import Path
 
-from nre import m4_harness as h
-from nre import m4_protocol as pr
-from nre import m4_registry as reg
-from nre.core import canonical, digest
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import m4_support as S  # noqa: E402
+from nre import m4_harness as h  # noqa: E402
+from nre import m4_protocol as pr  # noqa: E402
+from nre import m4_registry as reg  # noqa: E402
+from nre.core import canonical, digest  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PROTOCOL = pr.load_json(pr.PROTOCOL_PATH)
@@ -24,12 +27,20 @@ class LogTests(unittest.TestCase):
             self.assertRegex(genesis["harness_commit"], r"^[0-9a-f]{40}$")
             self.assertRegex(genesis["created_at"], r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 
-    def test_while_the_tripwires_are_off_each_log_holds_its_genesis_and_nothing_else(self):
+    def test_while_the_tripwires_are_off_each_log_holds_only_what_an_authorized_phase_put_there(self):
         # An experiment record or a holdout access can exist only once the phase that makes it has been authorized and has turned its tripwire on.
         if not h.ALLOW_REAL_EVALUATION:
             self.assertEqual(len(reg.read(reg.EXPERIMENT_LOG)), 1)
-        if not h.ALLOW_HOLDOUT_LOOK:
-            self.assertEqual(len(reg.read(reg.HOLDOUT_LOG)), 1)
+        # The holdout tripwire is turned on for the one look and off again after it (reports/m4-phase4-authorization-2026-10-07.json, P4-11): whatever its setting, the log holds
+        # its genesis and at most that one access, which names the Phase 4 look and all 23 holdout events, and nothing else can have been added.
+        accesses = [record for record, _ in reg.read(reg.HOLDOUT_LOG)][1:]
+        self.assertLessEqual(len(accesses), 1)
+        for access in accesses:
+            self.assertEqual(access["access_number"], 1)
+            self.assertTrue(access["reason"].startswith("Milestone 4 Phase 4: the one look at the final holdout"))
+            self.assertEqual(len(access["events_read"]), 23)
+        if accesses:
+            self.assertFalse(h.ALLOW_HOLDOUT_LOOK, "after the look the tripwire is turned off again")
 
     def test_the_genesis_records_were_written_before_anything_was_evaluated(self):
         self.assertIn("No predictor has been fitted", reg.read(reg.EXPERIMENT_LOG)[0][0]["note"])
@@ -40,7 +51,7 @@ class LogTests(unittest.TestCase):
 class DryRunReportTests(unittest.TestCase):
     def test_the_committed_dry_run_report_is_what_the_harness_produces_from_the_committed_inputs(self):
         committed = json.loads(REPORT.read_text(encoding="utf-8"))
-        fresh = h.Harness.from_repository().dry_run()
+        fresh = h.Harness.from_repository(holdout_log=S.genesis_only_holdout_log(self)).dry_run()  # the holdout log as it was then: genesis only
         self.assertEqual(digest(canonical(fresh)), digest(canonical(committed)))
 
     def test_the_report_says_nothing_was_evaluated_and_nothing_disagrees_with_the_freeze_record(self):

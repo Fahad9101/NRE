@@ -9,10 +9,12 @@ rebuilds the training events with the target defined and recomputes:
   M2 the training means and standard deviations of its features, the penalized optimality conditions at the stored coefficients (so the stored fit IS the optimum of the
      stated objective on the rebuilt training rows), and the predictions from the stored parameters, capped by the 3% model's where the 5% model was repaired.
 
-`check` returns (the problems found, how many sets of predictions and fits were checked).
+`check` returns (the problems found, how many sets of predictions and fits were checked). The holdout fold's test events are sealed: `check` takes them from `holdout_events`, the
+{version: events with their labels} that a replayed look (Harness.look against temporary logs) returned, and refuses a holdout fold without them.
 """
 import math
 
+from nre import fingerprints as fp
 from nre import m4_data as d
 from nre import m4_protocol as pr
 
@@ -54,17 +56,30 @@ def features(event, defined, target, names):
     return [available[name] for name in names]
 
 
-def check(harness, report, by_key):
+def run_of(report, target_id, version, predictor):
+    return report["evaluations"][target_id][version]["predictors"][predictor]
+
+
+def fold_entry(run, fold_name):
+    """The part of a predictor's result that holds a fold's model and diagnostics: per fold in a development report, the predictor's own in a holdout one."""
+    return run["folds"][fold_name] if "folds" in run else run
+
+
+def check(harness, report, by_key, holdout_events=None):
     """by_key maps (target id, version, predictor id) to that predictor's prediction records, as read from a predictions file; report is the matching results report."""
     problems, checked = [], 0
-    development = {fold.name: fold for fold in harness.folds if fold.role == "development"}
+    folds = {fold.name: fold for fold in harness.folds}
     for (target_id, version, predictor), records in sorted(by_key.items()):
         target = harness.targets[target_id]
         if target.kind != "binary" or predictor not in BINARY:
             continue
         for fold_name in sorted({r["fold"] for r in records}):
             where = "%s %s %s %s" % (target_id, version, predictor, fold_name)
-            train, test = d.split(harness.versions[version], harness.blocks, development[fold_name])
+            train, test = d.split(harness.versions[version], harness.blocks, folds[fold_name])
+            if folds[fold_name].role == "holdout":
+                if holdout_events is None:
+                    raise ValueError("the holdout fold's test events are sealed: pass the events a replayed look returned")
+                test = sorted(holdout_events[version], key=fp.event_order)
             defined = [(e, target.function(e["labels"])) for e in train]
             defined = [(e, v) for e, v in defined if v is not None]
             test_defined = [e for e in test if target.function(e["labels"]) is not None]
@@ -84,7 +99,7 @@ def check(harness, report, by_key):
             elif predictor == "C4_issuer_history_rate":
                 want = {e["event_id"]: issuer_rate(e, defined, target) for e in test_defined}
             else:
-                model = report["evaluations"][target_id][version]["predictors"][predictor]["folds"][fold_name]["model"]
+                model = fold_entry(run_of(report, target_id, version, predictor), fold_name)["model"]
                 names = model["kept"]
                 if model["dropped"]:
                     problems.append("%s: features were dropped (%s)" % (where, model["dropped"]))
@@ -112,7 +127,7 @@ def check(harness, report, by_key):
                     cap = {r["event_id"]: r["prediction"] for r in by_key[("gap_ge_3pct", version, predictor)] if r["fold"] == fold_name}
                     repaired = sum(1 for k in want if want[k] > cap[k] + 1e-12)
                     want = {k: min(v, cap[k]) for k, v in want.items()}
-                    reported = report["evaluations"][target_id][version]["predictors"][predictor]["folds"][fold_name]["diagnostics"]["repairs_of_the_nested_threshold"]
+                    reported = fold_entry(run_of(report, target_id, version, predictor), fold_name)["diagnostics"]["repairs_of_the_nested_threshold"]
                     if repaired != reported:
                         problems.append("%s: %d predictions exceed the 3%% model's, but the report counts %d repairs" % (where, repaired, reported))
                 checked += 1

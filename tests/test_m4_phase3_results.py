@@ -10,6 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import m4_independent as independent  # noqa: E402
+import m4_support as S  # noqa: E402
 from nre import m4_data as d  # noqa: E402
 from nre import m4_harness as h
 from nre import m4_metrics as m
@@ -237,7 +238,7 @@ class ResultsTests(unittest.TestCase):
     # ---- reproduced, and the holdout ------------------------------------------------------------------------------------------------------------
 
     def test_the_evaluation_reproduces_from_the_committed_inputs(self):
-        harness = h.Harness.from_repository()
+        harness = h.Harness.from_repository(holdout_log=S.genesis_only_holdout_log(self))  # the holdout log as it was then: genesis only
         evaluations = p2.run_all(harness, p3.TARGETS)
         statuses = p2.statuses(harness, evaluations, p3.TARGETS)
         fresh = p2.results_report(harness, evaluations, statuses, "ignored", p3.PHASE_3)
@@ -252,8 +253,9 @@ class ResultsTests(unittest.TestCase):
     def test_the_holdout_was_never_touched(self):
         self.assertEqual(self.report["holdout"], {"sealed_events": 23, "denied_reads": 0, "unsealed_loads": 0, "access_log_records_after_genesis": 0})
         self.assertEqual((self.inputs["gate"].denied, self.inputs["gate"].unsealed), ([], 0))
-        if not h.ALLOW_HOLDOUT_LOOK:
-            self.assertEqual(len(reg.read(reg.HOLDOUT_LOG)), 1)  # the genesis record only: not one access
+        accesses = [record for record, _ in reg.read(reg.HOLDOUT_LOG)][1:]  # the report says no access at its time; since then the log may hold only the one authorized look (Phase 4)
+        self.assertLessEqual(len(accesses), 1)
+        self.assertTrue(all(a["reason"].startswith("Milestone 4 Phase 4: the one look at the final holdout") for a in accesses))
         self.assertEqual(self.report["scope"]["targets"], list(p3.TARGETS))
         self.assertEqual(sorted(self.report["evaluations"]), sorted(p3.TARGETS))
         for target_id in p3.TARGETS:

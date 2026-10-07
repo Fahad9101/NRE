@@ -482,6 +482,128 @@ class Harness:
                                     "generated_at": generated_at})
         return records
 
+    # ---- the holdout evaluation (Phase 4): from the events the logged look returned ---------------------------------------------------------------
+
+    def holdout_fold(self):
+        return next(f for f in self.folds if f.role == "holdout")
+
+    def evaluate_holdout(self, target_id, version, unsealed, predictors=None):
+        """One primary target in one version on the holdout fold, from the holdout events that Harness.look returned for this version.
+
+        Nothing here unseals anything: `unsealed` is what the logged look handed back. The fold is trained on blocks 1 to 4 as the version sees them. A fold whose
+        training events fail the fold-level rule is INSUFFICIENT_DATA; holdout test events that fail the holdout-level rule make the target COUNTS_ONLY (nothing is
+        fitted or scored: only the counts, the base rate and its Wilson interval); otherwise every predictor is fitted on the training events and scored on the test
+        events. Every contrast is a holdout contrast and none is a claim: the holdout alone never creates one.
+        """
+        self._guard(target_id)
+        target = self.targets[target_id]
+        if target.role != "primary":
+            raise DataError("%s is %s: no predictor is fitted for it" % (target_id, target.role))
+        predictors = predictors or [PooledRate() if target.kind == "binary" else PooledQuantiles()]
+        if any(p.kind != target.kind for p in predictors):
+            raise DataError("every predictor must be of the target's kind (%s)" % target.kind)
+        fold = self.holdout_fold()
+        train, sealed_test = d.split(self.versions[version], self.blocks, fold)
+        test = sorted(unsealed, key=fp.event_order)
+        if [e["event_id"] for e in test] != [e["event_id"] for e in sealed_test] or any(d.is_sealed(e) for e in test):
+            raise DataError("the events given are not the holdout fold's test events with their labels")
+        d.assert_clusters_whole(train, test, self.blocks)
+        slack_all = d.assert_label_maturity(train, test, fp.LABELS, fold.name)
+        slack_target = d.assert_label_maturity(train, test, target.source_labels, fold.name)
+        train_values, test_values = d.target_values(target, train), d.target_values(target, test)
+        entry = {"role": fold.role, "train_blocks": list(fold.train_blocks), "test_block": fold.test_block, "train_events": len(train), "test_events": len(test),
+                 "smallest_label_slack_days": {"all_sixteen_labels": round(slack_all, 2), "this_target": round(slack_target, 2)}, **d.fold_state(target, train, train_values)}
+        held = d.holdout_state(target, test_values)
+        entry["test"] = held["test"]
+        train_defined = [e for e, v in zip(train, train_values) if v is not None]
+        tests = [(e, v) for e, v in zip(test, test_values) if v is not None]
+        result = {"target": target.id, "version": version, "kind": target.kind, "clock": target.clock, "fold": entry, "state": None, "reason": None,
+                  "test_counts": self._holdout_counts(target, tests), "selection_regime": self.protocol["holdout"]["selection_regime"],
+                  "predictors": {}, "contrasts": {}, "other_contrasts": {}}
+        if entry["state"] != d.EVALUABLE:
+            result["state"], result["reason"] = d.INSUFFICIENT_DATA, entry["reason"]
+        elif held["state"] != d.EVALUABLE:
+            result["state"] = d.COUNTS_ONLY
+            result["reason"] = (d.shortfall(held["test"]) if target.kind == "binary"
+                                else "%d test events with the target defined (at least %d needed)" % (held["test"]["defined"], pr.MIN_REGRESSION_TEST_EVENTS))
+        if result["state"] is not None:
+            for predictor in predictors:
+                result["predictors"][predictor.id] = {"state": result["state"], "reason": result["reason"], "predictions": None}
+            return result
+        result["state"] = EVALUATED
+        for predictor in predictors:
+            result["predictors"][predictor.id] = self._run_holdout(predictor, target, fold, train_defined, tests)
+        runs = result["predictors"]
+        comparator = runs.get(COMPARATOR[target.kind])
+        evaluated = lambda run: run is not None and run["state"] == EVALUATED  # noqa: E731
+        no_claim = "none: the holdout alone never creates a claim"
+        for pid, run in runs.items():
+            if evaluated(comparator) and pid != COMPARATOR[target.kind] and evaluated(run):
+                role = "holdout_replication_check" if pid == CONFIRMATORY[target.kind] else "exploratory"
+                result["contrasts"][pid] = {"role": role, "claim": no_claim, "baseline": COMPARATOR[target.kind], **self._contrast(target, run["rows"], comparator["rows"])}
+        for model_id, baseline_id in OTHER_CONTRASTS[target.kind]:
+            if evaluated(runs.get(model_id)) and evaluated(runs.get(baseline_id)):
+                result["other_contrasts"]["%s_vs_%s" % (model_id, baseline_id)] = {
+                    "role": "exploratory", "claim": no_claim, "model": model_id, "baseline": baseline_id, **self._contrast(target, runs[model_id]["rows"], runs[baseline_id]["rows"])}
+        return result
+
+    def _run_holdout(self, predictor, target, fold, train_defined, tests):
+        """One predictor fitted on the holdout fold's training events and scored on its test events; a fit that fails has null predictions and a reason."""
+        try:
+            model = predictor.fit(train_defined, target)
+        except Abstain as abstention:
+            return {"state": abstention.state, "reason": abstention.reason, "predictions": None}
+        base = self._baseline_rate(target, train_defined)
+        rows = [self._row(e, v, rounded(predictor.predict(model, view_of(e, target))), fold, base) for e, v in tests]
+        return {"state": EVALUATED, "reason": None, "predictions": len(rows), "model": model, "model_checksum": digest(canonical(model)),
+                "diagnostics": dict(getattr(model, "diagnostics", None) or {}), "rows": rows, "metrics": self._metrics(target, rows, pr.PRECISION_K_FOLD),
+                "metrics_by_source": {s: self._metrics(target, [r for r in rows if r["source"] == s], pr.PRECISION_K_FOLD) for s in sorted({r["source"] for r in rows})}}
+
+    def _holdout_counts(self, target, tests):
+        """What a holdout target-version is described by whatever its state: the defined test events, their positives and negatives, sessions and issuers, and for a binary
+        target the base rate with its Wilson interval at the reporting level."""
+        header = self._counts_header(target, [{"y": v, "reaction_session": e["reaction_session"], "issuer": e["cik"]} for e, v in tests])
+        if target.kind == "binary" and tests:
+            low, high = fp.wilson(header["positives"], header["events"], pr.REPORTING_LEVEL)
+            header.update(base_rate=header["positives"] / header["events"], wilson_low=low, wilson_high=high, wilson_level=pr.REPORTING_LEVEL)
+        return header
+
+    def holdout_experiment_records(self, result):
+        """One record per predictor for the holdout fold: EVALUATED with its predictions and metrics, or COUNTS_ONLY, INSUFFICIENT_DATA or MODEL_FIT_FAILED with the counts."""
+        target, commit, created, start = self.targets[result["target"]], self.commit(), self.clock(), len(reg.read(self.experiment_log))
+        method = self.protocol["intervals"]["headline_interval_for_the_primary_contrast"]["method"]
+        fold = self.holdout_fold()
+        records = []
+        for pid, run in result["predictors"].items():
+            contrasts = {"against_the_comparator": result["contrasts"].get(pid), "others": {k: v for k, v in result["other_contrasts"].items() if v["model"] == pid}}
+            metrics = {"fold": result["fold"], "holdout_state": result["state"], "test_counts": result["test_counts"], "selection_regime": result["selection_regime"],
+                       "metrics": run.get("metrics") or {"state": run["state"], "reason": run["reason"]}, "diagnostics": run.get("diagnostics"), "contrasts": contrasts}
+            records.append(self._record(start + len(records), created, commit, target, pid, result, fold.name, self._train_ids(result["version"], fold.name), run.get("rows", []),
+                                        run.get("model", {}), metrics, method if run["state"] == EVALUATED else "none", run["state"]))
+        return records
+
+    def record_holdout_experiments(self, result):
+        return [reg.append(self.experiment_log, "experiments", record, self.protocol) for record in self.holdout_experiment_records(result)]
+
+    def holdout_prediction_records(self, result, generated_at):
+        """Every holdout prediction of one evaluate_holdout() result as a prediction record: one per predictor and test event, for the predictors that were scored."""
+        target, version, fold = self.targets[result["target"]], result["version"], self.holdout_fold()
+        snapshot = digest(canonical({k: self.protocol["inputs"][k] for k in ("event_table_sha256", "event_labels_sha256", "block_assignment_sha256")}))
+        sessions = sorted(e["reaction_session"] for e in d.split(self.versions[version], self.blocks, fold)[0])
+        by_id = {e["event_id"]: e for e in self.events}
+        records = []
+        for pid, run in result["predictors"].items():
+            if run["state"] != EVALUATED:
+                continue
+            for row in run["rows"]:
+                event = by_id[row["event_id"]]
+                when = self.inputs["calendar"].bounds(event["reaction_session"])[0] if target.clock == "C0" else event["cutoff"]
+                records.append({"event_id": row["event_id"], "target_id": target.id, "version": version, "fold": fold.name, "predictor_id": pid,
+                                "prediction": list(row["p"]) if isinstance(row["p"], tuple) else row["p"], **RESPONSE, "reasons": RESPONSE_REASONS,
+                                "model_version": "m4-%s-v1" % pid, "feature_version": feat.FEATURE_VERSION, "training_window_dates": [sessions[0], sessions[-1]],
+                                "data_snapshot_sha256": snapshot, "model_checksum": run["model_checksum"], "prediction_time": iso(when), "generated_at": generated_at})
+        return records
+
     # ---- the holdout -----------------------------------------------------------------------------------------------------------------------
 
     def look(self, reason):

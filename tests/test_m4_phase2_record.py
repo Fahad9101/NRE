@@ -1,13 +1,16 @@
 """What Phase 2 recorded about itself: the owner's go-ahead and how it was read, and the details settled before any real evaluation existed."""
 import json
+import sys
 import unittest
 from pathlib import Path
 
-from nre import m4_harness as h
-from nre import m4_phase2 as p2
-from nre import m4_protocol as pr
-from nre import m4_registry as reg
-from nre.core import canonical, digest
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import m4_support as S  # noqa: E402
+from nre import m4_harness as h  # noqa: E402
+from nre import m4_phase2 as p2  # noqa: E402
+from nre import m4_protocol as pr  # noqa: E402
+from nre import m4_registry as reg  # noqa: E402
+from nre.core import canonical, digest  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 AUTHORIZATION = ROOT / "reports" / "m4-phase2-authorization-2026-10-07.json"
@@ -57,7 +60,7 @@ class StructureAuditReportTests(unittest.TestCase):
         cls.committed = json.loads(cls.PATH.read_text(encoding="utf-8"))
 
     def test_the_committed_audit_is_what_the_code_produces_from_the_committed_inputs(self):
-        fresh = p2.audit_report(h.Harness.from_repository())
+        fresh = p2.audit_report(h.Harness.from_repository(holdout_log=S.genesis_only_holdout_log(self)))  # the holdout log as it was then: genesis only
         self.assertEqual(digest(canonical(fresh)), digest(canonical(self.committed)))
 
     def test_it_found_nothing_that_the_pre_registered_rules_do_not_already_cover(self):

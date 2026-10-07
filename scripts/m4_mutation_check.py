@@ -20,11 +20,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TESTS = ["tests.test_m4_harness", "tests.test_m4_data_features", "tests.test_m4_metrics", "tests.test_m4_registry", "tests.test_m4_models", "tests.test_m4_phase2",
-         "tests.test_m4_phase3"]
+         "tests.test_m4_phase3", "tests.test_m4_phase4"]
 # a defect in one of these files can only be seen by the test modules that use it, so only those are run for it (any other file's defects get every module)
 TESTS_FOR = {"nre/m4_models.py": ["tests.test_m4_models", "tests.test_m4_phase2", "tests.test_m4_phase3"],
              "nre/m4_phase2.py": ["tests.test_m4_phase2", "tests.test_m4_phase3", "tests.test_m4_phase3_record"],
-             "nre/m4_phase3.py": ["tests.test_m4_phase3", "tests.test_m4_phase3_record"]}
+             "nre/m4_phase3.py": ["tests.test_m4_phase3", "tests.test_m4_phase3_record"],
+             "nre/m4_phase4.py": ["tests.test_m4_phase4", "tests.test_m4_phase4_rehearsal", "tests.test_m4_phase4_record"],
+             "nre/m4_report.py": ["tests.test_m4_report"]}
 COPIED = ("nre", "tests", "config", "reports")
 
 MUTATIONS = [
@@ -141,7 +143,9 @@ MUTATIONS = [
     ("the logistic penalty constant is two", "nre/m4_protocol.py", "RIDGE_LAMBDA = 1.0", "RIDGE_LAMBDA = 2.0"),
     ("the Newton iteration limit is fifty", "nre/m4_protocol.py", "NEWTON_TOLERANCE, NEWTON_MAX_ITERATIONS = 1e-8, 100", "NEWTON_TOLERANCE, NEWTON_MAX_ITERATIONS = 1e-8, 50"),
     # Phase 2: the harness extensions and the runner
-    ("predictions are not rounded", "nre/m4_harness.py", "rounded(predictor.predict(model, view_of(e, target)))", "predictor.predict(model, view_of(e, target))"),
+    ("predictions are not rounded", "nre/m4_harness.py",
+     "            base = self._baseline_rate(target, train)\n            rows = [self._row(e, v, rounded(predictor.predict(model, view_of(e, target))), fold, base) for e, v in tests]",
+     "            base = self._baseline_rate(target, train)\n            rows = [self._row(e, v, predictor.predict(model, view_of(e, target)), fold, base) for e, v in tests]"),
     ("diagnostics are not collected", "nre/m4_harness.py", '"diagnostics": dict(getattr(model, "diagnostics", None) or {}), "rows": rows}', '"diagnostics": {}, "rows": rows}'),
     ("the guard ignores the list of authorized targets", "nre/m4_harness.py", "        if self.real and target_id not in REAL_EVALUATION_TARGETS:", "        if False:"),
     ("every model's contrast against C1 is confirmatory", "nre/m4_harness.py",
@@ -183,6 +187,47 @@ MUTATIONS = [
     ("Phase 3 expects no earlier targets", "nre/m4_phase3.py", "3, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,", "3, TARGETS, 1 + 2 * (18 + 18 + 15), (),"),
     ("Phase 3 is numbered Phase 2", "nre/m4_phase3.py", "3, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,", "2, TARGETS, 1 + 2 * (18 + 18 + 15), p2.TARGETS,"),
     ("Phase 3's command line runs Phase 2", "nre/m4_phase3.py", "    return p2.main(argv, phase=PHASE_3)", "    return p2.main(argv)"),
+    # Phase 4: the holdout evaluation in the harness
+    ("the holdout fold is the second development fold", "nre/m4_harness.py", "        fold = self.holdout_fold()\n        train, sealed_test = d.split(", "        fold = self.folds[1]\n        train, sealed_test = d.split("),
+    ("the holdout rule is not applied", "nre/m4_harness.py", '        elif held["state"] != d.EVALUABLE:\n            result["state"] = d.COUNTS_ONLY', '        elif False:\n            result["state"] = d.COUNTS_ONLY'),
+    ("the fold-level rule is not applied to the holdout fold", "nre/m4_harness.py", '        if entry["state"] != d.EVALUABLE:\n            result["state"], result["reason"] = d.INSUFFICIENT_DATA',
+     '        if False:\n            result["state"], result["reason"] = d.INSUFFICIENT_DATA'),
+    ("a counts-only target is still fitted", "nre/m4_harness.py", '        if result["state"] is not None:\n            for predictor in predictors:', '        if result["state"] is not None and False:\n            for predictor in predictors:'),
+    ("any events are accepted as the holdout's", "nre/m4_harness.py", '        if [e["event_id"] for e in test] != [e["event_id"] for e in sealed_test] or any(d.is_sealed(e) for e in test):', "        if False:"),
+    ("the confirmatory holdout contrast is not labelled", "nre/m4_harness.py", '                role = "holdout_replication_check" if pid == CONFIRMATORY[target.kind] else "exploratory"', '                role = "exploratory"'),
+    ("a holdout contrast claims something", "nre/m4_harness.py", '        no_claim = "none: the holdout alone never creates a claim"', '        no_claim = "a claim"'),
+    ("the holdout metrics use the pooled K values", "nre/m4_harness.py", '"rows": rows, "metrics": self._metrics(target, rows, pr.PRECISION_K_FOLD),', '"rows": rows, "metrics": self._metrics(target, rows, pr.PRECISION_K_POOLED),'),
+    ("the Wilson interval of a counts-only target is reversed", "nre/m4_harness.py", "wilson_low=low, wilson_high=high, wilson_level=pr.REPORTING_LEVEL)", "wilson_low=high, wilson_high=low, wilson_level=pr.REPORTING_LEVEL)"),
+    ("a holdout prediction on the C0 clock is timed at the cutoff", "nre/m4_harness.py",
+     'event = by_id[row["event_id"]]\n                when = self.inputs["calendar"].bounds(event["reaction_session"])[0] if target.clock == "C0" else event["cutoff"]',
+     'event = by_id[row["event_id"]]\n                when = event["cutoff"]'),
+    ("holdout experiments are recorded on a development fold", "nre/m4_harness.py", 'result, fold.name, self._train_ids(result["version"], fold.name), run.get("rows", []),',
+     'result, "dev_test_block_3", self._train_ids(result["version"], fold.name), run.get("rows", []),'),
+    ("a holdout experiment record always says EVALUATED", "nre/m4_harness.py", 'metrics, method if run["state"] == EVALUATED else "none", run["state"]))', 'metrics, method if run["state"] == EVALUATED else "none", EVALUATED))'),
+    # Phase 4: the one-look runner and what it computes
+    ("a run starts from a log of any length", "nre/m4_phase4.py", "    if len(experiments) != EXPERIMENTS_BEFORE or len(accesses) != 1:", "    if len(accesses) != 1:"),
+    ("a run starts from a holdout log that already holds an access", "nre/m4_phase4.py", "    if len(experiments) != EXPERIMENTS_BEFORE or len(accesses) != 1:", "    if len(experiments) != EXPERIMENTS_BEFORE:"),
+    ("holdout experiments already in the log are ignored", "nre/m4_phase4.py", '    if {record["target_id"] for record, _ in experiments[1:]} - set(TARGETS) or any(record["fold"] == harness.holdout_fold().name for record, _ in experiments[1:]):',
+     '    if {record["target_id"] for record, _ in experiments[1:]} - set(TARGETS):'),
+    ("the development results are not checked against their hashes", "nre/m4_phase4.py", '        if digest(canonical(results)) != completion["evaluation"]["results_canonical_sha256"]:', "        if False:"),
+    ("the sign check always agrees", "nre/m4_phase4.py", '"same_sign": holdout_sign == development_sign and holdout_sign != 0,', '"same_sign": True,'),
+    ("zero has a sign", "nre/m4_phase4.py", "    return (value > 0) - (value < 0)", "    return (value >= 0) - (value < 0)"),
+    ("the nested cap is not applied at the holdout", "nre/m4_phase4.py", "            if target_id in p2.NESTED:", "            if False:"),
+    ("the descriptive report leaves out a holdout event", "nre/m4_phase4.py", "        events = sorted(visible + list(unsealed[version]), key=fp.event_order)", "        events = sorted(visible + list(unsealed[version])[:-1], key=fp.event_order)"),
+    ("the runner covers four of the five primaries", "nre/m4_phase4.py", "TARGETS = p2.TARGETS + p3.TARGETS  # the five primaries", "TARGETS = p2.TARGETS + p3.TARGETS[:1]  # the five primaries"),
+    ("the second evaluation takes a second look", "nre/m4_phase4.py", "    second = evaluate_all(harness, unsealed)", "    second = evaluate_all(harness, harness.look(LOOK_REASON))"),
+    ("the audit reads the test events' labels", "nre/m4_phase4.py", '            defined = [e for e in train if target.function(e["labels"]) is not None]', '            defined = [e for e in train + test if target.function(e["labels"]) is not None]'),
+    ("the results report omits the selection-regime statement", "nre/m4_phase4.py", '            "selection_regime": harness.protocol["holdout"]["selection_regime"], "what_it_is_for"', '            "what_it_is_for"'),
+    ("the look does not name itself the one look", "nre/m4_phase4.py", 'LOOK_REASON = ("Milestone 4 Phase 4: the one look at the final holdout', 'LOOK_REASON = ("Milestone 4 Phase 4: a look at the final holdout'),
+    ("a value that cannot be written is found only after the records are appended", "nre/m4_phase4.py", "    for document in (report, descriptive):\n        json.dumps(document, allow_nan=False)",
+     "    for document in ():\n        json.dumps(document, allow_nan=False)"),
+    # Phase 4: the Milestone 4 report
+    ("the report accepts a development result that does not match its hash", "nre/m4_report.py", '        if digest(canonical(results)) != records[phase]["completion"]["evaluation"]["results_canonical_sha256"]:', "        if False:"),
+    ("the report does not check the protocol against its freeze record", "nre/m4_report.py", '    if protocol_sha != freeze["protocol"]["canonical_sha256"]:', "    if False:"),
+    ("the report counts the genesis as an access", "nre/m4_report.py", "    accesses = [record for record, _ in reg.read(holdout_log)][1:]", "    accesses = [record for record, _ in reg.read(holdout_log)][:1]"),
+    ("the looked-at-once criterion is always met", "nre/m4_report.py", '         "met_by_the_evidence": len(accesses) == 1},', '         "met_by_the_evidence": True},'),
+    ("an interval that excludes zero is miscounted", "nre/m4_report.py", '"excludes_zero_at_95": contrast["headline"]["0.95"]["low"] > 0 or contrast["headline"]["0.95"]["high"] < 0,',
+     '"excludes_zero_at_95": contrast["headline"]["0.95"]["low"] > 0 or contrast["headline"]["0.95"]["high"] < -1,'),
 ]
 
 

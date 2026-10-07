@@ -216,14 +216,16 @@ class RequiredTests(unittest.TestCase):
             sealed[0]["labels"]["gap_ge_3pct"]
         self.assertEqual(len(run.gate.denied), 1)
 
-    def test_4_holdout_sealing_the_only_way_to_the_labels_is_a_logged_look_that_is_off(self):
-        self.assertIs(h.ALLOW_HOLDOUT_LOOK, False)
+    def test_4_holdout_sealing_the_only_way_to_the_labels_is_a_logged_look_that_is_refused_unless_authorized(self):
+        # The tripwire is on only from the commit that turns it on for the one look until that look: once an access is on the record it is off again (P4-11).
+        self.assertTrue(not h.ALLOW_HOLDOUT_LOOK or len(reg.read(reg.HOLDOUT_LOG)) == 1)
         self.assertEqual(h.REAL_EVALUATION_TARGETS, ("gap_ge_3pct", "gap_ge_5pct", "day1_close_return", "extension_after_open_ge_5pct", "loses_half_of_gap"))  # the five primaries; the look is separate
         with tempfile.TemporaryDirectory() as directory:
             log = Path(directory) / "holdout.jsonl"
             run = harness(holdout_log=log, commit=lambda: "c" * 40, clock=lambda: "2026-10-06T00:00:00Z")
-            with self.assertRaises(d.HoldoutNotAuthorized):
-                run.look("a trial")
+            with mock.patch.object(h, "ALLOW_HOLDOUT_LOOK", False):  # whatever the real setting, with the tripwire off a look is refused before anything is written or read
+                with self.assertRaises(d.HoldoutNotAuthorized):
+                    run.look("a trial")
             self.assertFalse(log.exists())
             self.assertEqual((run.gate.unsealed, run.gate.denied), (0, []))
 
@@ -720,15 +722,17 @@ class RealHarnessTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.harness = h.Harness.from_repository()
+        # against a copy of the holdout log cut back to its genesis, the log as it was when the dry run was made, so that nothing here depends on the Phase 4 look and nothing
+        # called on this harness can write to the real log
+        cls.harness = h.Harness.from_repository(holdout_log=S.genesis_only_holdout_log(cls))
         cls.report = cls.harness.dry_run()
 
-    def test_real_evaluation_is_limited_to_the_five_primaries_and_the_holdout_look_is_off(self):
+    def test_real_evaluation_is_limited_to_the_five_primaries_and_the_holdout_look_is_refused_when_the_tripwire_is_off(self):
         self.assertIs(h.ALLOW_REAL_EVALUATION, True)  # Phase 2 and Phase 3, authorized 2026-10-07 (reports/m4-phase2-authorization-2026-10-07.json, m4-phase3-authorization-2026-10-07.json)
         self.assertEqual(h.REAL_EVALUATION_TARGETS, ("gap_ge_3pct", "gap_ge_5pct", "day1_close_return", "extension_after_open_ge_5pct", "loses_half_of_gap"))
         primaries = [t.id for t in self.harness.targets.values() if t.role == "primary"]
         self.assertEqual(sorted(h.REAL_EVALUATION_TARGETS), sorted(primaries))  # exactly the protocol's five primaries
-        self.assertIs(h.ALLOW_HOLDOUT_LOOK, False)
+        self.assertTrue(not h.ALLOW_HOLDOUT_LOOK or len(reg.read(reg.HOLDOUT_LOG)) == 1)  # on only while the one look is still to come
         others = [t.id for t in self.harness.targets.values() if t.role != "primary"]
         self.assertEqual(len(others), 9 + 5)  # the descriptive-only targets (full_gap_fill and the five-session returns among them) and the INSUFFICIENT_DATA ones
         for refused in others:
@@ -738,8 +742,9 @@ class RealHarnessTests(unittest.TestCase):
             with mock.patch.object(h, "ALLOW_REAL_EVALUATION", False):
                 with self.assertRaises(h.EvaluationNotAuthorized):
                     self.harness.evaluate(authorized, "all_event")  # refused before anything is fitted
-        with self.assertRaises(d.HoldoutNotAuthorized):
-            self.harness.look("a trial")
+        with mock.patch.object(h, "ALLOW_HOLDOUT_LOOK", False):  # never call look() on the real inputs with the tripwire as it may stand
+            with self.assertRaises(d.HoldoutNotAuthorized):
+                self.harness.look("a trial")
         self.assertEqual((self.harness.gate.unsealed, self.harness.gate.denied), (0, []))
 
     def test_the_dry_run_verifies_everything_and_agrees_with_the_freeze_record(self):
@@ -812,7 +817,7 @@ class RealHarnessTests(unittest.TestCase):
             written = json.loads(path.read_text(encoding="utf-8"))
         self.assertEqual(summary["state"], "DRY_RUN")
         self.assertEqual(summary["report_sha256"], canonical_digest(written))
-        self.assertEqual(canonical_digest(written), canonical_digest(self.report))
+        self.assertEqual(canonical_digest(written), canonical_digest(h.Harness.from_repository().dry_run()))  # the command line reads the real log, whatever it holds by now
 
 
 if __name__ == "__main__":

@@ -1,9 +1,15 @@
 """What Phase 4 recorded about itself: the owner's go-ahead and how it was read, and the details settled before any Phase 4 code existed and before any block-5 outcome was read."""
 import json
+import sys
 import unittest
 from pathlib import Path
 
-from nre import m4_protocol as pr
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import m4_support as S  # noqa: E402
+from nre import m4_harness as h  # noqa: E402
+from nre import m4_phase4 as p4  # noqa: E402
+from nre import m4_protocol as pr  # noqa: E402
+from nre.core import canonical, digest  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 AUTHORIZATION = ROOT / "reports" / "m4-phase4-authorization-2026-10-07.json"
@@ -59,6 +65,52 @@ class AuthorizationRecordTests(unittest.TestCase):
         protocol = pr.load_json(pr.PROTOCOL_PATH)
         self.assertEqual(sum(len(protocol["targets"][k]) for k in ("primary", "descriptive_only", "insufficient_data_by_rule")), 19)
         self.assertEqual(self.record["not_a_claim"][0], "Not a result: no block-5 outcome has been read when this record is written.")
+
+
+class HoldoutAuditReportTests(unittest.TestCase):
+    """The audit taken before the look: facts about the holdout fold that need no block-5 outcome."""
+    PATH = ROOT / "reports" / "m4-phase4-holdout-structure-audit-2026-10-07.json"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.committed = json.loads(cls.PATH.read_text(encoding="utf-8"))
+
+    def folds(self):
+        return {(t, v): entry for t, versions in self.committed["targets"].items() for v, entry in versions.items()}
+
+    def test_the_committed_audit_is_what_the_code_produces_from_the_committed_inputs(self):
+        fresh = p4.audit_report(h.Harness.from_repository(holdout_log=S.genesis_only_holdout_log(self)))  # the holdout log as it was then: genesis only
+        self.assertEqual(digest(canonical(fresh)), digest(canonical(self.committed)))
+
+    def test_it_found_nothing_that_stops_the_look(self):
+        folds = self.folds()
+        self.assertEqual(len(folds), 5 * 2)  # five primary targets, two versions
+        for key, entry in folds.items():
+            self.assertEqual(entry["test_events"], 23, key)
+            self.assertEqual(entry["cells_below_the_minimum_of_10"], {"C2_timing": [], "C3_sector_group": []}, key)  # no baseline falls back to the pooled value
+            self.assertEqual(entry["test_events_that_would_fall_back_to_the_pooled_value"], {"C2_timing": 0, "C3_sector_group": 0}, key)
+            self.assertEqual(entry["test_events_with_no_earlier_matured_event"], 0, key)  # every test event has a history
+            self.assertEqual(entry["indicator_features_constant_in_training"], [], key)  # no feature is dropped
+            self.assertEqual(entry["test_events_by_issuer_count"], {"1": 23}, key)  # 23 events from 23 issuers: no issuer has two events in the holdout
+        for version in ("all_event", "clean_window"):
+            self.assertEqual(self.committed["targets"]["day1_close_return"][version]["test_events_whose_history_mean_would_stop_the_run"], 0)
+
+    def test_the_few_things_it_counts(self):
+        folds = self.folds()
+        own = {key: entry["test_events_with_no_earlier_event_of_their_own_issuer"] for key, entry in folds.items()}
+        self.assertEqual({k: n for k, n in own.items() if n}, {("loses_half_of_gap", "all_event"): 2, ("loses_half_of_gap", "clean_window"): 2})
+        training = {key: entry["training_events_with_the_target_defined"] for key, entry in folds.items()}
+        self.assertEqual({t: (training[(t, "all_event")], training[(t, "clean_window")]) for t in p4.TARGETS},
+                         {"gap_ge_3pct": (105, 98), "gap_ge_5pct": (105, 98), "day1_close_return": (105, 98), "extension_after_open_ge_5pct": (105, 98), "loses_half_of_gap": (48, 46)})
+        entry = folds[("gap_ge_3pct", "all_event")]
+        self.assertEqual((entry["test_events_by_cell"]["C2_timing"], entry["test_events_by_cell"]["C3_sector_group"]),
+                         ({"after_hours": 16, "premarket": 7}, {"D": 10, "I": 8, "other": 5}))
+
+    def test_it_says_it_read_no_outcome_and_evaluated_nothing(self):
+        self.assertIn("no block-5 outcome", self.committed["purpose"])
+        self.assertIn("not the opening gap", self.committed["purpose"])
+        self.assertIn("Not a result: nothing was fitted, scored or evaluated.", self.committed["not_a_claim"])
+        self.assertEqual(self.committed["holdout"], {"sealed_events": 23, "denied_reads": 0, "unsealed_loads": 0, "access_log_records_after_genesis": 0})
 
 
 if __name__ == "__main__":

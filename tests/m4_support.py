@@ -5,8 +5,11 @@ reaction session; some caveats) so that the harness's folds, thresholds and leak
 """
 import copy
 import random
+import tempfile
+from pathlib import Path
 
 from nre import fingerprints as fp
+from nre import m4_registry as reg
 from nre.calendar import Calendar
 
 CAL = Calendar()
@@ -77,3 +80,52 @@ def with_labels_changed(events, change):
     for event in out:
         change(event)
     return out
+
+
+def labels_from_returns(opened, high, low, close, step=0.01):
+    """The sixteen labels, consistent with one another as the dataset engine's are, for chosen day-1 returns (the session returns walk from the close by `step`)."""
+    labels = {"day1_open_return": opened, "day1_high_return": high, "day1_low_return": low, "day1_close_return": close}
+    walk = close
+    for n in fp.HORIZONS:
+        walk += step
+        labels["session_%d_close_return" % n] = walk
+    for t in fp.GAP_THRESHOLDS:
+        labels["gap_ge_%dpct" % t] = opened >= t / 100
+    positive = opened >= 0.005
+    labels["positive_gap_retained_half"] = close >= opened / 2 if positive else None
+    labels["positive_gap_filled"] = low <= 0 if positive else None
+    return {name: {"value": None if labels[name] is None else (round(labels[name], 6) if not isinstance(labels[name], bool) else labels[name]),
+                   "reason": "NOT_POSITIVE_GAP_GE_0_5PCT" if labels[name] is None else None} for name in fp.LABELS}
+
+
+def genesis_only_holdout_log(owner):
+    """A temporary copy of the real holdout access log cut back to its genesis record: the log as it stood when Phases 1 to 3 produced their outputs. Reproducing those outputs
+    against it does not depend on whether the Phase 4 look has been recorded in the real log since. `owner` is a TestCase or its class (for the clean-up)."""
+    directory = tempfile.TemporaryDirectory()
+    (owner.addClassCleanup if isinstance(owner, type) else owner.addCleanup)(directory.cleanup)
+    first = [line for line in reg.HOLDOUT_LOG.read_bytes().split(b"\n") if line.strip()][0]
+    path = Path(directory.name) / "holdout-genesis-only.jsonl"
+    path.write_bytes(first + b"\n")
+    return path
+
+
+def holdout_balanced(position, n=30):
+    """Synthetic holdout labels that meet every holdout threshold: the first half of the events have a 6% gap that then extends, the rest a 1% one that does not, and within each
+    half the close alternates between keeping and losing half the gap."""
+    lose = position % 2 == 0
+    if position < n // 2:
+        return labels_from_returns(0.06, 0.13, 0.04, 0.02 if lose else 0.05)
+    return labels_from_returns(0.01, 0.02, -0.01, 0.0 if lose else 0.015)
+
+
+def holdout_sparse(position, n=30):
+    """Synthetic holdout labels with three big movers and a flat rest: every binary target has too few positives (or defined events) for the holdout thresholds."""
+    return labels_from_returns(0.06, 0.13, 0.04, 0.02) if position < 3 else labels_from_returns(0.0, 0.01, -0.01, 0.0)
+
+
+def holdout_events(events, blocks=None):
+    """The events of the last block, in the order they are in `events`."""
+    from nre import m4_scoping_evidence as ev
+    blocks = blocks or ev.assign_blocks(events)
+    last = max(blocks.values())
+    return [e for e in events if blocks[e["event_id"]] == last]
