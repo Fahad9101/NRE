@@ -24,7 +24,7 @@ from .core import DataError, canonical, digest, iso
 ALLOW_REAL_EVALUATION = True  # fitting and scoring predictors on the real development folds, only with the owner's go-ahead: Phase 2 and Phase 3, 2026-10-07
 REAL_EVALUATION_TARGETS = ("gap_ge_3pct", "gap_ge_5pct", "day1_close_return",  # Phase 2's go-ahead: the B clock
                            "extension_after_open_ge_5pct", "loses_half_of_gap")  # Phase 3's: the C0 clock; any other target is refused
-ALLOW_HOLDOUT_LOOK = False  # Phase 4, and only with the owner's go-ahead: the one look at block 5
+ALLOW_HOLDOUT_LOOK = True  # ON for the one look at block 5 only (Phase 4, "authorize phase 4", 2026-10-07; reports/m4-phase4-authorization-2026-10-07.json); off again in the commit after it
 COMPARATOR = {"binary": "C1_pooled_rate", "regression": "C1_pooled_quantiles"}
 CONFIRMATORY = {"binary": "M2_logistic", "regression": "M3_ridge_linear"}  # the one model per primary target whose contrast against C1 can support a status
 # the exploratory contrasts reported besides each predictor's against C1: (model, the predictor it is set against)
