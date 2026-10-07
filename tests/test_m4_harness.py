@@ -218,7 +218,7 @@ class RequiredTests(unittest.TestCase):
 
     def test_4_holdout_sealing_the_only_way_to_the_labels_is_a_logged_look_that_is_off(self):
         self.assertIs(h.ALLOW_HOLDOUT_LOOK, False)
-        self.assertIs(h.ALLOW_REAL_EVALUATION, False)
+        self.assertEqual(h.REAL_EVALUATION_TARGETS, ("gap_ge_3pct", "gap_ge_5pct", "day1_close_return"))  # Phase 2's targets: no C0 target, and the look is separate
         with tempfile.TemporaryDirectory() as directory:
             log = Path(directory) / "holdout.jsonl"
             run = harness(holdout_log=log, commit=lambda: "c" * 40, clock=lambda: "2026-10-06T00:00:00Z")
@@ -723,14 +723,19 @@ class RealHarnessTests(unittest.TestCase):
         cls.harness = h.Harness.from_repository()
         cls.report = cls.harness.dry_run()
 
-    def test_the_tripwires_are_off_so_the_real_inputs_support_only_verify_plan_and_dry_run(self):
-        self.assertIs(h.ALLOW_REAL_EVALUATION, False)
+    def test_real_evaluation_is_limited_to_phase_2s_targets_and_the_holdout_look_is_off(self):
+        self.assertIs(h.ALLOW_REAL_EVALUATION, True)  # Phase 2, authorized 2026-10-07 (reports/m4-phase2-authorization-2026-10-07.json)
+        self.assertEqual(h.REAL_EVALUATION_TARGETS, ("gap_ge_3pct", "gap_ge_5pct", "day1_close_return"))
         self.assertIs(h.ALLOW_HOLDOUT_LOOK, False)
-        with self.assertRaises(h.EvaluationNotAuthorized):
-            self.harness.evaluate("gap_ge_3pct", "all_event")
+        for refused in ("extension_after_open_ge_5pct", "loses_half_of_gap", "gap_ge_10pct", "gap_ge_15pct"):  # Phase 3's targets and the non-primary ones
+            with self.assertRaises(h.EvaluationNotAuthorized):
+                self.harness.evaluate(refused, "all_event")
+        with mock.patch.object(h, "ALLOW_REAL_EVALUATION", False):
+            with self.assertRaises(h.EvaluationNotAuthorized):
+                self.harness.evaluate("gap_ge_3pct", "all_event")  # refused before anything is fitted
         with self.assertRaises(d.HoldoutNotAuthorized):
             self.harness.look("a trial")
-        self.assertEqual(self.harness.gate.unsealed, 0)
+        self.assertEqual((self.harness.gate.unsealed, self.harness.gate.denied), (0, []))
 
     def test_the_dry_run_verifies_everything_and_agrees_with_the_freeze_record(self):
         self.assertTrue(self.report["integrity_ok"])
