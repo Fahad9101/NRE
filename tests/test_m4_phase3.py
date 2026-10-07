@@ -52,6 +52,11 @@ class PhaseDefinitionTests(unittest.TestCase):
         self.assertFalse(set(p3.TARGETS) & set(p2.TARGETS))
         self.assertEqual((p3.PHASE_3.number, p2.PHASE_2.number), (3, 2))
 
+    def test_the_tripwire_covers_exactly_the_targets_of_the_two_phases_that_were_authorized(self):
+        self.assertEqual(set(h.REAL_EVALUATION_TARGETS), set(p2.TARGETS) | set(p3.TARGETS))
+        self.assertEqual(len(h.REAL_EVALUATION_TARGETS), len(p2.TARGETS) + len(p3.TARGETS))  # none twice
+        self.assertIs(h.ALLOW_HOLDOUT_LOOK, False)
+
     def test_phase_3_starts_from_the_log_as_phase_2_left_it(self):
         self.assertEqual((p3.PHASE_3.log_records_before, p3.PHASE_3.earlier_targets), (1 + 102, p2.TARGETS))
         self.assertEqual((p2.PHASE_2.log_records_before, p2.PHASE_2.earlier_targets), (1, ()))
