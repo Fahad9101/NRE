@@ -3,7 +3,10 @@ import json
 import unittest
 from pathlib import Path
 
+from nre import m4_harness as h
+from nre import m4_phase2 as p2
 from nre import m4_protocol as pr
+from nre.core import canonical, digest
 
 ROOT = Path(__file__).resolve().parent.parent
 AUTHORIZATION = ROOT / "reports" / "m4-phase2-authorization-2026-10-07.json"
@@ -42,6 +45,35 @@ class AuthorizationRecordTests(unittest.TestCase):
         self.assertEqual((protocol["protocol_version"], protocol["amendments"]["history"]), ("1", []))
         for detail in settled["new_in_phase_2"]:
             self.assertIsInstance(detail["could_move_a_result"], bool)
+
+
+class StructureAuditReportTests(unittest.TestCase):
+    """The audit taken before any Phase 2 predictor was evaluated: facts about the development folds that need only which labels are defined."""
+    PATH = ROOT / "reports" / "m4-phase2-structure-audit-2026-10-07.json"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.committed = json.loads(cls.PATH.read_text(encoding="utf-8"))
+
+    def test_the_committed_audit_is_what_the_code_produces_from_the_committed_inputs(self):
+        fresh = p2.audit_report(h.Harness.from_repository())
+        self.assertEqual(digest(canonical(fresh)), digest(canonical(self.committed)))
+
+    def test_it_found_nothing_that_the_pre_registered_rules_do_not_already_cover(self):
+        folds = [f for versions in self.committed["targets"].values() for fold in versions.values() for f in fold.values()]
+        self.assertEqual(len(folds), 3 * 2 * 2)  # three targets, two versions, two development folds
+        for fold in folds:
+            self.assertEqual(fold["cells_below_the_minimum_of_10"], {"C2_timing": [], "C3_sector_group": []})  # no baseline falls back to the pooled value
+            self.assertEqual(fold["test_events_that_would_fall_back_to_the_pooled_value"], {"C2_timing": 0, "C3_sector_group": 0})
+            self.assertEqual(fold["test_events_with_no_earlier_matured_event"], 0)  # every test event has a history mean
+            self.assertEqual(fold["test_events_with_no_earlier_event_of_their_own_issuer"], 0)
+            self.assertEqual(fold["indicator_features_constant_in_training"], [])  # no feature is dropped
+            self.assertIn(fold["training_rows_with_no_earlier_matured_event"], (2, 3))  # the ridge model leaves these out
+        self.assertEqual(self.committed["holdout"], {"sealed_events": 23, "denied_reads": 0, "unsealed_loads": 0, "access_log_records_after_genesis": 0})
+
+    def test_it_says_it_read_no_outcome_and_evaluated_nothing(self):
+        self.assertIn("reads no outcome value", self.committed["purpose"])
+        self.assertIn("Not a result: nothing was fitted, scored or evaluated.", self.committed["not_a_claim"])
 
 
 if __name__ == "__main__":

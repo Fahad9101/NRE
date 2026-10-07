@@ -19,7 +19,9 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TESTS = ["tests.test_m4_harness", "tests.test_m4_data_features", "tests.test_m4_metrics", "tests.test_m4_registry"]
+TESTS = ["tests.test_m4_harness", "tests.test_m4_data_features", "tests.test_m4_metrics", "tests.test_m4_registry", "tests.test_m4_models", "tests.test_m4_phase2"]
+# a defect in one of these files can only be seen by the test modules that use it, so only those are run for it (any other file's defects get every module)
+TESTS_FOR = {"nre/m4_models.py": ["tests.test_m4_models", "tests.test_m4_phase2"], "nre/m4_phase2.py": ["tests.test_m4_phase2"]}
 COPIED = ("nre", "tests", "config", "reports")
 
 MUTATIONS = [
@@ -36,8 +38,11 @@ MUTATIONS = [
     ("a predictor is shown the digest of the labels", "nre/m4_harness.py", '    view = {k: v for k, v in event.items() if k not in ("labels", "labels_sha256")}',
      '    view = {k: v for k, v in event.items() if k != "labels"}'),
     ("the C0 opening gap is the close", "nre/m4_harness.py", 'view["open_gap"] = event["labels"]["day1_open_return"]["value"]', 'view["open_gap"] = event["labels"]["day1_close_return"]["value"]'),
-    ("the C0 prediction time is the cutoff", "nre/m4_harness.py", 'when = self.inputs["calendar"].bounds(event["reaction_session"])[0] if target.clock == "C0" else event["cutoff"]',
-     'when = event["cutoff"]'),
+    ("the C0 prediction time is the cutoff", "nre/m4_harness.py", '\n        when = self.inputs["calendar"].bounds(event["reaction_session"])[0] if target.clock == "C0" else event["cutoff"]',
+     '\n        when = event["cutoff"]'),
+    ("the C0 prediction time is the cutoff in the bulk records", "nre/m4_harness.py",
+     '                    when = self.inputs["calendar"].bounds(event["reaction_session"])[0] if target.clock == "C0" else event["cutoff"]',
+     '                    when = event["cutoff"]'),
     # leakage: label maturity and clusters
     ("maturity assertion never raises", "nre/m4_data.py", "if slack < 0:", "if slack < -1e9:"),
     ("clusters check does nothing", "nre/m4_data.py", '    for key, label in (("reaction_session", "reaction session"), ("cluster_id", "cluster")):', "    for key, label in ():"),
@@ -102,6 +107,49 @@ MUTATIONS = [
      """        if number == 0:
             if record.get("kind") != "genesis" or record.get("log") != kind:
                 raise DataError("%s: the first record must be the %s log's genesis" % (path, kind))""", "        if number == 0:\n            pass"),
+    # Phase 2: the baselines
+    ("the logistic penalty is not applied", "nre/m4_models.py", "    penalty = [0.0] + [pr.RIDGE_LAMBDA] * (k - 1)", "    penalty = [0.0] * k"),
+    ("the logistic intercept is penalized", "nre/m4_models.py", "    penalty = [0.0] + [pr.RIDGE_LAMBDA] * (k - 1)", "    penalty = [pr.RIDGE_LAMBDA] * k"),
+    ("the ridge intercept is penalized", "nre/m4_models.py", "(pr.RIDGE_LAMBDA if i == j and i > 0 else 0.0)", "(pr.RIDGE_LAMBDA if i == j else 0.0)"),
+    ("standardization uses the sample standard deviation", "nre/m4_models.py", "for x in column) / n)", "for x in column) / (n - 1))"),
+    ("a constant feature is not dropped", "nre/m4_models.py", "        (dropped if sd <= ZERO_SD * max(1.0, abs(mean)) else kept).append(j)", "        kept.append(j)"),
+    ("Newton stops after one step", "nre/m4_models.py", "        if max(abs(s) for s in step) < pr.NEWTON_TOLERANCE:", "        if True:"),
+    ("a rate cell of exactly ten falls back", "nre/m4_models.py", '        if cell is None or cell["n"] < pr.CELL_MINIMUM:\n            model.diagnostics["fallbacks_to_the_pooled_rate"] += 1',
+     '        if cell is None or cell["n"] <= pr.CELL_MINIMUM:\n            model.diagnostics["fallbacks_to_the_pooled_rate"] += 1'),
+    ("a quantile cell of exactly ten falls back", "nre/m4_models.py", '        if cell is None or cell["n"] < pr.CELL_MINIMUM:\n            model.diagnostics["fallbacks_to_the_pooled_quantiles"] += 1',
+     '        if cell is None or cell["n"] <= pr.CELL_MINIMUM:\n            model.diagnostics["fallbacks_to_the_pooled_quantiles"] += 1'),
+    ("a fallback is not counted", "nre/m4_models.py", '            model.diagnostics["fallbacks_to_the_pooled_rate"] += 1', "            pass"),
+    ("C3 uses the timing cell", "nre/m4_models.py", '    return CellRate("C3_sector_group_rate", sector_cell)', '    return CellRate("C3_sector_group_rate", timing_cell)'),
+    ("the issuer rate is not clipped", "nre/m4_models.py", "    return min(max(rate, pr.RATE_CLIP[0]), pr.RATE_CLIP[1])", "    return rate"),
+    ("C4 is the prior rather than the shrunk rate", "nre/m4_models.py", '        return result["rate"]', '        return result["prior"]'),
+    ("the without-sector logistic keeps the sector indicators", "nre/m4_models.py",
+     '        row = [indicators["after_hours"]] + ([indicators["is_I"], indicators["is_other"]] if self.with_sector else [])\n        row.append(logit(',
+     '        row = [indicators["after_hours"]] + ([indicators["is_I"], indicators["is_other"]] if True else [])\n        row.append(logit('),
+    ("the logistic fits events whose target is absent", "nre/m4_models.py", "        defined = [(e, v) for e, v in zip(train, d.target_values(target, train)) if v is not None]",
+     "        defined = [(e, v) for e, v in zip(train, d.target_values(target, train))]"),
+    ("the monotone repair is not applied", "nre/m4_models.py", '                p = self.cap[view["event_id"]]', "                p = p"),
+    ("the monotone repair is not counted", "nre/m4_models.py", '                model.diagnostics["repairs_of_the_nested_threshold"] += 1', "                pass"),
+    ("an empty cap goes uncapped", "nre/m4_models.py", "        if self.cap is not None and not self.cap:", "        if False:"),
+    ("the ridge model does not leave out rows without history", "nre/m4_models.py", "            except ProtocolGap:\n                excluded.append", "            except KeyError:\n                excluded.append"),
+    ("the ridge model fits on twenty rows", "nre/m4_models.py", "        if len(rows) < pr.MIN_TRAIN_EVENTS:", "        if len(rows) < 20:"),
+    ("the ridge residual quantiles are at the wrong levels", "nre/m4_models.py", "        residual_quantiles = [fp.quantile(residuals, q) for q in pr.QUANTILE_LEVELS]",
+     "        residual_quantiles = [fp.quantile(residuals, q) for q in (0.05, 0.5, 0.95)]"),
+    ("the ridge forecast omits the fitted mean", "nre/m4_models.py", '        return tuple(mean + q for q in c["residual_quantiles"])', '        return tuple(q for q in c["residual_quantiles"])'),
+    ("the logistic penalty constant is two", "nre/m4_protocol.py", "RIDGE_LAMBDA = 1.0", "RIDGE_LAMBDA = 2.0"),
+    ("the Newton iteration limit is fifty", "nre/m4_protocol.py", "NEWTON_TOLERANCE, NEWTON_MAX_ITERATIONS = 1e-8, 100", "NEWTON_TOLERANCE, NEWTON_MAX_ITERATIONS = 1e-8, 50"),
+    # Phase 2: the harness extensions and the runner
+    ("predictions are not rounded", "nre/m4_harness.py", "rounded(predictor.predict(model, view_of(e, target)))", "predictor.predict(model, view_of(e, target))"),
+    ("diagnostics are not collected", "nre/m4_harness.py", '"diagnostics": dict(getattr(model, "diagnostics", None) or {}), "rows": rows}', '"diagnostics": {}, "rows": rows}'),
+    ("the guard ignores the list of authorized targets", "nre/m4_harness.py", "        if self.real and target_id not in REAL_EVALUATION_TARGETS:", "        if False:"),
+    ("every model's contrast against C1 is confirmatory", "nre/m4_harness.py",
+     '                role = "exploratory"\n                if pid == CONFIRMATORY[target.kind]:', '                role = "confirmatory"\n                if pid == CONFIRMATORY[target.kind]:'),
+    ("the all-event contrast is confirmatory too", "nre/m4_harness.py", 'role = "confirmatory" if version == "clean_window" else "companion_of_the_confirmatory_contrast"', 'role = "confirmatory"'),
+    ("the 5pct models are not capped", "nre/m4_phase2.py", "            if target_id in NESTED:", "            if False:"),
+    ("a clean tree is not required", "nre/m4_phase2.py", "    if not clean:", "    if False:"),
+    ("an earlier output is overwritten", "nre/m4_phase2.py", "        if path.exists():", "        if False:"),
+    ("two differing evaluations are recorded", "nre/m4_phase2.py", "    if first_digest != digest(", "    if False and first_digest != digest("),
+    ("the records name the harness's own commit", "nre/m4_phase2.py", "    harness.commit = lambda: commit\n", "    pass\n"),
+    ("the structure audit reads an outcome", "nre/m4_phase2.py", '                train = [e for e in train if target.function(e["labels"]) is not None]', '                train = [e for e in train if target.function(e["labels"])]'),
 ]
 
 
@@ -121,7 +169,7 @@ def run(mutation):
         if text.count(old) != 1:
             return "SKIPPED", "the source text occurs %d times, not once" % text.count(old)
         path.write_text(text.replace(old, new), encoding="utf-8", newline="\n")
-        proc = subprocess.run([sys.executable, "-m", "unittest"] + TESTS, cwd=copy, capture_output=True, text=True, timeout=900)
+        proc = subprocess.run([sys.executable, "-m", "unittest"] + TESTS_FOR.get(relative, TESTS), cwd=copy, capture_output=True, text=True, timeout=900)
         failing = sorted({line.split(" (")[0].replace("FAIL: ", "").replace("ERROR: ", "").strip()
                           for line in proc.stderr.splitlines() if line.startswith(("FAIL:", "ERROR:"))})
         return ("CAUGHT" if proc.returncode != 0 else "NOT CAUGHT"), "; ".join(failing[:2])
@@ -132,8 +180,9 @@ def main(argv=None):
     parser.add_argument("only", nargs="*", help="run only the defects whose description contains one of these words")
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--check-patterns", action="store_true")
+    parser.add_argument("--from-number", type=int, default=1, help="start at this defect (1-based, as --list numbers them); for resuming or running only the later ones")
     args = parser.parse_args(argv)
-    chosen = [m for m in MUTATIONS if not args.only or any(word in m[0] for word in args.only)]
+    chosen = [m for number, m in enumerate(MUTATIONS, 1) if number >= args.from_number and (not args.only or any(word in m[0] for word in args.only))]
     if args.list:
         print("\n".join(m[0] for m in chosen))
         return 0

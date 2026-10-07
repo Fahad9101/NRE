@@ -34,6 +34,8 @@ CELL_MINIMUM = 10  # C2 and C3: a cell with fewer defined training events falls 
 RATE_CLIP = (0.01, 0.99)
 GROUP_PRIOR_MINIMUM, GROUP_PRIOR_DEFAULT = 10, 0.5
 PRIOR_STRENGTH = 10
+RIDGE_LAMBDA = 1.0  # the penalty of M2 and M3, on standardized features, the intercept not penalized
+NEWTON_TOLERANCE, NEWTON_MAX_ITERATIONS = 1e-8, 100
 TERCILES = 3
 BOOTSTRAP_CLUSTERINGS = ("reaction_session", "issuer")
 SEED_KEYS = {"bootstrap_reaction_session": "reaction_session", "bootstrap_issuer": "issuer"}
@@ -67,6 +69,10 @@ def constant_readings():
         ("group prior minimum", ("features", "B_and_C0", "issuer_history_rate", "group_prior_p"), r"at least (\d+) of them", (GROUP_PRIOR_MINIMUM,)),
         ("group prior default", ("features", "B_and_C0", "issuer_history_rate", "group_prior_p"), r"p = (\d\.\d+)", (GROUP_PRIOR_DEFAULT,)),
         ("prior strength", ("features", "B_and_C0", "issuer_history_rate", "formula"), r"m = (\d+)", (PRIOR_STRENGTH,)),
+        ("logistic penalty", ("predictors", "binary_targets", "M2_logistic", "objective"), r"lambda = (\d+)", (RIDGE_LAMBDA,)),
+        ("ridge penalty", ("predictors", "regression_target", "M3_ridge_linear", "fit"), r"lambda = (\d+)", (RIDGE_LAMBDA,)),
+        ("Newton convergence", ("predictors", "binary_targets", "M2_logistic", "solver"), r"below (\S+), at most (\d+) iterations",
+         (NEWTON_TOLERANCE, NEWTON_MAX_ITERATIONS)),
     )
 
 

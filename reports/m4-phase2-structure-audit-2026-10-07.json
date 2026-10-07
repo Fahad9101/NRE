@@ -1,0 +1,496 @@
+{
+  "schema_version": 1,
+  "kind": "m4_phase2_structure_audit",
+  "purpose": "The structure of the real development folds, taken before any Phase 2 predictor is evaluated: how many training events fall in each cell the C2 and C3 baselines will use, which cells have too few and so fall back to the pooled value, and how many training rows and test events have no earlier matured event to learn from (the ridge model leaves those training rows out; a test event without one would stop the run). It counts which labels are defined and reads no outcome value: no rate, no positive count, no return.",
+  "protocol": {
+    "id": "nre-m4-baseline-evaluation",
+    "version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9"
+  },
+  "targets": {
+    "gap_ge_3pct": {
+      "all_event": {
+        "dev_test_block_3": {
+          "training_events_with_the_target_defined": 61,
+          "test_events_with_the_target_defined": 21,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 49,
+              "premarket": 12
+            },
+            "C3_sector_group": {
+              "D": 26,
+              "I": 20,
+              "other": 15
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 15,
+              "premarket": 6
+            },
+            "C3_sector_group": {
+              "D": 9,
+              "I": 7,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 3,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        },
+        "dev_test_block_4": {
+          "training_events_with_the_target_defined": 82,
+          "test_events_with_the_target_defined": 23,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 64,
+              "premarket": 18
+            },
+            "C3_sector_group": {
+              "D": 35,
+              "I": 27,
+              "other": 20
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 16,
+              "premarket": 7
+            },
+            "C3_sector_group": {
+              "D": 10,
+              "I": 8,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 3,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        }
+      },
+      "clean_window": {
+        "dev_test_block_3": {
+          "training_events_with_the_target_defined": 55,
+          "test_events_with_the_target_defined": 20,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 44,
+              "premarket": 11
+            },
+            "C3_sector_group": {
+              "D": 23,
+              "I": 20,
+              "other": 12
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 14,
+              "premarket": 6
+            },
+            "C3_sector_group": {
+              "D": 9,
+              "I": 6,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 2,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        },
+        "dev_test_block_4": {
+          "training_events_with_the_target_defined": 75,
+          "test_events_with_the_target_defined": 23,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 58,
+              "premarket": 17
+            },
+            "C3_sector_group": {
+              "D": 32,
+              "I": 26,
+              "other": 17
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 16,
+              "premarket": 7
+            },
+            "C3_sector_group": {
+              "D": 10,
+              "I": 8,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 2,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        }
+      }
+    },
+    "gap_ge_5pct": {
+      "all_event": {
+        "dev_test_block_3": {
+          "training_events_with_the_target_defined": 61,
+          "test_events_with_the_target_defined": 21,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 49,
+              "premarket": 12
+            },
+            "C3_sector_group": {
+              "D": 26,
+              "I": 20,
+              "other": 15
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 15,
+              "premarket": 6
+            },
+            "C3_sector_group": {
+              "D": 9,
+              "I": 7,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 3,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        },
+        "dev_test_block_4": {
+          "training_events_with_the_target_defined": 82,
+          "test_events_with_the_target_defined": 23,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 64,
+              "premarket": 18
+            },
+            "C3_sector_group": {
+              "D": 35,
+              "I": 27,
+              "other": 20
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 16,
+              "premarket": 7
+            },
+            "C3_sector_group": {
+              "D": 10,
+              "I": 8,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 3,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        }
+      },
+      "clean_window": {
+        "dev_test_block_3": {
+          "training_events_with_the_target_defined": 55,
+          "test_events_with_the_target_defined": 20,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 44,
+              "premarket": 11
+            },
+            "C3_sector_group": {
+              "D": 23,
+              "I": 20,
+              "other": 12
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 14,
+              "premarket": 6
+            },
+            "C3_sector_group": {
+              "D": 9,
+              "I": 6,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 2,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        },
+        "dev_test_block_4": {
+          "training_events_with_the_target_defined": 75,
+          "test_events_with_the_target_defined": 23,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 58,
+              "premarket": 17
+            },
+            "C3_sector_group": {
+              "D": 32,
+              "I": 26,
+              "other": 17
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 16,
+              "premarket": 7
+            },
+            "C3_sector_group": {
+              "D": 10,
+              "I": 8,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 2,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        }
+      }
+    },
+    "day1_close_return": {
+      "all_event": {
+        "dev_test_block_3": {
+          "training_events_with_the_target_defined": 61,
+          "test_events_with_the_target_defined": 21,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 49,
+              "premarket": 12
+            },
+            "C3_sector_group": {
+              "D": 26,
+              "I": 20,
+              "other": 15
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 15,
+              "premarket": 6
+            },
+            "C3_sector_group": {
+              "D": 9,
+              "I": 7,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 3,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        },
+        "dev_test_block_4": {
+          "training_events_with_the_target_defined": 82,
+          "test_events_with_the_target_defined": 23,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 64,
+              "premarket": 18
+            },
+            "C3_sector_group": {
+              "D": 35,
+              "I": 27,
+              "other": 20
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 16,
+              "premarket": 7
+            },
+            "C3_sector_group": {
+              "D": 10,
+              "I": 8,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 3,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        }
+      },
+      "clean_window": {
+        "dev_test_block_3": {
+          "training_events_with_the_target_defined": 55,
+          "test_events_with_the_target_defined": 20,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 44,
+              "premarket": 11
+            },
+            "C3_sector_group": {
+              "D": 23,
+              "I": 20,
+              "other": 12
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 14,
+              "premarket": 6
+            },
+            "C3_sector_group": {
+              "D": 9,
+              "I": 6,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 2,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        },
+        "dev_test_block_4": {
+          "training_events_with_the_target_defined": 75,
+          "test_events_with_the_target_defined": 23,
+          "training_cells": {
+            "C2_timing": {
+              "after_hours": 58,
+              "premarket": 17
+            },
+            "C3_sector_group": {
+              "D": 32,
+              "I": 26,
+              "other": 17
+            }
+          },
+          "test_events_by_cell": {
+            "C2_timing": {
+              "after_hours": 16,
+              "premarket": 7
+            },
+            "C3_sector_group": {
+              "D": 10,
+              "I": 8,
+              "other": 5
+            }
+          },
+          "cells_below_the_minimum_of_10": {
+            "C2_timing": [],
+            "C3_sector_group": []
+          },
+          "test_events_that_would_fall_back_to_the_pooled_value": {
+            "C2_timing": 0,
+            "C3_sector_group": 0
+          },
+          "training_rows_with_no_earlier_matured_event": 2,
+          "test_events_with_no_earlier_matured_event": 0,
+          "test_events_with_no_earlier_event_of_their_own_issuer": 0,
+          "indicator_features_constant_in_training": []
+        }
+      }
+    }
+  },
+  "holdout": {
+    "sealed_events": 23,
+    "denied_reads": 0,
+    "unsealed_loads": 0,
+    "access_log_records_after_genesis": 0
+  },
+  "not_a_claim": [
+    "Not a result: nothing was fitted, scored or evaluated.",
+    "Not Milestone 4 acceptance."
+  ]
+}

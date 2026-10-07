@@ -517,7 +517,7 @@ class BehaviourTests(unittest.TestCase):
             train = [e for e in self.events if blocks[e["event_id"]] in train_blocks]
             rate = sum(1 for e in train if e["labels"]["gap_ge_3pct"]["value"]) / len(train)
             self.assertAlmostEqual(run["folds"][fold_name]["model"]["rate"], rate)
-            self.assertTrue(all(r["p"] == run["folds"][fold_name]["model"]["rate"] for r in run["folds"][fold_name]["rows"]))
+            self.assertTrue(all(r["p"] == h.rounded(run["folds"][fold_name]["model"]["rate"]) for r in run["folds"][fold_name]["rows"]))  # as produced: rounded
 
     def test_the_pooled_quantiles_are_type_7_quantiles_of_the_training_values(self):
         result = self.run.evaluate("day1_close_return", "all_event")
@@ -645,9 +645,8 @@ class BehaviourTests(unittest.TestCase):
         result = self.run.evaluate("gap_ge_3pct", "all_event", [h.PooledRate(), Skipping()])
         a, b = (result["predictors"][k]["rows"] for k in ("C1_pooled_rate", "TEST_SKIPPING"))
         self.assertEqual([r["event_id"] for r in a], [r["event_id"] for r in b])
-        broken = {"rows": b[:-1], "state": h.EVALUATED}
         with self.assertRaises(DataError):
-            self.run._contrast(self.run.targets["gap_ge_3pct"], broken, result["predictors"]["C1_pooled_rate"])
+            self.run._contrast(self.run.targets["gap_ge_3pct"], b[:-1], a)
 
     def test_the_plan_reports_every_target_with_counts_by_version_and_the_fold_states_of_the_primaries(self):
         plan = self.run.plan()
@@ -682,7 +681,7 @@ class BehaviourTests(unittest.TestCase):
             self.assertEqual(c1["state"], "EVALUATED")
             pooled = by_fold[("TEST_ORACLE", "pooled_development")]
             self.assertIn("5000 replicates", pooled["interval_method"])
-            self.assertIsNotNone(pooled["metrics_with_counts"]["contrast"])
+            self.assertIsNotNone(pooled["metrics_with_counts"]["contrasts"]["against_the_comparator"])
             self.assertEqual([r["experiment_id"] for r in written][:2], ["m4-experiment-00001", "m4-experiment-00002"])
 
     def test_a_fold_that_could_not_be_evaluated_is_recorded_with_its_state_and_no_predictions(self):

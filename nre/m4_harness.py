@@ -1,9 +1,9 @@
-"""The Milestone 4 evaluation harness (Phase 1): the machinery the frozen protocol requires before anything is evaluated.
+"""The Milestone 4 evaluation harness: the machinery the frozen protocol requires, and the one place a predictor is evaluated.
 
-It verifies the protocol and every input the protocol pins, builds the folds, asserts that no fold leaks, keeps the holdout sealed, and can evaluate a
-predictor on the development folds. Only the pooled base rate (C1) is built, the comparator every other predictor is measured against. Nothing is
-evaluated on real events: ALLOW_REAL_EVALUATION and ALLOW_HOLDOUT_LOOK are False, so the real inputs support verify, plan and dry-run only, and a later
-phase changes those two lines in a commit of its own, with the owner's go-ahead on record.
+It verifies the protocol and every input the protocol pins, builds the folds, asserts that no fold leaks, keeps the holdout sealed, and evaluates predictors
+on the development folds (nre/m4_models.py holds the baselines beyond the pooled rate C1, nre/m4_phase2.py runs them). What may be evaluated on the real
+events is set by two constants, ALLOW_REAL_EVALUATION and REAL_EVALUATION_TARGETS; ALLOW_HOLDOUT_LOOK stays False until the one look at block 5. Each is
+changed in a commit of its own, with the owner's go-ahead on record.
 
     python -m nre.m4_harness verify | plan | dry-run [--output PATH] | verify-logs | init-logs
 """
@@ -21,9 +21,17 @@ from . import m4_registry as reg
 from . import m4_scoping_evidence as ev
 from .core import DataError, canonical, digest, iso
 
-ALLOW_REAL_EVALUATION = False  # Phase 2, and only with the owner's go-ahead: fitting and scoring predictors on the real development folds
+ALLOW_REAL_EVALUATION = False  # fitting and scoring predictors on the real development folds, only with the owner's go-ahead
+REAL_EVALUATION_TARGETS = ()  # the targets that go-ahead covers; evaluating any other target on the real inputs is refused
 ALLOW_HOLDOUT_LOOK = False  # Phase 4, and only with the owner's go-ahead: the one look at block 5
 COMPARATOR = {"binary": "C1_pooled_rate", "regression": "C1_pooled_quantiles"}
+CONFIRMATORY = {"binary": "M2_logistic", "regression": "M3_ridge_linear"}  # the one model per primary target whose contrast against C1 can support a status
+# the exploratory contrasts reported besides each predictor's against C1: (model, the predictor it is set against)
+OTHER_CONTRASTS = {"binary": (("M2_logistic", "C2_timing_rate"), ("M2_logistic", "C3_sector_group_rate"), ("M2_logistic", "C4_issuer_history_rate"),
+                              ("M2_logistic", "M2_without_sector")),
+                   "regression": (("M3_ridge_linear", "C2_timing_quantiles"), ("M3_ridge_linear", "C3_sector_group_quantiles"),
+                                  ("M3_ridge_linear", "M3_without_sector"))}
+PREDICTION_DIGITS = 12  # predictions are rounded when produced so that results reproduce across platforms (exp and log can differ in the last bit)
 RESPONSE = {"response_state": "MODEL_NOT_VALIDATED", "opportunity_state": "NO_QUALIFIED_OPPORTUNITY", "confidence_tier": "VERY_LOW"}
 RESPONSE_REASONS = ["no calibration has been shown", "the sample is small and clustered", "no confidence threshold has been validated"]
 EVALUATED = "EVALUATED"
@@ -41,8 +49,26 @@ class Abstain(Exception):
         self.state, self.reason = state, reason
 
 
+class FittedModel(dict):
+    """A fitted model: its parameters (what is hashed and logged) as the dict, and, outside it, whatever the model needs to predict (`context`) and what it
+    counts while predicting (`diagnostics`, for instance each use of a fallback)."""
+    context = None
+
+    def __init__(self, parameters=(), context=None, diagnostics=None):
+        super().__init__(parameters)
+        self.context = context
+        self.diagnostics = diagnostics if diagnostics is not None else {}
+
+
+def rounded(value):
+    """A prediction as produced: rounded to PREDICTION_DIGITS decimals (a tuple elementwise), and never -0.0."""
+    if isinstance(value, (tuple, list)):
+        return tuple(rounded(v) for v in value)
+    return round(value, PREDICTION_DIGITS) + 0.0
+
+
 class Predictor:
-    """fit(train_events, target) -> a JSON-serializable model; predict(model, view) -> a probability or (q10, q50, q90). A `view` has no labels."""
+    """fit(train_events, target) -> a JSON-serializable model (a FittedModel); predict(model, view) -> a probability or (q10, q50, q90). A `view` has no labels."""
     id = kind = None
 
     def fit(self, train, target):
@@ -133,9 +159,12 @@ class Harness:
         checks = pr.verify_protocol(self.protocol, self.freeze, self.inputs.get("policy"))
         return checks + (pr.verify_inputs(self.protocol, self.inputs, self.spec, self.root) if self.real else [])
 
-    def _guard(self):
+    def _guard(self, target_id):
+        """On the real inputs only the targets the owner's go-ahead covers may be evaluated, and only while the tripwire is on."""
         if self.real and not ALLOW_REAL_EVALUATION:
             raise EvaluationNotAuthorized("evaluating on the real events is not authorized in this version of the harness; verify, plan and dry-run are")
+        if self.real and target_id not in REAL_EVALUATION_TARGETS:
+            raise EvaluationNotAuthorized("%s is not among the targets authorized for evaluation on the real events (%s)" % (target_id, ", ".join(REAL_EVALUATION_TARGETS)))
 
     # ---- folds -----------------------------------------------------------------------------------------------------------------------------
 
@@ -232,8 +261,13 @@ class Harness:
     # ---- evaluation on the development folds -----------------------------------------------------------------------------------------------
 
     def evaluate(self, target_id, version, predictors=None):
-        """One primary target in one version on the development folds: fold states, out-of-fold predictions, metrics, contrasts."""
-        self._guard()
+        """One primary target in one version on the development folds: fold states, out-of-fold predictions, metrics, contrasts.
+
+        Every predictor is contrasted with the comparator C1 (model minus comparator, lower is better). The one contrast that can support a status is the
+        confirmatory model's against C1 in the clean-window version; the all-event contrast of the same pair is its companion in the status rule, and every
+        other contrast (the other predictors against C1, the pairs in OTHER_CONTRASTS, and each development fold) is labelled exploratory.
+        """
+        self._guard(target_id)
         target = self.targets[target_id]
         if target.role != "primary":
             raise DataError("%s is %s: no predictor is fitted for it" % (target_id, target.role))
@@ -241,13 +275,30 @@ class Harness:
         if any(p.kind != target.kind for p in predictors):
             raise DataError("every predictor must be of the target's kind (%s)" % target.kind)
         report, usable = self._prepare(target, version)
-        result = {"target": target.id, "version": version, "kind": target.kind, "clock": target.clock, **report, "predictors": {}, "contrasts": {}}
+        result = {"target": target.id, "version": version, "kind": target.kind, "clock": target.clock, **report, "predictors": {}, "contrasts": {},
+                  "other_contrasts": {}, "fold_contrasts": {}}
         for predictor in predictors:
             result["predictors"][predictor.id] = self._run(predictor, target, report, usable)
-        comparator = result["predictors"].get(COMPARATOR[target.kind])
-        for pid, run in result["predictors"].items():
-            if comparator is not None and pid != COMPARATOR[target.kind] and run["state"] == EVALUATED and comparator["state"] == EVALUATED:
-                result["contrasts"][pid] = self._contrast(target, run, comparator)
+        runs = result["predictors"]
+        comparator = runs.get(COMPARATOR[target.kind])
+        evaluated = lambda run: run is not None and run["state"] == EVALUATED  # noqa: E731
+        for pid, run in runs.items():
+            if evaluated(comparator) and pid != COMPARATOR[target.kind] and evaluated(run):
+                role = "exploratory"
+                if pid == CONFIRMATORY[target.kind]:
+                    role = "confirmatory" if version == "clean_window" else "companion_of_the_confirmatory_contrast"
+                result["contrasts"][pid] = {"role": role, "baseline": COMPARATOR[target.kind], **self._contrast(target, run["rows"], comparator["rows"])}
+        for model_id, baseline_id in OTHER_CONTRASTS[target.kind]:
+            if evaluated(runs.get(model_id)) and evaluated(runs.get(baseline_id)):
+                result["other_contrasts"]["%s_vs_%s" % (model_id, baseline_id)] = {
+                    "role": "exploratory", "model": model_id, "baseline": baseline_id, **self._contrast(target, runs[model_id]["rows"], runs[baseline_id]["rows"])}
+        confirmatory = runs.get(CONFIRMATORY[target.kind])
+        if evaluated(confirmatory) and evaluated(comparator):
+            for fold_name in confirmatory["folds"]:
+                a, b = (run["folds"][fold_name].get("rows") for run in (confirmatory, comparator))
+                if a and b:
+                    result["fold_contrasts"][fold_name] = {"role": "exploratory", "model": CONFIRMATORY[target.kind], "baseline": COMPARATOR[target.kind],
+                                                           **self._contrast(target, a, b)}
         return result
 
     def _run(self, predictor, target, report, usable):
@@ -272,9 +323,9 @@ class Harness:
                 failure = failure or abstention
                 continue
             base = self._baseline_rate(target, train)
-            rows = [self._row(e, v, predictor.predict(model, view_of(e, target)), fold, base) for e, v in tests]
+            rows = [self._row(e, v, rounded(predictor.predict(model, view_of(e, target))), fold, base) for e, v in tests]
             run["folds"][fold.name] = {"state": EVALUATED, "reason": None, "predictions": len(rows), "model": model,
-                                       "model_checksum": digest(canonical(model)), "rows": rows}
+                                       "model_checksum": digest(canonical(model)), "diagnostics": dict(getattr(model, "diagnostics", None) or {}), "rows": rows}
             run["rows"] += rows
         if failure is not None:
             run["state"], run["reason"], run["rows"] = failure.state, failure.reason, []
@@ -329,9 +380,8 @@ class Harness:
         out["expected_return_by_tercile"] = m.tercile_means(scores, [r["day1_close_return"] for r in rows], keys)
         return out
 
-    def _contrast(self, target, model_run, comparator_run):
-        """Model minus comparator on the pooled out-of-fold events (lower is better), with the cluster-bootstrap intervals."""
-        model_rows, base_rows = model_run["rows"], comparator_run["rows"]
+    def _contrast(self, target, model_rows, base_rows):
+        """Model minus comparator on the same out-of-fold events (lower is better), with the cluster-bootstrap intervals."""
         if [r["event_id"] for r in model_rows] != [r["event_id"] for r in base_rows]:
             raise DataError("predictors must be compared on the same events")
         if target.kind == "binary":
@@ -372,11 +422,15 @@ class Harness:
                 rows = entry.get("rows", [])
                 metrics = run.get("metrics_by_fold", {}).get(name) or {"state": entry["state"], "reason": entry["reason"]}
                 records.append(self._record(start + len(records), created, commit, target, pid, result, name, self._train_ids(result["version"], name), rows,
-                                            entry.get("model", {}), {"fold": result["folds"][name], "metrics": metrics}, "none", entry["state"]))
+                                            entry.get("model", {}), {"fold": result["folds"][name], "metrics": metrics, "diagnostics": entry.get("diagnostics")},
+                                            "none", entry["state"]))
             rows = run["rows"]
             metrics = run.get("metrics") or {"state": run["state"], "reason": run["reason"]}
+            contrasts = {"against_the_comparator": result["contrasts"].get(pid),
+                         "others": {k: v for k, v in result["other_contrasts"].items() if v["model"] == pid},
+                         "by_fold": {k: v for k, v in result["fold_contrasts"].items() if v["model"] == pid}}
             records.append(self._record(start + len(records), created, commit, target, pid, result, "pooled_development", [], rows,
-                                        {}, {"fold": result["pooled_development_test"], "metrics": metrics, "contrast": result["contrasts"].get(pid)}, method, run["state"]))
+                                        {}, {"fold": result["pooled_development_test"], "metrics": metrics, "contrasts": contrasts}, method, run["state"]))
         return records
 
     def _record(self, sequence, created, commit, target, pid, result, name, train_ids, rows, parameters, metrics, interval_method, state):
@@ -397,6 +451,28 @@ class Harness:
                 "reasons": RESPONSE_REASONS, "model_version": "m4-%s-v1" % predictor.id, "feature_version": feat.FEATURE_VERSION,
                 "training_window_dates": [sessions[0], sessions[-1]], "data_snapshot_sha256": digest(canonical(snapshot)),
                 "model_checksum": digest(canonical(model)), "prediction_time": iso(when), "generated_at": generated_at}
+
+    def prediction_records(self, result, generated_at):
+        """Every out-of-fold prediction of one evaluate() result as a prediction record: one per predictor, development fold and test event."""
+        target, version = self.targets[result["target"]], result["version"]
+        snapshot = digest(canonical({k: self.protocol["inputs"][k] for k in ("event_table_sha256", "event_labels_sha256", "block_assignment_sha256")}))
+        by_id = {e["event_id"]: e for e in self.events}
+        records = []
+        for pid, run in result["predictors"].items():
+            for fold_name, entry in run["folds"].items():
+                if entry["state"] != EVALUATED:
+                    continue
+                fold = next(f for f in self.folds if f.name == fold_name)
+                sessions = sorted(e["reaction_session"] for e in d.split(self.versions[version], self.blocks, fold)[0])
+                for row in entry["rows"]:
+                    event = by_id[row["event_id"]]
+                    when = self.inputs["calendar"].bounds(event["reaction_session"])[0] if target.clock == "C0" else event["cutoff"]
+                    records.append({"event_id": row["event_id"], "target_id": target.id, "version": version, "fold": fold_name, "predictor_id": pid,
+                                    "prediction": list(row["p"]) if isinstance(row["p"], tuple) else row["p"], **RESPONSE, "reasons": RESPONSE_REASONS,
+                                    "model_version": "m4-%s-v1" % pid, "feature_version": feat.FEATURE_VERSION, "training_window_dates": [sessions[0], sessions[-1]],
+                                    "data_snapshot_sha256": snapshot, "model_checksum": entry["model_checksum"], "prediction_time": iso(when),
+                                    "generated_at": generated_at})
+        return records
 
     # ---- the holdout -----------------------------------------------------------------------------------------------------------------------
 
