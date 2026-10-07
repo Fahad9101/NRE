@@ -22,6 +22,10 @@ described in `docs/M4-HARNESS.md`). It was run on the real inputs only as a dry 
 fold counts agree with the freeze record, and no holdout outcome was read. Only the pooled base rate (C1) exists, and only synthetic data has been scored. Phases 2 to 4 are not
 authorized. The harness decided a handful of details the protocol is silent on; they are listed in section 5 of `docs/M4-HARNESS.md` for the owner to confirm or amend before Phase 2.
 
+**Update 2026-10-07, after Phase 2:** the owner authorized Phase 2 (`reports/m4-phase2-authorization-2026-10-07.json`). The B-clock baselines (C2, C3, C4, M2, M3 and their without-sector sensitivities) were built
+(`docs/M4-PHASE2.md`) and evaluated on the real development folds in both versions (`docs/M4-PHASE2-RESULTS.md`, `reports/m4-phase2-results-2026-10-07.json`). All three primary targets are
+`NOT_DISTINGUISHABLE` from the pooled base rate, as the protocol expected. The protocol is unchanged, the holdout is untouched, and Phases 3 and 4 are not authorized.
+
 ## Summary
 
 - **What Milestone 4 is.** The master prompt's section, in full: "Build baseline models for: opening gap, Day-1 move, gap retention,

@@ -5,6 +5,11 @@ any real event, and no holdout outcome has been read.** The harness is built to 
 `a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9`). It is the machinery the protocol requires before any evaluation, plus the pooled base rate (C1), the comparator
 every other predictor will be measured against, which is exercised on synthetic data only. Phase 2 (the other baselines) and Phase 4 (the holdout look) each need the owner's go-ahead.
 
+**Update 2026-10-07, after Phase 2:** the owner authorized Phase 2 and the harness now evaluates the B-clock baselines on the real development folds (`docs/M4-PHASE2.md`, results in
+`docs/M4-PHASE2-RESULTS.md`). Two things in this note describe Phase 1's state and are no longer current: `ALLOW_REAL_EVALUATION` is `True`, restricted to the three B-clock primaries by
+`REAL_EVALUATION_TARGETS` (every other target is still refused on the real inputs), and the harness has evaluated real events. `ALLOW_HOLDOUT_LOOK` is still `False`, the holdout is still sealed (23 events,
+no read, no load), and the details in section 5 are in force as written. The protocol is unchanged.
+
 ## 1. What it is
 
 ```
