@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-07",
+  "context": "Milestone 4's Phase 2 (the B-clock baselines on the development folds) was closed on 2026-10-07 (reports/m4-phase2-completion-2026-10-07.json): all three B-clock primaries were NOT_DISTINGUISHABLE from the pooled base rate. The assistant's closing message, quoted verbatim below, recommended reading the results note and then authorizing Phase 3, the two C0-clock primaries, and said that recommending is not authorizing.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-07T05:51:50.746Z",
+    "text": "Phase 2 is done: the baselines ran on the real development folds, and all three primary targets come out `NOT_DISTINGUISHABLE` from the pooled base rate, as the protocol expected. The holdout was not touched, the C0 targets were not run, and no status is a claim of an edge. The work is commits `7836b0b` to `5d50813` in NRE. CI passed on Python 3.12 and 3.13 for every push, and the suite is 835 tests, all passing.\n\n**How I read \"authorize phase 2\".** The three B-clock primaries (`gap_ge_3pct`, `gap_ge_5pct`, `day1_close_return`), both versions, development folds only. The models were the timing, sector-group and issuer-history baselines, the logistic model (M2), the ridge model (M3), and their without-sector variants. The C0 targets are Phase 3.\n\n**The details I flagged are now in effect.** You hadn't answered the open details in `docs/M4-HARNESS.md` section 5, so I treated that as \"proceed under protocol version 1\", not as an amendment. The further details I had to settle are in `reports/m4-phase2-authorization-2026-10-07.json`, committed before any code or result. They are population standard deviation, the ridge model leaving out the 2–3 earliest training events that have no earlier event, point-in-time features for training rows, the monotone repair, and rounding. Results now exist, so changing any of them would be a new protocol version that says results were seen.\n\n**Result.** Each row is the clean-window model's score minus the base rate's; negative means the model did better. There are 43 events from 23 issuers, and 44 in the all-event version.\n\n| Target | Difference | 99% interval | Status |\n| --- | --- | --- | --- |\n| `gap_ge_3pct` (Brier) | −0.0027 | −0.026 to +0.033 | `NOT_DISTINGUISHABLE` |\n| `gap_ge_5pct` (Brier) | +0.0157 | −0.026 to +0.052 | `NOT_DISTINGUISHABLE` |\n| `day1_close_return` (pinball) | +0.0005 | −0.003 to +0.005 | `NOT_DISTINGUISHABLE` |\n\nThe rest is exploratory:\n- None of the 50 pooled contrasts has an interval that excludes zero.\n- Two of 12 per-fold contrasts do, in opposite directions. About 0.6 would be expected by chance.\n- On the 3% gap the sector-group and issuer-history baselines and M2 score slightly better than the base rate, but the data cannot tell that from noise.\n- On the 5% gap M2 is worse than the base rate, also not distinguishable.\n\n**How it was checked.**\n- A structure audit before the run, which read only which labels exist, found no cell fallbacks and a history for every test event.\n- I ran the evaluation once from a clean tree at `595736b`. The tripwire flip is its own commit, limited to the three targets. The run happened twice from scratch with identical output.\n- I recomputed scores, contrasts and the bootstrap intervals from the predictions file with plain arithmetic: 40 quantities, no difference. A test re-runs the evaluation and passes on the Linux runners.\n- All 80 deliberate defects in the mutation check are caught. Two of the 34 new ones were missed at first (a quantile cell of exactly ten events, and the ridge residual quantile levels) and now have tests.\n\n**My own slips.** I named a test attribute `run` again, which broke `setUpClass` until I renamed it. I also checked the results note against the data and tightened several loose phrasings before committing it.\n\n**What remains.**\n- **You:**\n  - Read `docs/M4-PHASE2-RESULTS.md`.\n  - The earlier review items still stand: the section-5 details, the two thin primary targets, the 99% claim level, and a counts-only holdout.\n- **Me, not authorized yet:**\n  - Phase 3, the two C0 targets. `loses_half_of_gap` falls below the protocol's thresholds in the clean-window version, so it will be exploratory only.\n  - Phase 4, the one holdout look, the descriptive report with block-5 counts, and the Milestone 4 report. Accepting Milestone 4 is your decision.\n\nMy recommended next step is to read the results note and then authorize Phase 3. It reuses everything built here and only adds the C0 targets to the tripwire's list, in its own commit. Recommending it does not authorize it.\n\nFiles are in `NRE/docs/` and `NRE/reports/`:\n- `docs/M4-PHASE2.md`\n- `docs/M4-PHASE2-RESULTS.md`\n- `reports/m4-phase2-results-2026-10-07.json`\n- `reports/m4-phase2-completion-2026-10-07.json`"
+  },
+  "owner_message": {
+    "text": "authorize phase 3",
+    "at": "2026-10-07T11:03:34.484Z",
+    "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, timestamps UTC)"
+  },
+  "how_the_words_were_read": [
+    "'authorize phase 3' authorizes Phase 3 as the scope proposal (docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md) and the frozen protocol define it: the baselines on the C0 clock, evaluated on the development folds only. The C0 clock is the regular open of the reaction session, at which the opening print (day1_open_return) is known and the day's high, low and close are not.",
+    "The targets are the two C0-clock primaries of the frozen protocol: extension_after_open_ge_5pct (the day's high at least 5% above the open) and loses_half_of_gap (among positive gaps of at least 0.5%, the day-1 close keeps less than half of the gap). The scope proposal's Phase 3 text also named full gap fill; the frozen protocol made full_gap_fill descriptive-only (no predictor is fitted for it), and the protocol governs, so it is not modelled.",
+    "The predictors are those of Phase 2 for a binary target, unchanged: C1, C2, C3, C4, M2_logistic and M2_without_sector. The one difference the protocol specifies is that M2 (both variants) also takes the opening gap, the event's own day1_open_return, as a continuous feature; the cell baselines and the issuer-history rate do not use it. Both versions (all_event and clean_window) are run, and each target gets its status under the decision rule.",
+    "The protocol already says what the data will allow: loses_half_of_gap has 9 training positives in clean-window development fold 3 (the threshold is 10), so its clean-window version is INSUFFICIENT_DATA for the claim rule and gets no predictions; its all-event version is run and reported as exploratory. This is not adjusted.",
+    "The reply did not address the details the protocol is silent on (docs/M4-HARNESS.md section 5), which stay in force as before, nor the Phase 2 results. It was not read as an amendment: the protocol stays version 1 and its hash is unchanged. The details Phase 2 settled (reports/m4-phase2-authorization-2026-10-07.json, P2-1 to P2-10) carry over, and the further details this phase settles are listed below and committed BEFORE the first C0-clock evaluation.",
+    "The sealed holdout stays sealed. ALLOW_HOLDOUT_LOOK stays False, block-5 labels are never read, and the holdout access log keeps only its genesis record."
+  ],
+  "authorized_under_these_words": [
+    "Making the C0 targets runnable: tests of M2's opening-gap feature, a Phase 3 runner that shares Phase 2's, the structure audit for the C0 targets, mutation checks of the new code, and the method note",
+    "A structure-only audit of the real development folds for the C0 targets before anything is evaluated (cell sizes, events without history, whether the opening gap is defined; no outcome value is read)",
+    "Extending REAL_EVALUATION_TARGETS by exactly extension_after_open_ge_5pct and loses_half_of_gap, in a commit of its own",
+    "Running the real development-fold evaluation of the Phase 2 predictors on those two targets in both versions from a clean committed tree; appending every experiment to reports/m4-experiment-log.jsonl; writing the results report, the predictions file and a plain-language results note"
+  ],
+  "not_authorized_by_these_words": [
+    "Any access to the holdout's outcomes, or turning on ALLOW_HOLDOUT_LOOK; the descriptive report with block-5 counts and the Milestone 4 report (Phase 4)",
+    "Any predictor for a descriptive-only or INSUFFICIENT_DATA target (full_gap_fill among them) or for the 5-session returns",
+    "Any amendment to the frozen protocol, any new data or provider",
+    "Trees, ensembles or deep models (Milestone 5), any ranking, candidate list, trading, sizing or backtest modelling",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later"
+  ],
+  "details_settled_before_any_c0_evaluation": {
+    "status": "Settled by the assistant, outcome-independently, before any predictor has been fitted or scored on a C0-clock target, real or otherwise. Not protocol amendments. Each is open to the owner's review; changing any now would be a new protocol version stated to follow results of the earlier one (Phase 2's results already exist).",
+    "carried_over_unchanged": [
+      "docs/M4-HARNESS.md section 5, items 1 to 12",
+      "reports/m4-phase2-authorization-2026-10-07.json, P2-1 to P2-10 (P2-2 and P2-6 concern M3 and the nested gap thresholds and do not arise)"
+    ],
+    "new_in_phase_3": [
+      {
+        "id": "P3-1",
+        "detail": "The opening gap is the event's own day1_open_return, standardized like every non-intercept feature (the training mean and the population standard deviation) and kept in both M2_logistic and M2_without_sector. For a training event it is read from its own labels; for a test event it is supplied in the view, because it is known at the open. C1, C2, C3 and C4 never use it.",
+        "could_move_a_result": true
+      },
+      {
+        "id": "P3-2",
+        "detail": "For loses_half_of_gap the fit set and the test set are the events whose positive_gap_retained_half label is defined (a gap of at least 0.5%), in the version being run; every threshold is the protocol's. A version whose pooled development test fails the thresholds is INSUFFICIENT_DATA and gets no predictions.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P3-3",
+        "detail": "When a target's clean-window version is INSUFFICIENT_DATA, the all-event contrast of M2 against C1 is labelled exploratory, not 'companion of the confirmatory contrast': there is no confirmatory contrast for it to accompany. The decision rule's status for that target is INSUFFICIENT_DATA.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P3-4",
+        "detail": "No monotone repair applies: neither C0 target has a nested looser threshold among the primaries. The tripwire list is extended by these two targets only.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P3-5",
+        "detail": "The prediction time of every C0-clock prediction record is the regular open of the reaction session (09:30 New York time) from the calendar; B-clock records keep the cutoff.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P3-6",
+        "detail": "The structure audit for the C0 targets adds the number of training rows and of test events whose opening gap is undefined (expected none), counted from which labels are defined; the audit still reads no outcome value, and the opening return's value is not read.",
+        "could_move_a_result": false
+      },
+      {
+        "id": "P3-7",
+        "detail": "The Phase 3 run starts from the experiment log exactly as Phase 2 left it (the genesis record and 102 experiment records), appends to it, and refuses otherwise; the holdout log must still hold only its genesis.",
+        "could_move_a_result": false
+      }
+    ]
+  },
+  "not_a_claim": [
+    "Not a result: nothing has been evaluated on a C0-clock target when this record is written.",
+    "Not Milestone 4 acceptance.",
+    "Not a statement that any predictor will beat the base rate: the protocol expects most primaries to be NOT_DISTINGUISHABLE, and Phase 2's three were."
+  ]
+}
