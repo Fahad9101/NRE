@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-07",
+  "what": "Closing record of Milestone 4 Phase 2: the baselines beyond the pooled rate, evaluated on the development folds for the three B-clock primary targets in both versions. The holdout was not touched, and the statuses below are not claims of an edge.",
+  "authorization": {
+    "record": "reports/m4-phase2-authorization-2026-10-07.json",
+    "commit": "7836b0ba09e954e72b6d82d835040b1764ae7763",
+    "owner_words": "authorize phase 2",
+    "at": "2026-10-07T04:40:50.937Z"
+  },
+  "protocol": {
+    "path": "config/m4-protocol.json",
+    "version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "amended": false
+  },
+  "built": {
+    "commits": {
+      "build": "b1549c95855247456a03f79ab5d2df50b680292b",
+      "test_fixes": "41ece55a403c9ca80cf2dd110ff0df3111c058de",
+      "tripwire": "595736bf50015b1a2f1318709ecc59acf9257371"
+    },
+    "modules": [
+      "nre/m4_models.py",
+      "nre/m4_phase2.py",
+      "nre/m4_harness.py",
+      "nre/m4_protocol.py"
+    ],
+    "tests": [
+      "tests/test_m4_models.py",
+      "tests/test_m4_phase2.py",
+      "tests/test_m4_phase2_record.py",
+      "tests/test_m4_phase2_results.py"
+    ],
+    "docs": [
+      "docs/M4-PHASE2.md",
+      "docs/M4-PHASE2-RESULTS.md"
+    ],
+    "audit": "reports/m4-phase2-structure-audit-2026-10-07.json"
+  },
+  "evaluation": {
+    "commit": "595736bf50015b1a2f1318709ecc59acf9257371",
+    "date": "2026-10-07",
+    "from_a_clean_committed_tree": true,
+    "experiment_records": 102,
+    "prediction_records": 1479,
+    "results": "reports/m4-phase2-results-2026-10-07.json",
+    "results_canonical_sha256": "a7a9de3bab35066a715b81a06123ecc5b46d23cc490eb9485b3965d736ded841",
+    "predictions": "reports/m4-phase2-predictions-2026-10-07.jsonl",
+    "evaluated_twice_from_scratch_and_identical": true,
+    "statuses": {
+      "day1_close_return": {
+        "M3_ridge_linear": "NOT_DISTINGUISHABLE"
+      },
+      "gap_ge_3pct": {
+        "M2_logistic": "NOT_DISTINGUISHABLE"
+      },
+      "gap_ge_5pct": {
+        "M2_logistic": "NOT_DISTINGUISHABLE"
+      }
+    },
+    "experiment_log_records_now": 103,
+    "experiment_log_last_record_sha256": "b13dcd30de3a5c47cb3cd0c9018ebecac43265665a477823fbaa5bb3e79b8db8"
+  },
+  "results_in_brief": {
+    "confirmatory_contrasts": {
+      "gap_ge_3pct/all_event": {
+        "model": "M2_logistic",
+        "comparator": "C1_pooled_rate",
+        "role": "companion_of_the_confirmatory_contrast",
+        "metric": "brier_score",
+        "events": 44,
+        "comparator_score": 0.21848768671074667,
+        "model_score": 0.20838599309346975,
+        "difference": -0.010101693617276933,
+        "interval_95": [
+          -0.029223733690915295,
+          0.01682059615639529
+        ],
+        "interval_99": [
+          -0.034733722118657766,
+          0.027613498167714298
+        ]
+      },
+      "gap_ge_3pct/clean_window": {
+        "model": "M2_logistic",
+        "comparator": "C1_pooled_rate",
+        "role": "confirmatory",
+        "metric": "brier_score",
+        "events": 43,
+        "comparator_score": 0.22140242167977703,
+        "model_score": 0.2186912073635395,
+        "difference": -0.002711214316237553,
+        "interval_95": [
+          -0.020426452282309868,
+          0.02258118901797937
+        ],
+        "interval_99": [
+          -0.02589769138681661,
+          0.032902271435552626
+        ]
+      },
+      "gap_ge_5pct/all_event": {
+        "model": "M2_logistic",
+        "comparator": "C1_pooled_rate",
+        "role": "companion_of_the_confirmatory_contrast",
+        "metric": "brier_score",
+        "events": 44,
+        "comparator_score": 0.17565521772098838,
+        "model_score": 0.1818385031704487,
+        "difference": 0.006183285449460304,
+        "interval_95": [
+          -0.015639947253848763,
+          0.028631413428809337
+        ],
+        "interval_99": [
+          -0.023305310156550994,
+          0.038059086156851454
+        ]
+      },
+      "gap_ge_5pct/clean_window": {
+        "model": "M2_logistic",
+        "comparator": "C1_pooled_rate",
+        "role": "confirmatory",
+        "metric": "brier_score",
+        "events": 43,
+        "comparator_score": 0.17872721293270769,
+        "model_score": 0.19440139065529477,
+        "difference": 0.01567417772258706,
+        "interval_95": [
+          -0.014395954004751516,
+          0.043122317579173605
+        ],
+        "interval_99": [
+          -0.0255350232936122,
+          0.05248841676871962
+        ]
+      },
+      "day1_close_return/all_event": {
+        "model": "M3_ridge_linear",
+        "comparator": "C1_pooled_quantiles",
+        "role": "companion_of_the_confirmatory_contrast",
+        "metric": "mean_pinball_loss",
+        "events": 44,
+        "comparator_score": 0.03440083012480776,
+        "model_score": 0.034820712337209354,
+        "difference": 0.0004198822124015992,
+        "interval_95": [
+          -0.0029903487131756955,
+          0.004635315532765563
+        ],
+        "interval_99": [
+          -0.003752334526600536,
+          0.0059722195036780385
+        ]
+      },
+      "day1_close_return/clean_window": {
+        "model": "M3_ridge_linear",
+        "comparator": "C1_pooled_quantiles",
+        "role": "confirmatory",
+        "metric": "mean_pinball_loss",
+        "events": 43,
+        "comparator_score": 0.03489148631820225,
+        "model_score": 0.035373195983950306,
+        "difference": 0.0004817096657480546,
+        "interval_95": [
+          -0.0024841267605746576,
+          0.003993302641508884
+        ],
+        "interval_99": [
+          -0.003305500094674968,
+          0.00507176898371888
+        ]
+      }
+    },
+    "pooled_contrasts_with_an_interval_excluding_zero": {
+      "of": 50,
+      "count": 0,
+      "which": []
+    },
+    "development_fold_contrasts_with_a_95_interval_excluding_zero": {
+      "of": 12,
+      "count": 2,
+      "which": [
+        {
+          "target": "gap_ge_3pct",
+          "version": "all_event",
+          "fold": "dev_test_block_3",
+          "model": "M2_logistic",
+          "difference": -0.031225279926237175,
+          "interval_95": [
+            -0.05101028460996814,
+            -0.011078677524731165
+          ]
+        },
+        {
+          "target": "gap_ge_5pct",
+          "version": "clean_window",
+          "fold": "dev_test_block_4",
+          "model": "M2_logistic",
+          "difference": 0.03219849483040857,
+          "interval_95": [
+            0.0017094074656667322,
+            0.06587890681511907
+          ]
+        }
+      ],
+      "note": "exploratory; about 0.6 of 12 are expected by chance alone, and the two go in opposite directions"
+    }
+  },
+  "verification": {
+    "independent_recomputation": {
+      "what": "the pooled scores, the contrasts and the confirmatory bootstrap intervals recomputed from the predictions file and the development labels with plain arithmetic",
+      "quantities_checked": 40,
+      "problems": 0
+    },
+    "reproduced_by_a_test": "tests/test_m4_phase2_results.py runs the evaluation again from the committed inputs and compares it with the committed results"
+  },
+  "tests": {
+    "suite_tests_run": 835,
+    "skipped": 4,
+    "result": "OK, exit status 0",
+    "mutation_check": {
+      "script": "scripts/m4_mutation_check.py",
+      "deliberate_defects": 80,
+      "caught": 80,
+      "phase_2_defects": 34,
+      "not_caught_on_the_first_run_then_given_tests": [
+        "a quantile cell of exactly ten falls back",
+        "the ridge residual quantiles are at the wrong levels"
+      ]
+    }
+  },
+  "holdout": {
+    "sealed_events": 23,
+    "denied_reads": 0,
+    "unsealed_loads": 0,
+    "access_log_records": 1,
+    "ALLOW_HOLDOUT_LOOK": false
+  },
+  "tripwires": {
+    "ALLOW_REAL_EVALUATION": true,
+    "REAL_EVALUATION_TARGETS": [
+      "gap_ge_3pct",
+      "gap_ge_5pct",
+      "day1_close_return"
+    ],
+    "ALLOW_HOLDOUT_LOOK": false
+  },
+  "details_settled_before_any_evaluation": "reports/m4-phase2-authorization-2026-10-07.json (P2-1 to P2-10), committed before the first real evaluation",
+  "not_done_and_not_authorized": [
+    "The C0-clock primaries (extension_after_open_ge_5pct, loses_half_of_gap): Phase 3",
+    "Any access to the holdout's outcomes, the descriptive report with block-5 counts, and the Milestone 4 report: Phase 4",
+    "Any amendment to the frozen protocol, new data or a new provider, models beyond the first three rungs",
+    "Declaring Milestone 4 accepted, or starting Milestone 5 or later"
+  ],
+  "not_a_claim": [
+    "Not a claim of a predictive edge: every status is NOT_DISTINGUISHABLE and none would be a claim.",
+    "Not Milestone 4 acceptance.",
+    "Not evidence about any market: a convenience sample of 23 issuers on one regime."
+  ]
+}

@@ -181,8 +181,9 @@ def main(argv=None):
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--check-patterns", action="store_true")
     parser.add_argument("--from-number", type=int, default=1, help="start at this defect (1-based, as --list numbers them); for resuming or running only the later ones")
+    parser.add_argument("--to-number", type=int, default=10 ** 6, help="stop after this defect, so that several runs can share the list")
     args = parser.parse_args(argv)
-    chosen = [m for number, m in enumerate(MUTATIONS, 1) if number >= args.from_number and (not args.only or any(word in m[0] for word in args.only))]
+    chosen = [m for number, m in enumerate(MUTATIONS, 1) if args.from_number <= number <= args.to_number and (not args.only or any(word in m[0] for word in args.only))]
     if args.list:
         print("\n".join(m[0] for m in chosen))
         return 0
