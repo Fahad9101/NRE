@@ -37,6 +37,10 @@ in advance; for the two scored targets the confirmatory model's direction did no
 made. On the owner's decision the replays that verify the look are counted as accesses (25 in all; an earlier version of this note said 21), and since 2026-10-08 the replay tests run only on request (`M4_REPLAY_HOLDOUT=1`). The protocol is unchanged, and Milestone 4 is not declared accepted: that is the
 owner's decision.
 
+**Update 2026-10-08, after the owner's acceptance:** the owner replied "accepted" (2026-10-08T07:31:38Z) to the report's evidence, and Milestone 4 is declared accepted
+(`reports/m4-acceptance-declaration-2026-10-08.json`, which records how the word was read, the state declared, the stated limits and what is not authorized). Milestone 5 or later is not authorized, scoped
+or started by that word, no predictor was shown to beat the pooled base rate, and the holdout is spent.
+
 ## Summary
 
 - **What Milestone 4 is.** The master prompt's section, in full: "Build baseline models for: opening gap, Day-1 move, gap retention,

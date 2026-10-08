@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "declared_on": "2026-10-08",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "accepted",
+  "exact_words_at": "2026-10-08T07:31:38.407Z",
+  "exact_words_source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 33368, timestamps UTC), not from a summary",
+  "context": "Made in reply to the assistant's own status message (2026-10-08T07:31:15.216Z, quoted verbatim in assistant_message_replied_to), which reported that CI had passed on the commit that states the corrected count of replay accesses, listed what was left for the owner to decide (Milestone 4 acceptance first among them) and recommended reading docs/M4-REPORT.md and deciding acceptance. Recorded verbatim, mirroring how the earlier milestones' acceptances were recorded.",
+  "assistant_message_replied_to": "CI run #235 for `80a3848` passed on attempt 1. Both jobs (3.13 and 3.12) succeeded in all three steps: the tests, the end-to-end smoke test and the compile check. It was the only run for that push, and local matches origin. The public repo now says 25 accesses, and nothing sealed was read.\n\n**Status**\n\n| Commit | What | CI |\n| --- | --- | --- |\n| `0bcdeac` | closing record and `docs/M4-REPORT.md` | #233 green |\n| `a3aaa8c` | replay tests opt-in | #234 green |\n| `80a3848` | access count corrected to 25 | #235 green |\n\n**Still to do (me):** nothing queued. A second holdout look, any selection or amendment, and Milestone 5 remain not authorized.\n\n**For you to decide**\n- Whether Milestone 4 is accepted.\n- Criterion 7, \"the holdout was looked at once\". The report marks it for you to judge, now at 25 accesses.\n- The four review items and five protocol-silent details, still on their defaults.\n- The local `PYTHONTZPATH` problem. Your user-level variable points at a Git folder that no longer exists, so three `test_pipeline` tests fail on your machine. CI is unaffected, and I didn't change your environment.\n\n**Recommended next step:** read `docs/M4-REPORT.md` and decide acceptance. If you'd like, I can also fix the local timezone variable first so your own test runs are clean again.",
+  "how_the_words_were_read": [
+    "'accepted' answers the question that message put first: whether Milestone 4 is accepted. It is read as the owner's declaration that Milestone 4 (Baseline Predictive Models) is accepted, with the same meaning as the earlier declarations: the milestone's work and the evidence in its report are accepted, nothing is claimed beyond them, and the next milestone is not thereby authorized.",
+    "The word was given with docs/M4-REPORT.md in front of the owner, whose own status line and whose acceptance-criteria section say that the decision is theirs and that criterion 7 (\"the holdout was looked at once\") is left to their judgment because, counting the replays they decided to count, the holdout's outcomes were read 25 times. The word does not say separately how criterion 7 was judged, and this declaration does not put words in the owner's mouth: it records that Milestone 4 was accepted with that criterion presented as theirs to judge, and treats the acceptance as covering it. The report, which is evidence assembled by code, is not changed and still marks the criterion 'for the owner to judge'.",
+    "The word does not answer the protocol's four review items or its five protocol-silent details; those stay at their defaults, and changing any now would be a new protocol version, stated to follow results.",
+    "The word does not authorize Milestone 5 or any later milestone, a second look at the holdout, an amendment, or any claim; section not_authorized_or_claimed lists them."
+  ],
+  "status": "MILESTONE_4_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "milestone": "Milestone 4 -- Baseline Predictive Models (pre-registered baselines and first models, evaluated on development folds and once on a sealed final holdout, with the Milestone 4 report)",
+  "acceptance_criterion": {
+    "protocol_statement": "The report is acceptable when: this protocol was frozen before evaluation; the integrity tests above pass; every output reproduces deterministically from committed inputs; every target is reported with counts and cluster-aware intervals or as INSUFFICIENT_DATA; every predictor is compared with the pooled comparator C1 and, for binary targets, the seeded random ranking, clean-window and all-event side by side; calibration is shown with coarse bins and their counts; the holdout was looked at once; and the limits are stated. The acceptance decision is the owner's.",
+    "does_not_require": "that any predictor beats the base rate",
+    "cannot_establish": [
+      "stability across market regimes (one regime in the span)",
+      "performance after execution costs (no execution data)",
+      "high-confidence precision (no validated confidence threshold)"
+    ],
+    "evidence_per_criterion_as_reported": {
+      "this protocol was frozen before evaluation": true,
+      "the integrity tests above pass": true,
+      "every output reproduces deterministically from committed inputs": true,
+      "every target is reported with counts and cluster-aware intervals or as INSUFFICIENT_DATA": true,
+      "every predictor is compared with the pooled comparator C1 and, for binary targets, the seeded random ranking, clean-window and all-event side by side": true,
+      "calibration is shown with coarse bins and their counts": true,
+      "the holdout was looked at once": "for the owner to judge",
+      "the limits are stated": true
+    }
+  },
+  "governing_protocol": {
+    "file": "config/m4-protocol.json",
+    "protocol_version": "1",
+    "protocol_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "freeze_record": "reports/m4-protocol-freeze-2026-10-06.json",
+    "frozen_at": "2026-10-06T14:45:11Z",
+    "amendments": []
+  },
+  "state_declared": {
+    "repository_head_at_declaration": "80a38483c5526e16a765c9ad3f828b395c685beb",
+    "working_tree_clean_at_declaration": true,
+    "pushed": true,
+    "ci_run": {
+      "number": 235,
+      "id": 37743535667,
+      "attempt": 1,
+      "conclusion": "success",
+      "jobs": [
+        "validate (3.12)",
+        "validate (3.13)"
+      ],
+      "url": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37743535667"
+    },
+    "tests_at_this_head": "1005 tests in the default suite, 13 skipped (the 4 from before and the 9 replay tests, which are opt-in), exit status 0 in CI (run #235) and locally with a process-local PYTHONTZPATH (see the stated limits)",
+    "mutation_check": "142 deliberate defects, all caught (scripts/m4_mutation_check.py)"
+  },
+  "basis": {
+    "report": {
+      "data": "reports/m4-report-2026-10-07.json",
+      "canonical_sha256": "237cf9a7cc31d3590a064f1cb0a9ca5c5c78bba53d3437673bfca1c33e54683a",
+      "note": "docs/M4-REPORT.md",
+      "development_statuses": {
+        "gap_ge_3pct": "NOT_DISTINGUISHABLE",
+        "gap_ge_5pct": "NOT_DISTINGUISHABLE",
+        "day1_close_return": "NOT_DISTINGUISHABLE",
+        "extension_after_open_ge_5pct": "NOT_DISTINGUISHABLE",
+        "loses_half_of_gap": "INSUFFICIENT_DATA"
+      },
+      "holdout_states": {
+        "day1_close_return": {
+          "all_event": "EVALUATED",
+          "clean_window": "EVALUATED"
+        },
+        "extension_after_open_ge_5pct": {
+          "all_event": "EVALUATED",
+          "clean_window": "EVALUATED"
+        },
+        "gap_ge_3pct": {
+          "all_event": "COUNTS_ONLY",
+          "clean_window": "COUNTS_ONLY"
+        },
+        "gap_ge_5pct": {
+          "all_event": "COUNTS_ONLY",
+          "clean_window": "COUNTS_ONLY"
+        },
+        "loses_half_of_gap": {
+          "all_event": "COUNTS_ONLY",
+          "clean_window": "COUNTS_ONLY"
+        }
+      },
+      "holdout_contrasts": {
+        "reported": 32,
+        "excluding_zero_at_95": 1
+      },
+      "pooled_development_contrasts": {
+        "reported": 77,
+        "excluding_zero_at_95": 0,
+        "excluding_zero_at_99": 0
+      }
+    },
+    "holdout_accesses": {
+      "logged_in_the_chain": 1,
+      "replays_counted": 24,
+      "in_total": 25,
+      "record": "reports/m4-phase4-replay-accesses-2026-10-07.json",
+      "later_accesses": "any run of the opt-in replay tests (M4_REPLAY_HOLDOUT=1) adds to that record and does not undo this acceptance"
+    },
+    "phases": {
+      "phase1": {
+        "owner_words": "okay authorize Phase 1",
+        "suite_tests_run": 742
+      },
+      "phase2": {
+        "owner_words": "authorize phase 2",
+        "suite_tests_run": 835
+      },
+      "phase3": {
+        "owner_words": "authorize phase 3",
+        "suite_tests_run": 896
+      },
+      "phase4": {
+        "owner_words": "authorize phase 4",
+        "suite_tests_run": null
+      }
+    },
+    "pinned_evidence_sha256_lf_normalized": {
+      "config/m4-protocol.json": "b1abfb3c54a7825247b76a49801da5e21b768854472e330f66b5540df8322a4d",
+      "reports/m4-protocol-freeze-2026-10-06.json": "a9e43eeafbc52fd0db12b788ce49623adcfe09594e3fa7be81498306a934f945",
+      "reports/m4-phase1-authorization-2026-10-06.json": "bd4a2f0c5514dd0c50827ddfb354c4202efb464999583264da593f1e23361646",
+      "reports/m4-phase1-completion-2026-10-06.json": "5739b9cdee1632e141e3c15ef209cf8a0476ef0c170a22fa2a8cd6a4c3da0a3d",
+      "reports/m4-phase2-authorization-2026-10-07.json": "161ae92bea815fde0c19a1bcf03c0a237505e9f90d0afff087ca602af3bfb935",
+      "reports/m4-phase2-completion-2026-10-07.json": "61a9a54d872b7461ecaccf05cc2ea23446a3d5d1d662cebf007a6e3776657390",
+      "reports/m4-phase2-results-2026-10-07.json": "33bcb556f206f7eba35aedbfa45e3c9b4cdf7573dc32f33c15363106cba504da",
+      "reports/m4-phase2-predictions-2026-10-07.jsonl": "bbb48e9dac78ef8b04fe5bae5e7e8f9ae6db74020d0644ee8bf49c9e7bdd02d8",
+      "reports/m4-phase3-authorization-2026-10-07.json": "3239b924b5ed89278c42d73acd1474f0b524ade1ca40af93783bda4dadf7703a",
+      "reports/m4-phase3-completion-2026-10-07.json": "79cdb23874b2281b12ebf9d476dfd75a2f9e54ebc60de42fbca67bee75958e38",
+      "reports/m4-phase3-results-2026-10-07.json": "330bc33a99ae4760dd0f9fc51d5e4f0be50d9572f0fe7d1d1f34f9fe4548ea66",
+      "reports/m4-phase3-predictions-2026-10-07.jsonl": "014ae08953f61119a1d72d7b765946d078d58b3c47867cf7c9001c0a1bc26cc3",
+      "reports/m4-phase4-authorization-2026-10-07.json": "d338026943d7ebcaf810b1bb8333afc3557049c271c0633ac4d4c2fba3caadf0",
+      "reports/m4-phase4-holdout-results-2026-10-07.json": "2b8c1a918ab7d6a1e1739e0ca7334c631123ea0a5a362b536b585531f01d3821",
+      "reports/m4-phase4-descriptive-2026-10-07.json": "685f71d0be4ad356cc912374d9be97729718199c1ba06dd055c3ba37072d1a63",
+      "reports/m4-phase4-holdout-predictions-2026-10-07.jsonl": "a944f0a37f60dad7a533418a533eb1d4a02a5c2b3f01df52ea79fa8e7d0896d1",
+      "reports/m4-phase4-holdout-structure-audit-2026-10-07.json": "d1dbe92ee14c2b819b93114b6e38d9f613b283ea38be7e0f7f601ee4cb3989c4",
+      "reports/m4-holdout-access-log.jsonl": "d178cb1d76a647fe96f32b6ea6165a006db73ddb7c235b61b8d49a3ad6798377"
+    },
+    "experiment_log_first_233_records_sha256_lf_normalized": "2a684876bdda5dd014dbd1da20e00f7caf3e88ea6348c3ebd6dd62c4223e7e68",
+    "as_accepted_not_asserted_by_the_binding_test": {
+      "reports/m4-phase4-completion-2026-10-08.json": "bea6e61214b37b30560567f940acd247e0de2ba661b986ea913ca3d259259fad",
+      "reports/m4-report-2026-10-07.json": "22b2036217f282cc824bc3939118b54a45b3510fcf6a6c043c3de9c863f12c5e",
+      "reports/m4-phase4-replay-accesses-2026-10-07.json": "8186b4c583770551cd6b1400c120e7083331ae2dca059a48769cc95a9a648812",
+      "docs/M4-REPORT.md": "e75bd15a71b4ac5880a6230ab77d44f5035b0cedf52ffa4e4c6a74dc389e9002",
+      "docs/M4-PHASE4-RESULTS.md": "a23c279db767abfcab0c3ab618ab978baee47b33da8c44a88f005296b02fa244",
+      "docs/M4-HARNESS.md": "307cc5147d8cfde1736b2aa8d9f26ff26f724269b9d241956c715ed91f1a0740",
+      "docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md": "d2d687b179bcac50db1b0686ea784a1a4668added74c080da893abcb7ca0f413"
+    },
+    "why_two_groups": "The pinned files are the immutable evidence: the protocol, the authorizations, the closing records of Phases 1 to 3, the results and predictions, and the holdout access log. A later change to any of them would change what was accepted, and the binding test fails on it. The others are living documents or records (the report is assembled by code, the accounting of replay accesses grows when a replay is run on purpose, the Phase 4 closing record carries an addendum); their hashes are recorded as accepted, but later legitimate updates are not tested against them."
+  },
+  "accepted_scope": "Milestone 4 as reported in docs/M4-REPORT.md at the head above: the frozen protocol version 1; the evaluation harness with its leakage and integrity tests and its sealed holdout; the baselines C1 to C4, the logistic model M2 and the ridge model M3 with their without-sector sensitivities on the five primary targets, in the all-event and clean-window versions; the development-fold results (four primary targets NOT_DISTINGUISHABLE from the pooled base rate, loses_half_of_gap INSUFFICIENT_DATA); the one look at the final holdout (block 5, the 23 Milestone 1 events) and the descriptive report with its block-5 counts; the Milestone 4 report; and the accounting of 25 counted accesses to the holdout's outcomes.",
+  "accepted_with_these_stated_limits": [
+    "No predictor was distinguishable from the pooled base rate and no claim of a predictive edge exists: accepting Milestone 4 accepts the work and its evidence, not any predictive power. The protocol says the report does not require that any predictor beats the base rate.",
+    "The sample is 128 events from 23 issuers in one market regime, a convenience sample conditioned on survival to 2026 and on reviewability; block 5 is entirely Milestone 1 events, selected very differently from the rest and the latest in time, so time and selection regime are confounded in the holdout. Nothing here is evidence about any market.",
+    "The holdout's outcomes were read 25 times counting the replays the owner decided to count (the count was corrected from 21 on 2026-10-08 because CI runs two jobs); criterion 7 of the protocol's acceptance list was left to the owner's judgment and this acceptance is read as covering it (how_the_words_were_read).",
+    "The Day-1 return's quantile and ridge predictions were never recomputed independently, in any phase; they were reproduced by the replay and scored by the independent arithmetic.",
+    "The protocol's four review items and five protocol-silent details are unanswered; the defaults are in force.",
+    "The holdout is spent. It was evaluated once, with every pre-registered predictor and target together; it cannot be an untouched holdout again.",
+    "On the owner's machine three tests in tests/test_pipeline.py currently error because the user-level PYTHONTZPATH points at a Git for Windows folder that no longer exists (unrelated to Milestone 4; CI is unaffected)."
+  ],
+  "not_authorized_or_claimed": [
+    "Milestone 5 or any later milestone is not authorized, scoped or started (master prompt: do not silently move to the next milestone). Accepting Milestone 4 does not authorize Milestone 5; that needs its own explicit word.",
+    "No second look at the holdout, other than a technical rerun that does not depend on any holdout result, and no selection, tuning or change made after a holdout result was seen.",
+    "No amendment to the frozen protocol, no new data or provider, no change to a predictor; any change would be a new protocol version stated to follow results.",
+    "No claim of a predictive edge, no ranking, candidate list, trading, sizing or backtest modelling, and no statement about any market.",
+    "This declaration changes no committed result, log, record or report; it adds a declaration and status notes."
+  ],
+  "note_for_future_planning": "Milestone 4 leaves these facts for whoever scopes a next milestone, as facts and not as a plan: the same 128 events and 23 issuers; block 5 is no longer an untouched holdout, so any later evaluation needs a new holdout or a different design; three of the five primary targets were counts-only on the holdout; the 99% claim level makes any claim very hard at these sample sizes; the replay tests are opt-in and every deliberate run of them is counted.",
+  "housekeeping": [
+    "docs/M4-REPORT.md, docs/M4-BASELINE-PREDICTIVE-MODELS-SCOPE.md, docs/M4-PHASE4-RESULTS.md, docs/M4-HARNESS.md and README.md carry a status line pointing to this declaration.",
+    "tests/test_m4_acceptance_declaration.py binds this declaration to the owner's word, the protocol, the pinned evidence and the report's criteria."
+  ]
+}

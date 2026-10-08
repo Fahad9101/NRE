@@ -150,4 +150,5 @@ Whether the replays should keep running automatically or only on request was off
 are skipped unless the environment variable `M4_REPLAY_HOLDOUT` is exactly `1`; the default suite and CI skip them and read nothing sealed. A run made on purpose (`M4_REPLAY_HOLDOUT=1 python -m unittest
 tests.test_m4_phase4_results.ReplayTests`) is still two counted accesses and is added to the accounting record when it is made. Making them opt-in did not run them, so the count is unchanged.
 
-Not authorized and not done: a second look, any selection or amendment, Milestone 5 and later, declaring Milestone 4 accepted.
+Not authorized and not done: a second look, any selection or amendment, Milestone 5 and later, declaring Milestone 4 accepted. (Update 2026-10-08: the owner has since declared Milestone 4 accepted,
+`reports/m4-acceptance-declaration-2026-10-08.json`; the rest stands.)

@@ -42,6 +42,10 @@ The project owner replied "approve" on 2026-09-26 to a two-step plan and then co
 
 Step 2, the data-depth push, was authorized on 2026-09-28 at a pilot scope: two prior quarters for the same 23 issuers, full Milestone-1-standard review ([authorization record](reports/m2-step2-authorization-2026-09-28.json)). 48 real SEC candidates across all 23 issuers are now frozen, outcome-blind ([pilot doc](docs/MILESTONE-2-STEP-2-PILOT.md), [freeze record](reports/m2-step2-sec-cohort-freeze.json)). None is reviewed yet; nothing from step 2 is in any dataset.
 
+## Milestone 4 status
+
+Declared accepted by the project owner on 2026-10-08 ([declaration](reports/m4-acceptance-declaration-2026-10-08.json)). Baseline predictive models were evaluated under a frozen, pre-registered protocol, with one logged look at a sealed holdout ([report](docs/M4-REPORT.md), [report as data](reports/m4-report-2026-10-07.json)). The finding is that no predictor could be told apart from the pooled base rate. Nothing there claims a predictive edge or anything about a market, and Milestone 5 is not authorized.
+
 ## Validation status
 
 The test suite covers schemas, timestamps, leakage, prices, ingestion and replay. GitHub Actions runs tests and the synthetic CLI build on Python 3.12/3.13. See the exact commit's Actions checks for CI status; test success does not establish real-data acceptance or predictive performance.

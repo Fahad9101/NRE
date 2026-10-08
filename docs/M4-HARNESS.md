@@ -20,7 +20,7 @@ event that has no opening return instead of failing on `None`. `ALLOW_HOLDOUT_LO
 46 loads) and the block-5 outcomes have been read. And `ALLOW_HOLDOUT_LOOK` was turned on for that look in a commit of its own and turned off again in the next, so it is `False` again; another look needs a new
 go-ahead. The tests that verify the look re-read the outcomes through the same gate against temporary logs; on the owner's decision those replays are counted as accesses
 (`reports/m4-phase4-replay-accesses-2026-10-07.json`: 25 accesses in all; an earlier version of this note said 21, which counted each CI run once although its two jobs both ran them). Since the owner's word of 2026-10-08 ("make the replay tests opt-in") those replay tests are skipped unless
-`M4_REPLAY_HOLDOUT=1` is set, so the default suite and CI read nothing sealed; a run made on purpose is two more counted accesses. The details in section 5 are in force as written, and the protocol is unchanged.
+`M4_REPLAY_HOLDOUT=1` is set, so the default suite and CI read nothing sealed; a run made on purpose is two more counted accesses. The details in section 5 are in force as written, and the protocol is unchanged. Milestone 4 was declared accepted by the owner on 2026-10-08 (`reports/m4-acceptance-declaration-2026-10-08.json`).
 
 ## 1. What it is
 

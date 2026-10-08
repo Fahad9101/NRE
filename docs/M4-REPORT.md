@@ -1,6 +1,7 @@
 # Milestone 4 — Baseline predictive models: the report
 
-**Status: evidence, not a decision.** Written 2026-10-08 from the committed artifacts. Whether Milestone 4 is accepted is the owner's decision, as the protocol says; nothing here declares it. The data
+**Status: evidence, not a decision.** Written 2026-10-08 from the committed artifacts. Whether Milestone 4 is accepted is the owner's decision, as the protocol says; nothing here declares it. The owner then declared it accepted ("accepted", 2026-10-08T07:31:38Z;
+[declaration](../reports/m4-acceptance-declaration-2026-10-08.json)); this report is the evidence they decided on, and is otherwise unchanged. The data
 form of this report is `reports/m4-report-2026-10-07.json` (`python -m nre.m4_report build --date 2026-10-07`), assembled by code from the committed results and records; it reads no label. The protocol
 (`config/m4-protocol.json`, version 1, sha256 `a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9`) was frozen on 2026-10-06 at 14:45:11Z, before any evaluation, and has never been amended.
 
@@ -111,7 +112,7 @@ is the protocol's reading of how much the count can support (the five regression
 - **The protocol's eight leakage and integrity tests** are implemented in `tests/test_m4_harness.py` and run in every phase: label maturity, an injected future that changes no earlier prediction, history
   features that use only training-block events, holdout sealing, protocol integrity, determinism, clusters never split between training and test, and abstention (`INSUFFICIENT_DATA` and
   `MODEL_FIT_FAILED` give null predictions with reasons, never substitutes).
-- **The test suite grew with each phase:** 742, 835, 896 and 1,000 tests, each phase closing with a full pass and the real exit status. It has 1,005 tests now; nine of them,
+- **The test suite grew with each phase:** 742, 835, 896 and 1,000 tests, each phase closing with a full pass and the real exit status. It has 1,011 tests now; nine of them,
   the replay tests, are skipped unless asked for.
 - **A mutation check:** the script `scripts/m4_mutation_check.py` makes one deliberate defect at a time in a copy of the code (history that ignores the earlier-session rule, a reversed contrast sign, a predictor
   shown the labels, a counted replay left out of the total, and so on) and requires the tests to fail. The list grew to 45, 80, 101 and 142 defects over the four phases (138 when Phase 4 closed; the four added with the opt-in change were
@@ -175,24 +176,25 @@ The protocol lists what makes the report acceptable. The column says whether the
 | 8 | the limits are stated | yes |
 
 Seven are met by the evidence. The seventh, "the holdout was looked at once", is marked for the owner to judge: the evaluation look was one and is the only access in the chained log, but counting
-the replays the holdout's outcomes were read 25 times, and the protocol says reruns are further accesses that the report states. The facts are in section 7; the judgment is not made here.
+the replays the holdout's outcomes were read 25 times, and the protocol says reruns are further accesses that the report states. The facts are in section 7; the judgment is not made here. The owner then declared Milestone 4 accepted without singling that criterion out; the declaration records how the word was read
+(`reports/m4-acceptance-declaration-2026-10-08.json`), and this report, being evidence, still marks the criterion for the owner to judge.
 
 ## 10. Open for the owner
 
-Decided since this report was first written, so no longer open: the replay tests are opt-in (section 7).
+Decided since this report was first written, so no longer open: the replay tests are opt-in (section 7), and Milestone 4 is accepted (`reports/m4-acceptance-declaration-2026-10-08.json`; "accepted",
+2026-10-08T07:31:38Z).
 
-1. **Whether Milestone 4 is accepted.** Nothing here decides it.
-2. **Criterion 7** (section 9).
-3. **The four review items the protocol flagged**, still unanswered, defaults in force:
+1. **Criterion 7** (section 9), which the acceptance is read as covering.
+2. **The four review items the protocol flagged**, still unanswered, defaults in force:
    - whether the two thin primaries (`gap_ge_5pct` with 29 positives, `loses_half_of_gap` with 25) belong among the primaries;
    - the 99% claim level, which makes any claim very hard at these sample sizes;
    - that the holdout would mostly be counts only (it was);
    - the issuer-history and sector features, given the point-in-time limits and small cells.
-4. **Five protocol-silent details that could move a result**, listed in `docs/M4-HARNESS.md` section 5 with the defaults used: the headline interval is the wider of the two by width (reaction session on a tie);
+3. **Five protocol-silent details that could move a result**, listed in `docs/M4-HARNESS.md` section 5 with the defaults used: the headline interval is the wider of the two by width (reaction session on a tie);
    a regression history mean with no earlier event is a `ProtocolGap`, with no default; standardization of the model features uses the population standard deviation of the training events (the protocol does not say
    which; the list was written before the models existed, and they use the population one); a predictor that fails in one fold takes that state for its whole pooled result; the group prior obeys the same maturity and
    earlier-session rules as the issuer's own history. Changing any of them now would be a new protocol version, stated to follow results.
-5. Parked, not part of Milestone 4 and not touched: a latent default `Calendar()` in `nre/alpaca.py`, noted in earlier sessions.
+4. Parked, not part of Milestone 4 and not touched: a latent default `Calendar()` in `nre/alpaca.py`, noted in earlier sessions.
 
 Not authorized and not done: a second evaluation look at the holdout, any selection or tuning after a holdout result, any protocol amendment, new data, Milestone 5 or later, any ranking, candidate list,
 trading or backtest.
@@ -206,6 +208,7 @@ trading or backtest.
 - The two logs: `reports/m4-experiment-log.jsonl` (233 records) and `reports/m4-holdout-access-log.jsonl` (its genesis and the look).
 - The accounting of the replays, and the opt-in switch: `reports/m4-phase4-replay-accesses-2026-10-07.json` (field `replay_tests_policy`); the replay tests themselves are `ReplayTests` in `tests/test_m4_phase4_results.py`.
 - The authorizations and the closing records: `reports/m4-phase{1,2,3,4}-authorization-*.json` and `reports/m4-phase{1,2,3,4}-completion-*.json`.
+- The owner's acceptance: `reports/m4-acceptance-declaration-2026-10-08.json`.
 - This report as data: `reports/m4-report-2026-10-07.json`.
 
-**This report does not declare Milestone 4 accepted.**
+**This report does not declare Milestone 4 accepted; the owner's declaration is `reports/m4-acceptance-declaration-2026-10-08.json`.**
