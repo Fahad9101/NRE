@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1a_authorization",
+  "recorded_on": "2026-10-08",
+  "context": "The six decisions of the Milestone 5 scope proposal were made on 2026-10-08 (reports/m5-scope-confirmation-2026-10-08.json) and pushed (1e2375b, CI run #238 green). That record authorizes no phase. The assistant's closing message, quoted verbatim in assistant_message_replied_to, recommended, as a recommendation only, saying \"authorize phase 1a\" to start the availability probe, described as a small read-only check run through GitHub Actions that would store only what is available, no prices, and nothing would enter the dataset. The owner then wrote those words.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-08T16:24:55.817Z",
+    "source": "session transcript, line 35065",
+    "text": "`1e2375b` is on `origin/main`, and CI is green.\n\n- **CI:** [run #238](https://github.com/Fahad9101/NRE/actions/runs/37808117809) passed on attempt 1. I read the jobs list: both `validate (3.12)` and `validate (3.13)` succeeded on every step.\n- **Holdout:** no holdout access. No workflow file changed between the two pushes, and none sets the opt-in switch for the replay tests, so the count stays at 25.\n- **Memory:** updated to the verified state.\n\nAll three M5 scoping commits are now published: `1b92890` (your go-ahead record), `622de37` (the proposal, evidence and tests) and `1e2375b` (your six decisions).\n\n**Remaining**\n- **You:** choose the next go-ahead. Nothing in M5 is authorized yet.\n- **Me:** nothing queued.\n\n**Recommended next step:** say \"authorize phase 1a\" to start the availability probe. It needs nothing else first, and it shows which feature families Phase 0 can pre-register. I would write it as a small read-only check run through GitHub Actions. It would store only what is available, no prices, and nothing would enter the dataset. If you would rather start with the document-only Phase 0 protocol, say so; I proposed the order, and it is yours to change. This is a recommendation, not an authorization."
+  },
+  "owner_messages": [
+    {
+      "text": "authorize phase 1a",
+      "at": "2026-10-08T16:25:07.994Z",
+      "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 35069, timestamps UTC), not from a summary"
+    }
+  ],
+  "phase_as_proposed": {
+    "document": "docs/M5-ADVANCED-MODELS-SCOPE.md",
+    "section": "3, Phase 1, item 1a",
+    "words": "an availability probe (no acquisition into the dataset): which regime and market-structure fields can be had point-in-time and under the provider's terms"
+  },
+  "how_the_words_were_read": [
+    "'authorize phase 1a' answers the assistant's recommendation to say exactly that. It authorizes Phase 1a of docs/M5-ADVANCED-MODELS-SCOPE.md as the proposal words it: an availability probe (no acquisition into the dataset): which regime and market-structure fields can be had point-in-time and under the provider's terms.",
+    "The probe is described before it runs. A spec (config/m5-phase1a-probe-spec.json) fixes the symbols, windows and checks and is committed before the probe is run; a standard-library probe module reuses the project's reviewed Alpaca access pattern (nre/alpaca_probe.py, nre/event_acquire.py); tests run offline. The findings are reported against the spec as written.",
+    "What it may read: the Alpaca market-data API (daily bars, a short minute-bar sample on ordinary sessions away from candidate earnings dates, and the corporate-actions endpoint) for the pre-specified symbols, through GitHub Actions with the repository's existing secrets; the public documentation of Alpaca, SEC, FINRA and CBOE as primary sources for the fields Alpaca does not provide; and SEC EDGAR, a provider the project already uses, to see which issuers' filings carry shares-outstanding and public-float facts. It keeps only availability metadata: dates, counts, status codes and ratios.",
+    "Nothing is bought, no provider the project has not reviewed has its data fetched, and no event, label, feature or price is added to the dataset or committed.",
+    "Running the probe needs its workflow pushed to GitHub. The words do not carry a push: the assistant commits locally and waits for the owner's word \"push\", as in every earlier step.",
+    "The go-ahead follows the order proposed in docs/M5-ADVANCED-MODELS-SCOPE.md section 3 (1a first). It does not authorize 1b, 0, 1c or any later phase.",
+    "Disclosure: the daily-bar requests cover the 23 issuers over the study span, whose event days lie inside it. The probe keeps only each bar's date and a count of zero-volume bars, computes no return, label or feature, and a test checks that its report holds no price or volume value. The minute-bar sample uses sessions the candidate ledgers show to be away from any candidate date."
+  ],
+  "authorized_under_these_words": [
+    "The probe spec, the probe module, its tests and its GitHub Actions workflow, built and committed locally.",
+    "Running the probe on GitHub Actions once the owner has said \"push\", and reading its result from the run.",
+    "Reading primary-source documentation (Alpaca, SEC, FINRA, CBOE) and a bounded SEC EDGAR availability check for the 23 issuers, for the fields Alpaca does not provide.",
+    "A findings record and a findings document stating, field by field from the master prompt's sections 10 and 11, what can be had point-in-time and under which terms."
+  ],
+  "not_authorized_by_these_words": [
+    "Phase 1b, enumerating or collecting any event since 2026-04-01, or Phase 1c, acquiring any derived feature for any event.",
+    "Phase 0, pre-registering a Milestone 5 protocol (config/m5-protocol.json).",
+    "Phase 2, writing any Milestone 5 model, harness extension or leakage test; Phase 3, any development comparison; Phase 4, any look at a holdout.",
+    "Computing or storing any return, label, feature, price or volume value, or adding anything to the dataset.",
+    "Fetching data from a provider the project has not reviewed (for example FINRA or CBOE data files), or purchasing, licensing or signing up for anything.",
+    "Any read of a block-5 outcome, or any use of a Milestone 4 holdout result as an input to a Milestone 5 design choice.",
+    "Answering the provider-rights-at-scale question, which the proposal puts to the owner again before 1b or 1c.",
+    "Pushing without the owner's word \"push\".",
+    "Declaring Milestone 5 accepted, or starting Milestone 6 or any later milestone.",
+    "Any change to the accepted Milestone 4 work."
+  ],
+  "change_rule": "If the probe shows that a confirmed default (reports/m5-scope-confirmation-2026-10-08.json) cannot be applied as written, the assistant stops at that point, records the finding and asks the owner; it does not change a confirmed default on its own.",
+  "not_a_claim": [
+    "Not a start of Milestone 5 building beyond the probe, and not Milestone 5 acceptance.",
+    "Not a claim that any feature family will be used: the probe reports what can be had, and Phase 0 would decide what is pre-registered.",
+    "Not a claim about any market."
+  ]
+}
