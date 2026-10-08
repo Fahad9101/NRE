@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-10-08",
+  "what": "Closing record of Milestone 4 Phase 4: the one look at the final holdout (block 5, the 23 Milestone 1 events), the descriptive report with block-5 counts, and the Milestone 4 report. The holdout creates no claim and no status, and Milestone 4 is not declared accepted.",
+  "authorization": {
+    "record": "reports/m4-phase4-authorization-2026-10-07.json",
+    "commit": "40e174499c8a2e5b2c19316acd044e985305528a",
+    "owner_words": "authorize phase 4",
+    "at": "2026-10-07T12:16:31.579Z",
+    "later_decisions": [
+      {
+        "words": "Count the replays as accesses.",
+        "at": "2026-10-07T19:14:34.716Z",
+        "record": "reports/m4-phase4-replay-accesses-2026-10-07.json",
+        "commit": "c4a524d189999c09cf7e409b818502a574466d38"
+      },
+      {
+        "words": "yes continuewith the closing work and push at the end",
+        "at": "2026-10-08T05:26:44.063Z"
+      }
+    ]
+  },
+  "protocol": {
+    "path": "config/m4-protocol.json",
+    "version": "1",
+    "canonical_sha256": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "amended": false
+  },
+  "built": {
+    "commits": {
+      "build": "85fee6c7f3ea0924c6324fd98a696a57ed916e1d",
+      "tripwire_on": "0e26ac98938a79d16dd8bd0e236de8287634e77f",
+      "tripwire_off": "85d3239748cec70f831cf7806c7ef0886469d217",
+      "look_outputs": "0e11dfc272c71b1a9b62b4cbb85706e4b14b0c0b",
+      "replay_accounting": "c4a524d189999c09cf7e409b818502a574466d38"
+    },
+    "modules": [
+      "nre/m4_phase4.py",
+      "nre/m4_report.py",
+      "nre/m4_harness.py"
+    ],
+    "tests": [
+      "tests/test_m4_phase4.py",
+      "tests/test_m4_phase4_record.py",
+      "tests/test_m4_phase4_rehearsal.py",
+      "tests/test_m4_phase4_results.py",
+      "tests/test_m4_phase4_replay_accounting.py",
+      "tests/test_m4_report.py",
+      "tests/test_m4_report_committed.py",
+      "tests/m4_rehearsal.py",
+      "tests/m4_independent.py",
+      "tests/m4_support.py"
+    ],
+    "docs": [
+      "docs/M4-PHASE4.md",
+      "docs/M4-PHASE4-RESULTS.md",
+      "docs/M4-REPORT.md"
+    ],
+    "audit": "reports/m4-phase4-holdout-structure-audit-2026-10-07.json"
+  },
+  "the_look": {
+    "commit": "0e26ac98938a79d16dd8bd0e236de8287634e77f",
+    "date": "2026-10-07",
+    "at": "2026-10-07T13:38:13Z",
+    "from_a_clean_committed_tree": true,
+    "accesses_in_the_chain": 1,
+    "technical_reruns": 0,
+    "events_read": 23,
+    "unsealed_loads": 46,
+    "denied_reads": 0,
+    "experiment_records": 58,
+    "prediction_records": 484,
+    "experiment_log_records_now": 233,
+    "experiment_log_last_record_sha256": "1144c5ea1686ac720cbd908dba1253b893fdc75166f728718a7d5b502d2d0ed1",
+    "results": "reports/m4-phase4-holdout-results-2026-10-07.json",
+    "results_canonical_sha256": "d0972ea28fa49daca49803bdf59a7dbad71fd1449dacc7f04e534371218ae9b2",
+    "descriptive_report": "reports/m4-phase4-descriptive-2026-10-07.json",
+    "descriptive_canonical_sha256": "b3603a1b78bfa97c9744a52b635941342583cdc28729b9eb687ca595387605ab",
+    "predictions": "reports/m4-phase4-holdout-predictions-2026-10-07.jsonl",
+    "evaluated_twice_from_scratch_and_identical": true,
+    "states": {
+      "day1_close_return": {
+        "all_event": "EVALUATED",
+        "clean_window": "EVALUATED"
+      },
+      "extension_after_open_ge_5pct": {
+        "all_event": "EVALUATED",
+        "clean_window": "EVALUATED"
+      },
+      "gap_ge_3pct": {
+        "all_event": "COUNTS_ONLY",
+        "clean_window": "COUNTS_ONLY"
+      },
+      "gap_ge_5pct": {
+        "all_event": "COUNTS_ONLY",
+        "clean_window": "COUNTS_ONLY"
+      },
+      "loses_half_of_gap": {
+        "all_event": "COUNTS_ONLY",
+        "clean_window": "COUNTS_ONLY"
+      }
+    }
+  },
+  "report": {
+    "path": "reports/m4-report-2026-10-07.json",
+    "command": "python -m nre.m4_report build --date 2026-10-07",
+    "canonical_sha256": "b5bf4b48258628fd605c45daad9d50df4ec026bdc1f74ce33f3131cd4538391b",
+    "reads_no_label": true,
+    "doc": "docs/M4-REPORT.md"
+  },
+  "results_in_brief": {
+    "confirmatory_model_against_c1_on_the_holdout": {
+      "extension_after_open_ge_5pct/clean_window": {
+        "events": 21,
+        "comparator_score": 0.25170068027214965,
+        "model_score": 0.2327555598666567,
+        "difference": -0.01894512040549294,
+        "interval_95": [
+          -0.06616176186495035,
+          0.02816176373661644
+        ],
+        "interval_99": [
+          -0.08207270903068645,
+          0.03861270502864282
+        ],
+        "development_difference": 0.028344791358834873,
+        "same_sign_as_development": false
+      },
+      "extension_after_open_ge_5pct/all_event": {
+        "events": 23,
+        "comparator_score": 0.25425219363104945,
+        "model_score": 0.25088082127979455,
+        "difference": -0.0033713723512548634,
+        "interval_95": [
+          -0.05390974312946031,
+          0.04916044347494
+        ],
+        "interval_99": [
+          -0.06833415949200977,
+          0.06257112405352103
+        ],
+        "development_difference": 0.022824302662109233,
+        "same_sign_as_development": false
+      },
+      "day1_close_return/clean_window": {
+        "events": 21,
+        "comparator_score": 0.037224930286541044,
+        "model_score": 0.035932641146106316,
+        "difference": -0.0012922891404347258,
+        "interval_95": [
+          -0.00546136633190834,
+          0.0029302398662069363
+        ],
+        "interval_99": [
+          -0.0059601150302668075,
+          0.005577206951798751
+        ],
+        "development_difference": 0.0004817096657480546,
+        "same_sign_as_development": false
+      },
+      "day1_close_return/all_event": {
+        "events": 23,
+        "comparator_score": 0.03589126927418254,
+        "model_score": 0.035065646080983885,
+        "difference": -0.0008256231931986579,
+        "interval_95": [
+          -0.004523495923165558,
+          0.0038850035949277266
+        ],
+        "interval_99": [
+          -0.0054763069621808595,
+          0.005791751923469575
+        ],
+        "development_difference": 0.0004198822124015992,
+        "same_sign_as_development": false
+      }
+    },
+    "holdout_contrasts": {
+      "of": 32,
+      "excluding_zero_at_95": 1,
+      "excluding_zero_at_99": 0
+    },
+    "development_statuses": {
+      "gap_ge_3pct": "NOT_DISTINGUISHABLE",
+      "gap_ge_5pct": "NOT_DISTINGUISHABLE",
+      "day1_close_return": "NOT_DISTINGUISHABLE",
+      "extension_after_open_ge_5pct": "NOT_DISTINGUISHABLE",
+      "loses_half_of_gap": "INSUFFICIENT_DATA"
+    },
+    "pooled_development_contrasts": {
+      "reported": 77,
+      "excluding_zero_at_95": 0,
+      "excluding_zero_at_99": 0
+    },
+    "development_fold_contrasts": {
+      "reported": 18,
+      "excluding_zero_at_95": 2
+    }
+  },
+  "accesses": {
+    "logged_in_the_chain": 1,
+    "replays_counted": 20,
+    "in_total": 21,
+    "found_before_the_closing_work": 17,
+    "counted_in_advance": 4,
+    "accounting_record": "reports/m4-phase4-replay-accesses-2026-10-07.json",
+    "owner_decision": {
+      "text": "Count the replays as accesses.",
+      "at": "2026-10-07T19:14:34.716Z",
+      "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 31616"
+    },
+    "note": "The two runs counted in advance are the whole-suite pass that follows this record and the CI run of the push that carries it; a record cannot be committed after the push it is part of without causing another run."
+  },
+  "verification": {
+    "cross_check": {
+      "on": "2026-10-07",
+      "what": "docs/M4-PHASE4-RESULTS.md compared with the committed results, the protocol, the logs and the code: the tables row by row by script, the states and counts with the protocol's disclosures, the development comparisons with the Phase 2 and 3 results, the logs with verify_chain and git, the frozen counts with the descriptive report; it read no sealed label file",
+      "problems_found_in_the_first_draft": 4,
+      "the_problems": [
+        "the C1 Brier identity (0.2495 + 0.0046 = 0.2541 should have been 0.2495 + 0.0047 = 0.2543)",
+        "the frozen-count comparison was described over 128 events for every target",
+        "an account of why C1 scored worst that went further than the arithmetic supports",
+        "the independent recomputation was described as covering the M3 fits"
+      ]
+    },
+    "replayed_by_a_test": "tests/test_m4_phase4_results.py (ReplayTests) runs the look again through Harness.look against temporary logs and compares the outputs with the committed ones, and recomputes scores, contrasts, bootstrap intervals, the C1 to C4 predictions and the M2 fits with plain arithmetic (tests/m4_independent.py)",
+    "not_recomputed_independently": [
+      "the Day-1 return's quantile and ridge predictions (C1 to C3 quantiles, M3 ridge): reproduced by the replay and scored by the independent arithmetic, but never recomputed independently from the training labels, in this or an earlier phase"
+    ]
+  },
+  "tests": {
+    "suite_tests_run": 1000,
+    "skipped": 4,
+    "result": "OK, exit status 0",
+    "how": "pass 1 ran everything except the replay tests (each run of which is two counted accesses) before this record existed: 988 tests run, only the record's own tests failing at setup; pass 2 runs all 1000, replay tests included, after it",
+    "mutation_check": {
+      "script": "scripts/m4_mutation_check.py",
+      "deliberate_defects": 138,
+      "caught": 138,
+      "run_on": "a snapshot of the committed state (c4a524d), in five runs that shared the list",
+      "phase_4_defects": 37,
+      "not_caught_on_the_first_run": []
+    }
+  },
+  "holdout": {
+    "sealed_events": 23,
+    "denied_reads": 0,
+    "unsealed_loads": 46,
+    "access_log_records": 2,
+    "ALLOW_HOLDOUT_LOOK": false
+  },
+  "tripwires": {
+    "ALLOW_REAL_EVALUATION": true,
+    "REAL_EVALUATION_TARGETS": [
+      "gap_ge_3pct",
+      "gap_ge_5pct",
+      "day1_close_return",
+      "extension_after_open_ge_5pct",
+      "loses_half_of_gap"
+    ],
+    "ALLOW_HOLDOUT_LOOK": false
+  },
+  "details_settled_before_the_look": "reports/m4-phase4-authorization-2026-10-07.json (P4-1 to P4-14), committed before any Phase 4 code existed",
+  "not_done_and_not_authorized": [
+    "A second look at the holdout other than a technical rerun that does not depend on any holdout result; any selection, tuning, re-run with other settings or change made after a holdout result was seen",
+    "Any amendment to the frozen protocol (a new version), any new data or provider, any change to a predictor",
+    "Any status, claim or edge statement derived from the holdout (the holdout alone never creates a claim)",
+    "Milestone 5 (trees, ensembles) or later, any ranking, candidate list, trading, sizing or backtest modelling",
+    "Declaring Milestone 4 accepted (the owner's separate decision)"
+  ],
+  "open_for_the_owner": [
+    "Whether Milestone 4 is accepted (the protocol makes it the owner's decision)",
+    "Whether the replay tests keep running automatically (each run, local or in CI, adds two counted accesses) or only on request; offered with the decision to count them and not chosen",
+    "Whether the protocol's criterion 'the holdout was looked at once' is met, given the counted accesses; the report marks it for the owner to judge",
+    "The review items still open from the protocol and the protocol-silent details that could move a result (listed in the report under open_for_the_owner); the defaults are in force"
+  ],
+  "not_a_claim": [
+    "Not a claim of a predictive edge: no status, including DISTINGUISHABLE_BETTER, is one, and none was reached.",
+    "Not Milestone 4 acceptance.",
+    "Not evidence about any market: a convenience sample of 23 issuers on one regime, and block 5 is entirely Milestone 1 events (time and selection regime are confounded)."
+  ]
+}

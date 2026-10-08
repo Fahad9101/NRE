@@ -5,6 +5,10 @@ describes cannot have been shaped by a result. No block-5 outcome had been read 
 `docs/M4-REPORT.md`, written afterwards. The frozen protocol (`config/m4-protocol.json`, version 1, sha256 `a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9`) is unchanged:
 nothing here is an amendment.
 
+**Update 2026-10-08, after the look:** the look was taken once, on 2026-10-07 at 13:38:13Z, from a clean tree at commit `0e26ac9`, as described below; the results are in `docs/M4-PHASE4-RESULTS.md` and the
+Milestone 4 report in `docs/M4-REPORT.md`. The rest of this note is left as it was committed. One thing it did not settle: P4-11 disclosed that the tests would replay the look against temporary logs, but not
+that those replays would be counted as accesses. On the owner's decision ("Count the replays as accesses.") they are (`reports/m4-phase4-replay-accesses-2026-10-07.json`).
+
 ## 1. What the look is
 
 The protocol's rule (`holdout`): the final holdout, block 5 (the 23 Milestone 1 events), "is evaluated once, with every pre-registered predictor and target together, trained on blocks 1 to 4 and

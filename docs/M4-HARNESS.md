@@ -15,6 +15,12 @@ no read, no load), and the details in section 5 are in force as written. The pro
 an all-event contrast is labelled the confirmatory contrast's companion only where the clean-window version can be evaluated (otherwise it is exploratory and says why), and M2 stops with a `ProtocolGap` naming any
 event that has no opening return instead of failing on `None`. `ALLOW_HOLDOUT_LOOK` is still `False` and the holdout still sealed (23 events, no read, no load). The protocol is unchanged.
 
+**Update 2026-10-08, after Phase 4:** the owner authorized Phase 4 and the harness took the one look at the holdout on 2026-10-07 (`docs/M4-PHASE4.md`, results in `docs/M4-PHASE4-RESULTS.md`, the Milestone 4 report in
+`docs/M4-REPORT.md`). Two things in this note are no longer current. The holdout is **not sealed any more**: the chained access log holds one access (`reports/m4-holdout-access-log.jsonl`, commit `0e26ac9`, 23 events,
+46 loads) and the block-5 outcomes have been read. And `ALLOW_HOLDOUT_LOOK` was turned on for that look in a commit of its own and turned off again in the next, so it is `False` again; another look needs a new
+go-ahead. The tests that verify the look re-read the outcomes through the same gate against temporary logs; on the owner's decision those replays are counted as accesses
+(`reports/m4-phase4-replay-accesses-2026-10-07.json`: 21 accesses in all, the closing runs counted in advance). The details in section 5 are in force as written, and the protocol is unchanged.
+
 ## 1. What it is
 
 ```

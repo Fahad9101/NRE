@@ -5385,7 +5385,7 @@
       "extension_after_open_ge_5pct": "NOT_DISTINGUISHABLE",
       "loses_half_of_gap": "INSUFFICIENT_DATA"
     },
-    "holdout_accesses_in_total": 17
+    "holdout_accesses_in_total": 21
   },
   "integrity": {
     "protocol": {
@@ -5409,8 +5409,8 @@
       "holdout_accesses_after_genesis": 1,
       "holdout_accesses": {
         "logged_in_the_chain": 1,
-        "replays_counted": 16,
-        "in_total": 17,
+        "replays_counted": 20,
+        "in_total": 21,
         "accounting_record": "reports/m4-phase4-replay-accesses-2026-10-07.json",
         "owner_decision": {
           "text": "Count the replays as accesses.",
@@ -5802,7 +5802,7 @@
       },
       {
         "criterion": "the holdout was looked at once",
-        "evidence": "the holdout access log holds its genesis and 1 access (Milestone 4 Phase 4: the one look at the final holdout (bloc...); on the owner's decision of 2026-10-07T19:14:34.716Z (\"Count the replays as accesses.\") the 16 replays that re-read the block-5 outcomes to verify the look are counted as accesses too, 17 accesses in all (reports/m4-phase4-replay-accesses-2026-10-07.json). The replays reproduced the committed look; nothing was selected, tuned or changed after a holdout result was seen.",
+        "evidence": "the holdout access log holds its genesis and 1 access (Milestone 4 Phase 4: the one look at the final holdout (bloc...); on the owner's decision of 2026-10-07T19:14:34.716Z (\"Count the replays as accesses.\") the 20 replays that re-read the block-5 outcomes to verify the look are counted as accesses too, 21 accesses in all (reports/m4-phase4-replay-accesses-2026-10-07.json). The replays reproduced the committed look; nothing was selected, tuned or changed after a holdout result was seen.",
         "met_by_the_evidence": "for the owner to judge"
       },
       {

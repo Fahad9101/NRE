@@ -9,6 +9,7 @@ import m4_support as S  # noqa: E402
 from nre import m4_harness as h  # noqa: E402
 from nre import m4_phase4 as p4  # noqa: E402
 from nre import m4_protocol as pr  # noqa: E402
+from nre import m4_registry as reg  # noqa: E402
 from nre.core import canonical, digest  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -111,6 +112,71 @@ class HoldoutAuditReportTests(unittest.TestCase):
         self.assertIn("not the opening gap", self.committed["purpose"])
         self.assertIn("Not a result: nothing was fitted, scored or evaluated.", self.committed["not_a_claim"])
         self.assertEqual(self.committed["holdout"], {"sealed_events": 23, "denied_reads": 0, "unsealed_loads": 0, "access_log_records_after_genesis": 0})
+
+
+class CompletionRecordTests(unittest.TestCase):
+    """The closing record is a snapshot of Phase 4; these check it against the artifacts it names, not against the code as later phases change it."""
+    RECORD = ROOT / "reports" / "m4-phase4-completion-2026-10-08.json"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.record = json.loads(cls.RECORD.read_text(encoding="utf-8"))
+
+    def test_the_record_names_the_artifacts_it_describes_and_their_hashes_match(self):
+        record, look = self.record, self.record["the_look"]
+        results = json.loads((ROOT / look["results"]).read_text(encoding="utf-8"))
+        descriptive = json.loads((ROOT / look["descriptive_report"]).read_text(encoding="utf-8"))
+        self.assertEqual(look["results_canonical_sha256"], digest(canonical(results)))
+        self.assertEqual(look["descriptive_canonical_sha256"], digest(canonical(descriptive)))
+        report = json.loads((ROOT / record["report"]["path"]).read_text(encoding="utf-8"))
+        self.assertEqual(record["report"]["canonical_sha256"], digest(canonical(report)))
+        accounting = json.loads((ROOT / record["accesses"]["accounting_record"]).read_text(encoding="utf-8"))
+        self.assertEqual((record["accesses"]["in_total"], record["accesses"]["replays_counted"]), (accounting["totals"]["accesses"], accounting["totals"]["replay_accesses"]))
+        self.assertEqual(record["protocol"]["canonical_sha256"], pr.protocol_sha256(pr.load_json(pr.PROTOCOL_PATH)))
+        log = reg.read(reg.EXPERIMENT_LOG)
+        first, count = p4.EXPERIMENTS_BEFORE, look["experiment_records"]
+        self.assertEqual(count, p4.EXPECTED_RECORDS)
+        self.assertEqual(look["experiment_log_last_record_sha256"], log[first + count - 1][1])  # the last of the 58 holdout records
+        self.assertEqual({r["harness_commit"] for r, _ in log[first:first + count]}, {look["commit"]})
+        for name in record["built"]["modules"] + record["built"]["tests"] + record["built"]["docs"] + [record["built"]["audit"], look["predictions"]]:
+            self.assertTrue((ROOT / name).is_file(), name)
+        for commit in list(record["built"]["commits"].values()) + [look["commit"], record["authorization"]["commit"]]:
+            self.assertRegex(commit, r"^[0-9a-f]{40}$")
+
+    def test_the_record_says_what_was_found_how_often_the_holdout_was_read_and_what_was_checked(self):
+        record, look = self.record, self.record["the_look"]
+        self.assertEqual((look["accesses_in_the_chain"], look["technical_reruns"], look["events_read"], look["unsealed_loads"], look["denied_reads"]), (1, 0, 23, 46, 0))
+        self.assertEqual((look["experiment_records"], look["prediction_records"]), (58, 484))
+        self.assertTrue(look["evaluated_twice_from_scratch_and_identical"])
+        counts_only = ("gap_ge_3pct", "gap_ge_5pct", "loses_half_of_gap")
+        scored = ("extension_after_open_ge_5pct", "day1_close_return")
+        self.assertEqual({t: set(look["states"][t].values()) for t in counts_only}, {t: {"COUNTS_ONLY"} for t in counts_only})
+        self.assertEqual({t: set(look["states"][t].values()) for t in scored}, {t: {"EVALUATED"} for t in scored})
+        brief = record["results_in_brief"]
+        self.assertEqual(len(brief["confirmatory_model_against_c1_on_the_holdout"]), 4)
+        self.assertTrue(all(row["same_sign_as_development"] is False for row in brief["confirmatory_model_against_c1_on_the_holdout"].values()))
+        self.assertEqual((brief["holdout_contrasts"]["of"], brief["holdout_contrasts"]["excluding_zero_at_95"], brief["holdout_contrasts"]["excluding_zero_at_99"]), (32, 1, 0))
+        accesses = record["accesses"]
+        self.assertEqual((accesses["logged_in_the_chain"], accesses["in_total"], accesses["counted_in_advance"]), (1, 21, 4))
+        self.assertEqual(accesses["owner_decision"]["text"], "Count the replays as accesses.")
+        mutation = record["tests"]["mutation_check"]
+        self.assertEqual((mutation["caught"], mutation["deliberate_defects"]), (138, 138))
+        self.assertEqual(record["tests"]["result"], "OK, exit status 0")
+        self.assertFalse(record["protocol"]["amended"])
+        self.assertEqual((record["tripwires"]["ALLOW_REAL_EVALUATION"], record["tripwires"]["ALLOW_HOLDOUT_LOOK"]), (True, False))
+        self.assertEqual(len(record["tripwires"]["REAL_EVALUATION_TARGETS"]), 5)
+        self.assertEqual(record["holdout"]["access_log_records"], 2)
+        self.assertEqual(record["verification"]["cross_check"]["problems_found_in_the_first_draft"], 4)
+        self.assertIn("quantile and ridge predictions", " ".join(record["verification"]["not_recomputed_independently"]))
+
+    def test_what_is_not_authorized_and_what_is_open_for_the_owner_is_listed(self):
+        text = " ".join(self.record["not_done_and_not_authorized"])
+        for phrase in ("second look", "selection", "amendment", "Milestone 4 accepted", "Milestone 5"):
+            self.assertIn(phrase, text)
+        self.assertIn("Not Milestone 4 acceptance.", self.record["not_a_claim"])
+        owner = " ".join(self.record["open_for_the_owner"])
+        for phrase in ("Milestone 4 is accepted", "replay tests", "looked at once", "review items"):
+            self.assertIn(phrase, owner)
 
 
 if __name__ == "__main__":

@@ -46,12 +46,15 @@ class AccountingTests(unittest.TestCase):
             self.assertEqual([a["access_number"] for a in mine], run["accesses"])
             self.assertEqual(run["class_setups"], 1)
         self.assertEqual([r["id"] for r in self.record["runs"]], ["R%d" % i for i in range(len(self.record["runs"]))])
-        starts = [r["started_at"] for r in self.record["runs"]]
-        self.assertEqual(starts, sorted(starts))                             # numbered in the order they happened
+        times = [r.get("started_at") or r["expected_after"] for r in self.record["runs"]]
+        self.assertEqual(times, sorted(times))                               # numbered in the order they happened, the runs counted in advance last
         totals = self.record["totals"]
         self.assertEqual((totals["accesses"], totals["the_look"], totals["replay_accesses"], totals["replay_runs"]), (len(accesses), 1, len(accesses) - 1, len(replay_runs)))
         self.assertEqual(totals["replay_runs_local"] + totals["replay_runs_in_ci"], totals["replay_runs"])
         self.assertEqual((totals["loads_per_access"], totals["events_read_per_access"]), (46, 23))
+        expected = [r for r in replay_runs if r.get("status") == "expected"]
+        self.assertEqual((totals["found_runs"] + totals["expected_runs"], totals["expected_runs"], totals["expected_accesses"]), (len(replay_runs), len(expected), 2 * len(expected)))
+        self.assertEqual(totals["found_accesses_with_the_look"], 1 + 2 * totals["found_runs"])
 
     def test_access_one_is_the_look_in_the_chained_log_and_the_chain_holds_nothing_else(self):
         look = self.record["runs"][0]
@@ -76,11 +79,28 @@ class AccountingTests(unittest.TestCase):
     def test_every_run_has_its_source_and_none_ran_before_the_look(self):
         look_at = self.record["runs"][0]["started_at"]
         for run in self.record["runs"]:
-            for key in ("id", "kind", "started_at", "where", "what", "result", "source", "tree"):
+            for key in ("id", "kind", "started_at" if run.get("status") != "expected" else "expected_after", "where", "what", "result", "source", "tree"):
                 self.assertTrue(run[key], (run["id"], key))
         for run in self.record["runs"][1:]:
+            if run.get("status") == "expected":
+                self.assertGreater(run["expected_after"], look_at)
+                self.assertEqual(run["result"], "expected")
+                self.assertTrue(run["source"].startswith("expected: counted in advance"), run["source"])
+                continue
             self.assertGreater(run["started_at"], look_at)
             self.assertTrue(run["source"].startswith("session transcript line") or run["source"].startswith("https://api.github.com/repos/Fahad9101/NRE/actions/runs/"), run["source"])
+
+    def test_the_runs_counted_in_advance_are_the_closing_pass_and_the_ci_run_of_the_push_and_name_their_authority(self):
+        runs = self.record["runs"]
+        expected = [r for r in runs if r.get("status") == "expected"]
+        self.assertEqual([r["id"] for r in expected], [r["id"] for r in runs[-2:]])      # they come last
+        self.assertTrue(expected[0]["where"].startswith("local") and "whole suite" in expected[0]["what"])
+        self.assertTrue(expected[1]["where"].startswith("GitHub Actions") and "push" in expected[1]["what"])
+        authority = self.record["closing_runs_authorized_by"]
+        self.assertEqual((authority["text"], authority["at"]), ("yes continuewith the closing work and push at the end", "2026-10-08T05:26:44.063Z"))
+        for run in expected:
+            self.assertIn(authority["text"], run["source"])
+        self.assertIn("counted before they happened", " ".join(self.record["limits"]))
 
     def test_the_rules_for_what_happens_next_and_the_limits_are_stated(self):
         going_forward = " ".join(self.record["going_forward"])
