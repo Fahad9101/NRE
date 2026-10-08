@@ -1,4 +1,5 @@
-"""What Milestone 5 scoping recorded about itself: the owner's go-ahead and how it was read (reports/m5-scoping-authorization-2026-10-08.json)."""
+"""What Milestone 5 scoping recorded about itself: the owner's go-ahead and how it was read (reports/m5-scoping-authorization-2026-10-08.json), the owner's answer to the proposal's six decisions
+(reports/m5-scope-confirmation-2026-10-08.json), and the proposal (docs/M5-ADVANCED-MODELS-SCOPE.md) bound to the evidence and the documents it cites."""
 import json
 import re
 import unittest
@@ -6,6 +7,21 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 AUTHORIZATION = ROOT / "reports" / "m5-scoping-authorization-2026-10-08.json"
+CONFIRMATION = ROOT / "reports" / "m5-scope-confirmation-2026-10-08.json"
+PROPOSAL = ROOT / "docs" / "M5-ADVANCED-MODELS-SCOPE.md"
+
+
+def decisions_of(text):
+    """The six numbered items of the proposal's section 6 as (number, title, recommended default, the rest of the item), in the words written there with line breaks flattened."""
+    section = text[text.index("## 6. Decisions needed"):text.index("## 7.")]
+    flat = " ".join(section.split())
+    flat = flat[flat.index("1. **"):]
+    out = []
+    for number, title, body in re.findall(r"(\d)\. \*\*([^*]+?)\.\*\* (.+?)(?= \d\. \*\*|$)", flat):
+        assert body.startswith("Recommended: "), body
+        cut = min(i for i in (body.find(marker) for marker in (" Alternatives:", " Alternative:", " Note that")) if i != -1)
+        out.append((int(number), title, body[len("Recommended: "):cut], body[cut + 1:]))
+    return out
 
 
 class AuthorizationRecordTests(unittest.TestCase):
@@ -41,9 +57,62 @@ class AuthorizationRecordTests(unittest.TestCase):
         self.assertIn("Not a start of Milestone 5 building", " ".join(record["not_a_claim"]))
 
 
+class ConfirmationRecordTests(unittest.TestCase):
+    """The owner's answer to the six decisions: his words, the decisions word for word, and that no phase is authorized."""
+    @classmethod
+    def setUpClass(cls):
+        cls.record = json.loads(CONFIRMATION.read_text(encoding="utf-8"))
+        cls.note = PROPOSAL.read_text(encoding="utf-8")
+
+    def test_it_quotes_the_owners_words_and_the_message_they_answer(self):
+        record = self.record
+        self.assertEqual(record["status"], "MILESTONE_5_SCOPE_DECISIONS_MADE_BY_THE_PROJECT_OWNER_NO_PHASE_AUTHORIZED")
+        self.assertEqual([(m["text"], m["at"]) for m in record["owner_messages"]], [("take your defaults for all six", "2026-10-08T16:07:04.055Z")])
+        self.assertIn("line 34796", record["owner_messages"][0]["source"])
+        replied = record["assistant_message_replied_to"]
+        self.assertLess(replied["at"], record["owner_messages"][0]["at"])
+        self.assertTrue(replied["text"].startswith("Both commits are on `origin/main` (`fb33eea..622de37`), and CI is green."))
+        for phrase in ('"take your defaults for all six" is a valid answer', "**Recommended next step:** answer decision 1", "each need your separate go-ahead", "This is a recommendation, not an authorization."):
+            self.assertIn(phrase, replied["text"])
+
+    def test_the_six_decisions_are_the_proposals_recommended_defaults_word_for_word(self):
+        decisions = self.record["decisions"]
+        self.assertEqual(decisions_of(self.note), [(d["number"], d["title"], d["recommended_default"], d["alternatives_and_notes_as_written"]) for d in decisions])
+        self.assertEqual([d["number"] for d in decisions], [1, 2, 3, 4, 5, 6])
+        for decision in decisions:
+            self.assertEqual(decision["decided"], "the recommended default")
+            self.assertTrue(decision["effect"] and decision["still_needed_before_it_takes_effect"])
+        self.assertIn("not authorized by it", decisions[1]["still_needed_before_it_takes_effect"])                      # decision 2 names the probe and the data steps
+        self.assertIn("does not answer Milestone 4's review item", decisions[4]["still_needed_before_it_takes_effect"])    # decision 5 sets Milestone 5's structure only
+        self.assertIn("not authorized by this decision", decisions[5]["still_needed_before_it_takes_effect"])             # decision 6 names the probe
+        proposal = self.record["proposal_as_decided"]
+        self.assertEqual((proposal["document"], proposal["pushed"]), ("docs/M5-ADVANCED-MODELS-SCOPE.md", True))
+        self.assertTrue(proposal["commit"].startswith("622de37") and len(proposal["commit"]) == 40)
+        self.assertEqual(len(proposal["sha256_of_the_document_at_that_commit_line_endings_normalized"]), 64)             # recorded for that commit; the document is a living file
+
+    def test_it_decides_but_authorizes_no_phase_and_keeps_the_change_rule(self):
+        record = self.record
+        not_authorized = " ".join(record["not_authorized_by_these_words"])
+        for phrase in ("Phase 1a, the availability probe", "Phase 1b", "Phase 1c", "Phase 0, pre-registering", "Phase 2", "Phase 3", "Phase 4", "Any read of a block-5 outcome",
+                       "Purchasing or licensing any dataset", "Declaring Milestone 5 accepted", "Any change to the accepted Milestone 4 work"):
+            self.assertIn(phrase, not_authorized)
+        done = " ".join(record["authorized_and_done_under_these_words"])
+        self.assertIn("reports/m5-scope-confirmation-2026-10-08.json", done)
+        self.assertNotIn("config/m5-protocol.json", done)
+        read = " ".join(record["how_the_words_were_read"])
+        for phrase in ("It decides; it authorizes no phase", "The probe is Phase 1a", "which stay at their defaults"):
+            self.assertIn(phrase, read)
+        self.assertIn("does not change a confirmed default on its own", record["change_rule"])
+        self.assertIn("Not a start of Milestone 5 building", " ".join(record["not_a_claim"]))
+        proposed = record["order_proposed_after_the_decisions"]
+        self.assertFalse(proposed["is_a_decision"])
+        self.assertEqual([step.split(":")[0] for step in proposed["order"]], ["1a", "1b", "0", "1c", "2", "3", "4"])
+        self.assertEqual(proposed["each_step_needs"], "its own explicit go-ahead from the owner")
+
+
 class ScopeNoteTests(unittest.TestCase):
     """The proposal (docs/M5-ADVANCED-MODELS-SCOPE.md) is bound to the evidence it cites, to the governing text it quotes and to the files it names."""
-    NOTE = ROOT / "docs" / "M5-ADVANCED-MODELS-SCOPE.md"
+    NOTE = PROPOSAL
     EVIDENCE = ROOT / "reports" / "m5-scoping-evidence-2026-10-08.json"
     MASTER, CONTRACT, PROTOCOL = "docs/NRE-1.0-MASTER-PROMPT.md", "docs/MILESTONE-0-TECHNICAL-CONTRACT.md", "config/m4-protocol.json"
     # every quotation the proposal takes from a governing document, as the proposal writes it between quotation marks: it must be in that document word for word (case and line breaks aside)
@@ -62,13 +131,24 @@ class ScopeNoteTests(unittest.TestCase):
     def setUpClass(cls):
         cls.text = cls.NOTE.read_text(encoding="utf-8")
         cls.evidence = json.loads(cls.EVIDENCE.read_text(encoding="utf-8"))
+        cls.confirmation = json.loads(CONFIRMATION.read_text(encoding="utf-8"))
 
-    def test_it_says_nothing_is_built_every_decision_is_open_and_nothing_is_started(self):
-        for phrase in ("Nothing for Milestone 5 is built", "Every decision in section 6 is open", "It fits nothing, predicts nothing, reads no event-level outcome and acquires no data",
-                       "it uses no result of the Milestone 4 holdout", "does not decide any of section 6", "it does not start Milestone 5", "does not pre-register anything",
-                       "**A disclosure:** the assistant writing this proposal has seen the block-5 results"):
-            self.assertIn(phrase, " ".join(self.text.split()))
-        self.assertIn("reports/m5-scoping-authorization-2026-10-08.json", self.text)
+    def test_it_says_nothing_is_built_the_decisions_are_made_and_no_phase_is_authorized(self):
+        flat = " ".join(self.text.split())
+        for phrase in ("Nothing for Milestone 5 is built and no phase of section 3 is authorized: each needs its own go-ahead", "its six decisions were then made the same day, each at the recommended default",
+                       "It fits nothing, predicts nothing, reads no event-level outcome and acquires no data", "it uses no result of the Milestone 4 holdout", "does not decide any of section 6",
+                       "it does not start Milestone 5", "does not pre-register anything", "**A disclosure:** the assistant writing this proposal has seen the block-5 results"):
+            self.assertIn(phrase, flat)
+        self.assertNotIn("Every decision in section 6 is open", flat)
+        for name in ("reports/m5-scoping-authorization-2026-10-08.json", "reports/m5-scope-confirmation-2026-10-08.json"):
+            self.assertIn(name, self.text)
+
+    def test_the_order_it_proposes_for_the_go_aheads_is_a_proposal_and_is_the_records(self):
+        flat = " ".join(self.text.split())
+        proposed = self.confirmation["order_proposed_after_the_decisions"]
+        self.assertFalse(proposed["is_a_decision"])
+        self.assertIn("An order is proposed here after the decisions, and is not itself a decision: %s," % ", ".join(step.split(":")[0] for step in proposed["order"]), flat)
+        self.assertIn("Made on 2026-10-08, all six at the recommended default (`reports/m5-scope-confirmation-2026-10-08.json`)", flat)
 
     def test_its_tables_and_figures_are_the_evidences(self):
         from nre import m5_scoping_evidence as ev
@@ -119,8 +199,8 @@ class ScopeNoteTests(unittest.TestCase):
             with self.subTest(source=source, words=words):
                 self.assertIn(words.lower(), " ".join((ROOT / source).read_text(encoding="utf-8").split()).lower())
                 self.assertIn('"%s"' % words, flat)
-        owners = [m["text"] for m in json.loads(AUTHORIZATION.read_text(encoding="utf-8"))["owner_messages"]]
-        self.assertEqual(owners, ["authorize m5 scoping"])
+        owners = [m["text"] for path in (AUTHORIZATION, CONFIRMATION) for m in json.loads(path.read_text(encoding="utf-8"))["owner_messages"]]
+        self.assertEqual(owners, ["authorize m5 scoping", "take your defaults for all six"])
         known = {words for _, words in self.QUOTES} | set(self.OWN_WORDS) | set(owners)
         for span in spans:                                                         # and nothing else is in quotation marks
             with self.subTest(span=span):

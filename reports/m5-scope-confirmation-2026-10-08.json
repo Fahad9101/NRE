@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "kind": "m5_scope_confirmation",
+  "recorded_on": "2026-10-08",
+  "status": "MILESTONE_5_SCOPE_DECISIONS_MADE_BY_THE_PROJECT_OWNER_NO_PHASE_AUTHORIZED",
+  "milestone": "Milestone 5 -- Advanced Models (NRE 1.0)",
+  "context": "The Milestone 5 scope proposal (docs/M5-ADVANCED-MODELS-SCOPE.md) was pushed in commit 622de37 (CI run #237 green on attempt 1, both jobs). It lists six decisions, each with a recommended default. The assistant's closing message, quoted verbatim in assistant_message_replied_to, asked the owner to answer them, said that \"take your defaults for all six\" is a valid answer, and recommended answering decision 1 first. The owner then wrote those words.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-08T08:48:46.560Z",
+    "source": "session transcript, line 34792",
+    "text": "Both commits are on `origin/main` (`fb33eea..622de37`), and CI is green.\n\n- **CI:** [run #237](https://github.com/Fahad9101/NRE/actions/runs/37751848884) passed on attempt 1. I read the jobs list, not just the run: both `validate (3.12)` and `validate (3.13)` succeeded on every step.\n- **Holdout:** no holdout access this time. The replay tests only run when `M4_REPLAY_HOLDOUT=1` is set, and no workflow sets it, so the count stays at 25.\n- **Memory:** updated from \"not pushed\" to the verified state.\n\n**Remaining**\n- **You:** answer the six decisions in section 6 of `docs/M5-ADVANCED-MODELS-SCOPE.md`. It is now on GitHub, and \"take your defaults for all six\" is a valid answer.\n- **Me:** nothing queued. M5 building, `config/m5-protocol.json` (Phase 0), data acquisition or a probe, and any read of block-5 outcomes each need your separate go-ahead.\n\n**Recommended next step:** answer decision 1, the shape of Milestone 5. It decides whether the other five matter, because pausing for a larger universe makes them moot. This is a recommendation, not an authorization."
+  },
+  "owner_messages": [
+    {
+      "text": "take your defaults for all six",
+      "at": "2026-10-08T16:07:04.055Z",
+      "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 34796, timestamps UTC), not from a summary"
+    }
+  ],
+  "proposal_as_decided": {
+    "document": "docs/M5-ADVANCED-MODELS-SCOPE.md",
+    "commit": "622de37ad07cb39c63fc73ce94bc5f35ac67b62f",
+    "pushed": true,
+    "ci": "NRE CI run #237, passed on attempt 1, both jobs (Python 3.12 and 3.13)",
+    "sha256_of_the_document_at_that_commit_line_endings_normalized": "a9a5a753c6e88a7d47cedbca22e181260da610c2e1c5a3c12fc328e42063e80d",
+    "note": "The document is a living file: after the decisions it received status notes (that the decisions were made, which record holds them, that no phase is authorized, and a proposed order of go-aheads). The hash is recorded for that commit and is not asserted against the current file. What is asserted is that section 6's recommended defaults, word for word, are the ones quoted in decisions below."
+  },
+  "how_the_words_were_read": [
+    "'take your defaults for all six' answers the assistant's closing message, which asked the owner to answer the six decisions in section 6 of docs/M5-ADVANCED-MODELS-SCOPE.md, said that 'take your defaults for all six' is a valid answer and recommended answering decision 1 first. The owner chose the broader valid answer: all six decisions, each at its recommended default.",
+    "It decides; it authorizes no phase. The same message said that Milestone 5 building, config/m5-protocol.json (Phase 0), data acquisition or a probe, and any read of block-5 outcomes each need a separate go-ahead, and the owner's words contain none.",
+    "The defaults are taken as the proposal worded them at commit 622de37, including the note under decision 5. Later edits to the proposal's text would not change what was decided; the binding test compares section 6's recommended defaults with the ones quoted here.",
+    "Decision 2 puts an availability probe before any acquisition and decision 6 says to probe first. The probe is Phase 1a: the decisions name it and the words do not authorize it.",
+    "The words do not answer the Milestone 4 review items, the protocol-silent details or the other items open for the owner, which stay at their defaults."
+  ],
+  "decisions": [
+    {
+      "number": 1,
+      "title": "Shape of Milestone 5",
+      "decided": "the recommended default",
+      "recommended_default": "the bounded, pre-registered comparison of section 3 on the five Milestone 4 primary targets, with promotion defined as in section 2.7 and \"no improvement shown\" accepted as a valid outcome.",
+      "alternatives_and_notes_as_written": "Alternatives: pause Milestone 5 until a universe expansion (Option D) can grow the dataset by an order of magnitude; or the full list in the master prompt, including bought market-structure data.",
+      "effect": "Milestone 5 is the bounded, pre-registered comparison of section 3 on the five Milestone 4 primary targets (gap_ge_3pct, gap_ge_5pct, day1_close_return, extension_after_open_ge_5pct, loses_half_of_gap), with promotion defined narrowly as in section 2.7. 'No improvement shown' is an accepted, valid outcome.",
+      "still_needed_before_it_takes_effect": "Nothing is built. Each phase of section 3 needs its own go-ahead."
+    },
+    {
+      "number": 2,
+      "title": "Data",
+      "decided": "the recommended default",
+      "recommended_default": "Options B and C, staged and each with its own go-ahead, preceded by the availability probe.",
+      "alternatives_and_notes_as_written": "Alternatives: Option A only (no promotion possible), or Option D first.",
+      "effect": "Options B (a forward extension for a fresh holdout) and C (derived features) are the chosen route, staged, each with its own go-ahead, preceded by the availability probe. Option A alone and Option D first are not taken.",
+      "still_needed_before_it_takes_effect": "The probe (Phase 1a), the forward extension (1b) and the derived-feature acquisition (1c) are named by this decision and not authorized by it. The provider-rights-at-scale question is put to the owner again before 1b or 1c (proposal, section 5)."
+    },
+    {
+      "number": 3,
+      "title": "Holdout",
+      "decided": "the recommended default",
+      "recommended_default": "a fresh sealed holdout from events since 2026-04-01, with block 5 as ordinary development data.",
+      "alternatives_and_notes_as_written": "Alternatives: reuse block 5 (against the contract; contaminated), or no separate holdout.",
+      "effect": "For Milestone 5, block 5 (Milestone 1's 23 events) is ordinary development data. The promotion statement waits for a fresh sealed holdout from events since 2026-04-01. Milestone 4's holdout record, its 25 counted accesses and its tripwire are untouched.",
+      "still_needed_before_it_takes_effect": "No event since 2026-04-01 is enumerated or collected, and nothing is sealed yet. The holdout is defined in the Milestone 5 protocol (Phase 0) and the forward extension (1b)."
+    },
+    {
+      "number": 4,
+      "title": "Implementation",
+      "decided": "the recommended default",
+      "recommended_default": "standard-library implementations validated by independent recomputation, consistent with the no-runtime-packages rule.",
+      "alternatives_and_notes_as_written": "Alternatives: pinned numpy and scikit-learn as development dependencies, or LightGBM or XGBoost as the master prompt names (this changes the rule).",
+      "effect": "Models are written in the Python standard library and validated by independent recomputation, consistent with the no-runtime-packages rule. numpy, scikit-learn, LightGBM and XGBoost are not used.",
+      "still_needed_before_it_takes_effect": "No code is written under this decision, and the rule is unchanged."
+    },
+    {
+      "number": 5,
+      "title": "Claim level and structure",
+      "decided": "the recommended default",
+      "recommended_default": "keep Milestone 4's structure (99% level, cluster-aware intervals, one confirmatory contrast per primary target) so results are comparable.",
+      "alternatives_and_notes_as_written": "Note that Milestone 4's review item on the 99% level was never answered and the defaults remain; an alternative is 95% with a correction across the confirmatory set.",
+      "effect": "Milestone 5 keeps Milestone 4's structure: the 99% level, cluster-aware intervals and one confirmatory contrast per primary target.",
+      "still_needed_before_it_takes_effect": "This sets Milestone 5's structure only. It does not answer Milestone 4's review item about the 99% level, which stays at its default, as the proposal's note says."
+    },
+    {
+      "number": 6,
+      "title": "Market-structure features",
+      "decided": "the recommended default",
+      "recommended_default": "probe availability first and declare float, short interest, institutional ownership, options and premarket volume out of reach unless a point-in-time source is found.",
+      "alternatives_and_notes_as_written": "Alternative: purchase or license a point-in-time dataset (new provider terms and cost).",
+      "effect": "Availability is probed first. Float, short interest, institutional ownership, options and premarket volume are declared out of reach unless a point-in-time source is found. No dataset is purchased or licensed and no new provider is chosen.",
+      "still_needed_before_it_takes_effect": "The probe is Phase 1a and is not authorized by this decision."
+    }
+  ],
+  "authorized_and_done_under_these_words": [
+    "This record (reports/m5-scope-confirmation-2026-10-08.json) and its binding test (tests/test_m5_scoping_record.py).",
+    "Status notes in docs/M5-ADVANCED-MODELS-SCOPE.md: that the decisions were made, which record holds them, that no phase is authorized, and the order of go-aheads the assistant proposes (stated there as a proposal and not a decision)."
+  ],
+  "not_authorized_by_these_words": [
+    "Phase 1a, the availability probe, or any fetch from any provider.",
+    "Phase 1b, enumerating or collecting any event since 2026-04-01, or Phase 1c, acquiring any derived feature.",
+    "Phase 0, pre-registering a Milestone 5 protocol (config/m5-protocol.json).",
+    "Phase 2, writing any Milestone 5 model, harness extension or leakage test; Phase 3, any development comparison; Phase 4, any look at a holdout.",
+    "Any read of a block-5 outcome, or any use of a Milestone 4 holdout result as an input to a Milestone 5 design choice.",
+    "Purchasing or licensing any dataset, or choosing any new provider.",
+    "Declaring Milestone 5 accepted, or starting Milestone 6 or any later milestone.",
+    "Any change to the accepted Milestone 4 work: its frozen protocol, its logs, its records or its report."
+  ],
+  "order_proposed_after_the_decisions": {
+    "is_a_decision": false,
+    "order": [
+      "1a: the availability probe (no acquisition into the dataset)",
+      "1b: the forward extension, an outcome-blind enumeration and freeze of events since 2026-04-01, labels sealed",
+      "0: the pre-registered protocol (config/m5-protocol.json), documents only",
+      "1c: derived features, computed as the protocol defines them",
+      "2: the harness extension and its leakage tests",
+      "3: the development comparison",
+      "4: one look at the fresh holdout, and the Milestone 5 report"
+    ],
+    "why": [
+      "The probe comes first because the protocol can pre-register only the feature families the probe shows to exist (decision 6 already says to probe first).",
+      "The fresh holdout is collected and sealed before the protocol is frozen (proposal, section 2.4), so the protocol can name it the way Milestone 4's named its blocks.",
+      "The derived features are computed after the protocol, as it defines them, so their definitions are fixed before any value is seen."
+    ],
+    "each_step_needs": "its own explicit go-ahead from the owner"
+  },
+  "change_rule": "If a phase shows that a confirmed default cannot be applied as written (for example, no point-in-time source for a feature family the protocol needs, or too few events since 2026-04-01 for the fresh holdout), the assistant stops at that point, records the finding and asks the owner; it does not change a confirmed default on its own.",
+  "not_a_claim": [
+    "Not a start of Milestone 5 building, and not Milestone 5 acceptance.",
+    "Not a claim that an advanced model will beat the baselines: the proposal's own evidence says that on the current events a gain could not be confirmed, and that the most likely result is no improvement shown.",
+    "Not a claim about any market."
+  ]
+}

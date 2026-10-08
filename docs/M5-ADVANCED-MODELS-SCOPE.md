@@ -1,8 +1,9 @@
 # Milestone 5 — Advanced Models: scope proposal (for the project owner's review)
 
-**Status: proposed 2026-10-08, after the owner's "authorize m5 scoping" (`reports/m5-scoping-authorization-2026-10-08.json`, which also says how those words were read). Nothing for Milestone 5 is built: this
-document and the planning arithmetic beneath it are all that exists. Milestones 0 to 4 and Milestone 2 steps 2 and 3 are the only ones declared accepted (Milestone 4 on 2026-10-08,
-`reports/m4-acceptance-declaration-2026-10-08.json`). Every decision in section 6 is open.** The arithmetic is `reports/m5-scoping-evidence-2026-10-08.json`, built by `nre/m5_scoping_evidence.py` from three
+**Status: proposed 2026-10-08, after the owner's "authorize m5 scoping" (`reports/m5-scoping-authorization-2026-10-08.json`, which also says how those words were read); its six decisions were then made the same
+day, each at the recommended default (the owner's "take your defaults for all six", `reports/m5-scope-confirmation-2026-10-08.json`). Nothing for Milestone 5 is built and no phase of section 3 is authorized: each
+needs its own go-ahead. This document, the planning arithmetic beneath it and the two records of the owner's words are all that exists. Milestones 0 to 4 and Milestone 2 steps 2 and 3 are the only ones declared
+accepted (Milestone 4 on 2026-10-08, `reports/m4-acceptance-declaration-2026-10-08.json`).** The arithmetic is `reports/m5-scoping-evidence-2026-10-08.json`, built by `nre/m5_scoping_evidence.py` from three
 committed artifacts. It fits nothing, predicts nothing, reads no event-level outcome and acquires no data, and it uses no result of the Milestone 4 holdout.
 
 ## Summary
@@ -22,7 +23,7 @@ committed artifacts. It fits nothing, predicts nothing, reads no event-level out
   forward extension for a fresh holdout, a small derived-features fetch) before any model is fit, implement the models in the standard library with independent recomputation, keep Milestone 4's confirmatory
   structure, and define "promotion" narrowly. Do not make "an advanced model beats the strongest baseline" the acceptance test: at these counts that cannot be demonstrated whether or not it is true.
   If the owner prefers to pay for statistical power first, pausing Milestone 5 for a universe expansion is the honest alternative (decision 1).
-- **What I need from you:** the six decisions in section 6, each with a recommended default.
+- **Decisions:** made on 2026-10-08, all six at the recommended default (section 6).
 
 ## 1. What Milestone 5 requires
 
@@ -132,7 +133,9 @@ fresh sealed holdout, derived regime and market features, and a calibrated, hone
 
 ## 3. Proposed scope
 
-Phases, each needing its own go-ahead, as in Milestones 2 to 4. With the data steps of Phase 1 that is up to seven go-aheads (0, 1a, 1b, 1c, 2, 3 and 4), against five for Milestone 4:
+Phases, each needing its own go-ahead, as in Milestones 2 to 4. With the data steps of Phase 1 that is up to seven go-aheads (0, 1a, 1b, 1c, 2, 3 and 4), against five for Milestone 4. The numbers name the
+phases; they are not the order the phases would run in. An order is proposed here after the decisions, and is not itself a decision: 1a, 1b, 0, 1c, 2, 3, 4, so that the probe shows which feature families Phase 0 can
+pre-register, the fresh holdout is collected and sealed before the protocol is frozen (section 2.4), and the derived features are computed as the frozen protocol defines them:
 
 - **Phase 0 — pre-registration (documents only).** `config/m5-protocol.json` and a short note, hashed and committed before any model is fit: targets (the five Milestone 4 primaries by default), model families (a
   small fixed list), feature families as ablation units, the tiny hyperparameter grids, the nested walk-forward design with block 5 as ordinary development data, the strongest-baseline rule, the confirmatory
@@ -183,6 +186,8 @@ transaction costs (no execution data exists; master prompt sections 22 and 23), 
 | Dependence (73 reaction sessions, 23 issuers) | cluster-aware intervals; events of one reaction session kept in one fold |
 
 ## 6. Decisions needed
+
+Made on 2026-10-08, all six at the recommended default (`reports/m5-scope-confirmation-2026-10-08.json`). The items below are the proposal as it was decided; the recommended default of each is what was taken.
 
 1. **Shape of Milestone 5.** Recommended: the bounded, pre-registered comparison of section 3 on the five Milestone 4 primary targets, with promotion defined as in section 2.7 and "no improvement shown" accepted as
    a valid outcome. Alternatives: pause Milestone 5 until a universe expansion (Option D) can grow the dataset by an order of magnitude; or the full list in the master prompt, including bought market-structure data.
