@@ -23,16 +23,22 @@ SPEC = probe.load_spec()
 CALENDARS = probe.load_project_calendars(SPEC)
 NEW_YORK = ZoneInfo("America/New_York")
 LEAK_PRICE, LEAK_VOLUME = 123.456789, 987654321      # carried by every fake bar; the report must never contain them
-RATIO_KEYS = {"daily_volume_over_regular_minute_volume", "daily_volume_over_all_hours_minute_volume", "premarket_share_of_all_hours_minute_volume", "after_hours_share_of_all_hours_minute_volume"}
+PRE_PRICE, REG_PRICE, CROSS_PRICE, POST_PRICE = 98.123456, 100.234567, 101.345678, 102.456789        # the fake's minute prices in each part of the day, and so also never in the report
+RATIO_KEYS = {"daily_volume_over_regular_and_closing_minute_volume", "daily_volume_over_all_hours_minute_volume", "premarket_share_of_all_hours_minute_volume",
+              "closing_minute_share_of_all_hours_minute_volume", "after_hours_share_of_all_hours_minute_volume"}
 STAMP = "2026-10-08T17:00:00Z"
 
 
 class FakeAlpaca:
     """A deterministic stand-in for the market-data API: the calls it receives are recorded, and its bars hold values on purpose."""
 
-    def __init__(self, first_bar=None, missing=None, zero_volume=None, extra_dates=None, page_size=None, statuses=None, raises=None, actions=None, session_daily_volume=390000, pre_market=True,
-                 pre_market_bar_volume=100, after_hours_bar_volume=50, no_mapping_first_bar=None, dated_actions=None, max_actions_span_days=None):
-        self.pre_market_bar_volume, self.after_hours_bar_volume = pre_market_bar_volume, after_hours_bar_volume
+    def __init__(self, first_bar=None, missing=None, zero_volume=None, extra_dates=None, page_size=None, statuses=None, raises=None, actions=None, session_daily_volume=392000, pre_market=True,
+                 pre_market_bar_volume=100, after_hours_bar_volume=50, no_mapping_first_bar=None, dated_actions=None, max_actions_span_days=None, after_hours=True, closing_minute=True,
+                 closing_bar_volume=2000, daily_basis=None, reverse_minutes=False):
+        self.reverse_minutes = reverse_minutes
+        self.pre_market_bar_volume, self.after_hours_bar_volume, self.closing_bar_volume = pre_market_bar_volume, after_hours_bar_volume, closing_bar_volume
+        self.after_hours, self.closing_minute = after_hours, closing_minute
+        self.daily_basis = dict({"open": "all_hours", "high": "all_hours", "low": "all_hours", "close": "last_bar"}, **(daily_basis or {}))       # what a single session's daily prices are made of
         self.no_mapping_first_bar, self.dated_actions, self.max_actions_span_days = no_mapping_first_bar or {}, dated_actions or {}, max_actions_span_days
         self.expected = probe.expected_sessions(SPEC, CALENDARS)
         self.first_bar, self.missing, self.zero_volume, self.extra_dates = first_bar or {}, missing or {}, zero_volume or {}, extra_dates or {}
@@ -63,20 +69,41 @@ class FakeAlpaca:
             if not start <= day <= end or day < earliest:
                 continue
             volume = 0 if day in self.zero_volume.get(symbol, ()) else (self.session_daily_volume if single else LEAK_VOLUME)
-            rows.append({"t": day + "T04:00:00Z", "o": LEAK_PRICE, "h": LEAK_PRICE + 1, "l": LEAK_PRICE - 1, "c": LEAK_PRICE, "v": volume, "n": 777, "vw": LEAK_PRICE})
+            prices = self._single_session_prices(day) if single else {"o": LEAK_PRICE, "h": LEAK_PRICE + 1, "l": LEAK_PRICE - 1, "c": LEAK_PRICE}
+            rows.append(dict({"t": day + "T04:00:00Z", "v": volume, "n": 777, "vw": LEAK_PRICE}, **prices))
         if not rows:
             return 200, {"bars": {}, "next_page_token": None}
         offset = int(params.get("page_token") or 0)
         size = self.page_size or len(rows)
         return 200, {"bars": {symbol: rows[offset:offset + size]}, "next_page_token": str(offset + size) if offset + size < len(rows) else None}
 
+    def _minute_bars(self):
+        """(hour, minute, volume, open, high, low, close) in time order: pre-market 04:00 to 04:09, regular 09:30 to 15:59, the closing minute 16:00, after hours 16:01 to 16:05. Each part of the day
+        has its own price range, with the pre-market low below the regular low and the after-hours high above the regular high."""
+        def bar(hour, minute, volume, price, spread):
+            return (hour, minute, volume, price, price + spread, price - spread, price)
+        bars = [bar(4, i, self.pre_market_bar_volume, PRE_PRICE + 0.000001 * i, 0.5) for i in range(10)] if self.pre_market else []
+        regular = [(9, 30 + i) for i in range(30)] + [(h, m) for h in range(10, 16) for m in range(60)]
+        bars += [bar(h, m, 1000, REG_PRICE + 0.000001 * (k % 50), 0.5) for k, (h, m) in enumerate(regular)]
+        bars += [bar(16, 0, self.closing_bar_volume, CROSS_PRICE, 0.1)] if self.closing_minute else []
+        bars += [bar(16, 1 + j, self.after_hours_bar_volume, POST_PRICE + 0.000001 * j, 0.5) for j in range(5)] if self.after_hours else []
+        return bars
+
+    def _single_session_prices(self, day):
+        """The daily bar of one session, built from the fake's own minute bars on the basis set at construction."""
+        bars = self._minute_bars()
+        regular = [b for b in bars if (b[0], b[1]) >= (9, 30) and (b[0], b[1]) < (16, 0)]
+        closing = [b for b in bars if (b[0], b[1]) == (16, 0)]
+        everything = {"all_hours": bars, "regular": regular}
+        first, highs, lows = self.daily_basis["open"], self.daily_basis["high"], self.daily_basis["low"]
+        close = {"last_bar": bars[-1][6], "last_regular_bar": regular[-1][6], "closing_minute": closing[0][6] if closing else regular[-1][6]}[self.daily_basis["close"]]
+        return {"o": everything[first][0][3], "h": max(b[4] for b in everything[highs]), "l": min(b[5] for b in everything[lows]), "c": close}
+
     def _minute(self, symbol, params):
         day = datetime.fromisoformat(params["start"]).date()
-        plan = ([(4, m, self.pre_market_bar_volume) for m in range(10)] if self.pre_market else []) + [(9, 30 + m, 1000) for m in range(30)] + [(h, m, 1000) for h in range(10, 16) for m in range(60)] \
-            + [(16, m, self.after_hours_bar_volume) for m in range(5)]
-        rows = [{"t": datetime.combine(day, clock(h, m), NEW_YORK).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "o": LEAK_PRICE, "h": LEAK_PRICE, "l": LEAK_PRICE,
-                 "c": LEAK_PRICE, "v": volume, "n": 777} for h, m, volume in plan]
-        return 200, {"bars": {symbol: rows}, "next_page_token": None}
+        rows = [{"t": datetime.combine(day, clock(h, m), NEW_YORK).astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "o": o, "h": high, "l": low, "c": close, "v": volume, "n": 777}
+                for h, m, volume, o, high, low, close in self._minute_bars()]
+        return 200, {"bars": {symbol: rows[::-1] if self.reverse_minutes else rows}, "next_page_token": None}
 
     def _actions(self, symbol, params):
         if self.max_actions_span_days is not None and (date.fromisoformat(params["end"]) - date.fromisoformat(params["start"])).days > self.max_actions_span_days:
@@ -149,9 +176,24 @@ class SpecTests(unittest.TestCase):
         self.assertEqual(SPEC["transport"]["corporate_actions_endpoint"], probe.ACTIONS_ENDPOINT)
         self.assertEqual((SPEC["transport"]["feed"], SPEC["transport"]["adjustment"]), ("sip", "raw"))
 
+    def test_the_spec_records_its_revisions_and_why(self):
+        self.assertEqual(SPEC["revision"], 2)
+        first, second = SPEC["revisions"]
+        self.assertEqual((first["revision"], first["committed_in"], second["revision"]), (1, "3cc9796", 2))
+        self.assertTrue((ROOT / first["run_record"]).is_file())
+        self.assertIn("closing-auction cross", second["reason"])
+        self.assertIn("adds no request, no symbol and no session", second["reason"])
+        self.assertEqual(second["motivated_by"], "the availability results of run 1 only; no event, label or outcome was read")
+        run1 = json.loads((ROOT / first["run_record"]).read_text(encoding="utf-8"))["report"]
+        self.assertEqual(run1["spec_revision"], 1)                                                       # run 1 ran revision 1; the spec has moved on and the record keeps what that run saw
+
     def test_the_spec_says_what_it_keeps_and_what_it_does_not(self):
         self.assertIn("keeps no price and no volume value", SPEC["purpose"])
         self.assertIn("adds nothing to the dataset", SPEC["purpose"])
+        self.assertIn("ratios and booleans", SPEC["purpose"])
+        reported = SPEC["checks"]["minute_sample"]["reported"]
+        for phrase in ("the 16:00 minute (which holds the closing-auction cross)", "five unit-free ratios", "booleans on whether the daily bar's open, high, low and close", "No volume and no price is kept"):
+            self.assertIn(phrase, reported)
         self.assertIn("VIXY and VXX are listed as futures-based proxies", SPEC["symbols"]["not_requested"])
         self.assertEqual(SPEC["authority"]["authorization"], "reports/m5-phase1a-authorization-2026-10-08.json")
         self.assertTrue((ROOT / SPEC["authority"]["authorization"]).is_file())
@@ -281,28 +323,91 @@ class OtherCheckTests(unittest.TestCase):
         with self.assertRaises(DataError):
             probe.corporate_action_counts(lambda e, p: (200, {"corporate_actions": []}), "NBIX", "2023-10-02", "2026-10-02")
 
+    HOURS = ["04:00", "20:00"]
+
     def test_the_minute_semantics_are_ratios_checked_by_hand(self):
-        result = probe.minute_semantics(FakeAlpaca(), "SPY", "2025-03-12", ["04:00", "20:00"])
-        regular, pre, after = 390 * 1000, 10 * 100, 5 * 50
-        self.assertEqual(result["minute_bars"], {"premarket": 10, "regular": 390, "after_hours": 5})
-        self.assertEqual(result["daily_volume_over_regular_minute_volume"], 1.0)                      # the fake's daily volume is the regular-session total
-        self.assertEqual(result["daily_volume_over_all_hours_minute_volume"], round(regular / (regular + pre + after), 4))
-        self.assertEqual(result["premarket_share_of_all_hours_minute_volume"], round(pre / (regular + pre + after), 4))
-        self.assertEqual(result["after_hours_share_of_all_hours_minute_volume"], round(after / (regular + pre + after), 4))
+        result = probe.minute_semantics(FakeAlpaca(), "SPY", "2025-03-12", self.HOURS)
+        regular, closing, pre, after = 390 * 1000, 2000, 10 * 100, 5 * 50
+        everything = regular + closing + pre + after
+        self.assertEqual(result["minute_bars"], {"premarket": 10, "regular": 390, "closing_minute": 1, "after_hours": 5})
+        self.assertEqual(result["daily_volume_over_regular_and_closing_minute_volume"], 1.0)           # the fake's daily volume is the volume through the closing minute
+        self.assertEqual(result["daily_volume_over_all_hours_minute_volume"], round((regular + closing) / everything, 4))
+        self.assertEqual(result["premarket_share_of_all_hours_minute_volume"], round(pre / everything, 4))
+        self.assertEqual(result["closing_minute_share_of_all_hours_minute_volume"], round(closing / everything, 4))
+        self.assertEqual(result["after_hours_share_of_all_hours_minute_volume"], round(after / everything, 4))
         self.assertEqual((result["status"], result["daily_bar_present"]), (200, True))
-        heavy = probe.minute_semantics(FakeAlpaca(pre_market_bar_volume=40000, after_hours_bar_volume=20000), "SPY", "2025-03-12", ["04:00", "20:00"])      # shares large enough to tell the denominators apart
-        pre, after = 10 * 40000, 5 * 20000
-        everything = regular + pre + after
+        heavy = probe.minute_semantics(FakeAlpaca(pre_market_bar_volume=40000, after_hours_bar_volume=20000, closing_bar_volume=90000), "SPY", "2025-03-12", self.HOURS)       # large enough to tell the denominators apart
+        pre, after, closing = 10 * 40000, 5 * 20000, 90000
+        everything = regular + closing + pre + after
         self.assertEqual(heavy["premarket_share_of_all_hours_minute_volume"], round(pre / everything, 4))
+        self.assertEqual(heavy["closing_minute_share_of_all_hours_minute_volume"], round(closing / everything, 4))
         self.assertEqual(heavy["after_hours_share_of_all_hours_minute_volume"], round(after / everything, 4))
-        self.assertEqual(heavy["daily_volume_over_all_hours_minute_volume"], round(regular / everything, 4))
+        self.assertEqual(heavy["daily_volume_over_all_hours_minute_volume"], round(392000 / everything, 4))
+        self.assertEqual(heavy["daily_volume_over_regular_and_closing_minute_volume"], round(392000 / (regular + closing), 4))        # the daily volume of the fake is 392,000 whatever the minutes hold
         self.assertNotEqual(heavy["premarket_share_of_all_hours_minute_volume"], round(pre / regular, 4))
-        none = probe.minute_semantics(FakeAlpaca(pre_market=False), "SPY", "2025-03-12", ["04:00", "20:00"])
+        none = probe.minute_semantics(FakeAlpaca(pre_market=False), "SPY", "2025-03-12", self.HOURS)
         self.assertEqual((none["minute_bars"]["premarket"], none["premarket_share_of_all_hours_minute_volume"]), (0, 0.0))
-        failed = probe.minute_semantics(FakeAlpaca(statuses={("timeframe", "1Min"): 403}), "SPY", "2025-03-12", ["04:00", "20:00"])
+        failed = probe.minute_semantics(FakeAlpaca(statuses={("timeframe", "1Min"): 403}), "SPY", "2025-03-12", self.HOURS)
         self.assertEqual((failed["status"], failed["stage"]), (403, "minute"))
-        no_bar = probe.minute_semantics(FakeAlpaca(missing={"SPY": {"2025-03-12"}}), "SPY", "2025-03-12", ["04:00", "20:00"])
-        self.assertEqual((no_bar["daily_bar_present"], no_bar["daily_volume_over_regular_minute_volume"]), (False, None))
+        no_bar = probe.minute_semantics(FakeAlpaca(missing={"SPY": {"2025-03-12"}}), "SPY", "2025-03-12", self.HOURS)
+        self.assertEqual((no_bar["daily_bar_present"], no_bar["daily_volume_over_regular_and_closing_minute_volume"], no_bar["ohlc_semantics"]), (False, None, None))
+
+    def test_the_closing_minute_is_kept_apart_from_the_regular_session_and_from_after_hours(self):
+        moment = lambda text: datetime.fromisoformat(text).astimezone(NEW_YORK)                          # noqa: E731
+        parts = {text: probe._part_of(moment(text)) for text in ("2025-03-12T04:00:00-04:00", "2025-03-12T09:29:00-04:00", "2025-03-12T09:30:00-04:00", "2025-03-12T15:59:00-04:00",
+                                                                "2025-03-12T16:00:00-04:00", "2025-03-12T16:00:59-04:00", "2025-03-12T16:01:00-04:00", "2025-03-12T19:59:00-04:00")}
+        self.assertEqual(list(parts.values()), ["premarket", "premarket", "regular", "regular", "closing_minute", "closing_minute", "after_hours", "after_hours"])
+        without = probe.minute_semantics(FakeAlpaca(closing_minute=False), "SPY", "2025-03-12", self.HOURS)
+        self.assertEqual(without["minute_bars"]["closing_minute"], 0)
+        self.assertEqual(without["closing_minute_share_of_all_hours_minute_volume"], 0.0)
+
+    def test_the_daily_prices_are_classified_as_all_hours_or_regular_session_by_booleans_only(self):
+        def classify(**kwargs):
+            return probe.minute_semantics(FakeAlpaca(**kwargs), "SPY", "2025-03-12", self.HOURS)["ohlc_semantics"]
+        all_hours = classify()                                                                           # open, high, low from all hours; close the last bar of the day
+        self.assertEqual(all_hours["daily_open"], {"equals_first_all_hours_bar_open": True, "equals_first_regular_bar_open": False, "the_two_differ_today": True})
+        self.assertEqual(all_hours["daily_high"], {"equals_all_hours_maximum": True, "equals_regular_maximum": False, "the_two_differ_today": True})
+        self.assertEqual(all_hours["daily_low"], {"equals_all_hours_minimum": True, "equals_regular_minimum": False, "the_two_differ_today": True})
+        self.assertEqual(all_hours["daily_close"], {"equals_last_regular_bar": False, "equals_closing_minute_bar": False, "equals_last_bar_of_the_day": True, "the_candidates_differ_today": True})
+        regular = classify(daily_basis={"open": "regular", "high": "regular", "low": "regular", "close": "closing_minute"})
+        self.assertEqual(regular["daily_open"]["equals_first_regular_bar_open"], True)
+        self.assertEqual((regular["daily_open"]["equals_first_all_hours_bar_open"], regular["daily_high"]["equals_all_hours_maximum"], regular["daily_low"]["equals_all_hours_minimum"]), (False, False, False))
+        self.assertEqual((regular["daily_high"]["equals_regular_maximum"], regular["daily_low"]["equals_regular_minimum"]), (True, True))
+        self.assertEqual(regular["daily_close"], {"equals_last_regular_bar": False, "equals_closing_minute_bar": True, "equals_last_bar_of_the_day": False, "the_candidates_differ_today": True})
+        last_regular = classify(daily_basis={"close": "last_regular_bar"})
+        self.assertEqual((last_regular["daily_close"]["equals_last_regular_bar"], last_regular["daily_close"]["equals_closing_minute_bar"], last_regular["daily_close"]["equals_last_bar_of_the_day"]),
+                         (True, False, False))
+        quiet = classify(pre_market=False, after_hours=False, closing_minute=False, daily_basis={"close": "last_regular_bar"})        # nothing outside the regular session: the day cannot tell the two apart
+        self.assertEqual((quiet["daily_open"]["the_two_differ_today"], quiet["daily_high"]["the_two_differ_today"], quiet["daily_low"]["the_two_differ_today"]), (False, False, False))
+        self.assertEqual(quiet["daily_close"], {"equals_last_regular_bar": True, "equals_closing_minute_bar": None, "equals_last_bar_of_the_day": True, "the_candidates_differ_today": False})
+        closing_only = classify(pre_market=False, after_hours=False, daily_basis={"close": "closing_minute"})        # the closing minute is the only bar outside [09:30, 16:00); its prices are above the regular ones
+        self.assertEqual((closing_only["daily_open"]["the_two_differ_today"], closing_only["daily_high"]["the_two_differ_today"], closing_only["daily_low"]["the_two_differ_today"]), (False, True, False))
+        self.assertEqual(closing_only["daily_close"], {"equals_last_regular_bar": False, "equals_closing_minute_bar": True, "equals_last_bar_of_the_day": True, "the_candidates_differ_today": False})
+        for value in (all_hours, regular, last_regular, quiet, closing_only):
+            for section in value.values():
+                self.assertTrue(all(item is None or isinstance(item, bool) for item in section.values()))      # booleans (or None for a missing closing minute): never a price
+
+    def test_the_order_in_which_the_provider_returns_the_minute_bars_does_not_matter(self):
+        forwards = probe.minute_semantics(FakeAlpaca(), "SPY", "2025-03-12", self.HOURS)
+        backwards = probe.minute_semantics(FakeAlpaca(reverse_minutes=True), "SPY", "2025-03-12", self.HOURS)
+        self.assertEqual(canonical(forwards), canonical(backwards))
+        self.assertTrue(forwards["ohlc_semantics"]["daily_close"]["equals_last_bar_of_the_day"])
+
+    def test_a_day_with_no_regular_session_bars_has_no_classification(self):
+        premarket_only = [{"part": "premarket", "t": None, "o": 1, "h": 2, "l": 0.5, "c": 1.5, "v": 1}]
+        self.assertIsNone(probe.ohlc_semantics({"o": 1, "h": 2, "l": 0.5, "c": 1.5}, premarket_only))
+
+    def test_a_daily_bar_without_prices_gives_no_classification(self):
+        def incomplete(endpoint, params):
+            status, payload = FakeAlpaca()(endpoint, params)
+            if params["timeframe"] == "1Day":
+                for rows in payload["bars"].values():
+                    for row in rows:
+                        del row["o"]
+            return status, payload
+        result = probe.minute_semantics(incomplete, "SPY", "2025-03-12", self.HOURS)
+        self.assertEqual((result["status"], result["daily_bar_present"], result["ohlc_semantics"]), (200, True, None))
+        self.assertIsNone(probe.ohlc_semantics(None, []))
 
     def test_the_minute_request_spans_the_hours_in_new_york_time_with_the_offset_in_force(self):
         fake = FakeAlpaca()
@@ -430,7 +535,7 @@ class RunTests(unittest.TestCase):
     def test_the_report_covers_every_symbol_and_check_and_names_its_spec(self):
         report = self.report
         self.assertTrue(report["complete"])
-        self.assertEqual((report["spec_id"], report["spec_revision"], report["spec_sha256"]), (SPEC["id"], 1, digest(canonical(SPEC))))
+        self.assertEqual((report["spec_id"], report["spec_revision"], report["spec_sha256"]), (SPEC["id"], 2, digest(canonical(SPEC))))
         self.assertEqual(report["github"], {"GITHUB_SHA": "abc123", "GITHUB_RUN_ID": "42", "GITHUB_RUN_ATTEMPT": None, "GITHUB_WORKFLOW": None})
         self.assertEqual(sorted(report["daily_bars"]), sorted(probe.spec_symbols(SPEC)))
         self.assertEqual(sorted(report["corporate_actions"]), sorted(SPEC["symbols"]["issuers"]))
@@ -477,11 +582,12 @@ class RunTests(unittest.TestCase):
             self.assertEqual((params["start"][11:16], params["end"][11:16]), ("04:00", "20:00"))
         self.assertGreater(len(skipped), 0)
         for pair in self.report["minute_sample"]["pairs"]:
-            self.assertEqual(pair["minute_bars"], {"premarket": 10, "regular": 390, "after_hours": 5})
+            self.assertEqual(pair["minute_bars"], {"premarket": 10, "regular": 390, "closing_minute": 1, "after_hours": 5})
+            self.assertEqual(pair["ohlc_semantics"]["daily_close"]["equals_last_bar_of_the_day"], True)
 
     def test_no_price_or_volume_value_reaches_the_report(self):
         text = canonical(self.report).decode("utf-8")
-        for leaked in (str(LEAK_VOLUME), "123.456789", "124.456789", "122.456789", "390000"):
+        for leaked in (str(LEAK_VOLUME), "123.456789", "124.456789", "122.456789", "390000", "392000", "98.1234", "97.6234", "100.2345", "100.7346", "99.7345", "101.3456", "102.4567", "102.9567"):
             self.assertNotIn(leaked, text)
         self.assertFalse(probe.contains_value_keys(self.report))
         for path, value in leaves(self.report):

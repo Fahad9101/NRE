@@ -309,17 +309,51 @@ def _ratio(numerator, denominator):
     return round(numerator / denominator, 4) if denominator else None
 
 
+MINUTE_PARTS = ("premarket", "regular", "closing_minute", "after_hours")
+
+
+def _part_of(moment):
+    """The part of the day a minute bar starts in. The 16:00 minute holds the closing-auction cross, which belongs to the regular session, together with the first minute of after-hours trading,
+    so it is kept apart and assigned to neither."""
+    when = moment.time()
+    if when < clock(9, 30):
+        return "premarket"
+    if when < clock(16, 0):
+        return "regular"
+    return "closing_minute" if when < clock(16, 1) else "after_hours"
+
+
+def ohlc_semantics(daily, bars):
+    """Booleans only: whether the daily bar's open, high, low and close equal the all-hours minute bars' or the regular-session ones', and whether the two differ on that day (when they do not,
+    the day cannot tell them apart). The closing minute is also compared on its own for the close. No price is kept."""
+    regular = [bar for bar in bars if bar["part"] == "regular"]
+    closing = [bar for bar in bars if bar["part"] == "closing_minute"]
+    if daily is None or not regular or any(daily.get(key) is None for key in ("o", "h", "l", "c")):
+        return None
+    first_all, first_regular, last_all, last_regular = bars[0], regular[0], bars[-1], regular[-1]
+    high_all, high_regular = max(bar["h"] for bar in bars), max(bar["h"] for bar in regular)
+    low_all, low_regular = min(bar["l"] for bar in bars), min(bar["l"] for bar in regular)
+    closes = [last_regular["c"]] + ([closing[0]["c"]] if closing else []) + [last_all["c"]]
+    return {"daily_open": {"equals_first_all_hours_bar_open": daily["o"] == first_all["o"], "equals_first_regular_bar_open": daily["o"] == first_regular["o"],
+                           "the_two_differ_today": first_all["o"] != first_regular["o"]},
+            "daily_high": {"equals_all_hours_maximum": daily["h"] == high_all, "equals_regular_maximum": daily["h"] == high_regular, "the_two_differ_today": high_all != high_regular},
+            "daily_low": {"equals_all_hours_minimum": daily["l"] == low_all, "equals_regular_minimum": daily["l"] == low_regular, "the_two_differ_today": low_all != low_regular},
+            "daily_close": {"equals_last_regular_bar": daily["c"] == last_regular["c"], "equals_closing_minute_bar": (daily["c"] == closing[0]["c"]) if closing else None,
+                            "equals_last_bar_of_the_day": daily["c"] == last_all["c"], "the_candidates_differ_today": len(set(closes)) == len(closes)}}
+
+
 def minute_semantics(fetch, symbol, session, hours):
-    """Minute-bar counts by part of the day, and unit-free ratios between the minute volume and the daily bar's volume. Per-bar values are summed into local totals and dropped."""
+    """Minute-bar counts by part of the day, unit-free ratios between the minute volume and the daily bar's volume, and booleans on what the daily bar's prices are. Per-bar values are held in
+    local lists, reduced to counts, ratios and booleans, and dropped with the function."""
     day = date.fromisoformat(session)
     opened, closed = [datetime.combine(day, clock.fromisoformat(h), NEW_YORK) for h in hours]
     daily_status, daily_payload = fetch(BARS_ENDPOINT, dict(symbols=symbol, timeframe="1Day", start=session, end=(day + timedelta(days=1)).isoformat(), feed="sip", adjustment="raw",
                                                            currency="USD", sort="asc", limit=10))
     if daily_status != 200:
         return {"status": daily_status, "stage": "daily", "message": (daily_payload or {}).get("message")}
-    daily = [row.get("v") for row in _rows(daily_payload, "bars", symbol) if _bar_date(row) == session]
-    daily_volume = daily[0] if daily else None
-    counts, volumes, pages, token, seen = {"premarket": 0, "regular": 0, "after_hours": 0}, {"premarket": 0, "regular": 0, "after_hours": 0}, 0, None, set()
+    todays = [row for row in _rows(daily_payload, "bars", symbol) if _bar_date(row) == session]
+    daily = todays[0] if todays else None
+    bars, pages, token, seen = [], 0, None, set()
     while True:
         params = dict(symbols=symbol, timeframe="1Min", start=opened.isoformat(), end=closed.isoformat(), feed="sip", adjustment="raw", currency="USD", sort="asc", limit=PAGE_LIMIT)
         if token is not None:
@@ -334,21 +368,25 @@ def minute_semantics(fetch, symbol, session, hours):
             if not isinstance(row, dict) or not isinstance(row.get("t"), str):
                 raise DataError("malformed bar record")
             moment = datetime.fromisoformat(row["t"].replace("Z", "+00:00")).astimezone(NEW_YORK)
-            part = "premarket" if moment.time() < clock(9, 30) else "regular" if moment.time() < clock(16, 0) else "after_hours"
-            counts[part] += 1
-            volumes[part] += row.get("v") or 0
+            bars.append({"t": moment, "part": _part_of(moment), "o": row.get("o"), "h": row.get("h"), "l": row.get("l"), "c": row.get("c"), "v": row.get("v") or 0})
         token = payload["next_page_token"]
         if token is None:
             break
         if not isinstance(token, str) or not token or token in seen or pages >= MAX_PAGES:
             raise DataError("invalid, repeated or runaway pagination")
         seen.add(token)
-    everything = sum(volumes.values())
-    return {"status": 200, "daily_bar_present": daily_volume is not None, "minute_bars": counts, "pages": pages,
-            "daily_volume_over_regular_minute_volume": _ratio(daily_volume, volumes["regular"]) if daily_volume is not None else None,
+    bars.sort(key=lambda bar: bar["t"])
+    counts = {name: sum(1 for bar in bars if bar["part"] == name) for name in MINUTE_PARTS}
+    volumes = {name: sum(bar["v"] for bar in bars if bar["part"] == name) for name in MINUTE_PARTS}
+    everything, through_the_close = sum(volumes.values()), volumes["regular"] + volumes["closing_minute"]
+    daily_volume = daily.get("v") if daily else None
+    return {"status": 200, "daily_bar_present": daily is not None, "minute_bars": counts, "pages": pages,
+            "daily_volume_over_regular_and_closing_minute_volume": _ratio(daily_volume, through_the_close) if daily_volume is not None else None,
             "daily_volume_over_all_hours_minute_volume": _ratio(daily_volume, everything) if daily_volume is not None else None,
             "premarket_share_of_all_hours_minute_volume": _ratio(volumes["premarket"], everything),
-            "after_hours_share_of_all_hours_minute_volume": _ratio(volumes["after_hours"], everything)}
+            "closing_minute_share_of_all_hours_minute_volume": _ratio(volumes["closing_minute"], everything),
+            "after_hours_share_of_all_hours_minute_volume": _ratio(volumes["after_hours"], everything),
+            "ohlc_semantics": ohlc_semantics(daily, bars)}
 
 
 def mapping_effect(fetch, symbol, window, mapped):

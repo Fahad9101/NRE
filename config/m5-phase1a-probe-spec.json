@@ -2,13 +2,17 @@
   "schema_version": 1,
   "kind": "m5_phase1a_probe_spec",
   "id": "nre-m5-phase1a-availability-probe",
-  "revision": 1,
+  "revision": 2,
+  "revisions": [
+    {"revision": 1, "committed_in": "3cc9796", "run_record": "reports/m5-phase1a-probe-run1-2026-10-08.json"},
+    {"revision": 2, "reason": "Run 1 showed that the daily bar's volume matches the all-hours minute volume and exposed two gaps in the minute sample: the 16:00 minute (which holds the closing-auction cross) was counted as after-hours, and nothing said whether the daily bar's open, high, low and close are regular-session or all-hours prices. Revision 2 keeps the closing minute apart and adds booleans for the daily prices. It adds no request, no symbol and no session, and changes no other check; the whole probe runs again, which also shows whether run 1's daily-bar results repeat.", "motivated_by": "the availability results of run 1 only; no event, label or outcome was read"}
+  ],
   "authority": {
     "authorization": "reports/m5-phase1a-authorization-2026-10-08.json",
     "phase": "docs/M5-ADVANCED-MODELS-SCOPE.md, section 3, Phase 1, item 1a",
     "decisions_confirmed": "reports/m5-scope-confirmation-2026-10-08.json"
   },
-  "purpose": "Availability only: which regime and market-structure fields the Alpaca market-data API can supply point-in-time for the pre-specified symbols. The probe keeps dates, counts, HTTP status codes and unit-free ratios. It keeps no price and no volume value, computes no return, label or feature, and adds nothing to the dataset.",
+  "purpose": "Availability only: which regime and market-structure fields the Alpaca market-data API can supply point-in-time for the pre-specified symbols, and what its daily bars mean. The probe keeps dates, counts, HTTP status codes, unit-free ratios and booleans. It keeps no price and no volume value, computes no return, label or feature, and adds nothing to the dataset.",
   "transport": {
     "bars_endpoint": "https://data.alpaca.markets/v2/stocks/bars",
     "corporate_actions_endpoint": "https://data.alpaca.markets/v1/corporate-actions",
@@ -57,8 +61,8 @@
       "symbols": ["SPY", "XBI", "CACI", "NBIX", "TTWO", "ACHV"],
       "sessions": ["2025-03-12", "2025-06-11", "2025-09-10", "2025-12-10"],
       "hours_new_york": ["04:00", "20:00"],
-      "reported": "Minute-bar counts before 09:30, from 09:30 to 16:00 and from 16:00 to 20:00, and four unit-free ratios: the daily bar's volume over the regular-session minute volume and over the all-hours minute volume, and the pre-market and after-hours shares of the all-hours minute volume. No volume value is kept.",
-      "purpose": "Whether pre-market volume exists in the feed and whether the daily bar's volume is regular-session or all-hours volume."
+      "reported": "Minute-bar counts before 09:30, from 09:30 to 16:00, in the 16:00 minute (which holds the closing-auction cross) and from 16:01 to 20:00; five unit-free ratios: the daily bar's volume over the minute volume through the closing minute and over the all-hours minute volume, and the pre-market, closing-minute and after-hours shares of the all-hours minute volume; and booleans on whether the daily bar's open, high, low and close equal the all-hours or the regular-session values of the minute bars (and whether the two differ that day). No volume and no price is kept.",
+      "purpose": "Whether pre-market volume exists in the feed, whether the daily bar's volume is regular-session or all-hours volume, and whether its prices are regular-session or all-hours prices."
     }
   },
   "event_day_guard": {
