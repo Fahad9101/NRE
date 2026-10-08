@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1a_probe_spec",
+  "id": "nre-m5-phase1a-availability-probe",
+  "revision": 1,
+  "authority": {
+    "authorization": "reports/m5-phase1a-authorization-2026-10-08.json",
+    "phase": "docs/M5-ADVANCED-MODELS-SCOPE.md, section 3, Phase 1, item 1a",
+    "decisions_confirmed": "reports/m5-scope-confirmation-2026-10-08.json"
+  },
+  "purpose": "Availability only: which regime and market-structure fields the Alpaca market-data API can supply point-in-time for the pre-specified symbols. The probe keeps dates, counts, HTTP status codes and unit-free ratios. It keeps no price and no volume value, computes no return, label or feature, and adds nothing to the dataset.",
+  "transport": {
+    "bars_endpoint": "https://data.alpaca.markets/v2/stocks/bars",
+    "corporate_actions_endpoint": "https://data.alpaca.markets/v1/corporate-actions",
+    "feed": "sip",
+    "adjustment": "raw",
+    "credentials": "APCA_API_KEY_ID and APCA_API_SECRET_KEY from the repository secrets, never printed",
+    "pacing_seconds": 0.35,
+    "request_budget": 320,
+    "methods": "GET only; redirects rejected"
+  },
+  "window": {
+    "start": "2023-10-02",
+    "end": "2026-10-02",
+    "periods": {
+      "lookback": ["2023-10-02", "2024-11-04"],
+      "study_span": ["2024-11-05", "2026-04-01"],
+      "fresh": ["2026-04-02", "2026-10-02"]
+    },
+    "first_reaction_session": "2024-11-05",
+    "lookback_sessions_needed": 252,
+    "why": "A 52-week high or low needs 252 sessions before the earliest reaction session of the 128 events (2024-11-05); the fresh period is the one a forward extension would draw its events from."
+  },
+  "calendar": {
+    "reviewed_project_calendars": {"2025": "nre/calendar-2025.json", "2026": "nre/calendar-2026.json"},
+    "full_day_holidays_for_other_years": {
+      "2023": ["2023-11-23", "2023-12-25"],
+      "2024": ["2024-01-01", "2024-01-15", "2024-02-19", "2024-03-29", "2024-05-27", "2024-06-19", "2024-07-04", "2024-09-02", "2024-11-28", "2024-12-25"]
+    },
+    "rule": "Expected sessions are the weekdays of the window less these holidays for 2023 and 2024, and the sessions of the reviewed project calendars for 2025 and 2026. The SPY series must equal that set, or the difference is reported."
+  },
+  "symbols": {
+    "regime_and_market_etfs": ["SPY", "QQQ", "IWM", "DIA", "RSP", "IJR", "VIXY", "VXX", "TLT", "HYG", "LQD", "GLD", "UUP"],
+    "biotech_and_sector_etfs": ["XBI", "IBB", "XLV", "XLK", "XLF", "XLE", "XLY", "XLP", "XLI", "XLB", "XLU", "XLRE", "XLC", "SMH", "IGV"],
+    "issuers": ["ACHV", "ALKT", "ASMB", "ASPN", "CACI", "COLL", "CXT", "HURN", "JBSS", "KLC", "LNSR", "LOVE", "NBIX", "OKTA", "PARR", "PAYO", "PDFS", "REAL", "REKR", "SLSN", "TECX", "TTWO", "VSAT"],
+    "issuers_from": "config/m2-step3-frozen-issuer-cohort.json",
+    "reference_calendar_symbol": "SPY",
+    "not_requested": "Index levels such as the VIX are not equities or ETFs and are not requested; VIXY and VXX are listed as futures-based proxies and are reported as proxies, not as the index."
+  },
+  "checks": {
+    "daily_bars": "For every symbol: bars with the sip feed and raw adjustment over the window; reduced at once to dates and a count of zero-volume bars. Reported: first and last bar date, bar count, missing sessions against the expected sessions after the first bar (count, count by period, first 20 dates), bars on unexpected dates, bars before the first reaction session and whether that is at least the sessions needed.",
+    "symbol_mapping": "For every issuer a second daily-bar query with asof '-' (the provider's symbol mapping skipped), reported beside the default one: bars, first bar date, and how many bars only the mapping supplies. The default mapping stitches the history of an entity's earlier symbols into the queried symbol, which for a reverse merger puts a different business into the lookback.",
+    "adjustment_modes": {"symbol": "SPY", "start": "2025-06-02", "end": "2025-06-06", "values": ["raw", "split", "dividend", "spin-off", "all"], "reported": "HTTP status and bar count per value"},
+    "feeds": {"symbol": "SPY", "start": "2025-06-02", "end": "2025-06-06", "values": ["sip", "iex", "boats", "otc"], "reported": "HTTP status and bar count per value"},
+    "corporate_actions": "For every issuer: the corporate-actions endpoint over the window (by calendar year if the whole window is refused with a 400), reported as counts by action type; no dates, no amounts.",
+    "minute_sample": {
+      "symbols": ["SPY", "XBI", "CACI", "NBIX", "TTWO", "ACHV"],
+      "sessions": ["2025-03-12", "2025-06-11", "2025-09-10", "2025-12-10"],
+      "hours_new_york": ["04:00", "20:00"],
+      "reported": "Minute-bar counts before 09:30, from 09:30 to 16:00 and from 16:00 to 20:00, and four unit-free ratios: the daily bar's volume over the regular-session minute volume and over the all-hours minute volume, and the pre-market and after-hours shares of the all-hours minute volume. No volume value is kept.",
+      "purpose": "Whether pre-market volume exists in the feed and whether the daily bar's volume is regular-session or all-hours volume."
+    }
+  },
+  "event_day_guard": {
+    "ledgers": ["config/m2-step2-frozen-candidate-ledger.json", "config/m2-step3-frozen-candidate-ledger.json"],
+    "cohort": "config/m2-step3-frozen-issuer-cohort.json",
+    "exclude_within_calendar_days": 5,
+    "rule": "A minute-sample pair (symbol, session) is skipped when a candidate filing date for that issuer lies within the exclusion distance of the session, so the sample stays away from earnings days. Milestone 1's events (reaction sessions 2026-01-22 to 2026-04-01) are not in the ledgers; every sample session is therefore in 2025.",
+    "latest_allowed_sample_session": "2025-12-31"
+  },
+  "output": {
+    "stdout": "the report as JSON",
+    "annotations": "the report, canonical JSON, gzip with mtime 0, base64, in notices of at most 3000 characters, then one digest notice; readable without sign-in through the public check-run annotations API",
+    "max_notice_parts": 9
+  }
+}
