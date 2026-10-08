@@ -1,0 +1,2104 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1a_probe_run_record",
+  "recorded_on": "2026-10-08",
+  "what_this_is": "The first run of the Milestone 5 Phase 1a availability probe, spec revision 1, exactly as the probe reported it. Availability metadata only: dates, counts, HTTP status codes and unit-free ratios; no price and no volume value.",
+  "run": {
+    "workflow": "M5 Phase 1a availability probe",
+    "run_id": 37839340734,
+    "job_id": 113524435620,
+    "attempt": 1,
+    "event": "push",
+    "commit": "3cc9796117a37d32ba1f76819adff095eaa0edd2",
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/37839340734",
+    "started": "2026-10-08T20:25:33Z",
+    "completed": "2026-10-08T20:26:55Z",
+    "conclusion": "success",
+    "probe_retrieved_at": "2026-10-08T20:25:36Z",
+    "authorization": "reports/m5-phase1a-authorization-2026-10-08.json",
+    "spec": "config/m5-phase1a-probe-spec.json, revision 1, as committed in 3cc9796"
+  },
+  "how_it_was_read": "The probe prints its report as canonical JSON, gzip with a fixed modification time, base64, in workflow-command notices ('m5-phase1a-probe part i of n') and one digest notice. The public check-run annotations API serves them without sign-in (the job log needs admin rights). They were fetched from /repos/Fahad9101/NRE/check-runs/113524435620/annotations and decoded with nre.m5_phase1a_probe.decode_annotations, which verifies the digest notice.",
+  "report_canonical_sha256": "6a91a9d3de304696ff6ca51246e9c6955c4c34c3f1472b46d7031605277b2312",
+  "report_canonical_bytes": 40536,
+  "known_limits_of_this_run": [
+    "The 16:00 minute bar holds the closing-auction cross, so the minute sample's 'after_hours' counts and shares include the closing cross and its ratios against the regular session are overstated; revision 2 of the spec separates the closing minute.",
+    "The sample does not say whether the daily bar's open, high, low and close are regular-session or all-hours prices; revision 2 adds that check as booleans.",
+    "Nothing here says anything about the 23 issuers' events or outcomes: no event day was sampled."
+  ],
+  "report": {
+    "adjustment_modes": {
+      "all": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "dividend": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "raw": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "spin-off": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "split": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      }
+    },
+    "checks_that_errored": 0,
+    "complete": true,
+    "corporate_actions": {
+      "ACHV": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "ALKT": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "ASMB": {
+        "by_type": {
+          "reverse_splits": 1
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "ASPN": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "CACI": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "COLL": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "CXT": {
+        "by_type": {
+          "cash_dividends": 12
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "HURN": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "JBSS": {
+        "by_type": {
+          "cash_dividends": 7
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "KLC": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "LNSR": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "LOVE": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "NBIX": {
+        "by_type": {
+          "cash_mergers": 1
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "OKTA": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "PARR": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "PAYO": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "PDFS": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "REAL": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "REKR": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "SLSN": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "TECX": {
+        "by_type": {
+          "name_changes": 1,
+          "reverse_splits": 1
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "TTWO": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "VSAT": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      }
+    },
+    "daily_bars": {
+      "ACHV": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "ALKT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "ASMB": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "ASPN": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "CACI": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "COLL": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "CXT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "DIA": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "GLD": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "HURN": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "HYG": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IBB": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IGV": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IJR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IWM": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "JBSS": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "KLC": {
+        "bars": 497,
+        "bars_before_first_reaction_session": 19,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 19,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 497,
+        "first_bar_date": "2024-10-09",
+        "has_required_lookback": false,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "LNSR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "LOVE": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "LQD": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "NBIX": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "OKTA": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "PARR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "PAYO": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "PDFS": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "QQQ": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "REAL": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "REKR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "RSP": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "SLSN": {
+        "bars": 374,
+        "bars_before_first_reaction_session": 0,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 0,
+          "study_span": 247
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 374,
+        "first_bar_date": "2025-04-08",
+        "has_required_lookback": false,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "SMH": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "SPY": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "TECX": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "TLT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "TTWO": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "UUP": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "VIXY": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "VSAT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "VXX": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XBI": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLB": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLC": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLE": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLF": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLI": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLK": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLP": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLRE": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLU": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLV": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLY": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      }
+    },
+    "feeds": {
+      "boats": {
+        "bars": 4,
+        "message": null,
+        "status": 200
+      },
+      "iex": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "otc": {
+        "bars": 0,
+        "message": "subscription does not permit querying OTC data",
+        "status": 403
+      },
+      "sip": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      }
+    },
+    "github": {
+      "GITHUB_RUN_ATTEMPT": "1",
+      "GITHUB_RUN_ID": "37839340734",
+      "GITHUB_SHA": "3cc9796117a37d32ba1f76819adff095eaa0edd2",
+      "GITHUB_WORKFLOW": "M5 Phase 1a availability probe"
+    },
+    "kind": "m5_phase1a_probe_result",
+    "minute_sample": {
+      "hours_new_york": [
+        "04:00",
+        "20:00"
+      ],
+      "pairs": [
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.1181,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0002,
+          "daily_volume_over_regular_minute_volume": 1.2346,
+          "minute_bars": {
+            "after_hours": 211,
+            "premarket": 258,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0717,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0557,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0001,
+          "daily_volume_over_regular_minute_volume": 1.1189,
+          "minute_bars": {
+            "after_hours": 209,
+            "premarket": 263,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0504,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.113,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0002,
+          "daily_volume_over_regular_minute_volume": 1.1554,
+          "minute_bars": {
+            "after_hours": 204,
+            "premarket": 244,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0213,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.1276,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0,
+          "daily_volume_over_regular_minute_volume": 1.1615,
+          "minute_bars": {
+            "after_hours": 235,
+            "premarket": 290,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0113,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0172,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0001,
+          "daily_volume_over_regular_minute_volume": 1.0244,
+          "minute_bars": {
+            "after_hours": 29,
+            "premarket": 40,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0065,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0242,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0046,
+          "daily_volume_over_regular_minute_volume": 1.0341,
+          "minute_bars": {
+            "after_hours": 18,
+            "premarket": 33,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0044,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0219,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0056,
+          "daily_volume_over_regular_minute_volume": 1.0512,
+          "minute_bars": {
+            "after_hours": 27,
+            "premarket": 80,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0215,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0467,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0032,
+          "daily_volume_over_regular_minute_volume": 1.056,
+          "minute_bars": {
+            "after_hours": 37,
+            "premarket": 28,
+            "regular": 390
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0033,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.1369,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0609,
+          "daily_volume_over_regular_minute_volume": 1.2305,
+          "minute_bars": {
+            "after_hours": 1,
+            "premarket": 3,
+            "regular": 263
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.001,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.2286,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.1755,
+          "daily_volume_over_regular_minute_volume": 1.5238,
+          "minute_bars": {
+            "after_hours": 1,
+            "premarket": 0,
+            "regular": 145
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.245,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.2247,
+          "daily_volume_over_regular_minute_volume": 1.6221,
+          "minute_bars": {
+            "after_hours": 2,
+            "premarket": 0,
+            "regular": 105
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.4061,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.071,
+          "daily_volume_over_regular_minute_volume": 1.8036,
+          "minute_bars": {
+            "after_hours": 1,
+            "premarket": 0,
+            "regular": 179
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.1936,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0098,
+          "daily_volume_over_regular_minute_volume": 1.2527,
+          "minute_bars": {
+            "after_hours": 2,
+            "premarket": 3,
+            "regular": 360
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0003,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.2894,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0237,
+          "daily_volume_over_regular_minute_volume": 1.4406,
+          "minute_bars": {
+            "after_hours": 3,
+            "premarket": 0,
+            "regular": 309
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.1905,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0245,
+          "daily_volume_over_regular_minute_volume": 1.2657,
+          "minute_bars": {
+            "after_hours": 1,
+            "premarket": 0,
+            "regular": 296
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.3015,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0233,
+          "daily_volume_over_regular_minute_volume": 1.4652,
+          "minute_bars": {
+            "after_hours": 3,
+            "premarket": 1,
+            "regular": 266
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0001,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.2783,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0791,
+          "daily_volume_over_regular_minute_volume": 1.4977,
+          "minute_bars": {
+            "after_hours": 2,
+            "premarket": 6,
+            "regular": 365
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0012,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.2782,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0124,
+          "daily_volume_over_regular_minute_volume": 1.4034,
+          "minute_bars": {
+            "after_hours": 5,
+            "premarket": 1,
+            "regular": 359
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0004,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.208,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.057,
+          "daily_volume_over_regular_minute_volume": 1.3353,
+          "minute_bars": {
+            "after_hours": 2,
+            "premarket": 2,
+            "regular": 352
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0004,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.2287,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.1486,
+          "daily_volume_over_regular_minute_volume": 1.4899,
+          "minute_bars": {
+            "after_hours": 2,
+            "premarket": 2,
+            "regular": 334
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0005,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0751,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0342,
+          "daily_volume_over_regular_minute_volume": 1.1575,
+          "minute_bars": {
+            "after_hours": 2,
+            "premarket": 1,
+            "regular": 175
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0314,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "ACHV"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0165,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.004,
+          "daily_volume_over_regular_minute_volume": 1.0238,
+          "minute_bars": {
+            "after_hours": 6,
+            "premarket": 11,
+            "regular": 294
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0029,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "ACHV"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0646,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0301,
+          "daily_volume_over_regular_minute_volume": 1.1051,
+          "minute_bars": {
+            "after_hours": 3,
+            "premarket": 2,
+            "regular": 215
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0032,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "ACHV"
+        }
+      ],
+      "skipped_for_nearness_to_a_candidate_date": [
+        {
+          "session": "2025-03-12",
+          "symbol": "ACHV"
+        }
+      ]
+    },
+    "reference_calendar": {
+      "bars": 754,
+      "expected_but_absent": [],
+      "expected_sessions": 754,
+      "matches_expected_sessions": true,
+      "present_but_unexpected": [],
+      "status": 200
+    },
+    "requests_made": 152,
+    "retrieved_at": "2026-10-08T20:25:36Z",
+    "schema_version": 1,
+    "spec_id": "nre-m5-phase1a-availability-probe",
+    "spec_revision": 1,
+    "spec_sha256": "05b127628b739f839106f86732d15743c8aa1ca4726c5132ae3dfdf79bf11362",
+    "symbol_mapping": {
+      "ACHV": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "ALKT": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "ASMB": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "ASPN": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "CACI": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "COLL": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "CXT": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "HURN": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "JBSS": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "KLC": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 497,
+        "bars_without_mapping": 497,
+        "first_bar_date_with_default_mapping": "2024-10-09",
+        "first_bar_date_without_mapping": "2024-10-09",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "LNSR": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "LOVE": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "NBIX": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "OKTA": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "PARR": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "PAYO": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "PDFS": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "REAL": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "REKR": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "SLSN": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 374,
+        "bars_without_mapping": 374,
+        "first_bar_date_with_default_mapping": "2025-04-08",
+        "first_bar_date_without_mapping": "2025-04-08",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "TECX": {
+        "bars_that_only_the_mapping_supplies": 181,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 573,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2024-06-21",
+        "mapping_changes_the_history": true,
+        "status_without_mapping": 200
+      },
+      "TTWO": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "VSAT": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      }
+    },
+    "window": {
+      "end": "2026-10-02",
+      "expected_sessions": 754,
+      "start": "2023-10-02"
+    }
+  }
+}
