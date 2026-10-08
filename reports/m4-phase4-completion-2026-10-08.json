@@ -104,7 +104,7 @@
   "report": {
     "path": "reports/m4-report-2026-10-07.json",
     "command": "python -m nre.m4_report build --date 2026-10-07",
-    "canonical_sha256": "f8773426dfe66cd5aecf2faacbe4d9a945676d188954b4fc04bc52a87e9fb4c5",
+    "canonical_sha256": "237cf9a7cc31d3590a064f1cb0a9ca5c5c78bba53d3437673bfca1c33e54683a",
     "reads_no_label": true,
     "doc": "docs/M4-REPORT.md",
     "regenerated_since_the_closing": [
@@ -216,7 +216,14 @@
       "at": "2026-10-07T19:14:34.716Z",
       "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 31616"
     },
-    "note": "The two runs counted in advance are the whole-suite pass that follows this record and the CI run of the push that carries it; a record cannot be committed after the push it is part of without causing another run."
+    "note": "The two runs counted in advance are the whole-suite pass that follows this record and the CI run of the push that carries it; a record cannot be committed after the push it is part of without causing another run.",
+    "corrected_on_2026_10_08": {
+      "in_total": 25,
+      "replays_counted": 24,
+      "found_before_the_closing_work": 19,
+      "added_by_the_closing_work": 6,
+      "why": "the numbers above (21 in all, 20 replay accesses, 17 found, 4 counted in advance) counted each CI run as one run of the replay tests; the workflow's matrix runs the whole suite in two jobs and both ran the replay tests in CI runs #232 and #233, so each was four accesses, not two. The accounting record holds the corrected count and the correction."
+    }
   },
   "verification": {
     "cross_check": {
@@ -288,6 +295,7 @@
   ],
   "addendum": {
     "2026-10-08, after the closing commit": {
+      "access_count": "The count of accesses in this record (21) was too low: CI runs #232 and #233 each ran the replay tests in two jobs, not one. The corrected count is 25 (see accesses.corrected_on_2026_10_08 and the correction in reports/m4-phase4-replay-accesses-2026-10-07.json).",
       "replay_tests": "The second item of open_for_the_owner (whether the replay tests keep running automatically or only on request) was decided after this record was written: the owner said \"make the replay tests opt-in\" (2026-10-08T06:47:34.487Z). ReplayTests are skipped unless M4_REPLAY_HOLDOUT=1 is set; a run made on purpose is two counted accesses added to reports/m4-phase4-replay-accesses-2026-10-07.json (field replay_tests_policy). The two runs this record calls counted in advance both happened exactly once (that file records them as they happened).",
       "what_this_record_still_says": "everything above is the state at the closing commit 0bcdeac, including the 1000 tests with the replay tests running and the skipped count of 4; the default suite now skips the nine replay tests as well"
     }

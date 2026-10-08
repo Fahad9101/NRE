@@ -135,7 +135,9 @@ class CompletionRecordTests(unittest.TestCase):
         self.assertIn("make the replay tests opt-in", earlier[0]["why"])
         self.assertIn("opt-in", record["addendum"]["2026-10-08, after the closing commit"]["replay_tests"])
         accounting = json.loads((ROOT / record["accesses"]["accounting_record"]).read_text(encoding="utf-8"))
-        self.assertEqual((record["accesses"]["in_total"], record["accesses"]["replays_counted"]), (accounting["totals"]["accesses"], accounting["totals"]["replay_accesses"]))
+        corrected = record["accesses"]["corrected_on_2026_10_08"]          # the closing record counted each CI run as one run of the replay tests; its two jobs each ran them
+        self.assertEqual((corrected["in_total"], corrected["replays_counted"]), (accounting["totals"]["accesses"], accounting["totals"]["replay_accesses"]))
+        self.assertEqual((record["accesses"]["in_total"], record["accesses"]["replays_counted"]), (21, 20))      # as recorded at the closing commit
         self.assertEqual(record["protocol"]["canonical_sha256"], pr.protocol_sha256(pr.load_json(pr.PROTOCOL_PATH)))
         log = reg.read(reg.EXPERIMENT_LOG)
         first, count = p4.EXPERIMENTS_BEFORE, look["experiment_records"]
@@ -163,6 +165,7 @@ class CompletionRecordTests(unittest.TestCase):
         accesses = record["accesses"]
         self.assertEqual((accesses["logged_in_the_chain"], accesses["in_total"], accesses["counted_in_advance"]), (1, 21, 4))
         self.assertEqual(accesses["owner_decision"]["text"], "Count the replays as accesses.")
+        self.assertEqual((accesses["corrected_on_2026_10_08"]["in_total"], accesses["corrected_on_2026_10_08"]["found_before_the_closing_work"]), (25, 19))
         mutation = record["tests"]["mutation_check"]
         self.assertEqual((mutation["caught"], mutation["deliberate_defects"]), (138, 138))
         self.assertEqual(record["tests"]["result"], "OK, exit status 0")

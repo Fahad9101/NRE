@@ -17,8 +17,8 @@ form of this report is `reports/m4-report-2026-10-07.json` (`python -m nre.m4_re
 - **What this does not mean.** It is not a finding that nothing predicts the reaction to an earnings release. 128 events from 23 issuers in one market regime cannot show that, and the intervals are wide.
   It is also not evidence about any market: the events are a convenience sample.
 - **The holdout was read more than once, and the owner decided to count that.** The look is one access in the hash-chained log. The tests that replay it to verify it re-read the same outcomes
-  through the same gate; on the owner's decision of 2026-10-07 ("Count the replays as accesses.") those are counted too: **21 accesses in all** (section 7). Since 2026-10-08 ("make the replay tests
-  opt-in") they run only on request, so routine runs and CI read nothing sealed. Whether the 21 still satisfy the protocol's "the holdout was looked at once" is left to the owner (section 9).
+  through the same gate; on the owner's decision of 2026-10-07 ("Count the replays as accesses.") those are counted too: **25 accesses in all** (section 7). Since 2026-10-08 ("make the replay tests
+  opt-in") they run only on request, so routine runs and CI read nothing sealed. Whether the 25 still satisfy the protocol's "the holdout was looked at once" is left to the owner (section 9).
 
 ## 2. What was done
 
@@ -111,7 +111,7 @@ is the protocol's reading of how much the count can support (the five regression
 - **The protocol's eight leakage and integrity tests** are implemented in `tests/test_m4_harness.py` and run in every phase: label maturity, an injected future that changes no earlier prediction, history
   features that use only training-block events, holdout sealing, protocol integrity, determinism, clusters never split between training and test, and abstention (`INSUFFICIENT_DATA` and
   `MODEL_FIT_FAILED` give null predictions with reasons, never substitutes).
-- **The test suite grew with each phase:** 742, 835, 896 and 1,000 tests, each phase closing with a full pass and the real exit status. It has 1,004 tests now; nine of them,
+- **The test suite grew with each phase:** 742, 835, 896 and 1,000 tests, each phase closing with a full pass and the real exit status. It has 1,005 tests now; nine of them,
   the replay tests, are skipped unless asked for.
 - **A mutation check:** the script `scripts/m4_mutation_check.py` makes one deliberate defect at a time in a copy of the code (history that ignores the earlier-session rule, a reversed contrast sign, a predictor
   shown the labels, a counted replay left out of the total, and so on) and requires the tests to fail. The list grew to 45, 80, 101 and 142 defects over the four phases (138 when Phase 4 closed; the four added with the opt-in change were
@@ -131,17 +131,20 @@ is the protocol's reading of how much the count can support (the five regression
 | What | Accesses | Where it is recorded |
 | --- | --- | --- |
 | The look, 2026-10-07 at 13:38:13Z, commit `0e26ac9`: 23 events, 46 loads, none denied | 1 | the hash-chained access log, written before the outcomes were read |
-| Replay runs found in the session transcript and the CI API when the owner decided to count them (seven local, one in CI), two accesses each | 16 | `reports/m4-phase4-replay-accesses-2026-10-07.json` |
-| The closing whole-suite pass and the CI run of the closing push, two accesses each | 4 | the same record |
-| **In all** | **21** | |
+| Replay runs found in the session transcript and the CI API when the owner decided to count them: seven local runs (two accesses each) and CI run #232 (four: its two jobs each ran them) | 18 | `reports/m4-phase4-replay-accesses-2026-10-07.json` |
+| The closing whole-suite pass (two) and CI run #233 of the closing push (four) | 6 | the same record |
+| **In all** | **25** | |
 
 The replays read the outcomes to reproduce the look and compare it with the committed outputs; they select, tune and change nothing, and nothing was decided from them. The protocol says every read of a
 block-5 outcome is logged and that the report states the number of accesses; the owner decided to count the replays, and this is the number. The replay design had been disclosed before the look (it
 touches temporary logs only) but not that it would be counted. The count is a lower bound: it rests on the session transcript and the CI API.
 
+**A correction.** The first version of this report said 21 accesses. It counted each CI run once, but the workflow's matrix runs the whole suite in two jobs (Python 3.12 and 3.13) and both ran the replay tests in
+CI runs #232 and #233, so each was four accesses, not two. This was found on 2026-10-08 when the jobs of a CI run were read; the accounting record's `corrections` entry has the details.
+
 Since the owner's word of 2026-10-08, "make the replay tests opt-in", the replay tests are skipped unless the environment variable `M4_REPLAY_HOLDOUT` is exactly `1`. The default suite and CI read nothing
 sealed, so a push no longer adds accesses. A run made on purpose (`M4_REPLAY_HOLDOUT=1 python -m unittest tests.test_m4_phase4_results.ReplayTests`) is still two counted accesses, added to the record when it is
-made. Making them opt-in did not run them, so the count stands at 21.
+made (a CI run with the switch set would be two for each job of the matrix). Making them opt-in did not run them, so the count stands at 25.
 
 ## 8. Limits
 
@@ -172,7 +175,7 @@ The protocol lists what makes the report acceptable. The column says whether the
 | 8 | the limits are stated | yes |
 
 Seven are met by the evidence. The seventh, "the holdout was looked at once", is marked for the owner to judge: the evaluation look was one and is the only access in the chained log, but counting
-the replays the holdout's outcomes were read 21 times, and the protocol says reruns are further accesses that the report states. The facts are in section 7; the judgment is not made here.
+the replays the holdout's outcomes were read 25 times, and the protocol says reruns are further accesses that the report states. The facts are in section 7; the judgment is not made here.
 
 ## 10. Open for the owner
 

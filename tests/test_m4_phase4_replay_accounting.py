@@ -37,17 +37,22 @@ class AccountingTests(unittest.TestCase):
         self.assertEqual(len(decision["not_decided_by_these_words"]), 3)
         self.assertTrue(any("only on request" in item for item in decision["not_decided_by_these_words"]))
 
-    def test_the_accesses_are_numbered_from_the_look_and_every_replay_run_is_two_of_them(self):
+    def test_the_accesses_are_numbered_from_the_look_and_every_run_of_the_replay_class_is_two_of_them(self):
         accesses = self.record["accesses"]
         self.assertEqual([a["access_number"] for a in accesses], list(range(1, len(accesses) + 1)))
         self.assertEqual([a["kind"] for a in accesses], ["the_look"] + ["replay"] * (len(accesses) - 1))
         replay_runs = [r for r in self.record["runs"] if r["kind"] == "replay"]
-        self.assertEqual(len(accesses) - 1, 2 * len(replay_runs))
+        setups = sum(r["class_setups"] for r in replay_runs)
+        self.assertEqual(len(accesses) - 1, 2 * setups)
         for run in replay_runs:
             mine = [a for a in accesses if a["run"] == run["id"]]
-            self.assertEqual([a["look_in_run"] for a in mine], [1, 2])
+            self.assertEqual([a["look_in_run"] for a in mine], list(range(1, 2 * run["class_setups"] + 1)))
             self.assertEqual([a["access_number"] for a in mine], run["accesses"])
-            self.assertEqual(run["class_setups"], 1)
+            if run["where"].startswith("GitHub"):                            # the workflow's matrix runs the whole suite once per Python version: one setup in each job
+                self.assertEqual((len(run["jobs"]), run["class_setups"]), (2, 2))
+                self.assertEqual({j["job"] for j in run["jobs"]}, {"validate (3.12)", "validate (3.13)"})
+            else:
+                self.assertEqual(run["class_setups"], 1)
         self.assertEqual([r["id"] for r in self.record["runs"]], ["R%d" % i for i in range(len(self.record["runs"]))])
         times = [r.get("started_at") or r["expected_after"] for r in self.record["runs"]]
         self.assertEqual(times, sorted(times))                               # numbered in the order they happened, the runs counted in advance last
@@ -57,7 +62,15 @@ class AccountingTests(unittest.TestCase):
         self.assertEqual((totals["loads_per_access"], totals["events_read_per_access"]), (46, 23))
         expected = [r for r in replay_runs if r.get("status") == "expected"]
         self.assertEqual((totals["found_runs"] + totals["expected_runs"], totals["expected_runs"], totals["expected_accesses"]), (len(replay_runs), len(expected), 2 * len(expected)))
-        self.assertEqual(totals["found_accesses_with_the_look"], 1 + 2 * totals["found_runs"])
+        self.assertEqual((totals["class_setups"], totals["found_accesses_with_the_look"]), (setups, 1 + 2 * setups))
+        self.assertEqual(totals["found_runs"], len(replay_runs) - len(expected))
+
+    def test_the_correction_of_the_ci_count_is_recorded(self):
+        correction = self.record["corrections"][0]
+        self.assertEqual(correction["found_on"], "2026-10-08")
+        self.assertEqual(correction["changed"], {"at_the_decision": {"was": 17, "is": 19}, "in_all": {"was": 21, "is": self.record["totals"]["accesses"]}})
+        self.assertIn("two jobs", correction["what"])
+        self.assertEqual(self.record["totals"]["accesses"], 25)
 
     def test_access_one_is_the_look_in_the_chained_log_and_the_chain_holds_nothing_else(self):
         look = self.record["runs"][0]

@@ -102,8 +102,9 @@ Scores on the holdout, lower is better.
 - **The logs.** Both hash chains verify (`m4_registry.verify_chain`): 233 experiment records and the holdout log's genesis plus one access (number 1, commit `0e26ac9`, 23 events read, the protocol's hash). The 175 experiment
   records present before the look are identical to the build commit's file; 58 were appended. The results record one access, no technical rerun, 46 label loads (23 events in each of the two versions) and no denied read.
 - **Accesses, counted.** The look is access 1 in the chained log. On the owner's decision ("Count the replays as accesses.", 2026-10-07 at 19:14:34Z) the replays that re-read the block-5 outcomes to verify the look
-  are counted too: eight runs of the replay tests found in the session transcript and the CI API when the decision was made (seven local, one in CI), two accesses each, so 16 replay accesses and 17 accesses;
-  the closing whole-suite pass and the CI run of the closing push were two more runs, so **21 accesses in all** (`reports/m4-phase4-replay-accesses-2026-10-07.json`). Since the owner's word of 2026-10-08
+  are counted too: eight runs found in the session transcript and the CI API when the decision was made (seven local runs of two accesses each, and CI run #232, whose two jobs, Python 3.12 and 3.13, each ran the
+  replay tests: four), so 18 replay accesses and 19 accesses with the look; the closing whole-suite pass (two) and CI run #233 (four) were two more runs, so **25 accesses in all**
+  (`reports/m4-phase4-replay-accesses-2026-10-07.json`; an earlier version of this note and of that record said 17 and 21 because it counted each CI run once, which the record's `corrections` entry explains). Since the owner's word of 2026-10-08
   ("make the replay tests opt-in") the replay tests are skipped unless `M4_REPLAY_HOLDOUT=1` is set, so routine runs and CI read nothing sealed; a run made on purpose is two more accesses, added to that record.
   The results file was written by the look and records its own single access and no technical rerun; it is not changed.
 - **The evaluation was run twice from the look's events before anything was recorded; the two were identical** (`determinism.identical`).
@@ -140,9 +141,10 @@ untouched). The suite has run since the look, locally and in CI, and the number 
 but they are reads of the holdout that the real log does not count. The design had been disclosed before the look (P4-11: temporary logs, the real log untouched); it did not say the replays would be counted.
 
 The owner decided on 2026-10-07 at 19:14:34Z: "Count the replays as accesses." They are counted in `reports/m4-phase4-replay-accesses-2026-10-07.json`, reconstructed from the session transcript and the CI API:
-8 runs of the replay tests (7 local, 1 in CI), 2 accesses each, 16 replay accesses and 17 accesses in all with the look when the decision was made. The closing whole-suite pass and the CI run of the closing push were
-two more runs: 21 accesses in all. The chained access log is unchanged and still holds the look only. The Milestone 4 report states the 21 and leaves the protocol's criterion "the holdout was looked at once" to the
-owner to judge.
+8 runs (7 local, 2 accesses each, and CI run #232 with two jobs, 4 accesses), 18 replay accesses and 19 accesses in all with the look when the decision was made. The closing whole-suite pass (2) and CI run #233
+(4, two jobs again) were two more runs: 25 accesses in all. The first version of this note said 17 and 21: it counted each CI run once, but the workflow's matrix runs the whole suite in two jobs and both ran the replay
+tests; this was found on 2026-10-08 and is corrected here and in the record. The chained access log is unchanged and still holds the look only. The Milestone 4 report states the 25 and leaves the protocol's
+criterion "the holdout was looked at once" to the owner to judge.
 
 Whether the replays should keep running automatically or only on request was offered with that decision and not chosen then. The owner decided it on 2026-10-08 at 06:47:34Z: "make the replay tests opt-in". `ReplayTests`
 are skipped unless the environment variable `M4_REPLAY_HOLDOUT` is exactly `1`; the default suite and CI skip them and read nothing sealed. A run made on purpose (`M4_REPLAY_HOLDOUT=1 python -m unittest

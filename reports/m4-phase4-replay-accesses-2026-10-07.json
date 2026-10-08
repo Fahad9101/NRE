@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "m4_phase4_replay_access_accounting",
   "recorded_on": "2026-10-08",
-  "recorded_at": "2026-10-08T06:52:56Z",
+  "recorded_at": "2026-10-08T07:15:53Z",
   "purpose": "The protocol says every read of a block-5 outcome by the harness is logged and that the report states the number of accesses. The look was one access in the chained log. The tests that replay the look to verify it (ReplayTests in tests/test_m4_phase4_results.py) read the same outcomes again through Harness.look, writing their access records to temporary logs. On the owner's decision, those replays are counted as accesses. This record counts them, from primary sources, and is what the Milestone 4 report reads.",
   "owner_decision": {
     "owner_message": {
@@ -17,8 +17,8 @@
     },
     "how_the_words_were_read": [
       "Every time the block-5 outcomes were read again by a replay of the look counts as an access, numbered in order after the look. One run of the replay tests is two accesses: their setup calls Harness.look twice (once inside the replayed runner, once more 'for verification').",
-      "Applied to what had already happened when the decision was made: the 8 runs found in the session transcript and the CI API below, 16 accesses, so 17 accesses in all with the look.",
-      "Applied from then on: every further run of those tests, local or in CI, is two more accesses. The closing work made two (the whole-suite pass for the Phase 4 closing record and the CI run of the closing push), which brought the total to 21.",
+      "Applied to what had already happened when the decision was made: the 8 runs found in the session transcript and the CI API below (a CI run counts once for each of its jobs that ran the suite), 18 accesses, so 19 accesses in all with the look.",
+      "Applied from then on: every further run of those tests is two more accesses (a run in CI, with its two jobs, four). The closing work made two (the whole-suite pass for the Phase 4 closing record and the CI run of the closing push), which brought the total to 25.",
       "The report states the total number of accesses (protocol holdout.a_technical_rerun) and shows the look and the replays separately."
     ],
     "not_decided_by_these_words": [
@@ -37,7 +37,7 @@
       "note": "The replay design was disclosed before the look: temporary logs, the real access log untouched. It did not say the replays would be counted and it did not reconcile with the protocol's counting rule; the owner's decision does."
     }
   },
-  "what_one_access_is": "One call of Harness.look on the real block-5 events: it unseals the 23 events once per version, 46 loads. The runner's look (one call) was access 1. A run of the replay tests calls Harness.look twice, so it adds two accesses.",
+  "what_one_access_is": "One call of Harness.look on the real block-5 events: it unseals the 23 events once per version, 46 loads. The runner's look (one call) was access 1. A run of the replay tests calls Harness.look twice, so it adds two accesses. A CI run executes the whole suite once in each job of the workflow's matrix (Python 3.12 and 3.13), so while the replay tests ran by default it added four.",
   "runs": [
     {
       "id": "R0",
@@ -149,14 +149,28 @@
       "started_at": "2026-10-07T13:44:15Z",
       "ended_at": "2026-10-07T13:46:27Z",
       "where": "GitHub Actions, workflow ci.yml: python -m unittest discover -s tests -v",
-      "what": "CI run #232 of the push of commit 0e11dfc, the first commit that contains the replay tests (run attempt 1)",
+      "what": "CI run #232 of the push of commit 0e11dfc, the first commit that contains the replay tests (run attempt 1); the workflow's matrix runs the whole suite in two jobs (Python 3.12 and 3.13), so the replays ran twice",
       "result": "completed, conclusion success",
-      "class_setups": 1,
-      "source": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37630886875",
+      "jobs": [
+        {
+          "job": "validate (3.13)",
+          "test_step_started_at": "2026-10-07T13:44:20Z",
+          "test_step_completed_at": "2026-10-07T13:46:24Z"
+        },
+        {
+          "job": "validate (3.12)",
+          "test_step_started_at": "2026-10-07T13:44:20Z",
+          "test_step_completed_at": "2026-10-07T13:46:05Z"
+        }
+      ],
+      "class_setups": 2,
+      "source": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37630886875 (and .../jobs)",
       "tree": "commit 0e11dfc as pushed",
       "accesses": [
         14,
-        15
+        15,
+        16,
+        17
       ]
     },
     {
@@ -170,8 +184,8 @@
       "source": "session transcript line 31231",
       "tree": "HEAD 0e11dfc (2026-10-07T13:44:09Z) with the Milestone 4 report and its test not yet committed",
       "accesses": [
-        16,
-        17
+        18,
+        19
       ]
     },
     {
@@ -186,8 +200,8 @@
       "source": "session transcript line 32528",
       "tree": "the tree committed as 0bcdeac (nothing was changed between the pass and the commit)",
       "accesses": [
-        18,
-        19
+        20,
+        21
       ]
     },
     {
@@ -198,12 +212,26 @@
       "where": "GitHub Actions, workflow ci.yml: python -m unittest discover -s tests -v",
       "what": "CI run #233 of the closing push of commit 0bcdeac (run attempt 1)",
       "result": "completed, conclusion success",
-      "class_setups": 1,
-      "source": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37738677801",
+      "jobs": [
+        {
+          "job": "validate (3.13)",
+          "test_step_started_at": "2026-10-08T06:38:04Z",
+          "test_step_completed_at": "2026-10-08T06:39:34Z"
+        },
+        {
+          "job": "validate (3.12)",
+          "test_step_started_at": "2026-10-08T06:38:05Z",
+          "test_step_completed_at": "2026-10-08T06:39:39Z"
+        }
+      ],
+      "class_setups": 2,
+      "source": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37738677801 (and .../jobs)",
       "tree": "commit 0bcdeac as pushed",
       "accesses": [
-        20,
-        21
+        22,
+        23,
+        24,
+        25
       ]
     }
   ],
@@ -315,43 +343,71 @@
     {
       "access_number": 16,
       "kind": "replay",
-      "run": "R8",
-      "look_in_run": 1,
+      "run": "R7",
+      "look_in_run": 3,
       "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 17,
       "kind": "replay",
-      "run": "R8",
-      "look_in_run": 2,
+      "run": "R7",
+      "look_in_run": 4,
       "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 18,
       "kind": "replay",
-      "run": "R9",
+      "run": "R8",
       "look_in_run": 1,
       "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 19,
       "kind": "replay",
-      "run": "R9",
+      "run": "R8",
       "look_in_run": 2,
       "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 20,
       "kind": "replay",
-      "run": "R10",
+      "run": "R9",
       "look_in_run": 1,
       "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 21,
       "kind": "replay",
+      "run": "R9",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 22,
+      "kind": "replay",
+      "run": "R10",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 23,
+      "kind": "replay",
       "run": "R10",
       "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 24,
+      "kind": "replay",
+      "run": "R10",
+      "look_in_run": 3,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 25,
+      "kind": "replay",
+      "run": "R10",
+      "look_in_run": 4,
       "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     }
   ],
@@ -367,7 +423,7 @@
       "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 32609"
     },
     "switch": "M4_REPLAY_HOLDOUT=1",
-    "meaning": "ReplayTests (tests/test_m4_phase4_results.py) are skipped unless the environment variable M4_REPLAY_HOLDOUT is exactly 1, so routine runs of the suite and CI no longer read the sealed block-5 outcomes. A run made on purpose is still two counted accesses and is added to this record when it is made.",
+    "meaning": "ReplayTests (tests/test_m4_phase4_results.py) are skipped unless the environment variable M4_REPLAY_HOLDOUT is exactly 1, so routine runs of the suite and CI no longer read the sealed block-5 outcomes. A run made on purpose is still two counted accesses (a CI run with the switch set would be two for each job of the matrix) and is added to this record when it is made.",
     "how_to_run_on_purpose": {
       "bash": "M4_REPLAY_HOLDOUT=1 python -m unittest tests.test_m4_phase4_results.ReplayTests",
       "powershell": "$env:M4_REPLAY_HOLDOUT = \"1\"; python -m unittest tests.test_m4_phase4_results.ReplayTests"
@@ -377,19 +433,37 @@
     "what_it_does_not_change": "the count so far, the chained access log, the decision to count replays as accesses, or what the replay tests check when they are run; the replay tests were not run again when they were made opt-in, so the count is unchanged"
   },
   "totals": {
-    "accesses": 21,
+    "accesses": 25,
     "the_look": 1,
-    "replay_accesses": 20,
+    "replay_accesses": 24,
     "replay_runs": 10,
     "replay_runs_local": 8,
     "replay_runs_in_ci": 2,
     "loads_per_access": 46,
     "events_read_per_access": 23,
+    "class_setups": 12,
     "found_runs": 10,
-    "found_accesses_with_the_look": 21,
+    "found_accesses_with_the_look": 25,
     "expected_runs": 0,
     "expected_accesses": 0
   },
+  "corrections": [
+    {
+      "found_on": "2026-10-08",
+      "what": "The first versions of this record counted each CI run as one run of the replay tests (two accesses). The workflow's matrix runs the whole suite in two jobs (Python 3.12 and 3.13), and in CI runs #232 and #233 both jobs ran the replay tests, so each of those runs was four accesses. The totals were 17 when the decision was made and 21 in all; they are 19 and 25.",
+      "how_found": "the owner asked for a check of the CI run of the opt-in push; its jobs list showed two jobs, and the jobs of runs #232 and #233 showed both had run the test step to success",
+      "changed": {
+        "at_the_decision": {
+          "was": 17,
+          "is": 19
+        },
+        "in_all": {
+          "was": 21,
+          "is": 25
+        }
+      }
+    }
+  ],
   "what_the_replays_did": "Each replay re-ran the look's pipeline on the same 23 events and compared its outputs with the committed ones; the runs passed, or (R2 to R5) failed exactly the tests that should notice the deliberate alteration. Nothing was selected, tuned, changed or decided from them, and no result was read from them that the committed outputs do not already hold.",
   "going_forward": [
     "ReplayTests are opt-in (replay_tests_policy): the default suite and CI skip them and read nothing sealed. A run made on purpose is two more accesses, to be added to this record when it is made.",
