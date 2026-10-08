@@ -1,7 +1,12 @@
 """The committed Phase 4 results: consistent with the two logs and the predictions file, reproduced by REPLAYING the look through Harness.look against temporary logs (P4-11: the real
-access log is never touched, and no other code path reads a block-5 outcome), recomputed independently from plain arithmetic, and the real holdout log showing exactly one access."""
+access log is never touched, and no other code path reads a block-5 outcome), recomputed independently from plain arithmetic, and the real holdout log showing exactly one access.
+
+The replay re-reads the sealed block-5 outcomes twice, and on the owner's decision every such run is two counted accesses (reports/m4-phase4-replay-accesses-2026-10-07.json). So it is OPT-IN since the
+owner's decision of 2026-10-08 ("make the replay tests opt-in"): ReplayTests are skipped unless M4_REPLAY_HOLDOUT=1 is set, and a run made on purpose is added to that record. Everything else in this
+file reads only committed outputs and the two logs."""
 import json
 import math
+import os
 import random
 import shutil
 import sys
@@ -31,6 +36,9 @@ DEVELOPMENT_FILES = ("m4-phase2-results-2026-10-07.json", "m4-phase2-completion-
 PROTOCOL = pr.load_json(pr.PROTOCOL_PATH)
 TARGETS = d.targets(PROTOCOL)
 HOLDOUT_FOLD = "holdout_test_block_5"
+REPLAY_SWITCH = "M4_REPLAY_HOLDOUT"
+REPLAY_SKIP_REASON = ("the replay re-reads the sealed block-5 outcomes twice (two counted accesses per run); set %s=1 to run it on purpose, then add the run to "
+                      "reports/m4-phase4-replay-accesses-2026-10-07.json" % REPLAY_SWITCH)
 
 
 def close(a, b, tolerance=1e-9):
@@ -187,11 +195,13 @@ class RecordTests(unittest.TestCase):
                     self.assertIn("never creates a claim", contrast["claim"])
 
 
+@unittest.skipUnless(os.environ.get(REPLAY_SWITCH) == "1", REPLAY_SKIP_REASON)
 class ReplayTests(unittest.TestCase):
-    """The look replayed through Harness.look against temporary logs: the committed outputs must reproduce, and plain arithmetic must agree with them."""
+    """The look replayed through Harness.look against temporary logs: the committed outputs must reproduce, and plain arithmetic must agree with them. Opt-in: see the module docstring."""
 
     @classmethod
     def setUpClass(cls):
+        print("%s=1: this run re-reads the sealed block-5 outcomes twice (two counted accesses); add it to reports/m4-phase4-replay-accesses-2026-10-07.json" % REPLAY_SWITCH, file=sys.stderr)
         cls.report = json.loads(RESULTS.read_text(encoding="utf-8"))
         cls.descriptive = json.loads(DESCRIPTIVE.read_text(encoding="utf-8"))
         cls.by_key = {}

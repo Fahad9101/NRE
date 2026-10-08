@@ -1,6 +1,6 @@
 # Milestone 4 — Phase 4 results: what the one look at the holdout can and cannot tell
 
-**Status: cross-checked against the committed files on 2026-10-07 (section 5); not yet committed.** The holdout (block 5, the 23 Milestone 1 events) was looked at once, on 2026-10-07 at 13:38:13Z, from a clean committed
+**Status: cross-checked against the committed files on 2026-10-07 (section 5); updated on 2026-10-08 for the owner's decisions about the replays.** The holdout (block 5, the 23 Milestone 1 events) was looked at once, on 2026-10-07 at 13:38:13Z, from a clean committed
 tree at commit `0e26ac9`, under protocol version 1 and the method committed beforehand in `docs/M4-PHASE4.md` and `reports/m4-phase4-authorization-2026-10-07.json`. The real holdout access log holds its genesis record and
 that one access. The tripwire was turned off again in the next commit (`85d3239`). The holdout alone creates no claim and no status, and none is given.
 
@@ -89,7 +89,7 @@ Scores on the holdout, lower is better.
 
 ## 3. What was checked
 
-- **The look was replayed.** `ReplayTests` (in `tests/test_m4_phase4_results.py`) runs the whole look again through `Harness.look`, against temporary logs and a temporary copy of the development files, and compares the
+- **The look was replayed (on request).** `ReplayTests` (in `tests/test_m4_phase4_results.py`; opt-in, with `M4_REPLAY_HOLDOUT=1`) runs the whole look again through `Harness.look`, against temporary logs and a temporary copy of the development files, and compares the
   outputs with the committed ones: the results, the descriptive report and the predictions agree in structure and, in every number, to 1e-9; the experiment records agree in their identity fields (experiment, target,
   clock, predictor, version, fold, event-id hashes, state, commit, protocol hash).
 - **Plain arithmetic agrees, with one limit.** The scores, contrasts and bootstrap intervals of both scored targets (5000 replicates; seed 410001 for reaction-session clusters, 410002 for issuer clusters; both levels)
@@ -102,12 +102,14 @@ Scores on the holdout, lower is better.
 - **The logs.** Both hash chains verify (`m4_registry.verify_chain`): 233 experiment records and the holdout log's genesis plus one access (number 1, commit `0e26ac9`, 23 events read, the protocol's hash). The 175 experiment
   records present before the look are identical to the build commit's file; 58 were appended. The results record one access, no technical rerun, 46 label loads (23 events in each of the two versions) and no denied read.
 - **Accesses, counted.** The look is access 1 in the chained log. On the owner's decision ("Count the replays as accesses.", 2026-10-07 at 19:14:34Z) the replays that re-read the block-5 outcomes to verify the look
-  are counted too: eight runs of the replay tests found in the session transcript and the CI API (seven local, one in CI), two accesses each, so 16 replay accesses and **17 accesses in all**
-  (`reports/m4-phase4-replay-accesses-2026-10-07.json`). The results file was written by the look and records its own single access and no technical rerun; it is not changed.
+  are counted too: eight runs of the replay tests found in the session transcript and the CI API when the decision was made (seven local, one in CI), two accesses each, so 16 replay accesses and 17 accesses;
+  the closing whole-suite pass and the CI run of the closing push were two more runs, so **21 accesses in all** (`reports/m4-phase4-replay-accesses-2026-10-07.json`). Since the owner's word of 2026-10-08
+  ("make the replay tests opt-in") the replay tests are skipped unless `M4_REPLAY_HOLDOUT=1` is set, so routine runs and CI read nothing sealed; a run made on purpose is two more accesses, added to that record.
+  The results file was written by the look and records its own single access and no technical rerun; it is not changed.
 - **The evaluation was run twice from the look's events before anything was recorded; the two were identical** (`determinism.identical`).
 - **The look's code was not changed after the look.** Between the build commit (`85fee6c`) and the commit of the outputs (`0e11dfc`) the only change under `nre/`, `config/` and `scripts/` is the comment on the tripwire
-  constant, which is `False` at both ends. After that commit the only code change follows the owner's decision to count the replays: the report assembler reads the replay accounting (it reads no label and depends on no
-  holdout result) and the mutation check lists the defects of that change.
+  constant, which is `False` at both ends. After that commit the only changes follow the owner's two decisions about the replays: the report assembler reads the replay accounting and its replay-test policy (it
+  reads no label and depends on no holdout result), the replay tests are gated behind the switch, and the mutation check lists the defects of those changes.
 
 ## 4. What this does and does not tell us
 
@@ -138,8 +140,12 @@ untouched). The suite has run since the look, locally and in CI, and the number 
 but they are reads of the holdout that the real log does not count. The design had been disclosed before the look (P4-11: temporary logs, the real log untouched); it did not say the replays would be counted.
 
 The owner decided on 2026-10-07 at 19:14:34Z: "Count the replays as accesses." They are counted in `reports/m4-phase4-replay-accesses-2026-10-07.json`, reconstructed from the session transcript and the CI API:
-8 runs of the replay tests (7 local, 1 in CI), 2 accesses each, 16 replay accesses and 17 accesses in all with the look. The chained access log is unchanged and still holds the look only. Counting does not change what
-the tests do: every further run, local or in CI, is two more accesses and is added to that record. Whether the replays should keep running automatically or only on request was offered with the decision and not
-chosen; it stays open. The Milestone 4 report states the 17 and leaves the protocol's criterion "the holdout was looked at once" to the owner to judge.
+8 runs of the replay tests (7 local, 1 in CI), 2 accesses each, 16 replay accesses and 17 accesses in all with the look when the decision was made. The closing whole-suite pass and the CI run of the closing push were
+two more runs: 21 accesses in all. The chained access log is unchanged and still holds the look only. The Milestone 4 report states the 21 and leaves the protocol's criterion "the holdout was looked at once" to the
+owner to judge.
+
+Whether the replays should keep running automatically or only on request was offered with that decision and not chosen then. The owner decided it on 2026-10-08 at 06:47:34Z: "make the replay tests opt-in". `ReplayTests`
+are skipped unless the environment variable `M4_REPLAY_HOLDOUT` is exactly `1`; the default suite and CI skip them and read nothing sealed. A run made on purpose (`M4_REPLAY_HOLDOUT=1 python -m unittest
+tests.test_m4_phase4_results.ReplayTests`) is still two counted accesses and is added to the accounting record when it is made. Making them opt-in did not run them, so the count is unchanged.
 
 Not authorized and not done: a second look, any selection or amendment, Milestone 5 and later, declaring Milestone 4 accepted.

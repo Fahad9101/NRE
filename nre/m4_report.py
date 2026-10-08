@@ -30,6 +30,8 @@ LEAKAGE_TESTS_FILE = "tests/test_m4_harness.py"
 SETTLED = {"phase2": ("details_settled_before_any_evaluation", "new_in_phase_2"), "phase3": ("details_settled_before_any_c0_evaluation", "new_in_phase_3"),
            "phase4": ("details_settled_before_the_look", "new_in_phase_4")}  # where each phase's authorization record lists the details it settled
 JUDGMENT = "for the owner to judge"  # the value of a criterion the evidence states but does not settle
+OPEN_REPLAY_TESTS = ("Whether the replay tests keep running automatically (each run, local or in CI, adds two counted accesses) or only on request. It was offered with that decision "
+                     "and not chosen; nothing has changed.")  # what the report says while the accounting record holds no replay_tests_policy
 NOT_A_CLAIM = ["Not a claim of a predictive edge: no status in the protocol, including DISTINGUISHABLE_BETTER, is one.",
                "Not evidence about any market: a convenience sample of 23 issuers on one regime, and block 5 is entirely Milestone 1 events (time and selection regime are confounded).",
                "Not Milestone 4 acceptance: the protocol makes that decision the owner's, and nothing here makes it."]
@@ -132,6 +134,7 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
     holdout_chain = reg.verify_chain(holdout_log, "holdout_access", protocol)
     accesses = [record for record, _ in reg.read(holdout_log)][1:]
     accounting, replays = replay_accounting(root, date)
+    policy = accounting.get("replay_tests_policy")  # present once the owner has decided how the replay tests run
     holdout_path = root / "reports" / ("m4-phase4-holdout-results-%s.json" % date)
     descriptive_path = root / "reports" / ("m4-phase4-descriptive-%s.json" % date)
     if not holdout_path.is_file() or not descriptive_path.is_file():
@@ -216,8 +219,8 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
                   "listed_in": phase1["listed_in"], "details_the_assistant_settled_in_later_phases": settled,
                   "replay_tests": {"decided": "The replays that re-read the block-5 outcomes to verify the look are counted as accesses (the owner's decision of %s: \"%s\")."
                                               % (accounting["owner_decision"]["owner_message"]["at"], accounting["owner_decision"]["owner_message"]["text"]),
-                                   "open": ("Whether the replay tests keep running automatically (each run, local or in CI, adds two counted accesses) or only on request. It was offered with that decision "
-                                            "and not chosen; nothing has changed.")}}
+                                   "opt_in": ({"decided_by": policy["decided_by"], "switch": policy["switch"], "meaning": policy["meaning"]} if policy else None),
+                                   "open": None if policy else OPEN_REPLAY_TESTS}}
     first = reg.read(experiment_log)[1][0]["created_at"]
     sources = (("development", {t: development[t] for t in primaries}), ("holdout", holdout["evaluations"]))
     scored = [(t, v, pid, run) for _, results in sources for t in primaries for v in d.VERSIONS for pid, run in results[t][v]["predictors"].items() if run["state"] == h.EVALUATED]
@@ -235,7 +238,7 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
          "evidence": "the protocol's eight required tests, each implemented in " + LEAKAGE_TESTS_FILE + " (see integrity.required_leakage_and_integrity_tests); every phase's completion record states a full-suite pass with exit status 0 and the mutation check's tally",
          "met_by_the_evidence": all(item["implemented_by"] for item in tests_by_number) and len(tests_by_number) == 8},
         {"criterion": "every output reproduces deterministically from committed inputs",
-         "evidence": "each phase's evaluation was run twice from scratch and was identical before anything was recorded; tests re-run each phase from the committed inputs and compare with the committed results (the holdout by replaying the look through Harness.look against temporary logs)",
+         "evidence": "each phase's evaluation was run twice from scratch and was identical before anything was recorded; tests re-run each phase from the committed inputs and compare with the committed results (the holdout by replaying the look through Harness.look against temporary logs, a test that runs only on request since the owner made it opt-in: each run is two counted accesses)",
          "met_by_the_evidence": all(integrity["determinism"].values())},
         {"criterion": "every target is reported with counts and cluster-aware intervals or as INSUFFICIENT_DATA",
          "evidence": "the five primary targets in the primary_targets section (counts, cluster-bootstrap intervals, or INSUFFICIENT_DATA / COUNTS_ONLY), the other 14 in other_targets (counts, base rates and Wilson intervals, as the protocol prescribes for targets that are not modelled)",

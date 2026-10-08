@@ -5762,7 +5762,16 @@
     },
     "replay_tests": {
       "decided": "The replays that re-read the block-5 outcomes to verify the look are counted as accesses (the owner's decision of 2026-10-07T19:14:34.716Z: \"Count the replays as accesses.\").",
-      "open": "Whether the replay tests keep running automatically (each run, local or in CI, adds two counted accesses) or only on request. It was offered with that decision and not chosen; nothing has changed."
+      "opt_in": {
+        "decided_by": {
+          "text": "make the replay tests opt-in",
+          "at": "2026-10-08T06:47:34.487Z",
+          "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 32609"
+        },
+        "switch": "M4_REPLAY_HOLDOUT=1",
+        "meaning": "ReplayTests (tests/test_m4_phase4_results.py) are skipped unless the environment variable M4_REPLAY_HOLDOUT is exactly 1, so routine runs of the suite and CI no longer read the sealed block-5 outcomes. A run made on purpose is still two counted accesses and is added to this record when it is made."
+      },
+      "open": null
     }
   },
   "acceptance_criteria": {
@@ -5782,7 +5791,7 @@
       },
       {
         "criterion": "every output reproduces deterministically from committed inputs",
-        "evidence": "each phase's evaluation was run twice from scratch and was identical before anything was recorded; tests re-run each phase from the committed inputs and compare with the committed results (the holdout by replaying the look through Harness.look against temporary logs)",
+        "evidence": "each phase's evaluation was run twice from scratch and was identical before anything was recorded; tests re-run each phase from the committed inputs and compare with the committed results (the holdout by replaying the look through Harness.look against temporary logs, a test that runs only on request since the owner made it opt-in: each run is two counted accesses)",
         "met_by_the_evidence": true
       },
       {

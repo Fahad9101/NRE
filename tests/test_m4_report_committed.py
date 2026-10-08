@@ -56,6 +56,8 @@ class CommittedReportTests(unittest.TestCase):
         self.assertIn("has not answered", owner["status"])
         self.assertEqual(len(owner["from_the_protocol_to_review"]), 4)
         self.assertEqual(len(owner["protocol_silent_details_that_could_move_a_result"]), 5)
+        self.assertIsNone(owner["replay_tests"]["open"])                              # the owner decided: the replay tests are opt-in
+        self.assertEqual((owner["replay_tests"]["opt_in"]["decided_by"]["text"], owner["replay_tests"]["opt_in"]["switch"]), ("make the replay tests opt-in", "M4_REPLAY_HOLDOUT=1"))
 
 
 if __name__ == "__main__":

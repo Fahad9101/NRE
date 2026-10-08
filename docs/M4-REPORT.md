@@ -17,8 +17,8 @@ form of this report is `reports/m4-report-2026-10-07.json` (`python -m nre.m4_re
 - **What this does not mean.** It is not a finding that nothing predicts the reaction to an earnings release. 128 events from 23 issuers in one market regime cannot show that, and the intervals are wide.
   It is also not evidence about any market: the events are a convenience sample.
 - **The holdout was read more than once, and the owner decided to count that.** The look is one access in the hash-chained log. The tests that replay it to verify it re-read the same outcomes
-  through the same gate; on the owner's decision of 2026-10-07 ("Count the replays as accesses.") those are counted too: **21 accesses in all** (section 7). Whether that still satisfies the protocol's
-  "the holdout was looked at once" is left to the owner (section 9).
+  through the same gate; on the owner's decision of 2026-10-07 ("Count the replays as accesses.") those are counted too: **21 accesses in all** (section 7). Since 2026-10-08 ("make the replay tests
+  opt-in") they run only on request, so routine runs and CI read nothing sealed. Whether the 21 still satisfy the protocol's "the holdout was looked at once" is left to the owner (section 9).
 
 ## 2. What was done
 
@@ -31,7 +31,7 @@ until the last phase.
 | 1 | "okay authorize Phase 1" | the evaluation harness, its eight leakage and integrity tests, the sealed holdout, the hash-chained logs, the pooled base rate C1; synthetic data and dry runs only | `a1f6c2c`, `200a4ea` | 742 | 45 |
 | 2 | "authorize phase 2" | the baselines C2 to C4, the logistic model M2 and the ridge model M3 on the three B-clock targets, development folds only | `b1549c9`, `595736b`, `304c783`, `5d50813` | 835 | 80 |
 | 3 | "authorize phase 3" | the same predictors on the two C0-clock targets (M2 also taking the opening gap), development folds only | `2080e01`, `14e3e1d`, `50086ed`, `350f7da` | 896 | 101 |
-| 4 | "authorize phase 4" | the one look at the holdout, the descriptive report with block-5 counts, and this report; then, on later words, counting the replays and the closing work | `40e1744`, `85fee6c`, `0e26ac9`, `85d3239`, `0e11dfc`, `c4a524d` and the closing commit | 1,000 | 138 |
+| 4 | "authorize phase 4" | the one look at the holdout, the descriptive report with block-5 counts, and this report; then, on later words, counting the replays, the closing work, and making the replay tests opt-in | `40e1744`, `85fee6c`, `0e26ac9`, `85d3239`, `0e11dfc`, `c4a524d`, `0bcdeac` and the opt-in commit | 1,000 at the closing pass | 142 |
 
 The data: 128 accepted events from 23 issuers in 73 reaction sessions, cut into five time blocks of 17, 44, 21, 23 and 23 events. The two development folds test on block 3 (training on blocks 1 and 2) and on
 block 4 (training on blocks 1 to 3); the holdout fold tests on block 5 (training on blocks 1 to 4). Every result is computed twice: `all_event` (every label as recorded) and `clean_window` (labels the
@@ -111,12 +111,13 @@ is the protocol's reading of how much the count can support (the five regression
 - **The protocol's eight leakage and integrity tests** are implemented in `tests/test_m4_harness.py` and run in every phase: label maturity, an injected future that changes no earlier prediction, history
   features that use only training-block events, holdout sealing, protocol integrity, determinism, clusters never split between training and test, and abstention (`INSUFFICIENT_DATA` and
   `MODEL_FIT_FAILED` give null predictions with reasons, never substitutes).
-- **The test suite grew with each phase:** 742, 835, 896 and 1,000 tests, each phase closing with a full pass and the real exit status.
+- **The test suite grew with each phase:** 742, 835, 896 and 1,000 tests, each phase closing with a full pass and the real exit status. It has 1,004 tests now; nine of them,
+  the replay tests, are skipped unless asked for.
 - **A mutation check:** the script `scripts/m4_mutation_check.py` makes one deliberate defect at a time in a copy of the code (history that ignores the earlier-session rule, a reversed contrast sign, a predictor
-  shown the labels, a counted replay left out of the total, and so on) and requires the tests to fail. The list grew to 45, 80, 101 and 138 defects over the four phases, and each
-  phase's closing run caught all of them (in Phases 1 and 2 a few were not caught on a first run, and tests were added until they were; those closing records list them).
+  shown the labels, a counted replay left out of the total, and so on) and requires the tests to fail. The list grew to 45, 80, 101 and 142 defects over the four phases (138 when Phase 4 closed; the four added with the opt-in change were
+  run together with the report defects that change touched), and each phase's closing run caught all of them (in Phases 1 and 2 a few were not caught on a first run, and tests were added until they were; those closing records list them).
 - **Deterministic:** each phase's evaluation was run twice from scratch before anything was recorded, and the two were identical; tests re-run each phase from the committed inputs and compare with the
-  committed results (the holdout by replaying the look through the same gate against temporary logs).
+  committed results (the holdout by replaying the look through the same gate against temporary logs: a test that runs only on request, last run on purpose at the closing pass).
 - **Independent arithmetic:** the pooled scores, contrasts and bootstrap intervals were recomputed from the predictions and labels without the harness in Phase 2 (40 quantities) and Phase 3 (45 quantities and 48
   sets of predictions and fits), with no problems. In Phase 4 the tests recompute the scores, contrasts and intervals of both scored targets, and the C1 to C4 predictions and the M2 fits of the extension target. **The
   Day-1 return's quantile and ridge predictions were never recomputed independently, in any phase**; they were reproduced by the replay and scored by the independent arithmetic.
@@ -130,13 +131,17 @@ is the protocol's reading of how much the count can support (the five regression
 | What | Accesses | Where it is recorded |
 | --- | --- | --- |
 | The look, 2026-10-07 at 13:38:13Z, commit `0e26ac9`: 23 events, 46 loads, none denied | 1 | the hash-chained access log, written before the outcomes were read |
-| Replay runs found in the session transcript and the CI API (seven local, one in CI), two accesses each | 16 | `reports/m4-phase4-replay-accesses-2026-10-07.json` |
-| The closing whole-suite pass and the CI run of the push that carries this report, counted in advance | 4 | the same record, marked expected |
+| Replay runs found in the session transcript and the CI API when the owner decided to count them (seven local, one in CI), two accesses each | 16 | `reports/m4-phase4-replay-accesses-2026-10-07.json` |
+| The closing whole-suite pass and the CI run of the closing push, two accesses each | 4 | the same record |
 | **In all** | **21** | |
 
 The replays read the outcomes to reproduce the look and compare it with the committed outputs; they select, tune and change nothing, and nothing was decided from them. The protocol says every read of a
 block-5 outcome is logged and that the report states the number of accesses; the owner decided to count the replays, and this is the number. The replay design had been disclosed before the look (it
 touches temporary logs only) but not that it would be counted. The count is a lower bound: it rests on the session transcript and the CI API.
+
+Since the owner's word of 2026-10-08, "make the replay tests opt-in", the replay tests are skipped unless the environment variable `M4_REPLAY_HOLDOUT` is exactly `1`. The default suite and CI read nothing
+sealed, so a push no longer adds accesses. A run made on purpose (`M4_REPLAY_HOLDOUT=1 python -m unittest tests.test_m4_phase4_results.ReplayTests`) is still two counted accesses, added to the record when it is
+made. Making them opt-in did not run them, so the count stands at 21.
 
 ## 8. Limits
 
@@ -171,19 +176,20 @@ the replays the holdout's outcomes were read 21 times, and the protocol says rer
 
 ## 10. Open for the owner
 
+Decided since this report was first written, so no longer open: the replay tests are opt-in (section 7).
+
 1. **Whether Milestone 4 is accepted.** Nothing here decides it.
-2. **Whether the replay tests keep running automatically or only on request.** Each run, local or in CI, adds two counted accesses. Counting them was chosen; switching them to opt-in was offered and not chosen.
-3. **Criterion 7** (section 9).
-4. **The four review items the protocol flagged**, still unanswered, defaults in force:
+2. **Criterion 7** (section 9).
+3. **The four review items the protocol flagged**, still unanswered, defaults in force:
    - whether the two thin primaries (`gap_ge_5pct` with 29 positives, `loses_half_of_gap` with 25) belong among the primaries;
    - the 99% claim level, which makes any claim very hard at these sample sizes;
    - that the holdout would mostly be counts only (it was);
    - the issuer-history and sector features, given the point-in-time limits and small cells.
-5. **Five protocol-silent details that could move a result**, listed in `docs/M4-HARNESS.md` section 5 with the defaults used: the headline interval is the wider of the two by width (reaction session on a tie);
+4. **Five protocol-silent details that could move a result**, listed in `docs/M4-HARNESS.md` section 5 with the defaults used: the headline interval is the wider of the two by width (reaction session on a tie);
    a regression history mean with no earlier event is a `ProtocolGap`, with no default; standardization of the model features uses the population standard deviation of the training events (the protocol does not say
    which; the list was written before the models existed, and they use the population one); a predictor that fails in one fold takes that state for its whole pooled result; the group prior obeys the same maturity and
    earlier-session rules as the issuer's own history. Changing any of them now would be a new protocol version, stated to follow results.
-6. Parked, not part of Milestone 4 and not touched: a latent default `Calendar()` in `nre/alpaca.py`, noted in earlier sessions.
+5. Parked, not part of Milestone 4 and not touched: a latent default `Calendar()` in `nre/alpaca.py`, noted in earlier sessions.
 
 Not authorized and not done: a second evaluation look at the holdout, any selection or tuning after a holdout result, any protocol amendment, new data, Milestone 5 or later, any ranking, candidate list,
 trading or backtest.
@@ -195,7 +201,7 @@ trading or backtest.
 - The results: `reports/m4-phase2-results-2026-10-07.json`, `reports/m4-phase3-results-2026-10-07.json`, `reports/m4-phase4-holdout-results-2026-10-07.json`,
   `reports/m4-phase4-descriptive-2026-10-07.json`, and the predictions files beside them.
 - The two logs: `reports/m4-experiment-log.jsonl` (233 records) and `reports/m4-holdout-access-log.jsonl` (its genesis and the look).
-- The accounting of the replays: `reports/m4-phase4-replay-accesses-2026-10-07.json`.
+- The accounting of the replays, and the opt-in switch: `reports/m4-phase4-replay-accesses-2026-10-07.json` (field `replay_tests_policy`); the replay tests themselves are `ReplayTests` in `tests/test_m4_phase4_results.py`.
 - The authorizations and the closing records: `reports/m4-phase{1,2,3,4}-authorization-*.json` and `reports/m4-phase{1,2,3,4}-completion-*.json`.
 - This report as data: `reports/m4-report-2026-10-07.json`.
 

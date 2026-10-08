@@ -104,9 +104,16 @@
   "report": {
     "path": "reports/m4-report-2026-10-07.json",
     "command": "python -m nre.m4_report build --date 2026-10-07",
-    "canonical_sha256": "b5bf4b48258628fd605c45daad9d50df4ec026bdc1f74ce33f3131cd4538391b",
+    "canonical_sha256": "f8773426dfe66cd5aecf2faacbe4d9a945676d188954b4fc04bc52a87e9fb4c5",
     "reads_no_label": true,
-    "doc": "docs/M4-REPORT.md"
+    "doc": "docs/M4-REPORT.md",
+    "regenerated_since_the_closing": [
+      {
+        "canonical_sha256": "b5bf4b48258628fd605c45daad9d50df4ec026bdc1f74ce33f3131cd4538391b",
+        "as_of": "the closing commit 0bcdeac",
+        "why": "the owner made the replay tests opt-in on 2026-10-08 (\"make the replay tests opt-in\"), which turned the report's open item about them into a decision and changed the evidence text of its third acceptance criterion; the report is assembled by code from the committed artifacts and was regenerated"
+      }
+    ]
   },
   "results_in_brief": {
     "confirmatory_model_against_c1_on_the_holdout": {
@@ -278,5 +285,11 @@
     "Not a claim of a predictive edge: no status, including DISTINGUISHABLE_BETTER, is one, and none was reached.",
     "Not Milestone 4 acceptance.",
     "Not evidence about any market: a convenience sample of 23 issuers on one regime, and block 5 is entirely Milestone 1 events (time and selection regime are confounded)."
-  ]
+  ],
+  "addendum": {
+    "2026-10-08, after the closing commit": {
+      "replay_tests": "The second item of open_for_the_owner (whether the replay tests keep running automatically or only on request) was decided after this record was written: the owner said \"make the replay tests opt-in\" (2026-10-08T06:47:34.487Z). ReplayTests are skipped unless M4_REPLAY_HOLDOUT=1 is set; a run made on purpose is two counted accesses added to reports/m4-phase4-replay-accesses-2026-10-07.json (field replay_tests_policy). The two runs this record calls counted in advance both happened exactly once (that file records them as they happened).",
+      "what_this_record_still_says": "everything above is the state at the closing commit 0bcdeac, including the 1000 tests with the replay tests running and the skipped count of 4; the default suite now skips the nine replay tests as well"
+    }
+  }
 }

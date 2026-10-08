@@ -7,7 +7,8 @@ nothing here is an amendment.
 
 **Update 2026-10-08, after the look:** the look was taken once, on 2026-10-07 at 13:38:13Z, from a clean tree at commit `0e26ac9`, as described below; the results are in `docs/M4-PHASE4-RESULTS.md` and the
 Milestone 4 report in `docs/M4-REPORT.md`. The rest of this note is left as it was committed. One thing it did not settle: P4-11 disclosed that the tests would replay the look against temporary logs, but not
-that those replays would be counted as accesses. On the owner's decision ("Count the replays as accesses.") they are (`reports/m4-phase4-replay-accesses-2026-10-07.json`).
+that those replays would be counted as accesses. On the owner's decision ("Count the replays as accesses.") they are (`reports/m4-phase4-replay-accesses-2026-10-07.json`), and on the owner's later word
+("make the replay tests opt-in") they run only on request: `ReplayTests` are skipped unless `M4_REPLAY_HOLDOUT=1` is set.
 
 ## 1. What the look is
 

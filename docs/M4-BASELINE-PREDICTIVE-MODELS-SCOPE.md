@@ -34,7 +34,7 @@ authorized. The harness decided a handful of details the protocol is silent on; 
 **Update 2026-10-08, after Phase 4:** the owner authorized Phase 4 (`reports/m4-phase4-authorization-2026-10-07.json`). The holdout (block 5, the 23 Milestone 1 events) was looked at once, on 2026-10-07, and the Milestone 4
 report was assembled (`docs/M4-REPORT.md`, `docs/M4-PHASE4-RESULTS.md`, `reports/m4-report-2026-10-07.json`). `gap_ge_3pct`, `gap_ge_5pct` and `loses_half_of_gap` were `COUNTS_ONLY` in the holdout, as the protocol said
 in advance; for the two scored targets the confirmatory model's direction did not repeat from development and every interval includes zero. No predictor was distinguishable from the pooled base rate and no claim is
-made. On the owner's decision the replays that verify the look are counted as accesses (21 in all, the closing runs counted in advance). The protocol is unchanged, and Milestone 4 is not declared accepted: that is the
+made. On the owner's decision the replays that verify the look are counted as accesses (21 in all), and since 2026-10-08 the replay tests run only on request (`M4_REPLAY_HOLDOUT=1`). The protocol is unchanged, and Milestone 4 is not declared accepted: that is the
 owner's decision.
 
 ## Summary

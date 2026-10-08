@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "m4_phase4_replay_access_accounting",
   "recorded_on": "2026-10-08",
-  "recorded_at": "2026-10-08T05:41:18Z",
+  "recorded_at": "2026-10-08T06:52:56Z",
   "purpose": "The protocol says every read of a block-5 outcome by the harness is logged and that the report states the number of accesses. The look was one access in the chained log. The tests that replay the look to verify it (ReplayTests in tests/test_m4_phase4_results.py) read the same outcomes again through Harness.look, writing their access records to temporary logs. On the owner's decision, those replays are counted as accesses. This record counts them, from primary sources, and is what the Milestone 4 report reads.",
   "owner_decision": {
     "owner_message": {
@@ -18,11 +18,11 @@
     "how_the_words_were_read": [
       "Every time the block-5 outcomes were read again by a replay of the look counts as an access, numbered in order after the look. One run of the replay tests is two accesses: their setup calls Harness.look twice (once inside the replayed runner, once more 'for verification').",
       "Applied to what had already happened when the decision was made: the 8 runs found in the session transcript and the CI API below, 16 accesses, so 17 accesses in all with the look.",
-      "Applied from then on: every further run of those tests, local or in CI, is two more accesses, added to this record when this session makes the run, or from the public API for CI runs. The closing work makes two: the whole-suite pass for the Phase 4 closing record and the CI run of the push that carries this record. They are counted in advance and marked expected, which brings the total to 21.",
+      "Applied from then on: every further run of those tests, local or in CI, is two more accesses. The closing work made two (the whole-suite pass for the Phase 4 closing record and the CI run of the closing push), which brought the total to 21.",
       "The report states the total number of accesses (protocol holdout.a_technical_rerun) and shows the look and the replays separately."
     ],
     "not_decided_by_these_words": [
-      "Whether the replay tests should keep running automatically or only on request. That was offered in the same message and not chosen; nothing here changes the tests' behaviour.",
+      "Whether the replay tests should keep running automatically or only on request. That was offered in the same message and not chosen then; the owner decided it afterwards (replay_tests_policy).",
       "Whether the protocol's acceptance criterion 'the holdout was looked at once' is met. The report gives the facts and marks the criterion 'for the owner to judge'.",
       "Milestone 4 acceptance, any second evaluation look, any selection or amendment, Milestone 5 or later."
     ]
@@ -177,14 +177,14 @@
     {
       "id": "R9",
       "kind": "replay",
-      "status": "expected",
-      "expected_after": "2026-10-08T05:41:18Z",
+      "started_at": "2026-10-08T06:35:02Z",
+      "ended_at": "2026-10-08T06:37:22Z",
       "where": "local, C:\\Users\\FhD\\NRE",
-      "what": "python -m unittest discover -s tests, the whole suite with the replay tests included: the closing pass of Phase 4, run after the closing record is written",
-      "result": "expected",
+      "what": "python -m unittest discover -s tests, the whole suite with the replay tests included: the closing pass of Phase 4, run after the closing record was written",
+      "result": "Ran 1000 tests in 138.830s: OK (skipped=4), exit 0",
       "class_setups": 1,
-      "source": "expected: counted in advance under the owner's go-ahead of 2026-10-08T05:26:44.063Z (\"yes continuewith the closing work and push at the end\", transcript line 31963)",
-      "tree": "the tree that will be committed with this record (not yet committed)",
+      "source": "session transcript line 32528",
+      "tree": "the tree committed as 0bcdeac (nothing was changed between the pass and the commit)",
       "accesses": [
         18,
         19
@@ -193,14 +193,14 @@
     {
       "id": "R10",
       "kind": "replay",
-      "status": "expected",
-      "expected_after": "2026-10-08T05:41:18Z",
+      "started_at": "2026-10-08T06:37:59Z",
+      "ended_at": "2026-10-08T06:39:44Z",
       "where": "GitHub Actions, workflow ci.yml: python -m unittest discover -s tests -v",
-      "what": "the CI run of the push of the commit that carries this record (a push runs the replay tests)",
-      "result": "expected",
+      "what": "CI run #233 of the closing push of commit 0bcdeac (run attempt 1)",
+      "result": "completed, conclusion success",
       "class_setups": 1,
-      "source": "expected: counted in advance under the owner's go-ahead of 2026-10-08T05:26:44.063Z (\"yes continuewith the closing work and push at the end\", transcript line 31963); to be checked at https://api.github.com/repos/Fahad9101/NRE/actions/runs after the push",
-      "tree": "the commit that will be pushed",
+      "source": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37738677801",
+      "tree": "commit 0bcdeac as pushed",
       "accesses": [
         20,
         21
@@ -331,34 +331,50 @@
       "kind": "replay",
       "run": "R9",
       "look_in_run": 1,
-      "recorded_in": "this file only: counted in advance; the replay will write its access record to a temporary log that is deleted when the test class finishes"
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 19,
       "kind": "replay",
       "run": "R9",
       "look_in_run": 2,
-      "recorded_in": "this file only: counted in advance; the replay will write its access record to a temporary log that is deleted when the test class finishes"
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 20,
       "kind": "replay",
       "run": "R10",
       "look_in_run": 1,
-      "recorded_in": "this file only: counted in advance; the replay will write its access record to a temporary log that is deleted when the test class finishes"
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     },
     {
       "access_number": 21,
       "kind": "replay",
       "run": "R10",
       "look_in_run": 2,
-      "recorded_in": "this file only: counted in advance; the replay will write its access record to a temporary log that is deleted when the test class finishes"
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
     }
   ],
   "closing_runs_authorized_by": {
     "text": "yes continuewith the closing work and push at the end",
     "at": "2026-10-08T05:26:44.063Z",
     "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 31963"
+  },
+  "replay_tests_policy": {
+    "decided_by": {
+      "text": "make the replay tests opt-in",
+      "at": "2026-10-08T06:47:34.487Z",
+      "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 32609"
+    },
+    "switch": "M4_REPLAY_HOLDOUT=1",
+    "meaning": "ReplayTests (tests/test_m4_phase4_results.py) are skipped unless the environment variable M4_REPLAY_HOLDOUT is exactly 1, so routine runs of the suite and CI no longer read the sealed block-5 outcomes. A run made on purpose is still two counted accesses and is added to this record when it is made.",
+    "how_to_run_on_purpose": {
+      "bash": "M4_REPLAY_HOLDOUT=1 python -m unittest tests.test_m4_phase4_results.ReplayTests",
+      "powershell": "$env:M4_REPLAY_HOLDOUT = \"1\"; python -m unittest tests.test_m4_phase4_results.ReplayTests"
+    },
+    "in_force_from": "the commit that carries this record",
+    "what_it_changes": "the default suite shows the nine replay tests as skipped, in addition to the tests that were already skipped, and a push no longer adds counted accesses",
+    "what_it_does_not_change": "the count so far, the chained access log, the decision to count replays as accesses, or what the replay tests check when they are run; the replay tests were not run again when they were made opt-in, so the count is unchanged"
   },
   "totals": {
     "accesses": 21,
@@ -369,15 +385,14 @@
     "replay_runs_in_ci": 2,
     "loads_per_access": 46,
     "events_read_per_access": 23,
-    "found_runs": 8,
-    "found_accesses_with_the_look": 17,
-    "expected_runs": 2,
-    "expected_accesses": 4
+    "found_runs": 10,
+    "found_accesses_with_the_look": 21,
+    "expected_runs": 0,
+    "expected_accesses": 0
   },
   "what_the_replays_did": "Each replay re-ran the look's pipeline on the same 23 events and compared its outputs with the committed ones; the runs passed, or (R2 to R5) failed exactly the tests that should notice the deliberate alteration. Nothing was selected, tuned, changed or decided from them, and no result was read from them that the committed outputs do not already hold.",
   "going_forward": [
-    "Every run of ReplayTests, local or in CI, is two more accesses. Runs this session makes are added here when they are made. CI runs are listed from https://api.github.com/repos/Fahad9101/NRE/actions/runs.",
-    "A push runs the replay tests in CI. The CI run triggered by the push of a commit that carries this record cannot be known to the record before it happens; it is counted in advance, marked 'expected', and its occurrence can be checked at the API.",
+    "ReplayTests are opt-in (replay_tests_policy): the default suite and CI skip them and read nothing sealed. A run made on purpose is two more accesses, to be added to this record when it is made.",
     "Runs by anyone other than this session are not visible to it and are not counted unless they are reported."
   ],
   "limits": [
@@ -385,7 +400,7 @@
     "The times are those of the tool calls in the transcript (when the command started) and of the CI run; a run's reads happened within its duration.",
     "The replays' own access records were written to temporary logs that were deleted; nothing in them survives, so the count cannot be checked against them.",
     "These accesses are not in the hash-chained access log, which is written before an outcome is read by a run against the real log. The chained log is unchanged.",
-    "The two runs marked expected were counted before they happened, because a record cannot be committed after the push it is part of without causing another run. If either does not happen as described, or happens more than once, this record has to be corrected."
+    "R9 and R10 were counted in advance in the first version of this record and are recorded here as they happened, from the transcript and the CI API."
   ],
   "not_a_claim": [
     "Not a claim about any market.",

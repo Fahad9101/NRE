@@ -130,6 +130,10 @@ class CompletionRecordTests(unittest.TestCase):
         self.assertEqual(look["descriptive_canonical_sha256"], digest(canonical(descriptive)))
         report = json.loads((ROOT / record["report"]["path"]).read_text(encoding="utf-8"))
         self.assertEqual(record["report"]["canonical_sha256"], digest(canonical(report)))
+        earlier = record["report"]["regenerated_since_the_closing"]       # the report is assembled by code; it was regenerated once after the closing, when the replay tests became opt-in
+        self.assertEqual([e["canonical_sha256"] for e in earlier], ["b5bf4b48258628fd605c45daad9d50df4ec026bdc1f74ce33f3131cd4538391b"])
+        self.assertIn("make the replay tests opt-in", earlier[0]["why"])
+        self.assertIn("opt-in", record["addendum"]["2026-10-08, after the closing commit"]["replay_tests"])
         accounting = json.loads((ROOT / record["accesses"]["accounting_record"]).read_text(encoding="utf-8"))
         self.assertEqual((record["accesses"]["in_total"], record["accesses"]["replays_counted"]), (accounting["totals"]["accesses"], accounting["totals"]["replay_accesses"]))
         self.assertEqual(record["protocol"]["canonical_sha256"], pr.protocol_sha256(pr.load_json(pr.PROTOCOL_PATH)))

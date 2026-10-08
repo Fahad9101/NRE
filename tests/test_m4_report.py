@@ -146,7 +146,10 @@ class ReportTests(unittest.TestCase):
         self.assertIn("has not answered", owner["status"])
         self.assertIn("counted as accesses", owner["replay_tests"]["decided"])
         self.assertIn("Count the replays as accesses.", owner["replay_tests"]["decided"])
-        self.assertIn("only on request", owner["replay_tests"]["open"])
+        self.assertIsNone(owner["replay_tests"]["open"])                              # decided since: the replay tests are opt-in
+        self.assertEqual(owner["replay_tests"]["opt_in"]["decided_by"]["text"], "make the replay tests opt-in")
+        self.assertEqual(owner["replay_tests"]["opt_in"]["switch"], "M4_REPLAY_HOLDOUT=1")
+        self.assertIn("still two counted accesses", owner["replay_tests"]["opt_in"]["meaning"])
 
 
 class ReportPropertiesTests(unittest.TestCase):
@@ -228,6 +231,20 @@ class ReportPropertiesTests(unittest.TestCase):
         finally:
             path.write_text(original, encoding="utf-8")
         self.assertEqual(rep.assemble(self.root)["summary"]["holdout_accesses_in_total"], data["totals"]["accesses"])
+
+    def test_while_the_replay_tests_policy_is_not_recorded_the_report_keeps_the_question_open(self):
+        path = self.root / "reports" / ACCOUNTING
+        original = path.read_text(encoding="utf-8")
+        undecided = json.loads(original)
+        del undecided["replay_tests_policy"]
+        try:
+            path.write_text(json.dumps(undecided), encoding="utf-8")
+            item = rep.assemble(self.root)["open_for_the_owner"]["replay_tests"]
+        finally:
+            path.write_text(original, encoding="utf-8")
+        self.assertEqual(item["open"], rep.OPEN_REPLAY_TESTS)
+        self.assertIsNone(item["opt_in"])
+        self.assertIsNotNone(rep.assemble(self.root)["open_for_the_owner"]["replay_tests"]["opt_in"])
 
     def test_with_no_replays_the_criterion_is_met_and_with_replays_it_is_left_to_the_owner(self):
         path = self.root / "reports" / ACCOUNTING

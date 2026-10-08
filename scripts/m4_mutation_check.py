@@ -26,7 +26,8 @@ TESTS_FOR = {"nre/m4_models.py": ["tests.test_m4_models", "tests.test_m4_phase2"
              "nre/m4_phase2.py": ["tests.test_m4_phase2", "tests.test_m4_phase3", "tests.test_m4_phase3_record"],
              "nre/m4_phase3.py": ["tests.test_m4_phase3", "tests.test_m4_phase3_record"],
              "nre/m4_phase4.py": ["tests.test_m4_phase4", "tests.test_m4_phase4_rehearsal", "tests.test_m4_phase4_record"],
-             "nre/m4_report.py": ["tests.test_m4_report"]}
+             "nre/m4_report.py": ["tests.test_m4_report"],
+             "tests/test_m4_phase4_results.py": ["tests.test_m4_phase4_replay_accounting"]}  # the switch on the replay tests is checked by importing the module, never by running them
 COPIED = ("nre", "tests", "config", "reports")
 
 MUTATIONS = [
@@ -237,6 +238,13 @@ MUTATIONS = [
     ("the accounting's numbering is not checked", "nre/m4_report.py", '    if [a["access_number"] for a in accesses] != list(range(1, len(accesses) + 1)) or accesses[0]["kind"] != "the_look" or any(a["kind"] != "replay" for a in accesses[1:]):',
      "    if False:"),
     ("the accounting's totals are not checked", "nre/m4_report.py", '    if record["totals"]["accesses"] != len(accesses) or record["totals"]["replay_accesses"] != replays:', "    if False:"),
+    # Phase 4: the replay tests are opt-in (the owner's decision of 2026-10-08)
+    ("the report keeps the replay-test policy open after the owner decided it", "nre/m4_report.py", '"open": None if policy else OPEN_REPLAY_TESTS}}', '"open": OPEN_REPLAY_TESTS}}'),
+    ("the report ignores the recorded replay-test policy", "nre/m4_report.py", '    policy = accounting.get("replay_tests_policy")  # present once the owner has decided how the replay tests run',
+     '    policy = None  # present once the owner has decided how the replay tests run'),
+    ("the replay tests run without the switch", "tests/test_m4_phase4_results.py", '@unittest.skipUnless(os.environ.get(REPLAY_SWITCH) == "1", REPLAY_SKIP_REASON)', '@unittest.skipUnless(True, REPLAY_SKIP_REASON)'),
+    ("any value switches the replay tests on", "tests/test_m4_phase4_results.py", '@unittest.skipUnless(os.environ.get(REPLAY_SWITCH) == "1", REPLAY_SKIP_REASON)',
+     '@unittest.skipUnless(os.environ.get(REPLAY_SWITCH), REPLAY_SKIP_REASON)'),
 ]
 
 

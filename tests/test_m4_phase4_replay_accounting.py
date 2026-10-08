@@ -2,6 +2,9 @@
 counted from primary sources. The record is data; these tests pin that it is consistent with itself, with the chained access log and with the protocol and the authorization record it
 quotes. They read no outcome and no label."""
 import json
+import os
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -90,17 +93,26 @@ class AccountingTests(unittest.TestCase):
             self.assertGreater(run["started_at"], look_at)
             self.assertTrue(run["source"].startswith("session transcript line") or run["source"].startswith("https://api.github.com/repos/Fahad9101/NRE/actions/runs/"), run["source"])
 
-    def test_the_runs_counted_in_advance_are_the_closing_pass_and_the_ci_run_of_the_push_and_name_their_authority(self):
-        runs = self.record["runs"]
-        expected = [r for r in runs if r.get("status") == "expected"]
-        self.assertEqual([r["id"] for r in expected], [r["id"] for r in runs[-2:]])      # they come last
-        self.assertTrue(expected[0]["where"].startswith("local") and "whole suite" in expected[0]["what"])
-        self.assertTrue(expected[1]["where"].startswith("GitHub Actions") and "push" in expected[1]["what"])
+    def test_the_closing_runs_are_recorded_as_they_happened_after_the_owners_go_ahead(self):
+        runs, totals = self.record["runs"], self.record["totals"]
+        self.assertEqual((totals["expected_runs"], totals["expected_accesses"]), (0, 0))        # counted in advance in the first version of this record, recorded as they happened since
+        self.assertFalse([r for r in runs if r.get("status") == "expected"])
+        closing = runs[-2:]
+        self.assertTrue(closing[0]["where"].startswith("local") and "whole suite" in closing[0]["what"] and "OK (skipped=4), exit 0" in closing[0]["result"])
+        self.assertTrue(closing[1]["where"].startswith("GitHub Actions") and closing[1]["source"].startswith("https://api.github.com/") and "success" in closing[1]["result"])
         authority = self.record["closing_runs_authorized_by"]
         self.assertEqual((authority["text"], authority["at"]), ("yes continuewith the closing work and push at the end", "2026-10-08T05:26:44.063Z"))
-        for run in expected:
-            self.assertIn(authority["text"], run["source"])
-        self.assertIn("counted before they happened", " ".join(self.record["limits"]))
+        self.assertGreater(closing[0]["started_at"], authority["at"])
+
+    def test_the_replay_tests_are_opt_in_by_the_owners_decision_and_that_is_recorded(self):
+        policy = self.record["replay_tests_policy"]
+        self.assertEqual((policy["decided_by"]["text"], policy["decided_by"]["at"]), ("make the replay tests opt-in", "2026-10-08T06:47:34.487Z"))
+        self.assertGreater(policy["decided_by"]["at"], self.record["closing_runs_authorized_by"]["at"])
+        self.assertEqual(policy["switch"], "M4_REPLAY_HOLDOUT=1")
+        self.assertIn("exactly 1", policy["meaning"])
+        self.assertIn("still two counted accesses", policy["meaning"])
+        self.assertIn("M4_REPLAY_HOLDOUT=1 python -m unittest tests.test_m4_phase4_results.ReplayTests", policy["how_to_run_on_purpose"]["bash"])
+        self.assertIn("opt-in", " ".join(self.record["going_forward"]))
 
     def test_the_rules_for_what_happens_next_and_the_limits_are_stated(self):
         going_forward = " ".join(self.record["going_forward"])
@@ -109,6 +121,31 @@ class AccountingTests(unittest.TestCase):
         self.assertIn("not counted unless they are reported", going_forward)
         self.assertIn("lower bound", " ".join(self.record["limits"]))
         self.assertIn("Not Milestone 4 acceptance", " ".join(self.record["not_a_claim"]))
+
+
+class ReplaySwitchTests(unittest.TestCase):
+    """ReplayTests re-read the sealed block-5 outcomes, so they run only on request. Importing their module reads nothing sealed; these check what the switch does without running them."""
+
+    @staticmethod
+    def skipped_with(value):
+        env = {k: v for k, v in os.environ.items() if k != "M4_REPLAY_HOLDOUT"}
+        if value is not None:
+            env["M4_REPLAY_HOLDOUT"] = value
+        code = ("import json, tests.test_m4_phase4_results as T; c = T.ReplayTests; "
+                "print(json.dumps([bool(getattr(c, '__unittest_skip__', False)), getattr(c, '__unittest_skip_why__', '')]))")
+        out = subprocess.run([sys.executable, "-c", code], cwd=str(ROOT), env=env, capture_output=True, text=True, check=True).stdout
+        return json.loads(out.strip().splitlines()[-1])
+
+    def test_without_the_switch_the_replay_tests_are_skipped_and_say_why(self):
+        skipped, why = self.skipped_with(None)
+        self.assertTrue(skipped)
+        for phrase in ("two counted accesses", "M4_REPLAY_HOLDOUT=1", "reports/m4-phase4-replay-accesses-2026-10-07.json"):
+            self.assertIn(phrase, why)
+
+    def test_only_the_value_one_switches_them_on(self):
+        self.assertFalse(self.skipped_with("1")[0])
+        for value in ("0", "true"):
+            self.assertTrue(self.skipped_with(value)[0], value)
 
 
 if __name__ == "__main__":
