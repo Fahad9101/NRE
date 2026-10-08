@@ -225,9 +225,18 @@ MUTATIONS = [
     ("the report accepts a development result that does not match its hash", "nre/m4_report.py", '        if digest(canonical(results)) != records[phase]["completion"]["evaluation"]["results_canonical_sha256"]:', "        if False:"),
     ("the report does not check the protocol against its freeze record", "nre/m4_report.py", '    if protocol_sha != freeze["protocol"]["canonical_sha256"]:', "    if False:"),
     ("the report counts the genesis as an access", "nre/m4_report.py", "    accesses = [record for record, _ in reg.read(holdout_log)][1:]", "    accesses = [record for record, _ in reg.read(holdout_log)][:1]"),
-    ("the looked-at-once criterion is always met", "nre/m4_report.py", '         "met_by_the_evidence": len(accesses) == 1},', '         "met_by_the_evidence": True},'),
+    ("the looked-at-once criterion is always met", "nre/m4_report.py", '         "met_by_the_evidence": (True if replays == 0 else JUDGMENT) if len(accesses) == 1 else False},', '         "met_by_the_evidence": True},'),
+    ("the looked-at-once criterion ignores the counted replays", "nre/m4_report.py", '         "met_by_the_evidence": (True if replays == 0 else JUDGMENT) if len(accesses) == 1 else False},',
+     '         "met_by_the_evidence": len(accesses) == 1},'),
     ("an interval that excludes zero is miscounted", "nre/m4_report.py", '"excludes_zero_at_95": contrast["headline"]["0.95"]["low"] > 0 or contrast["headline"]["0.95"]["high"] < 0,',
      '"excludes_zero_at_95": contrast["headline"]["0.95"]["low"] > 0 or contrast["headline"]["0.95"]["high"] < -1,'),
+    # Phase 4: the accesses counted from the replays (the owner's decision of 2026-10-07)
+    ("the replays are left out of the total number of accesses", "nre/m4_report.py", '"in_total": len(accesses) + replays,', '"in_total": len(accesses),'),
+    ("the summary leaves the replays out of the accesses", "nre/m4_report.py", '"holdout_accesses_in_total": len(accesses) + replays}', '"holdout_accesses_in_total": len(accesses)}'),
+    ("the report is assembled without the replay accounting", "nre/m4_report.py", '    if not path.is_file():\n        raise DataError("the replay accounting is missing', '    if False:\n        raise DataError("the replay accounting is missing'),
+    ("the accounting's numbering is not checked", "nre/m4_report.py", '    if [a["access_number"] for a in accesses] != list(range(1, len(accesses) + 1)) or accesses[0]["kind"] != "the_look" or any(a["kind"] != "replay" for a in accesses[1:]):',
+     "    if False:"),
+    ("the accounting's totals are not checked", "nre/m4_report.py", '    if record["totals"]["accesses"] != len(accesses) or record["totals"]["replay_accesses"] != replays:', "    if False:"),
 ]
 
 

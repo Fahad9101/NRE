@@ -29,6 +29,7 @@ PRIMARY_METRIC = {"binary": "brier", "regression": "mean_pinball_loss"}
 LEAKAGE_TESTS_FILE = "tests/test_m4_harness.py"
 SETTLED = {"phase2": ("details_settled_before_any_evaluation", "new_in_phase_2"), "phase3": ("details_settled_before_any_c0_evaluation", "new_in_phase_3"),
            "phase4": ("details_settled_before_the_look", "new_in_phase_4")}  # where each phase's authorization record lists the details it settled
+JUDGMENT = "for the owner to judge"  # the value of a criterion the evidence states but does not settle
 NOT_A_CLAIM = ["Not a claim of a predictive edge: no status in the protocol, including DISTINGUISHABLE_BETTER, is one.",
                "Not evidence about any market: a convenience sample of 23 issuers on one regime, and block 5 is entirely Milestone 1 events (time and selection regime are confounded).",
                "Not Milestone 4 acceptance: the protocol makes that decision the owner's, and nothing here makes it."]
@@ -103,6 +104,22 @@ def required_tests(root):
     return found
 
 
+def replay_accounting(root, date):
+    """The accesses to the block-5 outcomes beyond the chained log's: the replays that re-read them to verify the look, counted as accesses on the owner's decision. The record is read, not
+    re-derived: it holds the look as access 1 and the replays after it, two to a run of the replay tests."""
+    path = Path(root) / "reports" / ("m4-phase4-replay-accesses-%s.json" % date)
+    if not path.is_file():
+        raise DataError("the replay accounting is missing: the report must state every access to the holdout (%s)" % path.name)
+    record = pr.load_json(path)
+    accesses = record["accesses"]
+    if [a["access_number"] for a in accesses] != list(range(1, len(accesses) + 1)) or accesses[0]["kind"] != "the_look" or any(a["kind"] != "replay" for a in accesses[1:]):
+        raise DataError("the replay accounting is not a sequence of accesses numbered from the look")
+    replays = len(accesses) - 1
+    if record["totals"]["accesses"] != len(accesses) or record["totals"]["replay_accesses"] != replays:
+        raise DataError("the replay accounting's totals do not match its accesses")
+    return record, replays
+
+
 def assemble(root=pr.ROOT, date="2026-10-07"):
     root = Path(root)
     protocol = pr.load_json(root / "config" / "m4-protocol.json")
@@ -114,6 +131,7 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
     experiments_chain = reg.verify_chain(experiment_log, "experiments", protocol)
     holdout_chain = reg.verify_chain(holdout_log, "holdout_access", protocol)
     accesses = [record for record, _ in reg.read(holdout_log)][1:]
+    accounting, replays = replay_accounting(root, date)
     holdout_path = root / "reports" / ("m4-phase4-holdout-results-%s.json" % date)
     descriptive_path = root / "reports" / ("m4-phase4-descriptive-%s.json" % date)
     if not holdout_path.is_file() or not descriptive_path.is_file():
@@ -160,13 +178,16 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
                "development_fold_contrasts": {"reported": len(folds), "excluding_zero_at_95": sum(c["excludes_zero_at_95"] for c in folds)},
                "holdout_contrasts": {"reported": len(holdout_contrasts), "excluding_zero_at_95": sum(c["excludes_zero_at_95"] for c in holdout_contrasts)},
                "holdout_direction_checks": {key: {"comparable": check["comparable"], "same_sign": check.get("same_sign")} for key, check in sign_checks.items()},
-               "development_statuses": {t: primary[t]["development_status"] for t in primaries}}
+               "development_statuses": {t: primary[t]["development_status"] for t in primaries},
+               "holdout_accesses_in_total": len(accesses) + replays}
 
     by_number = required_tests(root)
     integrity = {
         "protocol": {"canonical_sha256": protocol_sha, "matches_the_freeze_record": True, "frozen_at": freeze["frozen_at"], "version": protocol["protocol_version"],
                      "amendments": protocol["amendments"]["history"]},
         "logs": {"experiments": experiments_chain, "holdout_access": holdout_chain, "holdout_accesses_after_genesis": len(accesses),
+                 "holdout_accesses": {"logged_in_the_chain": len(accesses), "replays_counted": replays, "in_total": len(accesses) + replays,
+                                      "accounting_record": "reports/m4-phase4-replay-accesses-%s.json" % date, "owner_decision": accounting["owner_decision"]["owner_message"]},
                  "the_accesses": [{"access_number": a["access_number"], "reason": a["reason"], "harness_commit": a["harness_commit"], "created_at": a["created_at"],
                                    "events_read": len(a["events_read"])} for a in accesses]},
         "phases": {phase: {"authorization": PHASES[phase]["authorization"], "owner_words": records[phase]["authorization"].get("owner_message", {}).get("text")
@@ -192,7 +213,11 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
                              "stated to follow results of the earlier phases."),
                   "from_the_protocol_to_review": protocol["disclosures"]["to_review"],
                   "protocol_silent_details_that_could_move_a_result": phase1["could_move_a_result"], "protocol_silent_details_presentational_or_minor": phase1["presentational_or_minor"],
-                  "listed_in": phase1["listed_in"], "details_the_assistant_settled_in_later_phases": settled}
+                  "listed_in": phase1["listed_in"], "details_the_assistant_settled_in_later_phases": settled,
+                  "replay_tests": {"decided": "The replays that re-read the block-5 outcomes to verify the look are counted as accesses (the owner's decision of %s: \"%s\")."
+                                              % (accounting["owner_decision"]["owner_message"]["at"], accounting["owner_decision"]["owner_message"]["text"]),
+                                   "open": ("Whether the replay tests keep running automatically (each run, local or in CI, adds two counted accesses) or only on request. It was offered with that decision "
+                                            "and not chosen; nothing has changed.")}}
     first = reg.read(experiment_log)[1][0]["created_at"]
     sources = (("development", {t: development[t] for t in primaries}), ("holdout", holdout["evaluations"]))
     scored = [(t, v, pid, run) for _, results in sources for t in primaries for v in d.VERSIONS for pid, run in results[t][v]["predictors"].items() if run["state"] == h.EVALUATED]
@@ -222,8 +247,11 @@ def assemble(root=pr.ROOT, date="2026-10-07"):
          "evidence": "reliability bins (at most 4, at least 10 predictions each) with n, mean prediction, observed rate and its Wilson interval, for every scored binary predictor, in the results files",
          "met_by_the_evidence": calibrated and bool(binary_scored)},
         {"criterion": "the holdout was looked at once",
-         "evidence": "the holdout access log holds its genesis and %d access (%s)" % (len(accesses), ", ".join(a["reason"][:60] + "..." for a in accesses)),
-         "met_by_the_evidence": len(accesses) == 1},
+         "evidence": ("the holdout access log holds its genesis and %d access (%s); on the owner's decision of %s (\"%s\") the %d replays that re-read the block-5 outcomes to verify the look are counted "
+                      "as accesses too, %d accesses in all (%s). The replays reproduced the committed look; nothing was selected, tuned or changed after a holdout result was seen."
+                      % (len(accesses), ", ".join(a["reason"][:60] + "..." for a in accesses), accounting["owner_decision"]["owner_message"]["at"],
+                         accounting["owner_decision"]["owner_message"]["text"], replays, len(accesses) + replays, "reports/m4-phase4-replay-accesses-%s.json" % date)),
+         "met_by_the_evidence": (True if replays == 0 else JUDGMENT) if len(accesses) == 1 else False},
         {"criterion": "the limits are stated",
          "evidence": "the limits section carries the protocol's limits, the holdout's selection-regime statement, what the report cannot establish, and the consequences stated in advance",
          "met_by_the_evidence": bool(limits["from_the_protocol"] and limits["cannot_establish"])}]

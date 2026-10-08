@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "kind": "m4_phase4_replay_access_accounting",
+  "recorded_on": "2026-10-08",
+  "recorded_at": "2026-10-08T03:41:10Z",
+  "purpose": "The protocol says every read of a block-5 outcome by the harness is logged and that the report states the number of accesses. The look was one access in the chained log. The tests that replay the look to verify it (ReplayTests in tests/test_m4_phase4_results.py) read the same outcomes again through Harness.look, writing their access records to temporary logs. On the owner's decision, those replays are counted as accesses. This record counts them, from primary sources, and is what the Milestone 4 report reads.",
+  "owner_decision": {
+    "owner_message": {
+      "text": "Count the replays as accesses.",
+      "at": "2026-10-07T19:14:34.716Z",
+      "source": "session transcript 3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 31616"
+    },
+    "assistant_message_replied_to": {
+      "at": "2026-10-07T19:13:07.901Z",
+      "source": "same transcript, line 31612",
+      "text": "The cross-check is done and `docs/M4-PHASE4-RESULTS.md` is corrected, but it is not committed. It turned up one open point that needs your decision before I continue.\n\n**What I checked**\n- **Method:** I compared every figure in the note with the committed result files, the protocol, the logs and the code, without reading any sealed label file.\n- **Tables:** all rows of the results and score tables match.\n- **Logs:** both hash chains verify. The experiment log has 233 records, and the 175 from before the look are identical to the build commit's file. The access log has its genesis plus the one access.\n- **Frozen counts:** the descriptive counts equal the protocol's frozen counts for 18 of 18 binary targets.\n- **Code:** nothing under `nre/`, `config/` or `scripts/` changed after the look except the comment on the tripwire constant.\n- **CI:** runs #231 (`85d3239`) and #232 (`0e11dfc`) are green.\n- **Earlier doubts:** several figures I had removed as unchecked are right, and the note now carries them with sources. These are 16 reaction sessions, the C4 intervals, the reliability bins, the selection-regime text, the development ordering and 46 loads with 0 denied.\n\n**Where my first draft was wrong** (the note lists these in section 5)\n- **Brier arithmetic:** the C1 Brier identity is 0.2495 + 0.0047 = 0.2543, not 0.2541.\n- **Frozen-count scope:** the comparison covers each target's defined events, not 128 for every target.\n- **Independent recomputation:** the check covers the binary targets' predictions only. The Day-1 return's quantile and ridge predictions were never recomputed independently in any phase. They were reproduced by the replay and their scores were recomputed.\n\n**Open point: the replay tests re-read the sealed labels**\n- **Protocol:** it says every harness read of a block-5 outcome is logged to the holdout access log (`holdout.sealing`). It also says each rerun is a further logged access, and the report states the number of accesses (`holdout.a_technical_rerun`).\n- **Tests:** `ReplayTests` re-reads the block-5 outcomes through the gate twice each time the class is set up. The records go to temporary logs. The real access log still shows one access and no technical rerun.\n- **How often:** it has run locally many times and in CI at least once (run #232). The number of runs isn't recorded.\n- **What it did:** the replay reads select, tune and change nothing, and nothing was decided from them. But the protocol's own rule counts such reads and the real log does not.\n- **Your options:**\n  - Count the replays as accesses.\n  - Make them opt-in (an explicit switch, so routine runs and CI stop reading the labels), run them once deliberately, and count that run in the report.\n  - Accept them as uncounted verification and say so in the report.\n- **Held for this:** I haven't run the full suite or pushed, since each does another unlogged replay. The completion record needs the suite, so it waits too.\n\n**Still to do (me, after your decision)**\n- Write `docs/M4-REPORT.md` and the status notes in `docs/M4-HARNESS.md` and the scope doc.\n- Run the suite twice and write the Phase 4 completion record, with the 132-of-132 mutation tally.\n- Commit and push.\n- Add a Phase 4 paragraph to `reference_nre_project.md`.\n\n**For you to decide**\n- The replay question above.\n- Whether Milestone 4 is accepted.\n- The review items that are still open.\n\nA second holdout look, any selection or amendment, and Milestone 5 remain not authorized.\n\n**Recommended next step:** choose the opt-in option for the replay tests. It stops routine runs and CI from re-reading the sealed labels, and it makes the one deliberate run a counted, visible one. This is a recommendation only. Once you decide, I'll make that change if you pick it and finish the list above."
+    },
+    "how_the_words_were_read": [
+      "Every time the block-5 outcomes were read again by a replay of the look counts as an access, numbered in order after the look. One run of the replay tests is two accesses: their setup calls Harness.look twice (once inside the replayed runner, once more 'for verification').",
+      "Applied to what has already happened: the eight runs found in the session transcript and the CI API below, sixteen accesses, so 17 accesses in all with the look.",
+      "Applied from now on: every further run of those tests, local or in CI, is two more accesses, added to this record when this session makes the run, or from the public API for CI runs.",
+      "The report states the total number of accesses (protocol holdout.a_technical_rerun) and shows the look and the replays separately."
+    ],
+    "not_decided_by_these_words": [
+      "Whether the replay tests should keep running automatically or only on request. That was offered in the same message and not chosen; nothing here changes the tests' behaviour.",
+      "Whether the protocol's acceptance criterion 'the holdout was looked at once' is met. The report gives the facts and marks the criterion 'for the owner to judge'.",
+      "Milestone 4 acceptance, any second evaluation look, any selection or amendment, Milestone 5 or later."
+    ]
+  },
+  "rules_applied": {
+    "protocol_holdout_sealing": "No predictor is fitted, scored or tuned on any block-5 outcome before the look. Every read of a block-5 outcome by the harness is logged to the holdout access log.",
+    "protocol_holdout_a_technical_rerun": "If the look fails for a technical reason, the fix must not depend on any holdout result. Each rerun is a further logged access, and the report states the number of accesses.",
+    "disclosed_before_the_look": {
+      "id": "P4-11",
+      "in": "reports/m4-phase4-authorization-2026-10-07.json",
+      "text": "Verification after the look replays the look through Harness.look against temporary logs; it never touches the real access log, and no test or script reads a block-5 outcome any other way.",
+      "note": "The replay design was disclosed before the look: temporary logs, the real access log untouched. It did not say the replays would be counted and it did not reconcile with the protocol's counting rule; the owner's decision does."
+    }
+  },
+  "what_one_access_is": "One call of Harness.look on the real block-5 events: it unseals the 23 events once per version, 46 loads. The runner's look (one call) was access 1. A run of the replay tests calls Harness.look twice, so it adds two accesses.",
+  "runs": [
+    {
+      "id": "R0",
+      "kind": "the_look",
+      "started_at": "2026-10-07T13:38:13Z",
+      "where": "local, C:\\Users\\FhD\\NRE, python -m nre.m4_phase4 run --date 2026-10-07",
+      "what": "the one look: Harness.look called once by the runner; the evaluation made twice from the unsealed events and found identical",
+      "result": "the 58 holdout experiment records, the results, the descriptive report and the 484 predictions",
+      "class_setups": 0,
+      "accesses": [
+        1
+      ],
+      "source": "reports/m4-holdout-access-log.jsonl, record with access_number 1",
+      "tree": "clean tree at commit 0e26ac9"
+    },
+    {
+      "id": "R1",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:39:59.652Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "python -m unittest tests.test_m4_phase4_results (15 tests, the replay tests among them)",
+      "result": "Ran 15 tests in 5.253s: OK",
+      "class_setups": 1,
+      "source": "session transcript line 31151",
+      "tree": "HEAD 85d3239 (2026-10-07T13:38:30Z) with the look's outputs and the new tests not yet committed",
+      "accesses": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "R2",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:40:21.179Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "the replay tests run against a deliberately altered copy of the committed outputs, to check that they notice the alteration (one of four runs of one command)",
+      "result": "a Brier score changed by 1e-6                  -> 2 failing: ['test_the_replayed_look_reproduces_the_committed_results', 'test_the_scores_contrasts_and_bootstrap_intervals_recompute_from_the_predictions_and_the_replayed_labels']",
+      "class_setups": 1,
+      "source": "session transcript line 31157 (the command started at 2026-10-07T13:40:21.179Z; the four runs finished before the next command started)",
+      "tree": "HEAD 85d3239 (2026-10-07T13:38:30Z) with the look's outputs and the new tests not yet committed",
+      "accesses": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "R3",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:40:21.179Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "the replay tests run against a deliberately altered copy of the committed outputs, to check that they notice the alteration (one of four runs of one command)",
+      "result": "a descriptive count changed                    -> 2 failing: ['test_the_descriptive_counts_recompute_from_all_128_events', 'test_the_replayed_look_reproduces_the_descriptive_report_and_the_predictions']",
+      "class_setups": 1,
+      "source": "session transcript line 31157 (the command started at 2026-10-07T13:40:21.179Z; the four runs finished before the next command started)",
+      "tree": "HEAD 85d3239 (2026-10-07T13:38:30Z) with the look's outputs and the new tests not yet committed",
+      "accesses": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "R4",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:40:21.179Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "the replay tests run against a deliberately altered copy of the committed outputs, to check that they notice the alteration (one of four runs of one command)",
+      "result": "one prediction nudged by 2e-9                  -> 1 failing: ['test_the_replayed_look_reproduces_the_descriptive_report_and_the_predictions']",
+      "class_setups": 1,
+      "source": "session transcript line 31157 (the command started at 2026-10-07T13:40:21.179Z; the four runs finished before the next command started)",
+      "tree": "HEAD 85d3239 (2026-10-07T13:38:30Z) with the look's outputs and the new tests not yet committed",
+      "accesses": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "R5",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:40:21.179Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "the replay tests run against a deliberately altered copy of the committed outputs, to check that they notice the alteration (one of four runs of one command)",
+      "result": "a state changed to EVALUATED                   -> 2 failing: ['test_the_replayed_look_reproduces_the_committed_results', 'test_the_states_follow_the_holdout_rule_from_the_replayed_counts']",
+      "class_setups": 1,
+      "source": "session transcript line 31157 (the command started at 2026-10-07T13:40:21.179Z; the four runs finished before the next command started)",
+      "tree": "HEAD 85d3239 (2026-10-07T13:38:30Z) with the look's outputs and the new tests not yet committed",
+      "accesses": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "R6",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:41:37.272Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "python -m unittest discover -s tests (the whole suite)",
+      "result": "Ran 981 tests in 137.264s: OK (skipped=4), exit 0",
+      "class_setups": 1,
+      "source": "session transcript line 31187",
+      "tree": "HEAD 85d3239 (2026-10-07T13:38:30Z) with the look's outputs and the new tests not yet committed",
+      "accesses": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "R7",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:44:15Z",
+      "ended_at": "2026-10-07T13:46:27Z",
+      "where": "GitHub Actions, workflow ci.yml: python -m unittest discover -s tests -v",
+      "what": "CI run #232 of the push of commit 0e11dfc, the first commit that contains the replay tests (run attempt 1)",
+      "result": "completed, conclusion success",
+      "class_setups": 1,
+      "source": "https://api.github.com/repos/Fahad9101/NRE/actions/runs/37630886875",
+      "tree": "commit 0e11dfc as pushed",
+      "accesses": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "R8",
+      "kind": "replay",
+      "started_at": "2026-10-07T13:46:37.587Z",
+      "where": "local, C:\\Users\\FhD\\NRE",
+      "what": "python -m unittest tests.test_m4_report_committed tests.test_m4_phase4_results (21 tests)",
+      "result": "Ran 21 tests in 5.380s: OK, exit 0",
+      "class_setups": 1,
+      "source": "session transcript line 31231",
+      "tree": "HEAD 0e11dfc (2026-10-07T13:44:09Z) with the Milestone 4 report and its test not yet committed",
+      "accesses": [
+        16,
+        17
+      ]
+    }
+  ],
+  "accesses": [
+    {
+      "access_number": 1,
+      "kind": "the_look",
+      "run": "R0",
+      "recorded_in": "reports/m4-holdout-access-log.jsonl, access_number 1 (hash-chained, written before the outcomes were read)"
+    },
+    {
+      "access_number": 2,
+      "kind": "replay",
+      "run": "R1",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 3,
+      "kind": "replay",
+      "run": "R1",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 4,
+      "kind": "replay",
+      "run": "R2",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 5,
+      "kind": "replay",
+      "run": "R2",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 6,
+      "kind": "replay",
+      "run": "R3",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 7,
+      "kind": "replay",
+      "run": "R3",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 8,
+      "kind": "replay",
+      "run": "R4",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 9,
+      "kind": "replay",
+      "run": "R4",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 10,
+      "kind": "replay",
+      "run": "R5",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 11,
+      "kind": "replay",
+      "run": "R5",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 12,
+      "kind": "replay",
+      "run": "R6",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 13,
+      "kind": "replay",
+      "run": "R6",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 14,
+      "kind": "replay",
+      "run": "R7",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 15,
+      "kind": "replay",
+      "run": "R7",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 16,
+      "kind": "replay",
+      "run": "R8",
+      "look_in_run": 1,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    },
+    {
+      "access_number": 17,
+      "kind": "replay",
+      "run": "R8",
+      "look_in_run": 2,
+      "recorded_in": "this file only: the replay wrote its access record to a temporary log that was deleted when the test class finished"
+    }
+  ],
+  "totals": {
+    "accesses": 17,
+    "the_look": 1,
+    "replay_accesses": 16,
+    "replay_runs": 8,
+    "replay_runs_local": 7,
+    "replay_runs_in_ci": 1,
+    "loads_per_access": 46,
+    "events_read_per_access": 23
+  },
+  "what_the_replays_did": "Each replay re-ran the look's pipeline on the same 23 events and compared its outputs with the committed ones; the runs passed, or (R2 to R5) failed exactly the tests that should notice the deliberate alteration. Nothing was selected, tuned, changed or decided from them, and no result was read from them that the committed outputs do not already hold.",
+  "going_forward": [
+    "Every run of ReplayTests, local or in CI, is two more accesses. Runs this session makes are added here when they are made. CI runs are listed from https://api.github.com/repos/Fahad9101/NRE/actions/runs.",
+    "A push runs the replay tests in CI. The CI run triggered by the push of a commit that carries this record cannot be known to the record before it happens; it is counted in advance, marked 'expected', and its occurrence can be checked at the API.",
+    "Runs by anyone other than this session are not visible to it and are not counted unless they are reported."
+  ],
+  "limits": [
+    "The count is a lower bound: it rests on the session transcript and the CI API. A run by someone else, or a run not visible to either, is not in it.",
+    "The times are those of the tool calls in the transcript (when the command started) and of the CI run; a run's reads happened within its duration.",
+    "The replays' own access records were written to temporary logs that were deleted; nothing in them survives, so the count cannot be checked against them.",
+    "These accesses are not in the hash-chained access log, which is written before an outcome is read by a run against the real log. The chained log is unchanged."
+  ],
+  "not_a_claim": [
+    "Not a claim about any market.",
+    "Not a second look: the replays reproduced the committed look and changed nothing.",
+    "Not Milestone 4 acceptance: that decision is the owner's."
+  ]
+}

@@ -19,11 +19,14 @@ from nre.core import DataError, canonical, digest  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PROTOCOL = pr.load_json(pr.PROTOCOL_PATH)
+ACCOUNTING = "m4-phase4-replay-accesses-2026-10-07.json"
+LOOKED_ONCE = "the holdout was looked at once"
 
 
 def with_tests(root):
     (root / "tests").mkdir(exist_ok=True)
     shutil.copy(ROOT / "tests" / "test_m4_harness.py", root / "tests" / "test_m4_harness.py")  # the report names the tests that implement the protocol's required ones
+    shutil.copy(ROOT / "reports" / ACCOUNTING, root / "reports" / ACCOUNTING)  # and states every access to the holdout, the counted replays included
     return root
 
 
@@ -92,7 +95,13 @@ class ReportTests(unittest.TestCase):
 
     def test_the_integrity_section_states_one_access_the_logs_and_the_phases(self):
         integrity = self.report["integrity"]
-        self.assertEqual(integrity["logs"]["holdout_accesses_after_genesis"], 1)
+        self.assertEqual(integrity["logs"]["holdout_accesses_after_genesis"], 1)  # the chained log holds the look only
+        accounting = json.loads((ROOT / "reports" / ACCOUNTING).read_text(encoding="utf-8"))
+        replays = accounting["totals"]["replay_accesses"]
+        self.assertGreater(replays, 0)
+        self.assertEqual(integrity["logs"]["holdout_accesses"], {"logged_in_the_chain": 1, "replays_counted": replays, "in_total": 1 + replays, "accounting_record": "reports/" + ACCOUNTING,
+                                                                  "owner_decision": accounting["owner_decision"]["owner_message"]})
+        self.assertEqual(self.report["summary"]["holdout_accesses_in_total"], accounting["totals"]["accesses"])
         self.assertEqual(integrity["logs"]["experiments"]["records"], p4.EXPERIMENTS_BEFORE + 58)
         self.assertEqual([a["events_read"] for a in integrity["logs"]["the_accesses"]], [23])
         self.assertTrue(integrity["protocol"]["matches_the_freeze_record"])
@@ -112,7 +121,12 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(len(criteria), 8)
         self.assertEqual([c["criterion"] for c in criteria][0], "this protocol was frozen before evaluation")
         self.assertTrue(all(c["evidence"] for c in criteria))
-        self.assertTrue(all(c["met_by_the_evidence"] for c in criteria), [c["criterion"] for c in criteria if not c["met_by_the_evidence"]])
+        others = [c for c in criteria if c["criterion"] != LOOKED_ONCE]
+        self.assertTrue(all(c["met_by_the_evidence"] is True for c in others), [c["criterion"] for c in others if c["met_by_the_evidence"] is not True])
+        looked_once = next(c for c in criteria if c["criterion"] == LOOKED_ONCE)
+        self.assertEqual(looked_once["met_by_the_evidence"], rep.JUDGMENT)  # one look in the chain, and replays the owner counted as accesses: the facts are stated, the judgment is the owner's
+        self.assertIn("Count the replays as accesses.", looked_once["evidence"])
+        self.assertIn("%d accesses in all" % self.report["summary"]["holdout_accesses_in_total"], looked_once["evidence"])
         self.assertIn("nothing here declares Milestone 4 accepted", self.report["acceptance_criteria"]["decision"])
         self.assertEqual(self.report["acceptance_criteria"]["does_not_require"], "that any predictor beats the base rate")
         self.assertIn("Not Milestone 4 acceptance", " ".join(self.report["not_a_claim"]))
@@ -130,6 +144,9 @@ class ReportTests(unittest.TestCase):
                          {"phase2": [i["id"] for i in phase2 if i["could_move_a_result"]], "phase3": ["P3-1"], "phase4": ["P4-3", "P4-4"]})
         self.assertEqual([len(items) for items in owner["details_the_assistant_settled_in_later_phases"].values()], [10, 7, 14])
         self.assertIn("has not answered", owner["status"])
+        self.assertIn("counted as accesses", owner["replay_tests"]["decided"])
+        self.assertIn("Count the replays as accesses.", owner["replay_tests"]["decided"])
+        self.assertIn("only on request", owner["replay_tests"]["open"])
 
 
 class ReportPropertiesTests(unittest.TestCase):
@@ -182,8 +199,53 @@ class ReportPropertiesTests(unittest.TestCase):
         finally:
             h_log.write_bytes(before)
         self.assertEqual(report["integrity"]["logs"]["holdout_accesses_after_genesis"], 2)
-        looked_once = next(c for c in report["acceptance_criteria"]["criteria"] if c["criterion"] == "the holdout was looked at once")
-        self.assertFalse(looked_once["met_by_the_evidence"])
+        looked_once = next(c for c in report["acceptance_criteria"]["criteria"] if c["criterion"] == LOOKED_ONCE)
+        self.assertIs(looked_once["met_by_the_evidence"], False)
+
+    def test_it_refuses_without_the_replay_accounting_or_with_one_that_does_not_add_up(self):
+        path = self.root / "reports" / ACCOUNTING
+        original = path.read_text(encoding="utf-8")
+        data = json.loads(original)
+        try:
+            path.unlink()
+            with self.assertRaisesRegex(DataError, "the replay accounting is missing"):
+                rep.assemble(self.root)
+            swapped = json.loads(original)
+            swapped["accesses"][2]["access_number"], swapped["accesses"][3]["access_number"] = swapped["accesses"][3]["access_number"], swapped["accesses"][2]["access_number"]
+            path.write_text(json.dumps(swapped), encoding="utf-8")
+            with self.assertRaisesRegex(DataError, "not a sequence of accesses numbered from the look"):
+                rep.assemble(self.root)
+            relabelled = json.loads(original)
+            relabelled["accesses"][1]["kind"] = "the_look"
+            path.write_text(json.dumps(relabelled), encoding="utf-8")
+            with self.assertRaisesRegex(DataError, "not a sequence of accesses numbered from the look"):
+                rep.assemble(self.root)
+            miscounted = json.loads(original)
+            miscounted["totals"]["replay_accesses"] += 1
+            path.write_text(json.dumps(miscounted), encoding="utf-8")
+            with self.assertRaisesRegex(DataError, "totals do not match its accesses"):
+                rep.assemble(self.root)
+        finally:
+            path.write_text(original, encoding="utf-8")
+        self.assertEqual(rep.assemble(self.root)["summary"]["holdout_accesses_in_total"], data["totals"]["accesses"])
+
+    def test_with_no_replays_the_criterion_is_met_and_with_replays_it_is_left_to_the_owner(self):
+        path = self.root / "reports" / ACCOUNTING
+        original = path.read_text(encoding="utf-8")
+        look_only = json.loads(original)
+        look_only["accesses"] = look_only["accesses"][:1]
+        look_only["totals"].update({"accesses": 1, "replay_accesses": 0})
+        try:
+            path.write_text(json.dumps(look_only), encoding="utf-8")
+            report = rep.assemble(self.root)
+            looked_once = next(c for c in report["acceptance_criteria"]["criteria"] if c["criterion"] == LOOKED_ONCE)
+            self.assertIs(looked_once["met_by_the_evidence"], True)
+            self.assertEqual(report["summary"]["holdout_accesses_in_total"], 1)
+            self.assertEqual(report["integrity"]["logs"]["holdout_accesses"]["replays_counted"], 0)
+        finally:
+            path.write_text(original, encoding="utf-8")
+        report = rep.assemble(self.root)
+        self.assertEqual(next(c for c in report["acceptance_criteria"]["criteria"] if c["criterion"] == LOOKED_ONCE)["met_by_the_evidence"], rep.JUDGMENT)
 
 
 if __name__ == "__main__":

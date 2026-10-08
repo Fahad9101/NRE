@@ -122,6 +122,39 @@ class RecordTests(unittest.TestCase):
             scored += 1
         self.assertEqual(scored, len(by_cell))
 
+    def test_what_the_look_found_as_the_protocol_said_in_advance_and_as_it_turned_out(self):
+        states = self.report["states"]
+        counts_only = ("gap_ge_3pct", "gap_ge_5pct", "loses_half_of_gap")  # the protocol's disclosure: 3 to 5 positives in the holdout, in both versions
+        for target_id in counts_only:
+            self.assertEqual(states[target_id], {"all_event": "COUNTS_ONLY", "clean_window": "COUNTS_ONLY"}, target_id)
+            for version in d.VERSIONS:
+                self.assertTrue(3 <= self.report["evaluations"][target_id][version]["test_counts"]["positives"] <= 5)
+        for target_id in ("extension_after_open_ge_5pct", "day1_close_return"):  # the protocol: these two meet their thresholds
+            self.assertEqual(states[target_id], {"all_event": "EVALUATED", "clean_window": "EVALUATED"}, target_id)
+        evaluated = self.report["evaluations"]
+        self.assertEqual({v: evaluated["extension_after_open_ge_5pct"][v]["test_counts"]["positives"] for v in d.VERSIONS}, {"all_event": 11, "clean_window": 10})
+        self.assertEqual({v: evaluated["day1_close_return"][v]["test_counts"]["events"] for v in d.VERSIONS}, {"all_event": 23, "clean_window": 21})
+        for versions in evaluated.values():  # 23 events from 23 issuers (21 from 21 in the clean-window version): no issuer has two events in the holdout
+            for result in versions.values():
+                self.assertEqual(result["test_counts"]["issuers"], result["test_counts"]["events"])
+
+    def test_the_confirmatory_models_direction_did_not_repeat_and_nothing_is_distinguishable_from_the_base_rate(self):
+        contrasts = 0
+        for target_id, model in (("extension_after_open_ge_5pct", "M2_logistic"), ("day1_close_return", "M3_ridge_linear")):
+            for version in d.VERSIONS:
+                contrast = self.report["evaluations"][target_id][version]["contrasts"][model]
+                check = contrast["against_the_development_result"]
+                self.assertEqual((check["comparable"], check["holdout_sign"], check["development_sign"], check["same_sign"]), (True, -1, 1, False), (target_id, version))
+                self.assertTrue(contrast["headline"]["0.95"]["low"] < 0 < contrast["headline"]["0.95"]["high"], (target_id, version))  # the 95% interval includes zero
+                contrasts += 1
+        self.assertEqual(contrasts, 4)
+        every = [c for versions in self.report["evaluations"].values() for result in versions.values() for section in ("contrasts", "other_contrasts") for c in result[section].values()]
+        self.assertEqual(len(every), 32)
+        excluding = [c for c in every if c["headline"]["0.95"]["low"] > 0 or c["headline"]["0.95"]["high"] < 0]
+        self.assertEqual(len(excluding), 1)  # about 1.6 of 32 would be expected by chance alone; it is exploratory and its 99% interval includes zero
+        self.assertEqual((excluding[0]["role"], excluding[0]["baseline"], excluding[0]["headline"]["0.99"]["low"] < 0 < excluding[0]["headline"]["0.99"]["high"]), ("exploratory", "C1_pooled_quantiles", True))
+        self.assertFalse(any(c["headline"]["0.99"]["low"] > 0 or c["headline"]["0.99"]["high"] < 0 for c in every))
+
     def test_every_prediction_is_a_protocol_prediction_record_timed_by_its_clock_with_no_other_state(self):
         inputs = d.load_inputs(PROTOCOL)
         by_id = {e["event_id"]: e for e in inputs["events"]}
