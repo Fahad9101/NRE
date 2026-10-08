@@ -1,0 +1,743 @@
+{
+  "schema_version": 1,
+  "kind": "m5_scoping_evidence",
+  "as_of": "2026-10-08",
+  "scope_note": "Planning arithmetic from committed Milestone 4 artifacts for the Milestone 5 scope proposal. It fits nothing, predicts nothing, scores nothing, reads no event-level outcome and acquires no data. It uses no result of the Milestone 4 holdout: of the holdout fold it reads only the sizes of its training and test sets.",
+  "inputs": {
+    "reports/m4-report-2026-10-07.json": {
+      "canonical_sha256_of_the_part_read": "8dde1f81f1fa7e4031ce02e379b076226464cda5362893be1b3600f480a4caa3"
+    },
+    "config/m4-protocol.json": {
+      "canonical_sha256_of_the_part_read": "837aa8bfcb16c58d6acf8cf7f1cbfdb4f8d64ac6a6b2263a8dccfe8c9632f377"
+    },
+    "reports/m2-step3-combined-fingerprint-table-2026-10-02.json": {
+      "canonical_sha256_of_the_part_read": "af1e983c07555f82d426be90262447d474007b5d65be5dc6dcaf7b72a0367c31"
+    }
+  },
+  "assumptions": [
+    "A contrast's 99% half-width shrinks with the square root of the number of test events, with the same per-event variability (the usual planning approximation; real intervals depend on the model, the targets' clustering and the bootstrap).",
+    "The half-widths are those of Milestone 4's confirmatory contrasts (a logistic or ridge model against the pooled comparator) on the pooled development test set; an advanced model's contrast against a stronger comparator could be wider or narrower.",
+    "A model could only be declared better at the 99% level if its improvement exceeded the half-width; the 'required events' ask what test-set size would make a stated relative improvement equal the half-width.",
+    "The held-back share is arithmetic about how small the fit set gets when the contract's ordered periods are cut from a training set; it is not a proposed design.",
+    "The data-supply figure applies the dataset's own event rate to the days since its last reaction session; it assumes the same issuers kept reporting on the same cadence and stayed eligible, which has not been checked."
+  ],
+  "fold_sizes": {
+    "gap_ge_3pct/clean_window": {
+      "dev_test_block_3": {
+        "train_events": 55,
+        "train_positives": 19,
+        "test_events": 20,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 55,
+          "held_back_for_hyperparameter_selection": 11,
+          "held_back_for_calibration": 11,
+          "left_to_fit": 33
+        },
+        "leaves_at_most": {
+          "3": 11,
+          "5": 6,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 75,
+        "train_positives": 27,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 75,
+          "held_back_for_hyperparameter_selection": 15,
+          "held_back_for_calibration": 15,
+          "left_to_fit": 45
+        },
+        "leaves_at_most": {
+          "3": 15,
+          "5": 9,
+          "10": 4
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 98,
+        "train_positives": 33,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 98,
+          "held_back_for_hyperparameter_selection": 19,
+          "held_back_for_calibration": 19,
+          "left_to_fit": 60
+        },
+        "leaves_at_most": {
+          "3": 20,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "gap_ge_3pct/all_event": {
+      "dev_test_block_3": {
+        "train_events": 61,
+        "train_positives": 21,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 61,
+          "held_back_for_hyperparameter_selection": 12,
+          "held_back_for_calibration": 12,
+          "left_to_fit": 37
+        },
+        "leaves_at_most": {
+          "3": 12,
+          "5": 7,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 82,
+        "train_positives": 29,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 82,
+          "held_back_for_hyperparameter_selection": 16,
+          "held_back_for_calibration": 16,
+          "left_to_fit": 50
+        },
+        "leaves_at_most": {
+          "3": 16,
+          "5": 10,
+          "10": 5
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 105,
+        "train_positives": 35,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 105,
+          "held_back_for_hyperparameter_selection": 21,
+          "held_back_for_calibration": 21,
+          "left_to_fit": 63
+        },
+        "leaves_at_most": {
+          "3": 21,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "gap_ge_5pct/clean_window": {
+      "dev_test_block_3": {
+        "train_events": 55,
+        "train_positives": 12,
+        "test_events": 20,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 55,
+          "held_back_for_hyperparameter_selection": 11,
+          "held_back_for_calibration": 11,
+          "left_to_fit": 33
+        },
+        "leaves_at_most": {
+          "3": 11,
+          "5": 6,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 75,
+        "train_positives": 17,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 75,
+          "held_back_for_hyperparameter_selection": 15,
+          "held_back_for_calibration": 15,
+          "left_to_fit": 45
+        },
+        "leaves_at_most": {
+          "3": 15,
+          "5": 9,
+          "10": 4
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 98,
+        "train_positives": 22,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 98,
+          "held_back_for_hyperparameter_selection": 19,
+          "held_back_for_calibration": 19,
+          "left_to_fit": 60
+        },
+        "leaves_at_most": {
+          "3": 20,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "gap_ge_5pct/all_event": {
+      "dev_test_block_3": {
+        "train_events": 61,
+        "train_positives": 14,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 61,
+          "held_back_for_hyperparameter_selection": 12,
+          "held_back_for_calibration": 12,
+          "left_to_fit": 37
+        },
+        "leaves_at_most": {
+          "3": 12,
+          "5": 7,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 82,
+        "train_positives": 19,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 82,
+          "held_back_for_hyperparameter_selection": 16,
+          "held_back_for_calibration": 16,
+          "left_to_fit": 50
+        },
+        "leaves_at_most": {
+          "3": 16,
+          "5": 10,
+          "10": 5
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 105,
+        "train_positives": 24,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 105,
+          "held_back_for_hyperparameter_selection": 21,
+          "held_back_for_calibration": 21,
+          "left_to_fit": 63
+        },
+        "leaves_at_most": {
+          "3": 21,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "day1_close_return/clean_window": {
+      "dev_test_block_3": {
+        "train_events": 55,
+        "train_positives": null,
+        "test_events": 20,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 55,
+          "held_back_for_hyperparameter_selection": 11,
+          "held_back_for_calibration": 11,
+          "left_to_fit": 33
+        },
+        "leaves_at_most": {
+          "3": 11,
+          "5": 6,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 75,
+        "train_positives": null,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 75,
+          "held_back_for_hyperparameter_selection": 15,
+          "held_back_for_calibration": 15,
+          "left_to_fit": 45
+        },
+        "leaves_at_most": {
+          "3": 15,
+          "5": 9,
+          "10": 4
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 98,
+        "train_positives": null,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 98,
+          "held_back_for_hyperparameter_selection": 19,
+          "held_back_for_calibration": 19,
+          "left_to_fit": 60
+        },
+        "leaves_at_most": {
+          "3": 20,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "day1_close_return/all_event": {
+      "dev_test_block_3": {
+        "train_events": 61,
+        "train_positives": null,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 61,
+          "held_back_for_hyperparameter_selection": 12,
+          "held_back_for_calibration": 12,
+          "left_to_fit": 37
+        },
+        "leaves_at_most": {
+          "3": 12,
+          "5": 7,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 82,
+        "train_positives": null,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 82,
+          "held_back_for_hyperparameter_selection": 16,
+          "held_back_for_calibration": 16,
+          "left_to_fit": 50
+        },
+        "leaves_at_most": {
+          "3": 16,
+          "5": 10,
+          "10": 5
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 105,
+        "train_positives": null,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 105,
+          "held_back_for_hyperparameter_selection": 21,
+          "held_back_for_calibration": 21,
+          "left_to_fit": 63
+        },
+        "leaves_at_most": {
+          "3": 21,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "extension_after_open_ge_5pct/clean_window": {
+      "dev_test_block_3": {
+        "train_events": 55,
+        "train_positives": 24,
+        "test_events": 20,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 55,
+          "held_back_for_hyperparameter_selection": 11,
+          "held_back_for_calibration": 11,
+          "left_to_fit": 33
+        },
+        "leaves_at_most": {
+          "3": 11,
+          "5": 6,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 75,
+        "train_positives": 31,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 75,
+          "held_back_for_hyperparameter_selection": 15,
+          "held_back_for_calibration": 15,
+          "left_to_fit": 45
+        },
+        "leaves_at_most": {
+          "3": 15,
+          "5": 9,
+          "10": 4
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 98,
+        "train_positives": 42,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 98,
+          "held_back_for_hyperparameter_selection": 19,
+          "held_back_for_calibration": 19,
+          "left_to_fit": 60
+        },
+        "leaves_at_most": {
+          "3": 20,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "extension_after_open_ge_5pct/all_event": {
+      "dev_test_block_3": {
+        "train_events": 61,
+        "train_positives": 25,
+        "test_events": 21,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 61,
+          "held_back_for_hyperparameter_selection": 12,
+          "held_back_for_calibration": 12,
+          "left_to_fit": 37
+        },
+        "leaves_at_most": {
+          "3": 12,
+          "5": 7,
+          "10": 3
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 82,
+        "train_positives": 32,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 82,
+          "held_back_for_hyperparameter_selection": 16,
+          "held_back_for_calibration": 16,
+          "left_to_fit": 50
+        },
+        "leaves_at_most": {
+          "3": 16,
+          "5": 10,
+          "10": 5
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 105,
+        "train_positives": 43,
+        "test_events": 23,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 105,
+          "held_back_for_hyperparameter_selection": 21,
+          "held_back_for_calibration": 21,
+          "left_to_fit": 63
+        },
+        "leaves_at_most": {
+          "3": 21,
+          "5": 12,
+          "10": 6
+        }
+      }
+    },
+    "loses_half_of_gap/clean_window": {
+      "dev_test_block_4": {
+        "train_events": 36,
+        "train_positives": 16,
+        "test_events": 10,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 36,
+          "held_back_for_hyperparameter_selection": 7,
+          "held_back_for_calibration": 7,
+          "left_to_fit": 22
+        },
+        "leaves_at_most": {
+          "3": 7,
+          "5": 4,
+          "10": 2
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 46,
+        "train_positives": 21,
+        "test_events": 10,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 46,
+          "held_back_for_hyperparameter_selection": 9,
+          "held_back_for_calibration": 9,
+          "left_to_fit": 28
+        },
+        "leaves_at_most": {
+          "3": 9,
+          "5": 5,
+          "10": 2
+        }
+      }
+    },
+    "loses_half_of_gap/all_event": {
+      "dev_test_block_3": {
+        "train_events": 25,
+        "train_positives": 10,
+        "test_events": 13,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 25,
+          "held_back_for_hyperparameter_selection": 5,
+          "held_back_for_calibration": 5,
+          "left_to_fit": 15
+        },
+        "leaves_at_most": {
+          "3": 5,
+          "5": 3,
+          "10": 1
+        }
+      },
+      "dev_test_block_4": {
+        "train_events": 38,
+        "train_positives": 17,
+        "test_events": 10,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 38,
+          "held_back_for_hyperparameter_selection": 7,
+          "held_back_for_calibration": 7,
+          "left_to_fit": 24
+        },
+        "leaves_at_most": {
+          "3": 8,
+          "5": 4,
+          "10": 2
+        }
+      },
+      "block_5_as_a_fold": {
+        "train_events": 48,
+        "train_positives": 22,
+        "test_events": 12,
+        "if_a_fifth_is_held_back_twice": {
+          "training_events": 48,
+          "held_back_for_hyperparameter_selection": 9,
+          "held_back_for_calibration": 9,
+          "left_to_fit": 30
+        },
+        "leaves_at_most": {
+          "3": 10,
+          "5": 6,
+          "10": 3
+        }
+      }
+    }
+  },
+  "detectability": {
+    "gap_ge_3pct/clean_window": {
+      "events": 43,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.22140242167977703,
+      "strongest_simple_baseline": "C4_issuer_history_rate",
+      "strongest_simple_baseline_score": 0.21166450686302885,
+      "strongest_m4_predictor": "C4_issuer_history_rate",
+      "strongest_m4_predictor_score": 0.21166450686302885,
+      "half_width_99": 0.02939998141118462,
+      "half_width_as_share_of_comparator_score": 0.13278979149427264,
+      "observed_difference_of_the_m4_model": -0.002711214316237553,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 304,
+        "10%": 76
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.07696511665089406,
+        "256": 0.054422555898660845,
+        "512": 0.03848255832544703,
+        "1024": 0.027211277949330422
+      }
+    },
+    "gap_ge_3pct/all_event": {
+      "events": 44,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.21848768671074667,
+      "strongest_simple_baseline": "C4_issuer_history_rate",
+      "strongest_simple_baseline_score": 0.2046191951057754,
+      "strongest_m4_predictor": "C4_issuer_history_rate",
+      "strongest_m4_predictor_score": 0.2046191951057754,
+      "half_width_99": 0.03117361014318603,
+      "half_width_as_share_of_comparator_score": 0.1426790251317751,
+      "observed_difference_of_the_m4_model": -0.010101693617276933,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 359,
+        "10%": 90
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.08365299350929015,
+        "256": 0.0591515989769733,
+        "512": 0.04182649675464507,
+        "1024": 0.02957579948848665
+      }
+    },
+    "gap_ge_5pct/clean_window": {
+      "events": 43,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.17872721293270769,
+      "strongest_simple_baseline": "C4_issuer_history_rate",
+      "strongest_simple_baseline_score": 0.17790843052864544,
+      "strongest_m4_predictor": "C4_issuer_history_rate",
+      "strongest_m4_predictor_score": 0.17790843052864544,
+      "half_width_99": 0.03901172003116591,
+      "half_width_as_share_of_comparator_score": 0.21827521053469431,
+      "observed_difference_of_the_m4_model": 0.01567417772258706,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 820,
+        "10%": 205
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.1265125643451725,
+        "256": 0.0894578921537709,
+        "512": 0.06325628217258625,
+        "1024": 0.04472894607688545
+      }
+    },
+    "gap_ge_5pct/all_event": {
+      "events": 44,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.17565521772098838,
+      "strongest_simple_baseline": "C4_issuer_history_rate",
+      "strongest_simple_baseline_score": 0.1700641109053362,
+      "strongest_m4_predictor": "C4_issuer_history_rate",
+      "strongest_m4_predictor_score": 0.1700641109053362,
+      "half_width_99": 0.030682198156701222,
+      "half_width_as_share_of_comparator_score": 0.17467285375739294,
+      "observed_difference_of_the_m4_model": 0.006183285449460304,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 537,
+        "10%": 135
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.10241103825962614,
+        "256": 0.0724155396217366,
+        "512": 0.05120551912981307,
+        "1024": 0.0362077698108683
+      }
+    },
+    "day1_close_return/clean_window": {
+      "events": 43,
+      "metric": "mean_pinball_loss",
+      "comparator": "C1_pooled_quantiles",
+      "comparator_score": 0.03489148631820225,
+      "strongest_simple_baseline": "C3_sector_group_quantiles",
+      "strongest_simple_baseline_score": 0.03456165793395368,
+      "strongest_m4_predictor": "C3_sector_group_quantiles",
+      "strongest_m4_predictor_score": 0.03456165793395368,
+      "half_width_99": 0.004188634539196923,
+      "half_width_as_share_of_comparator_score": 0.12004746662258951,
+      "observed_difference_of_the_m4_model": 0.0004817096657480546,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 248,
+        "10%": 62
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.06957965042554058,
+        "256": 0.04920024264848919,
+        "512": 0.03478982521277029,
+        "1024": 0.024600121324244596
+      }
+    },
+    "day1_close_return/all_event": {
+      "events": 44,
+      "metric": "mean_pinball_loss",
+      "comparator": "C1_pooled_quantiles",
+      "comparator_score": 0.03440083012480776,
+      "strongest_simple_baseline": "C3_sector_group_quantiles",
+      "strongest_simple_baseline_score": 0.033918083553081416,
+      "strongest_m4_predictor": "C3_sector_group_quantiles",
+      "strongest_m4_predictor_score": 0.033918083553081416,
+      "half_width_99": 0.004862277015139287,
+      "half_width_as_share_of_comparator_score": 0.14134185127215615,
+      "observed_difference_of_the_m4_model": 0.0004198822124015992,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 352,
+        "10%": 88
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.08286900584119256,
+        "256": 0.05859723598049487,
+        "512": 0.04143450292059628,
+        "1024": 0.029298617990247435
+      }
+    },
+    "extension_after_open_ge_5pct/clean_window": {
+      "events": 43,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.24500610331651504,
+      "strongest_simple_baseline": "C1_pooled_rate",
+      "strongest_simple_baseline_score": 0.24500610331651504,
+      "strongest_m4_predictor": "C1_pooled_rate",
+      "strongest_m4_predictor_score": 0.24500610331651504,
+      "half_width_99": 0.0615093715067519,
+      "half_width_as_share_of_comparator_score": 0.2510524051202514,
+      "observed_difference_of_the_m4_model": 0.028344791358834873,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 1085,
+        "10%": 272
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.14551026421636523,
+        "256": 0.10289129455963808,
+        "512": 0.07275513210818262,
+        "1024": 0.05144564727981904
+      }
+    },
+    "extension_after_open_ge_5pct/all_event": {
+      "events": 44,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.24333826863280797,
+      "strongest_simple_baseline": "C1_pooled_rate",
+      "strongest_simple_baseline_score": 0.24333826863280797,
+      "strongest_m4_predictor": "C1_pooled_rate",
+      "strongest_m4_predictor_score": 0.24333826863280797,
+      "half_width_99": 0.0673456571030063,
+      "half_width_as_share_of_comparator_score": 0.27675736118854943,
+      "observed_difference_of_the_m4_model": 0.022824302662109233,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 1349,
+        "10%": 338
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.16226338607073967,
+        "256": 0.1147375406289108,
+        "512": 0.08113169303536984,
+        "1024": 0.0573687703144554
+      }
+    },
+    "loses_half_of_gap/all_event": {
+      "events": 23,
+      "metric": "brier_score",
+      "comparator": "C1_pooled_rate",
+      "comparator_score": 0.2612043839575888,
+      "strongest_simple_baseline": "C4_issuer_history_rate",
+      "strongest_simple_baseline_score": 0.2539431310972912,
+      "strongest_m4_predictor": "C4_issuer_history_rate",
+      "strongest_m4_predictor_score": 0.2539431310972912,
+      "half_width_99": 0.11405097946170697,
+      "half_width_as_share_of_comparator_score": 0.43663501252806375,
+      "observed_difference_of_the_m4_model": 0.05813343983443807,
+      "events_for_a_stated_improvement_to_equal_the_half_width": {
+        "5%": 1754,
+        "10%": 439
+      },
+      "half_width_as_share_of_comparator_score_at_test_sizes": {
+        "128": 0.18508767107196025,
+        "256": 0.13087674732900825,
+        "512": 0.09254383553598013,
+        "1024": 0.06543837366450413
+      }
+    }
+  },
+  "data_supply": {
+    "events": 128,
+    "issuers": 23,
+    "block_sizes": [
+      17,
+      44,
+      21,
+      23,
+      23
+    ],
+    "first_reaction_session": "2024-11-05",
+    "last_reaction_session": "2026-04-01",
+    "span_days": 512,
+    "events_per_issuer_in_the_fingerprint_table_note": {
+      "fewest": 4,
+      "most": 6,
+      "from": "2024-11-04",
+      "to": "2026-03-31"
+    },
+    "as_of": "2026-10-08",
+    "days_since_the_last_reaction_session": 190,
+    "events_at_the_same_rate_since_then": 47.5,
+    "reading": "an estimate, not a count: nothing was enumerated, and the issuers' cadence and eligibility since the data ended have not been checked"
+  }
+}
