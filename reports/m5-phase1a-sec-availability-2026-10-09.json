@@ -1,0 +1,954 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1a_sec_availability_check",
+  "recorded_on": "2026-10-09",
+  "authorization": "reports/m5-phase1a-authorization-2026-10-08.json (the bounded SEC EDGAR availability check for the 23 issuers)",
+  "what_this_is": "Whether each of the 23 issuers has entity-wide XBRL facts for shares outstanding and for public float in the SEC's company-concept API, and when they were filed. Counts, forms and filing dates only: no value was kept. It says what could be had point-in-time from the SEC; nothing was added to the dataset.",
+  "method": {
+    "provider": "SEC EDGAR XBRL company-concept API, https://data.sec.gov/api/xbrl/companyconcept/CIK##########/dei/<concept>.json",
+    "concepts": [
+      "EntityCommonStockSharesOutstanding",
+      "EntityPublicFloat"
+    ],
+    "how": "A same-origin fetch loop run in a data.sec.gov tab of the built-in browser, because data.sec.gov supports no cross-origin scripting; one request per issuer and concept, 300 ms apart (about 3 a second; the SEC's stated maximum is 10 a second). A page script cannot set a user agent, so the browser sent its own.",
+    "requests_for_this_result": 46,
+    "requests_in_all": "about 110: an aborted first loop (15 requests, stopped by a TypeError on HURN's empty unit entry before anything was kept), one request to inspect that entry, one for ACHV, a shape-only loop (46) and the loop that produced this result (46)",
+    "retrieved_at": "2026-10-09T05:13:53.660Z",
+    "window": [
+      "2024-10-01",
+      "2026-10-02"
+    ],
+    "first_event_day": "2024-11-04",
+    "kept": "per issuer and concept: the status, the unit, the number of facts, the forms, the first and last filing date, the facts and distinct filing dates inside the window, and whether a fact was filed by 2024-11-04",
+    "not_kept": "every fact's value, period end, accession number and fiscal period",
+    "transcription": "The page computed the SHA-256 of its canonical output; the text was saved to a file and its length and SHA-256 were recomputed in Python and matched."
+  },
+  "result_canonical_sha256": "fc7f0bc60a3205766aa4658300066c9fecf690f4ef2b6716990e7c29264542fd",
+  "result_canonical_bytes": 12098,
+  "summary": {
+    "shares_outstanding": {
+      "issuers_with_entity_wide_facts_filed_in_the_window": [
+        "ACHV",
+        "ALKT",
+        "ASMB",
+        "ASPN",
+        "CACI",
+        "COLL",
+        "CXT",
+        "KLC",
+        "LNSR",
+        "LOVE",
+        "NBIX",
+        "PARR",
+        "PAYO",
+        "PDFS",
+        "REAL",
+        "REKR",
+        "SLSN",
+        "TECX",
+        "TTWO",
+        "VSAT"
+      ],
+      "count": 20,
+      "distinct_filing_dates_in_the_window": {
+        "fewest": 7,
+        "most": 10,
+        "fewest_issuer": "ALKT",
+        "most_issuer": "LNSR"
+      },
+      "issuers_without": {
+        "HURN": "status 200 but the unit entry is empty: no entity-wide fact",
+        "JBSS": "3 facts, all from 2011-11-02 to 2012-05-01: none in the window",
+        "OKTA": "status 404: the API holds no entity-wide fact (the cover page reports shares by class)"
+      },
+      "no_fact_filed_on_or_before_2024_11_04": [
+        "KLC"
+      ],
+      "forms_seen": [
+        "10-K",
+        "10-K/A",
+        "10-Q",
+        "10-Q/A"
+      ]
+    },
+    "public_float": {
+      "issuers_with_facts": [
+        "ACHV",
+        "ALKT",
+        "ASMB",
+        "ASPN",
+        "CACI",
+        "COLL",
+        "CXT",
+        "HURN",
+        "JBSS",
+        "KLC",
+        "LNSR",
+        "LOVE",
+        "NBIX",
+        "OKTA",
+        "PARR",
+        "PAYO",
+        "PDFS",
+        "REAL",
+        "REKR",
+        "SLSN",
+        "TECX",
+        "TTWO",
+        "VSAT"
+      ],
+      "count": 23,
+      "facts_filed_in_the_window": {
+        "fewest": 2,
+        "most": 4
+      },
+      "no_fact_filed_on_or_before_2024_11_04": [
+        "KLC"
+      ],
+      "forms_seen": [
+        "10-K",
+        "10-K/A",
+        "10-Q"
+      ]
+    }
+  },
+  "limits": [
+    "Entity-wide facts only: the company-concept API does not aggregate dimensional facts, so an issuer that reports shares by class (OKTA, and JBSS since 2012) shows no usable fact here although its filings state the shares.",
+    "A filing date is the date of the original filing in the API's fact list; amendments appear as further facts with later dates, and the check did not look at values or at which fact supersedes which.",
+    "Public float is the aggregate market value of non-affiliate common equity on one date a year (the last business day of the second fiscal quarter), reported in the annual report: it is not a share count and not free float.",
+    "Shares outstanding come from the cover page as of a date near the filing; they are not updated between filings.",
+    "The SEC says the XBRL APIs update in under a minute and filings appear on sec.gov a few minutes after acceptance, and does not guarantee either; a filing's availability time is therefore its filing date plus a margin, not a measured instant."
+  ],
+  "result": {
+    "ACHV": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 9,
+            "facts": 63,
+            "facts_filed_in_window": 9,
+            "first_filed": "2011-08-05",
+            "forms": {
+              "10-K": 15,
+              "10-K/A": 2,
+              "10-Q": 46
+            },
+            "last_filed": "2026-08-11"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 3,
+            "facts": 19,
+            "facts_filed_in_window": 3,
+            "first_filed": "2011-08-05",
+            "forms": {
+              "10-K": 15,
+              "10-K/A": 2,
+              "10-Q": 2
+            },
+            "last_filed": "2026-04-30"
+          }
+        }
+      },
+      "cik": "0000949858"
+    },
+    "ALKT": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 7,
+            "facts": 21,
+            "facts_filed_in_window": 7,
+            "first_filed": "2021-05-12",
+            "forms": {
+              "10-K": 5,
+              "10-Q": 16
+            },
+            "last_filed": "2026-07-30"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 5,
+            "facts_filed_in_window": 2,
+            "first_filed": "2022-02-25",
+            "forms": {
+              "10-K": 5
+            },
+            "last_filed": "2026-02-26"
+          }
+        }
+      },
+      "cik": "0001529274"
+    },
+    "ASMB": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 63,
+            "facts_filed_in_window": 8,
+            "first_filed": "2011-08-15",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 46,
+              "10-Q/A": 1
+            },
+            "last_filed": "2026-08-13"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 16,
+            "facts_filed_in_window": 2,
+            "first_filed": "2012-03-14",
+            "forms": {
+              "10-K": 16
+            },
+            "last_filed": "2026-03-19"
+          }
+        }
+      },
+      "cik": "0001426800"
+    },
+    "ASPN": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 9,
+            "facts": 50,
+            "facts_filed_in_window": 9,
+            "first_filed": "2014-08-08",
+            "forms": {
+              "10-K": 12,
+              "10-K/A": 1,
+              "10-Q": 37
+            },
+            "last_filed": "2026-08-07"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 3,
+            "facts": 13,
+            "facts_filed_in_window": 3,
+            "first_filed": "2015-03-13",
+            "forms": {
+              "10-K": 12,
+              "10-K/A": 1
+            },
+            "last_filed": "2026-03-23"
+          }
+        }
+      },
+      "cik": "0001145986"
+    },
+    "CACI": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 64,
+            "facts_filed_in_window": 8,
+            "first_filed": "2010-11-04",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 48
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 16,
+            "facts_filed_in_window": 2,
+            "first_filed": "2011-08-29",
+            "forms": {
+              "10-K": 16
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "cik": "0000016058"
+    },
+    "COLL": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 47,
+            "facts_filed_in_window": 8,
+            "first_filed": "2015-07-17",
+            "forms": {
+              "10-K": 11,
+              "10-Q": 34,
+              "10-Q/A": 2
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 11,
+            "facts_filed_in_window": 2,
+            "first_filed": "2016-03-18",
+            "forms": {
+              "10-K": 11
+            },
+            "last_filed": "2026-02-26"
+          }
+        }
+      },
+      "cik": "0001267565"
+    },
+    "CXT": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 65,
+            "facts_filed_in_window": 8,
+            "first_filed": "2010-08-05",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 49
+            },
+            "last_filed": "2026-08-05"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 16,
+            "facts_filed_in_window": 2,
+            "first_filed": "2011-02-28",
+            "forms": {
+              "10-K": 16
+            },
+            "last_filed": "2026-02-26"
+          }
+        }
+      },
+      "cik": "0000025445"
+    },
+    "HURN": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "facts": 0,
+            "unit_entry_was_an_array": false
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 21,
+            "facts_filed_in_window": 2,
+            "first_filed": "2010-07-29",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 5
+            },
+            "last_filed": "2026-02-24"
+          }
+        }
+      },
+      "cik": "0001289848"
+    },
+    "JBSS": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 0,
+            "facts": 3,
+            "facts_filed_in_window": 0,
+            "first_filed": "2011-11-02",
+            "forms": {
+              "10-Q": 3
+            },
+            "last_filed": "2012-05-01"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 16,
+            "facts_filed_in_window": 2,
+            "first_filed": "2011-11-02",
+            "forms": {
+              "10-K": 15,
+              "10-Q": 1
+            },
+            "last_filed": "2026-08-19"
+          }
+        }
+      },
+      "cik": "0000880117"
+    },
+    "KLC": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": false,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 8,
+            "facts_filed_in_window": 8,
+            "first_filed": "2024-11-21",
+            "forms": {
+              "10-K": 2,
+              "10-Q": 6
+            },
+            "last_filed": "2026-08-13"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": false,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 2,
+            "facts_filed_in_window": 2,
+            "first_filed": "2025-03-21",
+            "forms": {
+              "10-K": 2
+            },
+            "last_filed": "2026-03-13"
+          }
+        }
+      },
+      "cik": "0001873529"
+    },
+    "LNSR": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 10,
+            "facts": 28,
+            "facts_filed_in_window": 10,
+            "first_filed": "2020-11-12",
+            "forms": {
+              "10-K": 6,
+              "10-K/A": 2,
+              "10-Q": 18,
+              "10-Q/A": 2
+            },
+            "last_filed": "2026-08-13"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 4,
+            "facts": 8,
+            "facts_filed_in_window": 4,
+            "first_filed": "2021-03-12",
+            "forms": {
+              "10-K": 6,
+              "10-K/A": 2
+            },
+            "last_filed": "2026-04-30"
+          }
+        }
+      },
+      "cik": "0001320350"
+    },
+    "LOVE": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 37,
+            "facts_filed_in_window": 8,
+            "first_filed": "2018-09-14",
+            "forms": {
+              "10-K": 8,
+              "10-K/A": 2,
+              "10-Q": 25,
+              "10-Q/A": 2
+            },
+            "last_filed": "2026-09-10"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 10,
+            "facts_filed_in_window": 2,
+            "first_filed": "2019-05-03",
+            "forms": {
+              "10-K": 8,
+              "10-K/A": 2
+            },
+            "last_filed": "2026-04-02"
+          }
+        }
+      },
+      "cik": "0001701758"
+    },
+    "NBIX": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 61,
+            "facts_filed_in_window": 8,
+            "first_filed": "2011-07-29",
+            "forms": {
+              "10-K": 15,
+              "10-Q": 46
+            },
+            "last_filed": "2026-07-31"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 15,
+            "facts_filed_in_window": 2,
+            "first_filed": "2012-02-09",
+            "forms": {
+              "10-K": 15
+            },
+            "last_filed": "2026-02-11"
+          }
+        }
+      },
+      "cik": "0000914475"
+    },
+    "OKTA": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 404
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 9,
+            "facts_filed_in_window": 2,
+            "first_filed": "2018-03-12",
+            "forms": {
+              "10-K": 9
+            },
+            "last_filed": "2026-03-05"
+          }
+        }
+      },
+      "cik": "0001660134"
+    },
+    "PARR": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 64,
+            "facts_filed_in_window": 8,
+            "first_filed": "2011-08-04",
+            "forms": {
+              "10-K": 15,
+              "10-K/A": 3,
+              "10-Q": 44,
+              "10-Q/A": 2
+            },
+            "last_filed": "2026-08-05"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 20,
+            "facts_filed_in_window": 2,
+            "first_filed": "2011-08-04",
+            "forms": {
+              "10-K": 15,
+              "10-K/A": 3,
+              "10-Q": 2
+            },
+            "last_filed": "2026-02-25"
+          }
+        }
+      },
+      "cik": "0000821483"
+    },
+    "PAYO": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 22,
+            "facts_filed_in_window": 8,
+            "first_filed": "2021-08-11",
+            "forms": {
+              "10-K": 5,
+              "10-Q": 16,
+              "10-Q/A": 1
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 5,
+            "facts_filed_in_window": 2,
+            "first_filed": "2022-03-03",
+            "forms": {
+              "10-K": 5
+            },
+            "last_filed": "2026-02-26"
+          }
+        }
+      },
+      "cik": "0001845815"
+    },
+    "PDFS": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 61,
+            "facts_filed_in_window": 8,
+            "first_filed": "2011-08-30",
+            "forms": {
+              "10-K": 15,
+              "10-Q": 44,
+              "10-Q/A": 2
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 15,
+            "facts_filed_in_window": 2,
+            "first_filed": "2012-03-15",
+            "forms": {
+              "10-K": 15
+            },
+            "last_filed": "2026-02-24"
+          }
+        }
+      },
+      "cik": "0001120914"
+    },
+    "REAL": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 29,
+            "facts_filed_in_window": 8,
+            "first_filed": "2019-08-14",
+            "forms": {
+              "10-K": 7,
+              "10-Q": 22
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 7,
+            "facts_filed_in_window": 2,
+            "first_filed": "2020-03-11",
+            "forms": {
+              "10-K": 7
+            },
+            "last_filed": "2026-02-26"
+          }
+        }
+      },
+      "cik": "0001573221"
+    },
+    "REKR": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 38,
+            "facts_filed_in_window": 8,
+            "first_filed": "2017-08-15",
+            "forms": {
+              "10-K": 9,
+              "10-Q": 27,
+              "10-Q/A": 2
+            },
+            "last_filed": "2026-08-13"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 9,
+            "facts_filed_in_window": 2,
+            "first_filed": "2018-04-12",
+            "forms": {
+              "10-K": 9
+            },
+            "last_filed": "2026-03-31"
+          }
+        }
+      },
+      "cik": "0001697851"
+    },
+    "SLSN": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 62,
+            "facts_filed_in_window": 8,
+            "first_filed": "2011-08-12",
+            "forms": {
+              "10-K": 15,
+              "10-Q": 46,
+              "10-Q/A": 1
+            },
+            "last_filed": "2026-08-19"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 15,
+            "facts_filed_in_window": 2,
+            "first_filed": "2012-03-29",
+            "forms": {
+              "10-K": 15
+            },
+            "last_filed": "2026-03-31"
+          }
+        }
+      },
+      "cik": "0000883107"
+    },
+    "TECX": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 33,
+            "facts_filed_in_window": 8,
+            "first_filed": "2018-08-09",
+            "forms": {
+              "10-K": 8,
+              "10-Q": 25
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 8,
+            "facts_filed_in_window": 2,
+            "first_filed": "2019-03-25",
+            "forms": {
+              "10-K": 8
+            },
+            "last_filed": "2026-02-26"
+          }
+        }
+      },
+      "cik": "0001681087"
+    },
+    "TTWO": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 64,
+            "facts_filed_in_window": 8,
+            "first_filed": "2010-09-03",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 48
+            },
+            "last_filed": "2026-08-07"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 16,
+            "facts_filed_in_window": 2,
+            "first_filed": "2011-05-25",
+            "forms": {
+              "10-K": 16
+            },
+            "last_filed": "2026-05-22"
+          }
+        }
+      },
+      "cik": "0000946581"
+    },
+    "VSAT": {
+      "EntityCommonStockSharesOutstanding": {
+        "status": 200,
+        "units": {
+          "shares": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 8,
+            "facts": 65,
+            "facts_filed_in_window": 8,
+            "first_filed": "2010-08-11",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 48,
+              "10-Q/A": 1
+            },
+            "last_filed": "2026-08-06"
+          }
+        }
+      },
+      "EntityPublicFloat": {
+        "status": 200,
+        "units": {
+          "USD": {
+            "a_fact_was_filed_by_2024_11_04": true,
+            "distinct_filing_dates_in_window": 2,
+            "facts": 19,
+            "facts_filed_in_window": 2,
+            "first_filed": "2010-08-11",
+            "forms": {
+              "10-K": 16,
+              "10-Q": 3
+            },
+            "last_filed": "2026-05-29"
+          }
+        }
+      },
+      "cik": "0000797721"
+    }
+  }
+}

@@ -1,0 +1,2698 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1a_probe_run_record",
+  "recorded_on": "2026-10-09",
+  "what_this_is": "The second run of the Milestone 5 Phase 1a availability probe, spec revision 2, exactly as the probe reported it. Availability metadata only: dates, counts, HTTP status codes, unit-free ratios and booleans; no price and no volume value.",
+  "run": {
+    "workflow": "M5 Phase 1a availability probe",
+    "run_id": 37887398952,
+    "job_id": 113680369835,
+    "attempt": 1,
+    "event": "push",
+    "commit": "5a573160c103227b356d23b4deb49fb6a4a6331a",
+    "run_url": "https://github.com/Fahad9101/NRE/actions/runs/37887398952",
+    "started": "2026-10-09T05:11:41Z",
+    "completed": "2026-10-09T05:13:05Z",
+    "conclusion": "success",
+    "probe_retrieved_at": "2026-10-09T05:11:45Z",
+    "authorization": "reports/m5-phase1a-authorization-2026-10-08.json",
+    "spec": "config/m5-phase1a-probe-spec.json, revision 2, as committed in 5a57316",
+    "ci_run_for_the_same_commit": "NRE Milestone 1 #240, passed on attempt 1, both jobs (Python 3.12 and 3.13)"
+  },
+  "how_it_was_read": "Read exactly as run 1 was: the probe prints its report as canonical JSON, gzip with a fixed modification time, base64, in workflow-command notices and one digest notice, which the public check-run annotations API serves without sign-in. They were fetched from /repos/Fahad9101/NRE/check-runs/113680369835/annotations and decoded with nre.m5_phase1a_probe.decode_annotations, which verifies the digest notice.",
+  "compared_with_run_1": {
+    "record": "reports/m5-phase1a-probe-run1-2026-10-08.json",
+    "sections_identical_to_run_1": [
+      "reference_calendar",
+      "daily_bars",
+      "symbol_mapping",
+      "adjustment_modes",
+      "feeds",
+      "corporate_actions"
+    ],
+    "meaning": "The daily-bar, symbol-mapping, adjustment, feed, corporate-action and calendar results repeat exactly, 8 hours 46 minutes after run 1 (run 1 retrieved at 2026-10-08T20:25:36Z, run 2 at 2026-10-09T05:11:45Z).",
+    "what_revision_2_added": [
+      "the 16:00 minute kept apart from the regular session and from after hours",
+      "a fifth ratio (the closing minute's share)",
+      "booleans on whether the daily open, high, low and close equal the all-hours or the regular-session minute values"
+    ]
+  },
+  "report_canonical_sha256": "e50e904566082ade138af879f4b0542c71f55b1c79800eec76ffcb8df00ed752",
+  "report_canonical_bytes": 54075,
+  "known_limits_of_this_run": [
+    "Six symbols on four ordinary Wednesdays of 2025 (23 sessions after the guard skipped one): thin for the issuers, whose extended-hours trading is sparse; a field can only be classified on a session where its candidates differ.",
+    "No early-close day and no event day was sampled.",
+    "The booleans compare the daily bar with minute bars from the same provider and feed; they say what the daily bar is made of, not whether either matches an official exchange price.",
+    "The daily bar is a snapshot as of the retrieval time; whether the provider revises historical bars after the fact (a vintage question) was not tested."
+  ],
+  "report": {
+    "adjustment_modes": {
+      "all": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "dividend": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "raw": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "spin-off": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "split": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      }
+    },
+    "checks_that_errored": 0,
+    "complete": true,
+    "corporate_actions": {
+      "ACHV": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "ALKT": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "ASMB": {
+        "by_type": {
+          "reverse_splits": 1
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "ASPN": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "CACI": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "COLL": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "CXT": {
+        "by_type": {
+          "cash_dividends": 12
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "HURN": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "JBSS": {
+        "by_type": {
+          "cash_dividends": 7
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "KLC": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "LNSR": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "LOVE": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "NBIX": {
+        "by_type": {
+          "cash_mergers": 1
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "OKTA": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "PARR": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "PAYO": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "PDFS": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "REAL": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "REKR": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "SLSN": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "TECX": {
+        "by_type": {
+          "name_changes": 1,
+          "reverse_splits": 1
+        },
+        "pages": 1,
+        "status": 200
+      },
+      "TTWO": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      },
+      "VSAT": {
+        "by_type": {},
+        "pages": 1,
+        "status": 200
+      }
+    },
+    "daily_bars": {
+      "ACHV": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "ALKT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "ASMB": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "ASPN": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "CACI": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "COLL": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "CXT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "DIA": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "GLD": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "HURN": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "HYG": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IBB": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IGV": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IJR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "IWM": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "JBSS": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "KLC": {
+        "bars": 497,
+        "bars_before_first_reaction_session": 19,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 19,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 497,
+        "first_bar_date": "2024-10-09",
+        "has_required_lookback": false,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "LNSR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "LOVE": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "LQD": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "NBIX": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "OKTA": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "PARR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "PAYO": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "PDFS": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "QQQ": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "REAL": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "REKR": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "RSP": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "SLSN": {
+        "bars": 374,
+        "bars_before_first_reaction_session": 0,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 0,
+          "study_span": 247
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 374,
+        "first_bar_date": "2025-04-08",
+        "has_required_lookback": false,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "SMH": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "SPY": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "TECX": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "TLT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "TTWO": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "UUP": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "VIXY": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "VSAT": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "VXX": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XBI": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLB": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLC": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLE": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLF": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLI": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLK": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLP": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLRE": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLU": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLV": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      },
+      "XLY": {
+        "bars": 754,
+        "bars_before_first_reaction_session": 276,
+        "bars_by_period": {
+          "fresh": 127,
+          "lookback": 276,
+          "study_span": 351
+        },
+        "bars_on_unexpected_dates": 0,
+        "expected_sessions_from_first_bar": 754,
+        "first_bar_date": "2023-10-02",
+        "has_required_lookback": true,
+        "last_bar_date": "2026-10-02",
+        "missing_by_period": {
+          "fresh": 0,
+          "lookback": 0,
+          "study_span": 0
+        },
+        "missing_dates_first_20": [],
+        "missing_sessions": 0,
+        "pages": 1,
+        "status": 200,
+        "unexpected_dates_first_20": [],
+        "zero_volume_bars": 0
+      }
+    },
+    "feeds": {
+      "boats": {
+        "bars": 4,
+        "message": null,
+        "status": 200
+      },
+      "iex": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      },
+      "otc": {
+        "bars": 0,
+        "message": "subscription does not permit querying OTC data",
+        "status": 403
+      },
+      "sip": {
+        "bars": 5,
+        "message": null,
+        "status": 200
+      }
+    },
+    "github": {
+      "GITHUB_RUN_ATTEMPT": "1",
+      "GITHUB_RUN_ID": "37887398952",
+      "GITHUB_SHA": "5a573160c103227b356d23b4deb49fb6a4a6331a",
+      "GITHUB_WORKFLOW": "M5 Phase 1a availability probe"
+    },
+    "kind": "m5_phase1a_probe_result",
+    "minute_sample": {
+      "hours_new_york": [
+        "04:00",
+        "20:00"
+      ],
+      "pairs": [
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.088,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0301,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0002,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.1903,
+          "minute_bars": {
+            "after_hours": 210,
+            "closing_minute": 1,
+            "premarket": 258,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": false,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0717,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.043,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0127,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0001,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.1032,
+          "minute_bars": {
+            "after_hours": 208,
+            "closing_minute": 1,
+            "premarket": 263,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": false,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0504,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.094,
+          "closing_minute_share_of_all_hours_minute_volume": 0.019,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0002,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.1305,
+          "minute_bars": {
+            "after_hours": 203,
+            "closing_minute": 1,
+            "premarket": 244,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": false,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": false,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0213,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.1003,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0274,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.1257,
+          "minute_bars": {
+            "after_hours": 234,
+            "closing_minute": 1,
+            "premarket": 290,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": false,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0113,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "SPY"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0063,
+          "closing_minute_share_of_all_hours_minute_volume": 0.011,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0001,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.013,
+          "minute_bars": {
+            "after_hours": 28,
+            "closing_minute": 1,
+            "premarket": 40,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": true,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": false,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": true
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0065,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0095,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0147,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0046,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0187,
+          "minute_bars": {
+            "after_hours": 17,
+            "closing_minute": 1,
+            "premarket": 33,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": false,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": false,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": true
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0044,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0057,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0162,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0056,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0337,
+          "minute_bars": {
+            "after_hours": 26,
+            "closing_minute": 1,
+            "premarket": 80,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": false,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0215,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0355,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0112,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0032,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0437,
+          "minute_bars": {
+            "after_hours": 36,
+            "closing_minute": 1,
+            "premarket": 28,
+            "regular": 390
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0033,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "XBI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0,
+          "closing_minute_share_of_all_hours_minute_volume": 0.1369,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0609,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0619,
+          "minute_bars": {
+            "after_hours": 0,
+            "closing_minute": 1,
+            "premarket": 3,
+            "regular": 263
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": true,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.001,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0,
+          "closing_minute_share_of_all_hours_minute_volume": 0.2286,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.1755,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.1755,
+          "minute_bars": {
+            "after_hours": 0,
+            "closing_minute": 1,
+            "premarket": 0,
+            "regular": 145
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": true,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": false,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": true,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": false
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0007,
+          "closing_minute_share_of_all_hours_minute_volume": 0.2442,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.2247,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.2256,
+          "minute_bars": {
+            "after_hours": 1,
+            "closing_minute": 1,
+            "premarket": 0,
+            "regular": 105
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": true,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": true,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": false
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0,
+          "closing_minute_share_of_all_hours_minute_volume": 0.4061,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.071,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.071,
+          "minute_bars": {
+            "after_hours": 0,
+            "closing_minute": 1,
+            "premarket": 0,
+            "regular": 179
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": true,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": true,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": false
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "CACI"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0001,
+          "closing_minute_share_of_all_hours_minute_volume": 0.1935,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0098,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0102,
+          "minute_bars": {
+            "after_hours": 1,
+            "closing_minute": 1,
+            "premarket": 3,
+            "regular": 360
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": false,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": true
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0003,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0007,
+          "closing_minute_share_of_all_hours_minute_volume": 0.2887,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0237,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0244,
+          "minute_bars": {
+            "after_hours": 2,
+            "closing_minute": 1,
+            "premarket": 0,
+            "regular": 309
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": false,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": true
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": true,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": false
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0,
+          "closing_minute_share_of_all_hours_minute_volume": 0.1905,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0245,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0245,
+          "minute_bars": {
+            "after_hours": 0,
+            "closing_minute": 1,
+            "premarket": 0,
+            "regular": 296
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": true,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": false,
+              "the_two_differ_today": false
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0537,
+          "closing_minute_share_of_all_hours_minute_volume": 0.2478,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0233,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0815,
+          "minute_bars": {
+            "after_hours": 2,
+            "closing_minute": 1,
+            "premarket": 1,
+            "regular": 266
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": true,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0001,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "NBIX"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0002,
+          "closing_minute_share_of_all_hours_minute_volume": 0.278,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0791,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0807,
+          "minute_bars": {
+            "after_hours": 1,
+            "closing_minute": 1,
+            "premarket": 6,
+            "regular": 365
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0012,
+          "session": "2025-03-12",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0093,
+          "closing_minute_share_of_all_hours_minute_volume": 0.269,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0124,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0223,
+          "minute_bars": {
+            "after_hours": 4,
+            "closing_minute": 1,
+            "premarket": 1,
+            "regular": 359
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0004,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.001,
+          "closing_minute_share_of_all_hours_minute_volume": 0.2069,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.057,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0586,
+          "minute_bars": {
+            "after_hours": 1,
+            "closing_minute": 1,
+            "premarket": 2,
+            "regular": 352
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": true,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0004,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0001,
+          "closing_minute_share_of_all_hours_minute_volume": 0.2286,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.1486,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.1492,
+          "minute_bars": {
+            "after_hours": 1,
+            "closing_minute": 1,
+            "premarket": 2,
+            "regular": 334
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0005,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "TTWO"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0007,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0744,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0342,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0686,
+          "minute_bars": {
+            "after_hours": 1,
+            "closing_minute": 1,
+            "premarket": 1,
+            "regular": 175
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": true,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": false
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0314,
+          "session": "2025-06-11",
+          "status": 200,
+          "symbol": "ACHV"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.0013,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0151,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.004,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0082,
+          "minute_bars": {
+            "after_hours": 5,
+            "closing_minute": 1,
+            "premarket": 11,
+            "regular": 294
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": false,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": true
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": true,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": false
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": false,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": true
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0029,
+          "session": "2025-09-10",
+          "status": 200,
+          "symbol": "ACHV"
+        },
+        {
+          "after_hours_share_of_all_hours_minute_volume": 0.002,
+          "closing_minute_share_of_all_hours_minute_volume": 0.0626,
+          "daily_bar_present": true,
+          "daily_volume_over_all_hours_minute_volume": 1.0301,
+          "daily_volume_over_regular_and_closing_minute_volume": 1.0355,
+          "minute_bars": {
+            "after_hours": 2,
+            "closing_minute": 1,
+            "premarket": 2,
+            "regular": 215
+          },
+          "ohlc_semantics": {
+            "daily_close": {
+              "equals_closing_minute_bar": true,
+              "equals_last_bar_of_the_day": true,
+              "equals_last_regular_bar": false,
+              "the_candidates_differ_today": false
+            },
+            "daily_high": {
+              "equals_all_hours_maximum": false,
+              "equals_regular_maximum": true,
+              "the_two_differ_today": true
+            },
+            "daily_low": {
+              "equals_all_hours_minimum": false,
+              "equals_regular_minimum": true,
+              "the_two_differ_today": true
+            },
+            "daily_open": {
+              "equals_first_all_hours_bar_open": false,
+              "equals_first_regular_bar_open": true,
+              "the_two_differ_today": true
+            }
+          },
+          "pages": 1,
+          "premarket_share_of_all_hours_minute_volume": 0.0032,
+          "session": "2025-12-10",
+          "status": 200,
+          "symbol": "ACHV"
+        }
+      ],
+      "skipped_for_nearness_to_a_candidate_date": [
+        {
+          "session": "2025-03-12",
+          "symbol": "ACHV"
+        }
+      ]
+    },
+    "reference_calendar": {
+      "bars": 754,
+      "expected_but_absent": [],
+      "expected_sessions": 754,
+      "matches_expected_sessions": true,
+      "present_but_unexpected": [],
+      "status": 200
+    },
+    "requests_made": 152,
+    "retrieved_at": "2026-10-09T05:11:45Z",
+    "schema_version": 1,
+    "spec_id": "nre-m5-phase1a-availability-probe",
+    "spec_revision": 2,
+    "spec_sha256": "8680f747be5b30d52acecc5bde753135924d15aebffafe2de42bd03894e23aab",
+    "symbol_mapping": {
+      "ACHV": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "ALKT": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "ASMB": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "ASPN": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "CACI": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "COLL": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "CXT": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "HURN": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "JBSS": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "KLC": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 497,
+        "bars_without_mapping": 497,
+        "first_bar_date_with_default_mapping": "2024-10-09",
+        "first_bar_date_without_mapping": "2024-10-09",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "LNSR": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "LOVE": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "NBIX": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "OKTA": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "PARR": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "PAYO": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "PDFS": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "REAL": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "REKR": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "SLSN": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 374,
+        "bars_without_mapping": 374,
+        "first_bar_date_with_default_mapping": "2025-04-08",
+        "first_bar_date_without_mapping": "2025-04-08",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "TECX": {
+        "bars_that_only_the_mapping_supplies": 181,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 573,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2024-06-21",
+        "mapping_changes_the_history": true,
+        "status_without_mapping": 200
+      },
+      "TTWO": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      },
+      "VSAT": {
+        "bars_that_only_the_mapping_supplies": 0,
+        "bars_with_default_mapping": 754,
+        "bars_without_mapping": 754,
+        "first_bar_date_with_default_mapping": "2023-10-02",
+        "first_bar_date_without_mapping": "2023-10-02",
+        "mapping_changes_the_history": false,
+        "status_without_mapping": 200
+      }
+    },
+    "window": {
+      "end": "2026-10-02",
+      "expected_sessions": 754,
+      "start": "2023-10-02"
+    }
+  }
+}
