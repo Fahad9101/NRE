@@ -1,7 +1,7 @@
 # Milestone 5 — Phase 1b: the forward extension (plan)
 
 **Status: the plan and the rules of Phase 1b, fixed on 2026-10-09 before any run, and updated the same day after S1. The owner authorized the phase ("authorize phase 1b") and answered two questions
-(`reports/m5-phase1b-authorization-2026-10-09.json`). S1 is done: the candidate pool is frozen (section 4). The first part of S2 is done too, the same-day sweep of the 47 candidates; the review of the filings' text is not. S3, the sealed mode of the event acquisition, is built too. No price or label has been read and nothing later has started. The rules are in
+(`reports/m5-phase1b-authorization-2026-10-09.json`). S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, which leaves three decisions for the owner. S3, the sealed mode of the event acquisition, is built. No price or label has been read and nothing later has started. The rules are in
 `config/m5-phase1b-protocol.json` and `config/m5-phase1b-cohort-spec.json`, which this plan explains.**
 
 ## 1. What Phase 1b is
@@ -46,7 +46,7 @@ adds about 48 events whose values stay sealed until Phase 4, so what is exposed 
 | Stage | What happens | Needs from the owner |
 | --- | --- | --- |
 | S1 | Freeze the candidate pool: the SEC filing lists of the 23 issuers, the Item 2.02 filings in the window frozen with hashes, and the SEC data committed with them. Done on 2026-10-09 through the built-in browser, because the SEC refused the one-time workflow (`reports/m5-phase1b-sec-cohort-freeze-result-2026-10-09.json`) | the owner's permission to download (given), then "push" |
-| S2 | Eligibility review and same-day-competing-catalyst sweep of the frozen candidates. The sweep is done (`reports/m5-phase1b-same-day-sweep-2026-10-09.json`): no candidate has another 8-K or 8-K/A on its filing date, and the record lists where the review has to read first. The review of the filings' text is not done | the owner's permission to download the filings, then nothing unless an exclusion needs a decision |
+| S2 | Eligibility review and same-day-competing-catalyst sweep of the frozen candidates. Both are done on 2026-10-09. The sweep (`reports/m5-phase1b-same-day-sweep-2026-10-09.json`) found no candidate with another 8-K or 8-K/A on its filing date. The review of the filings' text (`reports/m5-phase1b-eligibility-review-2026-10-09.json`, read with the owner's permission) found 44 results releases with no issue and three decisions for the owner: a pre-announcement, a header-only amendment and a pending cash take-private | the owner's decisions on the three, at the first batch signoff |
 | S3 | The sealed mode of the event acquisition: a whitelist report, its workflow, and offline tests that inject distinctive prices and prove none reaches a log, an annotation or a report. Built on 2026-10-09: the `--sealed` flag of `nre/event_acquire.py`, the workflow `.github/workflows/m5-phase1b-event-acquire.yml` and `tests/test_event_acquire_sealed.py` (section 5) | "push" |
 | S4 | Event specs in batches of about ten (wire timestamps, identity, cutoffs), validated offline | "push" for each batch |
 | S5 | A sealed dry run for each batch (every event quarantined until attested), then a signoff packet | the owner's attestations |
@@ -59,7 +59,7 @@ Step 2 took four batches and step 3 six; about 48 events is about five. The froz
 
 S1: the protocol and the cohort spec above, an additive option in the freeze validation (`window_relation_to_milestone_1`, which lets a window start after Milestone 1's instead of ending before it, and changes nothing for the
 earlier steps), the one-time freeze workflow (`.github/workflows/m5-phase1b-sec-cohort-freeze.yml`, which stops whenever any frozen file exists on main; the SEC refused its run, so it is now dispatch-only and kept as the record) and their
-tests. The freeze itself was then run, as step 3's was, on SEC data fetched through the built-in browser: what was fetched, what was kept and what was checked are in the result record named in section 4. The sweep of S2 followed, from the archived lists alone (`tests/test_m5_phase1b_sweep.py` repeats it); the review of the filings' text waits for the owner's permission to download them.
+tests. The freeze itself was then run, as step 3's was, on SEC data fetched through the built-in browser: what was fetched, what was kept and what was checked are in the result record named in section 4. The sweep of S2 followed, from the archived lists alone (`tests/test_m5_phase1b_sweep.py` repeats it); the review of the filings' text followed, with the owner's permission to read the filings in the built-in browser (`tests/test_m5_phase1b_review.py` binds its record).
 
 S3 followed, before the first batch's dry run. `nre/event_acquire.py` takes `--sealed`: the report of each event is rebuilt from an allowlist (state, window facts, missing and zero-volume sessions, corporate actions, the commitment, and for each of the four
 session-return labels only whether it exists and a reason that names no price), every reason and error is checked against a fixed list and anything else becomes OTHER, an exception prints no message, and an output that holds a decimal number or

@@ -1,0 +1,862 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_eligibility_review",
+  "recorded_on": "2026-10-09",
+  "state": "REVIEW_DONE_THREE_DECISIONS_FOR_THE_OWNER",
+  "purpose": "The content part of S2 for the 47 frozen Milestone 5 Phase 1b candidates: whether each Item 2.02 filing is a results release (and not a pre-announcement, a guidance reaffirmation or an amendment), on which exchange the security is listed, and what else the filing or its release carries. It is outcome-blind: no price, return or label was read. It recommends; every disposition is made later, at the owner's signoff.",
+  "owner_permission": {
+    "assistant_request": {
+      "at": "2026-10-09T12:23:48.642Z",
+      "source": "session transcript, line 39517 (AskUserQuestion)",
+      "question": "May I read the Phase 1b candidates' SEC filing pages in the built-in browser for the S2 content review (eligibility: results release or pre-announcement or amendment, exchange, bundled items)?",
+      "selected_option_as_offered": {
+        "label": "Yes, all 47 filings (Recommended)",
+        "description": "The 47 candidates' primary 8-K pages (primary_url in config/m5-phase1b-frozen-candidate-ledger.json) and each filing's press-release exhibit, from the public SEC archive (www.sec.gov/Archives/edgar/data/...). Size unknown per page; the SEC's size field for the 47 whole filings sums to 47.0 MB, an upper bound that includes XBRL and graphics I would not read. Browser memory only; I keep short quoted excerpts in the review records. No push, no other download."
+      }
+    },
+    "owner_answer": {
+      "selected": "Yes, all 47 filings (Recommended)",
+      "at": "2026-10-09T14:03:40.842Z",
+      "source": "session transcript, line 39523 (the tool result of the question), not from a summary"
+    },
+    "read_as": "Permission to read, in the built-in browser, the 47 candidates' primary 8-K pages and each filing's press-release exhibit from the public SEC archive, holding them in browser memory only and keeping short excerpts in the review records. It carries no push and no other download: the nine other 8-Ks within three days of a candidate (listed in reports/m5-phase1b-same-day-sweep-2026-10-09.json) were not read."
+  },
+  "method": {
+    "how": "Each page was fetched with fetch() from a www.sec.gov tab of the built-in browser (same origin, no credentials), its text extracted in the page, and only extracts returned: the cover table, the Item 2.02 sentence, the other Items, the exhibit link, the release's first lines and keyword flags. Candidates with a bundled Item or a keyword hit were then read in more detail around the hit.",
+    "reading": {
+      "host": "www.sec.gov",
+      "candidates": 47,
+      "documents_read": 94,
+      "primary_pages": 47,
+      "press_release_exhibits": 47,
+      "requests": 191,
+      "distinct_urls": 95,
+      "mistaken_requests": 1,
+      "documents_with_http_200": 94,
+      "decoded_bytes": 31011709,
+      "encoded_bytes": 1895187,
+      "held_in": "browser memory only; the page's variables were cleared and the tab closed afterwards"
+    },
+    "requests_explained": "Nearly every document was fetched more than once (an extraction pass, a keyword-scan pass and, for some, a closer read), hence 191 requests for 94 documents, which are about 15.9 million characters of HTML in all. The one mistaken request went to a path that does not exist in the CXT 2026-05-06 filing folder (a bug in the extraction code: an undefined variable) and returned HTTP 404; nothing was read from it.",
+    "checks_for_every_candidate": [
+      "the exchange on the cover table or the release's dateline",
+      "the Item 2.02 sentence (a results release for a period, or something else)",
+      "the release's headline and first lines",
+      "every other Item the filing lists, read around its heading",
+      "a keyword scan of the filing and the release"
+    ],
+    "keyword_scan_terms": [
+      "to be acquired",
+      "merger agreement",
+      "tender offer",
+      "take-private",
+      "going private",
+      "delist",
+      "minimum bid",
+      "reverse split",
+      "stock split",
+      "spin-off",
+      "special dividend",
+      "deficiency",
+      "going concern",
+      "substantial doubt",
+      "chapter 11",
+      "bankruptcy",
+      "non-reliance",
+      "restatement of previously",
+      "material weakness",
+      "strategic alternatives"
+    ],
+    "keyword_scan_result": "Only PAYO 2026-08-06 matched the merger terms. The other hits were incidental: JBSS 2026-08-19 a special dividend; KLC 2026-05-14 and 2026-08-13 a material weakness named in the risk language; LOVE 2026-06-11 and 2026-09-10 restatement-related fees from the past; ACHV 2026-08-11 an FDA deficiency in the regulatory update. A separate check of each Item 2.02 sentence and each release's first 1,100 characters for the word preliminary found it only in REKR 2026-07-15; reaffirm or affirms appears in the opening lines of COLL 2026-05-07, HURN 2026-05-05, NBIX 2026-05-05 and REKR 2026-08-13, each of which also reports results."
+  },
+  "extraction_table_sha256": "961b9770a6c3b9d40b368dcb54f219f292cf2e4ae9b518747dc719b04289b672",
+  "extraction_table_fields": [
+    "ticker",
+    "filing_date",
+    "candidate_id",
+    "form",
+    "release_date_in_the_filing",
+    "exchange_on_cover_or_release",
+    "press_release_exhibit"
+  ],
+  "extraction_table_note": "The SHA-256 of the compact JSON array of these seven fields over the 47 candidates in ticker and date order, computed in the browser page and checked against the file written from its output (5,362 bytes).",
+  "candidates": [
+    {
+      "ticker": "ACHV",
+      "filing_date": "2026-05-12",
+      "candidate_id": "0001193125-26-218175",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "5.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-12",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "d854692dex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/949858/000119312526218175/d854692d8k.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release also reports the close of a private placement (up to $354 million) and leadership changes. Item 5.02 reports a board appointment tied to the private placement, which the filing calls previously reported; the archived list shows an earlier 8-K on 2026-04-16 (Items 1.01, 3.02, 5.02, 7.01), which was not read."
+    },
+    {
+      "ticker": "ACHV",
+      "filing_date": "2026-08-11",
+      "candidate_id": "0001193125-26-344571",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-11",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "achv-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/949858/000119312526344571/achv-20260811.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release carries a regulatory update on the NDA (a resubmission planned for the fourth quarter of 2026) and leadership and board updates in the same release as the results."
+    },
+    {
+      "ticker": "ALKT",
+      "filing_date": "2026-04-29",
+      "candidate_id": "0001529274-26-000028",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "8.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-04-29",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "exhibit991-earningsrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927426000028/alk-20260423.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "A $100 million share repurchase program is announced in the release's headline and in Item 8.01 (the Board authorized it on 2026-04-23). It is inside the earnings release, so it is not independently disseminated (the policy's second condition), but it is a bundled item to carry as a caveat."
+    },
+    {
+      "ticker": "ALKT",
+      "filing_date": "2026-07-29",
+      "candidate_id": "0001529274-26-000049",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-07-29",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "exhibit991-earningsrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927426000049/alk-20260729.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "Item 7.01 furnishes an investor presentation."
+    },
+    {
+      "ticker": "ASMB",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001193125-26-211922",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "asmb-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1426800/000119312526211922/asmb-20260507.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "ASMB",
+      "filing_date": "2026-08-14",
+      "candidate_id": "0001193125-26-352193",
+      "form": "8-K/A",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-13",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "asmb-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1426800/000119312526352193/asmb-20260813.htm",
+      "assessment": "owner_decision_header_only_amendment",
+      "note": "A header-only amendment: its explanatory note says it amends the submission header of the 8-K filed on 2026-08-13, which inadvertently tagged Item 2.02 as Item 2.01, and that no content changed. The results release is dated 2026-08-13. The original 8-K was filed under Item 2.01 and so is not in the frozen pool; this candidate is the only pool member for that release."
+    },
+    {
+      "ticker": "ASPN",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001171843-26-003109",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "exh_991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1145986/000117184326003109/f8k_050726.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "Item 7.01 incorporates the release's outlook section by reference."
+    },
+    {
+      "ticker": "ASPN",
+      "filing_date": "2026-08-06",
+      "candidate_id": "0001171843-26-005289",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-06",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "exh_991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1145986/000117184326005289/f8k_080626.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "Item 7.01 incorporates the release's outlook section by reference."
+    },
+    {
+      "ticker": "CACI",
+      "filing_date": "2026-04-22",
+      "candidate_id": "0001628280-26-026589",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-04-22",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "fy26-q3caci20260422ex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000162828026026589/caci-20260422.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release discusses the close of the ARKA Group acquisition and its transaction expenses; the archived list shows an 8-K on 2026-03-09 (Items 1.01, 2.01, 2.03, 8.01, 9.01), which was not read."
+    },
+    {
+      "ticker": "CACI",
+      "filing_date": "2026-08-05",
+      "candidate_id": "0001628280-26-053448",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-05",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "fy26-q4caci20260805ex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/16058/000162828026053448/caci-20260805.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "COLL",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001628280-26-031694",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "NASDAQ Global Select Market",
+      "press_release_exhibit": "coll-2026x03x31xex99x1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1267565/000162828026031694/coll-20260507.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release says the acquisition of AZSTARYS is pending and on track to close in the second quarter; the archived list shows an 8-K on 2026-03-19 (Items 1.01, 7.01, 9.01), which was not read. Item 7.01 furnishes an earnings presentation."
+    },
+    {
+      "ticker": "COLL",
+      "filing_date": "2026-08-06",
+      "candidate_id": "0001628280-26-053849",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01"
+      ],
+      "release_date_in_the_filing": "2026-08-06",
+      "exchange_on_cover_or_release": "NASDAQ Global Select Market",
+      "press_release_exhibit": "coll-2026x06x30xex99x1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1267565/000162828026053849/coll-20260806.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release says the AZSTARYS acquisition is completed; the archived list shows an 8-K on 2026-05-12 (Items 2.01, 5.02, 7.01, 9.01), which was not read. Item 7.01 furnishes an earnings presentation."
+    },
+    {
+      "ticker": "CXT",
+      "filing_date": "2026-05-06",
+      "candidate_id": "0000025445-26-000015",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-06",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "exhibit991-pressreleasexq1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/25445/000002544526000015/cxt-20260506.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release lists the completion of the Antares Vision acquisition on 2026-03-31 as a highlight of the quarter."
+    },
+    {
+      "ticker": "CXT",
+      "filing_date": "2026-08-05",
+      "candidate_id": "0000025445-26-000032",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-05",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "exhibit991-pressreleasexq2.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/25445/000002544526000032/cxt-20260805.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "HURN",
+      "filing_date": "2026-05-05",
+      "candidate_id": "0001289848-26-000080",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-05",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "hurn2026331exh991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1289848/000128984826000080/hurn-20260505.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "HURN",
+      "filing_date": "2026-07-28",
+      "candidate_id": "0001628280-26-050168",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-07-28",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "hurn2026630exh991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1289848/000162828026050168/hurn-20260728.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The archived list shows an 8-K with Item 5.02 filed the evening before (2026-07-27 21:29 ET), not read."
+    },
+    {
+      "ticker": "JBSS",
+      "filing_date": "2026-04-29",
+      "candidate_id": "0001193125-26-191599",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-04-29",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "jbss-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312526191599/jbss-20260429.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "JBSS",
+      "filing_date": "2026-08-19",
+      "candidate_id": "0001193125-26-356911",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-19",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "jbss-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/880117/000119312526356911/jbss-20260819.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release says a special dividend was declared: a corporate action to check at the owner's attestation."
+    },
+    {
+      "ticker": "KLC",
+      "filing_date": "2026-05-14",
+      "candidate_id": "0001193125-26-224059",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-14",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "klc-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1873529/000119312526224059/klc-20260514.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "KLC",
+      "filing_date": "2026-08-13",
+      "candidate_id": "0001193125-26-349267",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-13",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "klc-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1873529/000119312526349267/klc-20260813.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The archived list shows an 8-K with Item 1.01 filed the next day (2026-08-14 17:00 ET), not read."
+    },
+    {
+      "ticker": "LNSR",
+      "filing_date": "2026-05-08",
+      "candidate_id": "0001193125-26-213268",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-08",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "lnsr-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1320350/000119312526213268/lnsr-20260508.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "LNSR",
+      "filing_date": "2026-08-13",
+      "candidate_id": "0001193125-26-347859",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-13",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "lnsr-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1320350/000119312526347859/lnsr-20260813.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "LOVE",
+      "filing_date": "2026-06-11",
+      "candidate_id": "0001628280-26-042363",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-06-11",
+      "exchange_on_cover_or_release": "NASDAQ Stock Market LLC",
+      "press_release_exhibit": "q1fy27pressrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828026042363/love-20260611.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "LOVE",
+      "filing_date": "2026-09-10",
+      "candidate_id": "0001628280-26-061219",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-09-10",
+      "exchange_on_cover_or_release": "NASDAQ Stock Market LLC",
+      "press_release_exhibit": "q2fy27pressrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828026061219/love-20260910.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "NBIX",
+      "filing_date": "2026-05-05",
+      "candidate_id": "0000914475-26-000025",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-05",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "q1-2026xearningsrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/nbix-20260505.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release calls the Soleno acquisition agreement recently announced; the archived list shows an 8-K on 2026-04-06 (Items 1.01, 9.01) and a completion filing on 2026-05-18 (Items 1.01, 2.01, 2.03, 7.01, 9.01), not read."
+    },
+    {
+      "ticker": "NBIX",
+      "filing_date": "2026-07-30",
+      "candidate_id": "0000914475-26-000035",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-07-30",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "q2-2026xearningsrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/nbix-20260730.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release says the Soleno acquisition was completed in May 2026."
+    },
+    {
+      "ticker": "OKTA",
+      "filing_date": "2026-05-28",
+      "candidate_id": "0001660134-26-000050",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-28",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "okta-4302026_ex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-20260528.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "Item 7.01 furnishes supplemental investor materials."
+    },
+    {
+      "ticker": "OKTA",
+      "filing_date": "2026-08-26",
+      "candidate_id": "0001660134-26-000068",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-26",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "okta-7312026_ex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-20260826.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "PARR",
+      "filing_date": "2026-05-05",
+      "candidate_id": "0001628280-26-030714",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-05",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "a20260331991earningsreleas.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/821483/000162828026030714/parr-20260505.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "PARR",
+      "filing_date": "2026-08-05",
+      "candidate_id": "0001628280-26-052766",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-04",
+      "exchange_on_cover_or_release": "New York Stock Exchange",
+      "press_release_exhibit": "a20260630991earningsreleas.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/821483/000162828026052766/parr-20260804.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release and the 8-K are dated 2026-08-04; EDGAR's filing date is a day later. The release also lists a completed $500 million notes offering as a highlight."
+    },
+    {
+      "ticker": "PAYO",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001104659-26-056688",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "payo-20260507xex99d1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1845815/000110465926056688/payo-20260507x8k.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "PAYO",
+      "filing_date": "2026-08-06",
+      "candidate_id": "0001104659-26-091646",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-06",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "payo-20260806xex99d1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1845815/000110465926091646/payo-20260806x8k.htm",
+      "assessment": "owner_decision_pending_cash_takeover",
+      "note": "Payoneer had agreed on 2026-06-15 to be acquired by Nuvei for $7.40 per share in cash (about $2.75 billion), with closing expected in mid-2027 after shareholder and regulatory approvals; the release says it is suspending earnings calls and its practice of giving guidance, and withdraws the 2026 outlook. The security trades under a pending cash take-private."
+    },
+    {
+      "ticker": "PDFS",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001437749-26-015603",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "NASDAQ Stock Market LLC",
+      "press_release_exhibit": "ex_926959.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1120914/000143774926015603/pdfs20260301_8k.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "PDFS",
+      "filing_date": "2026-08-06",
+      "candidate_id": "0001437749-26-026292",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-06",
+      "exchange_on_cover_or_release": "NASDAQ Stock Market LLC",
+      "press_release_exhibit": "ex_964960.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1120914/000143774926026292/pdfs20260518_8k.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "REAL",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001573221-26-000045",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "real-20260507xex991pressre.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000157322126000045/real-20260507.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "REAL",
+      "filing_date": "2026-08-06",
+      "candidate_id": "0001573221-26-000052",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-06",
+      "exchange_on_cover_or_release": "Nasdaq Global Select Market",
+      "press_release_exhibit": "real-20260807xex991pressre.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1573221/000157322126000052/real-20260806.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "REKR",
+      "filing_date": "2026-05-11",
+      "candidate_id": "0001437749-26-016113",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-11",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market",
+      "press_release_exhibit": "ex_959898.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774926016113/rekr20260508_8k.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "REKR",
+      "filing_date": "2026-07-15",
+      "candidate_id": "0001437749-26-023616",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-07-15",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market",
+      "press_release_exhibit": "ex_988551.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774926023616/rekr20260715_8k.htm",
+      "assessment": "recommend_exclude_preliminary_preannouncement",
+      "note": "The release announces preliminary, unaudited second-quarter results with an outlook and a product launch (Items 2.02 and 7.01); the full second-quarter results followed on 2026-08-13. Steps 2 and 3 excluded Rekor's preliminary pre-announcements as not qualifying earnings events."
+    },
+    {
+      "ticker": "REKR",
+      "filing_date": "2026-08-13",
+      "candidate_id": "0001437749-26-027481",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-13",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market",
+      "press_release_exhibit": "ex_1003963.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1697851/000143774926027481/rekr20260812_8k.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The 8-K says the release was issued before the open of trading."
+    },
+    {
+      "ticker": "SLSN",
+      "filing_date": "2026-05-12",
+      "candidate_id": "0001171843-26-003273",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-12",
+      "exchange_on_cover_or_release": "NASDAQ Capital Market",
+      "press_release_exhibit": "exh_991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326003273/f8k_051126.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "SLSN",
+      "filing_date": "2026-08-20",
+      "candidate_id": "0001171843-26-005676",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-19",
+      "exchange_on_cover_or_release": "NASDAQ Capital Market",
+      "press_release_exhibit": "exh_991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/883107/000117184326005676/f8k_082026.htm",
+      "assessment": "results_release_no_issue_found",
+      "note": "The release and the 8-K's own text are dated 2026-08-19 (a conference call at 5:00 p.m. ET that day); the 8-K was filed the next day. The archived list shows an 8-K with Item 4.02 filed on 2026-08-21 at 16:30 ET, not read."
+    },
+    {
+      "ticker": "TECX",
+      "filing_date": "2026-05-07",
+      "candidate_id": "0001193125-26-212069",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-07",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "tecx-ex99_1.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526212069/tecx-20260507.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "TECX",
+      "filing_date": "2026-08-06",
+      "candidate_id": "0001193125-26-338000",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-06",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "d114671dex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1681087/000119312526338000/d114671d8k.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "TTWO",
+      "filing_date": "2026-05-21",
+      "candidate_id": "0001628280-26-037260",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-21",
+      "exchange_on_cover_or_release": "NASDAQ Global Select Market",
+      "press_release_exhibit": "ttwo4q26earningsrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026037260/ttwo-20260521.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "TTWO",
+      "filing_date": "2026-08-07",
+      "candidate_id": "0001628280-26-054580",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-07",
+      "exchange_on_cover_or_release": "NASDAQ Global Select Market",
+      "press_release_exhibit": "ttwo1q27earningsrelease.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026054580/ttwo-20260807.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "VSAT",
+      "filing_date": "2026-05-28",
+      "candidate_id": "0001193125-26-245304",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-05-28",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "d133220dex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312526245304/d133220d8k.htm",
+      "assessment": "results_release_no_issue_found"
+    },
+    {
+      "ticker": "VSAT",
+      "filing_date": "2026-08-04",
+      "candidate_id": "0001193125-26-332896",
+      "form": "8-K",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "release_date_in_the_filing": "2026-08-04",
+      "exchange_on_cover_or_release": "Nasdaq Stock Market LLC",
+      "press_release_exhibit": "d131434dex991.htm",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312526332896/d131434d8k.htm",
+      "assessment": "results_release_no_issue_found"
+    }
+  ],
+  "counts": {
+    "candidates": 47,
+    "by_assessment": {
+      "owner_decision_header_only_amendment": 1,
+      "owner_decision_pending_cash_takeover": 1,
+      "recommend_exclude_preliminary_preannouncement": 1,
+      "results_release_no_issue_found": 44
+    }
+  },
+  "decisions_for_the_owner": [
+    {
+      "candidate": "REKR 2026-07-15",
+      "question": "Exclude it as a preliminary pre-announcement?",
+      "finding": "The 8-K says the release announces certain preliminary, unaudited financial results, with an outlook and a product launch; the full second-quarter results followed on 2026-08-13 (REKR 2026-08-13 is in the pool).",
+      "recommendation": "Exclude, as steps 2 and 3 did for Rekor's earlier pre-announcements (not a qualifying earnings event)."
+    },
+    {
+      "candidate": "ASMB 2026-08-14",
+      "question": "Keep the 8-K/A as the pool's representation of the 2026-08-13 results release, or exclude it as an amendment?",
+      "finding": "It only corrects the submission header of the 2026-08-13 8-K (Item 2.02 had been tagged as Item 2.01); the release is dated 2026-08-13. The original 8-K is not in the pool, so excluding the amendment, as step 3 did for CACI's 8-K/A (there the original was a candidate), would leave that release out.",
+      "recommendation": "Keep it, with a caveat, and take the release's first-public time from the 2026-08-13 wire and 8-K (EDGAR accepted the original at 16:11 ET that day, so the release was public by then), not from 2026-08-14. Excluding it is the literal reading of the step 3 rule and costs one event."
+    },
+    {
+      "candidate": "PAYO 2026-08-06",
+      "question": "Exclude it because the security was under a pending cash take-private?",
+      "finding": "On 2026-06-15 Payoneer agreed to be acquired by Nuvei for $7.40 per share in cash (about $2.75 billion), closing expected in mid-2027; the release suspends earnings calls and guidance and withdraws the 2026 outlook. Its earlier release, PAYO 2026-05-07, predates the deal.",
+      "recommendation": "Exclude: a price pinned to a cash offer is not an earnings reaction, and this is a new category that steps 2 and 3 did not meet, so it needs the owner's word."
+    }
+  ],
+  "carried_to_later_stages": [
+    "S4 needs each event's first-public minute from a public wire release or the issuer's own newsroom, and a check for a separate same-day release with no 8-K; that is another set of sites and needs its own permission.",
+    "The release date can differ from the filing date: ASMB 2026-08-14 (release 2026-08-13), PARR 2026-08-05 (release 2026-08-04) and SLSN 2026-08-20 (release 2026-08-19). The event is the release, not the filing.",
+    "Corporate actions to check at attestation include JBSS's special dividend; the owner attests them per batch.",
+    "The nine other 8-Ks within three days of a candidate stay unread: SLSN Item 4.02 (2026-08-21), KLC Item 1.01 (2026-08-14), ASMB Item 2.01 (the mis-tagged original, whose content the 8-K/A says is unchanged), ACHV Item 8.01, HURN Item 5.02, NBIX 8-K/A, and three Item 5.07 results. Reading any of them needs a separate permission."
+  ],
+  "what_this_is_not": [
+    "Not a clearance of any candidate: first-public timing, historical identity, corporate actions and a same-day release with no 8-K are not settled by it; those are S4 and the owner's attestations.",
+    "Not a disposition: the three decisions above and every inclusion are the owner's, at the batch signoffs.",
+    "Not a full read of 94 documents: the checks are the ones listed under method, and the releases were read beyond their first lines only around bundled items and keyword hits.",
+    "Not evidence of anything about prices or returns: none was read."
+  ]
+}
