@@ -105,7 +105,7 @@ class PlanDocumentTests(unittest.TestCase):
         cls.proposal = flat(PROPOSAL.read_text(encoding="utf-8"))
 
     def test_it_says_nothing_has_run_and_what_it_does_not_do(self):
-        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, and the owner has decided the three things it left (`reports/m5-phase1b-s2-decisions-2026-10-09.json`), so 45 candidates stand. S3, the sealed mode of the event acquisition, is built. S4 has begun: batch 1's event specs are built in the dry-run state. No label, return or event price has been read; one inadvertent exposure to a company's quarterly average repurchase price, through a search-tool summary, is disclosed in `reports/m5-phase1b-batch1-sources-2026-10-09.json`. Nothing later than S4 has started.",
+        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, and the owner has decided the three things it left (`reports/m5-phase1b-s2-decisions-2026-10-09.json`), so 45 candidates stand. S3, the sealed mode of the event acquisition, is built. S4 has begun: batch 1's event specs are built in the dry-run state, and S5 has begun for it: the sealed dry run ran and the signoff packet is prepared. No label, return or event price has been read; one inadvertent exposure to a company's quarterly average repurchase price, through a search-tool summary, is disclosed in `reports/m5-phase1b-batch1-sources-2026-10-09.json`. Nothing later has started.",
                        "It runs and fetches nothing itself and pushes nothing. The work it describes enumerates candidates by filing metadata only, reads no price or label, and attests no event.",
                        "It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c."):
             self.assertIn(phrase, self.flat)
@@ -202,6 +202,8 @@ class PlanDocumentTests(unittest.TestCase):
                       "in the built-in browser (`tests/test_m5_phase1b_review.py` binds its record).", self.flat)
         self.assertIn("Batch 1 is built on 2026-10-09 (`reports/m5-phase1b-batch1-sources-2026-10-09.json`, `config/m5-phase1b-events.json`): nine sealed events in the dry-run state; the tenth candidate, ASMB, was released at the 16:00 ET close, "
                       "which the calendar classes as bell-ambiguous, so it is left quarantined for the owner's word | \"push\" for each batch |", self.flat)
+        self.assertIn("Batch 1's ran on 2026-10-09 (`reports/m5-phase1b-batch1-dry-run-2026-10-09.json`): eight events quarantined as a dry run should, and NBIX errored on a corporate action with no ex-date; the packet "
+                      "(`reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json`) asks for the eight attestations and puts two decisions to the owner | the owner's attestations and the two decisions |", self.flat)
         review = load(ROOT / "reports" / "m5-phase1b-eligibility-review-2026-10-09.json")
         self.assertEqual(review["counts"]["by_assessment"]["results_release_no_issue_found"], 44)
         self.assertEqual(len(review["decisions_for_the_owner"]), 3)
