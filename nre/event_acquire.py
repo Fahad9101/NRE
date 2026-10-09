@@ -63,6 +63,7 @@ RELEASE_TIMINGS = TIMINGS | {"regular", "bell_ambiguous", "closed"}
 DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 SEALED_TRIPWIRE = re.compile(r"\d\.\d|NOT_POSITIVE_GAP")
+ACTION_DATE_FIELDS = ("ex_date", "effective_date", "payable_date", "process_date")
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -238,7 +239,9 @@ def fetch_bars(fetch, ticker, params):
 
 
 def fetch_actions(fetch, params):
-    """Each action's type and ex_date, so the pipeline can suppress exactly the labels an action crosses."""
+    """Each action's type and date, so the pipeline can suppress exactly the labels an action crosses. The date is the action's ex_date. An action Alpaca gives no ex_date (a merger) takes the first of its
+    effective, payable and process dates that is present, and the entry says which in date_field; a date that is present but unusable is an error, never a reason to try the next one. An action with none of them
+    fails closed, as before."""
     merged, pages = _paginate(fetch, params, "corporate_actions")
     entries = []
     for page in merged:
@@ -251,13 +254,17 @@ def fetch_actions(fetch, params):
             if not isinstance(items, list):
                 raise DataError("unexpected corporate_actions structure")
             for item in items:
-                if not isinstance(item, dict) or not isinstance(item.get("ex_date"), str):
+                field = next((f for f in ACTION_DATE_FIELDS if isinstance(item, dict) and item.get(f) is not None), None)
+                if field is None or not isinstance(item[field], str):
                     raise DataError("corporate action missing ex_date")
                 try:
-                    date.fromisoformat(item["ex_date"])
+                    date.fromisoformat(item[field])
                 except ValueError:
                     raise DataError("corporate action ex_date is not a date") from None
-                entries.append({"type": action_type, "ex_date": item["ex_date"], "id": item.get("id")})
+                entry = {"type": action_type, "ex_date": item[field], "id": item.get("id")}
+                if field != "ex_date":
+                    entry["date_field"] = field
+                entries.append(entry)
     return entries, pages
 
 
@@ -397,6 +404,14 @@ def _days(values):
     return [v for v in values or [] if isinstance(v, str) and DAY.match(v)]
 
 
+def _sealed_action(action):
+    entry = {"type": action["type"] if re.fullmatch(r"[a-z_]{1,40}", str(action.get("type"))) else "OTHER", "ex_date": _day(action.get("ex_date")),
+             "id": action["id"] if re.fullmatch(r"[A-Za-z0-9_\-]{1,64}", str(action.get("id"))) else None}
+    if action.get("date_field") in ACTION_DATE_FIELDS[1:]:
+        entry["date_field"] = action["date_field"]           # which of its dates ex_date holds, shown only when it is not an ex-date
+    return entry
+
+
 def sealed_report(report):
     """The only view of an event's run that a sealed run may print: every field is rebuilt from an allowlist, every free-text field is checked against a fixed set
     and anything unknown becomes OTHER, so nothing else in the report (a label, a price, a hash of the bars) can pass through."""
@@ -415,9 +430,7 @@ def sealed_report(report):
                    "start": _day(window.get("start")), "end": _day(window.get("end")), "asof": _day(window.get("asof")),
                    "required_sessions": window.get("required_sessions") if isinstance(window.get("required_sessions"), int) else None},
         "missing_sessions": _days(report.get("missing_sessions")), "zero_volume_sessions": _days(report.get("zero_volume_sessions")),
-        "corporate_actions": [{"type": a["type"] if re.fullmatch(r"[a-z_]{1,40}", str(a.get("type"))) else "OTHER", "ex_date": _day(a.get("ex_date")),
-                               "id": a["id"] if re.fullmatch(r"[A-Za-z0-9_\-]{1,64}", str(a.get("id"))) else None}
-                              for a in report.get("corporate_actions") or []],
+        "corporate_actions": [_sealed_action(a) for a in report.get("corporate_actions") or []],
         "labels_sha256": report.get("labels_sha256") if HEX64.match(str(report.get("labels_sha256"))) else None,
         "labels_match_recorded": report.get("labels_match_recorded") if isinstance(report.get("labels_match_recorded"), bool) else None,
         "session_labels": None if sessions is None else {
