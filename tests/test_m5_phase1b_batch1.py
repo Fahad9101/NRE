@@ -1,6 +1,6 @@
-"""Milestone 5 Phase 1b batch 1 in the dry-run state: config/m5-phase1b-events.json (nine sealed events, no attestations) validates with the project's own spec validation, agrees with the frozen ledger, the eligibility review, the owner's
-decisions, the Milestone 1 events and the wire evidence in reports/m5-phase1b-batch1-sources-2026-10-09.json (each page's machine-readable time converts to the minute taken from it), and a sealed run of it with injected prices quarantines
-every event, prints no price and pins no commitment."""
+"""Milestone 5 Phase 1b batch 1 after the owner's signoff: config/m5-phase1b-events.json (nine sealed events; eight carry the owner's attestations and the packet's caveats, NBIX does not) validates with the project's own spec validation, agrees with the frozen
+ledger, the eligibility review, the owner's decisions, the Milestone 1 events and the wire evidence in reports/m5-phase1b-batch1-sources-2026-10-09.json (each page's machine-readable time converts to the minute taken from it), its dry-run state is
+recoverable byte for byte, and a sealed run of it with injected prices maps the eight, quarantines NBIX, prints no price and pins no commitment."""
 import hashlib
 import json
 import re
@@ -36,14 +36,14 @@ class EventsFileTests(unittest.TestCase):
         cls.decisions = load(ROOT / "reports" / "m5-phase1b-s2-decisions-2026-10-09.json")
         cls.m1 = {e["security"]["ticker"]: e for e in load(ROOT / "config" / "m1-events.json")["events"]}
 
-    def test_it_passes_the_projects_own_spec_validation_and_is_in_the_dry_run_state(self):
+    def test_it_passes_the_projects_own_spec_validation_and_exactly_the_eight_signed_off_events_are_attested(self):
         ea.validate_spec(self.spec, Calendar())
         self.assertEqual(len(self.events), 9)
         for event in self.events:
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
-                self.assertNotIn("attestations", event)                       # no event is attested until the owner signs the batch off
-                self.assertNotIn("recorded_result", event)
+                self.assertEqual("attestations" in event, event["security"]["ticker"] != "NBIX")       # NBIX stays unattested until the owner has seen the action its second dry run lists
+                self.assertNotIn("recorded_result", event)                    # a commitment is pinned only after a sealed run has printed it
                 self.assertEqual(event["event_id"], event["cluster_id"])
                 self.assertRegex(event["event_id"], r"^[a-z]+-m5b-2026-\d\d-\d\d$")
         self.assertEqual(len({e["event_id"] for e in self.events}), 9)
@@ -110,14 +110,16 @@ class EventsFileTests(unittest.TestCase):
                 self.assertTrue(event["security"]["valid_from"].startswith(previous + "T00:00:00-05:00"))
                 self.assertEqual(event["security"]["available_at"], previous + "T20:00:00Z")
 
-    def test_the_two_caveats_are_the_ones_the_sources_record_names(self):
-        caveated = {e["security"]["ticker"]: e["caveats"] for e in self.events if "caveats" in e}
+    def test_the_two_caveats_on_all_labels_are_the_ones_the_sources_record_names(self):
+        caveated = {e["security"]["ticker"]: [c for c in e["caveats"] if c["labels"] == ["all"]] for e in self.events if any(c["labels"] == ["all"] for c in e.get("caveats", []))}
         self.assertEqual(set(caveated), {"ALKT", "NBIX"})
         self.assertIn("share repurchase program", caveated["ALKT"][0]["note"])
         self.assertIn("09:00 ET", caveated["NBIX"][0]["note"])
         for notes in caveated.values():
-            self.assertEqual([c["labels"] for c in notes], [["all"]])
-            self.assertLessEqual(set(notes[0]["labels"]), ea.LABEL_NAMES | {"all"})
+            self.assertEqual(len(notes), 1)
+        for event in self.events:
+            for caveat in event.get("caveats", []):
+                self.assertLessEqual(set(caveat["labels"]), ea.LABEL_NAMES | {"all"})
 
 
 class SourcesRecordTests(unittest.TestCase):
@@ -178,6 +180,11 @@ class SourcesRecordTests(unittest.TestCase):
         for event in stripped["events"]:
             event.pop("attestations", None)
             event.pop("recorded_result", None)
+            kept = [c for c in event.get("caveats", []) if c["labels"] == ["all"]]       # the signoff added only the caveats that name labels
+            if kept:
+                event["caveats"] = kept
+            else:
+                event.pop("caveats", None)
         text = json.dumps(stripped, indent=2, ensure_ascii=False) + "\n"
         info = self.record["events_file"]
         self.assertEqual(hashlib.sha256(text.encode("utf-8")).hexdigest(), info["sha256_in_the_dry_run_state"])
@@ -203,8 +210,9 @@ class SourcesRecordTests(unittest.TestCase):
             self.assertIn(phrase, text)
 
 
-class DryRunSimulationTests(unittest.TestCase):
-    """The shipped events file through the sealed run with a fake provider holding distinctive prices: every event is quarantined for want of an attestation, nothing is pinned, and no price reaches the output."""
+class SealedRunSimulationTests(unittest.TestCase):
+    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions: the eight attested events map, NBIX is quarantined for want of an attestation, nothing is pinned, and no price
+    reaches the output."""
 
     def run_sealed(self):
         calendar = Calendar()
@@ -240,15 +248,21 @@ class DryRunSimulationTests(unittest.TestCase):
             code = ea.main(["--sealed", "--spec", str(EVENTS)])
         return code, [call.args[0] for call in output.call_args_list]
 
-    def test_every_event_is_quarantined_unattested_and_nothing_is_pinned_or_leaked(self):
+    def test_the_attested_events_map_nbix_is_quarantined_unattested_and_nothing_is_pinned_or_leaked(self):
         code, printed = self.run_sealed()
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
-        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"QUARANTINED": 9}))
+        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 8, "QUARANTINED": 1}))
         self.assertEqual(len(out["events"]), 9)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                self.assertEqual((view["state"], view["reasons"], view["session_labels"], view["labels_sha256"]), ("QUARANTINED", ["FIRST_PUBLIC_TIME_UNVERIFIED"], None, None))
+                if event_id == "nbix-m5b-2026-05-05":
+                    self.assertEqual((view["state"], view["reasons"], view["session_labels"], view["labels_sha256"]), ("QUARANTINED", ["FIRST_PUBLIC_TIME_UNVERIFIED"], None, None))
+                else:
+                    self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
+                    self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
+                    self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
+                self.assertIsNone(view["labels_match_recorded"])                                  # nothing is pinned yet
                 self.assertEqual((view["missing_sessions"], view["zero_volume_sessions"], view["corporate_actions"]), ([], [], []))
                 self.assertEqual(view["window"]["required_sessions"], 21)
                 self.assertTrue(view["access_check_passed"])

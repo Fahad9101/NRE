@@ -41,7 +41,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:15",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-04-23"
+      "expected_reaction_session": "2026-04-23",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "alkt-m5b-2026-04-29",
@@ -76,8 +96,41 @@
             "all"
           ],
           "note": "The release itself announces a $100 million share repurchase program (the Board authorized it on 2026-04-23, per Item 8.01); it is inside the earnings release, not a separate release, so it is carried as a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md, second condition)."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001529274-26-000036 filed 2026-05-06 20:02 ET (Items 1.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001529274-26-000043 filed 2026-05-20 20:04 ET (Items 5.07) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
         }
-      ]
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "jbss-m5b-2026-04-29",
@@ -105,7 +158,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:10",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-04-30"
+      "expected_reaction_session": "2026-04-30",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "hurn-m5b-2026-05-05",
@@ -133,7 +206,36 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-06"
+      "expected_reaction_session": "2026-05-06",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001289848-26-000098 filed 2026-05-12 18:25 ET (Items 5.07) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "nbix-m5b-2026-05-05",
@@ -197,7 +299,44 @@
       "precision": "minute",
       "timestamp_evidence": "16:15",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-06"
+      "expected_reaction_session": "2026-05-06",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001193125-26-215799 filed 2026-05-11 12:26 ET (Items 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001193125-26-224142 filed 2026-05-14 20:26 ET (Items 1.01, 2.03, 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "cxt-m5b-2026-05-06",
@@ -225,7 +364,35 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-07"
+      "expected_reaction_session": "2026-05-07",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0000025445-26-000023 filed 2026-05-28 20:07 ET (Items 5.07, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "aspn-m5b-2026-05-07",
@@ -253,7 +420,36 @@
       "precision": "minute",
       "timestamp_evidence": "06:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-05-07"
+      "expected_reaction_session": "2026-05-07",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001171843-26-003511 filed 2026-05-18 16:30 ET (Items 5.02, 5.07, 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     },
     {
       "event_id": "coll-m5b-2026-05-07",
@@ -281,7 +477,44 @@
       "precision": "minute",
       "timestamp_evidence": "07:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-05-07"
+      "expected_reaction_session": "2026-05-07",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001104659-26-059018 filed 2026-05-12 11:43 ET (Items 2.01, 5.02, 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001104659-26-062536 filed 2026-05-15 20:10 ET (Items 5.07) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-09",
+          "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+          "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
+        }
+      }
     }
   ]
 }

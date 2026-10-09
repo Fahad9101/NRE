@@ -105,7 +105,7 @@ class PlanDocumentTests(unittest.TestCase):
         cls.proposal = flat(PROPOSAL.read_text(encoding="utf-8"))
 
     def test_it_says_nothing_has_run_and_what_it_does_not_do(self):
-        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, and the owner has decided the three things it left (`reports/m5-phase1b-s2-decisions-2026-10-09.json`), so 45 candidates stand. S3, the sealed mode of the event acquisition, is built. S4 has begun: batch 1's event specs are built in the dry-run state, and S5 has begun for it: the sealed dry run ran and the signoff packet is prepared. No label, return or event price has been read; one inadvertent exposure to a company's quarterly average repurchase price, through a search-tool summary, is disclosed in `reports/m5-phase1b-batch1-sources-2026-10-09.json`. Nothing later has started.",
+        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, and the owner has decided the three things it left (`reports/m5-phase1b-s2-decisions-2026-10-09.json`), so 45 candidates stand. S3, the sealed mode of the event acquisition, is built. S4 and S5 have run for batch 1: its event specs were built in the dry-run state, the sealed dry run ran, the signoff packet was prepared and the owner has signed it off (`reports/m5-phase1b-batch1-signoff-2026-10-09.json`): eight events are attested, NBIX waits for a pipeline change the owner chose and for its second dry run, and ASMB stays quarantined. The attested sealed run has not run. No label, return or event price has been read; one inadvertent exposure to a company's quarterly average repurchase price, through a search-tool summary, is disclosed in `reports/m5-phase1b-batch1-sources-2026-10-09.json`. Nothing later has started.",
                        "It runs and fetches nothing itself and pushes nothing. The work it describes enumerates candidates by filing metadata only, reads no price or label, and attests no event.",
                        "It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c."):
             self.assertIn(phrase, self.flat)
@@ -200,10 +200,19 @@ class PlanDocumentTests(unittest.TestCase):
                       "with a caveat, exclude the pending take-private; 45 candidates stand | nothing further |", self.flat)
         self.assertIn("The sweep of S2 followed, from the archived lists alone (`tests/test_m5_phase1b_sweep.py` repeats it); the review of the filings' text followed, with the owner's permission to read the filings "
                       "in the built-in browser (`tests/test_m5_phase1b_review.py` binds its record).", self.flat)
-        self.assertIn("Batch 1 is built on 2026-10-09 (`reports/m5-phase1b-batch1-sources-2026-10-09.json`, `config/m5-phase1b-events.json`): nine sealed events in the dry-run state; the tenth candidate, ASMB, was released at the 16:00 ET close, "
+        self.assertIn("Batch 1 is built on 2026-10-09 (`reports/m5-phase1b-batch1-sources-2026-10-09.json`, `config/m5-phase1b-events.json`): nine sealed events, built in the dry-run state; the tenth candidate, ASMB, was released at the 16:00 ET close, "
                       "which the calendar classes as bell-ambiguous, so it is left quarantined for the owner's word | \"push\" for each batch |", self.flat)
         self.assertIn("Batch 1's ran on 2026-10-09 (`reports/m5-phase1b-batch1-dry-run-2026-10-09.json`): eight events quarantined as a dry run should, and NBIX errored on a corporate action with no ex-date; the packet "
-                      "(`reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json`) asks for the eight attestations and puts two decisions to the owner | the owner's attestations and the two decisions |", self.flat)
+                      "(`reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json`) asked for the eight attestations and put two decisions to the owner. The owner answered the same day (`reports/m5-phase1b-batch1-signoff-2026-10-09.json`): "
+                      "the eight are attested, with the packet's caveats; NBIX gets an additive change to `fetch_actions` (an action with no ex-date is dated by its effective, payable or process date; `tests/test_event_acquire_action_dates.py`) "
+                      "and stays unattested until its second dry run has listed its action; ASMB stays quarantined | the attestations and decisions (given); NBIX's attestation, once the owner has seen its listed action |", self.flat)
+        for phrase in ("The signoff of batch 1 added one change to that module, the owner's answer (A) on NBIX: `fetch_actions` dates an action that has no ex_date by the first of its effective, payable and process dates that is present, "
+                       "and says which in a `date_field` entry that the sealed view shows only when the date is not an ex-date.",
+                       "An action with none of them still fails closed, and a date that is present but unusable is an error, never a reason to try the next one.",
+                       "It changes nothing for an input that worked before, because such an input has a valid ex_date, which still decides.",
+                       "`tests/test_event_acquire_action_dates.py` pins it and `tests/test_m5_phase1b_attestations.py` binds the signoff record and the attested events file.",
+                       "Pushing it starts the Milestone 1 event acquisition again, whose pinned matches are the same real-data check."):
+            self.assertIn(phrase, self.flat)
         review = load(ROOT / "reports" / "m5-phase1b-eligibility-review-2026-10-09.json")
         self.assertEqual(review["counts"]["by_assessment"]["results_release_no_issue_found"], 44)
         self.assertEqual(len(review["decisions_for_the_owner"]), 3)

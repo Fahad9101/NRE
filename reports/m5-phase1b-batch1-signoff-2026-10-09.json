@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch1_signoff",
+  "recorded_on": "2026-10-09",
+  "context": "Reply to the batch 1 signoff request built from reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json: eight events quarantined as a dry run should (reports/m5-phase1b-batch1-dry-run-2026-10-09.json), one event (NBIX) that errored on a corporate action with no ex-date, and one candidate (ASMB) that is bell-ambiguous. The questions and the owner's answers are quoted from the session transcript, not from a summary.",
+  "asked": {
+    "at": "2026-10-09T18:15:39.381Z",
+    "source": "session transcript, line 41007 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-09T18:30:06.367Z",
+    "source": "session transcript, line 41013 (the tool result of the questions)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "Attest 8",
+      "question": "Attest first-public time, historical identity and corporate actions for the eight batch 1 events that ran (CACI, ALKT, JBSS, HURN, PARR, CXT, ASPN, COLL), on the evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json?",
+      "options_offered": [
+        {
+          "label": "Yes, attest all eight (Recommended)",
+          "description": "I add the three attestations to each of the eight events, quoting your answer as the basis, and carry the proposed caveats into their specs: ALKT's buyback and the in-window 8-Ks listed in the packet (not opened, caveats not exclusions). You accept the residual gap that open-web research cannot close: an earlier public disclosure with no discoverable trace. The next push of the events file then runs the attested sealed run, which prints only the sealed view and the commitments."
+        },
+        {
+          "label": "Not yet",
+          "description": "Nothing is attested; every event stays quarantined. Name any events or concerns under Other."
+        }
+      ],
+      "owner_selected": "Yes, attest all eight (Recommended)"
+    },
+    {
+      "header": "NBIX 05-05",
+      "question": "NBIX 2026-05-05 errored in the dry run on a corporate action with no ex-date (probably the Soleno merger entry). How should it be handled?",
+      "options_offered": [
+        {
+          "label": "(A) Additive pipeline change (Recommended)",
+          "description": "In nre/event_acquire.py an action with no ex_date uses its effective date (then its payable or process date) and still fails closed if it has none; labels crossing it are suppressed as for any action. Results already computed are unchanged, since only inputs that failed before are affected, and the Milestone 1 pinned matches re-run on real data as the check. A second dry run then lists the action for you to see before NBIX is attested. It keeps a legitimate event and fixes the rule before any commitment exists."
+        },
+        {
+          "label": "(B) Leave it quarantined",
+          "description": "No code change. NBIX 2026-05-05 is taken out of the events file, so the sealed workflow runs green, and recorded as quarantined for an unresolved pipeline limitation, as GALT and PDFS were. As far as Alpaca's three-year list shows, it is the only event in the pool this touches."
+        }
+      ],
+      "owner_selected": "(A) Additive pipeline change (Recommended)"
+    },
+    {
+      "header": "ASMB 05-07",
+      "question": "ASMB 2026-05-07 was released at 16:00 ET, the instant of the close, which the calendar classes as bell-ambiguous, so no event spec can be built. Leave it quarantined or exclude it?",
+      "options_offered": [
+        {
+          "label": "Leave it quarantined (Recommended)",
+          "description": "Not excluded: an unresolved encoding limitation, as Milestone 1's GALT and step 2's PDFS 2025-08-07 were, which you confirmed on 2026-09-29."
+        },
+        {
+          "label": "Exclude it",
+          "description": "It is recorded as excluded for being released at the bell."
+        }
+      ],
+      "owner_selected": "Leave it quarantined (Recommended)"
+    }
+  ],
+  "scope": {
+    "attested": {
+      "events": [
+        "caci-m5b-2026-04-22",
+        "alkt-m5b-2026-04-29",
+        "jbss-m5b-2026-04-29",
+        "hurn-m5b-2026-05-05",
+        "parr-m5b-2026-05-05",
+        "cxt-m5b-2026-05-06",
+        "aspn-m5b-2026-05-07",
+        "coll-m5b-2026-05-07"
+      ],
+      "attestations": [
+        "first_public_time",
+        "historical_identity",
+        "corporate_actions"
+      ],
+      "read_as": "The three attestations for the eight events named, on the evidence in the packet, accepting the residual gap that open-web research cannot close (an earlier public disclosure with no discoverable trace), and carrying the packet's proposed label caveats (ALKT's buyback and the in-window 8-Ks listed for each event, not opened) into each event's spec as caveats, not exclusions."
+    },
+    "nbix": {
+      "event": "nbix-m5b-2026-05-05",
+      "decision": "(A)",
+      "read_as": "The additive change to nre/event_acquire.py's fetch_actions described in the packet: an action with no ex_date uses its effective date (then its payable or process date), still fails closed with none of them, and labels crossing it are suppressed as for any action. It authorizes that change and the second dry run that lists NBIX's action; it does not attest NBIX, which stays unattested until the owner has seen the listed action.",
+      "assistant_additions_for_the_owner_to_veto": [
+        "The sealed view gains a date_field entry on an action only when its date is not an ex_date, so the owner can see which date was used; it holds no price. The pre-registered list of what a sealed run may report names an action's type, ex-date and id, so this is a small addition to it, made visible here.",
+        "'Has none of them' is read as 'has none that is present': the first of ex_date, effective_date, payable_date and process_date that is present (not null) decides, and if it is not a valid date the action fails closed, never falls through to the next field. This fails closed in more cases than the plain reading would. It changes nothing for an input that worked before, because such an input has a valid ex_date, which still decides."
+      ]
+    },
+    "asmb": {
+      "candidate": "ASMB 2026-05-07",
+      "disposition": "quarantined",
+      "read_as": "Left quarantined, not excluded, as an unresolved encoding limitation (bell-ambiguous release at 16:00 ET), as Milestone 1's GALT and step 2's PDFS 2025-08-07 were."
+    }
+  },
+  "not_a_claim": [
+    "Not Phase 1b acceptance and not a claim about any event's outcome: no label, price or return has been computed or viewed.",
+    "Not an attestation of NBIX 2026-05-05, which stays unattested.",
+    "Not a clearance of the in-window 8-Ks whose content was not opened: they travel with the labels as caveats."
+  ]
+}

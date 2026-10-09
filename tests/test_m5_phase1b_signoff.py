@@ -178,12 +178,17 @@ class SignoffPacketTests(Base):
         self.assertEqual({k: len(v) for k, v in by_event.items()}, {"caci-m5b-2026-04-22": 0, "alkt-m5b-2026-04-29": 2, "jbss-m5b-2026-04-29": 0, "hurn-m5b-2026-05-05": 1, "nbix-m5b-2026-05-05": 2, "parr-m5b-2026-05-05": 2,
                                                                   "cxt-m5b-2026-05-06": 1, "aspn-m5b-2026-05-07": 1, "coll-m5b-2026-05-07": 2})
 
-    def test_the_spec_caveats_travel_into_the_packet_and_the_dry_run_facts_are_the_dry_run_records(self):
+    def test_the_packets_caveats_are_the_specs_and_the_dry_run_facts_are_the_dry_run_records(self):
         view = self.dry["sealed_view"]["events"]
         for entry in self.packet["events"]:
             with self.subTest(event=entry["event_id"]):
-                spec_caveats = [{"labels": ["all"], "note": c["note"]} for c in self.by_id[entry["event_id"]].get("caveats", [])]
-                self.assertEqual([c for c in (entry["proposed_label_caveats"] or []) if c["labels"] == ["all"]], spec_caveats)
+                event, proposed = self.by_id[entry["event_id"]], entry["proposed_label_caveats"] or []
+                if entry["event_id"] == "nbix-m5b-2026-05-05":
+                    # Not signed off: its spec holds only the caveat on all labels, as at the dry run; the in-window 8-K caveats join it when the event is attested.
+                    self.assertNotIn("attestations", event)
+                    self.assertEqual(event.get("caveats", []), [c for c in proposed if c["labels"] == ["all"]])
+                else:
+                    self.assertEqual(event.get("caveats", []), proposed)             # the signoff carried the packet's caveats into each attested spec, in the packet's order
                 sealed = view[entry["event_id"]]
                 if "error" in sealed:
                     self.assertEqual(entry["corporate_actions"]["sealed_dry_run"], "ERROR: " + sealed["error"])
