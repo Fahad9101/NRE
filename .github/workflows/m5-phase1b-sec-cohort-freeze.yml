@@ -1,0 +1,110 @@
+name: NRE M5 Phase 1b SEC Cohort Freeze
+
+# The Milestone 5 Phase 1b candidate pool (the same 23 Milestone 1 issuers, Item 2.02 8-Ks filed 2026-04-01 to 2026-09-10, the forward extension whose labels stay sealed) is frozen once. It runs when this file
+# or config/m5-phase1b-cohort-spec.json is pushed, or when dispatched by hand, and it stops before touching SEC or the repository whenever any frozen file already exists on main, so no push or dispatch
+# can re-freeze or overwrite the frozen pool. It reads no price and no label: it only enumerates SEC filings. The raw SEC bytes it fetched are committed with the frozen files, so the audit's source-hash
+# gate has them from the start (Milestone 2 step 2's were archived only afterwards).
+on:
+  push:
+    paths:
+      - '.github/workflows/m5-phase1b-sec-cohort-freeze.yml'
+      - 'config/m5-phase1b-cohort-spec.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nre-m5-phase1b-sec-cohort-freeze
+  cancel-in-progress: false
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refuse to run while a frozen Phase 1b cohort file exists on main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          for path in config/m5-phase1b-frozen-issuer-cohort.json config/m5-phase1b-frozen-candidate-ledger.json reports/m5-phase1b-sec-cohort-freeze.json archive/m5-phase1b-sec-freeze; do
+            found="$(git ls-tree --name-only origin/main -- "$path")"
+            if [ -n "$found" ]; then
+              echo "::error::$path already exists on origin/main. The frozen Phase 1b cohort is never re-frozen or overwritten."
+              exit 1
+            fi
+          done
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Re-run offline validation before network acquisition
+        run: python -m unittest discover -s tests
+
+      - name: Freeze deterministic targeted candidate membership
+        env:
+          SEC_USER_AGENT: NRE research contact https://github.com/Fahad9101/NRE
+        run: |
+          rm -rf /tmp/nre-m5-phase1b-freeze
+          python -m nre.cli freeze-targeted-cohort --spec config/m5-phase1b-cohort-spec.json --protocol config/m5-phase1b-protocol.json --output /tmp/nre-m5-phase1b-freeze
+
+      - name: Verify freeze result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          spec = json.loads(Path("config/m5-phase1b-cohort-spec.json").read_text())
+          report = json.loads(Path("/tmp/nre-m5-phase1b-freeze/discovery-report.json").read_text())
+          ledger = json.loads(Path("/tmp/nre-m5-phase1b-freeze/candidate-ledger.json").read_text())
+          cohort = json.loads(Path("/tmp/nre-m5-phase1b-freeze/issuer-cohort.json").read_text())
+          assert report["state"] == "FROZEN_CANDIDATE_MEMBERSHIP", report
+          assert report["price_data_accessed_by_this_workflow"] is False
+          assert report["processed_issuers"] == len(spec["issuers"]) == 23
+          assert ledger["frozen_at"] == report["frozen_at"] == cohort["frozen_at"]
+          assert len(ledger["candidates"]) == report["candidate_count"]
+          assert all(spec["filing_screen_start"] <= c["filing_date"] <= spec["filing_screen_end"] for c in ledger["candidates"])
+          print(json.dumps({
+              "state": report["state"],
+              "processed_issuers": report["processed_issuers"],
+              "candidate_count": report["candidate_count"],
+              "candidate_issuers": report["issuers_with_item_2_02_candidates"],
+              "membership_sha256": report["membership_sha256"],
+              "frozen_at": report["frozen_at"],
+          }, sort_keys=True))
+          PY
+
+      - name: Publish frozen metadata only from unchanged source SHA
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          for path in config/m5-phase1b-frozen-issuer-cohort.json config/m5-phase1b-frozen-candidate-ledger.json reports/m5-phase1b-sec-cohort-freeze.json archive/m5-phase1b-sec-freeze; do
+            found="$(git ls-tree --name-only origin/main -- "$path")"
+            if [ -n "$found" ]; then
+              echo "::error::$path already exists on origin/main. The frozen Phase 1b cohort is never re-frozen or overwritten."
+              exit 1
+            fi
+          done
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          cp /tmp/nre-m5-phase1b-freeze/issuer-cohort.json config/m5-phase1b-frozen-issuer-cohort.json
+          cp /tmp/nre-m5-phase1b-freeze/candidate-ledger.json config/m5-phase1b-frozen-candidate-ledger.json
+          cp /tmp/nre-m5-phase1b-freeze/discovery-report.json reports/m5-phase1b-sec-cohort-freeze.json
+          mkdir -p archive/m5-phase1b-sec-freeze
+          cp -r /tmp/nre-m5-phase1b-freeze/raw archive/m5-phase1b-sec-freeze/raw
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/m5-phase1b-frozen-issuer-cohort.json config/m5-phase1b-frozen-candidate-ledger.json reports/m5-phase1b-sec-cohort-freeze.json archive/m5-phase1b-sec-freeze
+          git diff --cached --quiet && exit 0
+          git commit -m "data: freeze Milestone 5 Phase 1b targeted SEC cohort"
+          git push origin HEAD:main
+
+      - name: Preserve raw acquisition bytes as audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nre-m5-phase1b-sec-freeze-raw
+          path: /tmp/nre-m5-phase1b-freeze/raw
+          if-no-files-found: error
+          retention-days: 30

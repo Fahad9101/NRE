@@ -1,0 +1,83 @@
+{
+  "protocol_version": "m5-phase1b-forward-extension-v1-2026-10-09",
+  "event_window_start": "2026-04-01",
+  "event_window_end": "2026-09-10",
+  "price_window_end": "2026-10-31",
+  "discovery": "Every Item 2.02 8-K for the 23 already-accepted Milestone 1 issuers, filed in the event window; record every exclusion",
+  "universe": "The 23 issuers with an accepted Milestone 1 event, no others -- see candidate_universe below",
+  "candidate_universe": {
+    "note": "Fixed by the 23 already-accepted Milestone 1 events (config/m1-events.json); not sampled or discovered. Identical issuer set to Milestone 2 steps 2 and 3.",
+    "ciks": [
+      "0000883107",
+      "0000025445",
+      "0000949858",
+      "0001267565",
+      "0001701758",
+      "0001145986",
+      "0001320350",
+      "0001426800",
+      "0001681087",
+      "0001697851",
+      "0000946581",
+      "0000880117",
+      "0000914475",
+      "0000016058",
+      "0000797721",
+      "0001289848",
+      "0000821483",
+      "0001873529",
+      "0001120914",
+      "0001529274",
+      "0001660134",
+      "0001573221",
+      "0001845815"
+    ]
+  },
+  "minimum_eligible_events": 1,
+  "minimum_unique_issuers": 1,
+  "minimum_note": "Deliberately minimal, as in Milestone 2 steps 2 and 3: a forward extension to give the Milestone 5 comparison a fresh holdout, not a coverage target. If too few events result for a usable holdout, the change rule of reports/m5-phase1b-authorization-2026-10-09.json applies: stop, record, ask.",
+  "selection": "Enumerate before reading returns; no performance-based sampling",
+  "availability_mode": "historical_reconstruction",
+  "scope": "Daily regular-session previous-close-anchored labels only; intraday events quarantined",
+  "window_rule": {
+    "start": "2026-04-01, the day after Milestone 1's event window ended (2026-03-31), so the candidate pools cannot overlap.",
+    "end": "2026-09-10, the last release date whose 20-session label window (the anchor session and the reaction session through 19 more) is complete as of the latest session at the time of the go-ahead, 2026-10-08, even for an after-hours release. It is computed from the calendar, not from any price.",
+    "later_releases": "Releases after the end date are not enumerated by this step."
+  },
+  "seal": {
+    "method": "hash_only",
+    "chosen_by": "the project owner, 2026-10-09 (reports/m5-phase1b-authorization-2026-10-09.json, answer 'Hash-only seal (Recommended)')",
+    "applies_from": "the first run that computes a label for an event in the window, until the owner opens the seal at Phase 4",
+    "a_sealed_run_may_report": [
+      "event_id, ticker, release timing, and the anchor, reaction and required sessions",
+      "the event's state and its event-level quarantine reasons",
+      "missing sessions and zero-volume sessions",
+      "corporate actions (type, ex-date, id)",
+      "the SHA-256 commitment of the event's labels, and whether it matches the pinned one",
+      "for each of session_2_close_return, session_5_close_return, session_10_close_return and session_20_close_return, only whether the label exists and, if not, a reason that does not depend on a price",
+      "counts of events by state"
+    ],
+    "a_sealed_run_never_reports": [
+      "a label value, a price, a return or a ratio",
+      "whether any day-1 label, gap threshold or gap label is true or false",
+      "the reason NOT_POSITIVE_GAP_GE_0_5PCT (it reveals the sign of the gap) or any other reason that depends on a price",
+      "the times at which labels became available",
+      "anything computed from a bar's open, high, low, close or volume, other than the zero-volume test"
+    ],
+    "commitment": "SHA-256 of the canonical JSON of an event's labels ({label: {value, reason}}), as computed by nre.event_acquire.labels_digest and pinned in the events file as recorded_result.labels_sha256. The commitment covers every label, so no single label can be read from it.",
+    "opening": "Phase 4 recomputes the labels once, checks every value against its pinned commitment (a mismatch is reported, never overwritten) and is the only look.",
+    "limits": [
+      "The seal is a procedure and a commitment, not secrecy: the same public prices exist elsewhere. It binds this project's own runs, logs, annotations, reports and commits, and the assistant will not seek those prices.",
+      "A commitment hides a value only as well as the value is hard to guess; the labels are many floats derived from prices that no sealed run prints."
+    ]
+  },
+  "acceptance": "A forward extension for the same 23 issuers, same full review standard as Milestone 1 and Milestone 2 steps 2 and 3, labels sealed; not evidence of predictive power. Completion is the owner's own declaration, in a separate record, as for the earlier steps.",
+  "authorization": {
+    "decision": "Milestone 5 Phase 1b, the forward extension (\"Milestone 2 step 4\"): an outcome-blind enumeration and freeze of candidate events since 2026-04-01 under the same procedure and review standard as steps 2 and 3, labels sealed from the design. The owner answered the provider-rights-at-scale question for this scale with 'Yes, provider rights fine' and chose the hash-only seal.",
+    "authorized_on": "2026-10-09",
+    "authorized_by": "Fahad9101 (project owner)",
+    "words": "authorize phase 1b",
+    "record": "reports/m5-phase1b-authorization-2026-10-09.json"
+  },
+  "relationship_to_earlier_steps": "A separate, parallel protocol. It does not amend, extend or touch config/m1-*.json, config/m2-step2-*.json, config/m2-step3-*.json, config/m2-combined-events.json or any earlier record. Its event window starts the day after Milestone 1's ended (2026-03-31), so the pools cannot overlap; no candidate of the 23 issuers in Milestone 1's frozen ledger is dated on or after 2026-04-01."
+}

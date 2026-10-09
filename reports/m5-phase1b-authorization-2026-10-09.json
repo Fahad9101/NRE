@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_authorization",
+  "recorded_on": "2026-10-09",
+  "context": "Phase 1a was pushed and verified (5a57316..c96b21b, CI run #241 green on both jobs). The assistant's closing message, quoted verbatim in assistant_message_replied_to, recommended, as a recommendation only, authorizing Phase 1b, the forward extension, and said it needed the owner's answer on the provider-rights-at-scale question first. The owner then wrote \"authorize phase 1b\". Because those words do not answer that question, the assistant put it, and the one design question it could not settle alone (how the labels are sealed), to the owner as two questions, and the owner answered both; the answers are in owner_answers.",
+  "assistant_message_replied_to": {
+    "at": "2026-10-09T06:38:16.764Z",
+    "source": "session transcript, line 37252",
+    "text": "Pushed `5a57316..c96b21b`, which publishes `dd9209d` and `c96b21b`. CI is green on the first attempt.\n\n- **CI:** [NRE Milestone 1 #241](https://github.com/Fahad9101/NRE/actions/runs/37894191982) passed in both matrix jobs (Python 3.12 and 3.13), and every step succeeded, including the test step.\n- **Probe:** no third run started, because the push didn't touch the probe workflow or its spec.\n- **Holdout:** no workflow sets the replay flag, so the access count stays at 25.\n- **Local state:** nothing is queued locally and the working tree is clean.\n\nPhase 1a is complete and published. No later phase has started, and none of the six decisions changed.\n\n**Remaining**\n- **You:** read section 6 of `docs/M5-PHASE1A-AVAILABILITY.md` (flags A to F). Flag E is optional: whether to annotate the Milestone 1 blocker `REGULAR_SESSION_VOLUME_UNVERIFIED` is your call. Then choose the next phase.\n- **Me:** nothing, until you authorize a phase.\n\n**Recommended next step:** authorize Phase 1b, the forward extension. The confirmed order puts it next, because the fresh holdout has to be collected and sealed before the protocol is frozen. It is the first step that pulls new data into the dataset, so it needs your answer on the provider-rights-at-scale question first. That is a recommendation only. Nothing proceeds without your own words."
+  },
+  "owner_messages": [
+    {
+      "text": "authorize phase 1b",
+      "at": "2026-10-09T07:12:36.854Z",
+      "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 37256, timestamps UTC), not from a summary"
+    }
+  ],
+  "owner_answers": [
+    {
+      "header": "Rights",
+      "question": "Does the Alpaca provider research authorization extend to Phase 1b's scale? It would add about 48 events to the 128 (an estimate; nothing is enumerated yet), run as sealed commitments only until Phase 4, on the same Alpaca account and SIP feed, derived values only, never raw prices. Phase 1c, which adds features for every event, would put the question to you again.",
+      "options_offered": [
+        {
+          "label": "Yes, provider rights fine",
+          "description": "Confirms the standing authorization (derived values only, never raw prices, same account and feed) covers Phase 1b's scale, as you confirmed it at each earlier scale-up."
+        },
+        {
+          "label": "Not yet",
+          "description": "I stop before any Alpaca request. I would still prepare the plan, specs and tests, and could run the SEC-side candidate freeze, which touches no prices."
+        }
+      ],
+      "owner_selected": "Yes, provider rights fine",
+      "asked_at": "2026-10-09T07:18:13.434Z",
+      "answered_at": "2026-10-09T07:33:06.977Z",
+      "source": "the AskUserQuestion call (session transcript, line 37363) and the owner's answers (line 37369), quoted from the session transcript, not from a summary"
+    },
+    {
+      "header": "Seal",
+      "question": "How should the fresh holdout's labels be sealed until Phase 4?",
+      "options_offered": [
+        {
+          "label": "Hash-only seal (Recommended)",
+          "description": "The label engine runs on each attested event, so missing sessions and dividends in the window surface now, but runs print and commit only each event's SHA-256 commitment and non-outcome availability: no return, no boolean, and not even the 'not a positive gap' reason, which would reveal the gap's sign. At Phase 4 the values are recomputed once and must match the commitments."
+        },
+        {
+          "label": "No labels until Phase 4",
+          "description": "Candidates are enumerated, reviewed and attested, but the label engine and Alpaca are not touched until Phase 4. The cleanest seal, but any data problem (a missing session, a dividend in a window) would first show at the one look."
+        }
+      ],
+      "owner_selected": "Hash-only seal (Recommended)",
+      "asked_at": "2026-10-09T07:18:13.434Z",
+      "answered_at": "2026-10-09T07:33:06.977Z",
+      "source": "the AskUserQuestion call (session transcript, line 37363) and the owner's answers (line 37369), quoted from the session transcript, not from a summary"
+    }
+  ],
+  "phase_as_proposed": {
+    "document": "docs/M5-ADVANCED-MODELS-SCOPE.md",
+    "section": "3, Phase 1, item 1b",
+    "words": "a forward extension, \"Milestone 2 step 4\": an outcome-blind enumeration and freeze of candidate events since 2026-04-01 under the same procedure and review standard as steps 2 and 3, labels sealed from the design"
+  },
+  "how_the_words_were_read": [
+    "'authorize phase 1b' answers the assistant's recommendation to say exactly that. It authorizes Phase 1b of docs/M5-ADVANCED-MODELS-SCOPE.md as the proposal words it: a forward extension, \"Milestone 2 step 4\": an outcome-blind enumeration and freeze of candidate events since 2026-04-01 under the same procedure and review standard as steps 2 and 3, labels sealed from the design.",
+    "The words do not answer the provider-rights-at-scale question, which the proposal and decision 2 put to the owner before 1b, and the assistant had said it needed that answer first. It was therefore asked separately, and the owner answered 'Yes, provider rights fine'. That answer is read as covering Phase 1b's scale only: about 48 more events (an estimate; nothing is enumerated), run as sealed commitments until Phase 4, on the same Alpaca account and SIP feed, derived values only, never raw prices. The question is put to the owner again before Phase 1c.",
+    "The owner chose the hash-only seal: the label engine runs on each attested event, so data problems surface now, but a sealed run reports only an event's state, its non-outcome facts and the SHA-256 commitment of its labels, never a value, a flag derived from a price, or a reason that depends on a price (the engine's NOT_POSITIVE_GAP_GE_0_5PCT reason would reveal the gap's sign). At Phase 4 the values are recomputed once and must match the commitments. The exact rule is pre-registered in config/m5-phase1b-protocol.json before any run.",
+    "'The same procedure and review standard as steps 2 and 3' is read as the whole of it: a fixed issuer set, an outcome-blind Item 2.02 enumeration frozen with hashes, an eligibility review and a same-day-competing-catalyst sweep, event specs built in batches, a dry run that quarantines every event until it is attested, a signoff packet per batch, and the owner's own attestation of first-public timing, historical identity and corporate actions for each batch. The assistant attests nothing, and no event enters the sealed set without the owner's attestation.",
+    "The go-ahead is for the phase, not for each of its steps. Every step that needs the owner (a push, an attestation, a sign-off, the declaration that the extension is complete) is asked for when it is reached. The words do not carry a push: the assistant commits locally and waits for the owner's word \"push\", as in every earlier step.",
+    "The assistant chose, and states for the owner's veto before the freeze, the end of the window: releases dated 2026-04-01 to 2026-09-10 inclusive, 2026-09-10 being the last release date whose 20-session label window is complete as of the latest session at the time of the go-ahead (2026-10-08). It starts the day after Milestone 1's release window ended.",
+    "The go-ahead follows the order proposed in docs/M5-ADVANCED-MODELS-SCOPE.md section 3 (1a, then 1b). It does not authorize 0, 1c or any later phase.",
+    "Disclosure: the assistant has seen the Milestone 4 block-5 results (the proposal says so). It has seen no outcome, price or label of any event since 2026-04-01 and will not, before the owner opens the seal at Phase 4."
+  ],
+  "authorized_under_these_words": [
+    "Building, testing and committing locally the pre-registered rules and tools of Phase 1b: the protocol and cohort spec, an additive change to the freeze validation, the one-time SEC freeze workflow, the sealed mode of the event acquisition and its workflow, event specs, signoff packets and the sealed audit, each with offline tests.",
+    "Running them on GitHub Actions once the owner has said \"push\", and reading their results from the runs (sealed runs print only what the protocol allows).",
+    "Reading SEC EDGAR (submissions, filings and wire releases) to enumerate and review candidates for the 23 issuers, outcome-blind.",
+    "Using the Alpaca market-data API through GitHub Actions, in sealed runs only, for events the owner has attested.",
+    "Recording sealed commitments, the frozen candidate pool and the review state in the repository."
+  ],
+  "not_authorized_by_these_words": [
+    "Phase 0 (pre-registering config/m5-protocol.json), Phase 1c (acquiring any derived feature), Phase 2, Phase 3 or Phase 4.",
+    "Reading, printing or committing any label value, return, price, ratio or price-derived flag of any event since 2026-04-01, before the owner opens the seal at Phase 4.",
+    "Attesting any event's first-public timing, historical identity or corporate-action state on the owner's behalf.",
+    "Adding an issuer to the 23, adding an event outside the window, or selecting an event by anything but the pre-registered rules.",
+    "Fetching data from a provider the project has not reviewed, or purchasing, licensing or signing up for anything.",
+    "Answering the provider-rights-at-scale question for Phase 1c.",
+    "Pushing without the owner's word \"push\".",
+    "Any read of a block-5 outcome, or any use of a Milestone 4 holdout result as an input to a Milestone 5 design choice.",
+    "Declaring the forward extension (Milestone 2 step 4) or Milestone 5 accepted, or starting Milestone 6 or any later milestone.",
+    "Any change to the accepted Milestone 1 to 4 work, including their frozen ledgers."
+  ],
+  "change_rule": "If Phase 1b shows that a confirmed default (reports/m5-scope-confirmation-2026-10-08.json) cannot be applied as written (for example, too few events since 2026-04-01 for a usable fresh holdout, or an attested event that cannot be run without revealing an outcome), the assistant stops at that point, records the finding and asks the owner; it does not change a confirmed default on its own.",
+  "not_a_claim": [
+    "Not a claim that about 48 events exist: that is the proposal's estimate, and the freeze will count them.",
+    "Not a start of any Milestone 5 phase beyond 1b, and not Milestone 5 acceptance.",
+    "Not a claim that a model beats a baseline, or about any market."
+  ]
+}

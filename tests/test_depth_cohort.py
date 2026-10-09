@@ -158,6 +158,21 @@ class ValidateSpecTests(unittest.TestCase):
         with self.assertRaises(DataError):
             dc.validate_spec(spec(p, filing_screen_end="2026-01-05", event_window_end="2026-01-05"), p)
 
+    def test_a_forward_spec_must_say_after_and_start_after_milestone_1s_event_window(self):
+        p = protocol(event_window_start="2026-04-01", event_window_end="2026-09-10")
+        forward = dict(filing_screen_start="2026-04-01", filing_screen_end="2026-09-10", event_window_start="2026-04-01", event_window_end="2026-09-10",
+                       window_relation_to_milestone_1="after")
+        dc.validate_spec(spec(p, **forward), p)  # no exception
+        with self.assertRaises(DataError):          # the same dates labelled "before" are held to the old rule (the screen must end before 2026-01-05)
+            dc.validate_spec(spec(p, **dict(forward, window_relation_to_milestone_1="before")), p)
+        with self.assertRaises(DataError):          # and so are the same dates with no label at all, since "before" is the default
+            dc.validate_spec(spec(p, **{k: v for k, v in forward.items() if k != "window_relation_to_milestone_1"}), p)
+        early = protocol(event_window_start="2026-03-31", event_window_end="2026-09-10")
+        with self.assertRaises(DataError):          # a forward screen that starts on Milestone 1's last event date would overlap its pool
+            dc.validate_spec(spec(early, **dict(forward, filing_screen_start="2026-03-31", event_window_start="2026-03-31")), early)
+        with self.assertRaises(DataError):
+            dc.validate_spec(spec(p, **dict(forward, window_relation_to_milestone_1="sideways")), p)
+
     def test_rejects_a_missing_or_malformed_issuer_list(self):
         p = protocol()
         for bad in ([], [{"ticker": "AAA"}], [{"ticker": "AAA", "cik": "1"}], [{"ticker": "", "cik": "0000000001"}]):

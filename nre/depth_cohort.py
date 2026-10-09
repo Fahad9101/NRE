@@ -1,4 +1,4 @@
-"""Milestone 2 step 2: a second, later filing-candidate freeze for the already-accepted Milestone 1 issuers.
+"""Milestone 2 steps 2 and 3, and (with window_relation_to_milestone_1 "after") Milestone 5 Phase 1b: a filing-candidate freeze for the already-accepted Milestone 1 issuers over another window.
 
 Unlike nre/cohort.py's freeze_sec_cohort, which samples an unknown issuer pool down to a target size, this module's
 issuer set is already fixed -- the 23 issuers with an accepted Milestone 1 event -- so there is no historical-frame
@@ -58,8 +58,15 @@ def validate_spec(spec, protocol):
         raise DataError("cohort spec event window differs from step-2 protocol")
     if _date(spec["filing_screen_start"]) > _date(spec["filing_screen_end"]):
         raise DataError("invalid filing screen")
-    if _date(spec["filing_screen_end"]) >= date(2026, 1, 5):
-        raise DataError("step-2 filing screen must end before Milestone 1's frozen window starts (2026-01-05), to keep the two candidate pools from overlapping")
+    relation = spec.get("window_relation_to_milestone_1", "before")
+    if relation == "before":
+        if _date(spec["filing_screen_end"]) >= date(2026, 1, 5):
+            raise DataError("step-2 filing screen must end before Milestone 1's frozen window starts (2026-01-05), to keep the two candidate pools from overlapping")
+    elif relation == "after":
+        if _date(spec["filing_screen_start"]) <= date(2026, 3, 31):
+            raise DataError("a forward filing screen must start after Milestone 1's event window ended (2026-03-31), to keep the two candidate pools from overlapping")
+    else:
+        raise DataError("window_relation_to_milestone_1 must be 'before' or 'after'")
     issuers = spec.get("issuers")
     if not isinstance(issuers, list) or not issuers:
         raise DataError("a nonempty issuer list is required")

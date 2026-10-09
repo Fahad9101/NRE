@@ -1,0 +1,199 @@
+"""What Milestone 5 Phase 1b recorded about itself: the owner's go-ahead and two answers, and how they were read (reports/m5-phase1b-authorization-2026-10-09.json); and the plan (docs/M5-PHASE1B-FORWARD-EXTENSION-PLAN.md)
+bound to those records, to the pre-registered protocol and to the earlier records and code its figures and claims come from."""
+import json
+import re
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+AUTHORIZATION = ROOT / "reports" / "m5-phase1b-authorization-2026-10-09.json"
+PHASE1A = ROOT / "reports" / "m5-phase1a-authorization-2026-10-08.json"
+PROTOCOL = ROOT / "config" / "m5-phase1b-protocol.json"
+PLAN = ROOT / "docs" / "M5-PHASE1B-FORWARD-EXTENSION-PLAN.md"
+PROPOSAL = ROOT / "docs" / "M5-ADVANCED-MODELS-SCOPE.md"
+
+
+def load(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def flat(text):
+    return " ".join(text.split())
+
+
+class AuthorizationRecordTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.record = load(AUTHORIZATION)
+
+    def test_it_quotes_the_owners_go_ahead_and_the_message_it_answers(self):
+        record = self.record
+        self.assertEqual((record["kind"], record["recorded_on"]), ("m5_phase1b_authorization", "2026-10-09"))
+        self.assertEqual([(m["text"], m["at"]) for m in record["owner_messages"]], [("authorize phase 1b", "2026-10-09T07:12:36.854Z")])
+        self.assertIn("line 37256", record["owner_messages"][0]["source"])
+        replied = record["assistant_message_replied_to"]
+        self.assertLess(replied["at"], record["owner_messages"][0]["at"])
+        self.assertEqual(replied["source"], "session transcript, line 37252")
+        self.assertTrue(replied["text"].startswith("Pushed `5a57316..c96b21b`, which publishes `dd9209d` and `c96b21b`."))
+        for phrase in ("**Recommended next step:** authorize Phase 1b, the forward extension.", "it needs your answer on the provider-rights-at-scale question first", "That is a recommendation only."):
+            self.assertIn(phrase, replied["text"])
+
+    def test_the_two_questions_and_the_owners_answers_are_recorded_as_asked(self):
+        record = self.record
+        answers = {a["header"]: a for a in record["owner_answers"]}
+        self.assertEqual(list(answers), ["Rights", "Seal"])
+        self.assertEqual({h: a["owner_selected"] for h, a in answers.items()}, {"Rights": "Yes, provider rights fine", "Seal": "Hash-only seal (Recommended)"})
+        for answer in answers.values():
+            self.assertIn(answer["owner_selected"], [o["label"] for o in answer["options_offered"]])
+            self.assertGreaterEqual(len(answer["options_offered"]), 2)
+            self.assertLess(record["owner_messages"][0]["at"], answer["asked_at"])
+            self.assertLess(answer["asked_at"], answer["answered_at"])
+            self.assertIn("line 37363", answer["source"])
+            self.assertIn("line 37369", answer["source"])
+        self.assertTrue(answers["Rights"]["question"].startswith("Does the Alpaca provider research authorization extend to Phase 1b's scale?"))
+        self.assertIn("It would add about 48 events to the 128 (an estimate; nothing is enumerated yet)", answers["Rights"]["question"])
+        self.assertIn("Phase 1c, which adds features for every event, would put the question to you again.", answers["Rights"]["question"])
+        self.assertEqual(answers["Seal"]["question"], "How should the fresh holdout's labels be sealed until Phase 4?")
+        self.assertEqual([o["label"] for o in answers["Seal"]["options_offered"]], ["Hash-only seal (Recommended)", "No labels until Phase 4"])
+        self.assertEqual([o["label"] for o in answers["Rights"]["options_offered"]], ["Yes, provider rights fine", "Not yet"])
+
+    def test_the_phase_it_authorizes_is_worded_as_in_the_proposal(self):
+        words = self.record["phase_as_proposed"]["words"]
+        self.assertIn(words, flat(PROPOSAL.read_text(encoding="utf-8")))
+        self.assertTrue(words.startswith("a forward extension, \"Milestone 2 step 4\": an outcome-blind enumeration and freeze of candidate events since 2026-04-01"))
+        self.assertEqual(self.record["phase_as_proposed"]["document"], "docs/M5-ADVANCED-MODELS-SCOPE.md")
+
+    def test_it_reads_the_words_narrowly_and_says_so(self):
+        text = " ".join(self.record["how_the_words_were_read"])
+        for phrase in ("It authorizes Phase 1b of docs/M5-ADVANCED-MODELS-SCOPE.md as the proposal words it", "The words do not answer the provider-rights-at-scale question", "'Yes, provider rights fine'",
+                       "covering Phase 1b's scale only: about 48 more events", "The question is put to the owner again before Phase 1c.", "The owner chose the hash-only seal", "NOT_POSITIVE_GAP_GE_0_5PCT",
+                       "pre-registered in config/m5-phase1b-protocol.json before any run", "The assistant attests nothing", "The go-ahead is for the phase, not for each of its steps", "The words do not carry a push",
+                       "It does not authorize 0, 1c or any later phase", "Disclosure:", "It has seen no outcome, price or label of any event since 2026-04-01"):
+            self.assertIn(phrase, text)
+
+    def test_what_is_authorized_and_what_is_not_is_listed(self):
+        record = self.record
+        self.assertEqual(len(record["authorized_under_these_words"]), 5)
+        authorized = " ".join(record["authorized_under_these_words"])
+        for later in ("Phase 0", "Phase 1c", "Phase 2", "Phase 3", "Phase 4", "Milestone 6"):
+            self.assertNotIn(later, authorized)                                  # nothing later is among the things authorized
+        for phrase in ("Building, testing and committing locally", "once the owner has said \"push\"", "outcome-blind", "in sealed runs only, for events the owner has attested", "Recording sealed commitments"):
+            self.assertIn(phrase, authorized)
+        not_authorized = " ".join(record["not_authorized_by_these_words"])
+        for phrase in ("Phase 0 (pre-registering config/m5-protocol.json), Phase 1c", "Reading, printing or committing any label value, return, price, ratio or price-derived flag", "Attesting any event's first-public timing",
+                       "Adding an issuer to the 23", "Fetching data from a provider the project has not reviewed", "Answering the provider-rights-at-scale question for Phase 1c", "Pushing without the owner's word \"push\"",
+                       "Any read of a block-5 outcome", "Declaring the forward extension (Milestone 2 step 4) or Milestone 5 accepted", "Any change to the accepted Milestone 1 to 4 work"):
+            self.assertIn(phrase, not_authorized)
+        self.assertIn("does not change a confirmed default on its own", record["change_rule"])
+        self.assertIn("Not a claim that about 48 events exist", " ".join(record["not_a_claim"]))
+
+    def test_the_default_the_assistant_chose_for_the_owners_veto_is_the_protocols_window(self):
+        protocol = load(PROTOCOL)
+        reading = " ".join(self.record["how_the_words_were_read"])
+        self.assertIn("releases dated %s to %s inclusive" % (protocol["event_window_start"], protocol["event_window_end"]), reading)
+        self.assertIn("(2026-10-08)", reading)
+        self.assertIn("for the owner's veto before the freeze", reading)
+
+
+class PlanDocumentTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.text = PLAN.read_text(encoding="utf-8")
+        cls.flat = flat(cls.text)
+        cls.record = load(AUTHORIZATION)
+        cls.protocol = load(PROTOCOL)
+        cls.proposal = flat(PROPOSAL.read_text(encoding="utf-8"))
+
+    def test_it_says_nothing_has_run_and_what_it_does_not_do(self):
+        for phrase in ("fixed on 2026-10-09 before any run", "As of this writing nothing has been run for it, nothing is pushed, no event is enumerated, and no price or label has been read",
+                       "It runs and fetches nothing, pushes nothing, enumerates no event, reads no price or label, and attests no event.",
+                       "It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c."):
+            self.assertIn(phrase, self.flat)
+        self.assertEqual(re.findall(r"^## (.+)$", self.text, re.M), ["1. What Phase 1b is", "2. What the owner decided", "3. The rules, fixed before the first run", "4. The stages", "5. What is built first", "6. What this plan does not do"])
+
+    def test_every_quotation_is_the_owners_or_the_proposals(self):
+        outside_code = re.sub(r"`[^`]*`", "", self.flat)
+        self.assertEqual(outside_code.count('"') % 2, 0)                                       # so that quotation marks pair up
+        spans = re.findall(r'"([^"]*)"', outside_code)
+        self.assertGreaterEqual(len(spans), 6)
+        phase1a = flat(json.dumps(load(PHASE1A)))
+        known = {"authorize phase 1b": self.record["owner_messages"][0]["text"], "Yes, provider rights fine": self.record["owner_answers"][0]["owner_selected"],
+                 "Hash-only seal (Recommended)": self.record["owner_answers"][1]["owner_selected"], "Milestone 2 step 4": "Milestone 2 step 4"}
+        for span in spans:
+            with self.subTest(span=span):
+                if span == "push":                                                              # the owner's standing word for publishing, as recorded in the Phase 1a record
+                    self.assertIn('word \\"push\\"', phase1a)
+                else:
+                    self.assertEqual(known[span], span)
+        self.assertIn('"Milestone 2 step 4"', self.proposal)                                  # and the proposal does say it, in quotation marks
+        self.assertEqual(self.text.count('"authorize phase 1b"'), 2)
+
+    def test_the_figures_are_the_records_and_the_earlier_files(self):
+        flat_text = self.flat
+        events = {name: [e for e in load(ROOT / "config" / name)["events"] if e.get("recorded_result")] for name in ("m1-events.json", "m2-step2-events.json", "m2-step3-events.json")}
+        sizes = {name: len(found) for name, found in events.items()}
+        self.assertEqual(sizes, {"m1-events.json": 23, "m2-step2-events.json": 45, "m2-step3-events.json": 60})
+        self.assertEqual(len(load(ROOT / "config" / "m2-step3-combined-events.json")["events"]), sum(sizes.values()))
+        self.assertIn("The exposed derived-data footprint is %d events today (%d from Milestone 1, %d from step 2 and %d from step 3)" % (
+            sum(sizes.values()), sizes["m1-events.json"], sizes["m2-step2-events.json"], sizes["m2-step3-events.json"]), flat_text)
+        self.assertIn("At the dataset's own rate (128 events over 512 days) about 48 events would have occurred since the data ended", flat_text)
+        self.assertIn("(128 events over 512 days, 190 days since the last reaction session) about 48 events would have occurred since", self.proposal)
+        batches = lambda pattern: len(list((ROOT / "reports").glob(pattern)))                    # noqa: E731
+        self.assertEqual((batches("m2-step2-batch*-signoff-2026-09-29.json"), batches("m2-step3-batch*-signoff-2026-10-02.json")), (4, 6))
+        self.assertIn("Step 2 took four batches and step 3 six; about 48 events is about five.", flat_text)
+        protocol = self.protocol
+        self.assertIn("Every Item 2.02 8-K or 8-K/A filed from %s to %s" % (protocol["event_window_start"], protocol["event_window_end"]), flat_text)
+        self.assertIn("It ends on %s, the last release date whose 20-session label window is complete as of the latest session when the window was fixed (2026-10-08)" % protocol["event_window_end"], flat_text)
+        pilot = load(ROOT / "config" / "pilot.json")
+        self.assertIn("It starts the day after Milestone 1's event window ended (%s)" % pilot["event_window_end"], flat_text)
+        self.assertEqual(protocol["event_window_start"], "2026-04-01")
+        self.assertIn("(2026-10-09T07:12:36.854Z)", flat_text)
+        self.assertEqual(self.record["owner_messages"][0]["at"], "2026-10-09T07:12:36.854Z")
+        ledger = load(ROOT / "config" / "m1-frozen-candidate-ledger.json")["candidates"]
+        ciks = {i["cik"] for i in load(ROOT / "config" / "m5-phase1b-cohort-spec.json")["issuers"]}
+        later = [c for c in ledger if c["filing_date"] >= protocol["event_window_start"]]
+        self.assertEqual((len(later), len([c for c in later if c["cik"] in ciks])), (3, 0))
+        self.assertIn("No candidate of the 23 issuers in Milestone 1's frozen ledger is dated on or after 2026-04-01 (three candidates of other issuers are)", flat_text)
+
+    def test_the_seal_paragraph_is_the_protocols_seal_and_the_leak_it_names_is_real(self):
+        seal = self.protocol["seal"]
+        self.assertEqual(seal["method"], "hash_only")
+        for phrase in ("A sealed run reports only an event's state, its quarantine reasons, its window facts, its missing and zero-volume sessions, its corporate actions, the SHA-256 commitment of its labels, and whether each of "
+                       "the four session-return labels exists and, if not, why.", "It never reports a label value, a price, a return or a ratio, or whether any day-1 label or gap label is true or false.",
+                       "It also hides the engine's reason `NOT_POSITIVE_GAP_GE_0_5PCT`", "which the engine gives exactly when the opening gap is below +0.5%",
+                       "At Phase 4 the labels are recomputed once and checked against the commitments (a mismatch is reported, never overwritten), and that look is the only one.",
+                       "The seal is a procedure, not secrecy", "The assistant will not seek those prices.", "**A disclosure:** the assistant has seen the Milestone 4 block-5 results (the proposal says so); it has seen no outcome, price or label of "
+                       "any event since 2026-04-01."):
+            self.assertIn(phrase, self.flat)
+        never = " ".join(seal["a_sealed_run_never_reports"])
+        self.assertIn("a label value, a price, a return or a ratio", never)
+        self.assertIn("whether any day-1 label, gap threshold or gap label is true or false", never)
+        self.assertIn("NOT_POSITIVE_GAP_GE_0_5PCT", never)
+        self.assertIn("The seal is a procedure and a commitment, not secrecy", " ".join(seal["limits"]))
+        self.assertIn("the assistant will not seek those prices", " ".join(seal["limits"]))
+        source = (ROOT / "nre" / "dataset.py").read_text(encoding="utf-8")
+        self.assertIn('label(None, window, "NOT_POSITIVE_GAP_GE_0_5PCT")', source)
+        self.assertIn('Decimal("1.005")', source)                                               # a gap of 0.5% or more is the only case with a value
+        self.assertIn("the assistant writing this proposal has seen the block-5 results", self.proposal)
+        self.assertIn("labels_sha256", (ROOT / "nre" / "event_acquire.py").read_text(encoding="utf-8"))
+
+    def test_the_stages_are_s1_to_s7_and_what_is_built_first_exists(self):
+        rows = re.findall(r"(?m)^\| (S\d) \|", self.text)
+        self.assertEqual(rows, ["S%d" % n for n in range(1, 8)])
+        for path in ("config/m5-phase1b-protocol.json", "config/m5-phase1b-cohort-spec.json", ".github/workflows/m5-phase1b-sec-cohort-freeze.yml", "tests/test_m5_phase1b_freeze.py",
+                     "tests/test_m5_phase1b_freeze_workflow.py"):
+            self.assertTrue((ROOT / path).is_file(), path)
+        self.assertIn("`window_relation_to_milestone_1`", self.text)
+        self.assertIn("window_relation_to_milestone_1", (ROOT / "nre" / "depth_cohort.py").read_text(encoding="utf-8"))
+        self.assertIn("which lets a window start after Milestone 1's instead of ending before it, and changes nothing for the earlier steps", self.flat)
+
+    def test_every_file_it_names_exists(self):
+        names = sorted(set(re.findall(r"`((?:reports|docs|nre|tests|config|scripts|archive|\.github)/[A-Za-z0-9_./\-]+\.(?:json|jsonl|md|py|yml))`", self.text)))
+        self.assertGreaterEqual(len(names), 5)
+        for name in names:
+            with self.subTest(name=name):
+                self.assertTrue((ROOT / name).is_file())
+
+
+if __name__ == "__main__":
+    unittest.main()
