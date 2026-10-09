@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_same_day_sweep",
+  "recorded_on": "2026-10-09",
+  "policy": "docs/SAME-DAY-COMPETING-CATALYST-POLICY.md",
+  "purpose": "The same-day-competing-catalyst sweep of the 47 frozen Milestone 5 Phase 1b candidates (S2, first part), done the way Milestone 2 step 3's was (reports/m2-step3-same-day-catalyst-review-2026-10-01.json): for each candidate, whether the same issuer filed any other 8-K or 8-K/A on the identical calendar filing date. It reads no price and downloads nothing.",
+  "method": "For each of the 47 candidates in config/m5-phase1b-frozen-candidate-ledger.json, the issuer's own archived filing list (archive/m5-phase1b-sec-freeze/raw: every 8-K and 8-K/A row filed since 2026-03-01, the data the freeze itself used) was searched for another accession with the same filingDate. tests/test_m5_phase1b_sweep.py repeats the search from the archived bytes.",
+  "result": {
+    "candidates_swept": 47,
+    "issuers": 23,
+    "archived_8k_rows_examined": 150,
+    "candidates_with_another_8k_or_8ka_on_the_same_filing_date": 0,
+    "such_candidates": []
+  },
+  "net_effect_on_the_47_candidates": {
+    "excluded_by_this_sweep": [],
+    "unaffected_by_this_sweep": 47
+  },
+  "limits": [
+    "The sweep finds only a second 8-K or 8-K/A filed on the same calendar date. A competing item bundled into the candidate's own filing (an extra Item beyond 2.02 and 9.01), or announced by a wire release with no 8-K, is invisible to it: Milestone 2 step 3's ALKT exclusion (a $400 million acquisition announced in the same minute as the earnings release) was found by reading the filing, not by this kind of sweep.",
+    "It tests the filing date, not the reaction day: an after-hours release on day D reacts on the next session, so a filing on that next day is on the reaction day. The policy's own text speaks of the same calendar day as the earnings anchor, and this sweep follows it; the filings within three days are listed below so the content review can look at them.",
+    "It says nothing about whether any candidate is an earnings-results release, its first-public timing, its identity or its corporate actions: those are the eligibility review and the owner's attestations."
+  ],
+  "pointers_for_the_content_review": {
+    "note": "Not verdicts. These are the places the content review has to read first, found from the filing metadata alone. The third list is outside the policy's test and is there only because it was seen.",
+    "candidates_whose_own_filing_lists_items_beyond_2_02_and_9_01": [
+      {
+        "ticker": "ACHV",
+        "filing_date": "2026-05-12",
+        "candidate_id": "0001193125-26-218175",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "5.02",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "ALKT",
+        "filing_date": "2026-04-29",
+        "candidate_id": "0001529274-26-000028",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "8.01",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "ALKT",
+        "filing_date": "2026-07-29",
+        "candidate_id": "0001529274-26-000049",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "ASPN",
+        "filing_date": "2026-05-07",
+        "candidate_id": "0001171843-26-003109",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "ASPN",
+        "filing_date": "2026-08-06",
+        "candidate_id": "0001171843-26-005289",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "COLL",
+        "filing_date": "2026-05-07",
+        "candidate_id": "0001628280-26-031694",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "COLL",
+        "filing_date": "2026-08-06",
+        "candidate_id": "0001628280-26-053849",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01"
+        ]
+      },
+      {
+        "ticker": "OKTA",
+        "filing_date": "2026-05-28",
+        "candidate_id": "0001660134-26-000050",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ]
+      },
+      {
+        "ticker": "REKR",
+        "filing_date": "2026-07-15",
+        "candidate_id": "0001437749-26-023616",
+        "form": "8-K",
+        "items": [
+          "2.02",
+          "7.01",
+          "9.01"
+        ]
+      }
+    ],
+    "other_8k_or_8ka_filings_by_the_same_issuer_within_three_calendar_days": [
+      {
+        "ticker": "ACHV",
+        "candidate_date": "2026-08-11",
+        "candidate_accepted_et": "2026-08-11 20:04",
+        "other_filing_date": "2026-08-14",
+        "days_from_candidate": 3,
+        "other_accession": "0001193125-26-352229",
+        "other_form": "8-K",
+        "other_items": [
+          "8.01",
+          "9.01"
+        ],
+        "other_accepted_et": "2026-08-14 20:09"
+      },
+      {
+        "ticker": "ASMB",
+        "candidate_date": "2026-08-14",
+        "candidate_accepted_et": "2026-08-14 16:05",
+        "other_filing_date": "2026-08-13",
+        "days_from_candidate": -1,
+        "other_accession": "0001193125-26-349198",
+        "other_form": "8-K",
+        "other_items": [
+          "2.01",
+          "9.01"
+        ],
+        "other_accepted_et": "2026-08-13 16:11"
+      },
+      {
+        "ticker": "HURN",
+        "candidate_date": "2026-07-28",
+        "candidate_accepted_et": "2026-07-28 20:14",
+        "other_filing_date": "2026-07-27",
+        "days_from_candidate": -1,
+        "other_accession": "0001628280-26-049857",
+        "other_form": "8-K",
+        "other_items": [
+          "5.02"
+        ],
+        "other_accepted_et": "2026-07-27 21:29"
+      },
+      {
+        "ticker": "KLC",
+        "candidate_date": "2026-08-13",
+        "candidate_accepted_et": "2026-08-13 16:20",
+        "other_filing_date": "2026-08-14",
+        "days_from_candidate": 1,
+        "other_accession": "0001193125-26-352533",
+        "other_form": "8-K",
+        "other_items": [
+          "1.01",
+          "9.01"
+        ],
+        "other_accepted_et": "2026-08-14 17:00"
+      },
+      {
+        "ticker": "LNSR",
+        "candidate_date": "2026-08-13",
+        "candidate_accepted_et": "2026-08-13 07:10",
+        "other_filing_date": "2026-08-10",
+        "days_from_candidate": -3,
+        "other_accession": "0001193125-26-342330",
+        "other_form": "8-K",
+        "other_items": [
+          "5.07"
+        ],
+        "other_accepted_et": "2026-08-10 16:05"
+      },
+      {
+        "ticker": "LOVE",
+        "candidate_date": "2026-06-11",
+        "candidate_accepted_et": "2026-06-11 07:01",
+        "other_filing_date": "2026-06-09",
+        "days_from_candidate": -2,
+        "other_accession": "0001628280-26-041938",
+        "other_form": "8-K",
+        "other_items": [
+          "5.07",
+          "9.01"
+        ],
+        "other_accepted_et": "2026-06-09 16:49"
+      },
+      {
+        "ticker": "NBIX",
+        "candidate_date": "2026-07-30",
+        "candidate_accepted_et": "2026-07-30 20:02",
+        "other_filing_date": "2026-07-31",
+        "days_from_candidate": 1,
+        "other_accession": "0001193125-26-328470",
+        "other_form": "8-K/A",
+        "other_items": [
+          "9.01"
+        ],
+        "other_accepted_et": "2026-07-31 20:05"
+      },
+      {
+        "ticker": "PARR",
+        "candidate_date": "2026-05-05",
+        "candidate_accepted_et": "2026-05-05 21:03",
+        "other_filing_date": "2026-05-04",
+        "days_from_candidate": -1,
+        "other_accession": "0001437749-26-014568",
+        "other_form": "8-K",
+        "other_items": [
+          "5.07"
+        ],
+        "other_accepted_et": "2026-05-04 15:10"
+      },
+      {
+        "ticker": "SLSN",
+        "candidate_date": "2026-08-20",
+        "candidate_accepted_et": "2026-08-20 16:12",
+        "other_filing_date": "2026-08-21",
+        "days_from_candidate": 1,
+        "other_accession": "0001171843-26-005702",
+        "other_form": "8-K",
+        "other_items": [
+          "4.02",
+          "9.01"
+        ],
+        "other_accepted_et": "2026-08-21 16:30"
+      }
+    ]
+  },
+  "not_a_claim": [
+    "Not an eligibility review: no candidate's filing text was read, so none is yet known to be an earnings-results release rather than a pre-announcement, a guidance reaffirmation or an amendment of one.",
+    "Not a disposition of any candidate. The 47 stay candidates until the review and the owner's attestations make some of them events.",
+    "Not a claim that no competing catalyst exists: only that no other 8-K or 8-K/A was filed on a candidate's own filing date."
+  ]
+}
