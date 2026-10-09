@@ -1,7 +1,7 @@
 # Milestone 5 — Phase 1b: the forward extension (plan)
 
 **Status: the plan and the rules of Phase 1b, fixed on 2026-10-09 before any run, and updated the same day after S1. The owner authorized the phase ("authorize phase 1b") and answered two questions
-(`reports/m5-phase1b-authorization-2026-10-09.json`). S1 is done: the candidate pool is frozen (section 4). The first part of S2 is done too, the same-day sweep of the 47 candidates; the review of the filings' text is not. No price or label has been read and nothing later has started. The rules are in
+(`reports/m5-phase1b-authorization-2026-10-09.json`). S1 is done: the candidate pool is frozen (section 4). The first part of S2 is done too, the same-day sweep of the 47 candidates; the review of the filings' text is not. S3, the sealed mode of the event acquisition, is built too. No price or label has been read and nothing later has started. The rules are in
 `config/m5-phase1b-protocol.json` and `config/m5-phase1b-cohort-spec.json`, which this plan explains.**
 
 ## 1. What Phase 1b is
@@ -47,7 +47,7 @@ adds about 48 events whose values stay sealed until Phase 4, so what is exposed 
 | --- | --- | --- |
 | S1 | Freeze the candidate pool: the SEC filing lists of the 23 issuers, the Item 2.02 filings in the window frozen with hashes, and the SEC data committed with them. Done on 2026-10-09 through the built-in browser, because the SEC refused the one-time workflow (`reports/m5-phase1b-sec-cohort-freeze-result-2026-10-09.json`) | the owner's permission to download (given), then "push" |
 | S2 | Eligibility review and same-day-competing-catalyst sweep of the frozen candidates. The sweep is done (`reports/m5-phase1b-same-day-sweep-2026-10-09.json`): no candidate has another 8-K or 8-K/A on its filing date, and the record lists where the review has to read first. The review of the filings' text is not done | the owner's permission to download the filings, then nothing unless an exclusion needs a decision |
-| S3 | The sealed mode of the event acquisition: a whitelist report, its workflow, and offline tests that inject distinctive prices and prove none reaches a log, an annotation or a report | "push" |
+| S3 | The sealed mode of the event acquisition: a whitelist report, its workflow, and offline tests that inject distinctive prices and prove none reaches a log, an annotation or a report. Built on 2026-10-09: the `--sealed` flag of `nre/event_acquire.py`, the workflow `.github/workflows/m5-phase1b-event-acquire.yml` and `tests/test_event_acquire_sealed.py` (section 5) | "push" |
 | S4 | Event specs in batches of about ten (wire timestamps, identity, cutoffs), validated offline | "push" for each batch |
 | S5 | A sealed dry run for each batch (every event quarantined until attested), then a signoff packet | the owner's attestations |
 | S6 | A sealed attested run for each batch, and each event's commitment pinned | "push" |
@@ -60,7 +60,12 @@ Step 2 took four batches and step 3 six; about 48 events is about five. The froz
 S1: the protocol and the cohort spec above, an additive option in the freeze validation (`window_relation_to_milestone_1`, which lets a window start after Milestone 1's instead of ending before it, and changes nothing for the
 earlier steps), the one-time freeze workflow (`.github/workflows/m5-phase1b-sec-cohort-freeze.yml`, which stops whenever any frozen file exists on main; the SEC refused its run, so it is now dispatch-only and kept as the record) and their
 tests. The freeze itself was then run, as step 3's was, on SEC data fetched through the built-in browser: what was fetched, what was kept and what was checked are in the result record named in section 4. The sweep of S2 followed, from the archived lists alone (`tests/test_m5_phase1b_sweep.py` repeats it); the review of the filings' text waits for the owner's permission to download them.
-S3 comes before the first batch's dry run.
+
+S3 followed, before the first batch's dry run. `nre/event_acquire.py` takes `--sealed`: the report of each event is rebuilt from an allowlist (state, window facts, missing and zero-volume sessions, corporate actions, the commitment, and for each of the four
+session-return labels only whether it exists and a reason that names no price), every reason and error is checked against a fixed list and anything else becomes OTHER, an exception prints no message, and an output that holds a decimal number or
+the gap reason is refused whole. An event marked `seal: hash_only` in its spec refuses to run without the flag, before anything is fetched. The sealed workflow runs on dispatch or when the events file is pushed, uploads nothing and uses no
+calendar argument. `tests/test_event_acquire_sealed.py` injects four-decimal prices through a fake provider, looks for them and for every label computed from them in everything a run prints, and runs price histories that differ in everything the seal hides
+(the sign and size of the gap, the day-1 move, the later drift) and requires identical sealed reports except the commitment. Pushing it also starts the Milestone 1 event acquisition, which watches that file; its pinned matches are the real-data check that the unsealed path is unchanged.
 
 ## 6. What this plan does not do
 

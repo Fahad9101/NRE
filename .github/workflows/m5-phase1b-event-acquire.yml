@@ -1,0 +1,34 @@
+name: M5 Phase 1b sealed event acquisition
+
+# Runs the Milestone 5 Phase 1b events under the hash-only seal (config/m5-phase1b-protocol.json). For each attested event it fetches the bars and corporate actions and prints, in the job log and in the
+# check-run annotation, only the sealed view: the event's state, window facts, missing and zero-volume sessions, corporate actions, the SHA-256 commitment of its labels and whether each session-return
+# label exists -- never a label value, a price, a return or a day-1 or gap label. It uploads nothing and writes nothing. It runs when dispatched or when the events file is pushed; that file does not exist
+# until the first batch of event specs is built.
+on:
+  workflow_dispatch:
+    inputs:
+      event_id:
+        description: 'event_id from config/m5-phase1b-events.json, or "all"'
+        required: false
+        default: 'all'
+  push:
+    branches: [main]
+    paths:
+      - 'config/m5-phase1b-events.json'
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch real bars and corporate actions and print only the sealed view
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+          EVENT_ID: ${{ inputs.event_id || 'all' }}
+        run: python -m nre.event_acquire --sealed --spec config/m5-phase1b-events.json --event "$EVENT_ID"

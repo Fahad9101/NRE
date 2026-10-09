@@ -3,6 +3,11 @@
 Fetches SIP daily bars and corporate actions from Alpaca for each event's session window, builds the reviewed
 bundle and runs nre.dataset.build(). Prints only derived results -- labels, counts, hashes, reasons -- never raw
 OHLCV or credentials; raw bars exist only in this process's memory.
+
+With --sealed (hash-only seal, config/m5-phase1b-protocol.json) it prints less: no label value, price, return or ratio, no
+day-1 or gap label and no price-dependent reason, only an event's state, window facts, missing and zero-volume sessions,
+corporate actions, the SHA-256 commitment of its labels and whether each session-return label exists. An event marked
+"seal": "hash_only" in its spec refuses to run without the flag.
 """
 import argparse
 import json
@@ -33,6 +38,31 @@ EVENT_CATEGORY, EVENT_SUBTYPE = "earnings", "results"
 TICKER = re.compile(r"^[A-Z][A-Z0-9.]{0,9}$")
 SECURITY_KEYS = ("security_id", "company_id", "cik", "ticker", "exchange", "security_type", "valid_from", "available_at")
 SOURCE_KEYS = ("source_id", "url", "text", "first_seen_at")
+
+SEAL = "hash_only"
+SESSION_LABEL_NAMES = tuple("session_%d_close_return" % n for n in (2, 5, 10, 20))
+# The reasons the label engine (nre.dataset) gives that name no price: a calendar, provider, attestation or data-availability fact, or the
+# zero-volume test. A sealed run reports one of these as it is and anything else as OTHER. NOT_POSITIVE_GAP_GE_0_5PCT is left out on
+# purpose: the engine gives it exactly when the opening gap is below +0.5%, so it would reveal the gap's sign.
+QUALITY_REASONS = frozenset(["MISSING_SESSION", "MIXED_PRICE_FEEDS", "PROVIDER_USE_UNVERIFIED", "UNDECLARED_FEED", "REGULAR_SESSION_COVERAGE_UNVERIFIED",
+                             "INCOMPLETE_OR_HALTED_SESSION", "CORPORATE_ACTION_AUDIT_MISSING", "LABEL_NOT_MATURE", "CORPORATE_ACTION_IN_WINDOW"])
+EVENT_REASONS = QUALITY_REASONS | frozenset([
+    "AMBIGUOUS_PUBLICATION_TIME", "FIRST_PUBLIC_TIME_UNVERIFIED", "NEWS_NOT_AVAILABLE_AT_CUTOFF", "INELIGIBLE_SECURITY", "IDENTITY_NOT_KNOWN_AT_RELEASE",
+    "IDENTITY_EXPIRED", "PUBLICATION_INTERVAL_CROSSES_SESSION_BOUNDARY", "INTRADAY_OR_BELL_REQUIRES_FINER_DATA", "CALENDAR_OUT_OF_RANGE",
+    "CUTOFF_NOT_BEFORE_REACTION_OPEN", "MISSING_PREVIOUS_SESSION", "ANCHOR_UNAVAILABLE_AT_CUTOFF", "ANCHOR_NOT_OBSERVED_AT_CUTOFF"])
+SESSION_LABEL_REASONS = QUALITY_REASONS | frozenset(["CALENDAR_OUT_OF_RANGE"])
+# The data-validation messages of this module and nre.core that carry no data. Any other message ("invalid OHLCV", ...) is reported as OTHER.
+SAFE_DATA_ERRORS = frozenset(["redirect rejected", "unexpected bars structure", "invalid bar list", "malformed bar record", "duplicate session in bars response",
+                              "missing pagination metadata", "invalid or repeated pagination token", "pagination limit exceeded", "unexpected corporate_actions structure",
+                              "corporate action missing ex_date", "corporate action ex_date is not a date", "response size limit exceeded", "CALENDAR_OUT_OF_RANGE",
+                              "not a supported session"])
+SEALED_REPORT_KEYS = frozenset(["event_id", "ticker", "sealed", "access_check_passed", "state", "reasons", "window", "missing_sessions", "zero_volume_sessions",
+                                "corporate_actions", "labels_sha256", "labels_match_recorded", "session_labels", "error"])
+SEALED_WINDOW_KEYS = ("anchor_session", "reaction_session", "release_timing", "start", "end", "asof", "required_sessions")
+RELEASE_TIMINGS = TIMINGS | {"regular", "bell_ambiguous", "closed"}
+DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+HEX64 = re.compile(r"^[0-9a-f]{64}$")
+SEALED_TRIPWIRE = re.compile(r"\d\.\d|NOT_POSITIVE_GAP")
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -83,6 +113,8 @@ def event_window(event, calendar):
 def _validate_event(event, calendar, root):
     _require(event, ("event_id", "cluster_id", "candidate_id", "published_at", "cutoff", "timestamp_evidence"), "event")
     name = event["event_id"]
+    if event.get("seal") not in (None, SEAL):
+        raise DataError(name + ": seal must be 'hash_only' when present")
     security, source = event.get("security"), event.get("source")
     _require(security, SECURITY_KEYS, name + ".security")
     _require(source, SOURCE_KEYS, name + ".source")
@@ -334,10 +366,77 @@ def _error_category(exc):
     return "UNCATEGORIZED_" + type(exc).__name__.upper()
 
 
-def run_event(event, provider, fetch, calendar, retrieved_at=None):
+def sealed_error(text):
+    """An error category with nothing in it that a price could be: the exception's class, an HTTP status or one of this module's own fixed messages."""
+    text = str(text)
+    if text in ("NETWORK_ERROR", "INVALID_JSON_RESPONSE", "LABELS_DIFFER_FROM_RECORDED", "SEALED_EVENT_REQUIRES_SEALED_RUN") or re.fullmatch(r"ALPACA_HTTP_\d{3}", text):
+        return text
+    if text.startswith("DATA_VALIDATION_FAILED: "):
+        message = text[len("DATA_VALIDATION_FAILED: "):]
+        return text if message in SAFE_DATA_ERRORS or re.fullmatch(r"not a supported session: \d{4}-\d{2}-\d{2}", message) else "DATA_VALIDATION_FAILED: OTHER"
+    if re.fullmatch(r"UNCATEGORIZED_[A-Z0-9_]{1,60}", text):
+        return text
+    return "ERROR_OTHER"
+
+
+def sealed_outcome(outcome):
+    """What a sealed run keeps of a label-engine outcome: the state, its reasons, the timing and, for each session-return label, only whether it exists and why not.
+    Every value, the anchor, the day-1 and gap labels and the gap reason are dropped here, before the outcome is kept anywhere."""
+    labels = outcome.get("labels") or {}
+    return {"state": outcome.get("state"), "reasons": list(outcome.get("reasons") or []),
+            "release_timing": outcome.get("release_timing"), "reaction_session": outcome.get("reaction_session"),
+            "session_labels": {name: {"exists": labels[name]["value"] is not None, "reason": labels[name]["reason"]}
+                               for name in SESSION_LABEL_NAMES if name in labels} if labels else None}
+
+
+def _day(value):
+    return value if isinstance(value, str) and DAY.match(value) else None
+
+
+def _days(values):
+    return [v for v in values or [] if isinstance(v, str) and DAY.match(v)]
+
+
+def sealed_report(report):
+    """The only view of an event's run that a sealed run may print: every field is rebuilt from an allowlist, every free-text field is checked against a fixed set
+    and anything unknown becomes OTHER, so nothing else in the report (a label, a price, a hash of the bars) can pass through."""
+    outcome, window = report.get("computed_outcome") or {}, report.get("window") or {}
+    if "labels" in outcome:                                  # a full, unsealed outcome: reduce it first
+        outcome = sealed_outcome(outcome)
+    state = outcome.get("state")
+    sessions = outcome.get("session_labels")
+    sealed = {
+        "event_id": str(report["event_id"]), "ticker": str(report["ticker"]), "sealed": True,
+        "access_check_passed": report.get("access_check_passed") is True,
+        "state": state if state in ("MAPPED", "QUARANTINED") else None,
+        "reasons": [r if r in EVENT_REASONS else "OTHER" for r in outcome.get("reasons") or []],
+        "window": {"anchor_session": _day(window.get("anchor_session")), "reaction_session": _day(window.get("reaction_session")),
+                   "release_timing": window.get("release_timing") if window.get("release_timing") in RELEASE_TIMINGS else None,
+                   "start": _day(window.get("start")), "end": _day(window.get("end")), "asof": _day(window.get("asof")),
+                   "required_sessions": window.get("required_sessions") if isinstance(window.get("required_sessions"), int) else None},
+        "missing_sessions": _days(report.get("missing_sessions")), "zero_volume_sessions": _days(report.get("zero_volume_sessions")),
+        "corporate_actions": [{"type": a["type"] if re.fullmatch(r"[a-z_]{1,40}", str(a.get("type"))) else "OTHER", "ex_date": _day(a.get("ex_date")),
+                               "id": a["id"] if re.fullmatch(r"[A-Za-z0-9_\-]{1,64}", str(a.get("id"))) else None}
+                              for a in report.get("corporate_actions") or []],
+        "labels_sha256": report.get("labels_sha256") if HEX64.match(str(report.get("labels_sha256"))) else None,
+        "labels_match_recorded": report.get("labels_match_recorded") if isinstance(report.get("labels_match_recorded"), bool) else None,
+        "session_labels": None if sessions is None else {
+            name: {"exists": sessions[name]["exists"] is True, "reason": sessions[name]["reason"] if sessions[name]["reason"] in SESSION_LABEL_REASONS else (None if sessions[name]["reason"] is None else "OTHER")}
+            for name in SESSION_LABEL_NAMES if name in sessions},
+    }
+    if report.get("error") is not None:
+        sealed["error"] = sealed_error(report["error"])
+    return sealed
+
+
+def run_event(event, provider, fetch, calendar, retrieved_at=None, sealed=False):
     ticker = event["security"]["ticker"]
     report = {"event_id": event["event_id"], "ticker": ticker, "access_check_passed": False, "labels_computed": False}
-    if event.get("caveats"):
+    if event.get("seal") == SEAL and not sealed:
+        # An event marked sealed is never run on the unsealed path: nothing is fetched and nothing is computed.
+        report["error"] = "SEALED_EVENT_REQUIRES_SEALED_RUN"
+        return report
+    if event.get("caveats") and not sealed:
         report["caveats"] = event["caveats"]
     try:
         window = event_window(event, calendar)
@@ -345,21 +444,27 @@ def run_event(event, provider, fetch, calendar, retrieved_at=None):
                                                           "start", "end", "asof")}
         report["window"]["required_sessions"] = len(window["required_sessions"])
         bars, bar_pages, actions, action_pages = fetch_event_data(event, window, fetch)
-        report.update(access_check_passed=True, bar_pages=bar_pages, action_pages=action_pages,
-                      corporate_actions=actions)
+        report.update(access_check_passed=True, corporate_actions=actions)
+        if not sealed:
+            # Page digests and record counts describe the raw responses; a sealed run does not keep them.
+            report.update(bar_pages=bar_pages, action_pages=action_pages)
         required = window["required_sessions"]
         report["missing_sessions"] = [s for s in required if s not in bars]
         report["zero_volume_sessions"] = [s for s in required if s in bars and bars[s]["volume"] == 0]
         bundle = build_bundle(event, provider, window, bars, actions, retrieved_at or datetime.now(timezone.utc),
                               calendar)
-        report["bundle_sha256"] = digest(canonical(bundle))
+        if not sealed:
+            report["bundle_sha256"] = digest(canonical(bundle))
         results, build_report = build(bundle, calendar)
         outcome = results[0]
-        if outcome.get("anchor"):
-            # event_outcome() embeds the anchor close as the return denominator; keep only its identifier.
-            outcome["anchor"] = {k: v for k, v in outcome["anchor"].items() if k != "price"}
-        report.update(build_report=build_report, computed_outcome=outcome,
-                      labels_computed=build_report["mapped_day1"] > 0)
+        if sealed:
+            report.update(computed_outcome=sealed_outcome(outcome), labels_computed=outcome["state"] == "MAPPED")
+        else:
+            if outcome.get("anchor"):
+                # event_outcome() embeds the anchor close as the return denominator; keep only its identifier.
+                outcome["anchor"] = {k: v for k, v in outcome["anchor"].items() if k != "price"}
+            report.update(build_report=build_report, computed_outcome=outcome,
+                          labels_computed=build_report["mapped_day1"] > 0)
         if outcome["state"] == "MAPPED":
             report["labels_sha256"] = labels_digest(outcome)
         pinned = (event.get("recorded_result") or {}).get("labels_sha256")
@@ -368,7 +473,7 @@ def run_event(event, provider, fetch, calendar, retrieved_at=None):
             if not report["labels_match_recorded"]:
                 report["error"] = "LABELS_DIFFER_FROM_RECORDED"
     except Exception as exc:
-        report["error"] = _error_category(exc)
+        report["error"] = sealed_error(_error_category(exc)) if sealed else _error_category(exc)
     return report
 
 
@@ -384,7 +489,7 @@ def _compact(report):
             "label_reasons": {k: v["reason"] for k, v in sorted(labels.items()) if v["reason"]}}
 
 
-def _annotations(level, all_ok, events, budget=3300):
+def _annotations(level, all_ok, events, budget=3300, title="NRE event acquisition"):
     """GitHub truncates an annotation message near 4,096 characters, so split the summary into parts."""
     parts, current, size = [], {}, 0
     for key, value in events.items():
@@ -401,20 +506,28 @@ def _annotations(level, all_ok, events, budget=3300):
         message = json.dumps({"all_ok": all_ok, "part": "%d/%d" % (number, len(parts)), "events": part},
                              sort_keys=True, separators=(",", ":"))
         message = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
-        lines.append("::" + level + " title=NRE event acquisition::" + message)
+        lines.append("::" + level + " title=" + title + "::" + message)
     return lines
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description="Acquire real prices and compute labels for attested M1 events.")
-    parser.add_argument("--spec", default=str(DEFAULT_SPEC))
-    parser.add_argument("--event", default="all", help="event_id from the spec, or 'all'")
-    parser.add_argument("--calendar", default=None,
-                        help="path to a Calendar spec JSON (e.g. a merged multi-year spec); omit for the default 2026-only calendar")
-    args = parser.parse_args(argv)
+def _run(args):
+    sealed = args.sealed
     out = {"all_ok": False, "events": {}}
+    if sealed:
+        out.update(sealed=True, seal=SEAL)
 
     def finish(code):
+        if sealed:
+            states = [r.get("state") or "NOT_RUN" for r in out["events"].values()]
+            out["counts_by_state"] = {state: states.count(state) for state in sorted(set(states))}
+            text = json.dumps(out, sort_keys=True, indent=2)
+            if SEALED_TRIPWIRE.search(text):
+                # Last line of defence against a later change that lets a number through: a sealed output holds no decimal number and no gap reason, so print nothing of it.
+                out.clear()
+                out.update(all_ok=False, sealed=True, seal=SEAL, error="SEALED_OUTPUT_REFUSED", events={})
+                text, code = json.dumps(out, sort_keys=True, indent=2), 2
+            print(text)
+            return code
         print(json.dumps(out, sort_keys=True, indent=2))
         return code
 
@@ -425,7 +538,10 @@ def main(argv=None):
         events = [e for e in spec["events"] if args.event in ("all", e["event_id"])]
         if not events:
             raise DataError("unknown event: " + args.event)
+        if not sealed and any(e.get("seal") == SEAL for e in events):
+            raise DataError("an event in this spec is sealed (seal: hash_only); run it with --sealed")
     except Exception as exc:
+        # The spec holds no price and is checked before anything is fetched, so its errors are safe to print in full.
         detail = "not valid JSON" if isinstance(exc, json.JSONDecodeError) else _error_category(exc)
         out["error"] = "SPEC_INVALID: " + detail
         return finish(2)
@@ -437,14 +553,42 @@ def main(argv=None):
 
     fetch = make_fetch(build_opener(NoRedirect()), key, secret)
     for event in events:
-        out["events"][event["event_id"]] = run_event(event, spec["provider"], fetch, calendar)
+        report = run_event(event, spec["provider"], fetch, calendar, sealed=sealed)
+        if not sealed:
+            out["events"][event["event_id"]] = report
+            continue
+        try:
+            out["events"][event["event_id"]] = sealed_report(report)
+        except Exception:
+            out["events"][event["event_id"]] = {"event_id": event["event_id"], "ticker": event["security"]["ticker"], "sealed": True, "error": "SEALED_REPORT_FAILED"}
     out["all_ok"] = all("error" not in report for report in out["events"].values())
     code = finish(0 if out["all_ok"] else 2)
     if os.getenv("GITHUB_ACTIONS") == "true":
         for line in _annotations("notice" if out["all_ok"] else "error", out["all_ok"],
-                                 {k: _compact(v) for k, v in out["events"].items()}):
+                                 dict(out["events"]) if sealed else {k: _compact(v) for k, v in out["events"].items()},
+                                 title="NRE sealed event acquisition" if sealed else "NRE event acquisition"):
             print(line)
     return code
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Acquire real prices and compute labels for attested M1 events.")
+    parser.add_argument("--spec", default=str(DEFAULT_SPEC))
+    parser.add_argument("--event", default="all", help="event_id from the spec, or 'all'")
+    parser.add_argument("--calendar", default=None,
+                        help="path to a Calendar spec JSON (e.g. a merged multi-year spec); omit for the default 2026-only calendar")
+    parser.add_argument("--sealed", action="store_true",
+                        help="hash-only seal: print only an event's state, window facts, missing and zero-volume sessions, corporate actions, "
+                             "the SHA-256 commitment of its labels and whether each session-return label exists -- never a value, a price or a day-1 or gap label")
+    args = parser.parse_args(argv)
+    if not args.sealed:
+        return _run(args)
+    try:
+        return _run(args)
+    except Exception:
+        # No traceback and no message: an exception raised while values are in memory could carry one into the log.
+        print(json.dumps({"all_ok": False, "sealed": True, "seal": SEAL, "error": "SEALED_RUN_FAILED"}, sort_keys=True, indent=2))
+        return 2
 
 
 if __name__ == "__main__":

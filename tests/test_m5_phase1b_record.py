@@ -105,7 +105,7 @@ class PlanDocumentTests(unittest.TestCase):
         cls.proposal = flat(PROPOSAL.read_text(encoding="utf-8"))
 
     def test_it_says_nothing_has_run_and_what_it_does_not_do(self):
-        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). The first part of S2 is done too, the same-day sweep of the 47 candidates; the review of the filings' text is not. No price or label has been read and nothing later has started.",
+        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). The first part of S2 is done too, the same-day sweep of the 47 candidates; the review of the filings' text is not. S3, the sealed mode of the event acquisition, is built too. No price or label has been read and nothing later has started.",
                        "It runs and fetches nothing itself and pushes nothing. The work it describes enumerates candidates by filing metadata only, reads no price or label, and attests no event.",
                        "It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c."):
             self.assertIn(phrase, self.flat)
@@ -197,6 +197,17 @@ class PlanDocumentTests(unittest.TestCase):
         self.assertIn("The sweep is done (`reports/m5-phase1b-same-day-sweep-2026-10-09.json`): no candidate has another 8-K or 8-K/A on its filing date, and the record lists where the review has to read first. "
                       "The review of the filings' text is not done | the owner's permission to download the filings, then nothing unless an exclusion needs a decision |", self.flat)
         self.assertIn("The sweep of S2 followed, from the archived lists alone (`tests/test_m5_phase1b_sweep.py` repeats it); the review of the filings' text waits for the owner's permission to download them.", self.flat)
+        self.assertIn("Built on 2026-10-09: the `--sealed` flag of `nre/event_acquire.py`, the workflow `.github/workflows/m5-phase1b-event-acquire.yml` and `tests/test_event_acquire_sealed.py` (section 5) | \"push\" |", self.flat)
+        for phrase in ("S3 followed, before the first batch's dry run. `nre/event_acquire.py` takes `--sealed`: the report of each event is rebuilt from an allowlist",
+                       "every reason and error is checked against a fixed list and anything else becomes OTHER, an exception prints no message, and an output that holds a decimal number or the gap reason is refused whole",
+                       "An event marked `seal: hash_only` in its spec refuses to run without the flag, before anything is fetched.", "uploads nothing and uses no calendar argument",
+                       "requires identical sealed reports except the commitment", "Pushing it also starts the Milestone 1 event acquisition, which watches that file; its pinned matches are the real-data check that the unsealed path is unchanged."):
+            self.assertIn(phrase, self.flat)
+        source, workflow = (ROOT / "nre" / "event_acquire.py").read_text(encoding="utf-8"), (ROOT / ".github" / "workflows" / "m5-phase1b-event-acquire.yml").read_text(encoding="utf-8")
+        self.assertIn("--sealed", source)
+        self.assertIn('SEAL = "hash_only"', source)
+        self.assertIn("python -m nre.event_acquire --sealed", workflow)
+        self.assertIn("nre/event_acquire.py", (ROOT / ".github" / "workflows" / "event-acquire.yml").read_text(encoding="utf-8"))               # the Milestone 1 workflow does watch the module
         self.assertIn("`window_relation_to_milestone_1`", self.text)
         self.assertIn("window_relation_to_milestone_1", (ROOT / "nre" / "depth_cohort.py").read_text(encoding="utf-8"))
         self.assertIn("which lets a window start after Milestone 1's instead of ending before it, and changes nothing for the earlier steps", self.flat)
