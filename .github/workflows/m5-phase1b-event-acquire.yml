@@ -1,9 +1,9 @@
 name: M5 Phase 1b sealed event acquisition
 
-# Runs the Milestone 5 Phase 1b events under the hash-only seal (config/m5-phase1b-protocol.json). For each attested event it fetches the bars and corporate actions and prints, in the job log and in the
+# Runs the Milestone 5 Phase 1b events under the hash-only seal (config/m5-phase1b-protocol.json). For each event it fetches the bars and corporate actions and prints, in the job log and in the
 # check-run annotation, only the sealed view: the event's state, window facts, missing and zero-volume sessions, corporate actions, the SHA-256 commitment of its labels and whether each session-return
-# label exists -- never a label value, a price, a return or a day-1 or gap label. It uploads nothing and writes nothing. It runs when dispatched or when the events file is pushed; that file does not exist
-# until the first batch of event specs is built.
+# label exists -- never a label value, a price, a return or a day-1 or gap label. An event not yet attested is quarantined and its report says so. It uploads nothing and writes nothing. It runs when
+# dispatched or when the events file is pushed.
 on:
   workflow_dispatch:
     inputs:

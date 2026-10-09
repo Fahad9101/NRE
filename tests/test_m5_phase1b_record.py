@@ -105,7 +105,7 @@ class PlanDocumentTests(unittest.TestCase):
         cls.proposal = flat(PROPOSAL.read_text(encoding="utf-8"))
 
     def test_it_says_nothing_has_run_and_what_it_does_not_do(self):
-        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, which leaves three decisions for the owner. S3, the sealed mode of the event acquisition, is built. No price or label has been read and nothing later has started.",
+        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). S2 is done too: the same-day sweep of the 47 candidates and the review of the filings' text, and the owner has decided the three things it left (`reports/m5-phase1b-s2-decisions-2026-10-09.json`), so 45 candidates stand. S3, the sealed mode of the event acquisition, is built. S4 has begun: batch 1's event specs are built in the dry-run state. No label, return or event price has been read; one inadvertent exposure to a company's quarterly average repurchase price, through a search-tool summary, is disclosed in `reports/m5-phase1b-batch1-sources-2026-10-09.json`. Nothing later than S4 has started.",
                        "It runs and fetches nothing itself and pushes nothing. The work it describes enumerates candidates by filing metadata only, reads no price or label, and attests no event.",
                        "It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c."):
             self.assertIn(phrase, self.flat)
@@ -196,9 +196,12 @@ class PlanDocumentTests(unittest.TestCase):
         self.assertIn('| the owner\'s permission to download (given), then "push" |', self.flat)
         self.assertIn("Both are done on 2026-10-09. The sweep (`reports/m5-phase1b-same-day-sweep-2026-10-09.json`) found no candidate with another 8-K or 8-K/A on its filing date. The review of the filings' text "
                       "(`reports/m5-phase1b-eligibility-review-2026-10-09.json`, read with the owner's permission) found 44 results releases with no issue and three decisions for the owner: a pre-announcement, "
-                      "a header-only amendment and a pending cash take-private | the owner's decisions on the three, at the first batch signoff |", self.flat)
+                      "a header-only amendment and a pending cash take-private. The owner made them the same day (`reports/m5-phase1b-s2-decisions-2026-10-09.json`): exclude the pre-announcement, keep the amendment "
+                      "with a caveat, exclude the pending take-private; 45 candidates stand | nothing further |", self.flat)
         self.assertIn("The sweep of S2 followed, from the archived lists alone (`tests/test_m5_phase1b_sweep.py` repeats it); the review of the filings' text followed, with the owner's permission to read the filings "
                       "in the built-in browser (`tests/test_m5_phase1b_review.py` binds its record).", self.flat)
+        self.assertIn("Batch 1 is built on 2026-10-09 (`reports/m5-phase1b-batch1-sources-2026-10-09.json`, `config/m5-phase1b-events.json`): nine sealed events in the dry-run state; the tenth candidate, ASMB, was released at the 16:00 ET close, "
+                      "which the calendar classes as bell-ambiguous, so it is left quarantined for the owner's word | \"push\" for each batch |", self.flat)
         review = load(ROOT / "reports" / "m5-phase1b-eligibility-review-2026-10-09.json")
         self.assertEqual(review["counts"]["by_assessment"]["results_release_no_issue_found"], 44)
         self.assertEqual(len(review["decisions_for_the_owner"]), 3)

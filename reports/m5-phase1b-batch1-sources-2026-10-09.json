@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch1_sources",
+  "recorded_on": "2026-10-09",
+  "state": "BATCH_1_SPECS_BUILT_DRY_RUN_PENDING",
+  "purpose": "S4 for batch 1: the first-public minute of each release in the first batch, taken from the public wire page, and what was found on the way. config/m5-phase1b-events.json holds the nine events built from it in the dry-run state: sealed, no attestations, so every event quarantines on FIRST_PUBLIC_TIME_UNVERIFIED until the owner attests it. Nothing here is a price, a return or a label.",
+  "permission": {
+    "decisions_record": "reports/m5-phase1b-s2-decisions-2026-10-09.json",
+    "answer": "Yes, batch 1 only (Recommended)",
+    "answered_at": "2026-10-09T17:00:54.499Z",
+    "read_as": "Batch 1 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. It carries no push and no other download; later batches ask again."
+  },
+  "reading": {
+    "page_loads_in_the_built_in_browser": 42,
+    "by_host": {
+      "investor.caci.com": 1,
+      "jbssinc.com": 1,
+      "www.businesswire.com": 14,
+      "www.globenewswire.com": 19,
+      "www.jbssinc.com": 1,
+      "www.prnewswire.com": 5,
+      "www.sec.gov": 1
+    },
+    "web_searches": 2,
+    "what": "The ten releases' pages and company searches on Business Wire, GlobeNewswire and PR Newswire, the Sanfilippo press room, and one re-read of an SEC exhibit already in the permission of the eligibility review; held in browser memory only; the URL, the displayed minute, the page's machine-readable time and the same-day check results are kept.",
+    "refused_or_missing": "The first GlobeNewswire navigation was refused by the browser and repeated through preview_start, which worked; investor.caci.com/news-releases and jbssinc.com/investor-relations/ were guessed addresses that returned 404."
+  },
+  "disclosure_of_a_web_search_exposure": "Two searches through the web-search tool located the CACI and Alkami release URLs. Its summary of the second contained Alkami's second-quarter share repurchases, in shares and in dollars (from its 10-Q), from which an average repurchase price over April to June can be computed; I computed it in passing (about $17). It is a quarterly average, not an event's price, return or label, and I did not use it; but it is a price level for the period and is disclosed here under the seal. The tool is not used again in Phase 1b: its summaries are not under my control.",
+  "events": [
+    {
+      "event_id": "caci-m5b-2026-04-22",
+      "ticker": "CACI",
+      "candidate_id": "0001628280-26-026589",
+      "release_date": "2026-04-22",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260422200925/en/CACI-Reports-Results-for-Its-Fiscal-2026-Third-Quarter",
+      "displayed_stamp": "Apr 22, 2026 4:15 PM Eastern Daylight Time",
+      "minute_et": "16:15",
+      "published_at": "2026-04-22T16:15:00-04:00",
+      "page_machine_readable_time": "2026-04-22T20:15:00+00:00",
+      "edgar_acceptance_et": "2026-04-22 20:35",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-23",
+      "same_day_release_check": {
+        "how": "Business Wire company search ('CACI International Inc', pages 2 and 3)",
+        "result": "No other CACI release on 2026-04-22; the neighbours are 2026-04-21 16:15 ET and 2026-04-27 16:15 ET."
+      }
+    },
+    {
+      "event_id": "alkt-m5b-2026-04-29",
+      "ticker": "ALKT",
+      "candidate_id": "0001529274-26-000028",
+      "release_date": "2026-04-29",
+      "wire": "PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2026-financial-results-302757653.html",
+      "displayed_stamp": "Apr 29, 2026, 16:05 ET",
+      "minute_et": "16:05",
+      "published_at": "2026-04-29T16:05:00-04:00",
+      "page_machine_readable_time": "2026-04-29T16:05:00-04:00",
+      "edgar_acceptance_et": "2026-04-29 20:11",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-30",
+      "same_day_release_check": {
+        "how": "PR Newswire company search ('Alkami Technology', all 82 results)",
+        "result": "No other Alkami release on 2026-04-29; the neighbours are 2026-04-22 10:00 ET and 2026-05-05 10:54 ET."
+      }
+    },
+    {
+      "event_id": "jbss-m5b-2026-04-29",
+      "ticker": "JBSS",
+      "candidate_id": "0001193125-26-191599",
+      "release_date": "2026-04-29",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260429646478/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Third-Quarter-Results",
+      "displayed_stamp": "Apr 29, 2026 4:10 PM Eastern Daylight Time",
+      "minute_et": "16:10",
+      "published_at": "2026-04-29T16:10:00-04:00",
+      "page_machine_readable_time": "2026-04-29T20:10:00+00:00",
+      "edgar_acceptance_et": "2026-04-29 16:13",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-30",
+      "same_day_release_check": {
+        "how": "Business Wire company search ('John B. Sanfilippo'); the company's press room lists the results as a PDF",
+        "result": "No other Sanfilippo release on 2026-04-29 on Business Wire; the neighbours are 2026-03-30 and 2026-05-05."
+      }
+    },
+    {
+      "event_id": "hurn-m5b-2026-05-05",
+      "ticker": "HURN",
+      "candidate_id": "0001289848-26-000080",
+      "release_date": "2026-05-05",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260505377069/en/Huron-Announces-First-Quarter-2026-Financial-Results-and-Affirms-Full-Year-2026-Guidance",
+      "displayed_stamp": "May 5, 2026 4:05 PM Eastern Daylight Time",
+      "minute_et": "16:05",
+      "published_at": "2026-05-05T16:05:00-04:00",
+      "page_machine_readable_time": "2026-05-05T20:05:00+00:00",
+      "edgar_acceptance_et": "2026-05-05 21:27",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-06",
+      "same_day_release_check": {
+        "how": "Business Wire company search ('Huron Consulting Group', pages 1 and 2)",
+        "result": "No other Huron release on 2026-05-05; the neighbours are 2026-04-23 (another company's award announcement naming Huron) and 2026-07-28."
+      }
+    },
+    {
+      "event_id": "nbix-m5b-2026-05-05",
+      "ticker": "NBIX",
+      "candidate_id": "0000914475-26-000025",
+      "release_date": "2026-05-05",
+      "wire": "PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-first-quarter-2026-financial-results-302763133.html",
+      "displayed_stamp": "May 05, 2026, 16:01 ET",
+      "minute_et": "16:01",
+      "published_at": "2026-05-05T16:01:00-04:00",
+      "page_machine_readable_time": "2026-05-05T16:01:00-04:00",
+      "edgar_acceptance_et": "2026-05-05 20:02",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-06",
+      "same_day_release_check": {
+        "how": "PR Newswire company search ('Neurocrine Biosciences', all 73 results)",
+        "result": "One other release the same day: 2026-05-05 09:00 ET, the company's participation in a health care conference. Independently disseminated, but routine and with no fresh, independently material content (the policy's third condition fails): a caveat, not an exclusion."
+      }
+    },
+    {
+      "event_id": "parr-m5b-2026-05-05",
+      "ticker": "PARR",
+      "candidate_id": "0001628280-26-030714",
+      "release_date": "2026-05-05",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/05/05/3288278/0/en/par-pacific-holdings-reports-first-quarter-2026-results.html",
+      "displayed_stamp": "May 05, 2026 16:15 ET",
+      "minute_et": "16:15",
+      "published_at": "2026-05-05T16:15:00-04:00",
+      "page_machine_readable_time": "2026-05-05T20:15:00Z",
+      "edgar_acceptance_et": "2026-05-05 21:03",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-06",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Par Pacific Holdings', 2026-05-04 to 2026-05-06)",
+        "result": "No other Par Pacific release in the window."
+      }
+    },
+    {
+      "event_id": "cxt-m5b-2026-05-06",
+      "ticker": "CXT",
+      "candidate_id": "0000025445-26-000015",
+      "release_date": "2026-05-06",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/05/06/3289352/0/en/crane-nxt-reports-first-quarter-2026-results.html",
+      "displayed_stamp": "May 06, 2026 16:05 ET",
+      "minute_et": "16:05",
+      "published_at": "2026-05-06T16:05:00-04:00",
+      "page_machine_readable_time": "2026-05-06T20:05:00Z",
+      "edgar_acceptance_et": "2026-05-06 20:20",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-07",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Crane NXT', 2026-05-05 to 2026-05-07)",
+        "result": "No other Crane NXT release in the window."
+      }
+    },
+    {
+      "event_id": "aspn-m5b-2026-05-07",
+      "ticker": "ASPN",
+      "candidate_id": "0001171843-26-003109",
+      "release_date": "2026-05-07",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/05/07/3289746/0/en/aspen-aerogels-inc-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html",
+      "displayed_stamp": "May 07, 2026 06:30 ET",
+      "minute_et": "06:30",
+      "published_at": "2026-05-07T06:30:00-04:00",
+      "page_machine_readable_time": "2026-05-07T10:30:00Z",
+      "edgar_acceptance_et": "2026-05-07 06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-07",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Aspen Aerogels', 2026-05-06 to 2026-05-08)",
+        "result": "No other Aspen Aerogels release in the window."
+      }
+    },
+    {
+      "event_id": "coll-m5b-2026-05-07",
+      "ticker": "COLL",
+      "candidate_id": "0001628280-26-031694",
+      "release_date": "2026-05-07",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/05/07/3289872/34897/en/collegium-reports-first-quarter-2026-financial-results-and-highlights-recent-company-progress.html",
+      "displayed_stamp": "May 07, 2026 07:30 ET",
+      "minute_et": "07:30",
+      "published_at": "2026-05-07T07:30:00-04:00",
+      "page_machine_readable_time": "2026-05-07T11:30:00Z",
+      "edgar_acceptance_et": "2026-05-07 11:33",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-07",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Collegium', 2026-05-06 to 2026-05-08)",
+        "result": "No other Collegium release in the window."
+      }
+    }
+  ],
+  "quarantined_before_the_spec": {
+    "ticker": "ASMB",
+    "candidate_id": "0001193125-26-211922",
+    "release_date": "2026-05-07",
+    "wire": "GlobeNewswire",
+    "displayed_stamp": "May 07, 2026 16:00 ET",
+    "page_machine_readable_time": "2026-05-07T20:00:00Z",
+    "url": "https://www.globenewswire.com/news-release/2026/05/07/3290491/16259/en/assembly-biosciences-reports-first-quarter-2026-financial-results-and-recent-highlights.html",
+    "edgar_acceptance_et": "2026-05-07 16:12",
+    "reason": "Released at 16:00 ET, the regular-session close: nre/calendar.py's classify() returns bell_ambiguous for the instant of the close, which event_acquire.validate_spec() does not accept at minute precision, so no event spec can be built. Milestone 1's GALT and Milestone 2 step 2's PDFS 2025-08-07 were left quarantined, not excluded, for the same reason (the owner confirmed that on 2026-09-29). The same disposition is proposed here; it needs the owner's word at the signoff.",
+    "same_day_release_check": "GlobeNewswire date-filtered search ('Assembly Biosciences', 2026-05-06 to 2026-05-08): no other release in the window."
+  },
+  "events_file": {
+    "path": "config/m5-phase1b-events.json",
+    "sha256_in_the_dry_run_state": "6d16a6acae2a7453a41f635d8db621b3a57e8059a89cb1321d3b013970d522c2",
+    "events": 9,
+    "attestations": 0,
+    "seal": "every event carries seal: hash_only",
+    "provider_attestation": "reports/m5-phase1b-provider-scope-authorization-2026-10-09.json (the owner's recorded 'Yes, provider rights fine')"
+  },
+  "caveats_carried": [
+    "ALKT 2026-04-29: a $100 million share repurchase program announced in the earnings release itself.",
+    "NBIX 2026-05-05: a routine conference-participation release at 09:00 ET the same day."
+  ],
+  "next": "A sealed dry run (the push of the events file starts it), then the signoff packet for the owner: for each event the wire evidence above and the sealed run's facts (missing and zero-volume sessions, corporate actions), and the ASMB question; then the owner's attestations of first-public time, historical identity and corporate actions, and the attested sealed run that pins each event's commitment.",
+  "what_this_is_not": [
+    "Not an attestation: first-public time, historical identity and corporate actions are the owner's to attest, per batch.",
+    "Not a proof that nothing earlier was public: open-web research can show no discoverable earlier disclosure, not a negative.",
+    "Not a price, a return or a label of any event: none was read (the one inadvertent exposure is disclosed above); the sealed run prints none."
+  ]
+}

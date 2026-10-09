@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "provider": {
+    "provider_id": "alpaca",
+    "research_permitted": true,
+    "terms_url": "https://files.alpaca.markets/disclosures/library/TermsAndConditions.pdf",
+    "feeds": [
+      "sip"
+    ],
+    "session_scope": "regular",
+    "attestation": {
+      "reviewer": "Fahad9101",
+      "date": "2026-10-09",
+      "record": "reports/m5-phase1b-provider-scope-authorization-2026-10-09.json"
+    }
+  },
+  "events": [
+    {
+      "event_id": "caci-m5b-2026-04-22",
+      "cluster_id": "caci-m5b-2026-04-22",
+      "candidate_id": "0001628280-26-026589",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "CACI-16058-2026-04-22",
+        "company_id": "0000016058",
+        "cik": "0000016058",
+        "ticker": "CACI",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-01-21T00:00:00-05:00",
+        "available_at": "2026-01-21T20:00:00Z"
+      },
+      "source": {
+        "source_id": "caci-wire-2026-04-22",
+        "url": "https://www.businesswire.com/news/home/20260422200925/en/CACI-Reports-Results-for-Its-Fiscal-2026-Third-Quarter",
+        "text": "Wire release, displayed dateline Apr 22, 2026 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20260422200925/en/CACI-Reports-Results-for-Its-Fiscal-2026-Third-Quarter",
+        "first_seen_at": "2026-04-22T16:16:00-04:00"
+      },
+      "published_at": "2026-04-22T16:15:00-04:00",
+      "cutoff": "2026-04-22T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-23"
+    },
+    {
+      "event_id": "alkt-m5b-2026-04-29",
+      "cluster_id": "alkt-m5b-2026-04-29",
+      "candidate_id": "0001529274-26-000028",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "ALKT-1529274-2026-04-29",
+        "company_id": "0001529274",
+        "cik": "0001529274",
+        "ticker": "ALKT",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-25T00:00:00-05:00",
+        "available_at": "2026-02-25T20:00:00Z"
+      },
+      "source": {
+        "source_id": "alkt-wire-2026-04-29",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2026-financial-results-302757653.html",
+        "text": "Wire release, displayed dateline Apr 29, 2026, 16:05 ET (16:05 ET). https://www.prnewswire.com/news-releases/alkami-announces-first-quarter-2026-financial-results-302757653.html",
+        "first_seen_at": "2026-04-29T16:06:00-04:00"
+      },
+      "published_at": "2026-04-29T16:05:00-04:00",
+      "cutoff": "2026-04-29T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-30",
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "The release itself announces a $100 million share repurchase program (the Board authorized it on 2026-04-23, per Item 8.01); it is inside the earnings release, not a separate release, so it is carried as a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md, second condition)."
+        }
+      ]
+    },
+    {
+      "event_id": "jbss-m5b-2026-04-29",
+      "cluster_id": "jbss-m5b-2026-04-29",
+      "candidate_id": "0001193125-26-191599",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "JBSS-880117-2026-04-29",
+        "company_id": "0000880117",
+        "cik": "0000880117",
+        "ticker": "JBSS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-01-29T00:00:00-05:00",
+        "available_at": "2026-01-29T20:00:00Z"
+      },
+      "source": {
+        "source_id": "jbss-wire-2026-04-29",
+        "url": "https://www.businesswire.com/news/home/20260429646478/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Third-Quarter-Results",
+        "text": "Wire release, displayed dateline Apr 29, 2026 4:10 PM Eastern Daylight Time (16:10 ET). https://www.businesswire.com/news/home/20260429646478/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Third-Quarter-Results",
+        "first_seen_at": "2026-04-29T16:11:00-04:00"
+      },
+      "published_at": "2026-04-29T16:10:00-04:00",
+      "cutoff": "2026-04-29T16:13:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-04-30"
+    },
+    {
+      "event_id": "hurn-m5b-2026-05-05",
+      "cluster_id": "hurn-m5b-2026-05-05",
+      "candidate_id": "0001289848-26-000080",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "HURN-1289848-2026-05-05",
+        "company_id": "0001289848",
+        "cik": "0001289848",
+        "ticker": "HURN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-24T00:00:00-05:00",
+        "available_at": "2026-02-24T20:00:00Z"
+      },
+      "source": {
+        "source_id": "hurn-wire-2026-05-05",
+        "url": "https://www.businesswire.com/news/home/20260505377069/en/Huron-Announces-First-Quarter-2026-Financial-Results-and-Affirms-Full-Year-2026-Guidance",
+        "text": "Wire release, displayed dateline May 5, 2026 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20260505377069/en/Huron-Announces-First-Quarter-2026-Financial-Results-and-Affirms-Full-Year-2026-Guidance",
+        "first_seen_at": "2026-05-05T16:06:00-04:00"
+      },
+      "published_at": "2026-05-05T16:05:00-04:00",
+      "cutoff": "2026-05-05T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-06"
+    },
+    {
+      "event_id": "nbix-m5b-2026-05-05",
+      "cluster_id": "nbix-m5b-2026-05-05",
+      "candidate_id": "0000914475-26-000025",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "NBIX-914475-2026-05-05",
+        "company_id": "0000914475",
+        "cik": "0000914475",
+        "ticker": "NBIX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-11T00:00:00-05:00",
+        "available_at": "2026-02-11T20:00:00Z"
+      },
+      "source": {
+        "source_id": "nbix-wire-2026-05-05",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-first-quarter-2026-financial-results-302763133.html",
+        "text": "Wire release, displayed dateline May 05, 2026, 16:01 ET (16:01 ET). https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-first-quarter-2026-financial-results-302763133.html",
+        "first_seen_at": "2026-05-05T16:02:00-04:00"
+      },
+      "published_at": "2026-05-05T16:01:00-04:00",
+      "cutoff": "2026-05-05T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-06",
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "PR Newswire carried a separate release the same day at 09:00 ET (the company's participation in a health care conference): independently disseminated but routine, with no fresh, independently material content, so it fails the policy's third condition and is a caveat, not an exclusion."
+        }
+      ]
+    },
+    {
+      "event_id": "parr-m5b-2026-05-05",
+      "cluster_id": "parr-m5b-2026-05-05",
+      "candidate_id": "0001628280-26-030714",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "PARR-821483-2026-05-05",
+        "company_id": "0000821483",
+        "cik": "0000821483",
+        "ticker": "PARR",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-24T00:00:00-05:00",
+        "available_at": "2026-02-24T20:00:00Z"
+      },
+      "source": {
+        "source_id": "parr-wire-2026-05-05",
+        "url": "https://www.globenewswire.com/news-release/2026/05/05/3288278/0/en/par-pacific-holdings-reports-first-quarter-2026-results.html",
+        "text": "Wire release, displayed dateline May 05, 2026 16:15 ET (16:15 ET). https://www.globenewswire.com/news-release/2026/05/05/3288278/0/en/par-pacific-holdings-reports-first-quarter-2026-results.html",
+        "first_seen_at": "2026-05-05T16:16:00-04:00"
+      },
+      "published_at": "2026-05-05T16:15:00-04:00",
+      "cutoff": "2026-05-05T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-06"
+    },
+    {
+      "event_id": "cxt-m5b-2026-05-06",
+      "cluster_id": "cxt-m5b-2026-05-06",
+      "candidate_id": "0000025445-26-000015",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "CXT-25445-2026-05-06",
+        "company_id": "0000025445",
+        "cik": "0000025445",
+        "ticker": "CXT",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-11T00:00:00-05:00",
+        "available_at": "2026-02-11T20:00:00Z"
+      },
+      "source": {
+        "source_id": "cxt-wire-2026-05-06",
+        "url": "https://www.globenewswire.com/news-release/2026/05/06/3289352/0/en/crane-nxt-reports-first-quarter-2026-results.html",
+        "text": "Wire release, displayed dateline May 06, 2026 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2026/05/06/3289352/0/en/crane-nxt-reports-first-quarter-2026-results.html",
+        "first_seen_at": "2026-05-06T16:06:00-04:00"
+      },
+      "published_at": "2026-05-06T16:05:00-04:00",
+      "cutoff": "2026-05-06T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-07"
+    },
+    {
+      "event_id": "aspn-m5b-2026-05-07",
+      "cluster_id": "aspn-m5b-2026-05-07",
+      "candidate_id": "0001171843-26-003109",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "ASPN-1145986-2026-05-07",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-25T00:00:00-05:00",
+        "available_at": "2026-02-25T20:00:00Z"
+      },
+      "source": {
+        "source_id": "aspn-wire-2026-05-07",
+        "url": "https://www.globenewswire.com/news-release/2026/05/07/3289746/0/en/aspen-aerogels-inc-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "text": "Wire release, displayed dateline May 07, 2026 06:30 ET (06:30 ET). https://www.globenewswire.com/news-release/2026/05/07/3289746/0/en/aspen-aerogels-inc-reports-first-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "first_seen_at": "2026-05-07T06:31:00-04:00"
+      },
+      "published_at": "2026-05-07T06:30:00-04:00",
+      "cutoff": "2026-05-07T06:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-07"
+    },
+    {
+      "event_id": "coll-m5b-2026-05-07",
+      "cluster_id": "coll-m5b-2026-05-07",
+      "candidate_id": "0001628280-26-031694",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "COLL-1267565-2026-05-07",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "coll-wire-2026-05-07",
+        "url": "https://www.globenewswire.com/news-release/2026/05/07/3289872/34897/en/collegium-reports-first-quarter-2026-financial-results-and-highlights-recent-company-progress.html",
+        "text": "Wire release, displayed dateline May 07, 2026 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2026/05/07/3289872/34897/en/collegium-reports-first-quarter-2026-financial-results-and-highlights-recent-company-progress.html",
+        "first_seen_at": "2026-05-07T07:31:00-04:00"
+      },
+      "published_at": "2026-05-07T07:30:00-04:00",
+      "cutoff": "2026-05-07T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-07"
+    }
+  ]
+}

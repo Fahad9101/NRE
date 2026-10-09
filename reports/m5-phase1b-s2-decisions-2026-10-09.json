@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_s2_decisions",
+  "recorded_on": "2026-10-09",
+  "context": "After reports/m5-phase1b-eligibility-review-2026-10-09.json (commit f2de5ec), the assistant put the three decisions it left to the owner and the permission S4 needs for the wire pages of the first batch, in one AskUserQuestion. The questions and the owner's answers are quoted from the session transcript, not from a summary.",
+  "asked": {
+    "at": "2026-10-09T14:26:06.969Z",
+    "source": "session transcript, line 39906 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-09T17:00:54.499Z",
+    "source": "session transcript, line 39912 (the tool result of the questions)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "Wire pages",
+      "question": "May I read public wire-release pages and the issuers' own newsroom pages to take the first-public minute of the releases (S4)?",
+      "options_offered": [
+        {
+          "label": "Yes, batch 1 only (Recommended)",
+          "description": "The ten earliest releases (CACI 04-22, ALKT 04-29, JBSS 04-29, HURN 05-05, NBIX 05-05, PARR 05-04, CXT 05-06, ASMB 05-13, ASPN 05-07, COLL 05-07): each release's page on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or the issuer's newsroom, plus a check for a separate same-day release. Public pages, roughly 50 to 300 KB each, size not known in advance; I would read them in the built-in browser, hold them in browser memory only and keep the URL, the displayed minute and a short excerpt. You may be asked to allow each site. No push, no other download. Later batches ask again."
+        },
+        {
+          "label": "Yes, all 44 unaffected candidates",
+          "description": "The same for all 44 candidates except the three above, batch by batch (about ten per batch), without asking again. Same sites, same handling."
+        },
+        {
+          "label": "No downloads for now",
+          "description": "I stop here on Phase 1b until you say otherwise."
+        }
+      ],
+      "owner_selected": "Yes, batch 1 only (Recommended)"
+    },
+    {
+      "header": "REKR 07-15",
+      "question": "REKR 2026-07-15 (a preliminary, unaudited pre-announcement; the full results followed on 2026-08-13): exclude it?",
+      "options_offered": [
+        {
+          "label": "Exclude it (Recommended)",
+          "description": "As steps 2 and 3 did for Rekor's earlier pre-announcements: not a qualifying earnings event. REKR 2026-08-13, the full results, stays a candidate."
+        },
+        {
+          "label": "Keep it as a candidate",
+          "description": "It stays in the pool and goes through the same steps as the others."
+        }
+      ],
+      "owner_selected": "Exclude it (Recommended)"
+    },
+    {
+      "header": "ASMB 08-14",
+      "question": "ASMB 2026-08-14 (an 8-K/A that only corrects the header of the 2026-08-13 8-K; the results release is dated 2026-08-13): keep it or exclude it?",
+      "options_offered": [
+        {
+          "label": "Keep it, with a caveat (Recommended)",
+          "description": "The candidate stands for the 2026-08-13 results release, and its first-public time comes from the 2026-08-13 wire and 8-K, not from 2026-08-14. The original 8-K is not in the pool, so this is the only way that release gets in."
+        },
+        {
+          "label": "Exclude it as an amendment",
+          "description": "The literal reading of step 3's rule for CACI's 8-K/A (there the original was a candidate). It costs one event."
+        }
+      ],
+      "owner_selected": "Keep it, with a caveat (Recommended)"
+    },
+    {
+      "header": "PAYO 08-06",
+      "question": "PAYO 2026-08-06 (Q2 results while a $7.40-per-share cash take-private by Nuvei, agreed 2026-06-15, was pending; guidance withdrawn): exclude it?",
+      "options_offered": [
+        {
+          "label": "Exclude it (Recommended)",
+          "description": "A price pinned to a cash offer is not an earnings reaction. A new exclusion category that steps 2 and 3 did not meet; PAYO 2026-05-07 (before the deal) stays a candidate."
+        },
+        {
+          "label": "Keep it, with a caveat",
+          "description": "It stays in the pool with a note that the security was under a pending cash take-private."
+        }
+      ],
+      "owner_selected": "Exclude it (Recommended)"
+    }
+  ],
+  "effects": {
+    "REKR 2026-07-15": {
+      "candidate_id": "0001437749-26-023616",
+      "disposition": "excluded",
+      "reason": "Not a qualifying earnings event: an explicit preliminary, unaudited pre-announcement of second-quarter results that REKR 2026-08-13 later reports in full (as steps 2 and 3 excluded Rekor's earlier pre-announcements)."
+    },
+    "ASMB 2026-08-14": {
+      "candidate_id": "0001193125-26-352193",
+      "disposition": "kept_with_caveat",
+      "caveat": "An 8-K/A that only corrects the submission header of the 2026-08-13 8-K (Item 2.02 had been tagged as Item 2.01); it stands for the 2026-08-13 results release, whose first-public time comes from the 2026-08-13 wire and 8-K, not from 2026-08-14."
+    },
+    "PAYO 2026-08-06": {
+      "candidate_id": "0001104659-26-091646",
+      "disposition": "excluded",
+      "reason": "The security was under a pending cash take-private (Nuvei, $7.40 per share, agreed 2026-06-15), so its price is pinned to the offer and the release is not an earnings reaction; a new exclusion category. PAYO 2026-05-07 stays a candidate."
+    }
+  },
+  "candidates_standing_after_the_decisions": 45,
+  "wire_permission_read_as": {
+    "scope": "Batch 1 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. It carries no push and no other download; later batches ask again.",
+    "batch_1": [
+      {
+        "ticker": "CACI",
+        "filing_date": "2026-04-22",
+        "release_date": "2026-04-22",
+        "candidate_id": "0001628280-26-026589"
+      },
+      {
+        "ticker": "ALKT",
+        "filing_date": "2026-04-29",
+        "release_date": "2026-04-29",
+        "candidate_id": "0001529274-26-000028"
+      },
+      {
+        "ticker": "JBSS",
+        "filing_date": "2026-04-29",
+        "release_date": "2026-04-29",
+        "candidate_id": "0001193125-26-191599"
+      },
+      {
+        "ticker": "HURN",
+        "filing_date": "2026-05-05",
+        "release_date": "2026-05-05",
+        "candidate_id": "0001289848-26-000080"
+      },
+      {
+        "ticker": "NBIX",
+        "filing_date": "2026-05-05",
+        "release_date": "2026-05-05",
+        "candidate_id": "0000914475-26-000025"
+      },
+      {
+        "ticker": "PARR",
+        "filing_date": "2026-05-05",
+        "release_date": "2026-05-05",
+        "candidate_id": "0001628280-26-030714"
+      },
+      {
+        "ticker": "CXT",
+        "filing_date": "2026-05-06",
+        "release_date": "2026-05-06",
+        "candidate_id": "0000025445-26-000015"
+      },
+      {
+        "ticker": "ASMB",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001193125-26-211922"
+      },
+      {
+        "ticker": "ASPN",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001171843-26-003109"
+      },
+      {
+        "ticker": "COLL",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001628280-26-031694"
+      }
+    ],
+    "how_batch_1_was_chosen": "The ten earliest releases among the candidates that stand after the decisions; the ties on 2026-05-07 (ASMB, ASPN, COLL, PAYO, PDFS, REAL, TECX) were broken alphabetically.",
+    "disclosure": "The option text I offered gave the dates 'PARR 05-04' and 'ASMB 05-13'. Those were my typing errors: the candidates are PARR 2026-05-05 (release and filing date) and ASMB 2026-05-07 (the issuer's first candidate in the pool); the ten names are what the permission covers."
+  },
+  "not_authorized_by_these_answers": [
+    "Reading the wire or newsroom pages of any candidate outside batch 1.",
+    "Reading the nine near-date 8-Ks of reports/m5-phase1b-same-day-sweep-2026-10-09.json.",
+    "Any push, any other download, any price or label read, and attesting any event's first-public time, identity or corporate actions for the owner."
+  ]
+}

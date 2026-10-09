@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_provider_scope_authorization",
+  "recorded_on": "2026-10-09",
+  "context": "nre/dataset.py's provider-level gate quarantines every event on PROVIDER_USE_UNVERIFIED unless the provider block says research_permitted true and carries its own attestation, independent of the per-event attestations; Milestone 2 step 3's first dry run hit exactly that (reports/m2-step3-provider-scope-authorization-2026-10-02.json). The owner's answer to the provider-rights question for Phase 1b's scale was recorded in reports/m5-phase1b-authorization-2026-10-09.json; this record names that answer as the provider attestation of config/m5-phase1b-events.json, so the first dry run does not quarantine on it.",
+  "questions_and_answers": [
+    {
+      "header": "Rights",
+      "question": "Does the Alpaca provider research authorization extend to Phase 1b's scale? It would add about 48 events to the 128 (an estimate; nothing is enumerated yet), run as sealed commitments only until Phase 4, on the same Alpaca account and SIP feed, derived values only, never raw prices. Phase 1c, which adds features for every event, would put the question to you again.",
+      "options_offered": [
+        {
+          "label": "Yes, provider rights fine",
+          "description": "Confirms the standing authorization (derived values only, never raw prices, same account and feed) covers Phase 1b's scale, as you confirmed it at each earlier scale-up."
+        },
+        {
+          "label": "Not yet",
+          "description": "I stop before any Alpaca request. I would still prepare the plan, specs and tests, and could run the SEC-side candidate freeze, which touches no prices."
+        }
+      ],
+      "owner_selected": "Yes, provider rights fine",
+      "asked_at": "2026-10-09T07:18:13.434Z",
+      "answered_at": "2026-10-09T07:33:06.977Z",
+      "source": "the AskUserQuestion call (session transcript, line 37363) and the owner's answers (line 37369), quoted from the session transcript, not from a summary"
+    }
+  ],
+  "scope_of_this_authorization": "research_permitted: true for Alpaca, for this project's specific, current use (derived ratios, booleans, counts and hashes only, never raw prices), at Milestone 5 Phase 1b's scale (about 48 more events, run as sealed commitments until Phase 4, on the same Alpaca account and SIP feed). The question is put to the owner again before Phase 1c. It does not authorize any prediction, score, ranking or model, and it does not itself attest any event's first_public_time, historical_identity or corporate_actions: those are attested per batch, after the batch's own signoff packet.",
+  "provider_block": "config/m5-phase1b-events.json's provider block mirrors config/m2-step3-events.json's real values (provider_id alpaca, the real Alpaca terms URL, feeds sip, session_scope regular) and adds this record as its attestation.",
+  "not_a_claim": [
+    "Not an attestation of any event.",
+    "Not an answer to the provider-rights question for Phase 1c."
+  ]
+}
