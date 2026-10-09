@@ -59,7 +59,7 @@
       "issuers_without": {
         "HURN": "status 200 but the unit entry is empty: no entity-wide fact",
         "JBSS": "3 facts, all from 2011-11-02 to 2012-05-01: none in the window",
-        "OKTA": "status 404: the API holds no entity-wide fact (the cover page reports shares by class)"
+        "OKTA": "status 404: the API holds no entity-wide fact (probably because shares are reported by class; not checked)"
       },
       "no_fact_filed_on_or_before_2024_11_04": [
         "KLC"
@@ -113,7 +113,7 @@
     }
   },
   "limits": [
-    "Entity-wide facts only: the company-concept API does not aggregate dimensional facts, so an issuer that reports shares by class (OKTA, and JBSS since 2012) shows no usable fact here although its filings state the shares.",
+    "Entity-wide facts only: the company-concept API does not aggregate dimensional facts, so an issuer that reports shares by class would show no usable fact here although its filings state the shares. That is the likely reason for OKTA and for JBSS after 2012 (not checked); why HURN's unit entry is empty was not found out.",
     "A filing date is the date of the original filing in the API's fact list; amendments appear as further facts with later dates, and the check did not look at values or at which fact supersedes which.",
     "Public float is the aggregate market value of non-affiliate common equity on one date a year (the last business day of the second fiscal quarter), reported in the annual report: it is not a share count and not free float.",
     "Shares outstanding come from the cover page as of a date near the filing; they are not updated between filings.",

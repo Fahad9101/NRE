@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1a_findings",
+  "recorded_on": "2026-10-09",
+  "authorization": "reports/m5-phase1a-authorization-2026-10-08.json",
+  "rests_on": {
+    "probe_run_1": {
+      "record": "reports/m5-phase1a-probe-run1-2026-10-08.json",
+      "report_sha256": "6a91a9d3de304696ff6ca51246e9c6955c4c34c3f1472b46d7031605277b2312",
+      "spec_revision": 1
+    },
+    "probe_run_2": {
+      "record": "reports/m5-phase1a-probe-run2-2026-10-09.json",
+      "report_sha256": "e50e904566082ade138af879f4b0542c71f55b1c79800eec76ffcb8df00ed752",
+      "spec_revision": 2
+    },
+    "sec_check": {
+      "record": "reports/m5-phase1a-sec-availability-2026-10-09.json",
+      "result_sha256": "fc7f0bc60a3205766aa4658300066c9fecf690f4ef2b6716990e7c29264542fd"
+    },
+    "documentation": [
+      "alpaca-bars",
+      "alpaca-corporate-actions",
+      "alpaca-option-bars",
+      "sec-edgar-apis",
+      "sec-webmaster-faq",
+      "sec-13f-data-sets",
+      "sec-insider-data-sets",
+      "finra-short-interest",
+      "cboe-vix-history",
+      "project-alpaca-access-notes",
+      "m1-provider-rights-review"
+    ]
+  },
+  "figures": {
+    "daily_bars": {
+      "symbols": 51,
+      "etfs": 28,
+      "issuers": 23,
+      "symbols_with_all_sessions_and_the_lookback": 49,
+      "etfs_with_all_sessions": 28,
+      "issuers_with_all_sessions": 21,
+      "sessions": 754,
+      "window": [
+        "2023-10-02",
+        "2026-10-02"
+      ],
+      "spy_matches_the_expected_calendar": true,
+      "missing_sessions_anywhere": 0,
+      "zero_volume_bars_anywhere": 0,
+      "short_history": {
+        "KLC": {
+          "first_bar_date": "2024-10-09",
+          "bars": 497,
+          "sessions_before_the_first_reaction_session": 19
+        },
+        "SLSN": {
+          "first_bar_date": "2025-04-08",
+          "bars": 374,
+          "sessions_before_the_first_reaction_session": 0
+        }
+      }
+    },
+    "symbol_mapping": {
+      "issuers_whose_history_the_mapping_changes": [
+        "TECX"
+      ],
+      "TECX_bars_only_the_mapping_supplies": 181,
+      "TECX_first_bar_with_the_mapping": "2023-10-02",
+      "TECX_first_bar_without_the_mapping": "2024-06-21",
+      "TECX_bars_with_the_mapping": 754,
+      "TECX_bars_without_the_mapping": 573,
+      "TECX_sessions_before_the_first_reaction_session_with_the_mapping": 276,
+      "TECX_sessions_before_the_first_reaction_session_without_the_mapping": 95,
+      "TECX_former_names_in_the_sec_submissions_cached_for_milestone_2": "AvroBio, Inc. and AVROBIO, Inc., both until 2024-06-18"
+    },
+    "corporate_actions_over_the_window": {
+      "issuers_with_any": [
+        "ASMB",
+        "CXT",
+        "JBSS",
+        "NBIX",
+        "TECX"
+      ],
+      "by_type": {
+        "ASMB": {
+          "reverse_splits": 1
+        },
+        "CXT": {
+          "cash_dividends": 12
+        },
+        "JBSS": {
+          "cash_dividends": 7
+        },
+        "NBIX": {
+          "cash_mergers": 1
+        },
+        "TECX": {
+          "name_changes": 1,
+          "reverse_splits": 1
+        }
+      },
+      "one_call_for_three_years_was_accepted": true
+    },
+    "adjustment_modes_accepted": [
+      "all",
+      "dividend",
+      "raw",
+      "spin-off",
+      "split"
+    ],
+    "feeds": {
+      "boats": 200,
+      "iex": 200,
+      "otc": 403,
+      "sip": 200
+    },
+    "feed_messages": {
+      "otc": "subscription does not permit querying OTC data"
+    },
+    "requests_per_run": [
+      152,
+      152
+    ],
+    "request_budget": 320,
+    "hours_between_the_runs": "8 hours 46 minutes",
+    "daily_bar_prices": {
+      "open": {
+        "sessions_that_can_tell_the_two_apart": 18,
+        "equal_to_the_all_hours_value": 0,
+        "equal_to_the_regular_session_value": 17,
+        "matched_neither": [
+          [
+            "SPY",
+            "2025-09-10"
+          ]
+        ],
+        "matched_neither_but_cannot_discriminate": [
+          [
+            "NBIX",
+            "2025-09-10"
+          ]
+        ]
+      },
+      "high": {
+        "sessions_that_can_tell_the_two_apart": 9,
+        "equal_to_the_all_hours_value": 1,
+        "equal_to_the_regular_session_value": 8,
+        "the_all_hours_exception": {
+          "symbol": "CACI",
+          "session": "2025-06-11",
+          "premarket_minute_bars": 0,
+          "after_hours_minute_bars": 0,
+          "closing_minute_bars": 1
+        }
+      },
+      "low": {
+        "sessions_that_can_tell_the_two_apart": 6,
+        "equal_to_the_all_hours_value": 0,
+        "equal_to_the_regular_session_value": 6
+      },
+      "close": {
+        "sessions": 23,
+        "equal_to_the_closing_minute_bars_close": 17,
+        "sessions_with_after_hours_bars": 19,
+        "of_those_where_the_close_is_not_the_last_after_hours_trade": 17,
+        "equal_to_none_of_the_three_minute_closes": [
+          [
+            "SPY",
+            "2025-03-12"
+          ],
+          [
+            "SPY",
+            "2025-06-11"
+          ],
+          [
+            "SPY",
+            "2025-09-10"
+          ],
+          [
+            "SPY",
+            "2025-12-10"
+          ],
+          [
+            "XBI",
+            "2025-06-11"
+          ],
+          [
+            "XBI",
+            "2025-09-10"
+          ]
+        ]
+      }
+    },
+    "daily_bar_volume": {
+      "spy_over_the_all_hours_minute_volume": [
+        1.0002,
+        1.0001,
+        1.0002,
+        1.0
+      ],
+      "xbi_over_the_all_hours_minute_volume": [
+        1.0001,
+        1.0056
+      ],
+      "etfs_over_the_all_hours_minute_volume": [
+        1.0,
+        1.0056
+      ],
+      "issuers_over_the_all_hours_minute_volume": [
+        1.004,
+        1.2247
+      ],
+      "spy_over_the_regular_and_closing_minute_volume": [
+        1.1032,
+        1.1903
+      ],
+      "issuers_closing_minute_share_of_the_all_hours_minute_volume": [
+        0.0151,
+        0.4061
+      ],
+      "etfs_closing_minute_share": [
+        0.011,
+        0.0301
+      ]
+    },
+    "extended_hours": {
+      "spy_premarket_minute_bars": [
+        258,
+        263,
+        244,
+        290
+      ],
+      "xbi_premarket_minute_bars": [
+        40,
+        33,
+        80,
+        28
+      ],
+      "issuer_premarket_minute_bars_range": [
+        0,
+        11
+      ],
+      "issuer_sessions_sampled": 15,
+      "issuer_sessions_with_no_premarket_bar": 5,
+      "sessions_sampled": 23,
+      "skipped_by_the_guard": [
+        {
+          "session": "2025-03-12",
+          "symbol": "ACHV"
+        }
+      ]
+    },
+    "sec": {
+      "shares_outstanding_issuers_with_entity_wide_facts_in_the_window": 20,
+      "distinct_filing_dates_in_the_window": [
+        7,
+        10
+      ],
+      "shares_outstanding_issuers_without": {
+        "HURN": "no facts",
+        "JBSS": "3 facts, 2011 to 2012",
+        "OKTA": "404"
+      },
+      "public_float_issuers_with_facts": 23,
+      "public_float_facts_in_the_window": [
+        2,
+        4
+      ],
+      "issuers_with_no_fact_filed_by_2024_11_04": [
+        "KLC"
+      ],
+      "KLC_first_shares_fact_filed": "2024-11-21",
+      "first_event_day": "2024-11-04"
+    },
+    "sector": {
+      "sic_codes_counted_as_drug_related": [
+        "2834",
+        "2835",
+        "2836"
+      ],
+      "issuers_with_such_a_code": [
+        "ACHV",
+        "ASMB",
+        "COLL",
+        "NBIX",
+        "TECX"
+      ],
+      "source": "config/sector-map.json (SIC codes read on 2026-09-26; coarse and not point-in-time)"
+    }
+  },
+  "status_labels": {
+    "in_hand_alpaca": "in hand (Alpaca)",
+    "derived": "derivable",
+    "sec_filings": "SEC filings",
+    "unreviewed_provider": "unreviewed provider",
+    "proxy_only": "proxy only",
+    "not_found": "not found"
+  },
+  "fields": [
+    {
+      "fields": [
+        "market capitalization"
+      ],
+      "master_prompt_section": 10,
+      "status": "derived",
+      "source_and_timing": "shares outstanding (SEC cover page) times the raw close at the cutoff (Alpaca); shares are known from their filing date, and a split after that filing needs the corporate-action list",
+      "evidence": "shares-outstanding facts exist for 20 of 23 issuers; HURN, JBSS and OKTA have no entity-wide fact in the window"
+    },
+    {
+      "fields": [
+        "float"
+      ],
+      "master_prompt_section": 10,
+      "status": "proxy_only",
+      "source_and_timing": "no free-float series found; shares outstanding and the annual public-float value (SEC) are proxies, the latter as of the end of the second fiscal quarter",
+      "evidence": "public-float facts exist for 23 of 23 issuers, 2 to 4 filed in the window; the value is a dollar amount, not a share count"
+    },
+    {
+      "fields": [
+        "shares outstanding"
+      ],
+      "master_prompt_section": 10,
+      "status": "sec_filings",
+      "source_and_timing": "SEC XBRL cover-page fact dei:EntityCommonStockSharesOutstanding; available from its filing date plus a margin (the SEC does not guarantee its lag)",
+      "evidence": "20 of 23 issuers, with 7 to 10 filing dates in the window; KLC's first fact was filed on 2024-11-21, after the first event day, 2024-11-04"
+    },
+    {
+      "fields": [
+        "average daily dollar volume",
+        "relative volume (daily)"
+      ],
+      "master_prompt_section": 10,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "Alpaca SIP daily bars: all-hours volume with regular-session prices; a day's volume is complete only after 20:00 ET",
+      "evidence": "49 of 51 symbols have all 754 sessions; the daily volume is 1.0000 to 1.0002 of SPY's all-hours minute volume and up to 1.2247 of an issuer's"
+    },
+    {
+      "fields": [
+        "premarket volume",
+        "relative volume (intraday)",
+        "distance from VWAP"
+      ],
+      "master_prompt_section": 10,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "Alpaca SIP minute bars from 04:00 to 20:00 ET; the minutes before the cutoff are known at the cutoff, though the provider's history today may include late reports (not tested)",
+      "evidence": "SPY has 244 to 290 pre-market minute bars a session and XBI 28 to 80; the four sampled issuers 0 to 11, with none in 5 of 15 issuer sessions"
+    },
+    {
+      "fields": [
+        "short interest",
+        "days to cover"
+      ],
+      "master_prompt_section": 10,
+      "status": "unreviewed_provider",
+      "source_and_timing": "FINRA equity short interest, twice a month; provided for publication on the 7th business day after the settlement date; corrections are flagged and only the most recent data is made available; days to cover also needs the average daily volume from the daily bars",
+      "evidence": "documentation read only; no data fetched; FINRA has not been reviewed as a provider"
+    },
+    {
+      "fields": [
+        "institutional ownership"
+      ],
+      "master_prompt_section": 10,
+      "status": "sec_filings",
+      "source_and_timing": "SEC Form 13F data sets: quarterly postings of the as-filed 13F data, usable from each filing's date if the tables carry it (the table definitions are in a PDF that was not read)",
+      "evidence": "documentation read only; 69.66 to 96.05 MB a posting for 2024 to 2026; the rows are not mapped to the issuers' securities"
+    },
+    {
+      "fields": [
+        "insider ownership"
+      ],
+      "master_prompt_section": 10,
+      "status": "sec_filings",
+      "source_and_timing": "SEC insider transactions data sets (Forms 3, 4 and 5, as filed): quarterly postings, usable from each filing's date if the tables carry it (the table definitions are in a PDF that was not read)",
+      "evidence": "documentation read only; 7.59 to 13.23 MB a posting for 2024 to 2026; the rows are not mapped to the issuers"
+    },
+    {
+      "fields": [
+        "ATR",
+        "realized volatility",
+        "recent price compression",
+        "breakout structure",
+        "support and resistance zones",
+        "previous gaps",
+        "distance from major moving averages"
+      ],
+      "master_prompt_section": 10,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "Alpaca SIP daily bars, raw prices; regular-session open, high, low and close, known after the close (late corrections were not tested)",
+      "evidence": "49 of 51 symbols have all 754 sessions with no gap; 5 of the 23 issuers have a corporate action in the window"
+    },
+    {
+      "fields": [
+        "distance from 52-week high/low"
+      ],
+      "master_prompt_section": 10,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "the same daily bars; needs 252 sessions before the event",
+      "evidence": "all 28 ETFs and 21 of 23 issuers have them; KLC has 19 sessions and SLSN none before the first reaction session; TECX has them only through the symbol mapping (181 of its sessions are under the former name)"
+    },
+    {
+      "fields": [
+        "implied volatility",
+        "call/put activity",
+        "options open interest",
+        "gamma-related variables"
+      ],
+      "master_prompt_section": 10,
+      "status": "not_found",
+      "source_and_timing": "Alpaca documents option bars (aggregates by contract symbol); no implied-volatility or open-interest history was found in what was read",
+      "evidence": "documentation read only; no data fetched"
+    },
+    {
+      "fields": [
+        "SPY trend",
+        "QQQ trend",
+        "Russell 2000 trend"
+      ],
+      "master_prompt_section": 11,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "Alpaca SIP daily bars of SPY, QQQ and IWM (with IJR for small caps); IWM, a Russell 2000 fund, is a proxy for the index, which was not queried",
+      "evidence": "754 sessions each, no gap"
+    },
+    {
+      "fields": [
+        "VIX"
+      ],
+      "master_prompt_section": 11,
+      "status": "proxy_only",
+      "source_and_timing": "VIXY and VXX on Alpaca are products on VIX futures, not the index (by their names; not checked); Cboe links the VIX daily close from 1990 and has not been reviewed as a provider",
+      "evidence": "VIXY and VXX have 754 sessions each; the Cboe page was read, no data fetched"
+    },
+    {
+      "fields": [
+        "sector ETF behavior",
+        "recent biotech momentum"
+      ],
+      "master_prompt_section": 11,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "Alpaca SIP daily bars of 13 sector and theme ETFs plus XBI and IBB",
+      "evidence": "754 sessions each; 5 of the 23 issuers carry a drug-related SIC code (2834, 2835 or 2836), so recent biotech momentum applies to a minority of them; SIC is coarse and not point-in-time"
+    },
+    {
+      "fields": [
+        "breadth"
+      ],
+      "master_prompt_section": 11,
+      "status": "proxy_only",
+      "source_and_timing": "RSP (an equal-weight S&P 500 fund) against SPY is a proxy; no advance-decline series was found",
+      "evidence": "RSP has 754 sessions"
+    },
+    {
+      "fields": [
+        "risk-on/risk-off environment",
+        "recent small-cap momentum"
+      ],
+      "master_prompt_section": 11,
+      "status": "in_hand_alpaca",
+      "source_and_timing": "Alpaca SIP daily bars of TLT, HYG, LQD, GLD, UUP, IWM and IJR; the composite is for the protocol to define",
+      "evidence": "754 sessions each"
+    }
+  ],
+  "sources": [
+    {
+      "id": "alpaca-bars",
+      "name": "Alpaca Market Data API: historical stock bars",
+      "url": "https://docs.alpaca.markets/reference/stockbars",
+      "read_on": "2026-10-08",
+      "says": "Inclusive RFC-3339 or date start and end; up to 10,000 bars a page; adjustments raw, split, dividend, spin-off and all (combinable); an asof date that, by default, maps an entity's earlier symbols into the queried one; feeds sip, iex, boats (overnight) and otc.",
+      "verbatim": [
+        "The special value of \"-\" means symbol mapping is skipped."
+      ]
+    },
+    {
+      "id": "alpaca-corporate-actions",
+      "name": "Alpaca Market Data API: corporate actions",
+      "url": "https://docs.alpaca.markets/reference/corporateactions-1",
+      "read_on": "2026-10-08",
+      "says": "Sixteen action types; start and end are inclusive dates, sorted by process date; no limit on the length of the interval is stated; incomplete actions are excluded by default; Alpaca warns that delays in receiving and processing are possible.",
+      "verbatim": [
+        "Currently Alpaca has no guarantees on the creation time of corporate actions."
+      ]
+    },
+    {
+      "id": "alpaca-option-bars",
+      "name": "Alpaca Market Data API: historical option bars",
+      "url": "https://docs.alpaca.markets/reference/optionbars",
+      "read_on": "2026-10-09",
+      "says": "Aggregates (bars) by option contract symbol, up to 100 contracts a request; the page states no history depth and mentions no implied-volatility or open-interest history.",
+      "verbatim": []
+    },
+    {
+      "id": "sec-edgar-apis",
+      "name": "SEC: EDGAR Application Programming Interfaces",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "read_on": "2026-10-08",
+      "says": "The XBRL company-concept, company-facts and frames APIs aggregate entity-wide facts from non-custom taxonomies including dei, update in real time (typically within a minute), and data.sec.gov supports no cross-origin scripting; bulk ZIPs are rebuilt nightly. Page reviewed 2025-04-08.",
+      "verbatim": []
+    },
+    {
+      "id": "sec-webmaster-faq",
+      "name": "SEC: Webmaster Frequently Asked Questions",
+      "url": "https://www.sec.gov/about/webmaster-frequently-asked-questions",
+      "read_on": "2026-10-08",
+      "says": "Scripted access is allowed at up to 10 requests a second with a declared user agent; filings are often on sec.gov 1 to 3 minutes after the EDGAR timestamp, which the SEC does not guarantee or predict.",
+      "verbatim": []
+    },
+    {
+      "id": "sec-13f-data-sets",
+      "name": "SEC: Form 13F Data Sets",
+      "url": "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+      "read_on": "2026-10-09",
+      "says": "ZIP files of the data extracted from the XML part of Form 13F submissions, July 2013 to August 2026, presented without change from the as-filed submissions in a flattened format; updated quarterly (since March 2024 run after the end of February, May, August and November for the prior three months), with documents filed after 5:30 p.m. Eastern on a quarter's last business day going into the next posting; 69.66 to 96.05 MB each for the files from 2024 to 2026; the table definitions are in a separate PDF, which was not read; the SEC cannot guarantee accuracy. Page reviewed 2026-08-31.",
+      "verbatim": []
+    },
+    {
+      "id": "sec-insider-data-sets",
+      "name": "SEC: Insider Transactions Data Sets",
+      "url": "https://www.sec.gov/data-research/sec-markets-data/insider-transactions-data-sets",
+      "read_on": "2026-10-09",
+      "says": "ZIP files of the data extracted from the XML fillable portion of Forms 3, 4 and 5, January 2006 to September 2026, presented without change from the as-filed submissions in a flattened format; updated quarterly, with documents filed after 5:30 p.m. Eastern on a quarter's last business day going into the next posting; 7.59 to 13.23 MB each for the files from 2024 to 2026; the table definitions are in a separate PDF, which was not read; the SEC cannot guarantee accuracy. Page reviewed 2026-09-30.",
+      "verbatim": []
+    },
+    {
+      "id": "finra-short-interest",
+      "name": "FINRA: About Equity Short Interest",
+      "url": "https://www.finra.org/finra-data/browse-catalog/equity-short-interest",
+      "read_on": "2026-10-09",
+      "says": "Member firms report short positions twice a month under Rule 4560; the data are provided for publication on the 7th business day after the reporting settlement date; the interactive grid and the Equity API hold five rolling years and historical files can be downloaded; when a correction is made, a Revision Flag appears next to the revised item.",
+      "verbatim": [
+        "Only the most recent data is made available."
+      ]
+    },
+    {
+      "id": "cboe-vix-history",
+      "name": "Cboe: VIX historical data",
+      "url": "https://www.cboe.com/tradable-products/vix/vix-historical-data",
+      "read_on": "2026-10-09",
+      "says": "The page links daily closing values of the VIX Index from 1990 to the present (updated daily) and lists seven other volatility indices; it points to DataShop for custom VIX options and futures data on demand (not reviewed); the data are compiled for visitors' convenience and furnished without responsibility for accuracy.",
+      "verbatim": []
+    },
+    {
+      "id": "project-alpaca-access-notes",
+      "name": "Project: Alpaca access notes",
+      "url": "docs/ALPACA-ACCESS.md",
+      "read_on": "2026-10-09",
+      "says": "As the project recorded it from Alpaca's market-data FAQ: extended-hours trade conditions do not update the daily open, high, low and close, but can update the daily volume; core-session volume was left unverified (also in `reports/alpaca-intake-validation.json`).",
+      "verbatim": []
+    },
+    {
+      "id": "m1-provider-rights-review",
+      "name": "Project: Alpaca provider-rights review",
+      "url": "reports/m1-alpaca-provider-rights-review-2026-09-23.json",
+      "read_on": "2026-10-09",
+      "says": "The review found the project's practice of committing only derived values, never raw OHLCV, consistent with the terms it read; it named as the open question what happens when derived labels accumulate across many events and securities over time, and asked that it be revisited at scale. It is not legal advice.",
+      "verbatim": []
+    }
+  ],
+  "flags_for_the_owner": [
+    {
+      "id": "A",
+      "title": "Decision 6's exception is met for some fields",
+      "text": "Decision 6 says to declare float, short interest, institutional ownership, options and premarket volume out of reach unless a point-in-time source is found. Found: premarket volume, in Alpaca's minute bars (a provider the project has already reviewed); and institutional ownership, with insider ownership, which the master prompt also lists, as public as-filed SEC bulk files whose rows still have to be mapped to the 23 issuers (not started). Not found: float (only proxies) and options history. Short interest has a published schedule, but FINRA flags corrections and keeps only the most recent data, FINRA has not been reviewed, and decision 6 says no new provider is chosen. Nothing was changed: Phase 0 would have to say which of these it pre-registers, and each new source needs its own go-ahead and, outside the SEC and Alpaca, a terms review."
+    },
+    {
+      "id": "B",
+      "title": "The daily bar's volume is all-hours volume",
+      "text": "Any volume feature built from a daily bar includes pre-market and after-hours trading, and a day's volume is complete only after 20:00 ET. For a release after the close, the same day's daily volume contains trading after the release; the protocol would need a rule (for example, use the previous completed day, or build the same-day figure from minute bars up to the cutoff) and must name which volume it means."
+    },
+    {
+      "id": "C",
+      "title": "Three issuers need an explicit lookback rule",
+      "text": "KLC (19 sessions before the first reaction session) and SLSN (none) cannot supply a 252-session lookback. TECX reaches 276 sessions only through Alpaca's default symbol mapping, which adds 181 sessions from before 2024-06-21: the SEC submissions cached for Milestone 2 give its former names as AvroBio, Inc. and AVROBIO, Inc. until 2024-06-18, and Alpaca lists a name change and a reverse split for it, so those sessions are under an earlier name and symbol and the raw prices across them may not be comparable (no price was kept to check). Without the mapping TECX has 95 sessions before the first reaction session. Phase 0 would need to say whether such features abstain, use shorter windows or skip the mapped history."
+    },
+    {
+      "id": "D",
+      "title": "Shares outstanding are missing for three issuers and, for KLC, before 2024-11-21",
+      "text": "HURN, JBSS and OKTA have no usable entity-wide shares-outstanding fact in the SEC API: OKTA's request returned 404 and JBSS's last fact was filed in 2012, probably because they report shares by class (not checked); HURN's entry is empty and I did not find out why. KLC's first fact was filed on 2024-11-21, after the first event day, 2024-11-04. Market capitalization for these would need another route or must abstain."
+    },
+    {
+      "id": "E",
+      "title": "The daily prices are regular-session prices",
+      "text": "This agrees with how the labels were built (daily open, high, low and close) and with what `docs/ALPACA-ACCESS.md` recorded from Alpaca's aggregation table (extended-hours trade conditions do not update the daily open, high, low and close, but can update the daily volume); the sample now measures it, on 23 sessions of six symbols. It also answers, for that sample, the question behind the Milestone 1 blocker `REGULAR_SESSION_VOLUME_UNVERIFIED`: the daily volume is not core-session volume; it includes extended-hours trading. The accepted scope of Milestone 1 names price-based labels, and the accepted Milestone 1 and 2 records were not touched; whether to annotate the blocker in them is the owner's call."
+    },
+    {
+      "id": "F",
+      "title": "The provider-rights-at-scale question gets bigger, not smaller",
+      "text": "Premarket volume and the other intraday fields would need minute bars around every event, and the forward extension adds events: both enlarge what is pulled from the provider and what is derived from it, which is the growth that the project's provider-rights review (`reports/m1-alpaca-provider-rights-review-2026-09-23.json`) asks to have revisited at scale. The proposal already puts the aggregate-at-scale question to the owner before 1b or 1c; these findings do not answer it."
+    }
+  ],
+  "decisions": {
+    "changed": [],
+    "touched": [
+      "decision 6 (flag A)",
+      "decision 2 (flag F: the provider-rights-at-scale question is put to the owner before 1b or 1c)"
+    ],
+    "rule": "reports/m5-scope-confirmation-2026-10-08.json: a confirmed default is never changed by the assistant alone"
+  },
+  "limits": [
+    "Two runs of one probe, 8 hours 46 minutes apart; the daily-bar results repeated exactly, which says nothing about whether the provider ever revises past bars or how its history may change later (a vintage question that was not tested).",
+    "The minute sample is six symbols on four ordinary 2025 Wednesdays (23 sessions after the guard skipped one), none within five calendar days of a candidate event date and none an early close. A field can be classified only on a session where its candidates differ, so the high and low rest on 9 and 6 sessions.",
+    "The booleans compare the daily bar with minute bars of the same provider and feed; they do not show that either equals an exchange's official price.",
+    "The SEC check used entity-wide facts only, kept no value, and cannot say whether the facts are right; the SEC does not guarantee its API's timing.",
+    "The SEC check ran as same-origin fetches from a data.sec.gov tab of the built-in browser (data.sec.gov supports no cross-origin scripting), so it sent the browser's own user agent, not a declared one as the SEC's guidance asks; it made 46 requests for the result kept and about 110 in all, at about 3 a second against the SEC's stated maximum of 10.",
+    "The documentation pages were read on 2026-10-08 and 2026-10-09 and can change; three sentences (two from Alpaca, one from FINRA) are quoted verbatim and the rest is paraphrased, and a test can compare the quotations with this record but not with the live pages. The PDFs with the SEC data sets' table definitions were not read.",
+    "No data was fetched from FINRA or Cboe (only their documentation pages were read), nothing was bought, and the dataset is unchanged.",
+    "The count of drug-related issuers uses SIC codes read on 2026-09-26 (`config/sector-map.json`), which are coarse and not point-in-time.",
+    "VIXY, VXX, IWM, RSP and the other fund symbols are taken in their usual sense; the probe checked only that they have daily bars."
+  ],
+  "not_done": [
+    "no event, label, feature, price or volume was added to the dataset",
+    "no later phase was started (1b, 0, 1c, 2, 3, 4)",
+    "no data was fetched from FINRA or Cboe and nothing was bought",
+    "no block-5 outcome was read",
+    "the provider-rights-at-scale question was not answered",
+    "none of the six decisions was changed"
+  ]
+}
