@@ -1,4 +1,4 @@
-"""The Milestone 5 Phase 1b SEC cohort freeze workflow must never be able to re-freeze or overwrite the frozen pool, must read no price, and must run only on its own two files.
+"""The Milestone 5 Phase 1b SEC cohort freeze workflow (kept as the record of an attempt the SEC refused, and as a guarded tool) must never be able to re-freeze or overwrite the frozen pool, must read no price, and must run only when dispatched by hand.
 
 The standard library has no YAML parser, so the checks read the workflow text: which events trigger it, and the order and content of its steps. Each check is itself run against deliberately broken copies of the
 workflow, and the guard's shell behaviour is run against throwaway git repositories (only where bash and git are on the PATH and the platform is not Windows; CI covers it, and NRE_SHELL_TESTS=1 forces it
@@ -15,8 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 WORKFLOW = ".github/workflows/m5-phase1b-sec-cohort-freeze.yml"
 TEXT = (ROOT / WORKFLOW).read_text(encoding="utf-8")
-PUSH_PATHS = [".github/workflows/m5-phase1b-sec-cohort-freeze.yml", "config/m5-phase1b-cohort-spec.json"]
-FROZEN = ("config/m5-phase1b-frozen-issuer-cohort.json", "config/m5-phase1b-frozen-candidate-ledger.json", "reports/m5-phase1b-sec-cohort-freeze.json", "archive/m5-phase1b-sec-freeze")
+FROZEN =("config/m5-phase1b-frozen-issuer-cohort.json", "config/m5-phase1b-frozen-candidate-ledger.json", "reports/m5-phase1b-sec-cohort-freeze.json", "archive/m5-phase1b-sec-freeze")
 WRITES = ("cp ", "mkdir -p archive", "git add", "git commit", "git push")
 HAZARDS = ("urllib", "freeze-targeted-cohort", "unittest") + WRITES  # network acquisition, and anything that changes the repository
 
@@ -63,11 +62,6 @@ def events(text):
     return found
 
 
-def push_paths(text):
-    match = re.search(r"(?m)^  push:\s*\n    paths:\s*\n((?:      - '[^']+'\s*\n)+)", text)
-    return re.findall(r"'([^']+)'", match.group(1)) if match else None
-
-
 def steps(text):
     """The job's steps, in order, each with its name (or `uses`) and its text."""
     body = text.partition("\n    steps:\n")[2]
@@ -108,10 +102,8 @@ def covered(destination):
 def problems(text):
     found = []
     triggers = events(text)
-    if sorted(triggers or []) != ["push", "workflow_dispatch"]:
-        found.append("it can be triggered by %s, not only by a push of its own files or by hand" % (triggers,))
-    if push_paths(text) != PUSH_PATHS:
-        found.append("it runs on pushes touching %s, not only its own two files" % (push_paths(text),))
+    if triggers != ["workflow_dispatch"]:
+        found.append("it can be triggered by %s, not only by hand" % (triggers,))
     parts = steps(text)
     guards = [i for i, part in enumerate(parts) if is_guard(part["text"])]
     if not guards:
@@ -167,8 +159,7 @@ def replace_last(text, old, new):
 
 MUTATIONS = {
     "a schedule trigger is added": lambda t: t.replace("  workflow_dispatch:\n", "  workflow_dispatch:\n  schedule:\n    - cron: '0 0 * * *'\n", 1),
-    "the push trigger is dropped": lambda t: t.replace("  push:\n    paths:\n      - '.github/workflows/m5-phase1b-sec-cohort-freeze.yml'\n      - 'config/m5-phase1b-cohort-spec.json'\n", "", 1),
-    "the push paths are widened": lambda t: t.replace("      - 'config/m5-phase1b-cohort-spec.json'\n", "      - 'config/m5-phase1b-cohort-spec.json'\n      - 'nre/cli.py'\n", 1),
+    "a push trigger is added": lambda t: t.replace("on:\n  workflow_dispatch:\n", "on:\n  push:\n    paths:\n      - 'config/m5-phase1b-cohort-spec.json'\n  workflow_dispatch:\n", 1),
     "the early guard is removed": lambda t: t.replace(GUARD_STEP, "", 1),
     "a frozen file is left out of the early guard": lambda t: t.replace(" archive/m5-phase1b-sec-freeze; do", "; do", 1),
     "a frozen file is left out of the publish guard": lambda t: replace_last(t, " archive/m5-phase1b-sec-freeze; do", "; do"),
@@ -190,11 +181,13 @@ class WorkflowTextTests(unittest.TestCase):
     def test_the_workflow_has_no_way_to_overwrite_the_frozen_pool(self):
         self.assertEqual(problems(TEXT), [])
 
-    def test_it_runs_only_on_a_push_of_its_own_two_files_or_by_hand(self):
-        self.assertEqual(sorted(events(TEXT)), ["push", "workflow_dispatch"])
-        self.assertEqual(push_paths(TEXT), PUSH_PATHS)
-        for path in PUSH_PATHS:
-            self.assertTrue((ROOT / path).is_file(), path)
+    def test_it_runs_only_when_dispatched_by_hand_and_says_why(self):
+        self.assertEqual(events(TEXT), ["workflow_dispatch"])
+        self.assertIsNone(re.search(r"(?m)^  (push|schedule|pull_request)\s*:", TEXT))
+        for phrase in ("was meant to be frozen here, once", "run 37902514638", "refused by the SEC (HTTP 403, an undeclared automated", "reports/m5-phase1b-sec-cohort-freeze-result-2026-10-09.json",
+                       "the guard stops any further run before it touches SEC or the repository", "the push trigger is gone so that a push cannot start a run that would stop there"):
+            self.assertIn(phrase, " ".join(TEXT.replace("#", " ").split()))
+        self.assertTrue((ROOT / "reports" / "m5-phase1b-sec-cohort-freeze-result-2026-10-09.json").is_file())
 
     def test_the_first_guard_follows_checkout_and_precedes_all_acquisition_and_publishing(self):
         parts = steps(TEXT)
@@ -235,7 +228,6 @@ class WorkflowTextTests(unittest.TestCase):
     def test_the_unguarded_workflow_is_flagged(self):
         found = problems(UNGUARDED)
         self.assertTrue(any("triggered by" in line for line in found), found)
-        self.assertTrue(any("not only its own two files" in line for line in found), found)
         self.assertTrue(any("no step checks" in line for line in found), found)
 
     def test_every_deliberate_breakage_is_flagged(self):
@@ -248,8 +240,7 @@ class WorkflowTextTests(unittest.TestCase):
     def test_the_checks_read_what_they_claim_to(self):
         self.assertEqual(events("name: x\non: push\n"), ["push"])
         self.assertEqual(events("name: x\non:\n  push:\n    paths:\n      - 'a'\n  workflow_dispatch:\n\npermissions:\n  contents: write\n"), ["push", "workflow_dispatch"])
-        self.assertEqual(push_paths("on:\n  push:\n    paths:\n      - 'a'\n      - 'b'\n  workflow_dispatch:\n"), ["a", "b"])
-        self.assertIsNone(push_paths("on:\n  workflow_dispatch:\n"))
+        self.assertEqual(events("name: x\n# a comment about on: push\non:\n  workflow_dispatch:\n\npermissions:\n  contents: write\n"), ["workflow_dispatch"])
         self.assertEqual([part["name"] for part in steps(TEXT)][0], "actions/checkout@v4")
         self.assertIn("git ls-tree", GUARD_CODE)
         self.assertTrue(GUARD_CODE.startswith("set -euo pipefail\n"))

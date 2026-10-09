@@ -105,8 +105,8 @@ class PlanDocumentTests(unittest.TestCase):
         cls.proposal = flat(PROPOSAL.read_text(encoding="utf-8"))
 
     def test_it_says_nothing_has_run_and_what_it_does_not_do(self):
-        for phrase in ("fixed on 2026-10-09 before any run", "As of this writing nothing has been run for it, nothing is pushed, no event is enumerated, and no price or label has been read",
-                       "It runs and fetches nothing, pushes nothing, enumerates no event, reads no price or label, and attests no event.",
+        for phrase in ("fixed on 2026-10-09 before any run, and updated the same day after S1", "S1 is done: the candidate pool is frozen (section 4). No price or label has been read and nothing later than S1 has started.",
+                       "It runs and fetches nothing itself and pushes nothing. The work it describes enumerates candidates by filing metadata only, reads no price or label, and attests no event.",
                        "It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c."):
             self.assertIn(phrase, self.flat)
         self.assertEqual(re.findall(r"^## (.+)$", self.text, re.M), ["1. What Phase 1b is", "2. What the owner decided", "3. The rules, fixed before the first run", "4. The stages", "5. What is built first", "6. What this plan does not do"])
@@ -140,7 +140,13 @@ class PlanDocumentTests(unittest.TestCase):
         self.assertIn("(128 events over 512 days, 190 days since the last reaction session) about 48 events would have occurred since", self.proposal)
         batches = lambda pattern: len(list((ROOT / "reports").glob(pattern)))                    # noqa: E731
         self.assertEqual((batches("m2-step2-batch*-signoff-2026-09-29.json"), batches("m2-step3-batch*-signoff-2026-10-02.json")), (4, 6))
-        self.assertIn("Step 2 took four batches and step 3 six; about 48 events is about five.", flat_text)
+        self.assertIn("Step 2 took four batches and step 3 six; about 48 events is about five. The frozen pool has 47 candidates, none of which is an event until it has been reviewed.", flat_text)
+        frozen = load(ROOT / "config" / "m5-phase1b-frozen-candidate-ledger.json")["candidates"]
+        per_issuer = {}
+        for candidate in frozen:
+            per_issuer[candidate["ticker"]] = per_issuer.get(candidate["ticker"], 0) + 1
+        self.assertEqual((len(frozen), sorted(n for n in per_issuer.values()).count(2), per_issuer["REKR"], sum(1 for c in frozen if c["form"] == "8-K/A")), (47, 22, 3, 1))
+        self.assertIn("The freeze found 47 candidates: 22 issuers have two, REKR has three, and one candidate is an 8-K/A.", flat_text)
         protocol = self.protocol
         self.assertIn("Every Item 2.02 8-K or 8-K/A filed from %s to %s" % (protocol["event_window_start"], protocol["event_window_end"]), flat_text)
         self.assertIn("It ends on %s, the last release date whose 20-session label window is complete as of the latest session when the window was fixed (2026-10-08)" % protocol["event_window_end"], flat_text)
@@ -181,8 +187,13 @@ class PlanDocumentTests(unittest.TestCase):
         rows = re.findall(r"(?m)^\| (S\d) \|", self.text)
         self.assertEqual(rows, ["S%d" % n for n in range(1, 8)])
         for path in ("config/m5-phase1b-protocol.json", "config/m5-phase1b-cohort-spec.json", ".github/workflows/m5-phase1b-sec-cohort-freeze.yml", "tests/test_m5_phase1b_freeze.py",
-                     "tests/test_m5_phase1b_freeze_workflow.py"):
+                     "tests/test_m5_phase1b_freeze_workflow.py", "config/m5-phase1b-frozen-issuer-cohort.json", "config/m5-phase1b-frozen-candidate-ledger.json", "reports/m5-phase1b-sec-cohort-freeze.json",
+                     "reports/m5-phase1b-sec-cohort-freeze-result-2026-10-09.json"):
             self.assertTrue((ROOT / path).is_file(), path)
+        self.assertIn("the SEC refused its run, so it is now dispatch-only and kept as the record", self.flat)
+        self.assertIn("which stops whenever any frozen file exists on main;", self.flat)
+        self.assertIn("Done on 2026-10-09 through the built-in browser, because the SEC refused the one-time workflow", self.flat)
+        self.assertIn('| the owner\'s permission to download (given), then "push" |', self.flat)
         self.assertIn("`window_relation_to_milestone_1`", self.text)
         self.assertIn("window_relation_to_milestone_1", (ROOT / "nre" / "depth_cohort.py").read_text(encoding="utf-8"))
         self.assertIn("which lets a window start after Milestone 1's instead of ending before it, and changes nothing for the earlier steps", self.flat)

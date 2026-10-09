@@ -1,8 +1,8 @@
 # Milestone 5 — Phase 1b: the forward extension (plan)
 
-**Status: the plan and the rules of Phase 1b, fixed on 2026-10-09 before any run. The owner authorized the phase ("authorize phase 1b") and answered two questions (`reports/m5-phase1b-authorization-2026-10-09.json`). As of this
-writing nothing has been run for it, nothing is pushed, no event is enumerated, and no price or label has been read. The rules are in `config/m5-phase1b-protocol.json` and `config/m5-phase1b-cohort-spec.json`, which this
-plan explains.**
+**Status: the plan and the rules of Phase 1b, fixed on 2026-10-09 before any run, and updated the same day after S1. The owner authorized the phase ("authorize phase 1b") and answered two questions
+(`reports/m5-phase1b-authorization-2026-10-09.json`). S1 is done: the candidate pool is frozen (section 4). No price or label has been read and nothing later than S1 has started. The rules are in
+`config/m5-phase1b-protocol.json` and `config/m5-phase1b-cohort-spec.json`, which this plan explains.**
 
 ## 1. What Phase 1b is
 
@@ -22,7 +22,7 @@ will count them.
 ## 3. The rules, fixed before the first run
 
 **The pool.** The same 23 issuers as Milestone 1 and steps 2 and 3, and no others. Every Item 2.02 8-K or 8-K/A filed from 2026-04-01 to 2026-09-10, found in the SEC's submissions by filing metadata alone. Every exclusion is
-recorded. No price, return or label is read before the freeze.
+recorded. No price, return or label is read before the freeze. The freeze found 47 candidates: 22 issuers have two, REKR has three, and one candidate is an 8-K/A.
 
 **The window.** It starts the day after Milestone 1's event window ended (2026-03-31). It ends on 2026-09-10, the last release date whose 20-session label window is complete as of the latest session when the window was fixed
 (2026-10-08), even for an after-hours release; one date later it would not be. The rule uses the calendar, not a price. Releases after 2026-09-10 are not part of this step. No candidate of the 23 issuers in Milestone 1's frozen
@@ -45,7 +45,7 @@ adds about 48 events whose values stay sealed until Phase 4, so what is exposed 
 
 | Stage | What happens | Needs from the owner |
 | --- | --- | --- |
-| S1 | Freeze the candidate pool: a one-time workflow fetches the SEC submissions of the 23 issuers, freezes the Item 2.02 filings in the window with hashes and commits the raw SEC bytes with them | "push" |
+| S1 | Freeze the candidate pool: the SEC filing lists of the 23 issuers, the Item 2.02 filings in the window frozen with hashes, and the SEC data committed with them. Done on 2026-10-09 through the built-in browser, because the SEC refused the one-time workflow (`reports/m5-phase1b-sec-cohort-freeze-result-2026-10-09.json`) | the owner's permission to download (given), then "push" |
 | S2 | Eligibility review and same-day-competing-catalyst sweep of the frozen candidates | nothing, unless an exclusion needs a decision |
 | S3 | The sealed mode of the event acquisition: a whitelist report, its workflow, and offline tests that inject distinctive prices and prove none reaches a log, an annotation or a report | "push" |
 | S4 | Event specs in batches of about ten (wire timestamps, identity, cutoffs), validated offline | "push" for each batch |
@@ -53,13 +53,16 @@ adds about 48 events whose values stay sealed until Phase 4, so what is exposed 
 | S6 | A sealed attested run for each batch, and each event's commitment pinned | "push" |
 | S7 | A sealed audit of the whole extension and a registry of its events and commitments | the owner's declaration that the extension is complete |
 
-Step 2 took four batches and step 3 six; about 48 events is about five.
+Step 2 took four batches and step 3 six; about 48 events is about five. The frozen pool has 47 candidates, none of which is an event until it has been reviewed.
 
 ## 5. What is built first
 
 S1: the protocol and the cohort spec above, an additive option in the freeze validation (`window_relation_to_milestone_1`, which lets a window start after Milestone 1's instead of ending before it, and changes nothing for the
-earlier steps), the one-time freeze workflow (`.github/workflows/m5-phase1b-sec-cohort-freeze.yml`, which stops whenever any frozen file exists on main) and their tests. S3 follows, before the first batch's dry run.
+earlier steps), the one-time freeze workflow (`.github/workflows/m5-phase1b-sec-cohort-freeze.yml`, which stops whenever any frozen file exists on main; the SEC refused its run, so it is now dispatch-only and kept as the record) and their
+tests. The freeze itself was then run, as step 3's was, on SEC data fetched through the built-in browser: what was fetched, what was kept and what was checked are in the result record named in section 4. S2 and S3 follow, S3
+before the first batch's dry run.
 
 ## 6. What this plan does not do
 
-It runs and fetches nothing, pushes nothing, enumerates no event, reads no price or label, and attests no event. It does not start Phase 0, 1c, 2, 3 or 4, and it does not answer the provider-rights question for Phase 1c.
+It runs and fetches nothing itself and pushes nothing. The work it describes enumerates candidates by filing metadata only, reads no price or label, and attests no event. It does not start Phase 0, 1c, 2, 3 or 4, and it does
+not answer the provider-rights question for Phase 1c.

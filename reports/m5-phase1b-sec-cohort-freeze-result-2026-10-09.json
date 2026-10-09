@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_sec_cohort_freeze_result",
+  "recorded_on": "2026-10-09",
+  "purpose": "Real result of freezing the Milestone 5 Phase 1b candidate pool (the same 23 Milestone 1 issuers, Item 2.02 8-Ks filed 2026-04-01 to 2026-09-10) under config/m5-phase1b-protocol.json and config/m5-phase1b-cohort-spec.json, after the SEC refused the one-time CI workflow. It enumerates filings by their metadata only; no price, return or label was read.",
+  "state": "FROZEN_CANDIDATE_MEMBERSHIP",
+  "transport": "built_in_browser_8k_subset",
+  "commit_of_the_rules": "41bb2da",
+  "owner_permission": {
+    "assistant_request": {
+      "at": "2026-10-09T08:18:55.808Z",
+      "source": "session transcript, line 38042",
+      "text": "`41bb2da` is pushed and the main CI run is green, but the SEC freeze failed and nothing was written. I need your permission before I download the SEC files by another route.\n\n- **CI:** [NRE Milestone 1 #242](https://github.com/Fahad9101/NRE/actions/runs/37902514658) passed in both jobs (Python 3.12 and 3.13).\n- **Freeze:** [the freeze run](https://github.com/Fahad9101/NRE/actions/runs/37902514638) failed in under a second at its SEC-fetch step. Every later step was skipped, so no frozen file exists on main and the window end is still open.\n- **Cause:** the SEC refuses automated clients that its front end doesn't recognize as declared (\"Your Request Originates from an Undeclared Automated Tool\", HTTP 403). It does this to GitHub's runner and to this machine alike.\n- **My earlier mistake:** I told you step 3 eventually got through on GitHub. It didn't. All 6 of its attempts were refused, and you chose the built-in browser route, so the freeze was run locally on the browser-fetched data. Retrying won't help.\n\n**What I did next, and where I stopped.** I fetched all 23 SEC filing lists in the browser; all came back fine. I kept only each issuer's 8-K rows filed since 2026-03-01 and saved them under my scratch folder, outside the repo. My command to check that copy was blocked by the system's safety check. I did not retry or work around it. I suspect it is the rule that downloads need your explicit permission, or how I handle downloaded data.\n\n**Permission request**\n- **Files:** `data.sec.gov/submissions/CIK##########.json` for the 23 issuers, public SEC filing lists.\n- **Size:** 20 to 163 KB each, about 3.0 MB in all, held in browser memory only.\n- **Kept on disk:** about 34 KB of 8-K rows plus each file's SHA-256, archived in the repo exactly as step 3 did.\n- **Rest of the plan:** I would verify the copies in their own empty folder with isolated Python, then run the same freeze code on them.\n\n**Alternative.** Declare a contact email in the User-Agent via a GitHub secret. It is uncertain to work, uses your personal email, and it needs you to add the secret on GitHub. I don't recommend it.\n\n**Remaining**\n- **You:** answer the permission question. If you say no, I'll delete the saved copies.\n- **Me:** after a yes, verify the copies and run the freeze. I'll disable the push trigger on the CI workflow in the same commit so it can't fire again. Then I ask for \"push\", and move on to the eligibility review and the sealed event-acquisition code.\n\n**Recommended next step:** say yes to the browser download."
+    },
+    "owner_answer": {
+      "text": "yes, use the browser route",
+      "at": "2026-10-09T08:45:35.879Z",
+      "source": "the project owner's chat message, quoted from the session transcript (C--Users-FhD-Biotech-swing-filter-engine/3ed5f870-4f0e-46ed-a247-a11d81b82da0.jsonl, line 38046, timestamps UTC), not from a summary"
+    },
+    "read_as": "Permission to download the 23 public SEC filing lists named in the request (data.sec.gov/submissions/CIK##########.json) through the built-in browser, keep their 8-K rows filed since 2026-03-01 on disk, and archive them in the repository, as in Milestone 2 step 3. It carries no push and no other download."
+  },
+  "ci_attempt": {
+    "workflow": "NRE M5 Phase 1b SEC Cohort Freeze",
+    "run_id": 37902514638,
+    "job_id": 113728118678,
+    "commit": "41bb2daf129742cfe61a5d5137b4553cff5c7e0b",
+    "attempt": 1,
+    "conclusion": "failure",
+    "failed_step": "Freeze deterministic targeted candidate membership (step 6), which started and completed within the same second (2026-10-09T08:05:17Z)",
+    "steps_after_it": "Verify freeze result, Publish frozen metadata and the artifact upload were skipped, so nothing was written and no frozen file existed on main",
+    "log": "not read: the job log needs a signed-in GitHub session and the built-in browser is signed out of GitHub",
+    "why_the_sec_is_the_cause": [
+      "The step failed in under a second, before any issuer could have been processed.",
+      "The same request (https://data.sec.gov/submissions/CIK0000016058.json with the declared User-Agent 'NRE research contact https://github.com/Fahad9101/NRE') from this machine's Python client returned HTTP 403 with the page titled 'Your Request Originates from an Undeclared Automated Tool'.",
+      "Milestone 2 step 3's freeze was refused the same way on 6 of 6 GitHub Actions attempts (reports/m2-step3-sec-cohort-freeze-blocked-2026-09-30.json) and was produced through the built-in browser."
+    ]
+  },
+  "how_this_differs_from_the_plan": "The plan (docs/M5-PHASE1B-FORWARD-EXTENSION-PLAN.md, S1) had the one-time workflow fetch the SEC data and commit it. The assistant believed Milestone 2 step 3's freeze had eventually come through GitHub Actions; it had not. The freeze was therefore produced as step 3's was: the same public endpoint fetched through the built-in browser, then nre.depth_cohort.freeze_targeted_candidates run on this machine with a client that serves those verified bytes instead of making requests. The discovery, screening, dedup and validation logic is the code every earlier freeze used. The workflow's push trigger is removed in the same commit as the frozen files (it stays as a guarded, dispatch-only record), so a push cannot start a run that would stop at its guard.",
+  "real_data_integrity": {
+    "fetch": "Each issuer's submissions.json was fetched with fetch() from a data.sec.gov tab of the built-in browser (HTTP 200 for all 23), and the SHA-256 and size of the complete response were computed in the page.",
+    "stability": "All 23 were fetched twice (2026-10-09T08:11:38Z to 08:11:51Z, then 08:12:26Z to 08:12:35Z) with byte-identical SHA-256 hashes both times.",
+    "subset": "In the page, each response was reduced to its 8-K and 8-K/A rows filed on or after 2026-03-01 (every column of filings.recent kept, filings.files kept) and re-serialized; those subsets are 976 to 1,874 bytes. The ledger's discovery_submission_sha256 values describe these subsets, labelled browser_fetched_8k_filtered_subset, never a hash of SEC's complete response, whose own hash and size are in each archived metadata file (real_source_full_sha256, real_source_full_size).",
+    "transfer": "The subsets were moved to this machine as gzip+base64 text, which the assistant copied by hand. The copy was checked against a digest the page computed over its own copy (23 lines, 21,660 characters, c64357e9dbce19b882684a3cc40c7a51f6b04f02c695bd9576a390207ac3edc7) and each decoded payload against the SHA-256 and size the page computed. The first copy failed that check on 4 of the 23 lines (copying errors by the assistant); those lines were copied again from the page until all 23 matched. The freeze ran only after every check passed.",
+    "recency": "The responses the freeze used were retrieved between 2026-10-09T08:12:26Z and 08:12:35Z; the window's last filing date is 2026-09-10 and no issuer needed a continuation file (23 client calls)."
+  },
+  "computed_output": {
+    "processed_issuers": 23,
+    "candidate_count": 47,
+    "issuers_with_item_2_02_candidates": 23,
+    "membership_sha256": "94312b6624bac9e742d94970454d4f045df62b986a5d3a90ab153964dc331d04",
+    "frozen_at": "2026-10-09T08:49:17.983908Z",
+    "filing_date_range": [
+      "2026-04-22",
+      "2026-09-10"
+    ],
+    "protocol_window": [
+      "2026-04-01",
+      "2026-09-10"
+    ],
+    "forms": {
+      "8-K": 46,
+      "8-K/A": 1
+    },
+    "candidates_per_issuer": {
+      "CACI": 2,
+      "CXT": 2,
+      "VSAT": 2,
+      "PARR": 2,
+      "JBSS": 2,
+      "SLSN": 2,
+      "NBIX": 2,
+      "TTWO": 2,
+      "ACHV": 2,
+      "PDFS": 2,
+      "ASPN": 2,
+      "COLL": 2,
+      "HURN": 2,
+      "LNSR": 2,
+      "ASMB": 2,
+      "ALKT": 2,
+      "REAL": 2,
+      "OKTA": 2,
+      "TECX": 2,
+      "REKR": 3,
+      "LOVE": 2,
+      "PAYO": 2,
+      "KLC": 2
+    }
+  },
+  "files": {
+    "frozen": [
+      "config/m5-phase1b-frozen-issuer-cohort.json",
+      "config/m5-phase1b-frozen-candidate-ledger.json",
+      "reports/m5-phase1b-sec-cohort-freeze.json"
+    ],
+    "archive": "archive/m5-phase1b-sec-freeze/raw (23 payloads and 23 metadata files)"
+  },
+  "for_the_review_that_follows": [
+    "One candidate is an 8-K/A (ASMB, filed 2026-08-14): an amendment, to be reviewed as such.",
+    "REKR has three candidates; the middle one (2026-07-15) also carries Item 7.01, and Milestone 2 step 2 excluded a REKR preliminary-guidance pre-announcement of the same kind.",
+    "The last candidate in the window (LOVE, 2026-09-10) is on the window's last day."
+  ],
+  "what_this_is_not": [
+    "Not a review: same-day competing catalysts, first-public timing, historical identity, corporate actions and bell-ambiguous timing are all still to be reviewed (S2 to S5).",
+    "Not an event set: no event spec exists for Phase 1b, and the candidates are not yet events.",
+    "Not a claim that GitHub Actions can read data.sec.gov/submissions/: it cannot, today, with this project's User-Agent.",
+    "Not evidence of anything about prices or returns: none was read."
+  ]
+}

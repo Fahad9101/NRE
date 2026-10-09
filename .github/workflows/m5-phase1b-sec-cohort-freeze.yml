@@ -1,14 +1,11 @@
 name: NRE M5 Phase 1b SEC Cohort Freeze
 
-# The Milestone 5 Phase 1b candidate pool (the same 23 Milestone 1 issuers, Item 2.02 8-Ks filed 2026-04-01 to 2026-09-10, the forward extension whose labels stay sealed) is frozen once. It runs when this file
-# or config/m5-phase1b-cohort-spec.json is pushed, or when dispatched by hand, and it stops before touching SEC or the repository whenever any frozen file already exists on main, so no push or dispatch
-# can re-freeze or overwrite the frozen pool. It reads no price and no label: it only enumerates SEC filings. The raw SEC bytes it fetched are committed with the frozen files, so the audit's source-hash
-# gate has them from the start (Milestone 2 step 2's were archived only afterwards).
+# The Milestone 5 Phase 1b candidate pool (the same 23 Milestone 1 issuers, Item 2.02 8-Ks filed 2026-04-01 to 2026-09-10, the forward extension whose labels stay sealed) was meant to be frozen here, once. This file
+# is kept as the record of that attempt and as a guarded, dispatch-only tool. Its one run (run 37902514638, on a push of this file and the cohort spec) was refused by the SEC (HTTP 403, an undeclared automated
+# tool) and wrote nothing, so the pool was frozen through the built-in browser instead, as Milestone 2 step 3's was (reports/m5-phase1b-sec-cohort-freeze-result-2026-10-09.json). The frozen files now exist on
+# main, so the guard stops any further run before it touches SEC or the repository, and the push trigger is gone so that a push cannot start a run that would stop there. It reads no price and no label: it only
+# enumerates SEC filings.
 on:
-  push:
-    paths:
-      - '.github/workflows/m5-phase1b-sec-cohort-freeze.yml'
-      - 'config/m5-phase1b-cohort-spec.json'
   workflow_dispatch:
 
 permissions:
