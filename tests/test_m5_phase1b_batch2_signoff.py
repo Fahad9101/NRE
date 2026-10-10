@@ -178,17 +178,11 @@ class SignoffPacketTests(Base):
         self.assertEqual({k: len(v) for k, v in by_event.items()}, {"payo-m5b-2026-05-07": 0, "pdfs-m5b-2026-05-07": 1, "real-m5b-2026-05-07": 0, "tecx-m5b-2026-05-07": 0, "lnsr-m5b-2026-05-08": 1, "rekr-m5b-2026-05-11": 1, "achv-m5b-2026-05-12": 1,
                                                                   "slsn-m5b-2026-05-12": 0, "klc-m5b-2026-05-14": 1, "ttwo-m5b-2026-05-21": 0})
 
-    def test_the_spec_caveats_travel_into_the_packet_and_the_dry_run_facts_are_the_dry_run_records(self):
+    def test_the_packets_caveats_are_the_specs_and_the_dry_run_facts_are_the_dry_run_records(self):
         view = self.dry["sealed_view"]["events"]
         for entry in self.packet["events"]:
             with self.subTest(event=entry["event_id"]):
-                spec_caveats = [{"labels": ["all"], "note": c["note"]} for c in self.by_id[entry["event_id"]].get("caveats", []) if c["labels"] == ["all"]]
-                proposed_all = [c for c in (entry["proposed_label_caveats"] or []) if c["labels"] == ["all"]]
-                if entry["event_id"] == REKR:
-                    self.assertEqual(proposed_all[1:], [])                              # the one caveat on all labels is the new one, from the identity check
-                    self.assertEqual(spec_caveats, [])
-                else:
-                    self.assertEqual(proposed_all, spec_caveats)
+                self.assertEqual(self.by_id[entry["event_id"]].get("caveats", []), entry["proposed_label_caveats"] or [])         # the signoff carried the packet's caveats into each attested spec, in the packet's order
                 sealed = view[entry["event_id"]]
                 self.assertEqual(entry["corporate_actions"]["sealed_dry_run"], {"corporate_actions": sealed["corporate_actions"], "state": "QUARANTINED", "reasons": ["FIRST_PUBLIC_TIME_UNVERIFIED"]})
         rekr = next(e for e in self.packet["events"] if e["event_id"] == REKR)

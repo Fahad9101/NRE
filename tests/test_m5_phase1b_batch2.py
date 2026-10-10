@@ -1,7 +1,7 @@
-"""Milestone 5 Phase 1b batch 2 in the dry-run state: the owner's permission to read the ten releases' wire pages (reports/m5-phase1b-batch2-permission-2026-10-10.json) is quoted as given and the ten are recomputed from the S2 records; the ten events appended to
-config/m5-phase1b-events.json after batch 1's nine (sealed, no attestations) validate with the project's own spec validation and agree with the frozen ledger, the eligibility review, the Milestone 1 events, the calendar and the wire evidence in
-reports/m5-phase1b-batch2-sources-2026-10-10.json (each page's machine-readable time converts to the minute taken from it; EDGAR's acceptance time is recomputed from the archived SEC lists); their dry-run state is recoverable byte for byte; and a sealed run of them
-with injected prices quarantines every one for want of an attestation, maps every one once attested, and prints no price."""
+"""Milestone 5 Phase 1b batch 2: the owner's permission to read the ten releases' wire pages (reports/m5-phase1b-batch2-permission-2026-10-10.json) is quoted as given and the ten are recomputed from the S2 records; the ten events appended to
+config/m5-phase1b-events.json after batch 1's nine (sealed; attested on the owner's signoff, tests/test_m5_phase1b_batch2_attestations.py) validate with the project's own spec validation and agree with the frozen ledger, the eligibility review, the Milestone 1 events,
+the calendar and the wire evidence in reports/m5-phase1b-batch2-sources-2026-10-10.json (each page's machine-readable time converts to the minute taken from it; EDGAR's acceptance time is recomputed from the archived SEC lists); their dry-run state is recoverable byte for
+byte; and a sealed run of them with injected prices quarantines every one once the attestations are taken out, maps every one as shipped, and prints no price."""
 import hashlib
 import json
 import re
@@ -101,14 +101,14 @@ class EventsAndSourcesTests(unittest.TestCase):
             for i, accession in enumerate(recent["accessionNumber"]):
                 cls.accepted[accession] = datetime.fromisoformat(recent["acceptanceDateTime"][i].replace("Z", "+00:00")).astimezone(ZONE).strftime("%Y-%m-%d %H:%M")
 
-    def test_the_ten_events_follow_batch_1_sealed_and_unattested_and_the_whole_file_validates(self):
+    def test_the_ten_events_follow_batch_1_sealed_attested_and_not_pinned_yet_and_the_whole_file_validates(self):
         ea.validate_spec(self.spec, Calendar())
         self.assertEqual([e["event_id"] for e in self.events], BATCH_2_IDS)
         for event in self.events:
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
-                self.assertNotIn("attestations", event)                       # the owner attests a batch only after its dry run and signoff packet
-                self.assertNotIn("recorded_result", event)
+                self.assertIn("attestations", event)                          # the owner attested the batch after its dry run and signoff packet
+                self.assertNotIn("recorded_result", event)                    # a commitment is pinned only after the attested sealed run has printed it
                 self.assertEqual(event["event_id"], event["cluster_id"])
                 self.assertRegex(event["event_id"], r"^[a-z]+-m5b-2026-\d\d-\d\d$")
         self.assertEqual(len(self.all_events), 19)
@@ -181,10 +181,10 @@ class EventsAndSourcesTests(unittest.TestCase):
             by_wire.setdefault(row["wire"], []).append(row["ticker"])
         self.assertEqual(by_wire, {"PR Newswire": ["PAYO"], "GlobeNewswire": ["PDFS", "REAL", "TECX", "LNSR", "REKR", "ACHV", "SLSN"], "Business Wire": ["KLC", "TTWO"]})
 
-    def test_the_one_caveat_is_achvs_and_the_other_nine_carry_none(self):
-        caveated = {e["security"]["ticker"]: e["caveats"] for e in self.events if "caveats" in e}
-        self.assertEqual(list(caveated), ["ACHV"])
-        caveat = caveated["ACHV"]
+    def test_the_one_caveat_carried_at_the_dry_run_is_achvs_and_the_signoff_added_only_filings(self):
+        carried = {e["security"]["ticker"]: [c for c in e["caveats"] if not c["note"].startswith("8-K ")] for e in self.events if any(not c["note"].startswith("8-K ") for c in e.get("caveats", []))}
+        self.assertEqual(list(carried), ["ACHV"])                                      # every caveat the signoff added names an 8-K (REKR's Item 3.01 filing or an in-window filing)
+        caveat = carried["ACHV"]
         self.assertEqual([c["labels"] for c in caveat], [["all"]])
         self.assertIn("The results release itself also reports the close of a private placement of up to $354 million and leadership changes", caveat[0]["note"])
         self.assertIn("A separate GlobeNewswire release five minutes later (07:05 ET) announced three senior leadership appointments", caveat[0]["note"])
@@ -197,7 +197,7 @@ class EventsAndSourcesTests(unittest.TestCase):
         for event in events:
             event.pop("attestations", None)
             event.pop("recorded_result", None)
-            kept = [c for c in event.get("caveats", []) if c["labels"] == ["all"]]       # a signoff adds only the caveats that name labels
+            kept = [c for c in event.get("caveats", []) if not c["note"].startswith("8-K ")]       # the signoff added only caveats that name a filing (REKR's has labels "all", so the labels cannot tell them apart)
             if kept:
                 event["caveats"] = kept
             else:
@@ -244,15 +244,15 @@ class Response:
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """Batch 2's ten events through the sealed run with a fake provider holding distinctive prices and no corporate actions: unattested they quarantine, attested in memory they map, and no price reaches the output."""
+    """Batch 2's ten events through the sealed run with a fake provider holding distinctive prices and no corporate actions: with the attestations taken out they quarantine, as shipped they map, and no price reaches the output."""
 
     def run_sealed(self, attested):
         calendar = Calendar()
         spec = load(EVENTS)
         spec["events"] = spec["events"][9:]
         for event in spec["events"]:
-            if attested:
-                event["attestations"] = {name: {"reviewer": "test", "date": "2026-10-10", "record": "reports/m5-phase1b-batch2-permission-2026-10-10.json"} for name in sorted(ea.ATTESTATIONS)}
+            if not attested:
+                event.pop("attestations")
 
         class Opener:
             def open(self, req, timeout=None):
@@ -293,14 +293,14 @@ class SealedRunSimulationTests(unittest.TestCase):
             self.assertNotIn(fragment, everything)
         self.assertTrue(printed[1].startswith("::notice title=NRE sealed event acquisition::"))
 
-    def test_attested_in_memory_they_would_all_map_so_nothing_but_the_attestation_blocks_them(self):
+    def test_as_shipped_they_all_map_so_nothing_but_the_attestation_blocked_them(self):
         code, printed = self.run_sealed(attested=True)
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
         self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 10}))
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
+                self.assertEqual((view["state"], view["reasons"], view["labels_match_recorded"]), ("MAPPED", [], None))
                 self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
                 self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
 

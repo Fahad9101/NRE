@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch2_signoff",
+  "recorded_on": "2026-10-10",
+  "context": "Reply to the batch 2 signoff request built from reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json after the sealed dry run (reports/m5-phase1b-batch2-dry-run-2026-10-10.json): ten events quarantined as a dry run should, and two calls for the owner, REKR's Item 3.01 filing of 2026-05-01 (not opened) and ACHV's separate same-day release. The questions and the owner's answers are quoted from the session transcript, not from a summary.",
+  "asked": {
+    "at": "2026-10-10T11:53:13.211Z",
+    "source": "session transcript, line 43451 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-10T11:55:42.964Z",
+    "source": "session transcript, line 43452 (the tool result of the questions)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "REKR 05-11",
+      "question": "REKR 2026-05-11: its archived 8-K history has a filing with Item 3.01 (the item for a notice about a continued-listing rule or a transfer of listing), 0001437749-26-014478, filed 2026-05-01 20:30 ET, ten days before the release. I did not open it. How should REKR be handled?",
+      "options_offered": [
+        {
+          "label": "Attest with the caveat (Recommended)",
+          "description": "REKR is attested with the others, and a caveat on all labels names that filing (content not opened). The cover of REKR's own 8-K still lists the stock on the Nasdaq Stock Market at the release, and Alpaca lists no corporate action over the window. The policy treats an item like this as a caveat, not an exclusion."
+        },
+        {
+          "label": "Hold until the 8-K is read",
+          "description": "REKR is left out of this signoff and stays quarantined. I then ask your permission to read that one SEC filing (with its name, source and size) and bring back what it says."
+        },
+        {
+          "label": "Exclude it",
+          "description": "REKR 2026-05-11 is recorded as excluded and its event is removed from the events file."
+        }
+      ],
+      "owner_selected": "Attest with the caveat (Recommended)"
+    },
+    {
+      "header": "ACHV 05-12",
+      "question": "ACHV 2026-05-12: a separate release at 07:05 ET, five minutes after the results release, announced three senior leadership appointments (a Board member, a Senior Vice President of Commercial and a Vice President of Sales). On my reading of the policy's third condition it is not independently material. Keep ACHV with a caveat, or exclude it?",
+      "options_offered": [
+        {
+          "label": "Keep it, with the caveat (Recommended)",
+          "description": "ACHV is attested with the others, with the caveat on all labels already in its spec (the separate release, and the private placement and leadership changes inside the results release). The appointments follow the April CEO appointment and the financing; they are neither a divestiture, a clinical readout nor an unplanned departure."
+        },
+        {
+          "label": "Exclude it",
+          "description": "ACHV 2026-05-12 is recorded as excluded as a same-day competing catalyst (all three conditions hold) and its event is removed from the events file."
+        }
+      ],
+      "owner_selected": "Keep it, with the caveat (Recommended)"
+    },
+    {
+      "header": "Attest 10",
+      "question": "Attest first-public time, historical identity and corporate actions for the batch 2 events that your two answers leave in (up to ten: PAYO, PDFS, REAL, TECX, LNSR, REKR, ACHV, SLSN, KLC, TTWO), on the evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json?",
+      "options_offered": [
+        {
+          "label": "Yes, attest them (Recommended)",
+          "description": "I add the three attestations to each event left in, quoting your answer as the basis, and carry the packet's caveats into their specs: REKR's and ACHV's if they are kept, and the in-window 8-Ks listed for PDFS, LNSR, REKR, ACHV and KLC (not opened; caveats, not exclusions). You accept the residual gap that open-web research cannot close: an earlier public disclosure with no discoverable trace. The next push of the events file then runs the attested sealed run, which prints only the sealed view and the commitments."
+        },
+        {
+          "label": "Not yet",
+          "description": "Nothing is attested; every event stays quarantined. Name any events or concerns under Other."
+        }
+      ],
+      "owner_selected": "Yes, attest them (Recommended)"
+    }
+  ],
+  "scope": {
+    "attested": {
+      "events": [
+        "payo-m5b-2026-05-07",
+        "pdfs-m5b-2026-05-07",
+        "real-m5b-2026-05-07",
+        "tecx-m5b-2026-05-07",
+        "lnsr-m5b-2026-05-08",
+        "rekr-m5b-2026-05-11",
+        "achv-m5b-2026-05-12",
+        "slsn-m5b-2026-05-12",
+        "klc-m5b-2026-05-14",
+        "ttwo-m5b-2026-05-21"
+      ],
+      "attestations": [
+        "first_public_time",
+        "historical_identity",
+        "corporate_actions"
+      ],
+      "read_as": "The three attestations for all ten batch 2 events, on the evidence in the packet, accepting the residual gap that open-web research cannot close (an earlier public disclosure with no discoverable trace), and carrying the packet's proposed label caveats into each event's spec as caveats, not exclusions: REKR's Item 3.01 filing, ACHV's separate same-day release, and the in-window 8-Ks listed for PDFS, LNSR, REKR, ACHV and KLC, whose content was not opened."
+    },
+    "rekr": {
+      "event": "rekr-m5b-2026-05-11",
+      "decision": "attest with the caveat",
+      "read_as": "REKR is attested with the others and carries a caveat on all labels naming the 8-K 0001437749-26-014478 filed 2026-05-01 with Item 3.01 (content not opened); it is not held for the filing to be read and not excluded."
+    },
+    "achv": {
+      "event": "achv-m5b-2026-05-12",
+      "decision": "keep with the caveat",
+      "read_as": "ACHV is attested with the others and keeps the caveat on all labels already in its spec (the separate release five minutes after the results release; the private placement and leadership changes inside the results release); it is not excluded."
+    },
+    "additions_to_the_owners_words": "None: the attestations and caveats are exactly the packet's proposals."
+  },
+  "not_a_claim": [
+    "Not Phase 1b acceptance and not a claim about any event's outcome: no label, price or return has been computed or viewed.",
+    "Not a clearance of the in-window 8-Ks or of REKR's Item 3.01 filing, whose content was not opened: they travel with the labels as caveats.",
+    "Not a reading of the Item 3.01 filing: the owner chose to attest without it."
+  ]
+}

@@ -216,8 +216,8 @@ class SourcesRecordTests(unittest.TestCase):
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the nine attested events of batch 1 map, batch 2's ten (not attested yet) are quarantined, and no price reaches
-    the output; with the pins in, the injected prices cannot reproduce a recorded commitment, so each of batch 1's nine pinned events reports the mismatch and nothing else."""
+    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the nineteen attested events (batch 1's nine, batch 2's ten) map and no price reaches the output; with the pins in,
+    the injected prices cannot reproduce a recorded commitment, so each of batch 1's nine pinned events reports the mismatch and nothing else, while batch 2's ten, not pinned yet, map and report no match either way."""
 
     def run_sealed(self, pinned):
         calendar = Calendar()
@@ -273,24 +273,21 @@ class SealedRunSimulationTests(unittest.TestCase):
                     self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
                     self.assertNotEqual(view["labels_sha256"], recorded[event_id])
                 else:
-                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("QUARANTINED", None, False))
+                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("MAPPED", None, False))
         self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
         self.assertTrue(printed[1].startswith("::error title=NRE sealed event acquisition::"))
 
-    def test_the_attested_events_map_the_others_are_quarantined_and_nothing_is_pinned_or_leaked(self):
+    def test_the_attested_events_map_and_nothing_is_pinned_or_leaked(self):
         code, printed = self.run_sealed(pinned=False)
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
-        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 9, "QUARANTINED": 10}))
+        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 19}))
         self.assertEqual(len(out["events"]), 19)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                if event_id in BATCH_1_IDS:
-                    self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
-                    self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
-                    self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
-                else:
-                    self.assertEqual((view["state"], view["reasons"], view["session_labels"], view["labels_sha256"]), ("QUARANTINED", ["FIRST_PUBLIC_TIME_UNVERIFIED"], None, None))
+                self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
+                self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
+                self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
                 self.assertIsNone(view["labels_match_recorded"])                                  # the pins were taken out
                 self.assertEqual((view["missing_sessions"], view["zero_volume_sessions"], view["corporate_actions"]), ([], [], []))
                 self.assertEqual(view["window"]["required_sessions"], 21)

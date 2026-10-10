@@ -611,7 +611,27 @@
       "precision": "minute",
       "timestamp_evidence": "07:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-05-07"
+      "expected_reaction_session": "2026-05-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "pdfs-m5b-2026-05-07",
@@ -639,7 +659,36 @@
       "precision": "minute",
       "timestamp_evidence": "16:04",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-08"
+      "expected_reaction_session": "2026-05-08",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001193125-26-226898 filed 2026-05-15 16:27 ET (Items 8.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "real-m5b-2026-05-07",
@@ -667,7 +716,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:04",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-08"
+      "expected_reaction_session": "2026-05-08",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "tecx-m5b-2026-05-07",
@@ -695,7 +764,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:01",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-08"
+      "expected_reaction_session": "2026-05-08",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "lnsr-m5b-2026-05-08",
@@ -723,7 +812,35 @@
       "precision": "minute",
       "timestamp_evidence": "07:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-05-08"
+      "expected_reaction_session": "2026-05-08",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001193125-26-248230 filed 2026-05-29 16:05 ET (Items 5.02, 5.08, 8.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "rekr-m5b-2026-05-11",
@@ -751,7 +868,43 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-12"
+      "expected_reaction_session": "2026-05-12",
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "8-K 0001437749-26-014478 filed 2026-05-01 20:30 ET with Item 3.01 (the item for a notice of delisting or of failure to satisfy a continued-listing rule or standard, or a transfer of listing), ten days before the release; content not opened. The event filing's cover still lists the stock on the Nasdaq Stock Market on the release date, and Alpaca lists no corporate action over the window. A caveat, not an exclusion."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001437749-26-017309 filed 2026-05-15 17:53 ET (Items 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "achv-m5b-2026-05-12",
@@ -786,8 +939,34 @@
             "all"
           ],
           "note": "Two points about the release. The results release itself also reports the close of a private placement of up to $354 million and leadership changes; they are inside the earnings release, not a separate release (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md, second condition). A separate GlobeNewswire release five minutes later (07:05 ET) announced three senior leadership appointments (a Board member, a Senior Vice President of Commercial and a Vice President of Sales): independently disseminated, but a commercial-team build that follows the CEO appointment of April 2026, not a divestiture, a clinical readout or an unplanned departure, so on the assistant's reading it fails the policy's third condition and is a caveat, not an exclusion."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001193125-26-252624 filed 2026-06-02 12:51 ET (Items 5.02) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
         }
-      ]
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "slsn-m5b-2026-05-12",
@@ -815,7 +994,27 @@
       "precision": "minute",
       "timestamp_evidence": "08:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-05-12"
+      "expected_reaction_session": "2026-05-12",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "klc-m5b-2026-05-14",
@@ -843,7 +1042,35 @@
       "precision": "minute",
       "timestamp_evidence": "16:15",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-15"
+      "expected_reaction_session": "2026-05-15",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001193125-26-259547 filed 2026-06-05 16:06 ET (Items 5.07) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     },
     {
       "event_id": "ttwo-m5b-2026-05-21",
@@ -871,7 +1098,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-05-22"
+      "expected_reaction_session": "2026-05-22",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
+        }
+      }
     }
   ]
 }
