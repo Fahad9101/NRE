@@ -631,6 +631,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "91677fc63706447ae2d81f82b78bf2fa770f8e52ebfe7a4cb743f530a755f9b9",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -688,6 +692,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "e689bd8f644e5874aa1f0f12bbc67a6302fd98f1a7e8a9f0ea49040a530560cb",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -736,6 +744,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "fae7d75968e60f4e9d36c518621a399dee2cc49320f9c4679093525f6918c853",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -784,6 +796,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "0cd49b23150105fdd202c98df9cf579b20729902e0cd80e4c324165e7d42365b",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -840,6 +856,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "7c6c1fc702b4878b2dc889317bf3057ecbb6bd64a87a1a50188b739d0c95b620",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -904,6 +924,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "a2205552fcf1055f7e8781fabff1f51903e98bd41f595156d38889b74c68e17b",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -966,6 +990,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "822cac0839065df0ef2333767d2871db5473d0329de9aa5ea04838b8d190d542",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -1014,6 +1042,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "2d6af8c59e7407ef696ede9dccfffa71b3963f114ae94a9df32f4dfe8d52581b",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -1070,6 +1102,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "dd727e9981192d77c0c8810b37528d05a7de73c9fce43d1a1053347a1e413f2a",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -1118,6 +1154,10 @@
           "record": "reports/m5-phase1b-batch2-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest them (Recommended)\", 2026-10-10) on the two signals in reports/m5-phase1b-batch2-signoff-packet-2026-10-10.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the ten)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "0278c717db41eea6ef07491b457638dba556d920aa0b65dd20217808958b6b2f",
+        "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json"
       }
     }
   ]

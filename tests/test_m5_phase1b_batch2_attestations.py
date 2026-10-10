@@ -1,5 +1,5 @@
 """The owner's signoff of Milestone 5 Phase 1b batch 2 (reports/m5-phase1b-batch2-signoff-2026-10-10.json): the three answers as given, what each decides, and the events file that carries them out -- all ten events attested on the record, REKR with the caveat
-for its Item 3.01 filing and ACHV with the caveat for its separate release, as the packet proposed; nothing pinned yet."""
+for its Item 3.01 filing and ACHV with the caveat for its separate release, as the packet proposed. (Their commitments are pinned from the attested sealed run: tests/test_m5_phase1b_batch2_sealed_run.py.)"""
 import json
 import unittest
 from pathlib import Path
@@ -88,12 +88,11 @@ class EventsFileTests(unittest.TestCase):
             for attestation in self.events[event_id]["attestations"].values():
                 self.assertNotEqual(attestation["record"], RECORD_PATH)                  # batch 1's attestations are on its own records
 
-    def test_the_ten_specs_carry_the_packets_caveats_and_nothing_is_pinned_yet(self):
+    def test_the_ten_specs_carry_the_packets_caveats(self):
         proposed = {e["event_id"]: e["proposed_label_caveats"] for e in self.packet["events"]}
         for event_id in IDS:
             with self.subTest(event=event_id):
                 self.assertEqual(self.events[event_id].get("caveats"), proposed[event_id])
-                self.assertNotIn("recorded_result", self.events[event_id])
         self.assertEqual({e: len(self.events[e].get("caveats", [])) for e in IDS if "caveats" in self.events[e]},
                          {"pdfs-m5b-2026-05-07": 1, "lnsr-m5b-2026-05-08": 1, REKR: 2, ACHV: 2, "klc-m5b-2026-05-14": 1})
         rekr = self.events[REKR]["caveats"]

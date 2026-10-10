@@ -101,14 +101,14 @@ class EventsAndSourcesTests(unittest.TestCase):
             for i, accession in enumerate(recent["accessionNumber"]):
                 cls.accepted[accession] = datetime.fromisoformat(recent["acceptanceDateTime"][i].replace("Z", "+00:00")).astimezone(ZONE).strftime("%Y-%m-%d %H:%M")
 
-    def test_the_ten_events_follow_batch_1_sealed_attested_and_not_pinned_yet_and_the_whole_file_validates(self):
+    def test_the_ten_events_follow_batch_1_sealed_attested_and_pinned_and_the_whole_file_validates(self):
         ea.validate_spec(self.spec, Calendar())
         self.assertEqual([e["event_id"] for e in self.events], BATCH_2_IDS)
         for event in self.events:
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
                 self.assertIn("attestations", event)                          # the owner attested the batch after its dry run and signoff packet
-                self.assertNotIn("recorded_result", event)                    # a commitment is pinned only after the attested sealed run has printed it
+                self.assertIn("recorded_result", event)                       # and each commitment was pinned after the attested sealed run printed it (tests/test_m5_phase1b_batch2_sealed_run.py)
                 self.assertEqual(event["event_id"], event["cluster_id"])
                 self.assertRegex(event["event_id"], r"^[a-z]+-m5b-2026-\d\d-\d\d$")
         self.assertEqual(len(self.all_events), 19)
@@ -244,15 +244,18 @@ class Response:
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """Batch 2's ten events through the sealed run with a fake provider holding distinctive prices and no corporate actions: with the attestations taken out they quarantine, as shipped they map, and no price reaches the output."""
+    """Batch 2's ten events through the sealed run with a fake provider holding distinctive prices and no corporate actions: with the attestations taken out they quarantine, with the pins taken out they map, as shipped the pins catch the injected prices, and no price
+    reaches the output."""
 
-    def run_sealed(self, attested):
+    def run_sealed(self, attested, pinned=False):
         calendar = Calendar()
         spec = load(EVENTS)
         spec["events"] = spec["events"][9:]
         for event in spec["events"]:
             if not attested:
                 event.pop("attestations")
+            if not pinned:
+                event.pop("recorded_result")
 
         class Opener:
             def open(self, req, timeout=None):
@@ -293,7 +296,7 @@ class SealedRunSimulationTests(unittest.TestCase):
             self.assertNotIn(fragment, everything)
         self.assertTrue(printed[1].startswith("::notice title=NRE sealed event acquisition::"))
 
-    def test_as_shipped_they_all_map_so_nothing_but_the_attestation_blocked_them(self):
+    def test_attested_and_unpinned_they_all_map_so_nothing_but_the_attestation_blocked_them(self):
         code, printed = self.run_sealed(attested=True)
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
@@ -303,6 +306,17 @@ class SealedRunSimulationTests(unittest.TestCase):
                 self.assertEqual((view["state"], view["reasons"], view["labels_match_recorded"]), ("MAPPED", [], None))
                 self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
                 self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
+
+    def test_as_shipped_each_pin_catches_the_injected_prices_and_nothing_else_is_reported(self):
+        code, printed = self.run_sealed(attested=True, pinned=True)
+        out = json.loads(printed[0])
+        self.assertEqual((code, out["all_ok"]), (2, False))
+        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][9:]}
+        for event_id, view in out["events"].items():
+            with self.subTest(event=event_id):
+                self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
+                self.assertNotEqual(view["labels_sha256"], recorded[event_id])
+        self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
 
 
 if __name__ == "__main__":

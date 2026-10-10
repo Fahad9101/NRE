@@ -217,7 +217,7 @@ class SourcesRecordTests(unittest.TestCase):
 
 class SealedRunSimulationTests(unittest.TestCase):
     """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the nineteen attested events (batch 1's nine, batch 2's ten) map and no price reaches the output; with the pins in,
-    the injected prices cannot reproduce a recorded commitment, so each of batch 1's nine pinned events reports the mismatch and nothing else, while batch 2's ten, not pinned yet, map and report no match either way."""
+    the injected prices cannot reproduce a recorded commitment, so each of the nineteen pinned events reports the mismatch and nothing else."""
 
     def run_sealed(self, pinned):
         calendar = Calendar()
@@ -265,15 +265,13 @@ class SealedRunSimulationTests(unittest.TestCase):
         out = json.loads(printed[0])
         self.assertEqual((code, out["all_ok"]), (2, False))
         recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"] if "recorded_result" in e}
-        self.assertEqual(sorted(recorded), sorted(BATCH_1_IDS))
+        self.assertEqual(len(recorded), 19)
+        self.assertEqual(sorted(recorded), sorted(e["event_id"] for e in load(EVENTS)["events"]))
         self.assertEqual(len(out["events"]), 19)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                if event_id in BATCH_1_IDS:
-                    self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
-                    self.assertNotEqual(view["labels_sha256"], recorded[event_id])
-                else:
-                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("MAPPED", None, False))
+                self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
+                self.assertNotEqual(view["labels_sha256"], recorded[event_id])
         self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
         self.assertTrue(printed[1].startswith("::error title=NRE sealed event acquisition::"))
 
