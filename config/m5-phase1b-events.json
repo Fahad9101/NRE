@@ -584,6 +584,294 @@
         "labels_sha256": "c408daff151e0dcf10dc28c2c04b40fec5c2274e2a11dcfa0c9d33ddc85115d3",
         "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
+    },
+    {
+      "event_id": "payo-m5b-2026-05-07",
+      "cluster_id": "payo-m5b-2026-05-07",
+      "candidate_id": "0001104659-26-056688",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "PAYO-1845815-2026-05-07",
+        "company_id": "0001845815",
+        "cik": "0001845815",
+        "ticker": "PAYO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "payo-wire-2026-05-07",
+        "url": "https://www.prnewswire.com/news-releases/payoneer-reports-first-quarter-2026-financial-results-302764826.html",
+        "text": "Wire release, displayed dateline May 07, 2026, 07:30 ET (07:30 ET). https://www.prnewswire.com/news-releases/payoneer-reports-first-quarter-2026-financial-results-302764826.html",
+        "first_seen_at": "2026-05-07T07:31:00-04:00"
+      },
+      "published_at": "2026-05-07T07:30:00-04:00",
+      "cutoff": "2026-05-07T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-07"
+    },
+    {
+      "event_id": "pdfs-m5b-2026-05-07",
+      "cluster_id": "pdfs-m5b-2026-05-07",
+      "candidate_id": "0001437749-26-015603",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "PDFS-1120914-2026-05-07",
+        "company_id": "0001120914",
+        "cik": "0001120914",
+        "ticker": "PDFS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-12T00:00:00-05:00",
+        "available_at": "2026-02-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "pdfs-wire-2026-05-07",
+        "url": "https://www.globenewswire.com/news-release/2026/05/07/3290527/7239/en/pdf-solutions-reports-first-quarter-2026-financial-results.html",
+        "text": "Wire release, displayed dateline May 07, 2026 16:04 ET (16:04 ET). https://www.globenewswire.com/news-release/2026/05/07/3290527/7239/en/pdf-solutions-reports-first-quarter-2026-financial-results.html",
+        "first_seen_at": "2026-05-07T16:05:00-04:00"
+      },
+      "published_at": "2026-05-07T16:04:00-04:00",
+      "cutoff": "2026-05-07T16:07:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:04",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-08"
+    },
+    {
+      "event_id": "real-m5b-2026-05-07",
+      "cluster_id": "real-m5b-2026-05-07",
+      "candidate_id": "0001573221-26-000045",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "REAL-1573221-2026-05-07",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "real-wire-2026-05-07",
+        "url": "https://www.globenewswire.com/news-release/2026/05/07/3290585/0/en/the-realreal-announces-first-quarter-2026-results.html",
+        "text": "Wire release, displayed dateline May 07, 2026 16:04 ET (16:04 ET). https://www.globenewswire.com/news-release/2026/05/07/3290585/0/en/the-realreal-announces-first-quarter-2026-results.html",
+        "first_seen_at": "2026-05-07T16:05:00-04:00"
+      },
+      "published_at": "2026-05-07T16:04:00-04:00",
+      "cutoff": "2026-05-07T16:07:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:04",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-08"
+    },
+    {
+      "event_id": "tecx-m5b-2026-05-07",
+      "cluster_id": "tecx-m5b-2026-05-07",
+      "candidate_id": "0001193125-26-212069",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "TECX-1681087-2026-05-07",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "tecx-wire-2026-05-07",
+        "url": "https://www.globenewswire.com/news-release/2026/05/07/3290500/0/en/tectonic-therapeutic-announces-first-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "text": "Wire release, displayed dateline May 07, 2026 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2026/05/07/3290500/0/en/tectonic-therapeutic-announces-first-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "first_seen_at": "2026-05-07T16:02:00-04:00"
+      },
+      "published_at": "2026-05-07T16:01:00-04:00",
+      "cutoff": "2026-05-07T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-08"
+    },
+    {
+      "event_id": "lnsr-m5b-2026-05-08",
+      "cluster_id": "lnsr-m5b-2026-05-08",
+      "candidate_id": "0001193125-26-213268",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "LNSR-1320350-2026-05-08",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-31T00:00:00-04:00",
+        "available_at": "2026-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire-2026-05-08",
+        "url": "https://www.globenewswire.com/news-release/2026/05/08/3290990/0/en/lensar-reports-first-quarter-2026-results-and-provides-business-update.html",
+        "text": "Wire release, displayed dateline May 08, 2026 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2026/05/08/3290990/0/en/lensar-reports-first-quarter-2026-results-and-provides-business-update.html",
+        "first_seen_at": "2026-05-08T07:01:00-04:00"
+      },
+      "published_at": "2026-05-08T07:00:00-04:00",
+      "cutoff": "2026-05-08T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-08"
+    },
+    {
+      "event_id": "rekr-m5b-2026-05-11",
+      "cluster_id": "rekr-m5b-2026-05-11",
+      "candidate_id": "0001437749-26-016113",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "REKR-1697851-2026-05-11",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-31T00:00:00-04:00",
+        "available_at": "2026-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "rekr-wire-2026-05-11",
+        "url": "https://www.globenewswire.com/news-release/2026/05/11/3292304/0/en/rekor-systems-reports-first-quarter-2026-financial-results.html",
+        "text": "Wire release, displayed dateline May 11, 2026 16:05 ET (16:05 ET). https://www.globenewswire.com/news-release/2026/05/11/3292304/0/en/rekor-systems-reports-first-quarter-2026-financial-results.html",
+        "first_seen_at": "2026-05-11T16:06:00-04:00"
+      },
+      "published_at": "2026-05-11T16:05:00-04:00",
+      "cutoff": "2026-05-11T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-12"
+    },
+    {
+      "event_id": "achv-m5b-2026-05-12",
+      "cluster_id": "achv-m5b-2026-05-12",
+      "candidate_id": "0001193125-26-218175",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "ACHV-949858-2026-05-12",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-24T00:00:00-04:00",
+        "available_at": "2026-03-24T20:00:00Z"
+      },
+      "source": {
+        "source_id": "achv-wire-2026-05-12",
+        "url": "https://www.globenewswire.com/news-release/2026/05/12/3292668/0/en/achieve-life-sciences-reports-first-quarter-2026-financial-results-and-provides-business-updates.html",
+        "text": "Wire release, displayed dateline May 12, 2026 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2026/05/12/3292668/0/en/achieve-life-sciences-reports-first-quarter-2026-financial-results-and-provides-business-updates.html",
+        "first_seen_at": "2026-05-12T07:01:00-04:00"
+      },
+      "published_at": "2026-05-12T07:00:00-04:00",
+      "cutoff": "2026-05-12T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-12",
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "Two points about the release. The results release itself also reports the close of a private placement of up to $354 million and leadership changes; they are inside the earnings release, not a separate release (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md, second condition). A separate GlobeNewswire release five minutes later (07:05 ET) announced three senior leadership appointments (a Board member, a Senior Vice President of Commercial and a Vice President of Sales): independently disseminated, but a commercial-team build that follows the CEO appointment of April 2026, not a divestiture, a clinical readout or an unplanned departure, so on the assistant's reading it fails the policy's third condition and is a caveat, not an exclusion."
+        }
+      ]
+    },
+    {
+      "event_id": "slsn-m5b-2026-05-12",
+      "cluster_id": "slsn-m5b-2026-05-12",
+      "candidate_id": "0001171843-26-003273",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "SLSN-883107-2026-05-12",
+        "company_id": "0000883107",
+        "cik": "0000883107",
+        "ticker": "SLSN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-31T00:00:00-04:00",
+        "available_at": "2026-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "slsn-wire-2026-05-12",
+        "url": "https://www.globenewswire.com/news-release/2026/05/12/3292790/12101/en/sol%c3%a9sence-reports-first-quarter-2026-financial-results.html",
+        "text": "Wire release, displayed dateline May 12, 2026 08:00 ET (08:00 ET). https://www.globenewswire.com/news-release/2026/05/12/3292790/12101/en/sol%c3%a9sence-reports-first-quarter-2026-financial-results.html",
+        "first_seen_at": "2026-05-12T08:01:00-04:00"
+      },
+      "published_at": "2026-05-12T08:00:00-04:00",
+      "cutoff": "2026-05-12T08:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "08:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-05-12"
+    },
+    {
+      "event_id": "klc-m5b-2026-05-14",
+      "cluster_id": "klc-m5b-2026-05-14",
+      "candidate_id": "0001193125-26-224059",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "KLC-1873529-2026-05-14",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-12T00:00:00-04:00",
+        "available_at": "2026-03-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "klc-wire-2026-05-14",
+        "url": "https://www.businesswire.com/news/home/20260514197392/en/KinderCare-Reports-First-Quarter-2026-Financial-Results",
+        "text": "Wire release, displayed dateline May 14, 2026 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20260514197392/en/KinderCare-Reports-First-Quarter-2026-Financial-Results",
+        "first_seen_at": "2026-05-14T16:16:00-04:00"
+      },
+      "published_at": "2026-05-14T16:15:00-04:00",
+      "cutoff": "2026-05-14T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-15"
+    },
+    {
+      "event_id": "ttwo-m5b-2026-05-21",
+      "cluster_id": "ttwo-m5b-2026-05-21",
+      "candidate_id": "0001628280-26-037260",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "TTWO-946581-2026-05-21",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-03T00:00:00-05:00",
+        "available_at": "2026-02-03T20:00:00Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire-2026-05-21",
+        "url": "https://www.businesswire.com/news/home/20260521450562/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fourth-Quarter-and-Fiscal-Year-2026",
+        "text": "Wire release, displayed dateline May 21, 2026 4:05 PM Eastern Daylight Time (16:05 ET). https://www.businesswire.com/news/home/20260521450562/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fourth-Quarter-and-Fiscal-Year-2026",
+        "first_seen_at": "2026-05-21T16:06:00-04:00"
+      },
+      "published_at": "2026-05-21T16:05:00-04:00",
+      "cutoff": "2026-05-21T16:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-22"
     }
   ]
 }

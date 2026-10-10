@@ -219,7 +219,7 @@ class PinVerificationTests(unittest.TestCase):
         self.assertEqual(self.record["commitments"], {NBIX: self.view[NBIX]["labels_sha256"]})
         self.assertEqual(self.record["summary"]["new_commitments"], 1)
         self.assertEqual(self.by_id[NBIX]["recorded_result"], {"labels_sha256": self.record["commitments"][NBIX], "recorded_in": VERIFICATION_PATH})
-        pins = {event_id: event["recorded_result"]["labels_sha256"] for event_id, event in self.by_id.items()}
+        pins = {event_id: event["recorded_result"]["labels_sha256"] for event_id, event in self.by_id.items() if "recorded_result" in event}      # batch 2's events, appended later, are not pinned yet
         self.assertEqual(sorted(pins), sorted(IDS))
         self.assertEqual(len(set(pins.values())), 9)
         ea.validate_spec(self.spec, self.calendar)

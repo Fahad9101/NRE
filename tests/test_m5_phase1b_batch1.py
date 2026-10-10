@@ -1,6 +1,7 @@
-"""Milestone 5 Phase 1b batch 1 after the owner's signoff: config/m5-phase1b-events.json (nine sealed events; eight carry the owner's attestations and the packet's caveats, NBIX does not) validates with the project's own spec validation, agrees with the frozen
-ledger, the eligibility review, the owner's decisions, the Milestone 1 events and the wire evidence in reports/m5-phase1b-batch1-sources-2026-10-09.json (each page's machine-readable time converts to the minute taken from it), its dry-run state is
-recoverable byte for byte, and a sealed run of it with injected prices maps the eight, quarantines NBIX, prints no price and pins no commitment."""
+"""Milestone 5 Phase 1b batch 1 after the owner's signoff: the first nine events of config/m5-phase1b-events.json (all attested on the owner's two records, each carrying the packet's caveats and a pinned commitment) validate with the project's own spec validation,
+agree with the frozen ledger, the eligibility review, the owner's decisions, the Milestone 1 events and the wire evidence in reports/m5-phase1b-batch1-sources-2026-10-09.json (each page's machine-readable time converts to the minute taken from it), their dry-run state
+is recoverable byte for byte, and a sealed run of the whole file (batch 2's ten events follow batch 1's nine, in the dry-run state: tests/test_m5_phase1b_batch2.py) with injected prices maps batch 1, quarantines batch 2, prints no price and catches a pin
+that the injected prices cannot reproduce."""
 import hashlib
 import json
 import re
@@ -20,6 +21,7 @@ SOURCES = ROOT / "reports" / "m5-phase1b-batch1-sources-2026-10-09.json"
 RAW = ROOT / "archive" / "m5-phase1b-sec-freeze" / "raw"
 ZONE = ZoneInfo("America/New_York")
 BATCH_1 = [("CACI", "2026-04-22"), ("ALKT", "2026-04-29"), ("JBSS", "2026-04-29"), ("HURN", "2026-05-05"), ("NBIX", "2026-05-05"), ("PARR", "2026-05-05"), ("CXT", "2026-05-06"), ("ASPN", "2026-05-07"), ("COLL", "2026-05-07")]
+BATCH_1_IDS = ["%s-m5b-%s" % (ticker.lower(), day) for ticker, day in BATCH_1]
 ENV = {"APCA_API_KEY_ID": "AKTESTKEY123", "APCA_API_SECRET_KEY": "SECRETVALUE456"}
 
 
@@ -31,7 +33,7 @@ class EventsFileTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.spec = load(EVENTS)
-        cls.events = cls.spec["events"]
+        cls.events = [e for e in cls.spec["events"] if e["event_id"] in BATCH_1_IDS]                 # batch 1's nine; batch 2's ten follow them in the file
         cls.ledger = {(c["ticker"], c["filing_date"]): c for c in load(ROOT / "config" / "m5-phase1b-frozen-candidate-ledger.json")["candidates"]}
         cls.review = {(r["ticker"], r["filing_date"]): r for r in load(ROOT / "reports" / "m5-phase1b-eligibility-review-2026-10-09.json")["candidates"]}
         cls.decisions = load(ROOT / "reports" / "m5-phase1b-s2-decisions-2026-10-09.json")
@@ -39,7 +41,8 @@ class EventsFileTests(unittest.TestCase):
 
     def test_it_passes_the_projects_own_spec_validation_and_all_nine_events_are_attested_and_pinned(self):
         ea.validate_spec(self.spec, Calendar())
-        self.assertEqual(len(self.events), 9)
+        self.assertEqual([e["event_id"] for e in self.spec["events"][:9]], BATCH_1_IDS)             # batch 1 keeps its place and its order at the head of the file
+        self.assertEqual([e["event_id"] for e in self.events], BATCH_1_IDS)
         for event in self.events:
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
@@ -139,7 +142,7 @@ class SourcesRecordTests(unittest.TestCase):
 
     def test_its_rows_are_the_events_and_each_pages_machine_time_converts_to_the_minute_taken_from_it(self):
         rows = self.record["events"]
-        self.assertEqual([r["event_id"] for r in rows], [e["event_id"] for e in self.spec["events"]])
+        self.assertEqual([r["event_id"] for r in rows], BATCH_1_IDS)
         wires = {"www.businesswire.com": "Business Wire", "www.globenewswire.com": "GlobeNewswire", "www.prnewswire.com": "PR Newswire"}
         for row in rows:
             with self.subTest(event=row["event_id"]):
@@ -178,6 +181,7 @@ class SourcesRecordTests(unittest.TestCase):
 
     def test_the_events_file_digest_is_the_dry_run_states(self):
         stripped = json.loads(EVENTS.read_text(encoding="utf-8"))
+        stripped["events"] = [e for e in stripped["events"] if e["event_id"] in BATCH_1_IDS]         # the file as batch 1 left it; batch 2's events were appended after it
         for event in stripped["events"]:
             event.pop("attestations", None)
             event.pop("recorded_result", None)
@@ -212,8 +216,8 @@ class SourcesRecordTests(unittest.TestCase):
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the nine attested events map and no price reaches the output; with the pins in, the injected
-    prices cannot reproduce a recorded commitment, so each of the nine pinned events reports the mismatch and nothing else."""
+    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the nine attested events of batch 1 map, batch 2's ten (not attested yet) are quarantined, and no price reaches
+    the output; with the pins in, the injected prices cannot reproduce a recorded commitment, so each of batch 1's nine pinned events reports the mismatch and nothing else."""
 
     def run_sealed(self, pinned):
         calendar = Calendar()
@@ -261,25 +265,32 @@ class SealedRunSimulationTests(unittest.TestCase):
         out = json.loads(printed[0])
         self.assertEqual((code, out["all_ok"]), (2, False))
         recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"] if "recorded_result" in e}
-        self.assertEqual(len(recorded), 9)
+        self.assertEqual(sorted(recorded), sorted(BATCH_1_IDS))
+        self.assertEqual(len(out["events"]), 19)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
-                self.assertNotEqual(view["labels_sha256"], recorded[event_id])
+                if event_id in BATCH_1_IDS:
+                    self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
+                    self.assertNotEqual(view["labels_sha256"], recorded[event_id])
+                else:
+                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("QUARANTINED", None, False))
         self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
         self.assertTrue(printed[1].startswith("::error title=NRE sealed event acquisition::"))
 
-    def test_the_attested_events_map_and_nothing_is_pinned_or_leaked(self):
+    def test_the_attested_events_map_the_others_are_quarantined_and_nothing_is_pinned_or_leaked(self):
         code, printed = self.run_sealed(pinned=False)
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
-        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 9}))
-        self.assertEqual(len(out["events"]), 9)
+        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 9, "QUARANTINED": 10}))
+        self.assertEqual(len(out["events"]), 19)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
-                self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
-                self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
+                if event_id in BATCH_1_IDS:
+                    self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
+                    self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
+                    self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
+                else:
+                    self.assertEqual((view["state"], view["reasons"], view["session_labels"], view["labels_sha256"]), ("QUARANTINED", ["FIRST_PUBLIC_TIME_UNVERIFIED"], None, None))
                 self.assertIsNone(view["labels_match_recorded"])                                  # the pins were taken out
                 self.assertEqual((view["missing_sessions"], view["zero_volume_sessions"], view["corporate_actions"]), ([], [], []))
                 self.assertEqual(view["window"]["required_sessions"], 21)

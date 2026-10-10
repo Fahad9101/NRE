@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch2_permission",
+  "recorded_on": "2026-10-10",
+  "context": "Batch 1 is complete (all nine events attested, pinned and verified on a re-run). The owner's answer on batch 1's wire pages was \"Yes, batch 1 only (Recommended)\", whose option text said \"Later batches ask again.\" The assistant's report offered batch 2 and said it would ask the exact question, with names, pages and size, before opening any page. The owner's message, the question and the answer are quoted from the session transcript, not from a summary.",
+  "owner_message": {
+    "text": "authorize batch 2.",
+    "at": "2026-10-10T10:53:36.037Z",
+    "source": "session transcript, line 42589",
+    "read_as": "The go-ahead to ask the question about batch 2, as the report offered; it is not itself the permission to read pages."
+  },
+  "asked": {
+    "at": "2026-10-10T10:54:45.656Z",
+    "source": "session transcript, line 42614 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-10T11:00:12.497Z",
+    "source": "session transcript, line 42615 (the tool result of the question)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "Wire pages 2",
+      "question": "May I read public wire-release pages and the issuers' own newsroom pages to take the first-public minute of the batch 2 releases (S4)?",
+      "options_offered": [
+        {
+          "label": "Yes, batch 2 only (Recommended)",
+          "description": "The ten next-earliest releases that stand (PAYO 05-07, PDFS 05-07, REAL 05-07, TECX 05-07, LNSR 05-08, REKR 05-11, ACHV 05-12, SLSN 05-12, KLC 05-14, TTWO 05-21; all assessed 'results release, no issue found' in the S2 review): each release's page on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or the issuer's newsroom, plus a check for a separate same-day release. Public pages, roughly 50 to 300 KB each, size not known in advance; batch 1 took 42 page loads, so expect 40 to 50. I read them in the built-in browser, hold them in browser memory only and keep the URL, the displayed minute and a short excerpt. No web-search tool, no price or quote page, no filing. You may be asked to allow each site. No push, no other download. Later batches ask again."
+        },
+        {
+          "label": "Yes, all 35 remaining candidates",
+          "description": "The same for all 35 candidates that stand and are not in batch 1 (batch 2 first, then about ten at a time), without asking again. Same sites, same handling."
+        },
+        {
+          "label": "No downloads for now",
+          "description": "I stop here on Phase 1b until you say otherwise."
+        }
+      ],
+      "owner_selected": "Yes, batch 2 only (Recommended)"
+    }
+  ],
+  "permission_read_as": {
+    "scope": "Batch 2 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download; later batches ask again.",
+    "batch_2": [
+      {
+        "ticker": "PAYO",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001104659-26-056688"
+      },
+      {
+        "ticker": "PDFS",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001437749-26-015603"
+      },
+      {
+        "ticker": "REAL",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001573221-26-000045"
+      },
+      {
+        "ticker": "TECX",
+        "filing_date": "2026-05-07",
+        "release_date": "2026-05-07",
+        "candidate_id": "0001193125-26-212069"
+      },
+      {
+        "ticker": "LNSR",
+        "filing_date": "2026-05-08",
+        "release_date": "2026-05-08",
+        "candidate_id": "0001193125-26-213268"
+      },
+      {
+        "ticker": "REKR",
+        "filing_date": "2026-05-11",
+        "release_date": "2026-05-11",
+        "candidate_id": "0001437749-26-016113"
+      },
+      {
+        "ticker": "ACHV",
+        "filing_date": "2026-05-12",
+        "release_date": "2026-05-12",
+        "candidate_id": "0001193125-26-218175"
+      },
+      {
+        "ticker": "SLSN",
+        "filing_date": "2026-05-12",
+        "release_date": "2026-05-12",
+        "candidate_id": "0001171843-26-003273"
+      },
+      {
+        "ticker": "KLC",
+        "filing_date": "2026-05-14",
+        "release_date": "2026-05-14",
+        "candidate_id": "0001193125-26-224059"
+      },
+      {
+        "ticker": "TTWO",
+        "filing_date": "2026-05-21",
+        "release_date": "2026-05-21",
+        "candidate_id": "0001628280-26-037260"
+      }
+    ],
+    "how_batch_2_was_chosen": "The ten earliest releases among the 35 candidates that stand and are not in batch 1 (reports/m5-phase1b-s2-decisions-2026-10-09.json), ties broken alphabetically, computed from the release dates in reports/m5-phase1b-eligibility-review-2026-10-09.json. All ten were assessed results_release_no_issue_found there, and each release date equals its filing date.",
+    "next_in_line": [
+      "OKTA 2026-05-28",
+      "VSAT 2026-05-28",
+      "LOVE 2026-06-11"
+    ]
+  },
+  "not_authorized_by_this_answer": [
+    "Reading the wire or newsroom pages of any candidate outside batch 2.",
+    "Reading the nine near-date 8-Ks of reports/m5-phase1b-same-day-sweep-2026-10-09.json, or any other filing.",
+    "Using the web-search tool (a search-tool summary once exposed a company's quarterly average repurchase price: reports/m5-phase1b-batch1-sources-2026-10-09.json).",
+    "Any push, any other download, any price or label read, and attesting any event's first-public time, identity or corporate actions for the owner."
+  ],
+  "not_a_claim": [
+    "Not an attestation of any event and not a finding about any batch 2 candidate: no page had been read when this was recorded."
+  ]
+}

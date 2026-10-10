@@ -112,10 +112,10 @@ class EventsFileTests(unittest.TestCase):
                     self.assertEqual(attestation, {"reviewer": "Fahad9101", "date": "2026-10-09", "record": RECORD_PATH, "basis": BASIS[name]})
 
     def test_nbix_is_attested_on_its_own_later_record_and_asmb_is_not_an_event(self):
-        self.assertEqual(sorted(e for e, event in self.events.items() if "attestations" in event), sorted(ATTESTED + [NBIX]))
-        self.assertEqual(len(self.events), 9)
+        self.assertEqual(sorted(e for e, event in self.events.items() if "attestations" in event), sorted(ATTESTED + [NBIX]))              # batch 2's ten events (in the file after these nine) are not attested yet
+        self.assertEqual([e for e in self.events][:9], ATTESTED[:4] + [NBIX] + ATTESTED[4:])                                              # batch 1 keeps its nine places at the head of the file
         self.assertNotIn("ASMB", {e["security"]["ticker"] for e in self.events.values()})
-        self.assertEqual(sorted(set(self.events) - set(ATTESTED)), [NBIX])
+        self.assertEqual(sorted(set(list(self.events)[:9]) - set(ATTESTED)), [NBIX])
         attestations = self.events[NBIX]["attestations"]
         self.assertEqual(sorted(attestations), sorted(ea.ATTESTATIONS))
         for name, attestation in attestations.items():
