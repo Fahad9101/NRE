@@ -4,6 +4,7 @@ recoverable byte for byte, and a sealed run of it with injected prices maps the 
 import hashlib
 import json
 import re
+import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -42,8 +43,8 @@ class EventsFileTests(unittest.TestCase):
         for event in self.events:
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
-                self.assertEqual("attestations" in event, event["security"]["ticker"] != "NBIX")       # NBIX stays unattested until the owner has seen the action its second dry run lists
-                self.assertNotIn("recorded_result", event)                    # a commitment is pinned only after a sealed run has printed it
+                self.assertEqual("attestations" in event, event["security"]["ticker"] != "NBIX")       # NBIX stays unattested until the owner has decided on the action its second dry run listed
+                self.assertEqual("recorded_result" in event, event["security"]["ticker"] != "NBIX")    # a commitment is pinned for each event the attested sealed run mapped (tests/test_m5_phase1b_sealed_run.py)
                 self.assertEqual(event["event_id"], event["cluster_id"])
                 self.assertRegex(event["event_id"], r"^[a-z]+-m5b-2026-\d\d-\d\d$")
         self.assertEqual(len({e["event_id"] for e in self.events}), 9)
@@ -211,11 +212,15 @@ class SourcesRecordTests(unittest.TestCase):
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions: the eight attested events map, NBIX is quarantined for want of an attestation, nothing is pinned, and no price
-    reaches the output."""
+    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the eight attested events map, NBIX is quarantined for want of an attestation, and no price
+    reaches the output; with the pins in, the injected prices cannot reproduce a recorded commitment, so each mapped event reports the mismatch and nothing else."""
 
-    def run_sealed(self):
+    def run_sealed(self, pinned):
         calendar = Calendar()
+        spec = load(EVENTS)
+        if not pinned:
+            for event in spec["events"]:
+                event.pop("recorded_result", None)
 
         class Response:
             def __init__(self, data):
@@ -244,12 +249,31 @@ class SealedRunSimulationTests(unittest.TestCase):
                     rows.append({"t": day + "T00:00:00Z", "o": o, "h": round(c * 1.0111, 4), "l": round(o * 0.9877, 4), "c": c, "v": 1000003 + 7919 * i})
                 return Response(json.dumps({"bars": {ticker: rows}, "next_page_token": None}).encode())
 
-        with patch.dict("os.environ", dict(ENV, GITHUB_ACTIONS="true"), clear=True), patch("nre.event_acquire.build_opener", return_value=Opener()), patch("builtins.print") as output:
-            code = ea.main(["--sealed", "--spec", str(EVENTS)])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "events.json"
+            path.write_text(json.dumps(spec), encoding="utf-8")
+            with patch.dict("os.environ", dict(ENV, GITHUB_ACTIONS="true"), clear=True), patch("nre.event_acquire.build_opener", return_value=Opener()), patch("builtins.print") as output:
+                code = ea.main(["--sealed", "--spec", str(path)])
         return code, [call.args[0] for call in output.call_args_list]
 
+    def test_the_pins_catch_prices_that_are_not_the_recorded_ones_and_report_nothing_else(self):
+        code, printed = self.run_sealed(pinned=True)
+        out = json.loads(printed[0])
+        self.assertEqual((code, out["all_ok"]), (2, False))
+        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"] if "recorded_result" in e}
+        self.assertEqual(len(recorded), 8)
+        for event_id, view in out["events"].items():
+            with self.subTest(event=event_id):
+                if event_id == "nbix-m5b-2026-05-05":
+                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("QUARANTINED", None, False))
+                else:
+                    self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
+                    self.assertNotEqual(view["labels_sha256"], recorded[event_id])
+        self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
+        self.assertTrue(printed[1].startswith("::error title=NRE sealed event acquisition::"))
+
     def test_the_attested_events_map_nbix_is_quarantined_unattested_and_nothing_is_pinned_or_leaked(self):
-        code, printed = self.run_sealed()
+        code, printed = self.run_sealed(pinned=False)
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
         self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 8, "QUARANTINED": 1}))

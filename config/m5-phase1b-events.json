@@ -61,6 +61,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "e4c8dc2174a4be6bd527561faadcd5c199bf61efd88a896b7f84025a482b14ca",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -130,6 +134,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "10aa8c9d83e555417e053162377f64a1aaf7a2b9c8973ba23d42aa0868012648",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -178,6 +186,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "debe6694e7309630352e0d63e70e136e157aeb07e18de84220384eb929775121",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -235,6 +247,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "4ddd98fa4fa94ed9c10c5493356ef0a21dce6d589ec9d51b85a3f2f71fe8f929",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -336,6 +352,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "85efc4ec30c4f4f75393e65192c0d9e874d6e41b3ed9f1d740a7e20f3bda5080",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -392,6 +412,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "26fa8a56aee6973f5418fd88385415198a5fc8d62eb8e9cc092325d36b87ab13",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -449,6 +473,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "76fa8458e61971c66dd7c0f3c11e9e47ca1309b59a205db26f8b9618404a6043",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     },
     {
@@ -514,6 +542,10 @@
           "record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
           "basis": "Owner sign-off (\"Yes, attest all eight (Recommended)\", 2026-10-09) on the two signals in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "c408daff151e0dcf10dc28c2c04b40fec5c2274e2a11dcfa0c9d33ddc85115d3",
+        "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
       }
     }
   ]
