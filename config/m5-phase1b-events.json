@@ -320,6 +320,10 @@
           "record": "reports/m5-phase1b-nbix-signoff-2026-10-10.json",
           "basis": "Owner sign-off (\"Yes, attest NBIX (Recommended)\", 2026-10-10) on the signal in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end) and the action its second dry run listed in reports/m5-phase1b-batch1-sealed-run-2026-10-10.json (one cash_mergers item dated 2026-05-18 by its effective date)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "5ec09a426334d23d630f8be0b0cbbe7a6f6498b56175bfbde9914b7553f23da1",
+        "recorded_in": "reports/m5-phase1b-batch1-pin-verification-2026-10-10.json"
       }
     },
     {
