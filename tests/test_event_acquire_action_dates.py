@@ -261,6 +261,7 @@ class MergerShapedItemOnTheBatch1Nbix(unittest.TestCase):
 
     def run_nbix(self, attested):
         event = copy.deepcopy(next(e for e in BATCH_1["events"] if e["event_id"] == NBIX))
+        event.pop("recorded_result", None)                                          # a made-up history cannot match a pinned commitment
         if attested:
             event["attestations"] = {name: {"reviewer": "test", "date": "2026-10-09", "record": "none"} for name in sorted(ea.ATTESTATIONS)}
         else:

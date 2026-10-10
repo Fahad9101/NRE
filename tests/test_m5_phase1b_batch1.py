@@ -37,14 +37,14 @@ class EventsFileTests(unittest.TestCase):
         cls.decisions = load(ROOT / "reports" / "m5-phase1b-s2-decisions-2026-10-09.json")
         cls.m1 = {e["security"]["ticker"]: e for e in load(ROOT / "config" / "m1-events.json")["events"]}
 
-    def test_it_passes_the_projects_own_spec_validation_and_exactly_the_eight_signed_off_events_are_attested(self):
+    def test_it_passes_the_projects_own_spec_validation_all_nine_events_are_attested_and_the_eight_the_sealed_run_mapped_are_pinned(self):
         ea.validate_spec(self.spec, Calendar())
         self.assertEqual(len(self.events), 9)
         for event in self.events:
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
-                self.assertEqual("attestations" in event, event["security"]["ticker"] != "NBIX")       # NBIX stays unattested until the owner has decided on the action its second dry run listed
-                self.assertEqual("recorded_result" in event, event["security"]["ticker"] != "NBIX")    # a commitment is pinned for each event the attested sealed run mapped (tests/test_m5_phase1b_sealed_run.py)
+                self.assertIn("attestations", event)                          # the eight on 2026-10-09, NBIX on 2026-10-10 once the owner had seen the action its second dry run listed (tests/test_m5_phase1b_attestations.py)
+                self.assertEqual("recorded_result" in event, event["security"]["ticker"] != "NBIX")    # a commitment is pinned for each event the attested sealed run mapped (tests/test_m5_phase1b_sealed_run.py); NBIX's is not printed yet
                 self.assertEqual(event["event_id"], event["cluster_id"])
                 self.assertRegex(event["event_id"], r"^[a-z]+-m5b-2026-\d\d-\d\d$")
         self.assertEqual(len({e["event_id"] for e in self.events}), 9)
@@ -212,8 +212,8 @@ class SourcesRecordTests(unittest.TestCase):
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the eight attested events map, NBIX is quarantined for want of an attestation, and no price
-    reaches the output; with the pins in, the injected prices cannot reproduce a recorded commitment, so each mapped event reports the mismatch and nothing else."""
+    """The shipped events file through the sealed run with a fake provider holding distinctive prices and no corporate actions. With the pins taken out the nine attested events map and no price reaches the output; with the pins in, the injected
+    prices cannot reproduce a recorded commitment, so each of the eight pinned events reports the mismatch and nothing else, while NBIX, whose commitment is not pinned yet, maps and reports no match either way."""
 
     def run_sealed(self, pinned):
         calendar = Calendar()
@@ -265,28 +265,25 @@ class SealedRunSimulationTests(unittest.TestCase):
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
                 if event_id == "nbix-m5b-2026-05-05":
-                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("QUARANTINED", None, False))
+                    self.assertEqual((view["state"], view["labels_match_recorded"], "error" in view), ("MAPPED", None, False))
                 else:
                     self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
                     self.assertNotEqual(view["labels_sha256"], recorded[event_id])
         self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
         self.assertTrue(printed[1].startswith("::error title=NRE sealed event acquisition::"))
 
-    def test_the_attested_events_map_nbix_is_quarantined_unattested_and_nothing_is_pinned_or_leaked(self):
+    def test_the_attested_events_map_and_nothing_is_pinned_or_leaked(self):
         code, printed = self.run_sealed(pinned=False)
         self.assertEqual(code, 0)
         out = json.loads(printed[0])
-        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 8, "QUARANTINED": 1}))
+        self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 9}))
         self.assertEqual(len(out["events"]), 9)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                if event_id == "nbix-m5b-2026-05-05":
-                    self.assertEqual((view["state"], view["reasons"], view["session_labels"], view["labels_sha256"]), ("QUARANTINED", ["FIRST_PUBLIC_TIME_UNVERIFIED"], None, None))
-                else:
-                    self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
-                    self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
-                    self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
-                self.assertIsNone(view["labels_match_recorded"])                                  # nothing is pinned yet
+                self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
+                self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
+                self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
+                self.assertIsNone(view["labels_match_recorded"])                                  # the pins were taken out
                 self.assertEqual((view["missing_sessions"], view["zero_volume_sessions"], view["corporate_actions"]), ([], [], []))
                 self.assertEqual(view["window"]["required_sessions"], 21)
                 self.assertTrue(view["access_check_passed"])

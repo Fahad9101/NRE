@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_nbix_signoff",
+  "recorded_on": "2026-10-10",
+  "context": "Reply to the question put after the attested sealed run of batch 1 (reports/m5-phase1b-batch1-sealed-run-2026-10-10.json) listed the one corporate action that NBIX 2026-05-05 had been blocked on. The owner had signed off the other eight events and decided answer (A) for NBIX on 2026-10-09 (reports/m5-phase1b-batch1-signoff-2026-10-09.json), which left NBIX unattested until the owner had seen the listed action. The question and the owner's answer are quoted from the session transcript, not from a summary.",
+  "asked": {
+    "at": "2026-10-10T06:28:55.451Z",
+    "source": "session transcript, line 42108 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-10T08:29:12.870Z",
+    "source": "session transcript, line 42114 (the tool result of the question)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "NBIX 05-05",
+      "question": "Attest first-public time, historical identity and corporate actions for NBIX 2026-05-05, on the evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json and the action its second dry run listed (reports/m5-phase1b-batch1-sealed-run-2026-10-10.json)?",
+      "options_offered": [
+        {
+          "label": "Yes, attest NBIX (Recommended)",
+          "description": "I add the same three attestations to NBIX as to the eight (your answer quoted as the basis) and the packet's caveats: the routine 09:00 ET conference notice, and the in-window 8-Ks of 2026-05-18 and 2026-05-28 (content not opened). The listed action is one cash_mergers item (id b8d80b2b-b0e2-4be3-b612-9325d12d1646) dated 2026-05-18 by its effective date, the day of NBIX's 8-K with Item 2.01. It falls inside the session_10 and session_20 windows only, so the engine suppresses those two labels. The sealed view cannot show whether the item lists NBIX as acquirer or acquiree; the suppression applies either way. You accept the same residual gap as for the eight. Your next push then verifies the eight pins and prints NBIX's commitment, which I pin in a last commit."
+        },
+        {
+          "label": "Not yet",
+          "description": "NBIX stays quarantined and unattested; the next push carries only the eight pins. Name any concern under Other."
+        },
+        {
+          "label": "Exclude it",
+          "description": "NBIX 2026-05-05 is recorded as excluded because the completion of an acquisition (the merger item and the 8-K with Item 2.01 on 2026-05-18) falls inside its label windows. The policy so far treats in-window filings as caveats, not exclusions, so this would be a new reading."
+        }
+      ],
+      "owner_selected": "Yes, attest NBIX (Recommended)"
+    }
+  ],
+  "scope": {
+    "attested": {
+      "event": "nbix-m5b-2026-05-05",
+      "attestations": [
+        "first_public_time",
+        "historical_identity",
+        "corporate_actions"
+      ],
+      "evidence": "reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the NBIX entry) and the action its second dry run listed, as recorded in reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "read_as": "The three attestations for NBIX 2026-05-05, accepting the residual gap that open-web research cannot close (an earlier public disclosure with no discoverable trace), and carrying the packet's three proposed label caveats into its spec as caveats, not exclusions: the routine 09:00 ET conference notice, and the in-window 8-Ks of 2026-05-18 and 2026-05-28, whose content was not opened."
+    },
+    "listed_action_seen_by_the_owner": {
+      "type": "cash_mergers",
+      "id": "b8d80b2b-b0e2-4be3-b612-9325d12d1646",
+      "ex_date": "2026-05-18",
+      "date_field": "effective_date",
+      "windows_it_falls_inside": [
+        "session_10_close_return",
+        "session_20_close_return"
+      ],
+      "what_it_means": "The engine suppresses the labels whose windows the date falls inside (CORPORATE_ACTION_IN_WINDOW) and computes the others. The sealed view does not show whether the item lists NBIX as acquirer or acquiree; the suppression applies either way."
+    }
+  },
+  "not_a_claim": [
+    "Not Phase 1b acceptance and not a claim about any label: no label, price or return of NBIX has been computed by anyone for viewing, and the sealed run that follows prints only its state and commitment.",
+    "Not a clearance of the in-window 8-Ks whose content was not opened: they travel with the labels as caveats.",
+    "Not a finding about the Soleno acquisition, nor that the listed item is that acquisition."
+  ]
+}

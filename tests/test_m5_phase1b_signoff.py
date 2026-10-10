@@ -183,12 +183,7 @@ class SignoffPacketTests(Base):
         for entry in self.packet["events"]:
             with self.subTest(event=entry["event_id"]):
                 event, proposed = self.by_id[entry["event_id"]], entry["proposed_label_caveats"] or []
-                if entry["event_id"] == "nbix-m5b-2026-05-05":
-                    # Not signed off: its spec holds only the caveat on all labels, as at the dry run; the in-window 8-K caveats join it when the event is attested.
-                    self.assertNotIn("attestations", event)
-                    self.assertEqual(event.get("caveats", []), [c for c in proposed if c["labels"] == ["all"]])
-                else:
-                    self.assertEqual(event.get("caveats", []), proposed)             # the signoff carried the packet's caveats into each attested spec, in the packet's order
+                self.assertEqual(event.get("caveats", []), proposed)             # the signoffs carried the packet's caveats into each attested spec, in the packet's order (NBIX's on 2026-10-10, the others' on 2026-10-09)
                 sealed = view[entry["event_id"]]
                 if "error" in sealed:
                     self.assertEqual(entry["corporate_actions"]["sealed_dry_run"], "ERROR: " + sealed["error"])

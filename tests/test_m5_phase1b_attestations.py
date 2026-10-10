@@ -1,5 +1,5 @@
-"""The owner's signoff of Milestone 5 Phase 1b batch 1 (reports/m5-phase1b-batch1-signoff-2026-10-09.json): the three answers as given, what each decides, and the events file that carries them out -- eight events attested on the record,
-NBIX and ASMB not -- with the pipeline change that answer (A) authorizes."""
+"""The owner's signoff of Milestone 5 Phase 1b batch 1 (reports/m5-phase1b-batch1-signoff-2026-10-09.json): the three answers as given, what each decides, and the events file that carries them out -- eight events attested on that record, ASMB not an event --
+with the pipeline change that answer (A) authorizes; and the owner's later answer on NBIX (reports/m5-phase1b-nbix-signoff-2026-10-10.json), given after the attested sealed run listed the action NBIX had been blocked on."""
 import json
 import re
 import unittest
@@ -12,6 +12,15 @@ RECORD_PATH = "reports/m5-phase1b-batch1-signoff-2026-10-09.json"
 PACKET_PATH = "reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json"
 ATTESTED = ["caci-m5b-2026-04-22", "alkt-m5b-2026-04-29", "jbss-m5b-2026-04-29", "hurn-m5b-2026-05-05", "parr-m5b-2026-05-05", "cxt-m5b-2026-05-06", "aspn-m5b-2026-05-07", "coll-m5b-2026-05-07"]
 NBIX = "nbix-m5b-2026-05-05"
+NBIX_RECORD_PATH = "reports/m5-phase1b-nbix-signoff-2026-10-10.json"
+SEALED_PATH = "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json"
+NBIX_ANSWER = 'Owner sign-off ("Yes, attest NBIX (Recommended)", 2026-10-10) on '
+NBIX_BASIS = {
+    "first_public_time": NBIX_ANSWER + "the release-time evidence in " + PACKET_PATH + " (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states.",
+    "historical_identity": NBIX_ANSWER + "the identity evidence in " + PACKET_PATH + " (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history).",
+    "corporate_actions": NBIX_ANSWER + "the signal in " + PACKET_PATH + " (no Item 3.03 or 5.03 8-K in the archived history up to the window end) and the action its second dry run listed in " + SEALED_PATH
+                         + " (one cash_mergers item dated 2026-05-18 by its effective date).",
+}
 ANSWER = 'Owner sign-off ("Yes, attest all eight (Recommended)", 2026-10-09) on '
 BASIS = {
     "first_public_time": ANSWER + "the release-time evidence in " + PACKET_PATH + " (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states.",
@@ -91,8 +100,8 @@ class EventsFileTests(unittest.TestCase):
         cls.events = {e["event_id"]: e for e in cls.spec["events"]}
         cls.record = load(RECORD_PATH)
 
-    def test_exactly_the_eight_events_the_owner_signed_off_carry_the_three_attestations(self):
-        self.assertEqual([e for e, event in self.events.items() if "attestations" in event], ATTESTED)
+    def test_the_eight_events_the_owner_signed_off_on_2026_10_09_carry_the_three_attestations_on_that_record(self):
+        self.assertEqual([e for e, event in self.events.items() if "attestations" in event and event["attestations"]["first_public_time"]["record"] == RECORD_PATH], ATTESTED)
         self.assertEqual(self.record["scope"]["attested"]["events"], ATTESTED)
         self.assertTrue((ROOT / RECORD_PATH).is_file())
         for event_id in ATTESTED:
@@ -102,21 +111,68 @@ class EventsFileTests(unittest.TestCase):
                 for name, attestation in attestations.items():
                     self.assertEqual(attestation, {"reviewer": "Fahad9101", "date": "2026-10-09", "record": RECORD_PATH, "basis": BASIS[name]})
 
-    def test_nbix_is_not_attested_and_asmb_is_not_an_event(self):
-        self.assertNotIn("attestations", self.events[NBIX])
+    def test_nbix_is_attested_on_its_own_later_record_and_asmb_is_not_an_event(self):
+        self.assertEqual(sorted(e for e, event in self.events.items() if "attestations" in event), sorted(ATTESTED + [NBIX]))
         self.assertEqual(len(self.events), 9)
         self.assertNotIn("ASMB", {e["security"]["ticker"] for e in self.events.values()})
         self.assertEqual(sorted(set(self.events) - set(ATTESTED)), [NBIX])
+        attestations = self.events[NBIX]["attestations"]
+        self.assertEqual(sorted(attestations), sorted(ea.ATTESTATIONS))
+        for name, attestation in attestations.items():
+            self.assertEqual(attestation, {"reviewer": "Fahad9101", "date": "2026-10-10", "record": NBIX_RECORD_PATH, "basis": NBIX_BASIS[name]})
 
     def test_the_eight_specs_carry_the_packets_caveats_and_nothing_else_changed_in_them(self):
         packet = {e["event_id"]: e for e in load(PACKET_PATH)["events"]}
-        for event_id in ATTESTED:
+        for event_id in ATTESTED + [NBIX]:
             with self.subTest(event=event_id):
                 self.assertEqual(self.events[event_id].get("caveats"), packet[event_id]["proposed_label_caveats"])
-        self.assertEqual([e for e in ATTESTED if "caveats" in self.events[e]], ["alkt-m5b-2026-04-29", "hurn-m5b-2026-05-05", "parr-m5b-2026-05-05", "cxt-m5b-2026-05-06", "aspn-m5b-2026-05-07", "coll-m5b-2026-05-07"])
-        for event_id in ATTESTED:
+        self.assertEqual([e for e in ATTESTED + [NBIX] if "caveats" in self.events[e]], ["alkt-m5b-2026-04-29", "hurn-m5b-2026-05-05", "parr-m5b-2026-05-05", "cxt-m5b-2026-05-06", "aspn-m5b-2026-05-07", "coll-m5b-2026-05-07", NBIX])
+        for event_id in ATTESTED + [NBIX]:
             for caveat in self.events[event_id].get("caveats", []):
                 self.assertTrue(caveat["labels"] == ["all"] or "content not opened" in caveat["note"])
+
+
+class NbixSignoffTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.record = load(NBIX_RECORD_PATH)
+        cls.sealed = load("reports/m5-phase1b-batch1-sealed-run-2026-10-10.json")
+
+    def test_the_answer_is_quoted_as_given(self):
+        record = self.record
+        self.assertEqual((record["asked"]["at"], record["asked"]["source"]), ("2026-10-10T06:28:55.451Z", "session transcript, line 42108 (AskUserQuestion)"))
+        self.assertEqual((record["answered"]["at"], record["answered"]["source"]), ("2026-10-10T08:29:12.870Z", "session transcript, line 42114 (the tool result of the question)"))
+        self.assertLess(record["asked"]["at"], record["answered"]["at"])
+        self.assertEqual(len(record["questions_and_answers"]), 1)
+        qa = record["questions_and_answers"][0]
+        self.assertEqual((qa["header"], qa["owner_selected"]), ("NBIX 05-05", "Yes, attest NBIX (Recommended)"))
+        self.assertEqual(qa["question"], "Attest first-public time, historical identity and corporate actions for NBIX 2026-05-05, on the evidence in " + PACKET_PATH
+                         + " and the action its second dry run listed (reports/m5-phase1b-batch1-sealed-run-2026-10-10.json)?")
+        self.assertEqual([o["label"] for o in qa["options_offered"]], ["Yes, attest NBIX (Recommended)", "Not yet", "Exclude it"])
+        yes = qa["options_offered"][0]["description"]
+        for phrase in ("(id b8d80b2b-b0e2-4be3-b612-9325d12d1646) dated 2026-05-18 by its effective date, the day of NBIX's 8-K with Item 2.01", "It falls inside the session_10 and session_20 windows only, so the engine suppresses those two labels.",
+                       "The sealed view cannot show whether the item lists NBIX as acquirer or acquiree; the suppression applies either way.", "You accept the same residual gap as for the eight."):
+            self.assertIn(phrase, yes)
+        self.assertIn("this would be a new reading", qa["options_offered"][2]["description"])
+        self.assertIn("quoted from the session transcript, not from a summary", record["context"])
+        self.assertIn("which left NBIX unattested until the owner had seen the listed action", record["context"])
+        self.assertEqual((record["kind"], record["recorded_on"]), ("m5_phase1b_nbix_signoff", "2026-10-10"))
+
+    def test_the_action_the_owner_saw_is_the_one_the_sealed_run_listed(self):
+        seen = self.record["scope"]["listed_action_seen_by_the_owner"]
+        listed = self.sealed["corporate_actions_found"][NBIX]
+        self.assertEqual(listed, [{"type": seen["type"], "ex_date": seen["ex_date"], "date_field": seen["date_field"], "id": seen["id"], "windows_it_falls_inside": seen["windows_it_falls_inside"]}])
+        self.assertEqual((seen["type"], seen["ex_date"], seen["date_field"], seen["windows_it_falls_inside"]), ("cash_mergers", "2026-05-18", "effective_date", ["session_10_close_return", "session_20_close_return"]))
+        self.assertIn("The engine suppresses the labels whose windows the date falls inside (CORPORATE_ACTION_IN_WINDOW) and computes the others.", seen["what_it_means"])
+        self.assertIn("The sealed view does not show whether the item lists NBIX as acquirer or acquiree; the suppression applies either way.", seen["what_it_means"])
+        attested = self.record["scope"]["attested"]
+        self.assertEqual((attested["event"], attested["attestations"]), (NBIX, ["first_public_time", "historical_identity", "corporate_actions"]))
+        self.assertEqual(attested["evidence"], PACKET_PATH + " (the NBIX entry) and the action its second dry run listed, as recorded in " + SEALED_PATH)
+        self.assertIn("accepting the residual gap that open-web research cannot close", attested["read_as"])
+        self.assertIn("whose content was not opened", attested["read_as"])
+        text = " ".join(self.record["not_a_claim"])
+        for phrase in ("Not Phase 1b acceptance and not a claim about any label", "Not a clearance of the in-window 8-Ks whose content was not opened", "Not a finding about the Soleno acquisition, nor that the listed item is that acquisition."):
+            self.assertIn(phrase, text)
 
 
 if __name__ == "__main__":

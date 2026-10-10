@@ -55,8 +55,8 @@ class SealedViewTests(Base):
         for event_id, view in self.view.items():
             with self.subTest(event=event_id):
                 if event_id == NBIX:
+                    # Unattested when the run happened; the owner attested it afterwards (reports/m5-phase1b-nbix-signoff-2026-10-10.json), so the view shows no commitment and no session labels.
                     self.assertEqual((view["state"], view["reasons"], view["labels_sha256"], view["session_labels"]), ("QUARANTINED", ["FIRST_PUBLIC_TIME_UNVERIFIED"], None, None))
-                    self.assertNotIn("attestations", self.by_id[event_id])
                     continue
                 self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
                 self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")

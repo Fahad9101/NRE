@@ -286,8 +286,41 @@
             "all"
           ],
           "note": "PR Newswire carried a separate release the same day at 09:00 ET (the company's participation in a health care conference): independently disseminated but routine, with no fresh, independently material content, so it fails the policy's third condition and is a caveat, not an exclusion."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001193125-26-228013 filed 2026-05-18 13:04 ET (Items 1.01, 2.01, 2.03, 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        },
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0000914475-26-000029 filed 2026-05-28 20:01 ET (Items 5.02, 5.07) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
         }
-      ]
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-nbix-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest NBIX (Recommended)\", 2026-10-10) on the release-time evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-nbix-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest NBIX (Recommended)\", 2026-10-10) on the identity evidence in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (the event filing's cover row, the previous Milestone 1 event, no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K in the archived history)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-10",
+          "record": "reports/m5-phase1b-nbix-signoff-2026-10-10.json",
+          "basis": "Owner sign-off (\"Yes, attest NBIX (Recommended)\", 2026-10-10) on the signal in reports/m5-phase1b-batch1-signoff-packet-2026-10-09.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end) and the action its second dry run listed in reports/m5-phase1b-batch1-sealed-run-2026-10-10.json (one cash_mergers item dated 2026-05-18 by its effective date)."
+        }
+      }
     },
     {
       "event_id": "parr-m5b-2026-05-05",
