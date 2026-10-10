@@ -1,0 +1,935 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch2_pin_verification",
+  "recorded_on": "2026-10-10",
+  "what_this_is": "The second attested sealed run of batch 2, and the first after its pins were pushed: config/m5-phase1b-events.json as pushed in 1734e8b, with the ten commitments of reports/m5-phase1b-batch2-sealed-run-2026-10-10.json pinned in it, on top of 71feecc. It is the sealed view exactly as the workflow printed it, and it does one thing: for each of the nineteen pinned events (batch 1's nine and batch 2's ten) it recomputes the labels from the provider's answer and reports labels_match_recorded, so a pin is checked, never overwritten. No label value, price, return, day-1 or gap label exists in it. No commitment is new in it: all nineteen were pinned already.",
+  "run": {
+    "workflow": "M5 Phase 1b sealed event acquisition",
+    "run_number": 7,
+    "run_id": 38051607098,
+    "job_id": 114211704151,
+    "commit": "1734e8bed8d459c06e24aa21115f4156bae3b18c",
+    "trigger": "the push of 1734e8b (71feecc..1734e8b); config/m5-phase1b-events.json changed in it",
+    "created_at": "2026-10-10T12:20:39Z",
+    "conclusion": "success",
+    "why": "No event returned an error and no pin differed, so the step exited with code 0 (all_ok true in every part)."
+  },
+  "other_runs_of_the_same_push": {
+    "ci": {
+      "workflow": "NRE Milestone 1",
+      "run_number": 251,
+      "run_id": 38051607118,
+      "conclusion": "success",
+      "jobs": {
+        "validate (3.12)": {
+          "job_id": 114211704299,
+          "conclusion": "success"
+        },
+        "validate (3.13)": {
+          "job_id": 114211704513,
+          "conclusion": "success"
+        }
+      }
+    },
+    "milestone_1_event_acquisition": "Not started: the workflow watches nre/event_acquire.py and config/m1-events.json, and this push changed neither."
+  },
+  "how_it_was_read": "From the check run's public annotations through the GitHub API (five sealed parts); the job log was not read.",
+  "annotation_parts": [
+    {
+      "level": "notice",
+      "part": "1/5",
+      "all_ok": true,
+      "message_characters": 3151,
+      "events": [
+        "alkt-m5b-2026-04-29",
+        "caci-m5b-2026-04-22",
+        "hurn-m5b-2026-05-05",
+        "jbss-m5b-2026-04-29"
+      ]
+    },
+    {
+      "level": "notice",
+      "part": "2/5",
+      "all_ok": true,
+      "message_characters": 2588,
+      "events": [
+        "cxt-m5b-2026-05-06",
+        "nbix-m5b-2026-05-05",
+        "parr-m5b-2026-05-05"
+      ]
+    },
+    {
+      "level": "notice",
+      "part": "3/5",
+      "all_ok": true,
+      "message_characters": 3053,
+      "events": [
+        "aspn-m5b-2026-05-07",
+        "coll-m5b-2026-05-07",
+        "payo-m5b-2026-05-07",
+        "pdfs-m5b-2026-05-07"
+      ]
+    },
+    {
+      "level": "notice",
+      "part": "4/5",
+      "all_ok": true,
+      "message_characters": 3057,
+      "events": [
+        "lnsr-m5b-2026-05-08",
+        "real-m5b-2026-05-07",
+        "rekr-m5b-2026-05-11",
+        "tecx-m5b-2026-05-07"
+      ]
+    },
+    {
+      "level": "notice",
+      "part": "5/5",
+      "all_ok": true,
+      "message_characters": 3052,
+      "events": [
+        "achv-m5b-2026-05-12",
+        "klc-m5b-2026-05-14",
+        "slsn-m5b-2026-05-12",
+        "ttwo-m5b-2026-05-21"
+      ]
+    }
+  ],
+  "sealed_view": {
+    "events": {
+      "achv-m5b-2026-05-12": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "achv-m5b-2026-05-12",
+        "labels_match_recorded": true,
+        "labels_sha256": "822cac0839065df0ef2333767d2871db5473d0329de9aa5ea04838b8d190d542",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "ACHV",
+        "window": {
+          "anchor_session": "2026-05-11",
+          "asof": "2026-05-12",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-12",
+          "release_timing": "premarket",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "klc-m5b-2026-05-14": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "klc-m5b-2026-05-14",
+        "labels_match_recorded": true,
+        "labels_sha256": "dd727e9981192d77c0c8810b37528d05a7de73c9fce43d1a1053347a1e413f2a",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "KLC",
+        "window": {
+          "anchor_session": "2026-05-14",
+          "asof": "2026-05-14",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-15",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "slsn-m5b-2026-05-12": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "slsn-m5b-2026-05-12",
+        "labels_match_recorded": true,
+        "labels_sha256": "2d6af8c59e7407ef696ede9dccfffa71b3963f114ae94a9df32f4dfe8d52581b",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "SLSN",
+        "window": {
+          "anchor_session": "2026-05-11",
+          "asof": "2026-05-12",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-12",
+          "release_timing": "premarket",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "ttwo-m5b-2026-05-21": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "ttwo-m5b-2026-05-21",
+        "labels_match_recorded": true,
+        "labels_sha256": "0278c717db41eea6ef07491b457638dba556d920aa0b65dd20217808958b6b2f",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "TTWO",
+        "window": {
+          "anchor_session": "2026-05-21",
+          "asof": "2026-05-21",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-22",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "lnsr-m5b-2026-05-08": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "lnsr-m5b-2026-05-08",
+        "labels_match_recorded": true,
+        "labels_sha256": "7c6c1fc702b4878b2dc889317bf3057ecbb6bd64a87a1a50188b739d0c95b620",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "LNSR",
+        "window": {
+          "anchor_session": "2026-05-07",
+          "asof": "2026-05-08",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-08",
+          "release_timing": "premarket",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "real-m5b-2026-05-07": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "real-m5b-2026-05-07",
+        "labels_match_recorded": true,
+        "labels_sha256": "fae7d75968e60f4e9d36c518621a399dee2cc49320f9c4679093525f6918c853",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "REAL",
+        "window": {
+          "anchor_session": "2026-05-07",
+          "asof": "2026-05-07",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-08",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "rekr-m5b-2026-05-11": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "rekr-m5b-2026-05-11",
+        "labels_match_recorded": true,
+        "labels_sha256": "a2205552fcf1055f7e8781fabff1f51903e98bd41f595156d38889b74c68e17b",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "REKR",
+        "window": {
+          "anchor_session": "2026-05-11",
+          "asof": "2026-05-11",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-12",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "tecx-m5b-2026-05-07": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "tecx-m5b-2026-05-07",
+        "labels_match_recorded": true,
+        "labels_sha256": "0cd49b23150105fdd202c98df9cf579b20729902e0cd80e4c324165e7d42365b",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "TECX",
+        "window": {
+          "anchor_session": "2026-05-07",
+          "asof": "2026-05-07",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-08",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "aspn-m5b-2026-05-07": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "aspn-m5b-2026-05-07",
+        "labels_match_recorded": true,
+        "labels_sha256": "76fa8458e61971c66dd7c0f3c11e9e47ca1309b59a205db26f8b9618404a6043",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "ASPN",
+        "window": {
+          "anchor_session": "2026-05-06",
+          "asof": "2026-05-07",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-07",
+          "release_timing": "premarket",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "coll-m5b-2026-05-07": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "coll-m5b-2026-05-07",
+        "labels_match_recorded": true,
+        "labels_sha256": "c408daff151e0dcf10dc28c2c04b40fec5c2274e2a11dcfa0c9d33ddc85115d3",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "COLL",
+        "window": {
+          "anchor_session": "2026-05-06",
+          "asof": "2026-05-07",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-07",
+          "release_timing": "premarket",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "payo-m5b-2026-05-07": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "payo-m5b-2026-05-07",
+        "labels_match_recorded": true,
+        "labels_sha256": "91677fc63706447ae2d81f82b78bf2fa770f8e52ebfe7a4cb743f530a755f9b9",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "PAYO",
+        "window": {
+          "anchor_session": "2026-05-06",
+          "asof": "2026-05-07",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-07",
+          "release_timing": "premarket",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "pdfs-m5b-2026-05-07": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "pdfs-m5b-2026-05-07",
+        "labels_match_recorded": true,
+        "labels_sha256": "e689bd8f644e5874aa1f0f12bbc67a6302fd98f1a7e8a9f0ea49040a530560cb",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "PDFS",
+        "window": {
+          "anchor_session": "2026-05-07",
+          "asof": "2026-05-07",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-08",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "cxt-m5b-2026-05-06": {
+        "access_check_passed": true,
+        "corporate_actions": [
+          {
+            "ex_date": "2026-05-29",
+            "id": "0a5b1554-acfa-4836-9775-8f007fcba86b",
+            "type": "cash_dividends"
+          }
+        ],
+        "event_id": "cxt-m5b-2026-05-06",
+        "labels_match_recorded": true,
+        "labels_sha256": "26fa8a56aee6973f5418fd88385415198a5fc8d62eb8e9cc092325d36b87ab13",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": false,
+            "reason": "CORPORATE_ACTION_IN_WINDOW"
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "CXT",
+        "window": {
+          "anchor_session": "2026-05-06",
+          "asof": "2026-05-06",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-07",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "nbix-m5b-2026-05-05": {
+        "access_check_passed": true,
+        "corporate_actions": [
+          {
+            "date_field": "effective_date",
+            "ex_date": "2026-05-18",
+            "id": "b8d80b2b-b0e2-4be3-b612-9325d12d1646",
+            "type": "cash_mergers"
+          }
+        ],
+        "event_id": "nbix-m5b-2026-05-05",
+        "labels_match_recorded": true,
+        "labels_sha256": "5ec09a426334d23d630f8be0b0cbbe7a6f6498b56175bfbde9914b7553f23da1",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": false,
+            "reason": "CORPORATE_ACTION_IN_WINDOW"
+          },
+          "session_20_close_return": {
+            "exists": false,
+            "reason": "CORPORATE_ACTION_IN_WINDOW"
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "NBIX",
+        "window": {
+          "anchor_session": "2026-05-05",
+          "asof": "2026-05-05",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-06",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "parr-m5b-2026-05-05": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "parr-m5b-2026-05-05",
+        "labels_match_recorded": true,
+        "labels_sha256": "85efc4ec30c4f4f75393e65192c0d9e874d6e41b3ed9f1d740a7e20f3bda5080",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "PARR",
+        "window": {
+          "anchor_session": "2026-05-05",
+          "asof": "2026-05-05",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-06",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "alkt-m5b-2026-04-29": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "alkt-m5b-2026-04-29",
+        "labels_match_recorded": true,
+        "labels_sha256": "10aa8c9d83e555417e053162377f64a1aaf7a2b9c8973ba23d42aa0868012648",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "ALKT",
+        "window": {
+          "anchor_session": "2026-04-29",
+          "asof": "2026-04-29",
+          "end": "2026-05-31",
+          "reaction_session": "2026-04-30",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-04-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "caci-m5b-2026-04-22": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "caci-m5b-2026-04-22",
+        "labels_match_recorded": true,
+        "labels_sha256": "e4c8dc2174a4be6bd527561faadcd5c199bf61efd88a896b7f84025a482b14ca",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "CACI",
+        "window": {
+          "anchor_session": "2026-04-22",
+          "asof": "2026-04-22",
+          "end": "2026-05-31",
+          "reaction_session": "2026-04-23",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-04-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "hurn-m5b-2026-05-05": {
+        "access_check_passed": true,
+        "corporate_actions": [],
+        "event_id": "hurn-m5b-2026-05-05",
+        "labels_match_recorded": true,
+        "labels_sha256": "4ddd98fa4fa94ed9c10c5493356ef0a21dce6d589ec9d51b85a3f2f71fe8f929",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "HURN",
+        "window": {
+          "anchor_session": "2026-05-05",
+          "asof": "2026-05-05",
+          "end": "2026-06-30",
+          "reaction_session": "2026-05-06",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-05-01"
+        },
+        "zero_volume_sessions": []
+      },
+      "jbss-m5b-2026-04-29": {
+        "access_check_passed": true,
+        "corporate_actions": [
+          {
+            "ex_date": "2026-04-27",
+            "id": "1b6fa9d4-9120-4ce8-946e-700cfe8d9d2a",
+            "type": "cash_dividends"
+          }
+        ],
+        "event_id": "jbss-m5b-2026-04-29",
+        "labels_match_recorded": true,
+        "labels_sha256": "debe6694e7309630352e0d63e70e136e157aeb07e18de84220384eb929775121",
+        "missing_sessions": [],
+        "reasons": [],
+        "sealed": true,
+        "session_labels": {
+          "session_10_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_20_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_2_close_return": {
+            "exists": true,
+            "reason": null
+          },
+          "session_5_close_return": {
+            "exists": true,
+            "reason": null
+          }
+        },
+        "state": "MAPPED",
+        "ticker": "JBSS",
+        "window": {
+          "anchor_session": "2026-04-29",
+          "asof": "2026-04-29",
+          "end": "2026-05-31",
+          "reaction_session": "2026-04-30",
+          "release_timing": "after_hours",
+          "required_sessions": 21,
+          "start": "2026-04-01"
+        },
+        "zero_volume_sessions": []
+      }
+    }
+  },
+  "verified_pins": [
+    "achv-m5b-2026-05-12",
+    "alkt-m5b-2026-04-29",
+    "aspn-m5b-2026-05-07",
+    "caci-m5b-2026-04-22",
+    "coll-m5b-2026-05-07",
+    "cxt-m5b-2026-05-06",
+    "hurn-m5b-2026-05-05",
+    "jbss-m5b-2026-04-29",
+    "klc-m5b-2026-05-14",
+    "lnsr-m5b-2026-05-08",
+    "nbix-m5b-2026-05-05",
+    "parr-m5b-2026-05-05",
+    "payo-m5b-2026-05-07",
+    "pdfs-m5b-2026-05-07",
+    "real-m5b-2026-05-07",
+    "rekr-m5b-2026-05-11",
+    "slsn-m5b-2026-05-12",
+    "tecx-m5b-2026-05-07",
+    "ttwo-m5b-2026-05-21"
+  ],
+  "summary": {
+    "events_run": 19,
+    "mapped": 19,
+    "batch_1_pins_checked": 9,
+    "batch_2_pins_checked": 10,
+    "pins_checked": 19,
+    "pins_that_matched": 19,
+    "pins_that_differed": 0,
+    "errored": {},
+    "events_with_missing_or_zero_volume_sessions": 0,
+    "required_sessions_per_event": 21,
+    "session_labels_that_do_not_exist": {
+      "cxt-m5b-2026-05-06": {
+        "session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"
+      },
+      "nbix-m5b-2026-05-05": {
+        "session_10_close_return": "CORPORATE_ACTION_IN_WINDOW",
+        "session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"
+      }
+    },
+    "new_commitments": 0
+  },
+  "findings": [
+    "All nineteen pinned events report labels_match_recorded true. Each one's labels were recomputed from the provider's answer in this run, and each commitment equals the one the events file pins; their states, window facts, session-label flags and corporate actions are also unchanged from the earlier runs (batch 1's nine from reports/m5-phase1b-batch1-pin-verification-2026-10-10.json, batch 2's ten from reports/m5-phase1b-batch2-sealed-run-2026-10-10.json).",
+    "For batch 2 this is the first time its pins were checked: the earlier run printed the ten commitments while nothing was pinned, so labels_match_recorded was null for them. The ten commitments came out the same, event by event, and are distinct from one another and from batch 1's nine (nineteen distinct commitments).",
+    "The corporate actions are those of the earlier runs and none is new: JBSS's dividend (ex-date 2026-04-27) precedes its anchor session and suppresses no label, CXT's dividend (ex-date 2026-05-29) suppresses its session_20 label only, NBIX's merger item (dated 2026-05-18 by its effective_date) suppresses its session_10 and session_20 labels, and the ten events of batch 2 still list none.",
+    "This push changed no code, so the Milestone 1 event acquisition did not start; only the main CI and this sealed run did."
+  ],
+  "not_a_claim": [
+    "Not an acceptance of Phase 1b or of the extension, which has later batches.",
+    "Not a label, a price or a return: the sealed view holds none, and none was read.",
+    "Not the sealed audit of the whole extension and the registry of its events and commitments (S7), which is a later stage."
+  ]
+}
