@@ -1,0 +1,805 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch3_signoff_packet",
+  "prepared_on": "2026-10-13",
+  "purpose": "Evidence for the project owner to sign off, or not, on batch 3 of Milestone 5 Phase 1b: ten events built from the next ten releases that stand (reports/m5-phase1b-batch3-permission-2026-10-10.json), after a sealed dry run. Nothing here is an acceptance: every event stays quarantined, and no label is computed, until the owner's attestations are added. No event carries a call for the owner this time (decisions_needed is empty): the identity check found no listing or charter item in any of the ten histories, and no separate same-day release was found. The packet proposes label caveats for five filings inside windows and records one cash dividend (CXT).",
+  "dry_run": {
+    "record": "reports/m5-phase1b-batch3-dry-run-2026-10-13.json",
+    "workflow": "M5 Phase 1b sealed event acquisition",
+    "run_id": 38418113326,
+    "commit": "b00783ed550a4402cdf94da07d90fefe127042e6",
+    "result": "All ten events ran with no attestation and quarantined on FIRST_PUBLIC_TIME_UNVERIFIED with every session present and none at zero volume; CXT listed one cash dividend and the other nine no corporate action; the nineteen pins of batches 1 and 2 matched again."
+  },
+  "signoff_items_requested": {
+    "first_public_time_and_historical_identity": "Accept the release time (the wire page's displayed minute, confirmed by the page's own machine-readable time) and the identity evidence per event below, including the residual gap that open-web research cannot close (an earlier disclosure with no public trace). The identity evidence is the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event and the archived 8-K history; the full cover rows were not re-read, to keep to the batch 3 permission.",
+    "corporate_actions": "Accept two signals: no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it (CXT one cash dividend, the other nine none)."
+  },
+  "events": [
+    {
+      "event_id": "okta-m5b-2026-05-28",
+      "candidate_id": "0001660134-26-000050",
+      "ticker": "OKTA",
+      "cik": "0001660134",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260528809289/en/Okta-Announces-First-Quarter-Fiscal-Year-2027-Financial-Results",
+        "displayed_stamp_et": "May 28, 2026 4:01 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2026-05-28T16:01:00-04:00",
+        "page_machine_readable_time": "2026-05-28T20:01:00+00:00",
+        "sec_8k_accepted_et": "2026-05-28 20:03",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-05-28",
+      "reaction_session": "2026-05-29",
+      "twentieth_reaction_session": "2026-06-26",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "Nasdaq Stock Market LLC",
+        "spec_exchange_and_ticker": "NASDAQ | OKTA",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-20260528.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "okta-2026-03-04",
+          "published_at": "2026-03-04T16:01:00-05:00",
+          "candidate_id": "0001660134-26-000016"
+        },
+        "spec_valid_from": "2026-03-04T00:00:00-05:00",
+        "spec_available_at": "2026-03-04T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-03-04 8-K 2.02,7.01,9.01",
+          "2026-03-11 8-K 5.02,9.01",
+          "2026-03-23 8-K 5.02,9.01",
+          "2026-04-22 8-K 5.02,9.01",
+          "2026-05-28 8-K 2.02,7.01,9.01 <EVENT>",
+          "2026-06-23 8-K 5.02,5.07,9.01"
+        ],
+        "same_day_release_check": {
+          "how": "Business Wire phrase searches ('Okta Announces', 43 results, page 1; 'Okta, Inc. (Nasdaq: OKTA)', 113 results, page 1)",
+          "result": "No other Okta release on 2026-05-28: the neighbours are 2026-05-21 08:30 ET (a Forrester Wave recognition) and 2026-05-29 08:00 ET (a notice of conference presentations)."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        {
+          "filing_date": "2026-06-23",
+          "accepted_et": "2026-06-23 21:05",
+          "form": "8-K",
+          "items": [
+            "5.02",
+            "5.07",
+            "9.01"
+          ],
+          "accession": "0001660134-26-000054",
+          "first_session_it_can_affect": "2026-06-24",
+          "labels_whose_windows_it_falls_inside": [
+            "session_20_close_return"
+          ]
+        }
+      ],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "1 other 8-K(s) sit inside the window (2026-06-23 Items 5.02,5.07,9.01); their content was not opened. Okta's next earnings release, on 2026-08-26, is outside this window (it ends 2026-06-26) and is a candidate of a later batch.",
+      "proposed_label_caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001660134-26-000054 filed 2026-06-23 21:05 ET (Items 5.02, 5.07, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ]
+    },
+    {
+      "event_id": "vsat-m5b-2026-05-28",
+      "candidate_id": "0001193125-26-245304",
+      "ticker": "VSAT",
+      "cik": "0000797721",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/05/28/3303256/0/en/viasat-releases-fourth-quarter-and-fiscal-year-2026-financial-results.html",
+        "displayed_stamp_et": "May 28, 2026 16:05 ET",
+        "minute_encoded_in_spec": "2026-05-28T16:05:00-04:00",
+        "page_machine_readable_time": "2026-05-28T20:05:00Z",
+        "sec_8k_accepted_et": "2026-05-28 20:23",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-05-28",
+      "reaction_session": "2026-05-29",
+      "twentieth_reaction_session": "2026-06-26",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "Nasdaq Stock Market LLC",
+        "spec_exchange_and_ticker": "NASDAQ | VSAT",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312526245304/d133220d8k.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "vsat-2026-02-05",
+          "published_at": "2026-02-05T16:05:00-05:00",
+          "candidate_id": "0001193125-26-039528"
+        },
+        "spec_valid_from": "2026-02-05T00:00:00-05:00",
+        "spec_available_at": "2026-02-05T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-05-07 8-K 1.01,5.02,7.01,9.01",
+          "2026-05-28 8-K 2.02,9.01 <EVENT>"
+        ],
+        "same_day_release_check": {
+          "how": "GlobeNewswire date-filtered search ('Viasat', 2026-05-27 to 2026-05-29); Business Wire phrase searches ('Viasat Reports', no results; 'Viasat', 489 results, page 1)",
+          "result": "No other Viasat release in the window: GlobeNewswire lists this one only, and Business Wire carries no Viasat-issued release (page 1 of its 'Viasat' results holds other companies' releases that mention the name)."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "No other 8-K inside the window. VSAT's other batch 3 event (2026-08-04) has a window that starts 2026-08-04, after this window ends (2026-06-26), so the two windows do not overlap.",
+      "proposed_label_caveats": null
+    },
+    {
+      "event_id": "love-m5b-2026-06-11",
+      "candidate_id": "0001628280-26-042363",
+      "ticker": "LOVE",
+      "cik": "0001701758",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/06/11/3310319/0/en/the-lovesac-company-reports-first-quarter-fiscal-2027-financial-results.html",
+        "displayed_stamp_et": "June 11, 2026 07:00 ET",
+        "minute_encoded_in_spec": "2026-06-11T07:00:00-04:00",
+        "page_machine_readable_time": "2026-06-11T11:00:00Z",
+        "sec_8k_accepted_et": "2026-06-11 07:01",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "premarket",
+      "anchor_session": "2026-06-10",
+      "reaction_session": "2026-06-11",
+      "twentieth_reaction_session": "2026-07-10",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "NASDAQ Stock Market LLC",
+        "spec_exchange_and_ticker": "NASDAQ | LOVE",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/1701758/000162828026042363/love-20260611.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "love-2026-03-26",
+          "published_at": "2026-03-26T07:00:00-04:00",
+          "candidate_id": "0001628280-26-021185"
+        },
+        "spec_valid_from": "2026-03-26T00:00:00-04:00",
+        "spec_available_at": "2026-03-26T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-03-26 8-K 2.02,9.01",
+          "2026-03-26 8-K 7.01,9.01",
+          "2026-06-09 8-K 5.07,9.01",
+          "2026-06-11 8-K 2.02,9.01 <EVENT>",
+          "2026-06-15 8-K 5.02,9.01"
+        ],
+        "same_day_release_check": {
+          "how": "GlobeNewswire date-filtered search ('Lovesac', 2026-06-10 to 2026-06-12)",
+          "result": "No other Lovesac release in the window: this is the only result."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        {
+          "filing_date": "2026-06-15",
+          "accepted_et": "2026-06-15 17:00",
+          "form": "8-K",
+          "items": [
+            "5.02",
+            "9.01"
+          ],
+          "accession": "0001213900-26-068869",
+          "first_session_it_can_affect": "2026-06-16",
+          "labels_whose_windows_it_falls_inside": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ]
+        }
+      ],
+      "filings_in_the_three_days_before_the_release": [
+        {
+          "filing_date": "2026-06-09",
+          "accepted_et": "2026-06-09 16:49",
+          "form": "8-K",
+          "items": [
+            "5.07",
+            "9.01"
+          ],
+          "accession": "0001628280-26-041938",
+          "first_session_it_can_affect": "2026-06-10"
+        }
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "1 other 8-K(s) sit inside the window (2026-06-15 Items 5.02,9.01); their content was not opened. An Item 5.07 8-K was filed 2026-06-09 16:49 ET, two days before the release; its first affected session (2026-06-10) is on or before the anchor session, so it falls inside no label's window.",
+      "proposed_label_caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001213900-26-068869 filed 2026-06-15 17:00 ET (Items 5.02, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ]
+    },
+    {
+      "event_id": "hurn-m5b-2026-07-28",
+      "candidate_id": "0001628280-26-050168",
+      "ticker": "HURN",
+      "cik": "0001289848",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260728334424/en/Huron-Announces-Record-Second-Quarter-2026-Financial-Results-and-Increases-2026-Guidance",
+        "displayed_stamp_et": "Jul 28, 2026 4:05 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2026-07-28T16:05:00-04:00",
+        "page_machine_readable_time": "2026-07-28T20:05:00+00:00",
+        "sec_8k_accepted_et": "2026-07-28 20:14",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-07-28",
+      "reaction_session": "2026-07-29",
+      "twentieth_reaction_session": "2026-08-25",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "Nasdaq Global Select Market",
+        "spec_exchange_and_ticker": "NASDAQ | HURN",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/1289848/000162828026050168/hurn-20260728.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "hurn-2026-02-24",
+          "published_at": "2026-02-24T16:05:00-05:00",
+          "candidate_id": "0001628280-26-011092"
+        },
+        "spec_valid_from": "2026-02-24T00:00:00-05:00",
+        "spec_available_at": "2026-02-24T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-05-05 8-K 2.02,9.01",
+          "2026-05-12 8-K 5.07",
+          "2026-06-22 8-K 5.02",
+          "2026-07-27 8-K 5.02",
+          "2026-07-28 8-K 2.02,9.01 <EVENT>"
+        ],
+        "same_day_release_check": {
+          "how": "Business Wire phrase searches ('Huron Announces', 67 results, page 1; 'Huron Consulting Group', 83 results, page 1)",
+          "result": "No other Huron release on 2026-07-28: the neighbours are 2026-07-14 09:05 ET (the notice of the earnings release and webcast) and, in the broader search, 2026-05-05 16:05 ET (first-quarter results)."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "filings_in_the_three_days_before_the_release": [
+        {
+          "filing_date": "2026-07-27",
+          "accepted_et": "2026-07-27 21:29",
+          "form": "8-K",
+          "items": [
+            "5.02"
+          ],
+          "accession": "0001628280-26-049857",
+          "first_session_it_can_affect": "2026-07-28"
+        }
+      ],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "No other 8-K inside the window. An Item 5.02 8-K was filed 2026-07-27 21:29 ET, the evening before the release; its first affected session (2026-07-28) is the anchor session, so it falls inside no label's window.",
+      "proposed_label_caveats": null
+    },
+    {
+      "event_id": "alkt-m5b-2026-07-29",
+      "candidate_id": "0001529274-26-000049",
+      "ticker": "ALKT",
+      "cik": "0001529274",
+      "release": {
+        "wire": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2026-financial-results-302837986.html",
+        "displayed_stamp_et": "Jul 29, 2026, 16:05 ET",
+        "minute_encoded_in_spec": "2026-07-29T16:05:00-04:00",
+        "page_machine_readable_time": "2026-07-29T16:05:00-04:00",
+        "sec_8k_accepted_et": "2026-07-29 20:07",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-07-29",
+      "reaction_session": "2026-07-30",
+      "twentieth_reaction_session": "2026-08-26",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "Nasdaq Stock Market LLC",
+        "spec_exchange_and_ticker": "NASDAQ | ALKT",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/1529274/000152927426000049/alk-20260729.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "alkt-2026-02-25",
+          "published_at": "2026-02-25T16:05:00-05:00",
+          "candidate_id": "0001529274-26-000005"
+        },
+        "spec_valid_from": "2026-02-25T00:00:00-05:00",
+        "spec_available_at": "2026-02-25T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-04-01 8-K 5.02",
+          "2026-04-29 8-K 2.02,7.01,8.01,9.01",
+          "2026-05-06 8-K 1.01,9.01",
+          "2026-05-20 8-K 5.07",
+          "2026-07-29 8-K 2.02,7.01,9.01 <EVENT>"
+        ],
+        "same_day_release_check": {
+          "how": "PR Newswire keyword search ('Alkami', 100 per page)",
+          "result": "No other Alkami release on 2026-07-29: there is none from 2026-07-24 to 2026-07-28, and the next is 2026-07-30 10:00 ET (a partnership announcement)."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "No other 8-K inside the window.",
+      "proposed_label_caveats": null
+    },
+    {
+      "event_id": "nbix-m5b-2026-07-30",
+      "candidate_id": "0000914475-26-000035",
+      "ticker": "NBIX",
+      "cik": "0000914475",
+      "release": {
+        "wire": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2026-financial-results-302839431.html",
+        "displayed_stamp_et": "Jul 30, 2026, 16:01 ET",
+        "minute_encoded_in_spec": "2026-07-30T16:01:00-04:00",
+        "page_machine_readable_time": "2026-07-30T16:01:00-04:00",
+        "sec_8k_accepted_et": "2026-07-30 20:02",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-07-30",
+      "reaction_session": "2026-07-31",
+      "twentieth_reaction_session": "2026-08-27",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "Nasdaq Global Select Market",
+        "spec_exchange_and_ticker": "NASDAQ | NBIX",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/nbix-20260730.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "nbix-2026-02-11",
+          "published_at": "2026-02-11T16:01:00-05:00",
+          "candidate_id": "0000914475-26-000006"
+        },
+        "spec_valid_from": "2026-02-11T00:00:00-05:00",
+        "spec_available_at": "2026-02-11T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-04-06 8-K 1.01,9.01",
+          "2026-05-05 8-K 2.02,9.01",
+          "2026-05-18 8-K 1.01,2.01,2.03,7.01,9.01",
+          "2026-05-28 8-K 5.02,5.07",
+          "2026-07-30 8-K 2.02,9.01 <EVENT>",
+          "2026-07-31 8-K/A 9.01"
+        ],
+        "same_day_release_check": {
+          "how": "PR Newswire keyword search ('Neurocrine', 100 per page)",
+          "result": "No other Neurocrine release from 2026-07-24 to 2026-08-05: the only other result in that range is another company's release (2026-08-03 08:00 ET) that mentions the name."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        {
+          "filing_date": "2026-07-31",
+          "accepted_et": "2026-07-31 20:05",
+          "form": "8-K/A",
+          "items": [
+            "9.01"
+          ],
+          "accession": "0001193125-26-328470",
+          "first_session_it_can_affect": "2026-08-03",
+          "labels_whose_windows_it_falls_inside": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_2_close_return",
+            "session_5_close_return"
+          ]
+        }
+      ],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "1 other 8-K(s) sit inside the window (2026-07-31 Items 9.01); their content was not opened. The only filing inside the window is an 8-K/A (Item 9.01) filed the evening after the release; an amendment, content not opened.",
+      "proposed_label_caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_2_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001193125-26-328470 filed 2026-07-31 20:05 ET (Items 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ]
+    },
+    {
+      "event_id": "parr-m5b-2026-08-04",
+      "candidate_id": "0001628280-26-052766",
+      "ticker": "PARR",
+      "cik": "0000821483",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/08/04/3338894/0/en/par-pacific-holdings-reports-second-quarter-2026-results.html",
+        "displayed_stamp_et": "August 04, 2026 16:53 ET",
+        "minute_encoded_in_spec": "2026-08-04T16:53:00-04:00",
+        "page_machine_readable_time": "2026-08-04T20:53:00Z",
+        "sec_8k_accepted_et": "2026-08-04 21:37",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-08-04",
+      "reaction_session": "2026-08-05",
+      "twentieth_reaction_session": "2026-09-01",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "New York Stock Exchange",
+        "spec_exchange_and_ticker": "NYSE | PARR",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/821483/000162828026052766/parr-20260804.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "parr-2026-02-24",
+          "published_at": "2026-02-24T16:15:00-05:00",
+          "candidate_id": "0001628280-26-011234"
+        },
+        "spec_valid_from": "2026-02-24T00:00:00-05:00",
+        "spec_available_at": "2026-02-24T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-05-04 8-K 5.07",
+          "2026-05-05 8-K 2.02,9.01",
+          "2026-05-11 8-K 7.01,9.01",
+          "2026-05-14 8-K 1.01,2.03,7.01,9.01",
+          "2026-08-05 8-K 2.02,9.01 <EVENT>",
+          "2026-08-25 8-K 7.01,8.01,9.01"
+        ],
+        "same_day_release_check": {
+          "how": "GlobeNewswire date-filtered search ('Par Pacific', 2026-08-03 to 2026-08-05)",
+          "result": "No other Par Pacific release in the window: this is the only result."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        {
+          "filing_date": "2026-08-25",
+          "accepted_et": "2026-08-25 21:26",
+          "form": "8-K",
+          "items": [
+            "7.01",
+            "8.01",
+            "9.01"
+          ],
+          "accession": "0001437749-26-028947",
+          "first_session_it_can_affect": "2026-08-26",
+          "labels_whose_windows_it_falls_inside": [
+            "session_20_close_return"
+          ]
+        }
+      ],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "1 other 8-K(s) sit inside the window (2026-08-25 Items 7.01,8.01,9.01); their content was not opened. The release came at 16:53 ET, later than this issuer's usual minute, and the 8-K carries the filing date 2026-08-05 although it was accepted at 21:37 ET on 2026-08-04, after the release.",
+      "proposed_label_caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001437749-26-028947 filed 2026-08-25 21:26 ET (Items 7.01, 8.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ]
+    },
+    {
+      "event_id": "vsat-m5b-2026-08-04",
+      "candidate_id": "0001193125-26-332896",
+      "ticker": "VSAT",
+      "cik": "0000797721",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/08/04/3338818/0/en/viasat-releases-first-quarter-fiscal-year-2027-financial-results.html",
+        "displayed_stamp_et": "August 04, 2026 16:05 ET",
+        "minute_encoded_in_spec": "2026-08-04T16:05:00-04:00",
+        "page_machine_readable_time": "2026-08-04T20:05:00Z",
+        "sec_8k_accepted_et": "2026-08-04 20:24",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-08-04",
+      "reaction_session": "2026-08-05",
+      "twentieth_reaction_session": "2026-09-01",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "Nasdaq Stock Market LLC",
+        "spec_exchange_and_ticker": "NASDAQ | VSAT",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/797721/000119312526332896/d131434d8k.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "vsat-2026-02-05",
+          "published_at": "2026-02-05T16:05:00-05:00",
+          "candidate_id": "0001193125-26-039528"
+        },
+        "spec_valid_from": "2026-02-05T00:00:00-05:00",
+        "spec_available_at": "2026-02-05T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-05-07 8-K 1.01,5.02,7.01,9.01",
+          "2026-05-28 8-K 2.02,9.01",
+          "2026-08-04 8-K 2.02,9.01 <EVENT>"
+        ],
+        "same_day_release_check": {
+          "how": "GlobeNewswire date-filtered search ('Viasat', 2026-08-03 to 2026-08-05)",
+          "result": "No other Viasat release in the window: this is the only result."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "No other 8-K inside the window. VSAT's other batch 3 event (2026-05-28) has a window that ends 2026-06-26, before this window starts (2026-08-04).",
+      "proposed_label_caveats": null
+    },
+    {
+      "event_id": "caci-m5b-2026-08-05",
+      "candidate_id": "0001628280-26-053448",
+      "ticker": "CACI",
+      "cik": "0000016058",
+      "release": {
+        "wire": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260805256967/en/CACI-Reports-Results-for-Its-Fiscal-2026-Fourth-Quarter-and-Full-Year-and-Issues-Fiscal-Year-2027-Guidance",
+        "displayed_stamp_et": "Aug 5, 2026 4:15 PM Eastern Daylight Time",
+        "minute_encoded_in_spec": "2026-08-05T16:15:00-04:00",
+        "page_machine_readable_time": "2026-08-05T20:15:00+00:00",
+        "sec_8k_accepted_et": "2026-08-05 20:44",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-08-05",
+      "reaction_session": "2026-08-06",
+      "twentieth_reaction_session": "2026-09-02",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "New York Stock Exchange",
+        "spec_exchange_and_ticker": "NYSE | CACI",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/16058/000162828026053448/caci-20260805.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "caci-2026-01-21",
+          "published_at": "2026-01-21T16:15:00-05:00",
+          "candidate_id": "0001628280-26-002895"
+        },
+        "spec_valid_from": "2026-01-21T00:00:00-05:00",
+        "spec_available_at": "2026-01-21T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-03-09 8-K 1.01,2.01,2.03,8.01,9.01",
+          "2026-03-12 8-K 1.01,2.03,9.01",
+          "2026-04-22 8-K 2.02,9.01",
+          "2026-06-05 8-K 5.02,9.01",
+          "2026-06-22 8-K 5.02,9.01",
+          "2026-08-05 8-K 2.02,9.01 <EVENT>"
+        ],
+        "same_day_release_check": {
+          "how": "Business Wire phrase search ('CACI International', 404 results, page 1)",
+          "result": "No other CACI release on 2026-08-05: the neighbours are 2026-07-30 (a contract award) and 2026-08-17 (a selection to modernize technology architectures); the listing's date lines did not render on that page, so the neighbours' dates are those in the releases' own addresses."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; no corporate action in the window (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "No other 8-K inside the window.",
+      "proposed_label_caveats": null
+    },
+    {
+      "event_id": "cxt-m5b-2026-08-05",
+      "candidate_id": "0000025445-26-000032",
+      "ticker": "CXT",
+      "cik": "0000025445",
+      "release": {
+        "wire": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/08/05/3339690/0/en/crane-nxt-reports-second-quarter-2026-results.html",
+        "displayed_stamp_et": "August 05, 2026 16:05 ET",
+        "minute_encoded_in_spec": "2026-08-05T16:05:00-04:00",
+        "page_machine_readable_time": "2026-08-05T20:05:00Z",
+        "sec_8k_accepted_et": "2026-08-05 20:22",
+        "sec_acceptance_not_before_wire_minute": true
+      },
+      "timing_class": "after_hours",
+      "anchor_session": "2026-08-05",
+      "reaction_session": "2026-08-06",
+      "twentieth_reaction_session": "2026-09-02",
+      "identity_evidence": {
+        "exchange_on_the_event_filings_cover_or_release_as_recorded_in_the_s2_review": "New York Stock Exchange",
+        "spec_exchange_and_ticker": "NYSE | CXT",
+        "event_filing_url": "https://www.sec.gov/Archives/edgar/data/25445/000002544526000032/cxt-20260805.htm",
+        "previous_earnings_event_in_milestone_1": {
+          "event_id": "cxt-2026-02-11",
+          "published_at": "2026-02-11T16:05:00-05:00",
+          "candidate_id": "0000025445-26-000005"
+        },
+        "spec_valid_from": "2026-02-11T00:00:00-05:00",
+        "spec_available_at": "2026-02-11T20:00:00Z",
+        "listing_or_charter_items_in_the_archived_history_up_to_the_window_end": "None (no Item 1.03, 3.01, 3.03, 4.01 or 5.03 8-K)"
+      },
+      "chronology_evidence": {
+        "sec_8k_history_from_2026-03-01_to_the_window_end": [
+          "2026-03-12 8-K 5.02,9.01",
+          "2026-05-06 8-K 2.02,9.01",
+          "2026-05-28 8-K 5.07,9.01",
+          "2026-08-05 8-K 2.02,9.01 <EVENT>",
+          "2026-08-11 8-K 7.01"
+        ],
+        "same_day_release_check": {
+          "how": "GlobeNewswire date-filtered search ('Crane NXT', 2026-08-04 to 2026-08-06)",
+          "result": "No other Crane NXT release on 2026-08-05: the other result in the window is the 2026-08-04 notice of its participation in the Oppenheimer technology conference, the day before."
+        },
+        "earlier_disclosure_of_these_results": "None found. The wire page's own stamp is the earliest public time located, EDGAR's acceptance is not earlier than it, and no other release of the issuer that day carries the results. That is absence of evidence, not proof: it is the residual gap the sign-off asks the owner to accept."
+      },
+      "competing_catalysts_inside_window": [
+        {
+          "filing_date": "2026-08-11",
+          "accepted_et": "2026-08-11 10:00",
+          "form": "8-K",
+          "items": [
+            "7.01"
+          ],
+          "accession": "0000025445-26-000038",
+          "first_session_it_can_affect": "2026-08-11",
+          "labels_whose_windows_it_falls_inside": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ]
+        }
+      ],
+      "filings_in_the_three_days_before_the_release": [],
+      "corporate_actions": {
+        "sec_8k_items": "No Item 3.03 or 5.03 8-K in the archived history up to the window end.",
+        "sealed_dry_run": {
+          "corporate_actions": [
+            {
+              "ex_date": "2026-08-31",
+              "id": "6c4c5bfd-242f-42e0-8f31-61d12a1783ad",
+              "type": "cash_dividends"
+            }
+          ],
+          "state": "QUARANTINED",
+          "reasons": [
+            "FIRST_PUBLIC_TIME_UNVERIFIED"
+          ]
+        }
+      },
+      "data_availability": "All 21 required sessions present; no zero-volume session; one cash dividend in the window (see the corporate actions above) (the sealed dry run, workflow run 38418113326). No return was computed or viewed.",
+      "additional_note": "1 other 8-K(s) sit inside the window (2026-08-11 Items 7.01); their content was not opened. A cash dividend with ex-date 2026-08-31 falls inside session_20's window only (the engine suppresses that one label); the 2026-08-11 Item 7.01 filing sits inside the window.",
+      "proposed_label_caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0000025445-26-000038 filed 2026-08-11 10:00 ET (Items 7.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ]
+    }
+  ],
+  "timing_class_balance": {
+    "premarket": [
+      "love-m5b-2026-06-11"
+    ],
+    "after_hours": [
+      "okta-m5b-2026-05-28",
+      "vsat-m5b-2026-05-28",
+      "hurn-m5b-2026-07-28",
+      "alkt-m5b-2026-07-29",
+      "nbix-m5b-2026-07-30",
+      "parr-m5b-2026-08-04",
+      "vsat-m5b-2026-08-04",
+      "caci-m5b-2026-08-05",
+      "cxt-m5b-2026-08-05"
+    ]
+  },
+  "decisions_needed": {},
+  "what_a_sign_off_would_look_like": "For example: 'attest the ten', or 'attest the nine and hold CXT', or a list of event_ids. Then the attestations are added for those events, the sealed workflow runs for real (the push of the events file), and each event's commitment is pinned.",
+  "not_a_claim": [
+    "Not an attestation of any event.",
+    "Not Phase 1b acceptance.",
+    "Not a claim that any proposed caveat's underlying filing is or is not disqualifying: content was not opened for any in-window filing.",
+    "No return, price or label was computed or viewed."
+  ]
+}
