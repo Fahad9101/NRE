@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch3_permission",
+  "recorded_on": "2026-10-10",
+  "context": "Batches 1 and 2 are complete (nineteen events attested, pinned and verified on a re-run). The owner's answer on batch 2's wire pages was \"Yes, batch 2 only (Recommended)\", whose option text said \"Later batches ask again.\" The assistant's report offered batch 3 and said it would ask the exact question, with names, sources and size, before opening any page. The owner's message, the question and the answer are quoted from the session transcript, not from a summary.",
+  "owner_message": {
+    "text": "authorize batch 3",
+    "at": "2026-10-10T13:03:39.862Z",
+    "source": "session transcript, line 44586",
+    "read_as": "The go-ahead to ask the question about batch 3, as the report offered; it is not itself the permission to read pages."
+  },
+  "asked": {
+    "at": "2026-10-10T13:04:03.894Z",
+    "source": "session transcript, line 44599 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-10T13:04:08.433Z",
+    "source": "session transcript, line 44600 (the tool result of the question)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "Wire pages 3",
+      "question": "May I read public wire-release pages and the issuers' own newsroom pages to take the first-public minute of the batch 3 releases (S4)?",
+      "options_offered": [
+        {
+          "label": "Yes, batch 3 only (Recommended)",
+          "description": "The ten next-earliest releases that stand (OKTA 05-28, VSAT 05-28, LOVE 06-11, HURN 07-28, ALKT 07-29, NBIX 07-30, PARR 08-04, VSAT 08-04, CACI 08-05, CXT 08-05; all assessed 'results release, no issue found' in the S2 review): each release's page on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or the issuer's newsroom, plus a check for a separate same-day release. Public pages, roughly 50 to 300 KB each, size not known in advance; batch 1 took 42 page loads and batch 2 took 27, so expect 25 to 45. I read them in the built-in browser, hold them in browser memory only and keep the URL, the displayed minute and a short excerpt. No web-search tool, no price or quote page, no filing. You may be asked to allow each site. No push, no other download. Later batches ask again."
+        },
+        {
+          "label": "Yes, all 25 remaining candidates",
+          "description": "The same for all 25 candidates that stand and are not in batch 1 or batch 2 (batch 3 first, then about ten at a time), without asking again. Same sites, same handling."
+        },
+        {
+          "label": "No downloads for now",
+          "description": "I stop here on Phase 1b until you say otherwise."
+        }
+      ],
+      "owner_selected": "Yes, batch 3 only (Recommended)"
+    }
+  ],
+  "permission_read_as": {
+    "scope": "Batch 3 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download; later batches ask again.",
+    "batch_3": [
+      {
+        "ticker": "OKTA",
+        "filing_date": "2026-05-28",
+        "release_date": "2026-05-28",
+        "candidate_id": "0001660134-26-000050"
+      },
+      {
+        "ticker": "VSAT",
+        "filing_date": "2026-05-28",
+        "release_date": "2026-05-28",
+        "candidate_id": "0001193125-26-245304"
+      },
+      {
+        "ticker": "LOVE",
+        "filing_date": "2026-06-11",
+        "release_date": "2026-06-11",
+        "candidate_id": "0001628280-26-042363"
+      },
+      {
+        "ticker": "HURN",
+        "filing_date": "2026-07-28",
+        "release_date": "2026-07-28",
+        "candidate_id": "0001628280-26-050168"
+      },
+      {
+        "ticker": "ALKT",
+        "filing_date": "2026-07-29",
+        "release_date": "2026-07-29",
+        "candidate_id": "0001529274-26-000049"
+      },
+      {
+        "ticker": "NBIX",
+        "filing_date": "2026-07-30",
+        "release_date": "2026-07-30",
+        "candidate_id": "0000914475-26-000035"
+      },
+      {
+        "ticker": "PARR",
+        "filing_date": "2026-08-05",
+        "release_date": "2026-08-04",
+        "candidate_id": "0001628280-26-052766"
+      },
+      {
+        "ticker": "VSAT",
+        "filing_date": "2026-08-04",
+        "release_date": "2026-08-04",
+        "candidate_id": "0001193125-26-332896"
+      },
+      {
+        "ticker": "CACI",
+        "filing_date": "2026-08-05",
+        "release_date": "2026-08-05",
+        "candidate_id": "0001628280-26-053448"
+      },
+      {
+        "ticker": "CXT",
+        "filing_date": "2026-08-05",
+        "release_date": "2026-08-05",
+        "candidate_id": "0000025445-26-000032"
+      }
+    ],
+    "how_batch_3_was_chosen": "The ten earliest releases among the 25 candidates that stand and are in neither batch 1 nor batch 2 (reports/m5-phase1b-s2-decisions-2026-10-09.json, reports/m5-phase1b-batch2-permission-2026-10-10.json), ties broken alphabetically, computed from the release dates in reports/m5-phase1b-eligibility-review-2026-10-09.json. All ten were assessed results_release_no_issue_found there; nine have a release date equal to the filing date, and PARR's release (2026-08-04) preceded its 8-K filing (2026-08-05) by a day.",
+    "next_in_line": [
+      "ASPN 2026-08-06",
+      "COLL 2026-08-06",
+      "PDFS 2026-08-06"
+    ]
+  },
+  "not_authorized_by_this_answer": [
+    "Reading the wire or newsroom pages of any candidate outside batch 3.",
+    "Reading the near-date 8-Ks of reports/m5-phase1b-same-day-sweep-2026-10-09.json, or any other filing.",
+    "Using the web-search tool (a search-tool summary once exposed a company's quarterly average repurchase price: reports/m5-phase1b-batch1-sources-2026-10-09.json).",
+    "Any push, any other download, any price or label read, and attesting any event's first-public time, identity or corporate actions for the owner."
+  ],
+  "not_a_claim": [
+    "Not an attestation of any event and not a finding about any batch 3 candidate: no page had been read when this was recorded."
+  ]
+}

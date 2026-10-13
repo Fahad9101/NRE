@@ -86,8 +86,8 @@ class EventsAndSourcesTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.spec = load(EVENTS)
-        cls.all_events = cls.spec["events"]
-        cls.events = cls.spec["events"][9:]
+        cls.all_events = cls.spec["events"][:19]                          # batches 1 and 2; batch 3's ten follow them (tests/test_m5_phase1b_batch3.py)
+        cls.events = cls.spec["events"][9:19]
         cls.record = load(SOURCES)
         cls.permission = load(PERMISSION)
         cls.ledger = {(c["ticker"], c["filing_date"]): c for c in load(ROOT / "config" / "m5-phase1b-frozen-candidate-ledger.json")["candidates"]}
@@ -250,7 +250,7 @@ class SealedRunSimulationTests(unittest.TestCase):
     def run_sealed(self, attested, pinned=False):
         calendar = Calendar()
         spec = load(EVENTS)
-        spec["events"] = spec["events"][9:]
+        spec["events"] = spec["events"][9:19]
         for event in spec["events"]:
             if not attested:
                 event.pop("attestations")
@@ -311,7 +311,7 @@ class SealedRunSimulationTests(unittest.TestCase):
         code, printed = self.run_sealed(attested=True, pinned=True)
         out = json.loads(printed[0])
         self.assertEqual((code, out["all_ok"]), (2, False))
-        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][9:]}
+        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][9:19]}
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
                 self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))

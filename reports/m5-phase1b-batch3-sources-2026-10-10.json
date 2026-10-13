@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch3_sources",
+  "recorded_on": "2026-10-10",
+  "state": "BATCH_3_SPECS_BUILT_DRY_RUN_PENDING",
+  "purpose": "S4 for batch 3: the first-public minute of each release in the third batch, taken from the public wire page, and what was found on the way. config/m5-phase1b-events.json now holds the ten events built from it in the dry-run state after the nineteen of batches 1 and 2: sealed, no attestations, so each quarantines on FIRST_PUBLIC_TIME_UNVERIFIED until the owner attests it. Nothing here is a price, a return or a label.",
+  "permission": {
+    "record": "reports/m5-phase1b-batch3-permission-2026-10-10.json",
+    "answer": "Yes, batch 3 only (Recommended)",
+    "answered_at": "2026-10-10T13:04:08.433Z",
+    "read_as": "Batch 3 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download; later batches ask again."
+  },
+  "reading": {
+    "page_loads_in_the_built_in_browser": 25,
+    "by_host": {
+      "www.businesswire.com": 11,
+      "www.globenewswire.com": 10,
+      "www.prnewswire.com": 4
+    },
+    "web_searches": 0,
+    "what": "The ten releases' pages and company searches on GlobeNewswire, Business Wire and PR Newswire (each issuer's wire is the one its earlier events in the repository used); held in browser memory only; the URL, the displayed minute, the page's machine-readable time and the same-day check results are kept. No filing was opened: EDGAR's acceptance times come from the archived SEC lists already in the repository. Listings were read through short extractions of the dates, times and titles wanted, so as to see as little else as possible.",
+    "what_was_seen_in_passing": "Business Wire's 'Okta Announces' listing was read as page text before I narrowed the extractions: it showed the headline, the time (2026-08-26 16:01 ET) and the first sentences of Okta's 2026-08-26 release, which is a candidate of a later batch, and the blurbs of older Okta releases. I did not open that release's page and did not use what I saw; the later batch will read its own page if the owner permits it. Other extractions returned titles of neighbouring releases (for Alkami, Neurocrine, Huron, CACI, Viasat) and one dateline sentence of Lovesac's release that gives its quarter's net sales. These are company-reported business content, not a price, a return or a label of any event.",
+    "refused_or_missing": "Nothing was refused. Two Business Wire searches returned nothing, one wasted page load each: the first Okta search used a wrong title ('Okta Announces Fiscal First Quarter 2027 Financial Results'; the real one is 'Okta Announces First Quarter Fiscal Year 2027 Financial Results'), and 'Viasat Reports' found nothing because Viasat's releases are on GlobeNewswire ('Viasat Releases ...'). On one CACI listing the date lines did not render (a dash), so the neighbours' dates there come from their addresses."
+  },
+  "events": [
+    {
+      "event_id": "okta-m5b-2026-05-28",
+      "ticker": "OKTA",
+      "candidate_id": "0001660134-26-000050",
+      "release_date": "2026-05-28",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260528809289/en/Okta-Announces-First-Quarter-Fiscal-Year-2027-Financial-Results",
+      "displayed_stamp": "May 28, 2026 4:01 PM Eastern Daylight Time",
+      "minute_et": "16:01",
+      "published_at": "2026-05-28T16:01:00-04:00",
+      "page_machine_readable_time": "2026-05-28T20:01:00+00:00",
+      "edgar_acceptance_et": "2026-05-28 20:03",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-29",
+      "same_day_release_check": {
+        "how": "Business Wire phrase searches ('Okta Announces', 43 results, page 1; 'Okta, Inc. (Nasdaq: OKTA)', 113 results, page 1)",
+        "result": "No other Okta release on 2026-05-28: the neighbours are 2026-05-21 08:30 ET (a Forrester Wave recognition) and 2026-05-29 08:00 ET (a notice of conference presentations)."
+      }
+    },
+    {
+      "event_id": "vsat-m5b-2026-05-28",
+      "ticker": "VSAT",
+      "candidate_id": "0001193125-26-245304",
+      "release_date": "2026-05-28",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/05/28/3303256/0/en/viasat-releases-fourth-quarter-and-fiscal-year-2026-financial-results.html",
+      "displayed_stamp": "May 28, 2026 16:05 ET",
+      "minute_et": "16:05",
+      "published_at": "2026-05-28T16:05:00-04:00",
+      "page_machine_readable_time": "2026-05-28T20:05:00Z",
+      "edgar_acceptance_et": "2026-05-28 20:23",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-05-29",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Viasat', 2026-05-27 to 2026-05-29); Business Wire phrase searches ('Viasat Reports', no results; 'Viasat', 489 results, page 1)",
+        "result": "No other Viasat release in the window: GlobeNewswire lists this one only, and Business Wire carries no Viasat-issued release (page 1 of its 'Viasat' results holds other companies' releases that mention the name)."
+      }
+    },
+    {
+      "event_id": "love-m5b-2026-06-11",
+      "ticker": "LOVE",
+      "candidate_id": "0001628280-26-042363",
+      "release_date": "2026-06-11",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/06/11/3310319/0/en/the-lovesac-company-reports-first-quarter-fiscal-2027-financial-results.html",
+      "displayed_stamp": "June 11, 2026 07:00 ET",
+      "minute_et": "07:00",
+      "published_at": "2026-06-11T07:00:00-04:00",
+      "page_machine_readable_time": "2026-06-11T11:00:00Z",
+      "edgar_acceptance_et": "2026-06-11 07:01",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-06-11",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Lovesac', 2026-06-10 to 2026-06-12)",
+        "result": "No other Lovesac release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "hurn-m5b-2026-07-28",
+      "ticker": "HURN",
+      "candidate_id": "0001628280-26-050168",
+      "release_date": "2026-07-28",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260728334424/en/Huron-Announces-Record-Second-Quarter-2026-Financial-Results-and-Increases-2026-Guidance",
+      "displayed_stamp": "Jul 28, 2026 4:05 PM Eastern Daylight Time",
+      "minute_et": "16:05",
+      "published_at": "2026-07-28T16:05:00-04:00",
+      "page_machine_readable_time": "2026-07-28T20:05:00+00:00",
+      "edgar_acceptance_et": "2026-07-28 20:14",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-07-29",
+      "same_day_release_check": {
+        "how": "Business Wire phrase searches ('Huron Announces', 67 results, page 1; 'Huron Consulting Group', 83 results, page 1)",
+        "result": "No other Huron release on 2026-07-28: the neighbours are 2026-07-14 09:05 ET (the notice of the earnings release and webcast) and, in the broader search, 2026-05-05 16:05 ET (first-quarter results)."
+      }
+    },
+    {
+      "event_id": "alkt-m5b-2026-07-29",
+      "ticker": "ALKT",
+      "candidate_id": "0001529274-26-000049",
+      "release_date": "2026-07-29",
+      "wire": "PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2026-financial-results-302837986.html",
+      "displayed_stamp": "Jul 29, 2026, 16:05 ET",
+      "minute_et": "16:05",
+      "published_at": "2026-07-29T16:05:00-04:00",
+      "page_machine_readable_time": "2026-07-29T16:05:00-04:00",
+      "edgar_acceptance_et": "2026-07-29 20:07",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-07-30",
+      "same_day_release_check": {
+        "how": "PR Newswire keyword search ('Alkami', 100 per page)",
+        "result": "No other Alkami release on 2026-07-29: there is none from 2026-07-24 to 2026-07-28, and the next is 2026-07-30 10:00 ET (a partnership announcement)."
+      }
+    },
+    {
+      "event_id": "nbix-m5b-2026-07-30",
+      "ticker": "NBIX",
+      "candidate_id": "0000914475-26-000035",
+      "release_date": "2026-07-30",
+      "wire": "PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2026-financial-results-302839431.html",
+      "displayed_stamp": "Jul 30, 2026, 16:01 ET",
+      "minute_et": "16:01",
+      "published_at": "2026-07-30T16:01:00-04:00",
+      "page_machine_readable_time": "2026-07-30T16:01:00-04:00",
+      "edgar_acceptance_et": "2026-07-30 20:02",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-07-31",
+      "same_day_release_check": {
+        "how": "PR Newswire keyword search ('Neurocrine', 100 per page)",
+        "result": "No other Neurocrine release from 2026-07-24 to 2026-08-05: the only other result in that range is another company's release (2026-08-03 08:00 ET) that mentions the name."
+      }
+    },
+    {
+      "event_id": "parr-m5b-2026-08-04",
+      "ticker": "PARR",
+      "candidate_id": "0001628280-26-052766",
+      "release_date": "2026-08-04",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/04/3338894/0/en/par-pacific-holdings-reports-second-quarter-2026-results.html",
+      "displayed_stamp": "August 04, 2026 16:53 ET",
+      "minute_et": "16:53",
+      "published_at": "2026-08-04T16:53:00-04:00",
+      "page_machine_readable_time": "2026-08-04T20:53:00Z",
+      "edgar_acceptance_et": "2026-08-04 21:37",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-05",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Par Pacific', 2026-08-03 to 2026-08-05)",
+        "result": "No other Par Pacific release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "vsat-m5b-2026-08-04",
+      "ticker": "VSAT",
+      "candidate_id": "0001193125-26-332896",
+      "release_date": "2026-08-04",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/04/3338818/0/en/viasat-releases-first-quarter-fiscal-year-2027-financial-results.html",
+      "displayed_stamp": "August 04, 2026 16:05 ET",
+      "minute_et": "16:05",
+      "published_at": "2026-08-04T16:05:00-04:00",
+      "page_machine_readable_time": "2026-08-04T20:05:00Z",
+      "edgar_acceptance_et": "2026-08-04 20:24",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-05",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Viasat', 2026-08-03 to 2026-08-05)",
+        "result": "No other Viasat release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "caci-m5b-2026-08-05",
+      "ticker": "CACI",
+      "candidate_id": "0001628280-26-053448",
+      "release_date": "2026-08-05",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260805256967/en/CACI-Reports-Results-for-Its-Fiscal-2026-Fourth-Quarter-and-Full-Year-and-Issues-Fiscal-Year-2027-Guidance",
+      "displayed_stamp": "Aug 5, 2026 4:15 PM Eastern Daylight Time",
+      "minute_et": "16:15",
+      "published_at": "2026-08-05T16:15:00-04:00",
+      "page_machine_readable_time": "2026-08-05T20:15:00+00:00",
+      "edgar_acceptance_et": "2026-08-05 20:44",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-06",
+      "same_day_release_check": {
+        "how": "Business Wire phrase search ('CACI International', 404 results, page 1)",
+        "result": "No other CACI release on 2026-08-05: the neighbours are 2026-07-30 (a contract award) and 2026-08-17 (a selection to modernize technology architectures); the listing's date lines did not render on that page, so the neighbours' dates are those in the releases' own addresses."
+      }
+    },
+    {
+      "event_id": "cxt-m5b-2026-08-05",
+      "ticker": "CXT",
+      "candidate_id": "0000025445-26-000032",
+      "release_date": "2026-08-05",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/05/3339690/0/en/crane-nxt-reports-second-quarter-2026-results.html",
+      "displayed_stamp": "August 05, 2026 16:05 ET",
+      "minute_et": "16:05",
+      "published_at": "2026-08-05T16:05:00-04:00",
+      "page_machine_readable_time": "2026-08-05T20:05:00Z",
+      "edgar_acceptance_et": "2026-08-05 20:22",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-06",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Crane NXT', 2026-08-04 to 2026-08-06)",
+        "result": "No other Crane NXT release on 2026-08-05: the other result in the window is the 2026-08-04 notice of its participation in the Oppenheimer technology conference, the day before."
+      }
+    }
+  ],
+  "events_file": {
+    "path": "config/m5-phase1b-events.json",
+    "events": 29,
+    "batch_3_events": 10,
+    "batch_3_attestations": 0,
+    "batch_3_events_sha256_in_the_dry_run_state": "9e6e1b1e9d892731fe16822ccdd59e70997ae1c787f97d0e3b12908adb912d93",
+    "seal": "every event carries seal: hash_only",
+    "provider_attestation": "reports/m5-phase1b-provider-scope-authorization-2026-10-09.json (the owner's recorded 'Yes, provider rights fine')"
+  },
+  "caveats_carried": [],
+  "notes": [
+    "PARR: the wire minute (2026-08-04 16:53 ET) is on the day before the 8-K's filing date (2026-08-05); the archived SEC list gives the 8-K's acceptance as 2026-08-04 21:37 ET, so the event follows the wire minute and EDGAR's acceptance is later than it, not earlier.",
+    "VSAT has two events in this batch (2026-05-28 and 2026-08-04), the fiscal fourth-quarter and first-quarter releases; each has its own event, candidate and release page."
+  ],
+  "next": "A sealed dry run (the push of the events file starts it; the nineteen pinned events of batches 1 and 2 are re-checked in the same run), then the signoff packet for the owner: for each event the wire evidence above and the sealed run's facts (missing and zero-volume sessions, corporate actions), and any call for the owner's word; then the owner's attestations of first-public time, historical identity and corporate actions, and the attested sealed run that pins each event's commitment.",
+  "what_this_is_not": [
+    "Not an attestation: first-public time, historical identity and corporate actions are the owner's to attest, per batch.",
+    "Not a proof that nothing earlier was public: open-web research can show no discoverable earlier disclosure, not a negative.",
+    "Not a price, a return or a label of any event: none was read; the sealed run prints none."
+  ]
+}

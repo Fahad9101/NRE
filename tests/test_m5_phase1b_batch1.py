@@ -222,6 +222,7 @@ class SealedRunSimulationTests(unittest.TestCase):
     def run_sealed(self, pinned):
         calendar = Calendar()
         spec = load(EVENTS)
+        spec["events"] = spec["events"][:19]                              # batches 1 and 2, attested and pinned; batch 3's ten follow them (tests/test_m5_phase1b_batch3.py)
         if not pinned:
             for event in spec["events"]:
                 event.pop("recorded_result", None)
@@ -266,7 +267,7 @@ class SealedRunSimulationTests(unittest.TestCase):
         self.assertEqual((code, out["all_ok"]), (2, False))
         recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"] if "recorded_result" in e}
         self.assertEqual(len(recorded), 19)
-        self.assertEqual(sorted(recorded), sorted(e["event_id"] for e in load(EVENTS)["events"]))
+        self.assertEqual(sorted(recorded), sorted(e["event_id"] for e in load(EVENTS)["events"][:19]))
         self.assertEqual(len(out["events"]), 19)
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
