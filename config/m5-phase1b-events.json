@@ -1753,7 +1753,27 @@
       "precision": "minute",
       "timestamp_evidence": "06:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-08-06"
+      "expected_reaction_session": "2026-08-06",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "coll-m5b-2026-08-06",
@@ -1781,7 +1801,36 @@
       "precision": "minute",
       "timestamp_evidence": "07:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-08-06"
+      "expected_reaction_session": "2026-08-06",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001104659-26-095464 filed 2026-08-13 11:30 ET (Items 8.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "pdfs-m5b-2026-08-06",
@@ -1809,7 +1858,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:02",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-07"
+      "expected_reaction_session": "2026-08-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "real-m5b-2026-08-06",
@@ -1837,7 +1906,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:07",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-07"
+      "expected_reaction_session": "2026-08-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "tecx-m5b-2026-08-06",
@@ -1865,7 +1954,27 @@
       "precision": "minute",
       "timestamp_evidence": "16:01",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-07"
+      "expected_reaction_session": "2026-08-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "ttwo-m5b-2026-08-07",
@@ -1893,7 +2002,27 @@
       "precision": "minute",
       "timestamp_evidence": "07:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-08-07"
+      "expected_reaction_session": "2026-08-07",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "achv-m5b-2026-08-11",
@@ -1921,7 +2050,43 @@
       "precision": "minute",
       "timestamp_evidence": "08:30",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-08-11"
+      "expected_reaction_session": "2026-08-11",
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "8-K 0001193125-26-296174 filed 2026-07-06 20:06 ET with Items 5.03, 5.07 and 9.01 (Item 5.03: amendments to the articles of incorporation or bylaws; Item 5.07: matters submitted to a vote of security holders), 36 days before the release and before the window starts; content not opened. The event filing's cover still records the exchange as 'Nasdaq Stock Market LLC' on the release date, and Alpaca lists no corporate action over the window. A caveat, not an exclusion."
+        },
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001193125-26-352229 filed 2026-08-14 20:09 ET (Items 8.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "klc-m5b-2026-08-13",
@@ -1949,7 +2114,38 @@
       "precision": "minute",
       "timestamp_evidence": "16:15",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-14"
+      "expected_reaction_session": "2026-08-14",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_2_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001193125-26-352533 filed 2026-08-14 17:00 ET (Items 1.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     },
     {
       "event_id": "lnsr-m5b-2026-08-13",
@@ -1977,7 +2173,27 @@
       "precision": "minute",
       "timestamp_evidence": "07:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-08-13"
+      "expected_reaction_session": "2026-08-13",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the release-time evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the identity evidence in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 5.03 filing found, ACHV's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-14",
+          "record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+          "basis": "Owner sign-off (\"attest the nine\", 2026-10-14) on the two signals in reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, except ACHV's Item 5.03 filing, which is carried as a caveat, and Alpaca's real answer as the sealed dry run reported it: no corporate action for any of the nine)."
+        }
+      }
     }
   ]
 }

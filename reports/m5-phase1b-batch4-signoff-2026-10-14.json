@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch4_signoff",
+  "recorded_on": "2026-10-14",
+  "context": "Reply to the batch 4 signoff request built from reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json after the sealed dry run (reports/m5-phase1b-batch4-dry-run-2026-10-14.json): nine events quarantined as a dry run should, no corporate action, two calls for the owner (ACHV's Item 5.03 filing of 2026-07-06 and ASMB's release at the bell) and proposed label caveats for four filings. The request went out as plain text in my report (no pop-up this time). His words are quoted from the session transcript, not from a summary.",
+  "request_in_text": {
+    "at": "2026-10-14T15:14:05.196Z",
+    "source": "session transcript, line 47893 (my report)",
+    "text": "Batch 4's signoff packet is pushed and CI is green. I need your signoff on the nine events and two calls.\n\n**What I did**\n- Your \"push\" arrived before this commit existed, so I held it until the checks passed. Mutation check: 724 defects, all caught. The first run missed six unpinned items, which I pinned and re-ran. Full suite: 1374 tests OK. A clean export of the commit: 1374 OK.\n- Then I pushed `d14220d`. CI #257 is green on both Python jobs, every step. No sealed run started, because the events file didn't change.\n- Your \"push\" is now used up. The next one will start the attested sealed run, so I'll ask you again then.\n\n**What the dry run found**\n- All nine events are quarantined, as a dry run should be. Every event has all 21 sessions, none at zero volume, and no corporate action.\n- All 29 earlier pins matched again.\n- No label, price or return was computed or viewed.\n\n**Two calls for you** (full text in the packet, `reports/m5-phase1b-batch4-signoff-packet-2026-10-14.json` in the NRE repo)\n1. **ACHV (08-11):** its 8-K history has a filing with Items 5.03, 5.07 and 9.01 (accession 0001193125-26-296174, filed 2026-07-06 20:06 ET). That is 36 days before the release and before the window starts. I did not open it, so I can't say what it did. What I can show:\n   - The cover still records Nasdaq on the release date.\n   - Milestone 1's ACHV event and batch 2's ACHV event name the same security.\n   - Alpaca lists no corporate action in the window.\n   - Options: attest ACHV with a caveat on all labels (my recommendation, as with REKR's Item 3.01 filing in batch 2), hold it until I read the filing (which needs your permission to read one SEC filing), or leave it quarantined or exclude it.\n2. **ASMB (08-13):** its release was at exactly 16:00 ET, which the calendar can't classify, so there is no spec. Options: leave it quarantined (my recommendation, as with ASMB 05-07) or exclude it.\n\n**Other things in the packet**\n- Proposed label caveats, none of the filings opened:\n  - COLL: 8-K of 08-13, Item 8.01.\n  - ACHV: 8-K of 08-14, Items 8.01 and 9.01.\n  - KLC: 8-K of 08-14, Items 1.01 and 9.01. This is the most consequential in-window item: Item 1.01 is entry into a material agreement.\n- LNSR's Item 5.07 8-K of 08-10 falls inside no label's window.\n- TTWO released premarket at 07:30, unlike its two earlier after-close events. The page's own timestamp, the issuer's own page and EDGAR's acceptance time all agree with it.\n- ACHV released at 08:30, later than its usual 07:00.\n\n**What remains**\n- **You:** the signoff.\n- **Me, after your signoff:**\n  - Write the signoff record, the attestations and the caveats into the specs.\n  - After your next \"push\", run the attested sealed run, record it and pin the nine commitments.\n  - Push again and verify all 38 pins.\n- **Later:** batch 5 (REKR, JBSS, SLSN, OKTA, LOVE) needs your \"authorize batch 5\". After that come the final audit and your completion declaration.\n\n**Recommended reply:** `attest the nine`. That attests first-public time, historical identity and corporate actions for all nine events. It attaches ACHV's all-label caveat plus the three in-window caveats, and leaves ASMB's release quarantined. Reply with different wording if you want a different call on ACHV or ASMB.",
+    "recommended_reply": "attest the nine"
+  },
+  "answered": {
+    "text": "attest the nine",
+    "at": "2026-10-14T15:15:43.454Z",
+    "source": "session transcript, line 47897 (queued at line 47895)",
+    "read_as": "The reply the report asked for: the three attestations for all nine events, on the evidence in the packet, with ACHV's caveat on all labels and the packet's three in-window caveats and the residual gap accepted; no event is held, and ASMB's release stays quarantined."
+  },
+  "scope": {
+    "attested": {
+      "events": [
+        "aspn-m5b-2026-08-06",
+        "coll-m5b-2026-08-06",
+        "pdfs-m5b-2026-08-06",
+        "real-m5b-2026-08-06",
+        "tecx-m5b-2026-08-06",
+        "ttwo-m5b-2026-08-07",
+        "achv-m5b-2026-08-11",
+        "klc-m5b-2026-08-13",
+        "lnsr-m5b-2026-08-13"
+      ],
+      "attestations": [
+        "first_public_time",
+        "historical_identity",
+        "corporate_actions"
+      ],
+      "read_as": "The three attestations for all nine batch 4 events, on the evidence in the packet, accepting the residual gap that open-web research cannot close (an earlier public disclosure with no discoverable trace), and carrying the packet's proposed label caveats into the events' specs as caveats, not exclusions: ACHV's Item 5.03 filing of 2026-07-06 on all of its labels, and the in-window 8-Ks listed for COLL, ACHV and KLC, whose content was not opened."
+    },
+    "achv": {
+      "event": "achv-m5b-2026-08-11",
+      "decision": "attest with the caveat",
+      "read_as": "ACHV is attested with the others and carries a caveat on all labels naming the 8-K 0001193125-26-296174 filed 2026-07-06 20:06 ET with Items 5.03, 5.07 and 9.01 (content not opened); it is not held for the filing to be read, not left quarantined and not excluded. No permission to read that filing was asked for or given."
+    },
+    "asmb": {
+      "candidate": "0001193125-26-352193",
+      "release": "asmb-2026-08-13",
+      "decision": "leave it quarantined, not excluded",
+      "read_as": "ASMB's second-quarter release (2026-08-13, exactly 16:00 ET, which the calendar classes as bell_ambiguous) stays quarantined, not excluded: no event spec is built, nothing is attested for it and nothing is computed for it. It is the disposition the owner gave ASMB 2026-05-07 (reports/m5-phase1b-batch1-signoff-2026-10-09.json), as Milestone 1's GALT and step 2's PDFS 2025-08-07 were left."
+    },
+    "additions_to_the_owners_words": "None: the attestations, caveats and the two dispositions are exactly the packet's recommendations and proposals."
+  },
+  "not_a_claim": [
+    "Not Phase 1b acceptance and not a claim about any event's outcome: no label, price or return has been computed or viewed.",
+    "Not a clearance of the filings that travel as caveats (ACHV's Item 5.03 filing and the in-window 8-Ks of COLL, ACHV and KLC): their content was not opened.",
+    "Not an attestation of ASMB's release, which has no spec and stays quarantined.",
+    "Not a permission to read any filing or any other page: later batches ask again."
+  ]
+}
