@@ -207,11 +207,11 @@ class SignoffPacketTests(Base):
         nbix = next(e for e in self.packet["events"] if e["ticker"] == "NBIX")["competing_catalysts_inside_window"][0]
         self.assertEqual((nbix["form"], nbix["labels_whose_windows_it_falls_inside"]), ("8-K/A", ["session_10_close_return", "session_20_close_return", "session_2_close_return", "session_5_close_return"]))
 
-    def test_no_spec_carries_a_caveat_yet_and_the_dry_run_facts_are_the_dry_run_records(self):
+    def test_the_packets_caveats_are_the_specs_and_the_dry_run_facts_are_the_dry_run_records(self):
         view = self.dry["sealed_view"]["events"]
         for entry in self.packet["events"]:
             with self.subTest(event=entry["event_id"]):
-                self.assertNotIn("caveats", self.by_id[entry["event_id"]])                           # the dry-run state: the signoff carries the packet's caveats into the attested specs
+                self.assertEqual(self.by_id[entry["event_id"]].get("caveats", []), entry["proposed_label_caveats"] or [])      # the signoff carried the packet's caveats into each attested spec, in the packet's order
                 sealed = view[entry["event_id"]]
                 self.assertEqual(entry["corporate_actions"]["sealed_dry_run"], {"corporate_actions": sealed["corporate_actions"], "state": "QUARANTINED", "reasons": ["FIRST_PUBLIC_TIME_UNVERIFIED"]})
         cxt = next(e for e in self.packet["events"] if e["event_id"] == CXT)
