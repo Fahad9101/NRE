@@ -265,7 +265,7 @@ class SealedRunSimulationTests(unittest.TestCase):
         code, printed = self.run_sealed(pinned=True)
         out = json.loads(printed[0])
         self.assertEqual((code, out["all_ok"]), (2, False))
-        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"] if "recorded_result" in e}
+        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][:19] if "recorded_result" in e}
         self.assertEqual(len(recorded), 19)
         self.assertEqual(sorted(recorded), sorted(e["event_id"] for e in load(EVENTS)["events"][:19]))
         self.assertEqual(len(out["events"]), 19)

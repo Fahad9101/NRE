@@ -1214,6 +1214,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "d6a4a81072919b5233b593e17bc1f441f40c0b949acf4ba9b4d35c9cec57090e",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1262,6 +1266,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "f0c0a35c5252bdf228d288cb79833cbd171179005ac688a78a680c0d624d7071",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1320,6 +1328,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "f2150ef79c55208150fdd97469aa7e5f5cc958e006561870f60904ce3b3977a6",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1368,6 +1380,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "402d35a7c14101c4daea925619aec981cd05bb5ed885fde4093a67a90f9eba61",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1416,6 +1432,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "776b0efa61d768a3fb6697f8c31cee6d6a02218a763f069e797ff3205a137af6",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1475,6 +1495,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "b9166c2572b6f1013c8ce9fbfb0c2fecde0bac8c5f4732a9757a3af0fa60642c",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1531,6 +1555,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "a70971f6f0ff1264794f2e70ae53985ea42ced75f8193bf12514b70c5b34a34a",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1579,6 +1607,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "0c9e8ac5acffd9e24a54a5470ea479efb94ea1d03f94a87124654d617f308b01",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1627,6 +1659,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "21945c3f5374a2ddd4d6b4510c641ef7ad89d6651ad4343b9c5943aed38cdc05",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     },
     {
@@ -1685,6 +1721,10 @@
           "record": "reports/m5-phase1b-batch3-signoff-2026-10-14.json",
           "basis": "Owner sign-off (\"attest the ten\", 2026-10-14) on the two signals in reports/m5-phase1b-batch3-signoff-packet-2026-10-13.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: CXT one cash dividend, the other nine none)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "09cacefa774a57609ffd3e0a3e0db399befc63289ee338d7e29f19ba9a7b52f4",
+        "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
     }
   ]

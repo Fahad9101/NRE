@@ -1,5 +1,5 @@
 """The owner's signoff of Milestone 5 Phase 1b batch 3 (reports/m5-phase1b-batch3-signoff-2026-10-14.json): his words as given (the pop-up question he cancelled, "what next", the request in my report, and "attest the ten"), what the answer decides, and the events file that
-carries it out -- all ten events attested on the record, with the five label caveats the packet proposed. (Their commitments are pinned from the attested sealed run once it has printed them.)"""
+carries it out -- all ten events attested on the record, with the five label caveats the packet proposed. (Their commitments are pinned from the attested sealed run: tests/test_m5_phase1b_batch3_sealed_run.py.)"""
 import json
 import unittest
 from pathlib import Path
@@ -117,12 +117,6 @@ class EventsFileTests(unittest.TestCase):
         for event_id in IDS:
             for caveat in self.events[event_id].get("caveats", []):
                 self.assertLessEqual(set(caveat["labels"]), ea.LABEL_NAMES | {"all"})
-
-    def test_no_commitment_is_pinned_yet_for_the_ten(self):
-        for event_id in IDS:
-            self.assertNotIn("recorded_result", self.events[event_id])
-        self.assertEqual(sum("recorded_result" in e for e in self.spec["events"]), 19)
-
 
 if __name__ == "__main__":
     unittest.main()

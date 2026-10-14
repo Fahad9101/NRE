@@ -77,7 +77,7 @@ class SealedViewTests(Base):
                                                                                        NBIX: {"session_10_close_return": "CORPORATE_ACTION_IN_WINDOW", "session_20_close_return": "CORPORATE_ACTION_IN_WINDOW"}},
                                                   "new_commitments": 0})
         ea.validate_spec(self.spec, self.calendar)
-        self.assertEqual(sum("recorded_result" in e for e in self.spec["events"]), 19)
+        self.assertEqual(sum("recorded_result" in e for e in self.spec["events"][:19]), 19)                                  # batch 3's ten are pinned from their own record (tests/test_m5_phase1b_batch3_sealed_run.py)
 
     def test_the_labels_that_do_not_exist_are_exactly_those_a_corporate_action_falls_inside(self):
         listed = sorted(event_id for event_id, view in self.view.items() if view["corporate_actions"])
