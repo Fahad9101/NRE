@@ -92,9 +92,9 @@ class EventsAndSourcesTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.spec = load(EVENTS)
-        cls.all_events = cls.spec["events"]
+        cls.all_events = cls.spec["events"][:29]                          # batches 1 to 3; batch 4's nine follow them (tests/test_m5_phase1b_batch4.py)
         cls.earlier = cls.spec["events"][:19]
-        cls.events = cls.spec["events"][19:]
+        cls.events = cls.spec["events"][19:29]
         cls.record = load(SOURCES)
         cls.permission = load(PERMISSION)
         cls.ledger = {(c["ticker"], c["filing_date"]): c for c in load(ROOT / "config" / "m5-phase1b-frozen-candidate-ledger.json")["candidates"]}
@@ -275,7 +275,7 @@ class SealedRunSimulationTests(unittest.TestCase):
     def run_sealed(self, attested, pinned=False):
         calendar = Calendar()
         spec = load(EVENTS)
-        spec["events"] = spec["events"][19:]
+        spec["events"] = spec["events"][19:29]
         for event in spec["events"]:
             if not attested:
                 event.pop("attestations")
@@ -336,7 +336,7 @@ class SealedRunSimulationTests(unittest.TestCase):
         code, printed = self.run_sealed(attested=True, pinned=True)
         out = json.loads(printed[0])
         self.assertEqual((code, out["all_ok"]), (2, False))
-        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][19:]}
+        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][19:29]}
         self.assertEqual(sorted(out["events"]), sorted(BATCH_3_IDS))
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):

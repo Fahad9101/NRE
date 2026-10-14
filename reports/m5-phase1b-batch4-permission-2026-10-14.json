@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch4_permission",
+  "recorded_on": "2026-10-14",
+  "context": "Batches 1 to 3 are complete (twenty-nine events attested, pinned and verified on a re-run). The owner's answer on batch 3's wire pages was \"Yes, batch 3 only (Recommended)\", whose option text said \"Later batches ask again.\" The assistant's report offered batch 4 and said it would ask the exact question, with names, sources and size, before opening any page. The owner's message, the question and the answer are quoted from the session transcript, not from a summary.",
+  "owner_message": {
+    "text": "authorize batch 4",
+    "at": "2026-10-14T05:18:34.377Z",
+    "source": "session transcript, line 46626",
+    "read_as": "The go-ahead to ask the question about batch 4, as the report offered; it is not itself the permission to read pages."
+  },
+  "asked": {
+    "at": "2026-10-14T05:18:58.350Z",
+    "source": "session transcript, line 46639 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-14T05:19:24.899Z",
+    "source": "session transcript, line 46640 (the tool result of the question)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "Wire pages 4",
+      "question": "May I read public wire-release pages and the issuers' own newsroom pages to take the first-public minute of the batch 4 releases (S4)?",
+      "options_offered": [
+        {
+          "label": "Yes, batch 4 only (Recommended)",
+          "description": "The ten next-earliest releases that stand (ASPN 08-06, COLL 08-06, PDFS 08-06, REAL 08-06, TECX 08-06, TTWO 08-07, ACHV 08-11, ASMB 08-13, KLC 08-13, LNSR 08-13; nine assessed 'results release, no issue found' in the S2 review, and ASMB's release, whose 8-K/A of 08-14 you kept with a caveat): each release's page on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or the issuer's newsroom, plus a check for a separate same-day release. Public pages, roughly 50 to 300 KB each, size not known in advance; batches 1, 2 and 3 took 42, 27 and 25 page loads, so expect 25 to 45. I read them in the built-in browser, hold them in browser memory only and keep the URL, the displayed minute and a short excerpt. No web-search tool, no price or quote page, no filing. You may be asked to allow each site. No push, no other download. Later batches ask again."
+        },
+        {
+          "label": "Yes, all 15 remaining candidates",
+          "description": "The same for all 15 candidates that stand and are not in batches 1 to 3 (batch 4 first, then batch 5's five: REKR 08-13, JBSS 08-19, SLSN 08-19, OKTA 08-26, LOVE 09-10), without asking again. Same sites, same handling."
+        },
+        {
+          "label": "No downloads for now",
+          "description": "I stop here on Phase 1b until you say otherwise."
+        }
+      ],
+      "owner_selected": "Yes, batch 4 only (Recommended)"
+    }
+  ],
+  "permission_read_as": {
+    "scope": "Batch 4 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download; later batches ask again.",
+    "batch_4": [
+      {
+        "ticker": "ASPN",
+        "filing_date": "2026-08-06",
+        "release_date": "2026-08-06",
+        "candidate_id": "0001171843-26-005289"
+      },
+      {
+        "ticker": "COLL",
+        "filing_date": "2026-08-06",
+        "release_date": "2026-08-06",
+        "candidate_id": "0001628280-26-053849"
+      },
+      {
+        "ticker": "PDFS",
+        "filing_date": "2026-08-06",
+        "release_date": "2026-08-06",
+        "candidate_id": "0001437749-26-026292"
+      },
+      {
+        "ticker": "REAL",
+        "filing_date": "2026-08-06",
+        "release_date": "2026-08-06",
+        "candidate_id": "0001573221-26-000052"
+      },
+      {
+        "ticker": "TECX",
+        "filing_date": "2026-08-06",
+        "release_date": "2026-08-06",
+        "candidate_id": "0001193125-26-338000"
+      },
+      {
+        "ticker": "TTWO",
+        "filing_date": "2026-08-07",
+        "release_date": "2026-08-07",
+        "candidate_id": "0001628280-26-054580"
+      },
+      {
+        "ticker": "ACHV",
+        "filing_date": "2026-08-11",
+        "release_date": "2026-08-11",
+        "candidate_id": "0001193125-26-344571"
+      },
+      {
+        "ticker": "ASMB",
+        "filing_date": "2026-08-14",
+        "release_date": "2026-08-13",
+        "candidate_id": "0001193125-26-352193"
+      },
+      {
+        "ticker": "KLC",
+        "filing_date": "2026-08-13",
+        "release_date": "2026-08-13",
+        "candidate_id": "0001193125-26-349267"
+      },
+      {
+        "ticker": "LNSR",
+        "filing_date": "2026-08-13",
+        "release_date": "2026-08-13",
+        "candidate_id": "0001193125-26-347859"
+      }
+    ],
+    "how_batch_4_was_chosen": "The ten earliest releases among the 15 candidates that stand and are in none of batches 1 to 3 (reports/m5-phase1b-s2-decisions-2026-10-09.json, reports/m5-phase1b-batch2-permission-2026-10-10.json, reports/m5-phase1b-batch3-permission-2026-10-10.json), ties broken alphabetically, computed from the release dates in reports/m5-phase1b-eligibility-review-2026-10-09.json. Nine were assessed results_release_no_issue_found there, with a release date equal to the filing date; the tenth, ASMB, is the 2026-08-14 8-K/A that the owner kept with a caveat as standing for its 2026-08-13 release (reports/m5-phase1b-s2-decisions-2026-10-09.json).",
+    "next_in_line": [
+      "REKR 2026-08-13",
+      "JBSS 2026-08-19",
+      "SLSN 2026-08-19"
+    ]
+  },
+  "not_authorized_by_this_answer": [
+    "Reading the wire or newsroom pages of any candidate outside batch 4.",
+    "Reading the near-date 8-Ks of reports/m5-phase1b-same-day-sweep-2026-10-09.json, or any other filing.",
+    "Using the web-search tool (a search-tool summary once exposed a company's quarterly average repurchase price: reports/m5-phase1b-batch1-sources-2026-10-09.json).",
+    "Any push, any other download, any price or label read, and attesting any event's first-public time, identity or corporate actions for the owner."
+  ],
+  "not_a_claim": [
+    "Not an attestation of any event and not a finding about any batch 4 candidate: no page had been read when this was recorded."
+  ]
+}

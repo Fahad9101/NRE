@@ -83,7 +83,7 @@ class EventsFileTests(unittest.TestCase):
 
     def test_the_ten_events_carry_the_three_attestations_on_that_record(self):
         self.assertTrue((ROOT / RECORD_PATH).is_file())
-        self.assertEqual(list(self.events)[19:], IDS)
+        self.assertEqual(list(self.events)[19:29], IDS)
         for event_id in IDS:
             with self.subTest(event=event_id):
                 attestations = self.events[event_id]["attestations"]

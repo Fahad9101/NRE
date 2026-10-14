@@ -1726,6 +1726,258 @@
         "labels_sha256": "09cacefa774a57609ffd3e0a3e0db399befc63289ee338d7e29f19ba9a7b52f4",
         "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json"
       }
+    },
+    {
+      "event_id": "aspn-m5b-2026-08-06",
+      "cluster_id": "aspn-m5b-2026-08-06",
+      "candidate_id": "0001171843-26-005289",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "ASPN-1145986-2026-08-06",
+        "company_id": "0001145986",
+        "cik": "0001145986",
+        "ticker": "ASPN",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-25T00:00:00-05:00",
+        "available_at": "2026-02-25T20:00:00Z"
+      },
+      "source": {
+        "source_id": "aspn-wire-2026-08-06",
+        "url": "https://www.globenewswire.com/news-release/2026/08/06/3340041/0/en/aspen-aerogels-inc-reports-second-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "text": "Wire release, displayed dateline August 06, 2026 06:30 ET (06:30 ET). https://www.globenewswire.com/news-release/2026/08/06/3340041/0/en/aspen-aerogels-inc-reports-second-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "first_seen_at": "2026-08-06T06:31:00-04:00"
+      },
+      "published_at": "2026-08-06T06:30:00-04:00",
+      "cutoff": "2026-08-06T06:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-06"
+    },
+    {
+      "event_id": "coll-m5b-2026-08-06",
+      "cluster_id": "coll-m5b-2026-08-06",
+      "candidate_id": "0001628280-26-053849",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "COLL-1267565-2026-08-06",
+        "company_id": "0001267565",
+        "cik": "0001267565",
+        "ticker": "COLL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "coll-wire-2026-08-06",
+        "url": "https://www.globenewswire.com/news-release/2026/08/06/3340155/34897/en/collegium-reports-second-quarter-2026-financial-results-and-highlights-recent-company-progress.html",
+        "text": "Wire release, displayed dateline August 06, 2026 07:30 ET (07:30 ET). https://www.globenewswire.com/news-release/2026/08/06/3340155/34897/en/collegium-reports-second-quarter-2026-financial-results-and-highlights-recent-company-progress.html",
+        "first_seen_at": "2026-08-06T07:31:00-04:00"
+      },
+      "published_at": "2026-08-06T07:30:00-04:00",
+      "cutoff": "2026-08-06T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-06"
+    },
+    {
+      "event_id": "pdfs-m5b-2026-08-06",
+      "cluster_id": "pdfs-m5b-2026-08-06",
+      "candidate_id": "0001437749-26-026292",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "PDFS-1120914-2026-08-06",
+        "company_id": "0001120914",
+        "cik": "0001120914",
+        "ticker": "PDFS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-12T00:00:00-05:00",
+        "available_at": "2026-02-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "pdfs-wire-2026-08-06",
+        "url": "https://www.globenewswire.com/news-release/2026/08/06/3340690/7239/en/pdf-solutions-reports-second-quarter-2026-financial-results.html",
+        "text": "Wire release, displayed dateline August 06, 2026 16:02 ET (16:02 ET). https://www.globenewswire.com/news-release/2026/08/06/3340690/7239/en/pdf-solutions-reports-second-quarter-2026-financial-results.html",
+        "first_seen_at": "2026-08-06T16:03:00-04:00"
+      },
+      "published_at": "2026-08-06T16:02:00-04:00",
+      "cutoff": "2026-08-06T16:05:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:02",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-07"
+    },
+    {
+      "event_id": "real-m5b-2026-08-06",
+      "cluster_id": "real-m5b-2026-08-06",
+      "candidate_id": "0001573221-26-000052",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "REAL-1573221-2026-08-06",
+        "company_id": "0001573221",
+        "cik": "0001573221",
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "real-wire-2026-08-06",
+        "url": "https://www.prnewswire.com/news-releases/the-realreal-announces-second-quarter-2026-results-302845414.html",
+        "text": "Wire release, displayed dateline Aug 06, 2026, 16:07 ET (16:07 ET). https://www.prnewswire.com/news-releases/the-realreal-announces-second-quarter-2026-results-302845414.html",
+        "first_seen_at": "2026-08-06T16:08:00-04:00"
+      },
+      "published_at": "2026-08-06T16:07:00-04:00",
+      "cutoff": "2026-08-06T16:10:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:07",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-07"
+    },
+    {
+      "event_id": "tecx-m5b-2026-08-06",
+      "cluster_id": "tecx-m5b-2026-08-06",
+      "candidate_id": "0001193125-26-338000",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "TECX-1681087-2026-08-06",
+        "company_id": "0001681087",
+        "cik": "0001681087",
+        "ticker": "TECX",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-26T00:00:00-05:00",
+        "available_at": "2026-02-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "tecx-wire-2026-08-06",
+        "url": "https://www.globenewswire.com/news-release/2026/08/06/3340678/0/en/tectonic-therapeutic-announces-second-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "text": "Wire release, displayed dateline August 06, 2026 16:01 ET (16:01 ET). https://www.globenewswire.com/news-release/2026/08/06/3340678/0/en/tectonic-therapeutic-announces-second-quarter-2026-financial-results-and-recent-business-highlights.html",
+        "first_seen_at": "2026-08-06T16:02:00-04:00"
+      },
+      "published_at": "2026-08-06T16:01:00-04:00",
+      "cutoff": "2026-08-06T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-07"
+    },
+    {
+      "event_id": "ttwo-m5b-2026-08-07",
+      "cluster_id": "ttwo-m5b-2026-08-07",
+      "candidate_id": "0001628280-26-054580",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "TTWO-946581-2026-08-07",
+        "company_id": "0000946581",
+        "cik": "0000946581",
+        "ticker": "TTWO",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-02-03T00:00:00-05:00",
+        "available_at": "2026-02-03T20:00:00Z"
+      },
+      "source": {
+        "source_id": "ttwo-wire-2026-08-07",
+        "url": "https://www.businesswire.com/news/home/20260806868549/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-First-Quarter-2027",
+        "text": "Wire release, displayed dateline Aug 7, 2026 7:30 AM Eastern Daylight Time (07:30 ET). https://www.businesswire.com/news/home/20260806868549/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-First-Quarter-2027",
+        "first_seen_at": "2026-08-07T07:31:00-04:00"
+      },
+      "published_at": "2026-08-07T07:30:00-04:00",
+      "cutoff": "2026-08-07T07:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-07"
+    },
+    {
+      "event_id": "achv-m5b-2026-08-11",
+      "cluster_id": "achv-m5b-2026-08-11",
+      "candidate_id": "0001193125-26-344571",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "ACHV-949858-2026-08-11",
+        "company_id": "0000949858",
+        "cik": "0000949858",
+        "ticker": "ACHV",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-24T00:00:00-04:00",
+        "available_at": "2026-03-24T20:00:00Z"
+      },
+      "source": {
+        "source_id": "achv-wire-2026-08-11",
+        "url": "https://www.globenewswire.com/news-release/2026/08/11/3342705/0/en/achieve-life-sciences-reports-second-quarter-2026-financial-results-and-provides-business-updates.html",
+        "text": "Wire release, displayed dateline August 11, 2026 08:30 ET (08:30 ET). https://www.globenewswire.com/news-release/2026/08/11/3342705/0/en/achieve-life-sciences-reports-second-quarter-2026-financial-results-and-provides-business-updates.html",
+        "first_seen_at": "2026-08-11T08:31:00-04:00"
+      },
+      "published_at": "2026-08-11T08:30:00-04:00",
+      "cutoff": "2026-08-11T08:33:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "08:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-11"
+    },
+    {
+      "event_id": "klc-m5b-2026-08-13",
+      "cluster_id": "klc-m5b-2026-08-13",
+      "candidate_id": "0001193125-26-349267",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "KLC-1873529-2026-08-13",
+        "company_id": "0001873529",
+        "cik": "0001873529",
+        "ticker": "KLC",
+        "exchange": "NYSE",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-12T00:00:00-04:00",
+        "available_at": "2026-03-12T20:00:00Z"
+      },
+      "source": {
+        "source_id": "klc-wire-2026-08-13",
+        "url": "https://www.businesswire.com/news/home/20260813429154/en/KinderCare-Reports-Second-Quarter-2026-Financial-Results",
+        "text": "Wire release, displayed dateline Aug 13, 2026 4:15 PM Eastern Daylight Time (16:15 ET). https://www.businesswire.com/news/home/20260813429154/en/KinderCare-Reports-Second-Quarter-2026-Financial-Results",
+        "first_seen_at": "2026-08-13T16:16:00-04:00"
+      },
+      "published_at": "2026-08-13T16:15:00-04:00",
+      "cutoff": "2026-08-13T16:18:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:15",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-14"
+    },
+    {
+      "event_id": "lnsr-m5b-2026-08-13",
+      "cluster_id": "lnsr-m5b-2026-08-13",
+      "candidate_id": "0001193125-26-347859",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "LNSR-1320350-2026-08-13",
+        "company_id": "0001320350",
+        "cik": "0001320350",
+        "ticker": "LNSR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-31T00:00:00-04:00",
+        "available_at": "2026-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "lnsr-wire-2026-08-13",
+        "url": "https://www.globenewswire.com/news-release/2026/08/13/3344364/0/en/lensar-reports-second-quarter-2026-results-and-provides-business-update.html",
+        "text": "Wire release, displayed dateline August 13, 2026 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2026/08/13/3344364/0/en/lensar-reports-second-quarter-2026-results-and-provides-business-update.html",
+        "first_seen_at": "2026-08-13T07:01:00-04:00"
+      },
+      "published_at": "2026-08-13T07:00:00-04:00",
+      "cutoff": "2026-08-13T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-13"
     }
   ]
 }

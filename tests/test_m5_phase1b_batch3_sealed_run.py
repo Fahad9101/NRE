@@ -114,7 +114,7 @@ class RunAndPinsTests(Base):
             with self.subTest(event=event_id):
                 self.assertEqual(self.by_id[event_id]["recorded_result"], {"labels_sha256": commitments[event_id], "recorded_in": RECORD_PATH})
                 self.assertEqual(commitments[event_id], self.view[event_id]["labels_sha256"])
-        self.assertEqual(sum("recorded_result" in e for e in self.spec["events"]), 29)
+        self.assertEqual(sum("recorded_result" in e for e in self.spec["events"][:29]), 29)                                  # batch 4's nine are pinned from their own record once it exists
         ea.validate_spec(self.spec, self.calendar)
 
     def test_it_says_what_it_is_and_what_it_is_not(self):

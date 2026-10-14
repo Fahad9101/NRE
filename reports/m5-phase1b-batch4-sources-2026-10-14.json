@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch4_sources",
+  "recorded_on": "2026-10-14",
+  "state": "BATCH_4_SPECS_BUILT_DRY_RUN_PENDING",
+  "purpose": "S4 for batch 4: the first-public minute of each release in the fourth batch, taken from the public wire page, and what was found on the way. config/m5-phase1b-events.json now holds nine events built from it in the dry-run state after the twenty-nine of batches 1 to 3: sealed, no attestations, so each quarantines on FIRST_PUBLIC_TIME_UNVERIFIED until the owner attests it. The tenth release, ASMB's, was made at the bell and is put aside for the owner's word. Nothing here is a price, a return or a label.",
+  "permission": {
+    "record": "reports/m5-phase1b-batch4-permission-2026-10-14.json",
+    "answer": "Yes, batch 4 only (Recommended)",
+    "answered_at": "2026-10-14T05:19:24.899Z",
+    "read_as": "Batch 4 only: the public pages of the releases of the ten candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download; later batches ask again."
+  },
+  "reading": {
+    "page_loads_in_the_built_in_browser": 36,
+    "by_host": {
+      "take2games.com": 2,
+      "www.businesswire.com": 15,
+      "www.globenewswire.com": 17,
+      "www.prnewswire.com": 2
+    },
+    "web_searches": 0,
+    "what": "The ten releases' pages and company searches on GlobeNewswire, Business Wire and PR Newswire (each issuer's wire is the one its earlier events in the repository used, except The RealReal, whose second-quarter release is on PR Newswire), and Take-Two's own investor-relations press-release list and release page, which gave no release minute; held in browser memory only; the URL, the displayed minute, the page's machine-readable time and the same-day check results are kept. No filing was opened: EDGAR's acceptance times come from the archived SEC lists already in the repository. Listings were read through short extractions of the dates, times and titles wanted, so as to see as little else as possible.",
+    "what_was_seen_in_passing": "Take-Two's investor page returned a sentence of the release (the conference call 'today at 8:00 a.m. Eastern Time') and, with a dateline extraction, a fragment of the company's net-bookings expectation; Business Wire's Take-Two listing showed titles of the company's other releases, one of them dated 2026-10-13 (a notice that it will report its next quarter's results); short datelines of other releases came back with their extractions. These are company-reported business content, not a price, a return or a label of any event.",
+    "refused_or_missing": "No site refused a page for permission. Business Wire's newsroom search answered 'Page Unavailable' (a reference id, no content) nine times, from three searches in quick succession onward, until about 45 minutes after my last attempt; its homepage loaded throughout. I did not route around it: I waited, then asked for one search at a time, and the Take-Two and KinderCare releases were read once it answered again. Two GlobeNewswire searches for The RealReal found nothing, because its release is on PR Newswire. The first batch call of GlobeNewswire searches stopped at its first action (the pane had to be reopened), so Aspen's search was loaded twice."
+  },
+  "events": [
+    {
+      "event_id": "aspn-m5b-2026-08-06",
+      "ticker": "ASPN",
+      "candidate_id": "0001171843-26-005289",
+      "release_date": "2026-08-06",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3340041/0/en/aspen-aerogels-inc-reports-second-quarter-2026-financial-results-and-recent-business-highlights.html",
+      "displayed_stamp": "August 06, 2026 06:30 ET",
+      "minute_et": "06:30",
+      "published_at": "2026-08-06T06:30:00-04:00",
+      "page_machine_readable_time": "2026-08-06T10:30:00Z",
+      "edgar_acceptance_et": "2026-08-06 06:30",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-06",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Aspen Aerogels', 2026-08-05 to 2026-08-07)",
+        "result": "No other Aspen Aerogels release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "coll-m5b-2026-08-06",
+      "ticker": "COLL",
+      "candidate_id": "0001628280-26-053849",
+      "release_date": "2026-08-06",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3340155/34897/en/collegium-reports-second-quarter-2026-financial-results-and-highlights-recent-company-progress.html",
+      "displayed_stamp": "August 06, 2026 07:30 ET",
+      "minute_et": "07:30",
+      "published_at": "2026-08-06T07:30:00-04:00",
+      "page_machine_readable_time": "2026-08-06T11:30:00Z",
+      "edgar_acceptance_et": "2026-08-06 11:33",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-06",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Collegium', 2026-08-05 to 2026-08-07)",
+        "result": "No other Collegium release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "pdfs-m5b-2026-08-06",
+      "ticker": "PDFS",
+      "candidate_id": "0001437749-26-026292",
+      "release_date": "2026-08-06",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3340690/7239/en/pdf-solutions-reports-second-quarter-2026-financial-results.html",
+      "displayed_stamp": "August 06, 2026 16:02 ET",
+      "minute_et": "16:02",
+      "published_at": "2026-08-06T16:02:00-04:00",
+      "page_machine_readable_time": "2026-08-06T20:02:00Z",
+      "edgar_acceptance_et": "2026-08-06 16:24",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-07",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('PDF Solutions', 2026-08-05 to 2026-08-07)",
+        "result": "No other PDF Solutions release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "real-m5b-2026-08-06",
+      "ticker": "REAL",
+      "candidate_id": "0001573221-26-000052",
+      "release_date": "2026-08-06",
+      "wire": "PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/the-realreal-announces-second-quarter-2026-results-302845414.html",
+      "displayed_stamp": "Aug 06, 2026, 16:07 ET",
+      "minute_et": "16:07",
+      "published_at": "2026-08-06T16:07:00-04:00",
+      "page_machine_readable_time": "2026-08-06T16:07:00-04:00",
+      "edgar_acceptance_et": "2026-08-06 16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-07",
+      "same_day_release_check": {
+        "how": "PR Newswire keyword search ('The RealReal', 100 per page); GlobeNewswire date-filtered searches ('The RealReal' and 'RealReal', 2026-08-05 to 2026-08-07, no results)",
+        "result": "No other The RealReal release on 2026-08-06: the neighbour on PR Newswire is 2026-08-03 10:00 ET (a store opening), and GlobeNewswire has none in the window."
+      }
+    },
+    {
+      "event_id": "tecx-m5b-2026-08-06",
+      "ticker": "TECX",
+      "candidate_id": "0001193125-26-338000",
+      "release_date": "2026-08-06",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/06/3340678/0/en/tectonic-therapeutic-announces-second-quarter-2026-financial-results-and-recent-business-highlights.html",
+      "displayed_stamp": "August 06, 2026 16:01 ET",
+      "minute_et": "16:01",
+      "published_at": "2026-08-06T16:01:00-04:00",
+      "page_machine_readable_time": "2026-08-06T20:01:00Z",
+      "edgar_acceptance_et": "2026-08-06 16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-07",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Tectonic Therapeutic', 2026-08-05 to 2026-08-07)",
+        "result": "No other Tectonic Therapeutic release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "ttwo-m5b-2026-08-07",
+      "ticker": "TTWO",
+      "candidate_id": "0001628280-26-054580",
+      "release_date": "2026-08-07",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260806868549/en/Take-Two-Interactive-Software-Inc.-Reports-Results-for-Fiscal-First-Quarter-2027",
+      "displayed_stamp": "Aug 7, 2026 7:30 AM Eastern Daylight Time",
+      "minute_et": "07:30",
+      "published_at": "2026-08-07T07:30:00-04:00",
+      "page_machine_readable_time": "2026-08-07T11:30:00+00:00",
+      "edgar_acceptance_et": "2026-08-07 11:37",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-07",
+      "same_day_release_check": {
+        "how": "Business Wire phrase search ('Take-Two Interactive Software', 611 results, page 1)",
+        "result": "No other Take-Two release on 2026-08-07: the neighbours in the results are 2026-07-22 10:00 ET (a game announcement) and 2026-09-01 08:00 ET (a game announcement). The page's address carries the date 2026-08-06 although the release is stamped 2026-08-07 07:30 ET."
+      }
+    },
+    {
+      "event_id": "achv-m5b-2026-08-11",
+      "ticker": "ACHV",
+      "candidate_id": "0001193125-26-344571",
+      "release_date": "2026-08-11",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/11/3342705/0/en/achieve-life-sciences-reports-second-quarter-2026-financial-results-and-provides-business-updates.html",
+      "displayed_stamp": "August 11, 2026 08:30 ET",
+      "minute_et": "08:30",
+      "published_at": "2026-08-11T08:30:00-04:00",
+      "page_machine_readable_time": "2026-08-11T12:30:00Z",
+      "edgar_acceptance_et": "2026-08-11 20:04",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-11",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Achieve Life Sciences', 2026-08-10 to 2026-08-12)",
+        "result": "No other Achieve Life Sciences release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "klc-m5b-2026-08-13",
+      "ticker": "KLC",
+      "candidate_id": "0001193125-26-349267",
+      "release_date": "2026-08-13",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260813429154/en/KinderCare-Reports-Second-Quarter-2026-Financial-Results",
+      "displayed_stamp": "Aug 13, 2026 4:15 PM Eastern Daylight Time",
+      "minute_et": "16:15",
+      "published_at": "2026-08-13T16:15:00-04:00",
+      "page_machine_readable_time": "2026-08-13T20:15:00+00:00",
+      "edgar_acceptance_et": "2026-08-13 16:20",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-14",
+      "same_day_release_check": {
+        "how": "Business Wire phrase search ('KinderCare Learning Companies', 119 results, page 1)",
+        "result": "No other KinderCare release on 2026-08-13: the neighbours in the results are 2026-08-06 08:45 ET (a scholarship announcement) and 2026-09-28 08:24 ET (an awards announcement)."
+      }
+    },
+    {
+      "event_id": "lnsr-m5b-2026-08-13",
+      "ticker": "LNSR",
+      "candidate_id": "0001193125-26-347859",
+      "release_date": "2026-08-13",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/13/3344364/0/en/lensar-reports-second-quarter-2026-results-and-provides-business-update.html",
+      "displayed_stamp": "August 13, 2026 07:00 ET",
+      "minute_et": "07:00",
+      "published_at": "2026-08-13T07:00:00-04:00",
+      "page_machine_readable_time": "2026-08-13T11:00:00Z",
+      "edgar_acceptance_et": "2026-08-13 07:10",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-13",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('LENSAR', 2026-08-12 to 2026-08-14)",
+        "result": "No other LENSAR release in the window: this is the only result."
+      }
+    }
+  ],
+  "quarantined_before_the_spec": {
+    "ticker": "ASMB",
+    "candidate_id": "0001193125-26-352193",
+    "filing_date": "2026-08-14",
+    "form": "8-K/A",
+    "release_date": "2026-08-13",
+    "wire": "GlobeNewswire",
+    "displayed_stamp": "August 13, 2026 16:00 ET",
+    "page_machine_readable_time": "2026-08-13T20:00:00Z",
+    "url": "https://www.globenewswire.com/news-release/2026/08/13/3344875/16259/en/assembly-biosciences-reports-second-quarter-2026-financial-results-and-recent-updates.html",
+    "edgar_acceptance_et": "2026-08-14 16:05",
+    "original_8k": {
+      "accession": "0001193125-26-349198",
+      "items": "2.01,9.01",
+      "accepted_et": "2026-08-13 16:11",
+      "note": "The 8-K the 8-K/A corrects (its Item 2.02 had been tagged as Item 2.01, per the owner's decision record); it is not one of the 47 candidates."
+    },
+    "reason": "Released at 16:00 ET, the regular-session close: nre/calendar.py's classify() returns bell_ambiguous for the instant of the close, which event_acquire.validate_spec() does not accept at minute precision, so no event spec can be built. ASMB 2026-05-07 was left quarantined, not excluded, for the same reason on the owner's word (reports/m5-phase1b-batch1-signoff-2026-10-09.json), as were Milestone 1's GALT and Milestone 2 step 2's PDFS 2025-08-07. The same disposition is proposed here; it needs the owner's word at the signoff. The owner's earlier decision on this candidate (kept with a caveat as the 8-K/A that stands for the 2026-08-13 release) does not decide the timing question.",
+    "same_day_release_check": "GlobeNewswire date-filtered search ('Assembly Biosciences', 2026-08-12 to 2026-08-14): no other release in the window."
+  },
+  "events_file": {
+    "path": "config/m5-phase1b-events.json",
+    "events": 38,
+    "batch_4_events": 9,
+    "batch_4_attestations": 0,
+    "batch_4_events_sha256_in_the_dry_run_state": "d1881d2769c4e2750f9101196a780b18eb3b6f34b4c4cd64ead0b45fb307f9e3",
+    "seal": "every event carries seal: hash_only",
+    "provider_attestation": "reports/m5-phase1b-provider-scope-authorization-2026-10-09.json (the owner's recorded 'Yes, provider rights fine')"
+  },
+  "caveats_carried": [],
+  "notes": [
+    "ASPN: EDGAR's acceptance of the 8-K (2026-08-06 06:30 ET) is the same minute as the wire's, not earlier.",
+    "TTWO: the release is stamped 2026-08-07 07:30 ET by the page and its machine-readable time, a premarket release before the 8:00 a.m. call; the page's address carries 2026-08-06.",
+    "REAL: the second-quarter release is on PR Newswire (16:07 ET); the first-quarter release was on GlobeNewswire."
+  ],
+  "next": "A sealed dry run (the push of the events file starts it; the twenty-nine pinned events of batches 1 to 3 are re-checked in the same run), then the signoff packet for the owner: for each event the wire evidence above and the sealed run's facts (missing and zero-volume sessions, corporate actions), and the question about ASMB's release at the bell for the owner's word; then the owner's attestations of first-public time, historical identity and corporate actions, and the attested sealed run that pins each event's commitment.",
+  "what_this_is_not": [
+    "Not an attestation: first-public time, historical identity and corporate actions are the owner's to attest, per batch.",
+    "Not a proof that nothing earlier was public: open-web research can show no discoverable earlier disclosure, not a negative.",
+    "Not a price, a return or a label of any event: none was read; the sealed run prints none."
+  ]
+}
