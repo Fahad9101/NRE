@@ -1,6 +1,6 @@
 """The owner's signoff of Milestone 5 Phase 1b batch 5, the last (reports/m5-phase1b-batch5-signoff-2026-10-15.json): his words as given (the request in my report and "attest the five"), what the answer decides (all five events attested, REKR with its two caveats on all
-labels, SLSN with its Item 4.02 caveat on three labels), and the events file that carries it out -- the five events attested on the record, with the caveats the packet proposed for REKR, JBSS, SLSN and OKTA. (Their commitments are pinned from the attested sealed run, once it has
-printed them: tests/test_m5_phase1b_batch5_sealed_run.py.)"""
+labels, SLSN with its Item 4.02 caveat on three labels), and the events file that carries it out -- the five events attested on the record, with the caveats the packet proposed for REKR, JBSS, SLSN and OKTA. (Their commitments are pinned from the attested sealed run:
+tests/test_m5_phase1b_batch5_sealed_run.py.)"""
 import json
 import unittest
 from pathlib import Path
@@ -137,10 +137,10 @@ class EventsFileTests(unittest.TestCase):
         self.assertEqual(batch2_rekr["labels"], ["all"])
         self.assertTrue(batch2_rekr["note"].startswith("8-K 0001437749-26-014478 filed 2026-05-01 20:30 ET with Item 3.01"))
 
-    def test_all_five_have_specs_and_nothing_is_pinned_before_the_attested_sealed_run(self):
+    def test_all_five_have_specs_and_were_pinned_from_the_attested_sealed_run(self):
         self.assertEqual(len([e for e in self.spec["events"] if e["event_id"] in IDS]), 5)       # no event of the batch is excluded or left without a spec
         for event_id in IDS:
-            self.assertNotIn("recorded_result", self.events[event_id])
+            self.assertEqual(self.events[event_id]["recorded_result"]["recorded_in"], "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json")
         for event_id in list(self.events)[:38]:
             self.assertIn("recorded_result", self.events[event_id])                              # the thirty-eight of batches 1 to 4 stay pinned
 

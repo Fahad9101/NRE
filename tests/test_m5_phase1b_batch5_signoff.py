@@ -269,7 +269,7 @@ class SignoffPacketTests(Base):
                 event = self.by_id[entry["event_id"]]
                 self.assertEqual(event.get("caveats", []), entry["proposed_label_caveats"] or [])      # the signoff carried the packet's caveats into each attested spec, in the packet's order
                 self.assertIn("attestations", event)
-                self.assertNotIn("recorded_result", event)                                           # and nothing is pinned until the attested sealed run has printed the commitments
+                self.assertIn("recorded_result", event)                                              # and each commitment was pinned after the attested sealed run printed it (tests/test_m5_phase1b_batch5_sealed_run.py)
                 sealed = view[entry["event_id"]]
                 self.assertEqual(entry["corporate_actions"]["sealed_dry_run"], {"corporate_actions": sealed["corporate_actions"], "state": "QUARANTINED", "reasons": ["FIRST_PUBLIC_TIME_UNVERIFIED"]})
                 for caveat in entry["proposed_label_caveats"] or []:

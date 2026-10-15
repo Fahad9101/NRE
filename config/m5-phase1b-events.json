@@ -2291,6 +2291,10 @@
           "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
           "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "358d96e48c703156970456d699178d1e67fb6a317291fb957ea804b20cbf1223",
+        "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json"
       }
     },
     {
@@ -2349,6 +2353,10 @@
           "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
           "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "4e2ca5d45a96069942c99c78cee3d00ccfbc93e44e74ba9de4882adbb9c42c9e",
+        "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json"
       }
     },
     {
@@ -2407,6 +2415,10 @@
           "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
           "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "74281fd3937cd744496b0b05be08aa48c361c2b0107b24aba663d709797a8e0a",
+        "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json"
       }
     },
     {
@@ -2463,6 +2475,10 @@
           "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
           "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "1e841feb4a66f072cc29dc69d69747b5b6aedd19f9fac43f4f9bae6129ecfcd4",
+        "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json"
       }
     },
     {
@@ -2511,6 +2527,10 @@
           "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
           "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
         }
+      },
+      "recorded_result": {
+        "labels_sha256": "e34d250135ae06832aa34a4e98d50d239ba31cde1ef6ab566b934485859633b7",
+        "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json"
       }
     }
   ]
