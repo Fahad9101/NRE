@@ -2,7 +2,7 @@ import copy
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 from urllib.error import HTTPError, URLError
@@ -224,6 +224,53 @@ class WindowTests(unittest.TestCase):
             asof="2026-02-11", sort="asc", currency="USD", limit=50))
         self.assertEqual(ea.actions_params("CXT", window), dict(
             symbols="CXT", start="2026-02-01", end="2026-03-31", limit=100, sort="asc"))
+
+    def test_the_bars_end_is_never_a_day_that_has_not_finished(self):
+        window = ea.event_window(event_copy(CXT), CAL)
+        self.assertEqual(ea.bars_params("CXT", window, today=date(2026, 10, 15))["end"], "2026-03-31")           # a window that ended months ago is asked for as before
+        future = dict(window, end="2026-10-31")
+        self.assertEqual(ea.fetch_end(future, today=date(2026, 10, 15)), "2026-10-14")                          # yesterday, not the month end
+        self.assertEqual(ea.bars_params("LOVE", future, today=date(2026, 10, 15))["end"], "2026-10-14")
+        self.assertEqual(ea.bars_params("LOVE", dict(window, end="2026-04-30"), today=date(2026, 4, 10))["end"], "2026-04-09")   # a today that is not the real one: the argument is used
+        self.assertEqual(ea.fetch_end(dict(window, end="2026-10-14"), today=date(2026, 10, 15)), "2026-10-14")  # yesterday itself is allowed
+        self.assertEqual(ea.fetch_end(dict(window, end="2026-10-15"), today=date(2026, 10, 15)), "2026-10-14")  # today is not
+        self.assertEqual(ea.fetch_end(dict(window, end="2026-10-31"), today=date(2026, 11, 1)), "2026-10-31")   # the day after the month end: the month end
+        self.assertEqual(ea.actions_params("LOVE", future)["end"], "2026-10-31")                               # corporate actions are not bars: the window's end is asked for as before
+        with patch("nre.event_acquire._today", return_value=date(2026, 10, 15)):
+            self.assertEqual(ea.bars_params("LOVE", future)["end"], "2026-10-14")
+        self.assertIsInstance(ea._today(), date)
+
+    def test_today_is_the_utc_date(self):
+        instant = datetime(2026, 12, 2, 22, 10, tzinfo=timezone.utc)
+
+        class FakeDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return instant.astimezone(tz) if tz is not None else (instant + timedelta(hours=3)).replace(tzinfo=None)         # a local clock three hours ahead of UTC
+
+        with patch("nre.event_acquire.datetime", FakeDateTime):
+            self.assertEqual(ea._today(), date(2026, 12, 2))
+
+    def test_a_window_that_has_not_finished_asks_up_to_yesterday_and_reports_what_is_missing(self):
+        asked = []
+
+        def fetch(endpoint, params):
+            if endpoint == ea.ACTIONS_ENDPOINT:
+                return json.dumps({"corporate_actions": {}, "next_page_token": None}).encode()
+            asked.append(params["end"])
+            if params["end"] > "2026-03-01":
+                raise HTTPError("https://data.alpaca.markets", 403, "forbidden", {}, None)                   # the basic plan's refusal of recent data
+            return json.dumps({"bars": {"CXT": [bar(s) for s in CXT_SESSIONS if s <= params["end"]]}, "next_page_token": None}).encode()
+
+        event = event_copy(CXT)
+        event.pop("recorded_result")                                                                         # unpinned: a pin would (rightly) report that the labels differ from the recorded ones
+        with patch("nre.event_acquire._today", return_value=date(2026, 3, 2)):
+            report = ea.run_event(event, SPEC["provider"], fetch, CAL, NOW)
+        self.assertEqual(asked, ["2026-03-01"])
+        self.assertNotIn("error", report)
+        self.assertTrue(report["access_check_passed"])
+        self.assertEqual(report["missing_sessions"], [s for s in CXT_SESSIONS if s > "2026-03-01"])
+        self.assertEqual(report["window"]["end"], "2026-03-31")                                              # the window itself is unchanged: only the request was shortened
 
     def test_window_spans_the_month_of_the_twentieth_session(self):
         event = event_copy(SLSN)
@@ -675,6 +722,30 @@ class MainTests(unittest.TestCase):
             self.assertEqual(body["part"], "%d/%d" % (number, len(lines)))
             merged.update(body["events"])
         self.assertEqual(merged, events)
+
+    def test_a_sealed_view_of_forty_three_events_fits_in_ten_annotations(self):
+        # GitHub keeps only the first ten annotations of a kind per step: batches 1 to 4 (38 events) took ten parts and a fifth batch took eleven, the last of which was dropped
+        real = json.loads((ROOT / "reports" / "m5-phase1b-batch4-sealed-run-2026-10-15.json").read_text(encoding="utf-8"))["sealed_view"]["events"]
+        self.assertEqual(len(real), 38)
+        events = dict(real)
+        for i, source in enumerate(list(real.values())[:5]):
+            copy_ = copy.deepcopy(source)
+            copy_["event_id"] = "extra-m5b-2026-09-%02d" % (i + 1)
+            events[copy_["event_id"]] = copy_
+        self.assertEqual(len(events), 43)
+        for level in ("notice", "error"):
+            lines = ea._annotations(level, level == "notice", events, title="NRE sealed event acquisition")
+            self.assertEqual(len(lines), 9)                                                                  # at most ten are kept, and nine leaves one part of room
+            prefix = "::%s title=NRE sealed event acquisition::" % level
+            merged = {}
+            for number, line in enumerate(lines, 1):
+                self.assertTrue(line.startswith(prefix))
+                self.assertLess(len(line) - len(prefix), 4000)                                                   # GitHub truncates a message near 4,096 characters
+                self.assertNotIn(chr(10), line)
+                body = json.loads(line[len(prefix):])
+                self.assertEqual((body["part"], body["all_ok"]), ("%d/%d" % (number, len(lines)), level == "notice"))
+                merged.update(body["events"])
+            self.assertEqual(merged, events)
 
     def test_annotation_escapes_percent_signs(self):
         line = ea._annotations("notice", True, {"a": {"note": "100%"}})[0]

@@ -207,8 +207,18 @@ def _paginate(fetch, base_params, payload_key):
     return merged, pages
 
 
-def bars_params(ticker, window):
-    return dict(symbols=ticker, timeframe="1Day", start=window["start"], end=window["end"], feed="sip",
+def _today():
+    return datetime.now(timezone.utc).date()
+
+
+def fetch_end(window, today=None):
+    """The last day to ask the provider's daily bars for: the window's month end, but never a day that has not finished. The provider's basic plan limits historical SIP bars to data older than
+    fifteen minutes, so an end date in the future is refused; no window needs a day after yesterday, and one that is not complete reports its missing sessions instead. A window that has ended is unchanged."""
+    return min(window["end"], ((today or _today()) - timedelta(days=1)).isoformat())
+
+
+def bars_params(ticker, window, today=None):
+    return dict(symbols=ticker, timeframe="1Day", start=window["start"], end=fetch_end(window, today), feed="sip",
                 adjustment="raw", asof=window["asof"], sort="asc", currency="USD", limit=50)
 
 
@@ -502,8 +512,9 @@ def _compact(report):
             "label_reasons": {k: v["reason"] for k, v in sorted(labels.items()) if v["reason"]}}
 
 
-def _annotations(level, all_ok, events, budget=3300, title="NRE event acquisition"):
-    """GitHub truncates an annotation message near 4,096 characters, so split the summary into parts."""
+def _annotations(level, all_ok, events, budget=3900, title="NRE event acquisition"):
+    """GitHub truncates an annotation message near 4,096 characters, so split the summary into parts. It also keeps only the first ten annotations of a kind per step, so the parts are packed as full as that allows:
+    a sealed view of forty-three events takes nine parts, the longest 3,929 characters (at a budget of 3,300 it took eleven, and the last was dropped)."""
     parts, current, size = [], {}, 0
     for key, value in events.items():
         piece = len(json.dumps({key: value}, separators=(",", ":")))

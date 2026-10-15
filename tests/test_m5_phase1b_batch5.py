@@ -360,6 +360,41 @@ class SealedRunSimulationTests(unittest.TestCase):
             self.assertNotIn(fragment, everything)
         self.assertTrue(printed[1].startswith("::notice title=NRE sealed event acquisition::"))
 
+    def test_the_whole_file_in_one_sealed_run_keeps_every_event_in_the_annotations(self):
+        # GitHub keeps only the first ten annotations of a kind per step; the forty-three events once needed eleven parts and the last was dropped (batch 5's first dry run)
+        calendar = Calendar()
+        spec = load(EVENTS)
+        for event in spec["events"]:
+            event.pop("recorded_result", None)                                # the fake prices would (rightly) differ from the pins; the question here is only how the report is carried
+
+        class Opener:
+            def open(self, req, timeout=None):
+                url = req.full_url
+                query = dict(part.split("=", 1) for part in url.split("?", 1)[1].split("&"))
+                if "corporate-actions" in url:
+                    return Response(json.dumps({"corporate_actions": {}, "next_page_token": None}).encode())
+                rows = [{"t": day + "T00:00:00Z", "o": 50.25 + i, "h": 51.5 + i, "l": 49.75 + i, "c": 50.75 + i, "v": 1000003 + 7919 * i} for i, day in enumerate(d for d in calendar.days if query["start"] <= d <= query["end"])]
+                return Response(json.dumps({"bars": {query["symbols"]: rows}, "next_page_token": None}).encode())
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "events.json"
+            path.write_text(json.dumps(spec), encoding="utf-8")
+            with patch.dict("os.environ", dict(ENV, GITHUB_ACTIONS="true"), clear=True), patch("nre.event_acquire.build_opener", return_value=Opener()), patch("builtins.print") as output:
+                code = ea.main(["--sealed", "--spec", str(path)])
+        printed = [call.args[0] for call in output.call_args_list]
+        self.assertEqual(code, 0)
+        prefix = "::notice title=NRE sealed event acquisition::"
+        lines = [line for line in printed[1:] if line.startswith(prefix)]
+        self.assertLessEqual(len(lines), 10)
+        seen = {}
+        for number, line in enumerate(lines, 1):
+            self.assertLess(len(line) - len(prefix), 4000)
+            body = json.loads(line[len(prefix):])
+            self.assertEqual(body["part"], "%d/%d" % (number, len(lines)))
+            seen.update(body["events"])
+        self.assertEqual(sorted(seen), sorted(e["event_id"] for e in spec["events"]))
+        self.assertEqual(len(seen), 43)
+
     def test_attested_in_memory_they_would_all_map_so_nothing_but_the_attestation_blocks_them(self):
         code, printed = self.run_sealed(attested=True)
         self.assertEqual(code, 0)
