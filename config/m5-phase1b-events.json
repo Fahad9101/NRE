@@ -2257,7 +2257,41 @@
       "precision": "minute",
       "timestamp_evidence": "08:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-08-13"
+      "expected_reaction_session": "2026-08-13",
+      "caveats": [
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "8-K 0001437749-26-014478 filed 2026-05-01 20:30 ET with Item 3.01 (the item for a notice of delisting or of failure to satisfy a continued-listing rule or standard, or a transfer of listing), 104 days before the release; content not opened. The event filing's cover still records the exchange as 'Nasdaq Stock Market' on the release date, and Alpaca lists no corporate action over the window. A caveat, not an exclusion."
+        },
+        {
+          "labels": [
+            "all"
+          ],
+          "note": "The second-quarter results were preliminarily pre-announced on 2026-07-15 (8-K 0001437749-26-023616, Items 2.02, 7.01, 9.01, accepted 18:13 ET, 29 days before this release; excluded as its own candidate, reports/m5-phase1b-s2-decisions-2026-10-09.json): the S2 review recorded it as preliminary, unaudited second-quarter results with an outlook and a product launch. Whether its headline figures match this release's was not compared, so this event's own reaction may reflect confirmation of already-known numbers rather than a fresh surprise. Applies to every computed label."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the release-time evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states; REKR's 2026-07-15 pre-announcement is carried as a caveat."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the identity evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
+        }
+      }
     },
     {
       "event_id": "jbss-m5b-2026-08-19",
@@ -2285,7 +2319,37 @@
       "precision": "minute",
       "timestamp_evidence": "16:10",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-20"
+      "expected_reaction_session": "2026-08-20",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001193125-26-364284 filed 2026-08-25 09:25 ET (Items 7.01, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the release-time evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states; REKR's 2026-07-15 pre-announcement is carried as a caveat."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the identity evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
+        }
+      }
     },
     {
       "event_id": "slsn-m5b-2026-08-19",
@@ -2313,7 +2377,37 @@
       "precision": "minute",
       "timestamp_evidence": "17:05",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-20"
+      "expected_reaction_session": "2026-08-20",
+      "caveats": [
+        {
+          "labels": [
+            "session_10_close_return",
+            "session_20_close_return",
+            "session_5_close_return"
+          ],
+          "note": "8-K 0001171843-26-005702 filed 2026-08-21 16:30 ET (Items 4.02, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the release-time evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states; REKR's 2026-07-15 pre-announcement is carried as a caveat."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the identity evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
+        }
+      }
     },
     {
       "event_id": "okta-m5b-2026-08-26",
@@ -2341,7 +2435,35 @@
       "precision": "minute",
       "timestamp_evidence": "16:01",
       "expected_release_timing": "after_hours",
-      "expected_reaction_session": "2026-08-27"
+      "expected_reaction_session": "2026-08-27",
+      "caveats": [
+        {
+          "labels": [
+            "session_20_close_return"
+          ],
+          "note": "8-K 0001660134-26-000072 filed 2026-09-18 20:24 ET (Items 5.02, 9.01) inside the window; content not opened. Policy: a caveat, not an exclusion (docs/SAME-DAY-COMPETING-CATALYST-POLICY.md; the Milestone 1 OKTA precedent)."
+        }
+      ],
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the release-time evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states; REKR's 2026-07-15 pre-announcement is carried as a caveat."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the identity evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
+        }
+      }
     },
     {
       "event_id": "love-m5b-2026-09-10",
@@ -2369,7 +2491,27 @@
       "precision": "minute",
       "timestamp_evidence": "07:00",
       "expected_release_timing": "premarket",
-      "expected_reaction_session": "2026-09-10"
+      "expected_reaction_session": "2026-09-10",
+      "attestations": {
+        "first_public_time": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the release-time evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the wire page's minute and its machine-readable time, the same-day release check), accepting the residual gap the packet states; REKR's 2026-07-15 pre-announcement is carried as a caveat."
+        },
+        "historical_identity": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the identity evidence in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (the exchange the S2 review recorded from the event filing's cover or the release, the previous Milestone 1 event, the archived 8-K history checked for Items 1.03, 3.01, 3.03, 4.01 and 5.03; the one Item 3.01 filing found, REKR's, is carried as a caveat)."
+        },
+        "corporate_actions": {
+          "reviewer": "Fahad9101",
+          "date": "2026-10-15",
+          "record": "reports/m5-phase1b-batch5-signoff-2026-10-15.json",
+          "basis": "Owner sign-off (\"attest the five\", 2026-10-15) on the two signals in reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json (no Item 3.03 or 5.03 8-K in the archived history up to the window end, and Alpaca's real answer as the sealed dry run reported it: JBSS two cash dividends with ex-date 2026-08-17, before its anchor session, and none for the other four)."
+        }
+      }
     }
   ]
 }

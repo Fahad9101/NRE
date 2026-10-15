@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch5_signoff",
+  "recorded_on": "2026-10-15",
+  "context": "Reply to the batch 5 signoff request built from reports/m5-phase1b-batch5-signoff-packet-2026-10-15.json after the sealed dry run (reports/m5-phase1b-batch5-dry-run-2026-10-15.json): five events quarantined as a dry run should, two cash dividends for JBSS before its anchor session, two calls for the owner (REKR's pre-announcement and Item 3.01 filing, SLSN's Item 4.02 filing) and proposed label caveats for five filings. The request went out as plain text in my report. His words are quoted from the session transcript, not from a summary.",
+  "request_in_text": {
+    "at": "2026-10-15T13:52:15.432Z",
+    "source": "session transcript, line 49256 (my report)",
+    "text": "Batch 5's signoff packet is ready, and I need your call on two events. The packet and the dry-run record are committed locally as `9e2021f` and not pushed.\n\n**Checks:** mutation check 704 of 704 caught, full suite 1416 OK (9 skipped), and the same on a clean export of the commit.\n\n**What the packet covers:** five events, REKR, JBSS, SLSN, OKTA and LOVE.\n- **Dry run:** the clean run's results are recorded.\n- **Evidence:** the release time, identity check, in-window filings and corporate actions for each.\n- **Filings:** I opened none, so none of them is verified.\n\n**Two calls for you**\n1. **REKR:**\n   - **Pre-announcement:** its second-quarter results were pre-announced on 2026-07-15. You already excluded that release as its own event, and I did not compare its figures with the 08-13 release.\n   - **Item 3.01 filing:** the 2026-05-01 filing that batch 2 handled with a caveat is still in its history.\n   - **My recommendation:** attest it with two all-label caveats. That follows the step 3 precedent for Rekor's 2025-03-31 event and the batch 2 precedent for the 3.01 filing.\n2. **SLSN:**\n   - **The filing:** an Item 4.02 8-K, which reports a conclusion that earlier financial statements shouldn't be relied on. It was filed 2026-08-21 at 16:30 ET, two days after its release. It's the only filing of that kind in any of the 43 windows.\n   - **What it affects:** the first session it can affect is 2026-08-24, so the day-1 and session_2 labels precede it.\n   - **My recommendation:** attest it with a caveat on the session_5, 10 and 20 labels. You may prefer to have the filing read first.\n\n**Other caveats**\n- JBSS gets one for an 8-K filed 2026-08-25.\n- OKTA gets one for an 8-K filed 2026-09-18.\n- JBSS also lists two cash dividends with ex-date 2026-08-17, before its anchor session, so no label is affected.\n- LOVE is clean.\n\n**Recommended reply:** `attest the five`. That attests first-public time, historical identity and corporate actions for all five events. It also attaches REKR's two caveats, SLSN's 4.02 caveat and the JBSS and OKTA caveats. Other replies work too, for example \"attest the three and hold REKR and SLSN\", or a different call on either.\n\n**What happens next**\n- **Signoff:** after your reply I'll write the signoff record and add the attestations and caveats to the specs.\n- **First push:** your next \"push\" publishes `9e2021f` together with that signoff commit and starts the attested sealed run. That is the first time labels are computed for these five events, and only their hash commitments are printed.\n- **Remaining pushes and steps:** a second push pins the commitments, and a third verifies them. After that come the final audit and your completion declaration.",
+    "recommended_reply": "attest the five"
+  },
+  "answered": {
+    "text": "attest the five",
+    "at": "2026-10-15T13:54:23.394Z",
+    "source": "session transcript, line 49260 (queued at line 49258)",
+    "read_as": "The reply the report asked for: the three attestations for all five events, on the evidence in the packet, with REKR's two caveats on all labels, SLSN's Item 4.02 caveat on session_5, session_10 and session_20, the packet's in-window caveats for JBSS and OKTA and the residual gap accepted; no event is held."
+  },
+  "scope": {
+    "attested": {
+      "events": [
+        "rekr-m5b-2026-08-13",
+        "jbss-m5b-2026-08-19",
+        "slsn-m5b-2026-08-19",
+        "okta-m5b-2026-08-26",
+        "love-m5b-2026-09-10"
+      ],
+      "attestations": [
+        "first_public_time",
+        "historical_identity",
+        "corporate_actions"
+      ],
+      "read_as": "The three attestations for all five batch 5 events, on the evidence in the packet, accepting the residual gap that open-web research cannot close (an earlier public disclosure with no discoverable trace), and carrying the packet's proposed label caveats into the events' specs as caveats, not exclusions: REKR's Item 3.01 filing of 2026-05-01 and its 2026-07-15 pre-announcement on all of its labels, and the in-window 8-Ks listed for JBSS, SLSN and OKTA, whose content was not opened."
+    },
+    "rekr": {
+      "event": "rekr-m5b-2026-08-13",
+      "decision": "attest with the two caveats",
+      "read_as": "REKR is attested with the others and carries two caveats on all labels: the 8-K 0001437749-26-014478 filed 2026-05-01 20:30 ET with Item 3.01 (content not opened), and the pre-announcement of 2026-07-15 (8-K 0001437749-26-023616; its figures were not compared with this release's). It is not held for the two releases to be compared, not left quarantined and not excluded. No permission to read any filing or release was asked for or given."
+    },
+    "slsn": {
+      "event": "slsn-m5b-2026-08-19",
+      "decision": "attest with the caveat",
+      "read_as": "SLSN is attested with the others and carries a caveat on session_5, session_10 and session_20 naming the 8-K 0001171843-26-005702 filed 2026-08-21 16:30 ET with Items 4.02 and 9.01 (content not opened); it is not held for the filing to be read, not left quarantined and not excluded. No permission to read that filing was asked for or given."
+    },
+    "additions_to_the_owners_words": "None: the attestations, caveats and the two decisions are exactly the packet's recommendations and proposals."
+  },
+  "not_a_claim": [
+    "Not Phase 1b acceptance and not a claim about any event's outcome: no label, price or return has been computed or viewed.",
+    "Not a clearance of the filings that travel as caveats (REKR's Item 3.01 filing and pre-announcement, and the in-window 8-Ks of JBSS, SLSN and OKTA): their content was not opened.",
+    "Not a comparison of REKR's pre-announcement with its 2026-08-13 release: the figures were not compared.",
+    "Not a permission to read any filing or any other page."
+  ]
+}

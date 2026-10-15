@@ -262,13 +262,14 @@ class SignoffPacketTests(Base):
                                     OKTA: [("2026-09-18", ["5.02", "9.01"], "2026-09-18 20:24", "2026-09-21", ["session_20_close_return"])]})
         self.assertEqual({e["event_id"]: e["filings_in_the_three_days_before_the_release"] for e in self.packet["events"] if e["filings_in_the_three_days_before_the_release"]}, {})
 
-    def test_no_spec_carries_a_caveat_or_an_attestation_yet_and_the_dry_run_facts_are_the_dry_run_records(self):
+    def test_the_packets_caveats_are_the_specs_and_the_dry_run_facts_are_the_dry_run_records(self):
         view = self.dry["sealed_view"]["events"]
         for entry in self.packet["events"]:
             with self.subTest(event=entry["event_id"]):
                 event = self.by_id[entry["event_id"]]
-                for key in ("caveats", "attestations", "recorded_result"):
-                    self.assertNotIn(key, event)                                                     # the dry-run state: the signoff carries the packet's caveats and attestations into the specs
+                self.assertEqual(event.get("caveats", []), entry["proposed_label_caveats"] or [])      # the signoff carried the packet's caveats into each attested spec, in the packet's order
+                self.assertIn("attestations", event)
+                self.assertNotIn("recorded_result", event)                                           # and nothing is pinned until the attested sealed run has printed the commitments
                 sealed = view[entry["event_id"]]
                 self.assertEqual(entry["corporate_actions"]["sealed_dry_run"], {"corporate_actions": sealed["corporate_actions"], "state": "QUARANTINED", "reasons": ["FIRST_PUBLIC_TIME_UNVERIFIED"]})
                 for caveat in entry["proposed_label_caveats"] or []:
