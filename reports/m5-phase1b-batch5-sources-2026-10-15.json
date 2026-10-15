@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch5_sources",
+  "recorded_on": "2026-10-15",
+  "state": "BATCH_5_SPECS_BUILT_DRY_RUN_PENDING",
+  "purpose": "S4 for batch 5, the last: the first-public minute of each release in the fifth batch, taken from the public wire page, and what was found on the way. config/m5-phase1b-events.json now holds five events built from it in the dry-run state after the thirty-eight of batches 1 to 4: sealed, no attestations, so each quarantines on FIRST_PUBLIC_TIME_UNVERIFIED until the owner attests it. None was made at the bell. Nothing here is a price, a return or a label.",
+  "permission": {
+    "record": "reports/m5-phase1b-batch5-permission-2026-10-15.json",
+    "answer": "Yes, batch 5 only (Recommended)",
+    "answered_at": "2026-10-15T09:52:18.018Z",
+    "read_as": "Batch 5 only: the public pages of the releases of the five candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download. It is the last batch: the final audit (S7) needs no pages."
+  },
+  "reading": {
+    "page_loads_in_the_built_in_browser": 13,
+    "by_host": {
+      "www.businesswire.com": 7,
+      "www.globenewswire.com": 6
+    },
+    "web_searches": 0,
+    "what": "The five releases' pages and company searches on GlobeNewswire and Business Wire (each issuer's wire is the one its earlier events in the repository used); held in browser memory only; the URL, the displayed minute, the page's machine-readable time and the same-day check results are kept. Business Wire's two release pages were loaded a second time to read the date and time the page itself displays, which the first extraction (the page's machine-readable time) had not given. No filing was opened: EDGAR's acceptance times come from the archived SEC lists already in the repository. Listings were read through short extractions of the dates, times and titles wanted, so as to see as little else as possible.",
+    "what_was_seen_in_passing": "Business Wire's Sanfilippo listing returned the opening sentences of the 2026-08-19 release (net sales, sales volume, gross profit and diluted earnings per share for its fiscal fourth quarter); the dateline extraction of Okta's release page included the end of a bullet before the dateline ('... cash flow of $227 million'); Okta's phrase-search listing showed the titles and times of its releases from 2026-05-21 to 2026-09-18, including two after its results (2026-09-14, a webcast notice, and 2026-09-18, a board appointment). These are company-reported business content, not a price, a return or a label of any event.",
+    "refused_or_missing": "No site refused a page for permission, and Business Wire answered every request: I made one search at a time, with release pages between them. The first Business Wire search page re-navigated by itself once while my first script ran, so that script was cut off and the extraction was redone on the loaded page; the first batch call (GlobeNewswire's Rekor search) stopped at its first action because the pane had to be opened, but that page had loaded and was read without a second load."
+  },
+  "events": [
+    {
+      "event_id": "rekr-m5b-2026-08-13",
+      "ticker": "REKR",
+      "candidate_id": "0001437749-26-027481",
+      "release_date": "2026-08-13",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/13/3344456/0/en/rekor-systems-reports-second-quarter-2026-financial-results.html",
+      "displayed_stamp": "August 13, 2026 08:00 ET",
+      "minute_et": "08:00",
+      "published_at": "2026-08-13T08:00:00-04:00",
+      "page_machine_readable_time": "2026-08-13T12:00:00Z",
+      "edgar_acceptance_et": "2026-08-13 12:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-13",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Rekor Systems', 2026-08-12 to 2026-08-14)",
+        "result": "No other Rekor release on 2026-08-13: the one other result in the window is dated 2026-08-12 (a product announcement, 'Rekor Expands Patented Verification Technology into Voice, Opening New Market for GoSecure')."
+      }
+    },
+    {
+      "event_id": "jbss-m5b-2026-08-19",
+      "ticker": "JBSS",
+      "candidate_id": "0001193125-26-356911",
+      "release_date": "2026-08-19",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260819284169/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Fourth-Quarter-and-Full-Year-Results",
+      "displayed_stamp": "Aug 19, 2026 4:10 PM Eastern Daylight Time",
+      "minute_et": "16:10",
+      "published_at": "2026-08-19T16:10:00-04:00",
+      "page_machine_readable_time": "2026-08-19T20:10:00+00:00",
+      "edgar_acceptance_et": "2026-08-19 16:13",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-20",
+      "same_day_release_check": {
+        "how": "Business Wire company search ('John B. Sanfilippo', 68 results sorted latest, page 1)",
+        "result": "No other Sanfilippo release on 2026-08-19: this is the latest result, and the one before it is dated 2026-07-16 16:10 ET."
+      }
+    },
+    {
+      "event_id": "slsn-m5b-2026-08-19",
+      "ticker": "SLSN",
+      "candidate_id": "0001171843-26-005676",
+      "release_date": "2026-08-19",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/08/19/3348014/12101/en/sol%c3%a9sence-reports-second-quarter-2026-financial-results.html",
+      "displayed_stamp": "August 19, 2026 17:05 ET",
+      "minute_et": "17:05",
+      "published_at": "2026-08-19T17:05:00-04:00",
+      "page_machine_readable_time": "2026-08-19T21:05:00Z",
+      "edgar_acceptance_et": "2026-08-20 16:12",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-20",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Solésence', 2026-08-18 to 2026-08-20)",
+        "result": "No other Solésence release in the window: this is the only result."
+      }
+    },
+    {
+      "event_id": "okta-m5b-2026-08-26",
+      "ticker": "OKTA",
+      "candidate_id": "0001660134-26-000068",
+      "release_date": "2026-08-26",
+      "wire": "Business Wire",
+      "url": "https://www.businesswire.com/news/home/20260826423506/en/Okta-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results",
+      "displayed_stamp": "Aug 26, 2026 4:01 PM Eastern Daylight Time",
+      "minute_et": "16:01",
+      "published_at": "2026-08-26T16:01:00-04:00",
+      "page_machine_readable_time": "2026-08-26T20:01:00+00:00",
+      "edgar_acceptance_et": "2026-08-26 20:03",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-27",
+      "same_day_release_check": {
+        "how": "Business Wire phrase searches ('Okta Announces', 43 results sorted latest, page 1; 'Okta, Inc. (Nasdaq: OKTA)', 113 results sorted latest, page 1)",
+        "result": "No other Okta release on 2026-08-26: the neighbours in the results are 2026-08-01 08:00 ET (a notice of the results date) and 2026-08-27 08:00 ET (a notice of conference presentations)."
+      }
+    },
+    {
+      "event_id": "love-m5b-2026-09-10",
+      "ticker": "LOVE",
+      "candidate_id": "0001628280-26-061219",
+      "release_date": "2026-09-10",
+      "wire": "GlobeNewswire",
+      "url": "https://www.globenewswire.com/news-release/2026/09/10/3359357/0/en/the-lovesac-company-reports-second-quarter-fiscal-2027-financial-results.html",
+      "displayed_stamp": "September 10, 2026 07:00 ET",
+      "minute_et": "07:00",
+      "published_at": "2026-09-10T07:00:00-04:00",
+      "page_machine_readable_time": "2026-09-10T11:00:00Z",
+      "edgar_acceptance_et": "2026-09-10 07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-09-10",
+      "same_day_release_check": {
+        "how": "GlobeNewswire date-filtered search ('Lovesac', 2026-09-09 to 2026-09-11)",
+        "result": "No other Lovesac release in the window: this is the only result."
+      }
+    }
+  ],
+  "quarantined_before_the_spec": null,
+  "events_file": {
+    "path": "config/m5-phase1b-events.json",
+    "events": 43,
+    "batch_5_events": 5,
+    "batch_5_attestations": 0,
+    "batch_5_events_sha256_in_the_dry_run_state": "ce8014699bd5e2113ff922380d30bdb140337d4155421b884045363ca9fc64be",
+    "seal": "every event carries seal: hash_only",
+    "provider_attestation": "reports/m5-phase1b-provider-scope-authorization-2026-10-09.json (the owner's recorded 'Yes, provider rights fine')"
+  },
+  "caveats_carried": [],
+  "notes": [
+    "REKR: the second-quarter release is premarket (08:00 ET); its earlier events in the repository were after the close (16:05 ET on 2026-03-31 and 2026-05-11). EDGAR accepted the 8-K at 12:00 ET.",
+    "SLSN: the release is after the close (17:05 ET on 2026-08-19); the 8-K was filed and accepted the next day (2026-08-20 16:12 ET). Its earlier events in the repository were premarket releases (08:02 ET on 2026-03-31 and 08:00 ET on 2026-05-12).",
+    "LOVE: EDGAR's acceptance of the 8-K (2026-09-10 07:00 ET) is the same minute as the wire's, not earlier."
+  ],
+  "next": "A sealed dry run (the push of the events file starts it; the thirty-eight pinned events of batches 1 to 4 are re-checked in the same run), then the signoff packet for the owner: for each event the wire evidence above and the sealed run's facts (missing and zero-volume sessions, corporate actions); then the owner's attestations of first-public time, historical identity and corporate actions, and the attested sealed run that pins each event's commitment. Then the final audit (S7).",
+  "what_this_is_not": [
+    "Not an attestation: first-public time, historical identity and corporate actions are the owner's to attest, per batch.",
+    "Not a proof that nothing earlier was public: open-web research can show no discoverable earlier disclosure, not a negative.",
+    "Not a price, a return or a label of any event: none was read; the sealed run prints none."
+  ]
+}

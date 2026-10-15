@@ -2230,6 +2230,146 @@
         "labels_sha256": "6e28bff7794bd2cee07fdd6a97bad6faad97ee04c1da8b509ef8ac5115756ca0",
         "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json"
       }
+    },
+    {
+      "event_id": "rekr-m5b-2026-08-13",
+      "cluster_id": "rekr-m5b-2026-08-13",
+      "candidate_id": "0001437749-26-027481",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "REKR-1697851-2026-08-13",
+        "company_id": "0001697851",
+        "cik": "0001697851",
+        "ticker": "REKR",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-31T00:00:00-04:00",
+        "available_at": "2026-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "rekr-wire-2026-08-13",
+        "url": "https://www.globenewswire.com/news-release/2026/08/13/3344456/0/en/rekor-systems-reports-second-quarter-2026-financial-results.html",
+        "text": "Wire release, displayed dateline August 13, 2026 08:00 ET (08:00 ET). https://www.globenewswire.com/news-release/2026/08/13/3344456/0/en/rekor-systems-reports-second-quarter-2026-financial-results.html",
+        "first_seen_at": "2026-08-13T08:01:00-04:00"
+      },
+      "published_at": "2026-08-13T08:00:00-04:00",
+      "cutoff": "2026-08-13T08:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "08:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-08-13"
+    },
+    {
+      "event_id": "jbss-m5b-2026-08-19",
+      "cluster_id": "jbss-m5b-2026-08-19",
+      "candidate_id": "0001193125-26-356911",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "JBSS-880117-2026-08-19",
+        "company_id": "0000880117",
+        "cik": "0000880117",
+        "ticker": "JBSS",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-01-29T00:00:00-05:00",
+        "available_at": "2026-01-29T20:00:00Z"
+      },
+      "source": {
+        "source_id": "jbss-wire-2026-08-19",
+        "url": "https://www.businesswire.com/news/home/20260819284169/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Fourth-Quarter-and-Full-Year-Results",
+        "text": "Wire release, displayed dateline Aug 19, 2026 4:10 PM Eastern Daylight Time (16:10 ET). https://www.businesswire.com/news/home/20260819284169/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Fourth-Quarter-and-Full-Year-Results",
+        "first_seen_at": "2026-08-19T16:11:00-04:00"
+      },
+      "published_at": "2026-08-19T16:10:00-04:00",
+      "cutoff": "2026-08-19T16:13:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:10",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-20"
+    },
+    {
+      "event_id": "slsn-m5b-2026-08-19",
+      "cluster_id": "slsn-m5b-2026-08-19",
+      "candidate_id": "0001171843-26-005676",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "SLSN-883107-2026-08-19",
+        "company_id": "0000883107",
+        "cik": "0000883107",
+        "ticker": "SLSN",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-31T00:00:00-04:00",
+        "available_at": "2026-03-31T20:00:00Z"
+      },
+      "source": {
+        "source_id": "slsn-wire-2026-08-19",
+        "url": "https://www.globenewswire.com/news-release/2026/08/19/3348014/12101/en/sol%c3%a9sence-reports-second-quarter-2026-financial-results.html",
+        "text": "Wire release, displayed dateline August 19, 2026 17:05 ET (17:05 ET). https://www.globenewswire.com/news-release/2026/08/19/3348014/12101/en/sol%c3%a9sence-reports-second-quarter-2026-financial-results.html",
+        "first_seen_at": "2026-08-19T17:06:00-04:00"
+      },
+      "published_at": "2026-08-19T17:05:00-04:00",
+      "cutoff": "2026-08-19T17:08:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "17:05",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-20"
+    },
+    {
+      "event_id": "okta-m5b-2026-08-26",
+      "cluster_id": "okta-m5b-2026-08-26",
+      "candidate_id": "0001660134-26-000068",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "OKTA-1660134-2026-08-26",
+        "company_id": "0001660134",
+        "cik": "0001660134",
+        "ticker": "OKTA",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-04T00:00:00-05:00",
+        "available_at": "2026-03-04T20:00:00Z"
+      },
+      "source": {
+        "source_id": "okta-wire-2026-08-26",
+        "url": "https://www.businesswire.com/news/home/20260826423506/en/Okta-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results",
+        "text": "Wire release, displayed dateline Aug 26, 2026 4:01 PM Eastern Daylight Time (16:01 ET). https://www.businesswire.com/news/home/20260826423506/en/Okta-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results",
+        "first_seen_at": "2026-08-26T16:02:00-04:00"
+      },
+      "published_at": "2026-08-26T16:01:00-04:00",
+      "cutoff": "2026-08-26T16:04:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "16:01",
+      "expected_release_timing": "after_hours",
+      "expected_reaction_session": "2026-08-27"
+    },
+    {
+      "event_id": "love-m5b-2026-09-10",
+      "cluster_id": "love-m5b-2026-09-10",
+      "candidate_id": "0001628280-26-061219",
+      "seal": "hash_only",
+      "security": {
+        "security_id": "LOVE-1701758-2026-09-10",
+        "company_id": "0001701758",
+        "cik": "0001701758",
+        "ticker": "LOVE",
+        "exchange": "NASDAQ",
+        "security_type": "common_stock",
+        "valid_from": "2026-03-26T00:00:00-04:00",
+        "available_at": "2026-03-26T20:00:00Z"
+      },
+      "source": {
+        "source_id": "love-wire-2026-09-10",
+        "url": "https://www.globenewswire.com/news-release/2026/09/10/3359357/0/en/the-lovesac-company-reports-second-quarter-fiscal-2027-financial-results.html",
+        "text": "Wire release, displayed dateline September 10, 2026 07:00 ET (07:00 ET). https://www.globenewswire.com/news-release/2026/09/10/3359357/0/en/the-lovesac-company-reports-second-quarter-fiscal-2027-financial-results.html",
+        "first_seen_at": "2026-09-10T07:01:00-04:00"
+      },
+      "published_at": "2026-09-10T07:00:00-04:00",
+      "cutoff": "2026-09-10T07:03:00-04:00",
+      "precision": "minute",
+      "timestamp_evidence": "07:00",
+      "expected_release_timing": "premarket",
+      "expected_reaction_session": "2026-09-10"
     }
   ]
 }

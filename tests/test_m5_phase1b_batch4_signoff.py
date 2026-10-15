@@ -135,7 +135,7 @@ class SignoffPacketTests(Base):
     def test_its_events_are_batch_4s_and_the_sources_record(self):
         sources = {r["event_id"]: r for r in load(ROOT / "reports" / "m5-phase1b-batch4-sources-2026-10-14.json")["events"]}
         self.assertEqual([e["event_id"] for e in self.packet["events"]], IDS)
-        self.assertEqual([e["event_id"] for e in self.spec["events"][29:]], IDS)
+        self.assertEqual([e["event_id"] for e in self.spec["events"][29:38]], IDS)
         for entry in self.packet["events"]:
             with self.subTest(event=entry["event_id"]):
                 event, row = self.by_id[entry["event_id"]], sources[entry["event_id"]]
@@ -155,7 +155,7 @@ class SignoffPacketTests(Base):
 
     def test_no_issuers_events_share_a_session_across_the_thirty_eight(self):
         spans = {}
-        for event in self.spec["events"]:
+        for event in self.spec["events"][:38]:                                                    # batches 1 to 4; batch 5 has its own test
             window = ea.event_window(event, self.calendar)
             spans.setdefault(event["security"]["ticker"], []).append((window["required_sessions"][0], window["required_sessions"][-1], event["event_id"]))
         self.assertEqual(len(sum(spans.values(), [])), 38)

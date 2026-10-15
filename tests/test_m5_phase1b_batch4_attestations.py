@@ -127,7 +127,7 @@ class EventsFileTests(unittest.TestCase):
                 self.assertLessEqual(set(caveat["labels"]), ea.LABEL_NAMES | {"all"})
 
     def test_asmbs_release_has_no_spec(self):
-        self.assertEqual(len(self.spec["events"]), 38)
+        self.assertEqual(len(self.spec["events"][:38]), 38)                                         # batches 1 to 4; batch 5's events follow
         self.assertNotIn("asmb-m5b-2026-08-13", self.events)
         self.assertFalse([e for e in self.spec["events"] if e["candidate_id"] == "0001193125-26-352193"])
         self.assertFalse([e for e in self.spec["events"] if e["security"]["ticker"] == "ASMB" and e["published_at"][:10] == "2026-08-13"])

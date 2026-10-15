@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_batch5_permission",
+  "recorded_on": "2026-10-15",
+  "context": "Batches 1 to 4 are complete (thirty-eight events attested, pinned and verified on a re-run; ASMB's two releases at the bell left quarantined). The owner's answer on batch 4's wire pages was \"Yes, batch 4 only (Recommended)\", whose option text said \"Later batches ask again.\" The assistant's report offered batch 5, the last, and said it would ask the exact question, with names, sources and size, before opening any page. The owner's message, the question and the answer are quoted from the session transcript, not from a summary.",
+  "owner_message": {
+    "text": "authorize batch 5",
+    "at": "2026-10-15T09:51:12.054Z",
+    "source": "session transcript, line 48416",
+    "read_as": "The go-ahead to ask the question about batch 5, as the report offered; it is not itself the permission to read pages."
+  },
+  "asked": {
+    "at": "2026-10-15T09:52:11.681Z",
+    "source": "session transcript, line 48441 (AskUserQuestion)"
+  },
+  "answered": {
+    "at": "2026-10-15T09:52:18.018Z",
+    "source": "session transcript, line 48442 (the tool result of the question)"
+  },
+  "questions_and_answers": [
+    {
+      "header": "Wire pages 5",
+      "question": "May I read public wire-release pages and the issuers' own newsroom pages to take the first-public minute of the batch 5 releases (S4)?",
+      "options_offered": [
+        {
+          "label": "Yes, batch 5 only (Recommended)",
+          "description": "The last five releases that stand (REKR 08-13, JBSS 08-19, SLSN 08-19, OKTA 08-26, LOVE 09-10; all assessed 'results release, no issue found' in the S2 review; SLSN's 8-K was filed 08-20, the day after its release): each release's page on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or the issuer's newsroom, plus a check for a separate same-day release. Public pages, roughly 50 to 300 KB each, size not known in advance; batches 1 to 4 took 42, 27, 25 and 36 page loads for ten candidates each, so for five expect 12 to 25. I read them in the built-in browser, hold them in browser memory only and keep the URL, the displayed minute and a short excerpt. No web-search tool, no price or quote page, no filing. You may be asked to allow each site. No push, no other download. One disclosure: during batch 3 a Business Wire listing showed me Okta's 08-26 headline and time (16:01 ET); I will read its own page rather than rely on that. This is the last batch: the final audit (S7) needs no pages."
+        },
+        {
+          "label": "No downloads for now",
+          "description": "I stop here on Phase 1b until you say otherwise."
+        }
+      ],
+      "owner_selected": "Yes, batch 5 only (Recommended)"
+    }
+  ],
+  "permission_read_as": {
+    "scope": "Batch 5 only: the public pages of the releases of the five candidates listed below on Business Wire, GlobeNewswire, PR Newswire or Accesswire, or on the issuer's own newsroom, to take each release's first-public minute, and a check for a separate same-day release. In the built-in browser, in browser memory only; the URL, the displayed minute and a short excerpt are kept. No web-search tool, no price or quote page, no filing. It carries no push and no other download. It is the last batch: the final audit (S7) needs no pages.",
+    "batch_5": [
+      {
+        "ticker": "REKR",
+        "filing_date": "2026-08-13",
+        "release_date": "2026-08-13",
+        "candidate_id": "0001437749-26-027481"
+      },
+      {
+        "ticker": "JBSS",
+        "filing_date": "2026-08-19",
+        "release_date": "2026-08-19",
+        "candidate_id": "0001193125-26-356911"
+      },
+      {
+        "ticker": "SLSN",
+        "filing_date": "2026-08-20",
+        "release_date": "2026-08-19",
+        "candidate_id": "0001171843-26-005676"
+      },
+      {
+        "ticker": "OKTA",
+        "filing_date": "2026-08-26",
+        "release_date": "2026-08-26",
+        "candidate_id": "0001660134-26-000068"
+      },
+      {
+        "ticker": "LOVE",
+        "filing_date": "2026-09-10",
+        "release_date": "2026-09-10",
+        "candidate_id": "0001628280-26-061219"
+      }
+    ],
+    "how_batch_5_was_chosen": "The five releases that remain among the 47 candidates once the two the owner excluded in the S2 decisions (REKR 2026-07-15, PAYO 2026-08-06) and the forty of batches 1 to 4 are taken out (reports/m5-phase1b-s2-decisions-2026-10-09.json and the batch 2, 3 and 4 permission records), ordered by the release dates in reports/m5-phase1b-eligibility-review-2026-10-09.json. All five were assessed results_release_no_issue_found there. SLSN's 8-K was filed 2026-08-20, the day after its 2026-08-19 release.",
+    "disclosed_in_the_question": "During batch 3 a Business Wire listing showed the headline and time (2026-08-26 16:01 ET) of Okta's 2026-08-26 release (reports/m5-phase1b-batch3-sources-2026-10-10.json, reading.what_was_seen_in_passing); the question told the owner that Okta's own page would be read rather than relying on it."
+  },
+  "not_authorized_by_this_answer": [
+    "Reading the wire or newsroom pages of any other issuer or release.",
+    "Reading the near-date 8-Ks of reports/m5-phase1b-same-day-sweep-2026-10-09.json, or any other filing.",
+    "Using the web-search tool (a search-tool summary once exposed a company's quarterly average repurchase price: reports/m5-phase1b-batch1-sources-2026-10-09.json).",
+    "Any push, any other download, any price or label read, and attesting any event's first-public time, identity or corporate actions for the owner."
+  ],
+  "not_a_claim": [
+    "Not an attestation of any event and not a finding about any batch 5 candidate: no page had been read when this was recorded."
+  ]
+}
