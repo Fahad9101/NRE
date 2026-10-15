@@ -236,8 +236,9 @@ class PlanDocumentTests(unittest.TestCase):
                       "Batch 3's ran on 2026-10-14 (`reports/m5-phase1b-batch3-sealed-run-2026-10-14.json`): the ten attested events are MAPPED with a commitment each, and every session-return label exists for nine of them "
                       "(CXT's session_20 label does not exist, because of its dividend); the ten commitments are pinned in the events file, and after the push of those pins a second sealed run (GitHub Actions run 38513974195) matched all twenty-nine pins; "
                       "no repository record was made of that run, and the final audit will re-run and cite. "
-                      "Batch 4's ran on 2026-10-15 (`reports/m5-phase1b-batch4-sealed-run-2026-10-15.json`): the nine attested events are MAPPED with a commitment each and all four session-return labels exist for every one; the nine commitments are pinned in the events file "
-                      "| nothing further for batches 1 to 3 (the twenty-nine pins are pushed and verified); \"push\" for batch 4's pins |", self.flat)
+                      "Batch 4's ran on 2026-10-15 (`reports/m5-phase1b-batch4-sealed-run-2026-10-15.json`): the nine attested events are MAPPED with a commitment each and all four session-return labels exist for every one; the nine commitments are pinned in the events file, and after the push of those pins a second sealed run (GitHub Actions run 38682669048) matched all thirty-eight pins; "
+                      "no repository record was made of that run, and the final audit will re-run and cite "
+                      "| nothing further for batches 1 to 4 (the thirty-eight pins are pushed and verified) |", self.flat)
         self.assertIn("S6 followed for batch 1's eight attested events. `tests/test_m5_phase1b_sealed_run.py` binds the sealed-run record to the events file and the calendar and checks that the pins are the record's commitments; "
                       "`tests/test_m5_phase1b_batch1.py` runs the pinned file with injected prices and requires each mapped event to report a mismatch, so a pin does catch a different history. "
                       "The same file binds the second record: the eight pins matched, nothing else about them changed, and NBIX's commitment is the events file's ninth pin. "
