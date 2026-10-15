@@ -1,6 +1,6 @@
 """The owner's signoff of Milestone 5 Phase 1b batch 4 (reports/m5-phase1b-batch4-signoff-2026-10-14.json): his words as given (the request in my report and "attest the nine"), what the answer decides (all nine events attested, ACHV with its caveat on all labels,
-ASMB's release at the bell left quarantined), and the events file that carries it out -- the nine events attested on the record, with the four label caveats the packet proposed and ACHV's Item 5.03 filing. (Their commitments are pinned from the attested sealed run
-once it has run.)"""
+ASMB's release at the bell left quarantined), and the events file that carries it out -- the nine events attested on the record, with the four label caveats the packet proposed and ACHV's Item 5.03 filing. (Their commitments are pinned from the attested sealed run:
+tests/test_m5_phase1b_batch4_sealed_run.py.)"""
 import json
 import unittest
 from pathlib import Path
@@ -126,9 +126,7 @@ class EventsFileTests(unittest.TestCase):
             for caveat in self.events[event_id].get("caveats", []):
                 self.assertLessEqual(set(caveat["labels"]), ea.LABEL_NAMES | {"all"})
 
-    def test_nothing_is_pinned_yet_and_asmbs_release_has_no_spec(self):
-        for event_id in IDS:
-            self.assertNotIn("recorded_result", self.events[event_id])                    # the commitments come from the attested sealed run, not from this signoff
+    def test_asmbs_release_has_no_spec(self):
         self.assertEqual(len(self.spec["events"]), 38)
         self.assertNotIn("asmb-m5b-2026-08-13", self.events)
         self.assertFalse([e for e in self.spec["events"] if e["candidate_id"] == "0001193125-26-352193"])

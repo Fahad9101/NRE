@@ -1,7 +1,7 @@
 """Milestone 5 Phase 1b batch 4: the owner's permission to read the ten releases' wire pages (reports/m5-phase1b-batch4-permission-2026-10-14.json) is quoted as given and the ten are recomputed from the S2 records; nine events, appended to
 config/m5-phase1b-events.json after the twenty-nine of batches 1 to 3 (sealed; attested on the owner's signoff, tests/test_m5_phase1b_batch4_attestations.py), validate with the project's own spec validation and agree with the frozen ledger, the eligibility review, the Milestone 1 events, the calendar and the wire evidence in
 reports/m5-phase1b-batch4-sources-2026-10-14.json (each page's machine-readable time converts to the minute taken from it; EDGAR's acceptance time is recomputed from the archived SEC lists); the tenth release, ASMB's, was made at the bell and is put aside, which the calendar
-confirms; their dry-run state is recoverable byte for byte; and a sealed run of the nine with injected prices quarantines every one once the attestations are taken out, maps every one as shipped, and prints no price."""
+confirms; their dry-run state is recoverable byte for byte; and a sealed run of the nine with injected prices quarantines every one once the attestations are taken out, maps every one once the pins are taken out, shows each pin catching the injected prices as shipped, and prints no price."""
 import hashlib
 import json
 import re
@@ -122,7 +122,7 @@ class EventsAndSourcesTests(unittest.TestCase):
             with self.subTest(event=event["event_id"]):
                 self.assertEqual(event["seal"], "hash_only")
                 self.assertIn("attestations", event)                          # the owner attested the batch after the sealed dry run and the signoff packet (tests/test_m5_phase1b_batch4_attestations.py)
-                self.assertNotIn("recorded_result", event)                    # and nothing is pinned until the attested sealed run has printed the commitments
+                self.assertIn("recorded_result", event)                       # and each commitment was pinned after the attested sealed run printed it (tests/test_m5_phase1b_batch4_sealed_run.py)
                 self.assertEqual(event["event_id"], event["cluster_id"])
                 self.assertRegex(event["event_id"], r"^[a-z]+-m5b-2026-\d\d-\d\d$")
         for event in self.earlier:
@@ -252,6 +252,7 @@ class EventsAndSourcesTests(unittest.TestCase):
         for event in events:
             event.pop("attestations")                                         # what the owner's signoff added: the attestations and the caveats that name a filing
             event.pop("caveats", None)
+            event.pop("recorded_result")                                      # and what the attested sealed run's commitments added
         text = json.dumps({"events": events}, indent=2, ensure_ascii=False) + "\n"
         info = self.record["events_file"]
         self.assertEqual(hashlib.sha256(text.encode("utf-8")).hexdigest(), info["batch_4_events_sha256_in_the_dry_run_state"])
@@ -303,15 +304,18 @@ class Response:
 
 
 class SealedRunSimulationTests(unittest.TestCase):
-    """Batch 4's nine events through the sealed run with a fake provider holding distinctive prices and no corporate actions: with the attestations taken out they quarantine, as shipped (attested, not pinned) they map, and no price reaches the output."""
+    """Batch 4's nine events through the sealed run with a fake provider holding distinctive prices and no corporate actions: with the attestations taken out they quarantine, with the pins taken out they map, as shipped the pins catch the injected prices, and no price
+    reaches the output."""
 
-    def run_sealed(self, attested):
+    def run_sealed(self, attested, pinned=False):
         calendar = Calendar()
         spec = load(EVENTS)
         spec["events"] = spec["events"][29:38]
         for event in spec["events"]:
             if not attested:
                 event.pop("attestations")
+            if not pinned:
+                event.pop("recorded_result")
 
         class Opener:
             def open(self, req, timeout=None):
@@ -359,9 +363,21 @@ class SealedRunSimulationTests(unittest.TestCase):
         self.assertEqual((out["all_ok"], out["counts_by_state"]), (True, {"MAPPED": 9}))
         for event_id, view in out["events"].items():
             with self.subTest(event=event_id):
-                self.assertEqual((view["state"], view["reasons"]), ("MAPPED", []))
+                self.assertEqual((view["state"], view["reasons"], view["labels_match_recorded"]), ("MAPPED", [], None))
                 self.assertEqual(view["session_labels"], {name: {"exists": True, "reason": None} for name in ea.SESSION_LABEL_NAMES})
                 self.assertRegex(view["labels_sha256"], r"^[0-9a-f]{64}$")
+
+    def test_as_shipped_each_pin_catches_the_injected_prices_and_nothing_else_is_reported(self):
+        code, printed = self.run_sealed(attested=True, pinned=True)
+        out = json.loads(printed[0])
+        self.assertEqual((code, out["all_ok"]), (2, False))
+        recorded = {e["event_id"]: e["recorded_result"]["labels_sha256"] for e in load(EVENTS)["events"][29:38]}
+        self.assertEqual(sorted(out["events"]), sorted(BATCH_4_IDS))
+        for event_id, view in out["events"].items():
+            with self.subTest(event=event_id):
+                self.assertEqual((view["state"], view["labels_match_recorded"], view["error"]), ("MAPPED", False, "LABELS_DIFFER_FROM_RECORDED"))
+                self.assertNotEqual(view["labels_sha256"], recorded[event_id])
+        self.assertIsNone(re.search(r"\d\.\d", "\n".join(printed)))
 
 
 if __name__ == "__main__":
