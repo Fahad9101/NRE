@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1c_authorization",
+  "authorized_on": "2026-11-12",
+  "authorized_by": "Fahad9101 (project owner)",
+  "owner_phase_instruction": "do next",
+  "owner_provider_rights_confirmation": "it does cover",
+  "context": "The owner confirmed that the existing Alpaca SIP data rights cover deriving the registered pre-cutoff features for the 128 development and 43 holdout events.",
+  "protocol": "config/m5-protocol.json",
+  "protocol_canonical_sha256": "f291ea2f7795e11cec64706de92fa89f5805f3e027897f579e7dc905d949ef88",
+  "protocol_commit": "5bb091e15a109f3700c3d72f611d4b5cba6a6983",
+  "lookback_calendar_source": {
+    "path": "config/m5-phase1a-probe-spec.json",
+    "canonical_sha256": "8680f747be5b30d52acecc5bde753135924d15aebffafe2de42bd03894e23aab",
+    "rule": "Use the probe's verified late-2023 schedule and the merged development calendar from 2024 onward."
+  },
+  "data_handling": "Derived development features, aggregate coverage and a commitment to holdout features only. Keep raw bars and corporate-action payloads in memory. Recompute holdout features against their commitment in authorized Phase 4.",
+  "scope": "Milestone 5 Phase 1c only. Publish and start the live workflow after the owner authorizes the push."
+}
