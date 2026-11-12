@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1b_completion_declaration",
+  "declared_on": "2026-11-12",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "I declare the NRE Milestone 5 Phase 1b forward extension complete.\u201d",
+  "exact_words_source": "Project owner's message in the NRE Codex chat",
+  "status": "MILESTONE_5_PHASE_1B_DECLARED_COMPLETE_BY_THE_PROJECT_OWNER",
+  "governing_protocol": "config/m5-phase1b-protocol.json",
+  "scope": "Milestone 5 Phase 1b forward extension",
+  "seal": "hash_only",
+  "seal_opening": "Reserved for separately authorized Phase 4",
+  "registry": {
+    "path": "reports/m5-phase1b-s7-registry.json",
+    "sha256": "1fe24cda0d8dbf42923aaa7c39a4472f44515740f03177a83403cc2323c8a6fa",
+    "published_commit": "b74fc567de26fce394c7469b5222382425ff9220"
+  },
+  "sealed_audit": {
+    "check_run_id": 131242331422,
+    "conclusion": "success",
+    "head_sha": "f53f05836f5b07c1a82ac0f7e228af19838aed5f",
+    "job_id": 131242331422,
+    "run_attempt": 1,
+    "run_id": 43235690974,
+    "run_number": 18,
+    "workflow": "M5 Phase 1b sealed event acquisition"
+  },
+  "audit_summary": {
+    "commitments_verified": 43,
+    "events_with_missing_or_zero_volume_sessions": 0,
+    "frozen_candidates": 47,
+    "mapped_events": 43,
+    "mismatches": 0,
+    "unavailable_session_labels": 4
+  },
+  "authorization_boundary": "Each later phase requires separate owner authorization."
+}
