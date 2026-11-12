@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-11-12",
+  "phase": "Milestone 5 Phase 0",
+  "owner_authorization": "Authorize NRE Milestone 5 Phase 0.",
+  "base_commit": "bf7f22ca21efb32c64c3c4a722c65811e39e7e40",
+  "protocol": "config/m5-protocol.json",
+  "canonical_sha256": "f291ea2f7795e11cec64706de92fa89f5805f3e027897f579e7dc905d949ef88",
+  "hash_definition": "SHA-256 of nre.core.canonical applied to the parsed protocol JSON",
+  "development_event_count": 128,
+  "sealed_holdout_event_count": 43,
+  "sealed_registry": {
+    "path": "reports/m5-phase1b-s7-registry.json",
+    "sha256_git_lf": "1fe24cda0d8dbf42923aaa7c39a4472f44515740f03177a83403cc2323c8a6fa"
+  },
+  "disclosure": "M4 block 5 results were previously seen and are part of development history. Phase 1a availability findings and Phase 1b seal metadata were available. This registration used no event-level outcome or opened holdout label and performed no fitting, evaluation or acquisition.",
+  "assistant_defaults": "Inner partition and support rules, feature definitions and coverage handling, model grids, tie rules, calibration and holdout margins, and random seeds. These are pre-registered design choices."
+}

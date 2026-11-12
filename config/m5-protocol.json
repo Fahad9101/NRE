@@ -1,0 +1,337 @@
+{
+  "protocol_id": "nre-m5-advanced-model-evaluation",
+  "protocol_version": 1,
+  "purpose": "A bounded comparison of advanced research procedures with strong baselines. No improvement shown and insufficient data are valid outcomes.",
+  "authority": {
+    "scope": {
+      "path": "docs/M5-ADVANCED-MODELS-SCOPE.md",
+      "sha256_git_lf": "baaa73474776bd3a09c9229fe4472b3afd1ae59a792d9a7afbec24e36100f8a5"
+    },
+    "owner_scope_decisions": {
+      "path": "reports/m5-scope-confirmation-2026-10-08.json",
+      "sha256_git_lf": "d2cb38d298d37167cf6b345fc5ae2952c62f72a54135bec81e0a82cf0b35d0d3"
+    },
+    "availability_findings": {
+      "path": "reports/m5-phase1a-findings-2026-10-09.json",
+      "sha256_git_lf": "e185bb887402011ded6e0e7b140f1e2538a495a8d19529ca2314ceb67627e1dc"
+    },
+    "technical_contract": {
+      "path": "docs/MILESTONE-0-TECHNICAL-CONTRACT.md",
+      "sha256_git_lf": "2bec8169c6a4af158e35d25239ad392c0854fec032a97ea17a0e7b4eaf07a680"
+    },
+    "master_prompt": {
+      "path": "docs/NRE-1.0-MASTER-PROMPT.md",
+      "sha256_git_lf": "2d55fdef3f803e6a71253d3abf51619c1d5e0900cd54a7513fcbd8c65bc29f09"
+    },
+    "phase_0_authorization": "Authorize NRE Milestone 5 Phase 0."
+  },
+  "inputs": {
+    "m4_protocol": {
+      "path": "config/m4-protocol.json",
+      "sha256_git_lf": "b1abfb3c54a7825247b76a49801da5e21b768854472e330f66b5540df8322a4d"
+    },
+    "development": {
+      "path": "config/m2-step3-combined-events.json",
+      "canonical_sha256": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+      "events": 128,
+      "issuers": 23
+    },
+    "development_event_table_sha256": "3a9b3b286e35c6aaa4227596d6d689b66f3f6cab0a8e52b047a7d39bffc423a1",
+    "development_event_labels_sha256": "14ff8c442e26187d0cbb8e47356df4f7ac973738126414ae71fd617fbaa582fa",
+    "development_calendar": {
+      "path": "config/m2-merged-calendar-2024-2026.json",
+      "canonical_sha256": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5"
+    },
+    "development_block_assignment": {
+      "sizes": [
+        17,
+        44,
+        21,
+        23,
+        23
+      ],
+      "block_assignment_sha256": "7c3843f19d2b142cf7a858e9d0fb477a1024ce9757804a5f2063fe02414844d3",
+      "first_and_last_reaction_session": [
+        [
+          "2024-11-05",
+          "2024-12-12"
+        ],
+        [
+          "2025-01-23",
+          "2025-06-12"
+        ],
+        [
+          "2025-07-31",
+          "2025-09-11"
+        ],
+        [
+          "2025-10-23",
+          "2025-12-11"
+        ],
+        [
+          "2026-01-22",
+          "2026-04-01"
+        ]
+      ]
+    },
+    "development_caveats": {
+      "as_recorded_sha256": "75f1e6dde7eaf4a74e358d2ab2ebc5c9743cbdea8bc864541a2ef8ff0fbea73b",
+      "with_derived_labels_sha256": "dd652b02da63e6313607ade71bf1f422556f9815cb83e5eea18e6051aea9f9e3",
+      "events_with_caveats": 38
+    },
+    "holdout": {
+      "registry": {
+        "path": "reports/m5-phase1b-s7-registry.json",
+        "sha256_git_lf": "1fe24cda0d8dbf42923aaa7c39a4472f44515740f03177a83403cc2323c8a6fa"
+      },
+      "events_spec": {
+        "path": "config/m5-phase1b-events.json",
+        "sha256_git_lf": "10735327bed85a9169b1ddf857f8661be69d2b929f9918989b89aa1415626754"
+      },
+      "candidate_ledger": {
+        "path": "config/m5-phase1b-frozen-candidate-ledger.json",
+        "sha256_git_lf": "3fff404a1cd884099826548b8c7db16f69135b88f5645c6afa6de103d74fc382"
+      },
+      "protocol": {
+        "path": "config/m5-phase1b-protocol.json",
+        "sha256_git_lf": "66ec5f05d9ceb65c14c15b8a2d96ba36f76779245ab6e2869b6ae008ac0e5919"
+      },
+      "owner_completion": {
+        "path": "reports/m5-phase1b-completion-declaration-2026-11-12.json",
+        "sha256_git_lf": "e3d87a58981533e8a49ccd3e572980e02003fa00560b21e6897ab557d624a157"
+      },
+      "events": 43,
+      "first_reaction_session": "2026-04-23",
+      "last_reaction_session": "2026-09-10",
+      "seal": "hash_only",
+      "membership": "Exactly the registry event IDs and commitments. Event and target eligibility is determined by the frozen spec and target rules. No substitutions."
+    }
+  },
+  "targets": [
+    {
+      "id": "gap_ge_3pct",
+      "role": "primary",
+      "master_prompt_family": "opening gap",
+      "clock": "B",
+      "kind": "binary",
+      "eligible_events": "all events",
+      "source_labels": [
+        "gap_ge_3pct"
+      ],
+      "definition": "opening gap O/Cprev - 1 >= 3%"
+    },
+    {
+      "id": "gap_ge_5pct",
+      "role": "primary",
+      "master_prompt_family": "opening gap",
+      "clock": "B",
+      "kind": "binary",
+      "eligible_events": "all events",
+      "source_labels": [
+        "gap_ge_5pct"
+      ],
+      "definition": "opening gap O/Cprev - 1 >= 5%"
+    },
+    {
+      "id": "day1_close_return",
+      "role": "primary",
+      "master_prompt_family": "Day-1 move",
+      "clock": "B",
+      "kind": "regression",
+      "eligible_events": "all events",
+      "source_labels": [
+        "day1_close_return"
+      ],
+      "definition": "day-1 close return C/P0 - 1 (the label day1_close_return), predicted as the 10th, 50th and 90th percentiles"
+    },
+    {
+      "id": "extension_after_open_ge_5pct",
+      "role": "primary",
+      "master_prompt_family": "continuation/fade",
+      "clock": "C0",
+      "kind": "binary",
+      "eligible_events": "all events",
+      "source_labels": [
+        "day1_open_return",
+        "day1_high_return"
+      ],
+      "definition": "opening-anchored day-1 high H/O - 1 >= 5%"
+    },
+    {
+      "id": "loses_half_of_gap",
+      "role": "primary",
+      "master_prompt_family": "gap retention",
+      "clock": "C0",
+      "kind": "binary",
+      "eligible_events": "events whose opening gap is at least 0.5% (positive_gap_retained_half is defined)",
+      "source_labels": [
+        "positive_gap_retained_half"
+      ],
+      "definition": "positive gaps of at least 0.5% only: the day-1 close keeps less than half of the gap"
+    }
+  ],
+  "clocks": {
+    "B": "Recorded prediction cutoff after release and strictly before the reaction session opens. The current reaction session opening print is unavailable.",
+    "C0": "Verified regular opening print of the reaction session, at the same opening clock as Milestone 4 C0. Add the opening gap as a feature. Daily high, low, close and volume of that session are unavailable.",
+    "maturity": "Use the canonical label availability of the latest source label for each target. All training labels must be available strictly before model fit and any history feature must also mature strictly before its event clock."
+  },
+  "caveats": {
+    "rule": "Inherit the pinned M4 caveat propagation and composite-target rules. Apply the Phase 1b events spec's per-label and all-label caveats in the same way.",
+    "versions": [
+      "clean_window",
+      "all_event"
+    ],
+    "selection": "Clean-window data drives selection and promotion. Replay the clean-window choices on the all-event variant with its own eligible training data. Report both, and any sign disagreement."
+  },
+  "feature_policy": {
+    "reference": "Release timing and, at C0 only, opening gap. Retrospective SIC grouping is confined to a separately reported development sensitivity.",
+    "ticker_reaction": "Inherit the M4 shrunken issuer-history rate or mean for the target, with prior strength 10 and a pooled fit-only prior. Restrict both issuer history and the prior to earlier, mature eligible labels within the current fit partition. The training row itself and same-session outcomes are excluded. If there is no mature pooled fit label, the feature is unavailable.",
+    "analogues": "Within the fit partition use eligible earlier mature events of other issuers with the same release timing. Use up to ten most recent, ordered by reaction session descending then event_id ascending, with at most one per reaction session. Require at least five. Feature is the target mean; expose analogue IDs in development logs.",
+    "daily_inputs": "Alpaca SIP raw bars only. For both clocks end every bar-derived lookback at the last exchange session strictly before the America/New_York date of the original event cutoff. This conservative rule excludes same-date daily volume even for after-hours releases. Price fields follow the provider daily regular-session aggregation; volume is all-hours and a session must have passed 20:00 ET.",
+    "market_structure": {
+      "return_5": "Close / close five sessions earlier minus one.",
+      "rv_20": "Sample standard deviation of twenty consecutive log close-to-close returns, requiring 21 closes. No annualization.",
+      "atr_14_fraction": "Arithmetic mean of fourteen true ranges divided by the final close. True range is max(high-low, abs(high-prior close), abs(low-prior close)).",
+      "adv_20": "Arithmetic mean of close times all-hours volume over twenty sessions.",
+      "rvol_20": "Final completed session volume divided by the mean all-hours volume of the preceding twenty sessions.",
+      "distance_252_high": "Final close divided by the maximum raw high over 252 consecutive completed sessions minus one."
+    },
+    "market_regime": {
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "RSP",
+        "HYG",
+        "LQD"
+      ],
+      "returns": "Twenty-session close-to-close simple returns of SPY, QQQ and IWM. IWM is a Russell 2000 proxy.",
+      "breadth_proxy": "Twenty-session simple return of RSP minus that of SPY.",
+      "credit_proxy": "Twenty-session simple return of HYG minus that of LQD."
+    },
+    "missingness": "Require exact consecutive expected sessions for each formula, positive prices and positive volume where used, and a verified historical identity. Never shorten a lookback, forward-fill, or stitch an unverified predecessor. For each symbol with a lookback crossing an effective corporate action or identity break, mark that feature unavailable. If action coverage or date is unresolved, mark the affected lookback unavailable. Use action dates as a conservative integrity filter and acknowledge that vintage availability is unverified.",
+    "encoding": "For advanced models use the fit-partition median for missing continuous values plus a missingness indicator. If no fit value exists, encode zero plus the missingness indicator. Record coverage by partition and family. Baseline stumps abstain on missing inputs and use the fit-partition pooled comparator on those rows, with fallback logged. Record unavailable families explicitly. If a whole daily-bar family cannot be acquired or validated under the registered rules, stop for the owner before development and do not substitute a different feed or feature.",
+    "deferred_fields": "Intraday and premarket volume, float, short interest, shares outstanding and market capitalization, ownership, options, VIX, earnings surprise, valuation and text features are outside the daily-bar acquisition scope.",
+    "seal_boundary": "Phase 1c may derive only the specified pre-cutoff features. C0 opening gaps for holdout events and any holdout-derived label, price or return at or after the event clock remain inside the seal until Phase 4. Pre-cutoff features for holdout events remain quarantined from development and model selection."
+  },
+  "validation": {
+    "outer_development_test_blocks": [
+      3,
+      4,
+      5
+    ],
+    "outer_train_blocks": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "final_development_blocks": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "inner_split": "Within each outer training set, sort whole reaction-session groups by session. Allocate the last groups until they contain at least ceil(0.15*N) events to calibration, then the preceding groups until they contain at least ceil(0.15*N) events to selection. The earlier groups are fit. N is the outer training event count before target or caveat filtering. Use the same rule on blocks 1–5 for the final frozen pipeline.",
+    "purge": "Keep related events in the same partition, using connected components of event cluster and reaction session. Any component spanning partitions is assigned to the latest partition and excluded from earlier partitions. At each boundary remove earlier rows if their label availability or outcome window intersects or reaches the first later cutoff. Apply at least a 20-session embargo wherever a 20-session label window is configured; the current primary targets end on reaction day 1. Verify actual maturity at every boundary, including the final development-to-holdout boundary.",
+    "selection": "Fit each configuration on fit only. Score on the subsequent selection partition with the primary loss. Select one advanced configuration and one strongest relevant baseline per target per fold. Break ties by listed family order, then smaller depth. Freeze those choices before calibration and test. The confirmatory contrast evaluates these fixed selection procedures across folds. A failed configuration receives no score. Retain all failures and use identical eligible selection rows; if no advanced configuration or baseline scores every eligible row, flag the fold and target.",
+    "calibration": "For binary targets apply Platt scaling to the logit of the selected advanced model probability, clipped to [0.000001, 0.999999], with intercept unpenalized and slope penalized by L2 lambda 1 and constrained nonnegative. Fit only on calibration data using the M4 logistic iteration cap and tolerance. If class support or convergence fails, retain raw probabilities and flag the fold as uncalibrated. Report raw and calibrated scores. For quantiles assess calibration through interval coverage without post-fit adjustment.",
+    "failure_rules": "Use identical eligible test rows for paired losses. Report abstentions and eligible denominator. Any unresolved fit or pipeline failure that removes an eligible prediction prevents promotion for the target.",
+    "support": {
+      "binary_fit_minimum_each_class": 10,
+      "binary_selection_minimum_each_class": 3,
+      "binary_calibration_minimum_each_class": 5,
+      "binary_development_and_holdout_minimum_each_class": 10,
+      "regression_fit_minimum": 40,
+      "regression_selection_minimum": 8,
+      "regression_development_and_holdout_minimum": 20,
+      "minimum_clusters_per_axis_for_claim": 10,
+      "minimum_evaluable_development_folds_for_claim": 2,
+      "below_threshold": "INSUFFICIENT_DATA in development or COUNTS_ONLY at the final holdout. A calibration-only shortfall preserves raw results but blocks binary promotion."
+    },
+    "final_pipeline": "Apply the same selection and calibration rules once to the ordered development-only partitions of blocks 1–5. Lock the resulting model, preprocessing, baseline and calibration before holdout access. Do not refit using holdout rows."
+  },
+  "models": {
+    "advanced_family_order": [
+      "single_tree",
+      "random_forest",
+      "gradient_boosting",
+      "equal_weight_ensemble"
+    ],
+    "grid": {
+      "max_depth": [
+        1,
+        2
+      ],
+      "minimum_leaf_events": 5,
+      "forest_trees": 32,
+      "boosting_rounds": 16,
+      "boosting_learning_rate": 0.1
+    },
+    "tree": "Deterministic CART using midpoint splits, squared error for regression and Gini for binary. No split with nonpositive gain. Break ties by feature name then smaller threshold. Predict target means or binary leaf frequencies.",
+    "forest": "Draw n fit rows with replacement per tree, where n is the fit count. At each node sample max(1,floor(sqrt(p))) of the p encoded feature columns without replacement. Average tree predictions. Stable fit-row order is reaction session then event_id.",
+    "boosting": "Start at the fit mean for regression or clipped fit-rate logit for binary. Fit squared-error regression trees to residuals y-prediction or y-probability, respectively. Update the mean or logit by the learning rate times the tree prediction. Convert final binary logits with the sigmoid.",
+    "ensemble": "Average the forest and boosted point predictions of the same depth with equal weights.",
+    "quantiles": "Add the fit residual type-7 0.10, 0.50 and 0.90 quantiles to each fitted conditional mean. For the ensemble compute residuals against its own fit mean predictions.",
+    "baselines_binary_order": [
+      "m4_pooled_rate",
+      "m4_timing_rate",
+      "m4_issuer_history_rate",
+      "m4_logistic_without_sector",
+      "rvol_stump",
+      "momentum_stump"
+    ],
+    "baselines_regression_order": [
+      "m4_pooled_quantiles",
+      "m4_timing_quantiles",
+      "m4_ridge_without_sector",
+      "rvol_stump",
+      "momentum_stump"
+    ],
+    "baseline_rules": "Inherit pinned M4 estimator definitions with current fit-only history and no SIC for the primary comparisons. The RVOL and momentum baselines are depth-1 trees on rvol_20 and return_5 respectively, with minimum leaf 5 and the same prediction or quantile rule. Also report random-ranking diagnostics and M4 sector-group comparators separately.",
+    "nested_probabilities": "For both candidate and baseline, report a sensitivity capping the 5% gap probability at the 3% prediction when both exist. The primary loss uses each target's independently selected prediction and the sensitivity logs every cap.",
+    "ablations": "Remove each of ticker reaction, analogue, market structure and market regime in turn. Refit the selected configuration at the frozen depth and refit any calibration with the same rules and partitions. Do not retune. Compare on identical rows. Report paired development loss changes, coverage and availability. Permutation importance is descriptive only."
+  },
+  "evaluation": {
+    "primary_binary": "Brier loss",
+    "primary_regression": "Mean pinball loss across the 0.10, 0.50 and 0.90 quantiles",
+    "contrast": "Candidate minus selected baseline in pooled paired out-of-fold development predictions. Negative favors the candidate. One confirmatory contrast per primary target.",
+    "intervals": "5,000 percentile bootstrap resamples each by issuer and by reaction session, predictions held fixed. Report both cluster intervals at 95% and 99%. Use the envelope (smallest lower endpoint, largest upper endpoint) for gates.",
+    "secondary": "Inherit applicable M4 metric definitions and support gates for log loss, average precision, precision at K and lift, reliability bins with counts, false positives and negatives, regression interval coverage and median absolute error. Report MAE for the median prediction and the actual count and rate of abstention. Report counts by fold, variant and target.",
+    "promotion": {
+      "development": "Clean-window paired 99% upper endpoint strictly below zero. Clean-window binary absolute difference between mean forecast and observed rate at most 0.10 and no eligible fold lacks calibration. Clean-window regression nominal 80% interval coverage must be within 0.15 of 0.80. All-event development point contrast must not be positive.",
+      "holdout": "Require sufficient support, a strictly negative clean-window point contrast, and the 99% upper endpoint of paired loss contrast at most 0.05 times the holdout baseline loss. Apply the same calibration tolerance and require all-event holdout point contrast at most zero. Zero baseline loss or unestimable contrast yields no promotion. Report both cluster intervals and counts even when a gate fails, where estimable. A counts-only holdout cannot support promotion.",
+      "meaning": "Eligibility to be carried forward as a candidate expected-reaction procedure for Milestone 6, subject to separate owner authorization. No predictive-edge, execution-economics or trading claim."
+    }
+  },
+  "seeds": {
+    "random_forest": 510001,
+    "bootstrap_reaction_session": 510002,
+    "bootstrap_issuer": 510003,
+    "random_ranking": 510004,
+    "permutation_importance": 510005,
+    "rule": "Use a separate Python random.Random stream per target, fold and operation. For a seed offset use the first eight bytes, unsigned big-endian, of SHA-256 over canonical JSON [target_id, fold_id, operation]. Add that offset to the base seed. No seed search."
+  },
+  "logs": {
+    "experiment": "Append one record per run and one per fold/target/variant/configuration with protocol digest, code and data revisions, seeds, partitions, feature availability, scores or abstention, selected configuration, calibration and failure status. Retain rejected configurations and interrupted attempts.",
+    "holdout": "Before access log owner authorization, exact protocol/code/feature digests and the frozen development fit, selection and calibration choices. Log attempt before computing any holdout outcome. Authorized Phase 4 has one look. Recompute all label commitments under the existing seal implementation and verify all 43 before any holdout metrics can be released. On mismatch or partial failure stop, record the attempt and safe error category, and require a separate owner decision. Never overwrite the registry or disclose raw prices. During the one-look run, history and analogue features may reference only the frozen development fit partition."
+  },
+  "integrity": {
+    "implementation": "Python standard library, independent recomputation and leakage injection in Phase 2. Verify timestamps, holdout isolation, pin matching, grouping, seed determinism and fixture-level feature and model computations before development evaluation.",
+    "amendments": "An owner-authorized change creates a new version and digest with reasons and the results or inputs already seen. Retain this version and its history. After holdout access, report under the version in force at that look.",
+    "freeze_record": "reports/m5-protocol-freeze-2026-11-12.json",
+    "known_at_freeze": "M4 block 5 results were previously seen and are part of development history. Phase 1a availability findings and Phase 1b seal metadata were available. This registration used no event-level outcome or opened holdout label and performed no fitting, evaluation or acquisition."
+  }
+}
