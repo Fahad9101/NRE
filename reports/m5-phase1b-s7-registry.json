@@ -1,0 +1,595 @@
+{
+  "annotation_parts": [
+    {
+      "events": [
+        "alkt-m5b-2026-04-29",
+        "caci-m5b-2026-04-22",
+        "hurn-m5b-2026-05-05",
+        "jbss-m5b-2026-04-29"
+      ],
+      "message_sha256": "b9be2710566a82e6264f47fedffccb9b01fc300bfb67b56f25f47cc0688cd7bd",
+      "part": "1/10"
+    },
+    {
+      "events": [
+        "aspn-m5b-2026-05-07",
+        "cxt-m5b-2026-05-06",
+        "nbix-m5b-2026-05-05",
+        "parr-m5b-2026-05-05"
+      ],
+      "message_sha256": "5f3f36ae4f07350b5d1a7994689024e13c547043507cc5ce172e4191beaad324",
+      "part": "2/10"
+    },
+    {
+      "events": [
+        "coll-m5b-2026-05-07",
+        "payo-m5b-2026-05-07",
+        "pdfs-m5b-2026-05-07",
+        "real-m5b-2026-05-07",
+        "tecx-m5b-2026-05-07"
+      ],
+      "message_sha256": "c4ca6bc677d680804a8ee8b651e41ce04ec8751d4233a128e7ad2237d0ad3b47",
+      "part": "3/10"
+    },
+    {
+      "events": [
+        "achv-m5b-2026-05-12",
+        "klc-m5b-2026-05-14",
+        "lnsr-m5b-2026-05-08",
+        "rekr-m5b-2026-05-11",
+        "slsn-m5b-2026-05-12"
+      ],
+      "message_sha256": "11823f2c3f16158c0fba93fe15e035434f9dc9396e117fec2144cab0c729542e",
+      "part": "4/10"
+    },
+    {
+      "events": [
+        "hurn-m5b-2026-07-28",
+        "love-m5b-2026-06-11",
+        "okta-m5b-2026-05-28",
+        "ttwo-m5b-2026-05-21",
+        "vsat-m5b-2026-05-28"
+      ],
+      "message_sha256": "da33d7f16bc223a08545f43f85be656d83f778c824e8c1dfe0dad1b50d48603e",
+      "part": "5/10"
+    },
+    {
+      "events": [
+        "alkt-m5b-2026-07-29",
+        "caci-m5b-2026-08-05",
+        "nbix-m5b-2026-07-30",
+        "parr-m5b-2026-08-04",
+        "vsat-m5b-2026-08-04"
+      ],
+      "message_sha256": "e534da7bdfab78200413932272fbc1372b1310f76d5e23c4617997dd58502523",
+      "part": "6/10"
+    },
+    {
+      "events": [
+        "aspn-m5b-2026-08-06",
+        "coll-m5b-2026-08-06",
+        "cxt-m5b-2026-08-05",
+        "pdfs-m5b-2026-08-06",
+        "real-m5b-2026-08-06"
+      ],
+      "message_sha256": "2653176693370e773dea546b8da96928667ebe14697aa5b2de82901aebb3994a",
+      "part": "7/10"
+    },
+    {
+      "events": [
+        "achv-m5b-2026-08-11",
+        "klc-m5b-2026-08-13",
+        "lnsr-m5b-2026-08-13",
+        "tecx-m5b-2026-08-06",
+        "ttwo-m5b-2026-08-07"
+      ],
+      "message_sha256": "c6a9d1df424feec9560d15b58d37e43aa4cb4169ce97d2e1058ccfd13d225c17",
+      "part": "8/10"
+    },
+    {
+      "events": [
+        "jbss-m5b-2026-08-19",
+        "okta-m5b-2026-08-26",
+        "rekr-m5b-2026-08-13",
+        "slsn-m5b-2026-08-19"
+      ],
+      "message_sha256": "8ecb2d1a5ea09d846757f17bc26c7ee7be6852245e5102da6180d23281452eb5",
+      "part": "9/10"
+    },
+    {
+      "events": [
+        "love-m5b-2026-09-10"
+      ],
+      "message_sha256": "76b993cca6c18221e9e474baaf8ec91d2665f251310d6319f710d99b74f6bedc",
+      "part": "10/10"
+    }
+  ],
+  "events": [
+    {
+      "candidate_id": "0001628280-26-026589",
+      "event_id": "caci-m5b-2026-04-22",
+      "labels_match_recorded": true,
+      "labels_sha256": "e4c8dc2174a4be6bd527561faadcd5c199bf61efd88a896b7f84025a482b14ca",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "CACI"
+    },
+    {
+      "candidate_id": "0001529274-26-000028",
+      "event_id": "alkt-m5b-2026-04-29",
+      "labels_match_recorded": true,
+      "labels_sha256": "10aa8c9d83e555417e053162377f64a1aaf7a2b9c8973ba23d42aa0868012648",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "ALKT"
+    },
+    {
+      "candidate_id": "0001193125-26-191599",
+      "event_id": "jbss-m5b-2026-04-29",
+      "labels_match_recorded": true,
+      "labels_sha256": "debe6694e7309630352e0d63e70e136e157aeb07e18de84220384eb929775121",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "JBSS"
+    },
+    {
+      "candidate_id": "0001289848-26-000080",
+      "event_id": "hurn-m5b-2026-05-05",
+      "labels_match_recorded": true,
+      "labels_sha256": "4ddd98fa4fa94ed9c10c5493356ef0a21dce6d589ec9d51b85a3f2f71fe8f929",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "HURN"
+    },
+    {
+      "candidate_id": "0000914475-26-000025",
+      "event_id": "nbix-m5b-2026-05-05",
+      "labels_match_recorded": true,
+      "labels_sha256": "5ec09a426334d23d630f8be0b0cbbe7a6f6498b56175bfbde9914b7553f23da1",
+      "recorded_in": "reports/m5-phase1b-batch1-pin-verification-2026-10-10.json",
+      "session_labels_unavailable": [
+        "session_10_close_return",
+        "session_20_close_return"
+      ],
+      "state": "MAPPED",
+      "ticker": "NBIX"
+    },
+    {
+      "candidate_id": "0001628280-26-030714",
+      "event_id": "parr-m5b-2026-05-05",
+      "labels_match_recorded": true,
+      "labels_sha256": "85efc4ec30c4f4f75393e65192c0d9e874d6e41b3ed9f1d740a7e20f3bda5080",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "PARR"
+    },
+    {
+      "candidate_id": "0000025445-26-000015",
+      "event_id": "cxt-m5b-2026-05-06",
+      "labels_match_recorded": true,
+      "labels_sha256": "26fa8a56aee6973f5418fd88385415198a5fc8d62eb8e9cc092325d36b87ab13",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [
+        "session_20_close_return"
+      ],
+      "state": "MAPPED",
+      "ticker": "CXT"
+    },
+    {
+      "candidate_id": "0001171843-26-003109",
+      "event_id": "aspn-m5b-2026-05-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "76fa8458e61971c66dd7c0f3c11e9e47ca1309b59a205db26f8b9618404a6043",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "ASPN"
+    },
+    {
+      "candidate_id": "0001628280-26-031694",
+      "event_id": "coll-m5b-2026-05-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "c408daff151e0dcf10dc28c2c04b40fec5c2274e2a11dcfa0c9d33ddc85115d3",
+      "recorded_in": "reports/m5-phase1b-batch1-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "COLL"
+    },
+    {
+      "candidate_id": "0001104659-26-056688",
+      "event_id": "payo-m5b-2026-05-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "91677fc63706447ae2d81f82b78bf2fa770f8e52ebfe7a4cb743f530a755f9b9",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "PAYO"
+    },
+    {
+      "candidate_id": "0001437749-26-015603",
+      "event_id": "pdfs-m5b-2026-05-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "e689bd8f644e5874aa1f0f12bbc67a6302fd98f1a7e8a9f0ea49040a530560cb",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "PDFS"
+    },
+    {
+      "candidate_id": "0001573221-26-000045",
+      "event_id": "real-m5b-2026-05-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "fae7d75968e60f4e9d36c518621a399dee2cc49320f9c4679093525f6918c853",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "REAL"
+    },
+    {
+      "candidate_id": "0001193125-26-212069",
+      "event_id": "tecx-m5b-2026-05-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "0cd49b23150105fdd202c98df9cf579b20729902e0cd80e4c324165e7d42365b",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "TECX"
+    },
+    {
+      "candidate_id": "0001193125-26-213268",
+      "event_id": "lnsr-m5b-2026-05-08",
+      "labels_match_recorded": true,
+      "labels_sha256": "7c6c1fc702b4878b2dc889317bf3057ecbb6bd64a87a1a50188b739d0c95b620",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "LNSR"
+    },
+    {
+      "candidate_id": "0001437749-26-016113",
+      "event_id": "rekr-m5b-2026-05-11",
+      "labels_match_recorded": true,
+      "labels_sha256": "a2205552fcf1055f7e8781fabff1f51903e98bd41f595156d38889b74c68e17b",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "REKR"
+    },
+    {
+      "candidate_id": "0001193125-26-218175",
+      "event_id": "achv-m5b-2026-05-12",
+      "labels_match_recorded": true,
+      "labels_sha256": "822cac0839065df0ef2333767d2871db5473d0329de9aa5ea04838b8d190d542",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "ACHV"
+    },
+    {
+      "candidate_id": "0001171843-26-003273",
+      "event_id": "slsn-m5b-2026-05-12",
+      "labels_match_recorded": true,
+      "labels_sha256": "2d6af8c59e7407ef696ede9dccfffa71b3963f114ae94a9df32f4dfe8d52581b",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "SLSN"
+    },
+    {
+      "candidate_id": "0001193125-26-224059",
+      "event_id": "klc-m5b-2026-05-14",
+      "labels_match_recorded": true,
+      "labels_sha256": "dd727e9981192d77c0c8810b37528d05a7de73c9fce43d1a1053347a1e413f2a",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "KLC"
+    },
+    {
+      "candidate_id": "0001628280-26-037260",
+      "event_id": "ttwo-m5b-2026-05-21",
+      "labels_match_recorded": true,
+      "labels_sha256": "0278c717db41eea6ef07491b457638dba556d920aa0b65dd20217808958b6b2f",
+      "recorded_in": "reports/m5-phase1b-batch2-sealed-run-2026-10-10.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "TTWO"
+    },
+    {
+      "candidate_id": "0001660134-26-000050",
+      "event_id": "okta-m5b-2026-05-28",
+      "labels_match_recorded": true,
+      "labels_sha256": "d6a4a81072919b5233b593e17bc1f441f40c0b949acf4ba9b4d35c9cec57090e",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "OKTA"
+    },
+    {
+      "candidate_id": "0001193125-26-245304",
+      "event_id": "vsat-m5b-2026-05-28",
+      "labels_match_recorded": true,
+      "labels_sha256": "f0c0a35c5252bdf228d288cb79833cbd171179005ac688a78a680c0d624d7071",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "VSAT"
+    },
+    {
+      "candidate_id": "0001628280-26-042363",
+      "event_id": "love-m5b-2026-06-11",
+      "labels_match_recorded": true,
+      "labels_sha256": "f2150ef79c55208150fdd97469aa7e5f5cc958e006561870f60904ce3b3977a6",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "LOVE"
+    },
+    {
+      "candidate_id": "0001628280-26-050168",
+      "event_id": "hurn-m5b-2026-07-28",
+      "labels_match_recorded": true,
+      "labels_sha256": "402d35a7c14101c4daea925619aec981cd05bb5ed885fde4093a67a90f9eba61",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "HURN"
+    },
+    {
+      "candidate_id": "0001529274-26-000049",
+      "event_id": "alkt-m5b-2026-07-29",
+      "labels_match_recorded": true,
+      "labels_sha256": "776b0efa61d768a3fb6697f8c31cee6d6a02218a763f069e797ff3205a137af6",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "ALKT"
+    },
+    {
+      "candidate_id": "0000914475-26-000035",
+      "event_id": "nbix-m5b-2026-07-30",
+      "labels_match_recorded": true,
+      "labels_sha256": "b9166c2572b6f1013c8ce9fbfb0c2fecde0bac8c5f4732a9757a3af0fa60642c",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "NBIX"
+    },
+    {
+      "candidate_id": "0001628280-26-052766",
+      "event_id": "parr-m5b-2026-08-04",
+      "labels_match_recorded": true,
+      "labels_sha256": "a70971f6f0ff1264794f2e70ae53985ea42ced75f8193bf12514b70c5b34a34a",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "PARR"
+    },
+    {
+      "candidate_id": "0001193125-26-332896",
+      "event_id": "vsat-m5b-2026-08-04",
+      "labels_match_recorded": true,
+      "labels_sha256": "0c9e8ac5acffd9e24a54a5470ea479efb94ea1d03f94a87124654d617f308b01",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "VSAT"
+    },
+    {
+      "candidate_id": "0001628280-26-053448",
+      "event_id": "caci-m5b-2026-08-05",
+      "labels_match_recorded": true,
+      "labels_sha256": "21945c3f5374a2ddd4d6b4510c641ef7ad89d6651ad4343b9c5943aed38cdc05",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "CACI"
+    },
+    {
+      "candidate_id": "0000025445-26-000032",
+      "event_id": "cxt-m5b-2026-08-05",
+      "labels_match_recorded": true,
+      "labels_sha256": "09cacefa774a57609ffd3e0a3e0db399befc63289ee338d7e29f19ba9a7b52f4",
+      "recorded_in": "reports/m5-phase1b-batch3-sealed-run-2026-10-14.json",
+      "session_labels_unavailable": [
+        "session_20_close_return"
+      ],
+      "state": "MAPPED",
+      "ticker": "CXT"
+    },
+    {
+      "candidate_id": "0001171843-26-005289",
+      "event_id": "aspn-m5b-2026-08-06",
+      "labels_match_recorded": true,
+      "labels_sha256": "b59c7778df799a0424eca897fa22e7dcbc38c28f45edd18131adc26e8eff40b8",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "ASPN"
+    },
+    {
+      "candidate_id": "0001628280-26-053849",
+      "event_id": "coll-m5b-2026-08-06",
+      "labels_match_recorded": true,
+      "labels_sha256": "82122abae9cc3c9799a57604367aa3301179112b61c7608973a573eb3b9e157f",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "COLL"
+    },
+    {
+      "candidate_id": "0001437749-26-026292",
+      "event_id": "pdfs-m5b-2026-08-06",
+      "labels_match_recorded": true,
+      "labels_sha256": "1162ffca3f887aa1fc05f22b86572b7a138b0f01ff58738ca2b3cf64993f4196",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "PDFS"
+    },
+    {
+      "candidate_id": "0001573221-26-000052",
+      "event_id": "real-m5b-2026-08-06",
+      "labels_match_recorded": true,
+      "labels_sha256": "4dd50cbbe89b41ab992b9f4e0cbb2ccbc3abe8d1fd2c5c6be99965f37ea5ec75",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "REAL"
+    },
+    {
+      "candidate_id": "0001193125-26-338000",
+      "event_id": "tecx-m5b-2026-08-06",
+      "labels_match_recorded": true,
+      "labels_sha256": "e1192e8db7f7a17710e0ef6aaa8f5c4365ae1e53684e24a061c12cb055d1d41c",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "TECX"
+    },
+    {
+      "candidate_id": "0001628280-26-054580",
+      "event_id": "ttwo-m5b-2026-08-07",
+      "labels_match_recorded": true,
+      "labels_sha256": "59d05b5ecee7a0d57f17233ce73daa84a77b1c6b069c11fad454bb6d939d18f9",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "TTWO"
+    },
+    {
+      "candidate_id": "0001193125-26-344571",
+      "event_id": "achv-m5b-2026-08-11",
+      "labels_match_recorded": true,
+      "labels_sha256": "7076ea54d5638b5464d3be84172882ad0d42c310484db351f7455782a00c6468",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "ACHV"
+    },
+    {
+      "candidate_id": "0001193125-26-349267",
+      "event_id": "klc-m5b-2026-08-13",
+      "labels_match_recorded": true,
+      "labels_sha256": "ce489720bb9384c9dfb04d2cdc73f38b21a37ebf6f4fe752ff5f1a189c9c0d02",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "KLC"
+    },
+    {
+      "candidate_id": "0001193125-26-347859",
+      "event_id": "lnsr-m5b-2026-08-13",
+      "labels_match_recorded": true,
+      "labels_sha256": "6e28bff7794bd2cee07fdd6a97bad6faad97ee04c1da8b509ef8ac5115756ca0",
+      "recorded_in": "reports/m5-phase1b-batch4-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "LNSR"
+    },
+    {
+      "candidate_id": "0001437749-26-027481",
+      "event_id": "rekr-m5b-2026-08-13",
+      "labels_match_recorded": true,
+      "labels_sha256": "358d96e48c703156970456d699178d1e67fb6a317291fb957ea804b20cbf1223",
+      "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "REKR"
+    },
+    {
+      "candidate_id": "0001193125-26-356911",
+      "event_id": "jbss-m5b-2026-08-19",
+      "labels_match_recorded": true,
+      "labels_sha256": "4e2ca5d45a96069942c99c78cee3d00ccfbc93e44e74ba9de4882adbb9c42c9e",
+      "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "JBSS"
+    },
+    {
+      "candidate_id": "0001171843-26-005676",
+      "event_id": "slsn-m5b-2026-08-19",
+      "labels_match_recorded": true,
+      "labels_sha256": "74281fd3937cd744496b0b05be08aa48c361c2b0107b24aba663d709797a8e0a",
+      "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "SLSN"
+    },
+    {
+      "candidate_id": "0001660134-26-000068",
+      "event_id": "okta-m5b-2026-08-26",
+      "labels_match_recorded": true,
+      "labels_sha256": "1e841feb4a66f072cc29dc69d69747b5b6aedd19f9fac43f4f9bae6129ecfcd4",
+      "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "OKTA"
+    },
+    {
+      "candidate_id": "0001628280-26-061219",
+      "event_id": "love-m5b-2026-09-10",
+      "labels_match_recorded": true,
+      "labels_sha256": "e34d250135ae06832aa34a4e98d50d239ba31cde1ef6ab566b934485859633b7",
+      "recorded_in": "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json",
+      "session_labels_unavailable": [],
+      "state": "MAPPED",
+      "ticker": "LOVE"
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "candidate_id": "0001104659-26-091646",
+      "decision_record": "reports/m5-phase1b-s2-decisions-2026-10-09.json",
+      "reason": "pending_cash_take_private"
+    },
+    {
+      "candidate_id": "0001193125-26-211922",
+      "decision_record": "reports/m5-phase1b-batch1-signoff-2026-10-09.json",
+      "reason": "bell_ambiguous"
+    },
+    {
+      "candidate_id": "0001193125-26-352193",
+      "decision_record": "reports/m5-phase1b-batch4-signoff-2026-10-14.json",
+      "reason": "bell_ambiguous"
+    },
+    {
+      "candidate_id": "0001437749-26-023616",
+      "decision_record": "reports/m5-phase1b-s2-decisions-2026-10-09.json",
+      "reason": "preliminary_preannouncement"
+    }
+  ],
+  "input_sha256": {
+    "config/m5-phase1b-events.json": "10735327bed85a9169b1ddf857f8661be69d2b929f9918989b89aa1415626754",
+    "config/m5-phase1b-frozen-candidate-ledger.json": "3fff404a1cd884099826548b8c7db16f69135b88f5645c6afa6de103d74fc382",
+    "reports/m5-phase1b-batch5-sealed-run-2026-10-15.json": "00bd32b3966993ccac584fb6f8246fa0b282717072dcd80e4c0a2daf0cd7ab80"
+  },
+  "kind": "m5_phase1b_s7_registry",
+  "run": {
+    "check_run_id": 131242331422,
+    "conclusion": "success",
+    "head_sha": "f53f05836f5b07c1a82ac0f7e228af19838aed5f",
+    "job_id": 131242331422,
+    "run_attempt": 1,
+    "run_id": 43235690974,
+    "run_number": 18,
+    "workflow": "M5 Phase 1b sealed event acquisition"
+  },
+  "schema_version": 1,
+  "seal": "hash_only",
+  "status": "awaiting_owner_declaration",
+  "summary": {
+    "commitments_verified": 43,
+    "events_with_missing_or_zero_volume_sessions": 0,
+    "frozen_candidates": 47,
+    "mapped_events": 43,
+    "mismatches": 0,
+    "unavailable_session_labels": 4
+  }
+}
