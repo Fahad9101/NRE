@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase1c_acquisition_result",
+  "verified_on": "2026-11-13",
+  "commit": "332981eeed89c7650a2fb034c2edaf6d70ff8852",
+  "acquisition": {
+    "run_number": 1,
+    "run_id": 43376916857,
+    "job_id": 131725439020,
+    "conclusion": "success"
+  },
+  "ci": {
+    "run_number": 268,
+    "run_id": 43376916850,
+    "conclusion": "success",
+    "jobs": {
+      "3.12": 131725439373,
+      "3.13": 131725439973
+    }
+  },
+  "artifact": {
+    "id": 14015206889,
+    "name": "m5-phase1c-derived-features",
+    "zip_sha256": "ef6fa2359cadbfd1e998619ba118487529ab160a2d7a0f1346a019f42ae24d3a",
+    "expires_at": "2026-12-13T06:13:33Z",
+    "files": [
+      "development.json",
+      "summary.json"
+    ]
+  },
+  "verification": "Verified the archive digest against GitHub, the development hash and event membership, the allowed fields, finite feature values, missingness and coverage totals, the protocol hash, and the absence of holdout event rows. The holdout feature digest is a commitment for later authorized recomputation.",
+  "summary": {
+    "counts": {
+      "development": 128,
+      "holdout": 43
+    },
+    "coverage": {
+      "development": {
+        "adv_20": {
+          "available": 117,
+          "insufficient_history": 11
+        },
+        "atr_14_fraction": {
+          "available": 119,
+          "insufficient_history": 9
+        },
+        "breadth_proxy": {
+          "available": 118,
+          "corporate_action": 10
+        },
+        "credit_proxy": {
+          "available": 2,
+          "corporate_action": 126
+        },
+        "distance_252_high": {
+          "insufficient_history": 128
+        },
+        "iwm_return_20": {
+          "available": 117,
+          "corporate_action": 11
+        },
+        "qqq_return_20": {
+          "available": 118,
+          "corporate_action": 10
+        },
+        "return_5": {
+          "available": 125,
+          "insufficient_history": 3
+        },
+        "rv_20": {
+          "available": 116,
+          "insufficient_history": 12
+        },
+        "rvol_20": {
+          "available": 116,
+          "insufficient_history": 12
+        },
+        "spy_return_20": {
+          "available": 124,
+          "corporate_action": 4
+        }
+      },
+      "holdout": {
+        "adv_20": {
+          "available": 43
+        },
+        "atr_14_fraction": {
+          "available": 43
+        },
+        "breadth_proxy": {
+          "available": 42,
+          "corporate_action": 1
+        },
+        "credit_proxy": {
+          "corporate_action": 43
+        },
+        "distance_252_high": {
+          "insufficient_history": 43
+        },
+        "iwm_return_20": {
+          "available": 43
+        },
+        "qqq_return_20": {
+          "available": 42,
+          "corporate_action": 1
+        },
+        "return_5": {
+          "available": 43
+        },
+        "rv_20": {
+          "available": 43
+        },
+        "rvol_20": {
+          "available": 43
+        },
+        "spy_return_20": {
+          "available": 43
+        }
+      }
+    },
+    "development_sha256": "75aea2bf297f37e2ec2c1929ee302dff0f2c1a4a0603086c1a0ade164b499afb",
+    "holdout_features_sha256": "b42a33c1b90131c77cee4a9c65c3c0d1f78bd6ad372531b48ff39f9f2eb8fa69",
+    "holdout_seal": "hash_only",
+    "protocol_sha256": "f291ea2f7795e11cec64706de92fa89f5805f3e027897f579e7dc905d949ef88",
+    "schema_version": 1
+  }
+}
