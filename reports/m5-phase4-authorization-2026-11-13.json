@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase4_authorization",
+  "authorized_on": "2026-11-13",
+  "authorized_by": "Fahad9101 (project owner)",
+  "exact_words": "authorize phase 4",
+  "scope": "One logged evaluation of the sealed 43-event holdout under protocol v1 and a Milestone 5 report.",
+  "protocol_sha256": "f291ea2f7795e11cec64706de92fa89f5805f3e027897f579e7dc905d949ef88",
+  "phase3_sha256": "d0f28f88fb3c5718964aa8788692244c450b1a429751b707390351ddab478580"
+}

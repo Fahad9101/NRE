@@ -188,7 +188,7 @@ def enough(events, binary, threshold):
     return min(positives, len(events) - positives) >= threshold
 
 
-def run_fold(protocol, target, fold, train, test, daily, choices=None):
+def run_fold(protocol, target, fold, train, test, daily, choices=None, prepare_only=False):
     """Fit, select, calibrate and score one fold on caller-supplied development fixtures."""
     binary = target["kind"] == "binary"
     fit, select, calibration, test = partitions(train, test)
@@ -197,7 +197,7 @@ def run_fold(protocol, target, fold, train, test, daily, choices=None):
     eligible_test = [e for e in test if e["outcome"] is not None]
     report = {"partitions": [[e["event_id"] for e in group] for group in phases],
               "selection": [], "predictions": [], "eligible_test": len(eligible_test)}
-    if any(boundary is None for boundary in boundaries) or not eligible_test:
+    if any(boundary is None for boundary in boundaries) or (not eligible_test and not prepare_only):
         return dict(report, status="INSUFFICIENT_DATA")
     fit, select, calibration = [eligible_before(group, min(boundaries[i + 1:]))
                                 for i, group in enumerate(phases[:-1])]
@@ -240,7 +240,11 @@ def run_fold(protocol, target, fold, train, test, daily, choices=None):
             return dict(raw(event), sector_group=event.get("sector_group", "other"))
 
         predict = baseline_fit(name, [row(e) for e in fit], y, binary, grid["minimum_leaf_events"])
-        return lambda event: predict(row(event))
+        def evaluate(event):
+            return predict(row(event))
+
+        evaluate.predict_row = predict
+        return evaluate
 
     def choose(configs, factory, kind):
         successful = []
@@ -279,6 +283,28 @@ def run_fold(protocol, target, fold, train, test, daily, choices=None):
                             support["binary_calibration_minimum_each_class"])
 
     transform, report["calibration"] = calibrated(candidate)
+    if prepare_only:
+        def predict(event, features):
+            row, _ = row_for(event, fit, features, target["clock"])
+            value = candidate(event, row)
+            return (transform(value) if binary else value,
+                    comparator.predict_row(dict(row, sector_group=event.get("sector_group", "other")))[0])
+
+        def lock_baseline(event):
+            try:
+                return comparator(event)
+            except Abstain:
+                return None
+
+        calibration_probe = [candidate(e) for e in calibration]
+        lock_probe = {
+            "selection_candidate": [candidate(e) for e in select],
+            "selection_baseline": [lock_baseline(e) for e in select],
+            "calibration_raw": calibration_probe,
+            "calibration_adjusted": [transform(value) for value in calibration_probe]
+            if binary else calibration_probe,
+        }
+        return dict(report, status="PREPARED", fitted_probe_sha256=digest(canonical(lock_probe))), predict
     ablations = {}
     for family in FAMILIES:
         model = train_advanced(advanced_choice, family)

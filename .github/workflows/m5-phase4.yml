@@ -1,0 +1,51 @@
+name: M5 Phase 4 one-look holdout
+on:
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+concurrency:
+  group: m5-phase4-one-look
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download the pinned Phase 1c archive and prepare the development pipeline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/14015206889/zip" > "$RUNNER_TEMP/m5-development.zip"
+          python -m nre.m5_phase4 prepare --artifact "$RUNNER_TEMP/m5-development.zip" --output "$RUNNER_TEMP/m5-phase4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m5-phase4-development-lock
+          path: ${{ runner.temp }}/m5-phase4/lock.json
+          if-no-files-found: error
+      - name: Record the one-time access before contacting Alpaca
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          lock_sha=$(sha256sum "$RUNNER_TEMP/m5-phase4/lock.json" | cut -d' ' -f1)
+          tag=$(gh api "repos/$GITHUB_REPOSITORY/git/tags" -f tag=m5-phase4-holdout-look-v1 \
+            -f "message=One-look attempt: run $GITHUB_RUN_ID attempt $GITHUB_RUN_ATTEMPT; lock file SHA-256 $lock_sha" \
+            -f "object=$GITHUB_SHA" -f type=commit --jq .sha)
+          gh api "repos/$GITHUB_REPOSITORY/git/refs" -f ref=refs/tags/m5-phase4-holdout-look-v1 -f "sha=$tag" --silent
+      - name: Verify the commitments and release aggregate metrics
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: python -m nre.m5_phase4 look --artifact "$RUNNER_TEMP/m5-development.zip" --output "$RUNNER_TEMP/m5-phase4"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m5-phase4-aggregate-results
+          path: ${{ runner.temp }}/m5-phase4/result.json
+          if-no-files-found: error
