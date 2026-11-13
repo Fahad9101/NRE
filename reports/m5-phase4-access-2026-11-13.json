@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "access_number": 1,
+  "access_recorded_at": "2026-11-13T09:54:38Z",
+  "authorization": "reports/m5-phase4-authorization-2026-11-13.json",
+  "run_id": 43405024484,
+  "run_number": 1,
+  "run_attempt": 1,
+  "job_id": 131817155023,
+  "code_commit": "c724e00be659e6af68933ac2320568bfd91a539e",
+  "conclusion": "success",
+  "access_tag": "m5-phase4-holdout-look-v1",
+  "access_tag_object_sha": "ed76177be0db167d11181511647af31e993f8e62",
+  "development_lock_artifact_id": 14026692665,
+  "development_lock_file_sha256": "adee68cb73cf2d2418ae7b7ff792b2f011bcc317e5821cbf49645f1ccc7c3016",
+  "aggregate_artifact_id": 14026259606,
+  "aggregate_file_sha256": "4300734716f488c510b83c0b3e4d979ec8c54fb5f119881f40be5a1af9692871",
+  "label_commitments_verified": 43,
+  "holdout_features_sha256": "b42a33c1b90131c77cee4a9c65c3c0d1f78bd6ad372531b48ff39f9f2eb8fa69",
+  "ci_run_id": 43404623761,
+  "ci_run_number": 272,
+  "ci_conclusion": "success"
+}
