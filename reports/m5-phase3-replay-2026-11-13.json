@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "m5_phase3_replay",
+  "checked_on": "2026-11-13",
+  "code_commit": "f63737de7e76bd50076a96c5b6108f84c4ab2c24",
+  "comparison_runs": 2,
+  "byte_identical": true,
+  "sha256_git_lf": {
+    "reports/m5-phase3-results-2026-11-13.json": "d0f28f88fb3c5718964aa8788692244c450b1a429751b707390351ddab478580",
+    "reports/m5-phase3-experiments-2026-11-13.jsonl": "6b9fb8cb9149d38b01bb6f1b06a107d2897f4164bcc5a0036b2468fde2d4b662"
+  },
+  "journal_counts": {
+    "run_started": 1,
+    "fold": 30,
+    "configuration": 126,
+    "run_completed": 1
+  },
+  "holdout_accesses": 0
+}

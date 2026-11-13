@@ -1,0 +1,731 @@
+{
+  "artifact_sha256": "ef6fa2359cadbfd1e998619ba118487529ab160a2d7a0f1346a019f42ae24d3a",
+  "authorization": "reports/m5-phase3-authorization-2026-11-13.json",
+  "code_commit": "f63737de7e76bd50076a96c5b6108f84c4ab2c24",
+  "development_events": 128,
+  "holdout_accesses": 0,
+  "nested_gap_sensitivity": {
+    "all_event": {
+      "caps": {
+        "baseline": 3,
+        "candidate": 0
+      },
+      "contrast": 0.013962786629402608,
+      "rows": 23
+    },
+    "clean_window": {
+      "caps": {
+        "baseline": 3,
+        "candidate": 5
+      },
+      "contrast": 0.006814570598043345,
+      "rows": 21
+    }
+  },
+  "protocol_sha256": "f291ea2f7795e11cec64706de92fa89f5805f3e027897f579e7dc905d949ef88",
+  "python": "3.12.10",
+  "schema_version": 1,
+  "targets": {
+    "day1_close_return": {
+      "all_event": {
+        "ablations": {
+          "analogue": 0.0008946532844801751,
+          "market_regime": -0.0013015141789909034,
+          "market_structure": 0.0004782048338026093,
+          "ticker_reaction": 0.0003907161549984423
+        },
+        "calibration_ok": true,
+        "cluster_intervals": {
+          "issuer": {
+            "clusters": 23,
+            "estimate": -0.0005556319948729306,
+            "events": 46,
+            "intervals": {
+              "0.95": [
+                -0.0028817623365877195,
+                0.0020232976158497244
+              ],
+              "0.99": [
+                -0.0034181666197882704,
+                0.0029261619356601805
+              ]
+            },
+            "replicates": 5000,
+            "seed": 15022343535495274143
+          },
+          "reaction_session": {
+            "clusters": 29,
+            "estimate": -0.0005556319948729306,
+            "events": 46,
+            "intervals": {
+              "0.95": [
+                -0.002690855057741078,
+                0.0015774247993270744
+              ],
+              "0.99": [
+                -0.0033836584141893724,
+                0.002355136373494266
+              ]
+            },
+            "replicates": 5000,
+            "seed": 12622515381698694918
+          }
+        },
+        "contrast": -0.0005556319948729306,
+        "counts": {
+          "eligible": 67,
+          "events": 46,
+          "folds": 2,
+          "issuers": 23,
+          "reaction_sessions": 29
+        },
+        "envelope": {
+          "0.95": [
+            -0.0028817623365877195,
+            0.0020232976158497244
+          ],
+          "0.99": [
+            -0.0034181666197882704,
+            0.0029261619356601805
+          ]
+        },
+        "loss": {
+          "baseline": 0.03835670116870815,
+          "candidate": 0.03780106917383522,
+          "candidate_raw": 0.03780106917383522,
+          "sector_sensitivity": 0.03643596908925334
+        },
+        "secondary": {
+          "interval_coverage": 0.6956521739130435,
+          "mae_of_the_median": 0.10944733140562887,
+          "mean_pinball_loss": 0.03780106917383522,
+          "pinball_loss_by_level": {
+            "0.1": 0.033338494826901724,
+            "0.5": 0.054723665702814436,
+            "0.9": 0.025341046991789493
+          }
+        },
+        "status": "EVALUABLE"
+      },
+      "clean_window": {
+        "ablations": {
+          "analogue": -0.00046612761583760573,
+          "market_regime": 0.00035123201257401706,
+          "market_structure": 0.004743391497671691,
+          "ticker_reaction": -0.00020053174488876923
+        },
+        "calibration_ok": true,
+        "cluster_intervals": {
+          "issuer": {
+            "clusters": 23,
+            "estimate": -8.47975418932764e-05,
+            "events": 44,
+            "intervals": {
+              "0.95": [
+                -0.004909395959737631,
+                0.004320666229666512
+              ],
+              "0.99": [
+                -0.00654394944145575,
+                0.005756866436185404
+              ]
+            },
+            "replicates": 5000,
+            "seed": 15022343535495274143
+          },
+          "reaction_session": {
+            "clusters": 28,
+            "estimate": -8.47975418932764e-05,
+            "events": 44,
+            "intervals": {
+              "0.95": [
+                -0.0036776619826980454,
+                0.003735158812259444
+              ],
+              "0.99": [
+                -0.004765613894600466,
+                0.004972967356972899
+              ]
+            },
+            "replicates": 5000,
+            "seed": 12622515381698694918
+          }
+        },
+        "contrast": -8.47975418932764e-05,
+        "counts": {
+          "eligible": 64,
+          "events": 44,
+          "folds": 2,
+          "issuers": 23,
+          "reaction_sessions": 28
+        },
+        "envelope": {
+          "0.95": [
+            -0.004909395959737631,
+            0.004320666229666512
+          ],
+          "0.99": [
+            -0.00654394944145575,
+            0.005756866436185404
+          ]
+        },
+        "loss": {
+          "baseline": 0.036640141544396695,
+          "candidate": 0.03655534400250342,
+          "candidate_raw": 0.03655534400250342,
+          "sector_sensitivity": 0.03775385108457251
+        },
+        "secondary": {
+          "interval_coverage": 0.7954545454545454,
+          "mae_of_the_median": 0.10812356114000746,
+          "mean_pinball_loss": 0.03655534400250342,
+          "pinball_loss_by_level": {
+            "0.1": 0.02882624238776308,
+            "0.5": 0.05406178057000373,
+            "0.9": 0.026778009049743444
+          }
+        },
+        "status": "EVALUABLE"
+      },
+      "development_gate_passed": false
+    },
+    "extension_after_open_ge_5pct": {
+      "all_event": {
+        "ablations": {
+          "analogue": 0.004837198863885709,
+          "market_regime": 0.006008739950610831,
+          "market_structure": 0.0049786089661869514,
+          "ticker_reaction": 0.00756107116953393
+        },
+        "calibration_ok": false,
+        "cluster_intervals": {
+          "issuer": {
+            "clusters": 23,
+            "estimate": -0.01717705326234424,
+            "events": 67,
+            "intervals": {
+              "0.95": [
+                -0.054507378268722095,
+                0.01884861928136012
+              ],
+              "0.99": [
+                -0.06564962715504022,
+                0.032661465625561624
+              ]
+            },
+            "replicates": 5000,
+            "seed": 16355832712174532036
+          },
+          "reaction_session": {
+            "clusters": 38,
+            "estimate": -0.01717705326234424,
+            "events": 67,
+            "intervals": {
+              "0.95": [
+                -0.050288755355488546,
+                0.014067459411417191
+              ],
+              "0.99": [
+                -0.06267114423149496,
+                0.02476739657751985
+              ]
+            },
+            "replicates": 5000,
+            "seed": 12665914889772458720
+          }
+        },
+        "contrast": -0.01717705326234424,
+        "counts": {
+          "eligible": 67,
+          "events": 67,
+          "folds": 3,
+          "issuers": 23,
+          "negatives": 38,
+          "positives": 29,
+          "reaction_sessions": 38
+        },
+        "envelope": {
+          "0.95": [
+            -0.054507378268722095,
+            0.01884861928136012
+          ],
+          "0.99": [
+            -0.06564962715504022,
+            0.032661465625561624
+          ]
+        },
+        "loss": {
+          "baseline": 0.280770421141049,
+          "candidate": 0.26359336787870474,
+          "candidate_raw": 0.26784793036567134,
+          "sector_sensitivity": 0.2549035820299049
+        },
+        "secondary": {
+          "average_precision": 0.46227222381175254,
+          "confusion": {
+            "false_negative_rate": 0.20689655172413793,
+            "false_negatives": 6,
+            "false_positive_rate": 0.7105263157894737,
+            "false_positives": 27,
+            "true_negatives": 11,
+            "true_positives": 23
+          },
+          "log_loss": 0.734696050738498,
+          "precision_at_k": {
+            "3:10": {
+              "baseline": 0.4,
+              "candidate": 0.2,
+              "lift_over_fit_rate": 0.48750000000000004,
+              "lift_over_random": 0.5948839976204641,
+              "random_reference": {
+                "high": 0.5,
+                "low": 0.1,
+                "mean": 0.3362,
+                "rankings": 1000,
+                "seed": 10885646712598948890
+              }
+            },
+            "3:5": {
+              "baseline": 0.4,
+              "candidate": 0.4,
+              "lift_over_fit_rate": 0.9750000000000001,
+              "lift_over_random": 1.1841326228537596,
+              "random_reference": {
+                "high": 0.8,
+                "low": 0.0,
+                "mean": 0.3378,
+                "rankings": 1000,
+                "seed": 10885646712598948890
+              }
+            },
+            "4:10": {
+              "baseline": 0.5,
+              "candidate": 0.6,
+              "lift_over_fit_rate": 1.434782608695652,
+              "lift_over_random": 1.2445550715619165,
+              "random_reference": {
+                "high": 0.7,
+                "low": 0.2,
+                "mean": 0.48210000000000003,
+                "rankings": 1000,
+                "seed": 1796077058396192822
+              }
+            },
+            "4:5": {
+              "baseline": 0.4,
+              "candidate": 0.6,
+              "lift_over_fit_rate": 1.434782608695652,
+              "lift_over_random": 1.253656498119515,
+              "random_reference": {
+                "high": 0.8,
+                "low": 0.2,
+                "mean": 0.4786,
+                "rankings": 1000,
+                "seed": 1796077058396192822
+              }
+            },
+            "5:10": {
+              "baseline": 0.4,
+              "candidate": 0.6,
+              "lift_over_fit_rate": 1.5692307692307692,
+              "lift_over_random": 1.2533946104031752,
+              "random_reference": {
+                "high": 0.7,
+                "low": 0.2,
+                "mean": 0.4787,
+                "rankings": 1000,
+                "seed": 13127693778782659764
+              }
+            },
+            "5:5": {
+              "baseline": 0.2,
+              "candidate": 0.6,
+              "lift_over_fit_rate": 1.5692307692307692,
+              "lift_over_random": 1.2510425354462051,
+              "random_reference": {
+                "high": 0.8,
+                "low": 0.2,
+                "mean": 0.4796,
+                "rankings": 1000,
+                "seed": 13127693778782659764
+              }
+            },
+            "pooled:10": {
+              "baseline": 0.3,
+              "candidate": 0.4,
+              "lift_over_fit_rate": 0.991575893815169,
+              "lift_over_random": 0.937426763534099,
+              "random_reference": {
+                "high": 0.7,
+                "low": 0.2,
+                "mean": 0.42669999999999997,
+                "rankings": 1000,
+                "seed": 18011579256954184890
+              }
+            },
+            "pooled:20": {
+              "baseline": 0.4,
+              "candidate": 0.45,
+              "lift_over_fit_rate": 1.1155228805420652,
+              "lift_over_random": 1.0476079618205099,
+              "random_reference": {
+                "high": 0.6,
+                "low": 0.25,
+                "mean": 0.42955,
+                "rankings": 1000,
+                "seed": 18011579256954184890
+              }
+            }
+          },
+          "reliability": {
+            "bins": [
+              {
+                "bin": 1,
+                "mean_prediction": 0.31901385927113973,
+                "n": 17,
+                "observed_rate": 0.35294117647058826,
+                "wilson_high": 0.5869963651478131,
+                "wilson_low": 0.17309720397243744
+              },
+              {
+                "bin": 2,
+                "mean_prediction": 0.4219894306416334,
+                "n": 17,
+                "observed_rate": 0.47058823529411764,
+                "wilson_high": 0.6903676493999557,
+                "wilson_low": 0.26165106442409447
+              },
+              {
+                "bin": 3,
+                "mean_prediction": 0.4507692645974823,
+                "n": 17,
+                "observed_rate": 0.4117647058823529,
+                "wilson_high": 0.6399455735700021,
+                "wilson_low": 0.21611056790214817
+              },
+              {
+                "bin": 4,
+                "mean_prediction": 0.6650945702106505,
+                "n": 16,
+                "observed_rate": 0.5,
+                "wilson_high": 0.7200043638967398,
+                "wilson_low": 0.27999563610326017
+              }
+            ],
+            "state": "REPORTED"
+          }
+        },
+        "status": "EVALUABLE"
+      },
+      "clean_window": {
+        "ablations": {
+          "analogue": -4.881102829934524e-05,
+          "market_regime": 0.008264273687403295,
+          "market_structure": 0.001061352112481772,
+          "ticker_reaction": 0.0001009908165244106
+        },
+        "calibration_ok": false,
+        "cluster_intervals": {
+          "issuer": {
+            "clusters": 23,
+            "estimate": -0.009323986053896996,
+            "events": 64,
+            "intervals": {
+              "0.95": [
+                -0.04381862662759392,
+                0.027761999750066983
+              ],
+              "0.99": [
+                -0.05516406100499168,
+                0.04103151292251404
+              ]
+            },
+            "replicates": 5000,
+            "seed": 16355832712174532036
+          },
+          "reaction_session": {
+            "clusters": 37,
+            "estimate": -0.009323986053896996,
+            "events": 64,
+            "intervals": {
+              "0.95": [
+                -0.04260346778696161,
+                0.02179801723190709
+              ],
+              "0.99": [
+                -0.0531421696838389,
+                0.03189052230016776
+              ]
+            },
+            "replicates": 5000,
+            "seed": 12665914889772458720
+          }
+        },
+        "contrast": -0.009323986053896996,
+        "counts": {
+          "eligible": 64,
+          "events": 64,
+          "folds": 3,
+          "issuers": 23,
+          "negatives": 36,
+          "positives": 28,
+          "reaction_sessions": 37
+        },
+        "envelope": {
+          "0.95": [
+            -0.04381862662759392,
+            0.027761999750066983
+          ],
+          "0.99": [
+            -0.05516406100499168,
+            0.04103151292251404
+          ]
+        },
+        "loss": {
+          "baseline": 0.27939834450191614,
+          "candidate": 0.2700743584480192,
+          "candidate_raw": 0.2702126953758149,
+          "sector_sensitivity": 0.24942708588887424
+        },
+        "secondary": {
+          "average_precision": 0.4477932580267669,
+          "confusion": {
+            "false_negative_rate": 0.6071428571428571,
+            "false_negatives": 17,
+            "false_positive_rate": 0.3888888888888889,
+            "false_positives": 14,
+            "true_negatives": 22,
+            "true_positives": 11
+          },
+          "log_loss": 0.7484591697184096,
+          "precision_at_k": {
+            "3:10": {
+              "baseline": 0.3,
+              "candidate": 0.3,
+              "lift_over_fit_rate": 0.68,
+              "lift_over_random": 0.8532423208191126,
+              "random_reference": {
+                "high": 0.6,
+                "low": 0.1,
+                "mean": 0.3516,
+                "rankings": 1000,
+                "seed": 10885646712598948890
+              }
+            },
+            "3:5": {
+              "baseline": 0.4,
+              "candidate": 0.4,
+              "lift_over_fit_rate": 0.9066666666666667,
+              "lift_over_random": 1.12549240292628,
+              "random_reference": {
+                "high": 0.8,
+                "low": 0.0,
+                "mean": 0.35540000000000005,
+                "rankings": 1000,
+                "seed": 10885646712598948890
+              }
+            },
+            "4:10": {
+              "baseline": 0.5,
+              "candidate": 0.6,
+              "lift_over_fit_rate": 1.3363636363636364,
+              "lift_over_random": 1.2445550715619165,
+              "random_reference": {
+                "high": 0.7,
+                "low": 0.2,
+                "mean": 0.48210000000000003,
+                "rankings": 1000,
+                "seed": 1796077058396192822
+              }
+            },
+            "4:5": {
+              "baseline": 0.4,
+              "candidate": 0.4,
+              "lift_over_fit_rate": 0.890909090909091,
+              "lift_over_random": 0.8357709987463435,
+              "random_reference": {
+                "high": 0.8,
+                "low": 0.2,
+                "mean": 0.4786,
+                "rankings": 1000,
+                "seed": 1796077058396192822
+              }
+            },
+            "5:10": {
+              "baseline": 0.4,
+              "candidate": 0.4,
+              "lift_over_fit_rate": 0.976,
+              "lift_over_random": 0.8366450533361222,
+              "random_reference": {
+                "high": 0.7,
+                "low": 0.3,
+                "mean": 0.4781,
+                "rankings": 1000,
+                "seed": 13127693778782659764
+              }
+            },
+            "5:5": {
+              "baseline": 0.2,
+              "candidate": 0.4,
+              "lift_over_fit_rate": 0.976,
+              "lift_over_random": 0.8298755186721992,
+              "random_reference": {
+                "high": 0.8,
+                "low": 0.0,
+                "mean": 0.482,
+                "rankings": 1000,
+                "seed": 13127693778782659764
+              }
+            },
+            "pooled:10": {
+              "baseline": 0.3,
+              "candidate": 0.5,
+              "lift_over_fit_rate": 1.1528782321573288,
+              "lift_over_random": 1.148105625717566,
+              "random_reference": {
+                "high": 0.7,
+                "low": 0.2,
+                "mean": 0.4355,
+                "rankings": 1000,
+                "seed": 18011579256954184890
+              }
+            },
+            "pooled:20": {
+              "baseline": 0.4,
+              "candidate": 0.5,
+              "lift_over_fit_rate": 1.1528782321573288,
+              "lift_over_random": 1.1437721605856113,
+              "random_reference": {
+                "high": 0.6,
+                "low": 0.25,
+                "mean": 0.43715000000000004,
+                "rankings": 1000,
+                "seed": 18011579256954184890
+              }
+            }
+          },
+          "reliability": {
+            "bins": [
+              {
+                "bin": 1,
+                "mean_prediction": 0.34249227678743466,
+                "n": 16,
+                "observed_rate": 0.375,
+                "wilson_high": 0.6135895945449727,
+                "wilson_low": 0.18481232558863642
+              },
+              {
+                "bin": 2,
+                "mean_prediction": 0.4218281151686638,
+                "n": 16,
+                "observed_rate": 0.5,
+                "wilson_high": 0.7200043638967398,
+                "wilson_low": 0.27999563610326017
+              },
+              {
+                "bin": 3,
+                "mean_prediction": 0.42954651518787734,
+                "n": 16,
+                "observed_rate": 0.4375,
+                "wilson_high": 0.6682144360118809,
+                "wilson_low": 0.23098652405492354
+              },
+              {
+                "bin": 4,
+                "mean_prediction": 0.5927783534868151,
+                "n": 16,
+                "observed_rate": 0.4375,
+                "wilson_high": 0.6682144360118809,
+                "wilson_low": 0.23098652405492354
+              }
+            ],
+            "state": "REPORTED"
+          }
+        },
+        "status": "EVALUABLE"
+      },
+      "development_gate_passed": false
+    },
+    "gap_ge_3pct": {
+      "all_event": {
+        "counts": {
+          "eligible": 67,
+          "events": 23,
+          "folds": 1,
+          "issuers": 23,
+          "negatives": 18,
+          "positives": 5,
+          "reaction_sessions": 16
+        },
+        "status": "INSUFFICIENT_DATA"
+      },
+      "clean_window": {
+        "counts": {
+          "eligible": 64,
+          "events": 21,
+          "folds": 1,
+          "issuers": 21,
+          "negatives": 17,
+          "positives": 4,
+          "reaction_sessions": 15
+        },
+        "status": "INSUFFICIENT_DATA"
+      },
+      "development_gate_passed": false
+    },
+    "gap_ge_5pct": {
+      "all_event": {
+        "counts": {
+          "eligible": 67,
+          "events": 23,
+          "folds": 1,
+          "issuers": 23,
+          "negatives": 18,
+          "positives": 5,
+          "reaction_sessions": 16
+        },
+        "status": "INSUFFICIENT_DATA"
+      },
+      "clean_window": {
+        "counts": {
+          "eligible": 64,
+          "events": 21,
+          "folds": 1,
+          "issuers": 21,
+          "negatives": 17,
+          "positives": 4,
+          "reaction_sessions": 15
+        },
+        "status": "INSUFFICIENT_DATA"
+      },
+      "development_gate_passed": false
+    },
+    "loses_half_of_gap": {
+      "all_event": {
+        "counts": {
+          "eligible": 35,
+          "events": 12,
+          "folds": 1,
+          "issuers": 12,
+          "negatives": 9,
+          "positives": 3,
+          "reaction_sessions": 10
+        },
+        "status": "INSUFFICIENT_DATA"
+      },
+      "clean_window": {
+        "counts": {
+          "eligible": 33,
+          "events": 10,
+          "folds": 1,
+          "issuers": 10,
+          "negatives": 7,
+          "positives": 3,
+          "reaction_sessions": 9
+        },
+        "status": "INSUFFICIENT_DATA"
+      },
+      "development_gate_passed": false
+    }
+  }
+}
