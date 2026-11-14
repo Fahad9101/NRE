@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "protocol_id": "nre-m6-reaction-gap",
+  "version": 2,
+  "status": "FROZEN_REVISED_COMPARISON_FEASIBILITY_BLOCKED",
+  "parent": {
+    "path": "config/m6-protocol.json",
+    "canonical_sha256": "99b63c293195e8bbd1a1035d17f3f3478622d62cf32ae8199405d28481815829"
+  },
+  "inheritance": "Inherit v1 cohort, quality, benchmark, clock, amendment and outcome rules. This amendment replaces the comparator, estimand and claim gate. The proposed 2027 window is retained as planning only.",
+  "candidate": "Apply the v1 tail and minimum-gap thresholds. On a flag use minus sign(opening_return) to isolate the selection question. Require a nonzero opening return. A common quality failure gives both rules zero allocation.",
+  "comparator": {
+    "rule": "At the same clock allocate minus sign(opening_return) if its absolute value strictly exceeds the fixed magnitude threshold, otherwise zero.",
+    "fit": "Match the number flagged by the candidate in the development diagnostic. Consider zero, each distinct nonzero opening magnitude, and adjacent midpoints. Minimize absolute flag-count difference, then prefer fewer flags, then the largest threshold. Keep ties together. Freeze the threshold before any fresh cohort. Do not adjust it to prospective coverage.",
+    "threshold": 0.15962558421721595
+  },
+  "estimand": "Mean of (candidate allocation minus magnitude allocation) times opening-to-close return over the common decision-eligible cohort with an observed clean outcome. Each unflagged allocation is zero. Identical allocations contribute zero. Retain missing outcomes in attrition and report an all-event sensitivity. Never fill missing outcome on a discordant row with zero.",
+  "coverage": "Report both flag rates, signed allocation overlap and discordance, issuer and session counts, and outcome attrition. Development coverage matching is a design constraint. Report any prospective coverage imbalance as part of the interpretation without rematching.",
+  "feasibility_gate": "Before a confirmatory collection proposal, require a nonzero development discordance count and a supported clustered precision plan for the paired difference. This diagnostic had zero discordant allocations. It cannot estimate the variance on discordant rows or support a confirmatory sample size. No collection under v2.",
+  "conditional_inference": "For a future owner-authorized feasible design freeze minimum discordant rows and independent issuer and session support before collection. Use the v1 cluster bootstrap and single 99% envelope. A positive candidate policy mean and strictly positive lower confidence bound on the paired difference are both required for a superiority claim.",
+  "development_evidence": {
+    "diagnostic_rows": 58,
+    "candidate_flags": 9,
+    "magnitude_flags": 9,
+    "magnitude_threshold": 0.15962558421721595,
+    "discordant_allocations": 0,
+    "joint_allocations": [
+      {
+        "candidate": -1,
+        "magnitude": -1,
+        "rows": 4
+      },
+      {
+        "candidate": 0,
+        "magnitude": 0,
+        "rows": 49
+      },
+      {
+        "candidate": 1,
+        "magnitude": 1,
+        "rows": 5
+      }
+    ],
+    "method": "Apply v1 support and timing rules to the deduplicated 128-event development set with then-mature history. Accepted daily opening returns are offline proxies. Fit the comparator threshold using only selection decisions and opening magnitudes. Diagnostic coverage is in-sample for this threshold. No diagnostic close outcome is scored."
+  }
+}

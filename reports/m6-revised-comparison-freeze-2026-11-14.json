@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "authorized_on": "2026-11-14",
+  "authorized_by": "Fahad9101 (project owner)",
+  "exact_words": "authorize a revised comparison",
+  "base_commit": "fc2a912691283c9162c96236833ccdeb4d4a82f5",
+  "protocol": "config/m6-protocol-v2.json",
+  "canonical_sha256": "de9383d4997104f0c0f4d0adab25dc97bdd1ab0df580e520c51a40c59a8bb7fb",
+  "disclosure": "Calibrated coverage on existing development data only. No prospective collection, new market data or M5 holdout outcomes were accessed."
+}
