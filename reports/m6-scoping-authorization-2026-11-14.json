@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "kind": "m6_scoping_authorization",
+  "authorized_on": "2026-11-14",
+  "authorized_by": "Fahad9101 (project owner)",
+  "exact_words": "Authorize Milestone 6 scoping",
+  "source": "Project owner's message in the NRE Codex chat",
+  "base_commit": "c256cf8b010a1df72e925c3b9fd720f3c70f0175",
+  "scope": "Document-only Milestone 6 scope proposal.",
+  "deliverable": "docs/M6-REACTION-GAP-SCOPE.md"
+}
