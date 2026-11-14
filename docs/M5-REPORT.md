@@ -14,4 +14,4 @@ Loss is Brier for binary targets and mean pinball loss for Day-1 return quantile
 
 The [aggregate results](../reports/m5-phase4-results-2026-11-13.json) include both caveat variants, cluster intervals and calibration. The [development report](M5-PHASE3-REPORT.md) records ablations, support and deterministic replay. The [access record](../reports/m5-phase4-access-2026-11-13.json) and [development lock](../reports/m5-phase4-development-lock-2026-11-13.json) bind the one-look evidence. Raw bars and event-level holdout outcomes and predictions stayed in memory.
 
-Milestone 5 acceptance is the project owner's decision.
+The project owner [declared Milestone 5 accepted](../reports/m5-acceptance-declaration-2026-11-14.json) on 2026-11-14.

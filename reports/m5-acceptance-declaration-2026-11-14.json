@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "m5_acceptance_declaration",
+  "declared_on": "2026-11-14",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "5 is accepted",
+  "exact_words_source": "Project owner's message in the NRE Codex chat following the published Milestone 5 report",
+  "status": "MILESTONE_5_DECLARED_ACCEPTED_BY_THE_PROJECT_OWNER",
+  "scope": "Milestone 5 advanced-model research under the frozen protocol. Milestone 6 requires separate owner authorization.",
+  "published_report_commit": "0ec38e20fb9553f88373571f76f700266bb7e361",
+  "report": "docs/M5-REPORT.md",
+  "published_report_ci_run_id": 43569331011,
+  "holdout_access_record": "reports/m5-phase4-access-2026-11-13.json",
+  "holdout_run_id": 43405024484,
+  "holdout_accesses": 1,
+  "label_commitments_verified": 43,
+  "targets_promoted": 0,
+  "protocol_sha256": "f291ea2f7795e11cec64706de92fa89f5805f3e027897f579e7dc905d949ef88"
+}
