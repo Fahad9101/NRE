@@ -1,0 +1,30 @@
+name: M6 limited SIP preflight
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [entitlement, opening]
+        required: true
+        default: entitlement
+permissions:
+  contents: read
+concurrency:
+  group: alpaca-sip-m6-preflight
+  cancel-in-progress: false
+jobs:
+  probe:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run metadata-only SIP probe
+        env:
+          MODE: ${{ inputs.mode }}
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: node scripts/m6-opening-preflight.mjs "$MODE"
