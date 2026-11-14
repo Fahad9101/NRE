@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "protocol_id": "nre-m6-reaction-gap",
+  "version": 1,
+  "status": "FROZEN_STEP_A_COLLECTION_BLOCKED",
+  "scope": {
+    "path": "docs/M6-REACTION-GAP-SCOPE.md",
+    "sha256_git_lf": "4dd6b7ae4566e24f9afce03aa6121f56e790a67a01ab518940aebed43dd8bfb9"
+  },
+  "research_use": "Historical engineering and prospective validation design. Later steps require separate authorization.",
+  "development": {
+    "events": {
+      "path": "config/m2-step3-combined-events.json",
+      "sha256_git_lf": "8e2cdc8d882ecc8d0eb1b7198f7688bef327304bd1e470a5ab9f27d188c01d5b"
+    },
+    "m4_protocol": {
+      "path": "config/m4-protocol.json",
+      "sha256_git_lf": "b1abfb3c54a7825247b76a49801da5e21b768854472e330f66b5540df8322a4d"
+    },
+    "events_count": 128,
+    "excluded_from_benchmark": "All M5 forward-extension events, and all events in or after the prospective window."
+  },
+  "cohort": {
+    "fixed_issuer_ciks": [
+      "0000883107",
+      "0000025445",
+      "0000949858",
+      "0001267565",
+      "0001701758",
+      "0001145986",
+      "0001320350",
+      "0001426800",
+      "0001681087",
+      "0001697851",
+      "0000946581",
+      "0000880117",
+      "0000914475",
+      "0000016058",
+      "0000797721",
+      "0001289848",
+      "0000821483",
+      "0001873529",
+      "0001120914",
+      "0001529274",
+      "0001660134",
+      "0001573221",
+      "0001845815"
+    ],
+    "eligible_release_dates_new_york_inclusive": [
+      "2027-01-01",
+      "2027-12-31"
+    ],
+    "definition": "Same security and economic event as the first verified public full quarterly results paired to an Item 2.02 8-K for a fixed issuer. Track amendments, preliminary results, duplicate syndication, delayed filings and missing corroboration as dispositions, and keep one row per issuer and economic release. SEC EDGAR, issuer IR and the originating public wire establish filing identity and first-public timing.",
+    "entry": "Begin only if operational readiness and separate collection authorization precede the fixed start. A missed start requires a new owner-approved version and future window. Monitor release channels before opening and reconcile qualifying releases to SEC filings. Keep missed releases in coverage.",
+    "calendar": {
+      "zone": "America/New_York",
+      "source": "https://www.nyse.com/trade/hours-calendars",
+      "rule": "Bind applicable NYSE and listing exchange calendar snapshots before collection, include early closes and the prior and potential next reaction sessions across year boundaries. A schedule disagreement or unverified special closure is an abstention. No extension based on results."
+    }
+  },
+  "observations": {
+    "source": "Existing Alpaca SIP real-time trade stream, conditional on Step C rights and coverage verification.",
+    "source_documentation": "https://docs.alpaca.markets/us/docs/real-time-stock-pricing-data",
+    "clock": "Take the first verified listing-venue official opening print received within 60 seconds of the scheduled regular open and no more than five seconds after the feed timestamp. Persist exchange timestamp, synchronized UTC receipt time, trade ID, exchange and condition mapping, then append flag record before accepting any closing outcome. Require a clock synchronization error no greater than one second.",
+    "quote_basis": "USD raw official regular-session opens and closes on the same historical security and share basis, verified against listing-venue and condition mapping pinned before collection. Verify the prior regular close before the news cutoff. Unknown official-print semantics or rights block collection. Daily OHLC supports offline arithmetic only.",
+    "news_cutoff": "Verified first-public timestamp plus five minutes, strictly before scheduled reaction open. Apply existing calendar classification and abstain at the bell, during regular hours or when first-public timing is ambiguous.",
+    "quality": "Abstain for missing, stale or conflicting evidence, absent receipt timestamp, unsupported security identity, unresolved action or halt, an unverified price basis, or a competing catalyst known by the flag clock. Preserve decision-time state. Late corrections are appended and reported as integrity exclusions with counts, never used to recreate the original flag.",
+    "outcome": "Official regular close / opening reference - 1. Accept a closing print only after the flag log has been persisted. Missing, nonpositive or unresolved prices are unknown. A subsequently disclosed competing catalyst masks only the clean outcome. Report all-event sensitivity on the original flags."
+  },
+  "benchmark": {
+    "target": "First reaction-session close / previous regular close - 1.",
+    "pool": "Deduplicate economic clusters and use clean day1_close_return outcomes with known comparable anchors, earlier reaction sessions and label availability strictly before each pre-open cutoff. Lock the pool from the pinned development history before the prospective start and verify maturity again on use.",
+    "minimum_events": 60,
+    "minimum_issuers": 15,
+    "minimum_reaction_sessions": 20,
+    "estimator": "Arithmetic mean and type-7 empirical quantiles at 0.10, 0.50 and 0.90, using nre.fingerprints.quantile on sorted returns.",
+    "gap_pp": "100 * (mean - opening_return)",
+    "residual_return": "(1 + mean) / (1 + opening_return) - 1, with each quantile transformed identically.",
+    "flag": "Require abs(gap_pp) >= 2 and opening return strictly below q10 or strictly above q90. Use sign(gap_pp) for direction. Exact quantile equality and zero gap yield no flag."
+  },
+  "comparison": {
+    "candidate_score": "sign(gap_pp) * opening_to_close_return",
+    "fade_score": "-sign(opening_return) * opening_to_close_return, zero for an exactly flat open.",
+    "neutral_score": "Zero for every event.",
+    "paired_difference": "Candidate score minus fade score on identical flagged clean-window rows. Keep all-event separately. Count identical decisions and disagreements before evaluating performance.",
+    "claim_gate": "The same-row fade contrast is structurally uninformative when q10 < min(mean, 0) and q90 > max(mean, 0). Report DESIGN_BLOCKED and do not collect confirmatory data under this contrast. A nondegenerate comparator or benchmark requires an owner-approved protocol revision before collection.",
+    "planned_inference": "For a separately approved identifiable contrast, use 5,000 paired bootstrap replicates by issuer and reaction session, seeds 610001 and 610002, and report the 99% envelope using the smaller lower and larger upper endpoint. The directional mean and envelope lower endpoint must both exceed zero, subject to support. Report predictive interval coverage, both directions, missing outcomes, and attrition.",
+    "engineering_reporting_floor": {
+      "flagged_rows_each_direction": 10,
+      "issuers_each_direction": 5,
+      "reaction_sessions_each_direction": 8,
+      "meaning": "Proposed descriptive floor only. Below it, report counts and attrition. It does not confer confirmatory power."
+    }
+  },
+  "planning_evidence": {
+    "development_only": true,
+    "diagnostic": "Outcome-blind flag check at each event cutoff using accepted daily opening values as offline proxies and the then-mature clean close-return pool, with opening caveats excluded. It estimates potential flag frequency but does not test official opening availability.",
+    "eligible_diagnostic_rows": 58,
+    "positive_flags": 5,
+    "negative_flags": 4,
+    "flag_direction_disagreements_with_fade": 0,
+    "candidate_reference_pool_clean": 119,
+    "candidate_reference_mean": -0.024331579843380965,
+    "candidate_reference_q10": -0.19116967930029163,
+    "candidate_reference_q90": 0.14279782308504593,
+    "clean_open_to_close_sample_sd": 0.08389329752232827,
+    "precision": "For illustration only, an identifiable paired difference with 8.39 percentage points of SD would require about 822 independent scored rows for a one-percentage-point effect, 80% power and two-sided 99% normal inference. This SD is the development return scale, not the paired-contrast SD. Clustering, direction floors and attrition can raise support needs. The current contrast has zero directional disagreement and no meaningful power calculation."
+  },
+  "amendments": "Version and hash every owner-approved revision before opening any prospective outcomes. Keep this version and record prior information and reasons."
+}
