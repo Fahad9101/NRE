@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "m6_opening_print_feasibility_plan_authorization",
+  "recorded_on": "2026-11-14",
+  "declared_by": "Fahad9101 (project owner)",
+  "exact_words": "go ahead",
+  "context": "Reply to the proposed authorization for the Milestone 6 opening-print feasibility plan.",
+  "base_commit": "a42987581bf1186bab6a7757376964649b2bde32",
+  "scope": "Document-only feasibility planning",
+  "protocol_v2_sha256": "de9383d4997104f0c0f4d0adab25dc97bdd1ab0df580e520c51a40c59a8bb7fb",
+  "plan": "docs/M6-OPENING-PRINT-FEASIBILITY.md",
+  "plan_sha256_git_lf": "8be66b53bff8b851ae91565ab6d1d3c5d767805c910be86ba4aad9882240c483"
+}
