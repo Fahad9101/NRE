@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "kind": "m6_research_closeout_acknowledgment",
+  "acknowledged_on": "2026-11-15",
+  "acknowledged_by": "Fahad9101 (project owner)",
+  "exact_words": "I acknowledge the Milestone 6 research closeout and defer the engine build.",
+  "source": "Project owner's message in the NRE Codex chat",
+  "closeout": "docs/M6-RESEARCH-CLOSEOUT.md",
+  "published_closeout_commit": "9eac0c9d845a1d36ba90d9c605a469af995114ef",
+  "published_closeout_sha256_git_lf": "80d7c3695a889c25894366a3ec3d95c47d372d6d4bc389d978c886a513b32d09",
+  "research_status": "ACKNOWLEDGED",
+  "engine_build": "DEFERRED",
+  "proposed_2027_study": "ON_HOLD",
+  "milestone_6_status": "INCOMPLETE_ENGINE_AND_FRESH_VALIDATION_OUTSTANDING"
+}
