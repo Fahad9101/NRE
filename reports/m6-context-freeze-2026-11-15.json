@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "authorized_on": "2026-11-15",
+  "authorized_by": "Fahad9101 (project owner)",
+  "exact_words": "authorize pre-registration and one offline development comparison",
+  "base_commit": "0eeab6a19e8307984a2f9cf3146b8ce1e6216b98",
+  "protocol": "config/m6-context-protocol.json",
+  "canonical_sha256": "b182b623ddaba7975a1f5b1279b4c41c93b0b94f2d0accd3ef4ce596b861ca2b",
+  "known_at_freeze": "Published M4 and M5 reports, M6 v2 aggregate feasibility, and the scope's development coverage counts. This protocol precedes any performance scoring of this comparison."
+}

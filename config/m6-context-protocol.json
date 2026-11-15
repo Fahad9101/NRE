@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "protocol_id": "nre-m6-issuer-context-development",
+  "version": 1,
+  "scope": {
+    "path": "docs/M6-CONTEXT-COMPARISON-SCOPE.md",
+    "sha256_git_lf": "f119895d24211b12807a82faa1ab7a2fda8bda85f25373d3aec6b2c27dac6d2f"
+  },
+  "input_canonical_sha256": {
+    "config/m4-protocol.json": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "reports/m6-historical-opening-result-2026-11-15.json": "9f7992aef123fb8a63b318e3383514df1ee26b563773eaa25ec7f12e6dd00466",
+    "reports/m6-context-scoping-2026-11-15.json": "0be41225fb37ea2feddcaee30622047abc976b6a074c7b5f661466c45d82d898"
+  },
+  "test_blocks": [
+    3,
+    4,
+    5
+  ],
+  "ridge_penalty": 1,
+  "issuer_prior": 10,
+  "clock": "Freeze history at the recorded pre-open news cutoff. Both predictors use the same accepted daily-bar opening return as an opening reference proxy. No live receipt inference.",
+  "target_and_eligibility": "z = -sign(g) * ((1 + y) / (1 + g) - 1), with g and y the opening and Day-1 close returns from the same prior regular close. Exclude g=0, nonfinite, missing or economically invalid returns at or below -1. Apply identical row eligibility to both models.",
+  "fold_rule": "Fit on all earlier blocks and predict the named held block once. Use frozen M4 block assignment, deduplicate economic clusters and reject a split cluster or reaction session. Exclude fit targets and prior-pool labels available at or after the earliest held-block cutoff.",
+  "history": "Use only valid Day-1 close labels from the eligible prior pool in earlier reaction sessions and strictly before each row's cutoff. A close-only row may enter the pool even if it has no eligible regression target. Center the shrunk own-CIK mean on the same pooled mean, giving that prior weight 10. Per-row inputs and their maturity clocks are retained. Use zero deviation for training rows with no own issuer history. At test time fall back to the baseline prediction when own issuer history is empty.",
+  "models": {
+    "baseline": [
+      "absolute_opening_gap",
+      "opening_gap_sign"
+    ],
+    "challenger_added_column": "-sign(g) * centered_issuer_history / (1 + g)",
+    "fit": "Use M4 population standardization with its near-zero variance check, computed on common fit rows. Drop constant columns and use the M4 ridge solve, with an unpenalized intercept."
+  },
+  "variants": {
+    "clean_window": "Primary. Mask recorded caveats and derived-label caveats for current rows and history.",
+    "all_event": "Sensitivity. Keep committed label values where defined, including caveated ones, for current rows and history."
+  },
+  "contrast": "Paired pooled out-of-fold baseline squared error minus challenger squared error. Positive favors context. Relative reduction is the mean difference divided by positive baseline MSE.",
+  "bootstrap": {
+    "replicates": 5000,
+    "seeds": {
+      "issuer": 620001,
+      "reaction_session": 620002
+    },
+    "rule": "Hold fitted predictions fixed. Resample whole clusters separately by issuer and session using the M4 percentile bootstrap. Take the smallest lower and largest upper endpoint of the two 99 percent intervals."
+  },
+  "gates": {
+    "paired_rows": 40,
+    "up_gaps": 10,
+    "down_gaps": 10,
+    "issuers": 15,
+    "sessions": 20,
+    "pairs_per_fold": 10,
+    "folds_with_minimum_pairs": 2,
+    "relative_mse_reduction": 0.05
+  },
+  "decision_rule": "Advance only to fresh-study scoping if all clean support floors pass, the clean 99 percent envelope lower bound is strictly positive, clean relative MSE reduction is at least 5 percent, and the all-event mean improvement is nonnegative. Otherwise stop this comparison. The existing 2027 study remains on hold.",
+  "boundary": "One offline development comparison covering both registered variants. No new data acquisition, reuse of the M5 extension, live capture or confirmatory efficacy claim."
+}
