@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "authorized_on": "2026-11-15",
+  "exact_words": "Authorize the historical opening-only check.\u201d",
+  "scope": "Historical development opening diagnostic only. Use the existing Alpaca Historical SIP account, with aggregate output.",
+  "base_commit": "b2a662bdf04c5f292f12b9a4516c1f445c55fa0b",
+  "v1_canonical_sha256": "99b63c293195e8bbd1a1035d17f3f3478622d62cf32ae8199405d28481815829",
+  "v2_canonical_sha256": "de9383d4997104f0c0f4d0adab25dc97bdd1ab0df580e520c51a40c59a8bb7fb",
+  "calendar": {
+    "path": "config/m2-merged-calendar-2024-2026.json",
+    "canonical_sha256": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5"
+  }
+}
