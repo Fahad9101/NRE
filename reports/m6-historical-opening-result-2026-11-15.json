@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "decision": "V2_FEASIBILITY_CLOSED_LOW_DISAGREEMENT",
+  "protocol_v2_sha256": "de9383d4997104f0c0f4d0adab25dc97bdd1ab0df580e520c51a40c59a8bb7fb",
+  "initial_run": {
+    "id": 43740243268,
+    "conclusion": "failure",
+    "status": "diagnostic_failed"
+  },
+  "completed_run": {
+    "id": 43740509173,
+    "job_id": 132892419420,
+    "conclusion": "success",
+    "head_sha": "2374bdba91591b80b6dc0d8f7040290db160ecf5",
+    "ci_run_id": 43740509150
+  },
+  "screened": 128,
+  "dispositions": {
+    "no_official_open": 12,
+    "opening_caveat": 9,
+    "verified_open": 107
+  },
+  "allocations": [
+    {
+      "tail": -1,
+      "magnitude": -1,
+      "count": 4
+    },
+    {
+      "tail": -1,
+      "magnitude": 0,
+      "count": 2
+    },
+    {
+      "tail": 0,
+      "magnitude": 0,
+      "count": 92
+    },
+    {
+      "tail": 0,
+      "magnitude": 1,
+      "count": 2
+    },
+    {
+      "tail": 1,
+      "magnitude": 1,
+      "count": 7
+    }
+  ],
+  "verified_coverage": {
+    "numerator": 107,
+    "denominator": 119
+  },
+  "disagreement": {
+    "numerator": 4,
+    "denominator": 107,
+    "issuers": 4,
+    "sessions": 4,
+    "tail_only": 2,
+    "magnitude_only": 2
+  },
+  "receipt_latency_verified": false,
+  "reaction_session_closing_outcomes_used": false,
+  "study_status": "ON_HOLD"
+}
