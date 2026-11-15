@@ -62,9 +62,10 @@ def sample(event, calendar, fetch):
     official = set()
     suspect = False
     for page in pages:
-        if page.get("symbol") != symbol or not isinstance(page.get("trades"), list):
+        if page.get("symbol") != symbol or "trades" not in page or (
+                page["trades"] is not None and not isinstance(page["trades"], list)):
             raise DataError("Malformed trade response")
-        for trade in page["trades"]:
+        for trade in page["trades"] or ():
             if (trade.get("x"), trade.get("z")) != venue or "Q" not in (trade.get("c") or ()):
                 continue
             at = timestamp(trade["t"])
@@ -153,6 +154,20 @@ def main():
         print(json.dumps(run(Path("."), fetch), sort_keys=True))
     except HTTPError as error:
         print(json.dumps({"status": "provider_error", "http_status": error.code}))
+        return 2
+    except DataError as error:
+        safe = {
+            "Protocol checksum mismatch", "Cohort checksum mismatch", "Calendar checksum mismatch",
+            "Unexpected cohort membership", "Unexpected date in anchor response", "Malformed trade response",
+            "Request budget exhausted", "pagination limit exceeded", "missing pagination metadata",
+            "invalid or repeated pagination token", "unexpected bars structure", "invalid bar list",
+            "duplicate session in bars response", "malformed bar record", "response size limit exceeded",
+        }
+        reason = str(error)
+        print(json.dumps({"status": "diagnostic_failed", "reason": reason if reason in safe else "validation_error"}))
+        return 2
+    except (KeyError, TypeError, ValueError, OSError) as error:
+        print(json.dumps({"status": "diagnostic_failed", "reason": type(error).__name__}))
         return 2
     except Exception:
         print('{"status":"diagnostic_failed"}')
