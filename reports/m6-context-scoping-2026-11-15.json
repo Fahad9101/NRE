@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "m6_context_comparison_scoping",
+  "recorded_on": "2026-11-15",
+  "authorized_by": "Fahad9101 (project owner)",
+  "exact_words": "say “Scope the context-based Milestone 6 comparison.”",
+  "interpretation": "Reply to the invitation to authorize document-only Milestone 6 context comparison scoping.",
+  "base_commit": "8086715697219ff1b5b576f71c262584983e17d4",
+  "scope": "docs/M6-CONTEXT-COMPARISON-SCOPE.md",
+  "scope_sha256_git_lf": "f119895d24211b12807a82faa1ab7a2fda8bda85f25373d3aec6b2c27dac6d2f",
+  "input_canonical_sha256": {
+    "config/m4-protocol.json": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "reports/m6-historical-opening-result-2026-11-15.json": "9f7992aef123fb8a63b318e3383514df1ee26b563773eaa25ec7f12e6dd00466"
+  },
+  "method": "Load the pinned Milestone 4 protocol and development inputs with fingerprints.load_inputs, verify with m4_protocol.verify_inputs, deduplicate by economic cluster and reuse the ordered block assignment from m4_scoping_evidence.assign_blocks. Mask opening and closing labels by caveat_sensitivity.caveated_pairs with derived labels. For each clean test row count same-CIK, clean, non-null earlier-session Day-1 close labels from earlier blocks with maturity strictly before its cutoff. No model fitting, performance evaluation, M5 holdout access or new market-data acquisition.",
+  "events": {
+    "deduplicated": 128,
+    "issuers": 23,
+    "reaction_sessions": 73,
+    "after_hours": 96,
+    "premarket": 32,
+    "clean_open_and_close": 119
+  },
+  "clean_fold_coverage": [
+    {
+      "test_block": 3,
+      "earlier_fit_rows": 55,
+      "test_rows": 20,
+      "issuer_history_histogram": {
+        "1": 4,
+        "2": 5,
+        "3": 11
+      }
+    },
+    {
+      "test_block": 4,
+      "earlier_fit_rows": 75,
+      "test_rows": 23,
+      "issuer_history_histogram": {
+        "2": 5,
+        "3": 7,
+        "4": 11
+      }
+    },
+    {
+      "test_block": 5,
+      "earlier_fit_rows": 98,
+      "test_rows": 21,
+      "issuer_history_histogram": {
+        "3": 4,
+        "4": 6,
+        "5": 11
+      }
+    }
+  ],
+  "decision": "ISSUER_HISTORY_OFFLINE_SCOPE_PROPOSED",
+  "prospective_study_status": "ON_HOLD"
+}
