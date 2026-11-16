@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "protocol_id": "nre-m6-quarterly-revenue-development",
+  "version": 1,
+  "input_canonical_sha256": {
+    "config/m4-protocol.json": "a2e1a987528b7c84f479d79d17de7910b976380749c9d54065af7830547982a9",
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "config/m2-merged-calendar-2024-2026.json": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5",
+    "config/m6-revenue-coverage.json": "04b01d65c5062bce5b26eff9fa0fd91f5e4dcc195e47c10b3ba56c808e28b992",
+    "reports/m6-revenue-coverage-result-2026-11-16.json": "d9a31ecf3fd30cb212ceb452d92df2e1bef0664d5bd954f92fd3b449f2571bb8"
+  },
+  "calendar": "config/m2-merged-calendar-2024-2026.json",
+  "audit": "reports/m6-revenue-coverage-result-2026-11-16.json",
+  "audit_method": "config/m6-revenue-coverage.json",
+  "development_events": 128,
+  "test_blocks": [3, 4, 5],
+  "feature_lead_minutes": 15,
+  "minimum_fit_rows": 30,
+  "ridge_penalty": 1,
+  "feature": "Use the pinned coverage audit's scheduled-open selection, in its fixed source priority: timestamped original wire, original SEC earnings exhibit, then periodic SEC filing. Require the release and reconstructed evidence availability to precede scheduled open minus 15 minutes strictly. If the selected evidence fails the clock, abstain. No replacement sources or imputation. Apply asinh to the fractional year-over-year revenue growth, compressing extremes using the fixed transform without fitted clipping thresholds.",
+  "clock": "Quarterly revenue is frozen 15 minutes before scheduled open. Both models receive the same committed daily-bar opening gap at the opening reference. These are opening-reference forecasts with a pre-open feature, using a historical measurement proxy. Current close and future data are outcomes only.",
+  "target_and_eligibility": "With g and y the opening and same-session close returns from the same prior close, predict -sign(g) * ((1 + y) / (1 + g) - 1). Exclude absent, nonfinite or economically invalid (at or below -1) labels and zero gaps. Match both arms on all training and test rows. The clean primary applies recorded and derived caveats for both labels. The all-event sensitivity retains defined caveated labels.",
+  "fold_rule": "Fit on earlier chronological blocks only and predict each held block once. Require at least 30 common fit rows per clean fold. Keep clusters and reaction sessions intact. Purge training labels whose availability is at or after the earliest scheduled feature cutoff in the full held block, including held rows later excluded.",
+  "models": {
+    "baseline": ["absolute_opening_gap", "opening_gap_sign"],
+    "challenger_added_column": "asinh(year_over_year_consolidated_quarterly_revenue_growth_fraction)",
+    "fit": "Use the M4 population standardization estimated on common training rows only. Drop constant columns and fit the existing ridge model with penalty 1 and an unpenalized intercept."
+  },
+  "contrast": "Paired pooled out-of-fold squared error, baseline minus challenger. Relative improvement divides the paired mean difference by positive baseline MSE. Report fit and test attrition, pre-label availability by issuer, reaction calendar quarter and release timing, plus growth-sign and opening-gap-sign counts.",
+  "bootstrap": {
+    "replicates": 5000,
+    "seeds": {"issuer": 630001, "reaction_session": 630002},
+    "rule": "Hold predictions fixed. Resample whole clusters separately by issuer and reaction session. Report the envelope spanning the outer endpoints of both 99 percent percentile intervals."
+  },
+  "gates": {
+    "paired_rows": 40,
+    "up_gaps": 10,
+    "down_gaps": 10,
+    "issuers": 15,
+    "sessions": 20,
+    "pairs_per_fold": 10,
+    "folds_with_minimum_pairs": 2,
+    "relative_mse_reduction": 0.05
+  },
+  "decision_rule": "Stop if any clean fit or paired support floor fails. Advance only to fresh-study scoping if the clean 99 percent lower envelope endpoint is positive, the clean relative MSE reduction is at least 5 percent, and the all-event mean improvement is nonnegative. Otherwise stop the revenue comparison.",
+  "boundary": "One offline development comparison with two registered variants. The previously opened M4 holdout is reused as M6 development block 5. No confirmation cohort, M5 extension, data acquisition, or live work. Persist only aggregate loss and coverage, plus pair membership digests. The 2027 study remains on hold."
+}
