@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scope": "Outcome-free Milestone 6 candidate feature coverage audit, authorized in the project chat. Frozen comparison and historical replay remain separate.",
+  "authorization_words": "yes figure it out and do it",
+  "base_commit": "41fbc7dcafdc6838b0efa4cd7d9e4f3d49d486d1",
+  "canonical_input_sha256": {
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "config/m2-merged-calendar-2024-2026.json": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5",
+    "reports/m6-revenue-wire-evidence-2026-11-16.json": "fcabd948956952b1686e6eddf0ea32149981c9f5eb5e94b0831b8ee9968eb4bb",
+    "reports/m6-revenue-exhibit-evidence-2026-11-16.json": "f089b0b2621a998a1865a245a0d22f0e95e7883c9165cba0a0aeda02d616ac91"
+  },
+  "feature": "Comparable consolidated fiscal-quarter USD revenue year-over-year growth from one SEC 10-Q/10-K, one original timestamped issuer release, or the original 8-K earnings exhibit.",
+  "timing": "Reconstruct from SEC submissions acceptanceDateTime plus two minutes and no earlier than the recorded filing date in New York. Exclude acceptances at or after 17:30 New York due to potential delayed public dissemination. Acceptance plus buffer is a historical provenance proxy and supplies no observed receipt timestamp.",
+  "availability_clocks": [
+    "Existing news cutoff",
+    "Scheduled opening of the reaction session"
+  ],
+  "matching": "Select newest eligible report period (ended zero to 110 days before the release or on its date); resolve same-period filings by earliest availability then accession. Require both USD observations from that accession and one approved revenue tag, each duration 80–100 days, prior end 340–390 days before the current end, prior positive. Withhold ambiguous or absent pairs.",
+  "coverage_screen": {
+    "clean_test_rows": 40,
+    "issuers": 15,
+    "reaction_sessions": 20,
+    "test_folds_with_at_least_10_rows": 2,
+    "meaning": "Apply the prior M6 context proposal's coverage floors as a planning screen. Check feature variation. Opening gap direction, official-opening joins and efficacy are outside this audit."
+  },
+  "sources": [
+    "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "https://www.sec.gov/search-filings/edgar-search-assistance/accessing-edgar-data#business-hours-and-dissemination"
+  ],
+  "wire_supplement": "Check selected original issuer releases for coverage gaps, plus the known JBSS example. Match URL and displayed publication minute or recorded dateline to the pinned event, require both GAAP-quarter figures in the same financial table, and use publication plus one minute. Unreviewed wire rows remain missing if SEC evidence is insufficient.",
+  "exhibit_supplement": "Review selected original 8-K earnings exhibits for missing held and fit rows. Join the accession and acceptance timestamp to SEC submissions. Apply the same two-minute buffer, filing-date floor and 17:30 exclusion as for periodic filings. Exclude identified mismatched-duration quarters. Prefer a validated wire pair, then a validated exhibit pair, then the periodic filing."
+}
