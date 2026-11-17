@@ -2,9 +2,23 @@
 
 Independent research system for estimating conditional market reactions to corporate news and identifying potential underreaction or overreaction.
 
-## Current boundary
+## Project status
 
-Milestone 1 authorized: earnings event dataset engineering is implemented; the acceptance sample is assembled (22 eligible events across 22 issuers), all 16 structural audit gates pass, and **the project owner declared Milestone 1 accepted on 2026-09-26**. The repository includes a standard-library Python pipeline, source ingestion, daily reaction extraction, point-in-time checks, immutable snapshots, SQLite schema, tests and CI. No predictive engine, validated edge, trading execution or production ranking exists. Milestone 2 step 1, which only describes the accepted events, is built and awaits the owner's review (see below).
+The owner has accepted Milestones 1–5. NRE includes an audited earnings event dataset, reaction fingerprints and analogues, catalyst extraction, and chronological comparisons of baseline and advanced predictive models. The accepted model research established no predictive edge and promoted no advanced models.
+
+| Milestone | Status and evidence |
+| --- | --- |
+| 1 · Historical event dataset | Accepted. The initial cohort met the amended sample and structural audit requirements. [Acceptance](reports/m1-acceptance-declaration-2026-09-26.json) · [Final audit](reports/m1-consolidated-audit-final-2026-09-26.json) |
+| 2 · Reaction fingerprints | Accepted. Later dataset expansion was accepted separately. [Acceptance](reports/m2-acceptance-declaration-2026-09-29.json) · [Expansion acceptance](reports/m2-step3-acceptance-declaration-2026-10-02.json) |
+| 3 · News and catalyst intelligence | Accepted. [Acceptance](reports/m3-acceptance-declaration-2026-09-30.json) |
+| 4 · Baseline predictive models | Accepted. No predictor was distinguishable from the pooled base rate. [Acceptance](reports/m4-acceptance-declaration-2026-10-08.json) · [Report](docs/M4-REPORT.md) |
+| 5 · Advanced models | Accepted. The 43-event forward extension was opened once under the frozen protocol. Zero targets were promoted. [Acceptance](reports/m5-acceptance-declaration-2026-11-14.json) · [Report](docs/M5-REPORT.md) |
+| 6 · Reaction Gap Engine | Research closeout acknowledged. The engine is deferred and the proposed 2027 study is on hold. [Closeout](docs/M6-RESEARCH-CLOSEOUT.md) · [Owner acknowledgment](reports/m6-research-closeout-acknowledgment-2026-11-15.json) |
+| 7 · Real-Time Candidate Ranking | Pending a validated reaction-gap signal and engine. |
+| 8 · Paper-Trading Validation | Pending forward validation using realistic entries and slippage. |
+| 9 · Integration Contracts | Pending independent validation and documented handoffs to SOE, BOE and IEE. |
+
+The latest Milestone 6 comparison found that adding quarterly revenue growth increased mean squared forecast error by 15.15% against the opening-gap baseline on 51 clean paired development events. Further signal research starts with verifying point-in-time input coverage and variation. A historical validation would require an untouched cohort and matched official opening evidence. [Revenue coverage](docs/M6-REVENUE-COVERAGE.md) · [Revenue result](docs/M6-REVENUE-RESULT.md)
 
 ## Documents
 
@@ -31,20 +45,6 @@ python -m nre build tests/fixtures/synthetic_bundle.json --output data/snapshots
 ```
 
 Python 3.12+ and IANA timezone data are required. No Docker, API subscription or runtime Python packages are required. Fixtures are synthetic and must not be interpreted as historical market observations.
-
-## Milestone 1 status
-
-Declared accepted by the project owner on 2026-09-26 ([declaration](reports/m1-acceptance-declaration-2026-09-26.json)). The amended target (20 events across 15 issuers) is met by 22 eligible events across 22 issuers, and the formal audit's 16 structural gates all pass ([final audit record](reports/m1-consolidated-audit-final-2026-09-26.json), [assessment](docs/M1-READINESS-ASSESSMENT.md)). The engine's `milestone_accepted` flag stays false by design. No predictive scoring exists.
-
-## Milestone 2 status
-
-The project owner replied "approve" on 2026-09-26 to a two-step plan and then confirmed the [scope proposal](docs/M2-SCOPE-PROPOSAL.md) for step 1 with all six of its defaults ([approval record](reports/m2-authorization-2026-09-26.json), [confirmation record](reports/m2-scope-confirmation-2026-09-26.json)). Step 1, reaction fingerprints and analogue retrieval on the existing 23 events with leakage tests and sparse-data suppression, is built ([runbook](docs/MILESTONE-2-RUNBOOK.md), [build record](reports/m2-step-1-build-record-2026-09-26.json)) and awaits the owner's review. On 2026-09-27 the owner raised the analogue minimum from 5 to 10 ([amendment record](reports/m2-policy-amendment-2026-09-27.json)), so every reported analogue set now carries a mean and median. It describes the accepted events and predicts nothing, and with one event per issuer most answers are "insufficient data". Milestone 2 is not accepted.
-
-Step 2, the data-depth push, was authorized on 2026-09-28 at a pilot scope: two prior quarters for the same 23 issuers, full Milestone-1-standard review ([authorization record](reports/m2-step2-authorization-2026-09-28.json)). 48 real SEC candidates across all 23 issuers are now frozen, outcome-blind ([pilot doc](docs/MILESTONE-2-STEP-2-PILOT.md), [freeze record](reports/m2-step2-sec-cohort-freeze.json)). None is reviewed yet; nothing from step 2 is in any dataset.
-
-## Milestone 4 status
-
-Declared accepted by the project owner on 2026-10-08 ([declaration](reports/m4-acceptance-declaration-2026-10-08.json)). Baseline predictive models were evaluated under a frozen, pre-registered protocol, with one logged look at a sealed holdout ([report](docs/M4-REPORT.md), [report as data](reports/m4-report-2026-10-07.json)). The finding is that no predictor could be told apart from the pooled base rate. Nothing there claims a predictive edge or anything about a market, and Milestone 5 is not authorized.
 
 ## Validation status
 
