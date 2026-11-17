@@ -16,6 +16,29 @@ DUMMY_ID = 987654321001
 
 
 class GuidanceOpeningTests(unittest.TestCase):
+    def test_expanded_mode_uses_the_frozen_held_cohort(self):
+        expanded = json.loads((ROOT / probe.EXPANSION).read_text(encoding="utf-8"))
+        expected = {(row["symbol"], row["reaction_session"]) for row in expanded["guidance_candidates"]}
+        requests = set()
+
+        def fetch(endpoint, params):
+            symbol = endpoint.split("/")[-2]
+            session = params["asof"]
+            self.assertIn((symbol, session), expected)
+            self.assertEqual(endpoint, f"https://data.alpaca.markets/v2/stocks/{symbol}/trades")
+            self.assertEqual(params["feed"], "sip")
+            self.assertEqual(datetime.fromisoformat(params["end"]) - datetime.fromisoformat(params["start"]),
+                             timedelta(minutes=1))
+            requests.add((symbol, session))
+            return json.dumps({"symbol": symbol, "trades": [], "next_page_token": None}).encode()
+
+        result = probe.run(ROOT, fetch, expanded=True)
+        self.assertEqual(requests, expected)
+        self.assertEqual(result["guidance_evidence_sha256"], probe.EXPANSION_SHA256)
+        self.assertEqual(result["screened"], len(expected))
+        self.assertEqual(result["matched"], 0)
+        self.assertEqual(result["dispositions"], {"no_official_open": len(expected)})
+
     def test_first_minute_sip_requests_and_dispositions_are_price_free(self):
         manifest = json.loads(PILOT.read_text(encoding="utf-8"))
         candidates = {row["symbol"]: row for row in manifest["guidance_candidates"]}

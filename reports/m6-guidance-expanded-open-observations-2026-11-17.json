@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-17",
+  "evidence_path": "reports/m6-guidance-expanded-evidence-2026-11-17.json",
+  "evidence_commit": "3ca84c634d0927572f5032fc01ac732d8f780e88",
+  "evidence_canonical_sha256": "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5",
+  "source": "Historical SIP first-minute trades via the connected Alpaca tool, with symbol as-of the reaction session.",
+  "retention": "Event joins, aggregate counts and dispositions only.",
+  "scope": "Coverage. Connection returns normalized records and omits underlying raw correction fields.",
+  "decision": "PROVISIONAL_COVERAGE_GATE_PASSED_RAW_VALIDATION_PENDING",
+  "summary": {
+    "rows": 58,
+    "issuers": 20,
+    "sessions": 46,
+    "by_held_block": {
+      "2025-H2": 27,
+      "2026-H1": 18,
+      "2026-Q3": 13
+    },
+    "revision_signs": {
+      "raise": 40,
+      "unchanged": 14,
+      "cut": 4
+    },
+    "issuers_with_cuts": 2
+  },
+  "provisional_gates": {
+    "matched_rows": true,
+    "issuers": true,
+    "sessions": true,
+    "block_support": true,
+    "both_revision_signs": true
+  },
+  "reviewed": 58,
+  "dispositions": {
+    "single_listing_venue_q_observed": 58
+  },
+  "closing_outcome_requests": 0,
+  "events": [
+    {
+      "event_id": "csgp-0001057352-25-000095",
+      "symbol": "CSGP",
+      "reaction_session": "2025-07-23",
+      "scheduled_open_at": "2025-07-23T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "orly-0000898173-25-000046",
+      "symbol": "ORLY",
+      "reaction_session": "2025-07-24",
+      "scheduled_open_at": "2025-07-24T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ea-0000712515-25-000027",
+      "symbol": "EA",
+      "reaction_session": "2025-07-30",
+      "scheduled_open_at": "2025-07-30T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000266",
+      "symbol": "CTSH",
+      "reaction_session": "2025-07-31",
+      "scheduled_open_at": "2025-07-31T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "idxx-0001104659-25-073304",
+      "symbol": "IDXX",
+      "reaction_session": "2025-08-04",
+      "scheduled_open_at": "2025-08-04T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "amgn-0000318154-25-000054",
+      "symbol": "AMGN",
+      "reaction_session": "2025-08-06",
+      "scheduled_open_at": "2025-08-06T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ddog-0001561550-25-000216",
+      "symbol": "DDOG",
+      "reaction_session": "2025-08-07",
+      "scheduled_open_at": "2025-08-07T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000025",
+      "symbol": "FTNT",
+      "reaction_session": "2025-08-07",
+      "scheduled_open_at": "2025-08-07T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "mdb-0001441816-25-000176",
+      "symbol": "MDB",
+      "reaction_session": "2025-08-27",
+      "scheduled_open_at": "2025-08-27T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "crwd-0001535527-25-000023",
+      "symbol": "CRWD",
+      "reaction_session": "2025-08-28",
+      "scheduled_open_at": "2025-08-28T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "adsk-0000769397-25-000114",
+      "symbol": "ADSK",
+      "reaction_session": "2025-08-29",
+      "scheduled_open_at": "2025-08-29T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dltr-0000935703-25-000060",
+      "symbol": "DLTR",
+      "reaction_session": "2025-09-03",
+      "scheduled_open_at": "2025-09-03T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "lulu-0001397187-25-000038",
+      "symbol": "LULU",
+      "reaction_session": "2025-09-05",
+      "scheduled_open_at": "2025-09-05T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 3
+    },
+    {
+      "event_id": "orly-0000898173-25-000055",
+      "symbol": "ORLY",
+      "reaction_session": "2025-10-23",
+      "scheduled_open_at": "2025-10-23T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "cdns-0000813672-25-000144",
+      "symbol": "CDNS",
+      "reaction_session": "2025-10-28",
+      "scheduled_open_at": "2025-10-28T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000338",
+      "symbol": "CTSH",
+      "reaction_session": "2025-10-29",
+      "scheduled_open_at": "2025-10-29T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000278",
+      "symbol": "DXCM",
+      "reaction_session": "2025-10-31",
+      "scheduled_open_at": "2025-10-31T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "idxx-0001104659-25-105185",
+      "symbol": "IDXX",
+      "reaction_session": "2025-11-03",
+      "scheduled_open_at": "2025-11-03T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000230",
+      "symbol": "VRTX",
+      "reaction_session": "2025-11-04",
+      "scheduled_open_at": "2025-11-04T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "amgn-0000318154-25-000070",
+      "symbol": "AMGN",
+      "reaction_session": "2025-11-05",
+      "scheduled_open_at": "2025-11-05T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ddog-0001561550-25-000310",
+      "symbol": "DDOG",
+      "reaction_session": "2025-11-06",
+      "scheduled_open_at": "2025-11-06T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000036",
+      "symbol": "FTNT",
+      "reaction_session": "2025-11-06",
+      "scheduled_open_at": "2025-11-06T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "adsk-0000769397-25-000126",
+      "symbol": "ADSK",
+      "reaction_session": "2025-11-26",
+      "scheduled_open_at": "2025-11-26T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "zs-0001713683-25-000203",
+      "symbol": "ZS",
+      "reaction_session": "2025-11-26",
+      "scheduled_open_at": "2025-11-26T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "mdb-0001628280-25-054425",
+      "symbol": "MDB",
+      "reaction_session": "2025-12-02",
+      "scheduled_open_at": "2025-12-02T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "crwd-0001535527-25-000030",
+      "symbol": "CRWD",
+      "reaction_session": "2025-12-03",
+      "scheduled_open_at": "2025-12-03T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dltr-0000935703-25-000104",
+      "symbol": "DLTR",
+      "reaction_session": "2025-12-03",
+      "scheduled_open_at": "2025-12-03T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000025",
+      "symbol": "DXCM",
+      "reaction_session": "2026-02-13",
+      "scheduled_open_at": "2026-02-13T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "snps-0001193125-26-071601",
+      "symbol": "SNPS",
+      "reaction_session": "2026-02-26",
+      "scheduled_open_at": "2026-02-26T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "intu-0000896878-26-000012",
+      "symbol": "INTU",
+      "reaction_session": "2026-02-27",
+      "scheduled_open_at": "2026-02-27T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "zs-0001713683-26-000047",
+      "symbol": "ZS",
+      "reaction_session": "2026-02-27",
+      "scheduled_open_at": "2026-02-27T14:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "cdns-0000813672-26-000044",
+      "symbol": "CDNS",
+      "reaction_session": "2026-04-28",
+      "scheduled_open_at": "2026-04-28T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ctsh-0001058290-26-000015",
+      "symbol": "CTSH",
+      "reaction_session": "2026-04-29",
+      "scheduled_open_at": "2026-04-29T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "vrsk-0001437749-26-013728",
+      "symbol": "VRSK",
+      "reaction_session": "2026-04-29",
+      "scheduled_open_at": "2026-04-29T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "orly-0000898173-26-000024",
+      "symbol": "ORLY",
+      "reaction_session": "2026-04-30",
+      "scheduled_open_at": "2026-04-30T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "amgn-0000318154-26-000054",
+      "symbol": "AMGN",
+      "reaction_session": "2026-05-01",
+      "scheduled_open_at": "2026-05-01T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000072",
+      "symbol": "DXCM",
+      "reaction_session": "2026-05-01",
+      "scheduled_open_at": "2026-05-01T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "idxx-0001104659-26-055203",
+      "symbol": "IDXX",
+      "reaction_session": "2026-05-05",
+      "scheduled_open_at": "2026-05-05T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "vrtx-0000875320-26-000171",
+      "symbol": "VRTX",
+      "reaction_session": "2026-05-05",
+      "scheduled_open_at": "2026-05-05T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ddog-0001628280-26-031677",
+      "symbol": "DDOG",
+      "reaction_session": "2026-05-07",
+      "scheduled_open_at": "2026-05-07T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ftnt-0001262039-26-000010",
+      "symbol": "FTNT",
+      "reaction_session": "2026-05-07",
+      "scheduled_open_at": "2026-05-07T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "zs-0001713683-26-000095",
+      "symbol": "ZS",
+      "reaction_session": "2026-05-27",
+      "scheduled_open_at": "2026-05-27T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dltr-0000935703-26-000064",
+      "symbol": "DLTR",
+      "reaction_session": "2026-05-28",
+      "scheduled_open_at": "2026-05-28T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "mdb-0001628280-26-038798",
+      "symbol": "MDB",
+      "reaction_session": "2026-05-29",
+      "scheduled_open_at": "2026-05-29T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "lulu-0001397187-26-000077",
+      "symbol": "LULU",
+      "reaction_session": "2026-06-05",
+      "scheduled_open_at": "2026-06-05T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "cdns-0000813672-26-000089",
+      "symbol": "CDNS",
+      "reaction_session": "2026-07-28",
+      "scheduled_open_at": "2026-07-28T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "vrsk-0001437749-26-024748",
+      "symbol": "VRSK",
+      "reaction_session": "2026-07-29",
+      "scheduled_open_at": "2026-07-29T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ftnt-0001262039-26-000018",
+      "symbol": "FTNT",
+      "reaction_session": "2026-07-30",
+      "scheduled_open_at": "2026-07-30T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "orly-0000898173-26-000042",
+      "symbol": "ORLY",
+      "reaction_session": "2026-07-30",
+      "scheduled_open_at": "2026-07-30T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000142",
+      "symbol": "DXCM",
+      "reaction_session": "2026-07-31",
+      "scheduled_open_at": "2026-07-31T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "idxx-0001104659-26-090033",
+      "symbol": "IDXX",
+      "reaction_session": "2026-08-04",
+      "scheduled_open_at": "2026-08-04T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "vrtx-0000875320-26-000256",
+      "symbol": "VRTX",
+      "reaction_session": "2026-08-04",
+      "scheduled_open_at": "2026-08-04T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "amgn-0000318154-26-000124",
+      "symbol": "AMGN",
+      "reaction_session": "2026-08-05",
+      "scheduled_open_at": "2026-08-05T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "ddog-0001628280-26-053829",
+      "symbol": "DDOG",
+      "reaction_session": "2026-08-06",
+      "scheduled_open_at": "2026-08-06T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "crwd-0001535527-26-000029",
+      "symbol": "CRWD",
+      "reaction_session": "2026-08-27",
+      "scheduled_open_at": "2026-08-27T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "dltr-0000935703-26-000108",
+      "symbol": "DLTR",
+      "reaction_session": "2026-08-27",
+      "scheduled_open_at": "2026-08-27T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "mdb-0001628280-26-059794",
+      "symbol": "MDB",
+      "reaction_session": "2026-09-02",
+      "scheduled_open_at": "2026-09-02T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    },
+    {
+      "event_id": "lulu-0001397187-26-000126",
+      "symbol": "LULU",
+      "reaction_session": "2026-09-04",
+      "scheduled_open_at": "2026-09-04T13:30:00+00:00",
+      "status": "single_listing_venue_q_observed",
+      "requests": 1
+    }
+  ]
+}

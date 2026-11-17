@@ -1,4 +1,5 @@
 """Check the historical official open for each frozen M6 guidance pilot event."""
+import argparse
 import json
 import os
 import re
@@ -18,21 +19,25 @@ from .m6_historical_opening import VENUES, first_minute_open
 
 PILOT = "reports/m6-guidance-pilot-evidence-2026-11-17.json"
 PILOT_SHA256 = "c8d7e2eea92f2e50cf0aa0c961f88514bb8a0221d3da39eeae1b8940fea28c22"
+EXPANSION = "reports/m6-guidance-expanded-evidence-2026-11-17.json"
+EXPANSION_SHA256 = "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5"
 
 
-def locked_events(root):
-    pilot = load(root / PILOT)
-    if digest(canonical(pilot)) != PILOT_SHA256 or pilot["frame_path"] != FRAME:
+def locked_events(root, path=PILOT, expected_sha=PILOT_SHA256):
+    evidence = load(root / path)
+    if digest(canonical(evidence)) != expected_sha or evidence["frame_path"] != FRAME:
         raise DataError("Guidance evidence changed")
     frame = load(root / FRAME)
-    if digest(canonical(frame)) != pilot["frame_canonical_sha256"]:
+    if digest(canonical(frame)) != evidence["frame_canonical_sha256"]:
         raise DataError("Guidance roster changed")
     calendar_pin = frame["calendar"]
     calendar_spec = load(root / calendar_pin["path"])
     if digest(canonical(calendar_spec)) != calendar_pin["canonical_sha256"]:
         raise DataError("Guidance calendar changed")
     calendar = Calendar(calendar_spec)
-    events = pilot["guidance_candidates"]
+    events = evidence["guidance_candidates"]
+    if len({(row["symbol"], row["reaction_session"]) for row in events}) != len(events):
+        raise DataError("Duplicate symbol and session in opening cohort")
     for event in events:
         session, timing = calendar.classify(event["current"]["source_time"])
         start, _ = calendar.bounds(session)
@@ -45,20 +50,26 @@ def locked_events(root):
     return events
 
 
-def run(root, fetch):
+def run(root, fetch, *, expanded=False):
+    path, expected = (EXPANSION, EXPANSION_SHA256) if expanded else (PILOT, PILOT_SHA256)
     results = []
-    for event in locked_events(root):
+    for event in locked_events(root, path, expected):
         symbol, session = (event[key] for key in ("symbol", "reaction_session"))
         start = timestamp(event["scheduled_open_at"])
         _, reason = first_minute_open(symbol, VENUES[event["venue"]], start, fetch, asof=session, page_limit=5000)
         results.append({"symbol": symbol, "reaction_session": session, "status": reason or "verified_open"})
     dispositions = Counter(row["status"] for row in results)
-    return {"scope": "guidance_pilot_official_open_coverage", "schema_version": 1,
-            "guidance_evidence_sha256": PILOT_SHA256, "screened": len(results),
+    scope = "guidance_expanded_official_open_coverage" if expanded else "guidance_pilot_official_open_coverage"
+    return {"scope": scope, "schema_version": 1,
+            "guidance_evidence_sha256": expected, "screened": len(results),
             "matched": dispositions["verified_open"], "dispositions": dict(dispositions), "events": results}
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--expanded", action="store_true")
+    args = parser.parse_args()
+    budget = 450 if args.expanded else 120
     try:
         provider = ea.make_fetch(build_opener(ea.NoRedirect()), os.environ["APCA_API_KEY_ID"],
                                  os.environ["APCA_API_SECRET_KEY"])
@@ -67,7 +78,7 @@ def main():
 
         def fetch(endpoint, params):
             nonlocal requests, next_request
-            if (requests >= 120 or params.get("feed") != "sip"
+            if (requests >= budget or params.get("feed") != "sip"
                     or not re.fullmatch(r"https://data\.alpaca\.markets/v2/stocks/[A-Z][A-Z0-9.]{0,9}/trades", endpoint)
                     or timestamp(params["end"]) - timestamp(params["start"]) != timedelta(seconds=60)):
                 raise DataError("Request outside opening pilot boundary")
@@ -76,7 +87,7 @@ def main():
             requests += 1
             return provider(endpoint, params)
 
-        result = run(Path("."), fetch)
+        result = run(Path("."), fetch, expanded=args.expanded)
         print(json.dumps(dict(result, requests=requests), sort_keys=True))
     except HTTPError as error:
         print(json.dumps({"status": "provider_error", "http_status": error.code}))

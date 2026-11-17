@@ -2,6 +2,14 @@ name: M6 guidance pilot official opening check
 
 on:
   workflow_dispatch:
+    inputs:
+      cohort:
+        description: Frozen guidance cohort
+        type: choice
+        default: pilot
+        options:
+          - pilot
+          - expanded
 
 permissions:
   contents: read
@@ -10,14 +18,20 @@ jobs:
   probe:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check the first minute for the frozen guidance pilot
+      - name: Check the first minute for the requested frozen guidance cohort
         env:
+          GUIDANCE_COHORT: ${{ inputs.cohort }}
           APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
           APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
-        run: python -m nre.m6_guidance_opening
+        run: |
+          case "$GUIDANCE_COHORT" in
+            pilot) python -m nre.m6_guidance_opening ;;
+            expanded) python -m nre.m6_guidance_opening --expanded ;;
+            *) exit 2 ;;
+          esac
