@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-17",
+  "base_commit": "94717344d9e3c028b9b1284e0311f5200bf1d769",
+  "canonical_input_sha256": {
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "reports/m6-revenue-coverage-result-2026-11-16.json": "d9a31ecf3fd30cb212ceb452d92df2e1bef0664d5bd954f92fd3b449f2571bb8"
+  },
+  "development_frame_events": 128,
+  "field": "Relative midpoint revision of a directly stated consolidated full-fiscal-year USD revenue or net-sales point or two-sided range, on the same fiscal period and scope, from the original earnings release and an independently timestamped still-active prior issuer disclosure.",
+  "primary_clock": "Strictly before scheduled opening minus 15 minutes. Original wire publication minute plus one minute is a reconstructed availability proxy.",
+  "review_scope": "Clean-label-metadata held blocks 3 through 5. Screen selected original earnings releases for necessary current-field coverage. Stop when the cohort cannot pass even if every other clean held event qualifies. Supplemental decks, transcripts and conversion from percentage to USD are outside this screen.",
+  "planning_thresholds": {
+    "rows": 40,
+    "issuers": 15,
+    "sessions": 20,
+    "folds": 2,
+    "rows_per_fold": 10
+  },
+  "clean_held_start": {
+    "rows": 64,
+    "issuers": 23,
+    "sessions": 37,
+    "by_block": {
+      "3": 20,
+      "4": 23,
+      "5": 21
+    }
+  },
+  "excluded_rows": 32,
+  "exclusion_reasons": {
+    "growth_only": 5,
+    "no_bounded_annual_revenue": 21,
+    "product_only": 3,
+    "quarter_only": 1,
+    "revenue_basis_excludes_items": 2
+  },
+  "optimistic_coverage_ceiling": {
+    "rows": 32,
+    "issuers": 11,
+    "sessions": 25,
+    "by_block": {
+      "3": 11,
+      "4": 11,
+      "5": 10
+    }
+  },
+  "remaining_event_ids": [
+    "alkt-2026-02-25",
+    "alkt-step2-2025-07-30",
+    "alkt-step2-2025-10-30",
+    "aspn-step2-2025-08-07",
+    "aspn-step2-2025-11-06",
+    "caci-2026-01-21",
+    "caci-step2-2025-08-06",
+    "caci-step2-2025-10-22",
+    "coll-2026-02-26",
+    "coll-step2-2025-08-07",
+    "coll-step2-2025-11-06",
+    "klc-2026-03-12",
+    "klc-step2-2025-08-12",
+    "klc-step2-2025-11-12",
+    "love-2026-03-26",
+    "love-step2-2025-09-11",
+    "love-step2-2025-12-11",
+    "okta-2026-03-04",
+    "okta-step2-2025-08-26",
+    "okta-step2-2025-12-02",
+    "payo-2026-02-26",
+    "payo-step2-2025-08-06",
+    "payo-step2-2025-11-05",
+    "real-2026-02-26",
+    "real-step2-2025-08-07",
+    "real-step2-2025-11-10",
+    "ttwo-2026-02-03",
+    "ttwo-step2-2025-08-07",
+    "ttwo-step2-2025-11-06",
+    "vsat-2026-02-05",
+    "vsat-step2-2025-08-05",
+    "vsat-step2-2025-11-07"
+  ],
+  "decision": "STOP_INSUFFICIENT_COVERAGE_ON_EXISTING_COHORT",
+  "intervening_revision_check": "Illustrative pairs verify published ranges and dates. Intervening issuer disclosures were not exhaustively reviewed, and no remaining event is counted as fully eligible.",
+  "example_pairs": [
+    {
+      "event_id": "alkt-step2-2025-10-30",
+      "prior_event_id": "alkt-step2-2025-07-30",
+      "fiscal_year_end": "2025-12-31",
+      "prior_release_url": "https://www.prnewswire.com/news-releases/alkami-announces-second-quarter-2025-financial-results-302517660.html",
+      "current_release_url": "https://www.prnewswire.com/news-releases/alkami-announces-third-quarter-2025-financial-results-302600234.html",
+      "prior_release_at": "2025-07-30T16:05:00-04:00",
+      "current_release_at": "2025-10-30T16:05:00-04:00",
+      "current_availability_proxy": "2025-10-30T20:06:00+00:00",
+      "scheduled_feature_cutoff": "2025-10-31T13:15:00+00:00",
+      "prior_range_usd_millions": [
+        443,
+        447
+      ],
+      "current_range_usd_millions": [
+        442.5,
+        444
+      ],
+      "midpoint_revision_fraction": -0.00393258426966292
+    },
+    {
+      "event_id": "real-step2-2025-11-10",
+      "prior_event_id": "real-step2-2025-08-07",
+      "fiscal_year_end": "2025-12-31",
+      "prior_release_url": "https://www.globenewswire.com/news-release/2025/08/07/3129634/0/en/The-RealReal-Announces-Second-Quarter-2025-Results.html",
+      "current_release_url": "https://www.globenewswire.com/news-release/2025/11/10/3185030/0/en/The-RealReal-Announces-Third-Quarter-2025-Results.html",
+      "prior_release_at": "2025-08-07T16:04:00-04:00",
+      "current_release_at": "2025-11-10T16:05:00-05:00",
+      "current_availability_proxy": "2025-11-10T21:06:00+00:00",
+      "scheduled_feature_cutoff": "2025-11-11T14:15:00+00:00",
+      "prior_range_usd_millions": [
+        667,
+        674
+      ],
+      "current_range_usd_millions": [
+        687,
+        690
+      ],
+      "midpoint_revision_fraction": 0.02684563758389258
+    }
+  ],
+  "excluded_events": [
+    {
+      "event_id": "achv-step2-2025-08-07",
+      "cik": "0000949858",
+      "block": 3,
+      "reaction_session": "2025-08-07",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports clinical and regulatory updates, historical financials and financing or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/08/07/3129127/0/en/Achieve-Life-Sciences-Reports-Second-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html"
+    },
+    {
+      "event_id": "cxt-step2-2025-08-06",
+      "cik": "0000025445",
+      "block": 3,
+      "reaction_session": "2025-08-07",
+      "reason": "growth_only",
+      "evidence": "The annual sales outlook is expressed as percentage growth. The release supplies no directly stated USD annual revenue bounds or point.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/08/06/3128648/0/en/Crane-NXT-Reports-Second-Quarter-2025-Results.html"
+    },
+    {
+      "event_id": "jbss-step2-2025-08-20",
+      "cik": "0000880117",
+      "block": 3,
+      "reaction_session": "2025-08-21",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical net sales and operating commentary. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.businesswire.com/news/home/20250820722529/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2025-Fourth-Quarter-and-Full-Year-Results"
+    },
+    {
+      "event_id": "lnsr-step2-2025-08-07",
+      "cik": "0001320350",
+      "block": 3,
+      "reaction_session": "2025-08-07",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports realized revenue and the proposed acquisition. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/08/07/3129055/0/en/lensar-reports-second-quarter-2025-results-and-provides-business-update.html"
+    },
+    {
+      "event_id": "nbix-step2-2025-07-30",
+      "cik": "0000914475",
+      "block": 3,
+      "reaction_session": "2025-07-31",
+      "reason": "product_only",
+      "evidence": "Guides annual INGREZZA sales and expenses. The product forecast does not cover consolidated revenue.",
+      "event_release_url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-second-quarter-2025-financial-results-302517700.html"
+    },
+    {
+      "event_id": "parr-step2-2025-08-05",
+      "cik": "0000821483",
+      "block": 3,
+      "reaction_session": "2025-08-06",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports realized consolidated revenue and operating developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/08/05/3127866/0/en/Par-Pacific-Holdings-Reports-Second-Quarter-2025-Results.html"
+    },
+    {
+      "event_id": "rekr-step2-2025-08-12",
+      "cik": "0001697851",
+      "block": 3,
+      "reaction_session": "2025-08-13",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical consolidated revenue and operating or contract developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/08/12/3132142/0/en/rekor-systems-reports-second-quarter-2025-financial-results.html"
+    },
+    {
+      "event_id": "slsn-step2-2025-07-31",
+      "cik": "0000883107",
+      "block": 3,
+      "reaction_session": "2025-08-01",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical consolidated revenue and operating or contract developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/07/31/3125368/0/en/Sol%C3%A9sence-Reports-Second-Quarter-2025-Financial-Results.html"
+    },
+    {
+      "event_id": "tecx-step2-2025-08-07",
+      "cik": "0001681087",
+      "block": 3,
+      "reaction_session": "2025-08-08",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports clinical and regulatory updates, historical financials and financing or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/08/07/3129619/0/en/Tectonic-Therapeutic-Announces-Second-Quarter-2025-Financial-Results-and-Recent-Business-Highlights.html"
+    },
+    {
+      "event_id": "achv-step2-2025-11-06",
+      "cik": "0000949858",
+      "block": 4,
+      "reaction_session": "2025-11-06",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports clinical and regulatory updates, historical financials and financing or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/06/3182358/0/en/Achieve-Life-Sciences-Reports-Third-Quarter-2025-Financial-Results-Provides-Updates-on-Cytisinicline-Program.html"
+    },
+    {
+      "event_id": "asmb-step2-2025-11-10",
+      "cik": "0001426800",
+      "block": 4,
+      "reaction_session": "2025-11-11",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical collaboration revenue and liquidity or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/10/3185025/16259/en/Assembly-Biosciences-Reports-Third-Quarter-2025-Financial-Results-and-Recent-Updates.html"
+    },
+    {
+      "event_id": "cxt-step2-2025-11-05",
+      "cik": "0000025445",
+      "block": 4,
+      "reaction_session": "2025-11-06",
+      "reason": "growth_only",
+      "evidence": "The annual sales outlook is expressed as percentage growth. The release supplies no directly stated USD annual revenue bounds or point.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/05/3181965/0/en/crane-nxt-reports-third-quarter-2025-results.html"
+    },
+    {
+      "event_id": "hurn-step2-2025-10-28",
+      "cik": "0001289848",
+      "block": 4,
+      "reaction_session": "2025-10-29",
+      "reason": "revenue_basis_excludes_items",
+      "evidence": "Guides revenue before reimbursable expenses. The financial statements separately report total consolidated revenue including the reimbursements.",
+      "event_release_url": "https://www.businesswire.com/news/home/20251028802664/en/Huron-Announces-Record-Third-Quarter-2025-Financial-Results-and-Raises-2025-Adjusted-Diluted-EPS-Guidance",
+      "reviewed_filed_copy": "https://www.sec.gov/Archives/edgar/data/1289848/000162828025046762/hurn2025930exh991.htm"
+    },
+    {
+      "event_id": "jbss-step2-2025-10-29",
+      "cik": "0000880117",
+      "block": 4,
+      "reaction_session": "2025-10-30",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical net sales and operating commentary. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/10/29/3176875/0/en/John-B-Sanfilippo-Son-Inc-Reports-Fiscal-2026-First-Quarter-Results.html"
+    },
+    {
+      "event_id": "lnsr-step2-2025-11-06",
+      "cik": "0001320350",
+      "block": 4,
+      "reaction_session": "2025-11-06",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports realized revenue and the proposed acquisition. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/06/3182416/0/en/LENSAR-Reports-Third-Quarter-2025-Results-and-Provides-Business-Update.html"
+    },
+    {
+      "event_id": "nbix-step2-2025-10-28",
+      "cik": "0000914475",
+      "block": 4,
+      "reaction_session": "2025-10-29",
+      "reason": "product_only",
+      "evidence": "Guides annual INGREZZA sales and expenses. The product forecast does not cover consolidated revenue.",
+      "event_release_url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-third-quarter-2025-financial-results-302597268.html"
+    },
+    {
+      "event_id": "parr-step2-2025-11-04",
+      "cik": "0000821483",
+      "block": 4,
+      "reaction_session": "2025-11-05",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports realized consolidated revenue and operating developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/04/3180903/0/en/Par-Pacific-Holdings-Reports-Third-Quarter-2025-Results.html"
+    },
+    {
+      "event_id": "pdfs-step2-2025-11-06",
+      "cik": "0001120914",
+      "block": 4,
+      "reaction_session": "2025-11-07",
+      "reason": "growth_only",
+      "evidence": "The annual sales outlook is expressed as percentage growth. The release supplies no directly stated USD annual revenue bounds or point.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/06/3183166/7239/en/PDF-Solutions-Reports-Third-Quarter-2025-Financial-Results-Announcing-Record-Third-Quarter-2025-Total-Revenues.html"
+    },
+    {
+      "event_id": "rekr-step2-2025-11-13",
+      "cik": "0001697851",
+      "block": 4,
+      "reaction_session": "2025-11-14",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical consolidated revenue and operating or contract developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/13/3187814/0/en/Rekor-Systems-Reports-Record-Third-Quarter-2025-Financial-Results.html"
+    },
+    {
+      "event_id": "slsn-step2-2025-11-11",
+      "cik": "0000883107",
+      "block": 4,
+      "reaction_session": "2025-11-11",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical consolidated revenue and operating or contract developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/11/3185292/12101/en/Sol%C3%A9sence-Reports-Third-Quarter-2025-Financial-Results.html"
+    },
+    {
+      "event_id": "tecx-step2-2025-11-06",
+      "cik": "0001681087",
+      "block": 4,
+      "reaction_session": "2025-11-07",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports clinical and regulatory updates, historical financials and financing or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2025/11/06/3183059/0/en/tectonic-therapeutic-announces-third-quarter-2025-financial-results-and-recent-business-highlights.html"
+    },
+    {
+      "event_id": "achv-2026-03-24",
+      "cik": "0000949858",
+      "block": 5,
+      "reaction_session": "2026-03-24",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports clinical and regulatory updates, historical financials and financing or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/03/24/3261062/0/en/Achieve-Life-Sciences-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Provides-Business-Updates.html"
+    },
+    {
+      "event_id": "asmb-2026-03-19",
+      "cik": "0001426800",
+      "block": 5,
+      "reaction_session": "2026-03-20",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical collaboration revenue and liquidity or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/03/19/3259423/16259/en/Assembly-Biosciences-Reports-Year-End-2025-Financial-Results-and-Recent-Highlights.html"
+    },
+    {
+      "event_id": "aspn-2026-02-25",
+      "cik": "0001145986",
+      "block": 5,
+      "reaction_session": "2026-02-25",
+      "reason": "quarter_only",
+      "evidence": "Gives a first-quarter revenue range and full-year capital spending guidance. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/02/25/3244410/0/en/Aspen-Aerogels-Inc-Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html"
+    },
+    {
+      "event_id": "cxt-2026-02-11",
+      "cik": "0000025445",
+      "block": 5,
+      "reaction_session": "2026-02-12",
+      "reason": "growth_only",
+      "evidence": "The annual sales outlook is expressed as percentage growth. The release supplies no directly stated USD annual revenue bounds or point.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/02/11/3236663/0/en/Crane-NXT-Announces-Fourth-Quarter-and-Full-Year-2025-Results-Raises-Annual-Dividend-by-6.html"
+    },
+    {
+      "event_id": "hurn-2026-02-24",
+      "cik": "0001289848",
+      "block": 5,
+      "reaction_session": "2026-02-25",
+      "reason": "revenue_basis_excludes_items",
+      "evidence": "Guides revenue before reimbursable expenses. The financial statements separately report total consolidated revenue including the reimbursements.",
+      "event_release_url": "https://www.businesswire.com/news/home/20260224117886/en/Huron-Announces-Fourth-Quarter-2025-Financial-Results-and-Provides-2026-Guidance",
+      "reviewed_filed_copy": "https://www.sec.gov/Archives/edgar/data/1289848/000162828026011092/hurn20251231exh991.htm"
+    },
+    {
+      "event_id": "jbss-2026-01-29",
+      "cik": "0000880117",
+      "block": 5,
+      "reaction_session": "2026-01-30",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical net sales and operating commentary. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.businesswire.com/news/home/20260129356587/en/John-B.-Sanfilippo-Son-Inc.-Reports-Fiscal-2026-Second-Quarter-Results"
+    },
+    {
+      "event_id": "nbix-2026-02-11",
+      "cik": "0000914475",
+      "block": 5,
+      "reaction_session": "2026-02-12",
+      "reason": "product_only",
+      "evidence": "Guides annual INGREZZA sales and expenses. The product forecast does not cover consolidated revenue.",
+      "event_release_url": "https://www.prnewswire.com/news-releases/neurocrine-biosciences-reports-fourth-quarter-and-full-year-2025-financial-results-and-provides-financial-expectations-for-2026-302685532.html"
+    },
+    {
+      "event_id": "parr-2026-02-24",
+      "cik": "0000821483",
+      "block": 5,
+      "reaction_session": "2026-02-25",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports realized consolidated revenue and operating developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/02/24/3244063/0/en/Par-Pacific-Reports-Fourth-Quarter-and-2025-Results.html"
+    },
+    {
+      "event_id": "pdfs-2026-02-12",
+      "cik": "0001120914",
+      "block": 5,
+      "reaction_session": "2026-02-13",
+      "reason": "growth_only",
+      "evidence": "The annual outlook refers to a long-term percentage growth target and supplies no directly stated USD annual revenue bounds or point.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/02/12/3237650/0/en/PDF-Solutions-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results-and-Announces-Record-2025-Fourth-Quarter-and-Record-Full-Year-Total-Revenues.html"
+    },
+    {
+      "event_id": "rekr-2026-03-31",
+      "cik": "0001697851",
+      "block": 5,
+      "reaction_session": "2026-04-01",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports historical consolidated revenue and operating or contract developments. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/03/31/3266027/0/en/Rekor-Systems-Reports-Full-Year-2025-Results.html"
+    },
+    {
+      "event_id": "tecx-2026-02-26",
+      "cik": "0001681087",
+      "block": 5,
+      "reaction_session": "2026-02-27",
+      "reason": "no_bounded_annual_revenue",
+      "evidence": "Reports clinical and regulatory updates, historical financials and financing or cash runway. The release supplies no full-year consolidated revenue amount.",
+      "event_release_url": "https://www.globenewswire.com/news-release/2026/02/26/3246161/0/en/Tectonic-Therapeutic-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results-and-Recent-Business-Highlights.html"
+    }
+  ]
+}
