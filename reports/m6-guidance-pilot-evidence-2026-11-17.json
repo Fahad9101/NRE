@@ -1,0 +1,624 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-11-17",
+  "frame_path": "config/m6-guidance-frame.json",
+  "frame_canonical_sha256": "7e82f0d84a313f4052e4a206da912d2fa40096f1748ec843d1106db619eeb23f",
+  "scope": "Read original earnings guidance and contemporaneous listing evidence for one candidate event per pilot issuer when available. Scope is historical coverage.",
+  "source_clock_rule": "Official dated original wire plus one minute or published SEC acceptance plus two minutes as a retrospective proxy. Exclude SEC acceptance time at or after 17:30 ET. Same event clock and operating basis require further source reconciliation for a final eligibility ledger.",
+  "guidance_candidates": [
+    {
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/adsk-20250522.htm",
+      "qualification_end": "2025-01-31",
+      "qualification": [
+        {
+          "date": "2024-06-11",
+          "range_usd_millions": [
+            5990,
+            6090
+          ],
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000095/q125pressrelease.htm"
+        },
+        {
+          "date": "2024-08-29",
+          "range_usd_millions": [
+            6080,
+            6130
+          ],
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000147/q225pressrelease.htm"
+        }
+      ],
+      "study_end": "2026-01-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-02-27T16:01:00-05:00",
+        "range_usd_millions": [
+          6895,
+          6965
+        ],
+        "url": "https://www.prnewswire.com/news-releases/autodesk-inc-announces-fiscal-2025-fourth-quarter-and-full-year-results-302387861.html",
+        "availability_proxy": "2025-02-27T21:02:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-22T16:01:00-04:00",
+        "range_usd_millions": [
+          6925,
+          6995
+        ],
+        "url": "https://www.prnewswire.com/news-releases/autodesk-inc-announces-fiscal-2026-first-quarter-results-302463539.html",
+        "availability_proxy": "2025-05-22T20:02:00+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-23",
+      "scheduled_open_at": "2025-05-23T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-23T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.0043290043290042934,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns-20250428.htm",
+      "qualification_end": "2024-12-31",
+      "qualification": [
+        {
+          "date": "2024-07-22",
+          "range_usd_millions": [
+            4600,
+            4660
+          ],
+          "url": "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr-ir/2024/cadence-reports-second-quarter-2024-financial-results.html"
+        },
+        {
+          "date": "2024-10-28",
+          "range_usd_millions": [
+            4610,
+            4650
+          ],
+          "url": "https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr-ir/2024/cadence-reports-third-quarter-2024-financial-results.html"
+        }
+      ],
+      "study_end": "2025-12-31",
+      "clock": "sec",
+      "prior": {
+        "source_time": "2025-02-18T16:04:08-05:00",
+        "range_usd_millions": [
+          5140,
+          5220
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/0000813672-25-000016-index.htm",
+        "availability_proxy": "2025-02-18T21:06:08+00:00"
+      },
+      "current": {
+        "source_time": "2025-04-28T16:03:44-04:00",
+        "range_usd_millions": [
+          5150,
+          5230
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/0000813672-25-000046-index.htm",
+        "availability_proxy": "2025-04-28T20:05:44+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-04-29",
+      "scheduled_open_at": "2025-04-29T13:30:00+00:00",
+      "feature_cutoff_at": "2025-04-29T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.0019305019305020377,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/0001535527-25-000017-index.html",
+      "qualification_end": "2025-01-31",
+      "qualification": [
+        {
+          "date": "2024-06-04",
+          "range_usd_millions": [
+            3976.3,
+            4010.7
+          ],
+          "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-first-quarter-fiscal-year-2025-financial"
+        },
+        {
+          "date": "2024-08-28",
+          "range_usd_millions": [
+            3890,
+            3902.2
+          ],
+          "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-second-quarter-fiscal-year-2025-financial/"
+        }
+      ],
+      "study_end": "2026-01-31",
+      "clock": "sec",
+      "prior": {
+        "source_time": "2025-03-04T16:11:41-05:00",
+        "range_usd_millions": [
+          4743.5,
+          4805.5
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/0001535527-25-000005-index.htm",
+        "availability_proxy": "2025-03-04T21:13:41+00:00"
+      },
+      "current": {
+        "source_time": "2025-06-03T16:06:56-04:00",
+        "range_usd_millions": [
+          4743.5,
+          4805.5
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/0001535527-25-000017-index.html",
+        "availability_proxy": "2025-06-03T20:08:56+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-06-04",
+      "scheduled_open_at": "2025-06-04T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-04T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.0,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/0001058290-25-000124-index.html",
+      "qualification_end": "2024-12-31",
+      "qualification": [
+        {
+          "date": "2024-05-01",
+          "range_usd_millions": [
+            18900,
+            19700
+          ],
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000115/exhibit9913312024.htm"
+        },
+        {
+          "date": "2024-07-31",
+          "range_usd_millions": [
+            19300,
+            19500
+          ],
+          "url": "https://www.prnewswire.com/news-releases/cognizant-reports-second-quarter-2024-results-302211465.html"
+        }
+      ],
+      "study_end": "2025-12-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-02-05T16:01:00-05:00",
+        "url": "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2024-results-302369335.html",
+        "range_usd_millions": [
+          20300,
+          20800
+        ],
+        "availability_proxy": "2025-02-05T21:02:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-04-30T16:01:00-04:00",
+        "url": "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2025-results-302443083.html",
+        "range_usd_millions": [
+          20500,
+          21000
+        ],
+        "availability_proxy": "2025-04-30T20:02:00+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-01",
+      "scheduled_open_at": "2025-05-01T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-01T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.009732360097323589,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/0001561550-25-000118-index.htm",
+      "qualification_end": "2024-12-31",
+      "qualification": [
+        {
+          "date": "2024-02-13",
+          "range_usd_millions": [
+            2555,
+            2575
+          ],
+          "url": "https://www.prnewswire.com/news-releases/datadog-announces-fourth-quarter-and-fiscal-year-2023-financial-results-302059989.html"
+        },
+        {
+          "date": "2024-05-07",
+          "range_usd_millions": [
+            2590,
+            2610
+          ],
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000048/ex-991x20240331x8k.htm"
+        }
+      ],
+      "study_end": "2025-12-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-02-13T07:00:00-05:00",
+        "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-fourth-quarter-and-fiscal-year-2024-financial",
+        "range_usd_millions": [
+          3175,
+          3195
+        ],
+        "availability_proxy": "2025-02-13T12:01:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-06T07:00:00-04:00",
+        "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-first-quarter-2025-financial-results",
+        "range_usd_millions": [
+          3215,
+          3235
+        ],
+        "availability_proxy": "2025-05-06T11:01:00+00:00"
+      },
+      "release_timing": "premarket",
+      "reaction_session": "2025-05-06",
+      "scheduled_open_at": "2025-05-06T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-06T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.012558869701726927,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/0001262039-25-000014-index.htm",
+      "qualification_end": "2024-12-31",
+      "qualification": [
+        {
+          "date": "2024-05-02",
+          "range_usd_millions": [
+            5745,
+            5845
+          ],
+          "url": "https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2024/fortinet-reports-first-quarter-2024-financial-results"
+        },
+        {
+          "date": "2024-08-06",
+          "range_usd_millions": [
+            5800,
+            5900
+          ],
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000032/ftntq2-2024ex991.htm"
+        }
+      ],
+      "study_end": "2025-12-31",
+      "clock": "sec",
+      "prior": {
+        "source_time": "2025-02-06T16:09:58-05:00",
+        "range_usd_millions": [
+          6650,
+          6850
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/0001262039-25-000007-index.htm",
+        "availability_proxy": "2025-02-06T21:11:58+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-07T16:11:27-04:00",
+        "range_usd_millions": [
+          6650,
+          6850
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/0001262039-25-000014-index.htm",
+        "availability_proxy": "2025-05-07T20:13:27+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-08",
+      "scheduled_open_at": "2025-05-08T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-08T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.0,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/0000896878-25-000020-index.htm",
+      "qualification_end": "2024-07-31",
+      "qualification": [
+        {
+          "date": "2024-02-22",
+          "range_usd_millions": [
+            15890,
+            16105
+          ],
+          "url": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-24-000009/fy24q2earningspressrelease.htm"
+        },
+        {
+          "date": "2024-05-23",
+          "range_usd_millions": [
+            16164,
+            16200
+          ],
+          "url": "https://investors.intuit.com/news-events/press-releases/detail/1188/intuit-reports-strong-third-quarter-results-and-raises-full-year-guidance"
+        }
+      ],
+      "study_end": "2025-07-31",
+      "clock": "sec",
+      "prior": {
+        "source_time": "2025-02-25T16:01:56-05:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/0000896878-25-000013-index.htm",
+        "availability_proxy": "2025-02-25T21:03:56+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-22T16:02:36-04:00",
+        "range_usd_millions": [
+          18723,
+          18760
+        ],
+        "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/0000896878-25-000020-index.htm",
+        "availability_proxy": "2025-05-22T20:04:36+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-23",
+      "scheduled_open_at": "2025-05-23T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-23T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.026734598844057267,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000049/mdb-20240131.htm",
+      "qualification_end": "2025-01-31",
+      "qualification": [
+        {
+          "date": "2024-05-30",
+          "range_usd_millions": [
+            1880,
+            1900
+          ],
+          "url": "https://www.prnewswire.com/news-releases/mongodb-inc-announces-first-quarter-fiscal-2025-financial-results-302159949.html"
+        },
+        {
+          "date": "2024-08-29",
+          "range_usd_millions": [
+            1920,
+            1930
+          ],
+          "url": "https://www.prnewswire.com/news-releases/mongodb-inc-announces-second-quarter-fiscal-2025-financial-results-302234446.html"
+        }
+      ],
+      "study_end": "2026-01-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-03-05T16:05:00-05:00",
+        "range_usd_millions": [
+          2240,
+          2280
+        ],
+        "url": "https://www.prnewswire.com/news-releases/mongodb-inc-announces-fourth-quarter-and-full-year-fiscal-2025-financial-results-302393702.html",
+        "availability_proxy": "2025-03-05T21:06:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-06-04T16:05:00-04:00",
+        "range_usd_millions": [
+          2250,
+          2290
+        ],
+        "url": "https://www.prnewswire.com/news-releases/mongodb-inc-announces-first-quarter-fiscal-2026-financial-results-302473666.html",
+        "availability_proxy": "2025-06-04T20:06:00+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-06-05",
+      "scheduled_open_at": "2025-06-05T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-05T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.004424778761061843,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "PANW",
+      "cik": "0001327567",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1327567/000132756724000029/panw-20240731.htm",
+      "qualification_end": "2025-07-31",
+      "qualification": [
+        {
+          "date": "2024-08-19",
+          "range_usd_millions": [
+            9100,
+            9150
+          ],
+          "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-reports-fiscal-fourth-quarter-and-fiscal-8"
+        },
+        {
+          "date": "2024-11-20",
+          "range_usd_millions": [
+            9120,
+            9170
+          ],
+          "url": "https://www.paloaltonetworks.com/company/press/2024/palo-alto-networks-reports-fiscal-first-quarter-2025-financial-results"
+        }
+      ],
+      "study_end": "2025-07-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-02-13T16:05:00-05:00",
+        "range_usd_millions": [
+          9140,
+          9190
+        ],
+        "url": "https://www.prnewswire.com/news-releases/palo-alto-networks-reports-fiscal-second-quarter-2025-financial-results-302376515.html",
+        "availability_proxy": "2025-02-13T21:06:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-20T16:05:00-04:00",
+        "range_usd_millions": [
+          9170,
+          9190
+        ],
+        "url": "https://www.prnewswire.com/news-releases/palo-alto-networks-reports-fiscal-third-quarter-2025-financial-results-302460935.html",
+        "availability_proxy": "2025-05-20T20:06:00+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-21",
+      "scheduled_open_at": "2025-05-21T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-21T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.0016366612111293755,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/883241/000088324124000024/snps-20241031.htm",
+      "qualification_end": "2024-10-31",
+      "qualification": [
+        {
+          "date": "2024-05-22",
+          "range_usd_millions": [
+            6090,
+            6150
+          ],
+          "url": "https://news.synopsys.com/2024-05-22-Synopsys-Posts-Financial-Results-for-Second-Quarter-Fiscal-Year-2024"
+        },
+        {
+          "date": "2024-08-21",
+          "range_usd_millions": [
+            6105,
+            6135
+          ],
+          "url": "https://investor.synopsys.com/news/news-details/2024/Synopsys-Posts-Financial-Results-for-Third-Quarter-Fiscal-Year-2024/default.aspx"
+        }
+      ],
+      "study_end": "2025-10-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-02-26T16:05:00-05:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "url": "https://www.prnewswire.com/news-releases/synopsys-posts-financial-results-for-first-quarter-fiscal-year-2025-302386200.html",
+        "availability_proxy": "2025-02-26T21:06:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-28T16:05:00-04:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "url": "https://www.prnewswire.com/news-releases/synopsys-posts-financial-results-for-second-quarter-fiscal-year-2025-302467545.html",
+        "availability_proxy": "2025-05-28T20:06:00+00:00"
+      },
+      "notes": "Consolidated continuing operations on a consistent basis within each pair. Pilot pair predates the Ansys acquisition.",
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-29",
+      "scheduled_open_at": "2025-05-29T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-29T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.0,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    },
+    {
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "identity_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000109/zs-20240731.htm",
+      "qualification_end": "2025-07-31",
+      "qualification": [
+        {
+          "date": "2024-09-03",
+          "range_usd_millions": [
+            2600,
+            2620
+          ],
+          "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-reports-fourth-quarter-and-fiscal-2024-financial-results"
+        },
+        {
+          "date": "2024-12-02",
+          "range_usd_millions": [
+            2623,
+            2643
+          ],
+          "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-reports-first-quarter-fiscal-2025-financial-results"
+        }
+      ],
+      "study_end": "2025-07-31",
+      "clock": "wire",
+      "prior": {
+        "source_time": "2025-03-05T16:05:00-05:00",
+        "range_usd_millions": [
+          2640,
+          2654
+        ],
+        "url": "https://www.globenewswire.com/news-release/2025/03/05/3037755/0/en/Zscaler-Reports-Second-Quarter-Fiscal-2025-Financial-Results.html",
+        "availability_proxy": "2025-03-05T21:06:00+00:00"
+      },
+      "current": {
+        "source_time": "2025-05-29T16:05:00-04:00",
+        "range_usd_millions": [
+          2659,
+          2661
+        ],
+        "url": "https://www.globenewswire.com/news-release/2025/05/29/3090709/0/en/Zscaler-Reports-Third-Quarter-Fiscal-2025-Financial-Results.html",
+        "availability_proxy": "2025-05-29T20:06:00+00:00"
+      },
+      "release_timing": "after_hours",
+      "reaction_session": "2025-05-30",
+      "scheduled_open_at": "2025-05-30T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-30T13:15:00+00:00",
+      "midpoint_revision_fraction": 0.004911220249338877,
+      "venue": "NASDAQ",
+      "stage": "paired written guidance for opening feasibility, pending full intervening disclosure reconciliation"
+    }
+  ],
+  "unqualified_in_pilot": [
+    {
+      "symbol": "ADBE",
+      "status": "no_same_fiscal_year_pair_verified",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634324000140/adbeex991q224.htm",
+        "https://www.businesswire.com/news/home/20241211684094/en/"
+      ]
+    },
+    {
+      "symbol": "ANSS",
+      "status": "guidance_suspended_pending_acquisition",
+      "sources": [
+        "https://investors.ansys.com/news-releases/news-release-details/ansys-announces-q2-financial-results",
+        "https://www.sec.gov/Archives/edgar/data/1013462/000101346224000027/anssex991-pressrelease2024.htm"
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "status": "no_qualifying_published_annual_range",
+      "sources": [
+        "https://www.microsoft.com/en-us/investor/earnings/fy-2024-q2/press-release-webcast",
+        "https://www.microsoft.com/en-us/investor/earnings/fy-2024-q3/press-release-webcast",
+        "https://www.microsoft.com/en-us/Investor/earnings/FY-2024-Q4/press-release-webcast",
+        "https://www.microsoft.com/en-us/investor/earnings/fy-2025-q1/press-release-webcast"
+      ]
+    },
+    {
+      "symbol": "ROP",
+      "status": "annual_growth_percentages_only",
+      "sources": [
+        "https://www.ropertech.com/news-releases/news-release-details/roper-technologies-announces-second-quarter-financial-results-1",
+        "https://www.sec.gov/Archives/edgar/data/882835/000088283524000040/a2024q3earningsrelease.htm"
+      ]
+    },
+    {
+      "symbol": "TEAM",
+      "status": "no_qualifying_annual_dollar_range_verified",
+      "sources": [
+        "https://investors.atlassian.com/files/doc_financials/2024/q3/TEAM-Q3-2024-Shareholder-Letter.pdf",
+        "https://investors.atlassian.com/files/doc_financials/2025/q1/TEAM-Q1-2025-Shareholder-Letter.pdf"
+      ]
+    },
+    {
+      "symbol": "WDAY",
+      "status": "annual_subscription_revenue_only",
+      "sources": [
+        "https://newsroom.workday.com/2024-08-22-Workday-Announces-Fiscal-2025-Second-Quarter-Financial-Results",
+        "https://en-gb.newsroom.workday.com/2024-11-26-Workday-Announces-Fiscal-2025-Third-Quarter-Financial-Results"
+      ]
+    }
+  ]
+}
