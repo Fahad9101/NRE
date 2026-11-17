@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-17",
+  "evidence_commit": "53bdef02d70eda2c206570beee959659bc58ad5a",
+  "guidance_evidence_path": "reports/m6-guidance-pilot-evidence-2026-11-17.json",
+  "guidance_evidence_canonical_sha256": "c8d7e2eea92f2e50cf0aa0c961f88514bb8a0221d3da39eeae1b8940fea28c22",
+  "source": "Alpaca historical SIP trades via the connected market data tool, read only",
+  "window": "First 60 seconds of each pinned reaction session, historical symbol with session as-of",
+  "coverage_rule": "Require complete connector response for each partition; split requests that hit the response limit. Deduplicate identical records at boundaries. Check condition Q with Nasdaq listing venue Q and tape C. Retain only observation disposition and request count.",
+  "normalized_feed_limit": "Normalized records do not expose underlying correction and update fields. A result establishes observation of the official-open condition in historical data. Raw correction validation remains pending.",
+  "pilot_issuers_screened": 17,
+  "guidance_candidates": 11,
+  "unique_q_observed": 11,
+  "reaction_sessions": 10,
+  "guidance_revision_signs": {
+    "raised": 8,
+    "unchanged": 3,
+    "cut": 0
+  },
+  "closing_outcome_requests": 0,
+  "events": [
+    {
+      "symbol": "ADSK",
+      "reaction_session": "2025-05-23",
+      "requests": 7,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "CDNS",
+      "reaction_session": "2025-04-29",
+      "requests": 1,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "CRWD",
+      "reaction_session": "2025-06-04",
+      "requests": 8,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "CTSH",
+      "reaction_session": "2025-05-01",
+      "requests": 1,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "DDOG",
+      "reaction_session": "2025-05-06",
+      "requests": 5,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "FTNT",
+      "reaction_session": "2025-05-08",
+      "requests": 9,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "INTU",
+      "reaction_session": "2025-05-23",
+      "requests": 11,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "MDB",
+      "reaction_session": "2025-06-05",
+      "status": "single_listing_venue_q_observed",
+      "requests": 6
+    },
+    {
+      "symbol": "PANW",
+      "reaction_session": "2025-05-21",
+      "status": "single_listing_venue_q_observed",
+      "requests": 6
+    },
+    {
+      "symbol": "SNPS",
+      "reaction_session": "2025-05-29",
+      "requests": 1,
+      "status": "single_listing_venue_q_observed"
+    },
+    {
+      "symbol": "ZS",
+      "reaction_session": "2025-05-30",
+      "requests": 9,
+      "status": "single_listing_venue_q_observed"
+    }
+  ]
+}

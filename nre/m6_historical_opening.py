@@ -38,7 +38,6 @@ def sample(event, calendar, fetch):
         return None, "unsupported_listing"
     window = ea.event_window(event, calendar)
     start, _ = calendar.bounds(window["reaction_session"])
-    end = start + timedelta(seconds=60)
     if timestamp(event["cutoff"]) >= start or window["release_timing"] not in ea.TIMINGS:
         return None, "unsupported_clock"
     anchor = date.fromisoformat(window["anchor_session"])
@@ -55,10 +54,19 @@ def sample(event, calendar, fetch):
     close = bars.get(anchor.isoformat(), {}).get("close")
     if type(close) not in (float, int) or not math.isfinite(close) or close <= 0:
         return None, "missing_anchor"
-    pages, _ = ea._paginate(lambda p: fetch(TRADES.format(symbol), p), {
+    price, reason = first_minute_open(symbol, venue, start, fetch)
+    return (None, reason) if reason else (price / close - 1, None)
+
+
+def first_minute_open(symbol, venue, start, fetch, *, asof=None, page_limit=1000):
+    end = start + timedelta(seconds=60)
+    params = {
         "start": start.isoformat(), "end": end.isoformat(), "feed": "sip",
-        "sort": "asc", "limit": 1000,
-    }, "trades")
+        "sort": "asc", "limit": page_limit,
+    }
+    if asof is not None:
+        params["asof"] = asof
+    pages, _ = ea._paginate(lambda p: fetch(TRADES.format(symbol), p), params, "trades")
     official = set()
     suspect = False
     for page in pages:
@@ -81,7 +89,7 @@ def sample(event, calendar, fetch):
         return None, "ambiguous_official_open"
     if not official:
         return None, "no_official_open"
-    return next(iter(official))[2] / close - 1, None
+    return next(iter(official))[2], None
 
 
 def run(root, fetch):
