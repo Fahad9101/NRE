@@ -1,0 +1,1171 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-11-17",
+  "scope": "Retrospective outcome-free broader Milestone 6 development frame and limited same-event opening feasibility review using no additional data subscription.",
+  "nport_source": {
+    "accession": "0001752724-24-274837",
+    "holdings_date": "2024-09-30",
+    "filed_on": "2024-11-27",
+    "accepted_at": "2024-11-27T15:19:19-05:00",
+    "index_url": "https://www.sec.gov/Archives/edgar/data/1067839/0001752724-24-274837-index.htm",
+    "primary_xml_url": "https://www.sec.gov/Archives/edgar/data/1067839/000175272424274837/primary_doc.xml",
+    "rendered_filing_url": "https://www.sec.gov/Archives/edgar/data/1067839/000175272424274837/xslFormNPORT-P_X01/primary_doc.xml",
+    "payload_sha256": "c6a35dad1c7b16ad9d54e6bae77543fb1eba3f315482d1eab0a53e3635130f92",
+    "transport_sha256": "7a7d7ec6b8c810b839d612f6882942ae2243aadb023cbcaf919445989e0e29e1",
+    "source_representation": "SEC-rendered filing text extracted from the repository SEC relay"
+  },
+  "audited_holdings_source": {
+    "accession": "0001193125-24-285734",
+    "filed_on": "2024-12-27",
+    "url": "https://www.sec.gov/Archives/edgar/data/1067839/000119312524285734/d876223dn30b2.htm",
+    "payload_sha256": "f1e6bc6edaa5f81f60ea4cb2e54816a9fa3d9906b8464a602b146cfadffc4120"
+  },
+  "date_windows_new_york": {
+    "qualification": [
+      "2024-01-01",
+      "2024-12-31"
+    ],
+    "development": [
+      "2025-01-02",
+      "2026-09-30"
+    ],
+    "warmup": [
+      "2025-01-02",
+      "2025-06-30"
+    ],
+    "candidate_held_blocks": [
+      [
+        "2025-07-01",
+        "2025-12-31"
+      ],
+      [
+        "2026-01-01",
+        "2026-06-30"
+      ],
+      [
+        "2026-07-01",
+        "2026-09-30"
+      ]
+    ],
+    "pilot": [
+      "2025-04-01",
+      "2025-09-30"
+    ]
+  },
+  "identity_and_exclusions": "Group holdings at issuer level, retain all historical classes in the roster, and reconcile issuer CIK and exchange-listed U.S. common stock class to dated SEC covers. Exclude CIKs from either prior cohort. Prefer Class A among multiple eligible classes, otherwise the smallest original ISIN. Membership is fixed from the historical filing.",
+  "excluded_cohort_canonical_hashes": {
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "config/m5-phase1b-cohort-spec.json": "73b0399e8b0e359cf4fc1b2e3d85e4e848b3f27bf6689508064160c61b16c623"
+  },
+  "calendar": {
+    "path": "config/m2-merged-calendar-2024-2026.json",
+    "canonical_sha256": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5"
+  },
+  "pre_window_qualification": "Require two original issuer earnings disclosures during calendar 2024 with directly stated consolidated USD full-fiscal-year revenue bounds or points for the same fiscal period and accounting scope. Include reaffirmations. Match original publication or conservative filing timestamps and verify historical identity. Selection is independent of revision sign.",
+  "development_event_rule": "Enumerate original SEC Item 2.02 filings and reconcile original issuer releases before assessing price availability. Dedupe economic events. Use latest active independently dated comparable same-period guidance preceding the reported update and require both inputs strictly before scheduled open minus 15 minutes. Use same scope and units, and account for intervening guidance, corporate actions and venue changes. Outside-window amendments can clarify original filings without backdating new guidance.",
+  "pilot_rule": "Review all issuers classified Software or IT Services in the audited holdings. For each, attempt one readily verifiable same-period quarterly revision in April through June 2025, extending through September as needed. Attempt source support independently of official-opening access. This targeted review supplies a feasibility check.",
+  "opening_rule": "For a historically verified Nasdaq security request first-minute historical SIP trades on the matched reaction session. Require a unique uncorrected Q condition on venue Q and tape C using the historical symbol. Use fixed time interval and complete response, abstain if ambiguous or truncated. Preserve only disposition and counts.",
+  "planning_floors": {
+    "clean_held_pairs": 40,
+    "issuers": 15,
+    "sessions": 20,
+    "held_blocks_with_minimum": 2,
+    "minimum_pairs_per_held_block": 10,
+    "revision_variation": "Require both signs and count unchanged midpoints separately before scoping a performance test."
+  },
+  "pilot_issuers": [
+    {
+      "issuer": "Adobe Inc.",
+      "source_symbol_hint": "ADBE",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Autodesk, Inc.",
+      "source_symbol_hint": "ADSK",
+      "sector": "Software"
+    },
+    {
+      "issuer": "ANSYS, Inc.",
+      "source_symbol_hint": "ANSS",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Cadence Design Systems, Inc.",
+      "source_symbol_hint": "CDNS",
+      "sector": "Software"
+    },
+    {
+      "issuer": "CrowdStrike Holdings, Inc.",
+      "source_symbol_hint": "CRWD",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Cognizant Technology Solutions Corp.",
+      "source_symbol_hint": "CTSH",
+      "sector": "IT Services"
+    },
+    {
+      "issuer": "Datadog, Inc.",
+      "source_symbol_hint": "DDOG",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Fortinet, Inc.",
+      "source_symbol_hint": "FTNT",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Intuit Inc.",
+      "source_symbol_hint": "INTU",
+      "sector": "Software"
+    },
+    {
+      "issuer": "MongoDB, Inc.",
+      "source_symbol_hint": "MDB",
+      "sector": "IT Services"
+    },
+    {
+      "issuer": "Microsoft Corp.",
+      "source_symbol_hint": "MSFT",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Palo Alto Networks, Inc.",
+      "source_symbol_hint": "PANW",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Roper Technologies, Inc.",
+      "source_symbol_hint": "ROP",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Synopsys, Inc.",
+      "source_symbol_hint": "SNPS",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Atlassian Corp.",
+      "source_symbol_hint": "TEAM",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Workday, Inc.",
+      "source_symbol_hint": "WDAY",
+      "sector": "Software"
+    },
+    {
+      "issuer": "Zscaler, Inc.",
+      "source_symbol_hint": "ZS",
+      "sector": "Software"
+    }
+  ],
+  "issuer_roster_sha256": "108104b47865f64b11f1352ad44474367f6e86b6a92a39378eb80e2d3babebbf",
+  "issuer_roster": [
+    {
+      "issuer": "Adobe Inc.",
+      "securities": [
+        {
+          "isin": "US00724F1012",
+          "title": "Adobe Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Advanced Micro Devices, Inc.",
+      "securities": [
+        {
+          "isin": "US0079031078",
+          "title": "Advanced Micro Devices, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Airbnb, Inc.",
+      "securities": [
+        {
+          "isin": "US0090661010",
+          "title": "Airbnb, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Alphabet Inc.",
+      "securities": [
+        {
+          "isin": "US02079K1079",
+          "title": "Alphabet Inc., Class C",
+          "country": "UNITED STATES OF AMERICA"
+        },
+        {
+          "isin": "US02079K3059",
+          "title": "Alphabet Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Amazon.com, Inc.",
+      "securities": [
+        {
+          "isin": "US0231351067",
+          "title": "Amazon.com, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "American Electric Power Co., Inc.",
+      "securities": [
+        {
+          "isin": "US0255371017",
+          "title": "American Electric Power Co., Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Amgen Inc.",
+      "securities": [
+        {
+          "isin": "US0311621009",
+          "title": "Amgen Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Analog Devices, Inc.",
+      "securities": [
+        {
+          "isin": "US0326541051",
+          "title": "Analog Devices, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "ANSYS, Inc.",
+      "securities": [
+        {
+          "isin": "US03662Q1058",
+          "title": "ANSYS, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Apple Inc.",
+      "securities": [
+        {
+          "isin": "US0378331005",
+          "title": "Apple Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Applied Materials, Inc.",
+      "securities": [
+        {
+          "isin": "US0382221051",
+          "title": "Applied Materials, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Arm Holdings PLC",
+      "securities": [
+        {
+          "isin": "US0420682058",
+          "title": "Arm Holdings PLC, ADR",
+          "country": "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND"
+        }
+      ]
+    },
+    {
+      "issuer": "ASML Holding N.V.",
+      "securities": [
+        {
+          "isin": "USN070592100",
+          "title": "ASML Holding N.V., New York Shares",
+          "country": "NETHERLANDS"
+        }
+      ]
+    },
+    {
+      "issuer": "AstraZeneca PLC",
+      "securities": [
+        {
+          "isin": "US0463531089",
+          "title": "AstraZeneca PLC, ADR",
+          "country": "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND"
+        }
+      ]
+    },
+    {
+      "issuer": "Atlassian Corp.",
+      "securities": [
+        {
+          "isin": "US0494681010",
+          "title": "Atlassian Corp., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Autodesk, Inc.",
+      "securities": [
+        {
+          "isin": "US0527691069",
+          "title": "Autodesk, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Automatic Data Processing, Inc.",
+      "securities": [
+        {
+          "isin": "US0530151036",
+          "title": "Automatic Data Processing, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Baker Hughes Co.",
+      "securities": [
+        {
+          "isin": "US05722G1004",
+          "title": "Baker Hughes Co., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Biogen Inc.",
+      "securities": [
+        {
+          "isin": "US09062X1037",
+          "title": "Biogen Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Booking Holdings Inc.",
+      "securities": [
+        {
+          "isin": "US09857L1089",
+          "title": "Booking Holdings Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Broadcom Inc.",
+      "securities": [
+        {
+          "isin": "US11135F1012",
+          "title": "Broadcom Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Cadence Design Systems, Inc.",
+      "securities": [
+        {
+          "isin": "US1273871087",
+          "title": "Cadence Design Systems, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "CDW Corp.",
+      "securities": [
+        {
+          "isin": "US12514G1085",
+          "title": "CDW Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Charter Communications, Inc.",
+      "securities": [
+        {
+          "isin": "US16119P1084",
+          "title": "Charter Communications, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Cintas Corp.",
+      "securities": [
+        {
+          "isin": "US1729081059",
+          "title": "Cintas Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Cisco Systems, Inc.",
+      "securities": [
+        {
+          "isin": "US17275R1023",
+          "title": "Cisco Systems, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Coca-Cola Europacific Partners PLC",
+      "securities": [
+        {
+          "isin": "GB00BDCPN049",
+          "title": "Coca-Cola Europacific Partners PLC",
+          "country": "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND"
+        }
+      ]
+    },
+    {
+      "issuer": "Cognizant Technology Solutions Corp.",
+      "securities": [
+        {
+          "isin": "US1924461023",
+          "title": "Cognizant Technology Solutions Corp., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Comcast Corp.",
+      "securities": [
+        {
+          "isin": "US20030N1019",
+          "title": "Comcast Corp., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Constellation Energy Corp.",
+      "securities": [
+        {
+          "isin": "US21037T1097",
+          "title": "Constellation Energy Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Copart, Inc.",
+      "securities": [
+        {
+          "isin": "US2172041061",
+          "title": "Copart, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "CoStar Group, Inc.",
+      "securities": [
+        {
+          "isin": "US22160N1090",
+          "title": "CoStar Group, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Costco Wholesale Corp.",
+      "securities": [
+        {
+          "isin": "US22160K1051",
+          "title": "Costco Wholesale Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "CrowdStrike Holdings, Inc.",
+      "securities": [
+        {
+          "isin": "US22788C1053",
+          "title": "CrowdStrike Holdings, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "CSX Corp.",
+      "securities": [
+        {
+          "isin": "US1264081035",
+          "title": "CSX Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Datadog, Inc.",
+      "securities": [
+        {
+          "isin": "US23804L1035",
+          "title": "Datadog, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "DexCom, Inc.",
+      "securities": [
+        {
+          "isin": "US2521311074",
+          "title": "DexCom, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Diamondback Energy, Inc.",
+      "securities": [
+        {
+          "isin": "US25278X1090",
+          "title": "Diamondback Energy, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Dollar Tree, Inc.",
+      "securities": [
+        {
+          "isin": "US2567461080",
+          "title": "Dollar Tree, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "DoorDash, Inc.",
+      "securities": [
+        {
+          "isin": "US25809K1051",
+          "title": "DoorDash, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Electronic Arts Inc.",
+      "securities": [
+        {
+          "isin": "US2855121099",
+          "title": "Electronic Arts Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Exelon Corp.",
+      "securities": [
+        {
+          "isin": "US30161N1019",
+          "title": "Exelon Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Fastenal Co.",
+      "securities": [
+        {
+          "isin": "US3119001044",
+          "title": "Fastenal Co.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Fortinet, Inc.",
+      "securities": [
+        {
+          "isin": "US34959E1091",
+          "title": "Fortinet, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "GE HealthCare Technologies Inc.",
+      "securities": [
+        {
+          "isin": "US36266G1076",
+          "title": "GE HealthCare Technologies Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Gilead Sciences, Inc.",
+      "securities": [
+        {
+          "isin": "US3755581036",
+          "title": "Gilead Sciences, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "GLOBALFOUNDRIES Inc.",
+      "securities": [
+        {
+          "isin": "KYG393871085",
+          "title": "GLOBALFOUNDRIES Inc.",
+          "country": "CAYMAN ISLANDS"
+        }
+      ]
+    },
+    {
+      "issuer": "Honeywell International Inc.",
+      "securities": [
+        {
+          "isin": "US4385161066",
+          "title": "Honeywell International Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "IDEXX Laboratories, Inc.",
+      "securities": [
+        {
+          "isin": "US45168D1046",
+          "title": "IDEXX Laboratories, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Illumina, Inc.",
+      "securities": [
+        {
+          "isin": "US4523271090",
+          "title": "Illumina, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Intel Corp.",
+      "securities": [
+        {
+          "isin": "US4581401001",
+          "title": "Intel Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Intuit Inc.",
+      "securities": [
+        {
+          "isin": "US4612021034",
+          "title": "Intuit Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Intuitive Surgical, Inc.",
+      "securities": [
+        {
+          "isin": "US46120E6023",
+          "title": "Intuitive Surgical, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Keurig Dr Pepper Inc.",
+      "securities": [
+        {
+          "isin": "US49271V1008",
+          "title": "Keurig Dr Pepper Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "KLA Corp.",
+      "securities": [
+        {
+          "isin": "US4824801009",
+          "title": "KLA Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Kraft Heinz Co. (The)",
+      "securities": [
+        {
+          "isin": "US5007541064",
+          "title": "Kraft Heinz Co. (The)",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Lam Research Corp.",
+      "securities": [
+        {
+          "isin": "US5128071082",
+          "title": "Lam Research Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Linde PLC",
+      "securities": [
+        {
+          "isin": "IE000S9YS762",
+          "title": "Linde PLC",
+          "country": "IRELAND"
+        }
+      ]
+    },
+    {
+      "issuer": "Lululemon Athletica Inc.",
+      "securities": [
+        {
+          "isin": "US5500211090",
+          "title": "Lululemon Athletica Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Marriott International, Inc.",
+      "securities": [
+        {
+          "isin": "US5719032022",
+          "title": "Marriott International, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Marvell Technology, Inc.",
+      "securities": [
+        {
+          "isin": "US5738741041",
+          "title": "Marvell Technology, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "MercadoLibre, Inc.",
+      "securities": [
+        {
+          "isin": "US58733R1023",
+          "title": "MercadoLibre, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Meta Platforms, Inc.",
+      "securities": [
+        {
+          "isin": "US30303M1027",
+          "title": "Meta Platforms, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Microchip Technology Inc.",
+      "securities": [
+        {
+          "isin": "US5950171042",
+          "title": "Microchip Technology Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Micron Technology, Inc.",
+      "securities": [
+        {
+          "isin": "US5951121038",
+          "title": "Micron Technology, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Microsoft Corp.",
+      "securities": [
+        {
+          "isin": "US5949181045",
+          "title": "Microsoft Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Moderna, Inc.",
+      "securities": [
+        {
+          "isin": "US60770K1079",
+          "title": "Moderna, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Mondelez International, Inc.",
+      "securities": [
+        {
+          "isin": "US6092071058",
+          "title": "Mondelez International, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "MongoDB, Inc.",
+      "securities": [
+        {
+          "isin": "US60937P1066",
+          "title": "MongoDB, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Monster Beverage Corp.",
+      "securities": [
+        {
+          "isin": "US61174X1090",
+          "title": "Monster Beverage Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Netflix, Inc.",
+      "securities": [
+        {
+          "isin": "US64110L1061",
+          "title": "Netflix, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "NVIDIA Corp.",
+      "securities": [
+        {
+          "isin": "US67066G1040",
+          "title": "NVIDIA Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "NXP Semiconductors N.V.",
+      "securities": [
+        {
+          "isin": "NL0009538784",
+          "title": "NXP Semiconductors N.V.",
+          "country": "NETHERLANDS"
+        }
+      ]
+    },
+    {
+      "issuer": "O'Reilly Automotive, Inc.",
+      "securities": [
+        {
+          "isin": "US67103H1077",
+          "title": "O'Reilly Automotive, Inc., Class R",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Old Dominion Freight Line, Inc.",
+      "securities": [
+        {
+          "isin": "US6795801009",
+          "title": "Old Dominion Freight Line, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "ON Semiconductor Corp.",
+      "securities": [
+        {
+          "isin": "US6821891057",
+          "title": "ON Semiconductor Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "PACCAR Inc.",
+      "securities": [
+        {
+          "isin": "US6937181088",
+          "title": "PACCAR Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Palo Alto Networks, Inc.",
+      "securities": [
+        {
+          "isin": "US6974351057",
+          "title": "Palo Alto Networks, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Paychex, Inc.",
+      "securities": [
+        {
+          "isin": "US7043261079",
+          "title": "Paychex, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "PayPal Holdings, Inc.",
+      "securities": [
+        {
+          "isin": "US70450Y1038",
+          "title": "PayPal Holdings, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "PDD Holdings Inc.",
+      "securities": [
+        {
+          "isin": "US7223041028",
+          "title": "PDD Holdings Inc., ADR",
+          "country": "CAYMAN ISLANDS"
+        }
+      ]
+    },
+    {
+      "issuer": "PepsiCo, Inc.",
+      "securities": [
+        {
+          "isin": "US7134481081",
+          "title": "PepsiCo, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "QUALCOMM Inc.",
+      "securities": [
+        {
+          "isin": "US7475251036",
+          "title": "QUALCOMM Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Regeneron Pharmaceuticals, Inc.",
+      "securities": [
+        {
+          "isin": "US75886F1075",
+          "title": "Regeneron Pharmaceuticals, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Roper Technologies, Inc.",
+      "securities": [
+        {
+          "isin": "US7766961061",
+          "title": "Roper Technologies, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Ross Stores, Inc.",
+      "securities": [
+        {
+          "isin": "US7782961038",
+          "title": "Ross Stores, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Starbucks Corp.",
+      "securities": [
+        {
+          "isin": "US8552441094",
+          "title": "Starbucks Corp.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Super Micro Computer, Inc.",
+      "securities": [
+        {
+          "isin": "US86800U1043",
+          "title": "Super Micro Computer, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Synopsys, Inc.",
+      "securities": [
+        {
+          "isin": "US8716071076",
+          "title": "Synopsys, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "T-Mobile US, Inc.",
+      "securities": [
+        {
+          "isin": "US8725901040",
+          "title": "T-Mobile US, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Take-Two Interactive Software, Inc.",
+      "securities": [
+        {
+          "isin": "US8740541094",
+          "title": "Take-Two Interactive Software, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Tesla, Inc.",
+      "securities": [
+        {
+          "isin": "US88160R1014",
+          "title": "Tesla, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Texas Instruments Inc.",
+      "securities": [
+        {
+          "isin": "US8825081040",
+          "title": "Texas Instruments Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Trade Desk, Inc. (The)",
+      "securities": [
+        {
+          "isin": "US88339J1051",
+          "title": "Trade Desk, Inc. (The), Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Verisk Analytics, Inc.",
+      "securities": [
+        {
+          "isin": "US92345Y1064",
+          "title": "Verisk Analytics, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Vertex Pharmaceuticals Inc.",
+      "securities": [
+        {
+          "isin": "US92532F1003",
+          "title": "Vertex Pharmaceuticals Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Warner Bros. Discovery, Inc.",
+      "securities": [
+        {
+          "isin": "US9344231041",
+          "title": "Warner Bros. Discovery, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Workday, Inc.",
+      "securities": [
+        {
+          "isin": "US98138H1014",
+          "title": "Workday, Inc., Class A",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Xcel Energy Inc.",
+      "securities": [
+        {
+          "isin": "US98389B1008",
+          "title": "Xcel Energy Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    },
+    {
+      "issuer": "Zscaler, Inc.",
+      "securities": [
+        {
+          "isin": "US98980G1022",
+          "title": "Zscaler, Inc.",
+          "country": "UNITED STATES OF AMERICA"
+        }
+      ]
+    }
+  ]
+}
