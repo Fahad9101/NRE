@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-19",
+  "stage": "SOURCE_ONLY_SUPPORT_GATE",
+  "registration_commit": "88571a7047fab70b0976a53de18e61fde0ee1e13",
+  "protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "canonical_input_sha256": {
+    "reports/m6-guidance-warmup-evidence-2026-11-19.json": "562d85fa8215e7cd7c0d88d2ad1481728314db7bd36948c5fff7b2d5bb30e505",
+    "reports/m6-guidance-source-masks-2026-11-19.json": "22cbc0a1977f65a52c7ebfd5cbcdd39c8c05fb6b59dcc616b9247c44136c091c"
+  },
+  "closing_outcome_requests": 0,
+  "model_runs": 0,
+  "implementation_sha256_git_lf": {
+    "nre/m6_guidance_readiness.py": "074cc7235ea2874b830b33431ea5a5a9af6380e73dd94f6bbe908c4e16f1e94e"
+  }
+}

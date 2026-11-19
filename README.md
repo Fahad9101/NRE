@@ -18,7 +18,7 @@ The owner has accepted Milestones 1–5. NRE includes an audited earnings event 
 | 8 · Paper-Trading Validation | Pending forward validation using realistic entries and slippage. |
 | 9 · Integration Contracts | Pending independent validation and documented handoffs to SOE, BOE and IEE. |
 
-The latest Milestone 6 comparison found that adding quarterly revenue growth increased mean squared forecast error by 15.15% against the opening-gap baseline on 51 clean paired development events. Further signal research starts with verifying point-in-time input coverage and variation. A historical validation would require an untouched cohort and matched official opening evidence. [Revenue coverage](docs/M6-REVENUE-COVERAGE.md) · [Revenue result](docs/M6-REVENUE-RESULT.md)
+The latest scored Milestone 6 comparison found that adding quarterly revenue growth increased mean squared forecast error by 15.15% against the opening-gap baseline on 51 clean paired development events. A later annual-guidance study verified 58 historical official openings, then stopped at its source-support gate: only 18 clean warmup rows were available against the registered minimum of 20. No closing outcomes were requested or models fitted for that study. The next research step is a source-only assessment of a longer historical training window under a separate design, using public disclosures without a subscription. Further roadmap implementation depends on a validated signal. [Revenue result](docs/M6-REVENUE-RESULT.md) · [Guidance source audit](docs/M6-GUIDANCE-READINESS.md)
 
 ## Documents
 

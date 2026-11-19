@@ -1,0 +1,4551 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-19",
+  "stage": "SOURCE_ONLY_NO_CLOSING_OUTCOMES",
+  "protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "registration_commit": "88571a7047fab70b0976a53de18e61fde0ee1e13",
+  "reaction_sessions": [
+    "2025-01-02",
+    "2025-06-30"
+  ],
+  "discovery_rule": "Original Item 2.02 filings for the 20 frozen held CIKs, through the warmup endpoint; July 1-15 metadata checked for delayed filings. Preliminary/final economic release clusters count once.",
+  "source_representation": "Canonical SEC archive URLs identify original filings. Archive digests identify the complete submission representation retrieved through the public no-key EDGAR mirror. Submissions provenance records relay bytes separately; these are not original SEC wire bytes.",
+  "metadata_provenance": [
+    {
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000769397.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000769397.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000769397.json",
+        "transport_sha256": "36d35196bbfa62d4e2c7504f6af208e5f8c3f6583ff405de161b1d77872925bb",
+        "sha256": "bb15e2a4751f6f4f02e422c7f6ff692e54d662785b394448b67434042a41a7dc",
+        "size": 161641,
+        "transport_size": 161797,
+        "retrieved_at": "2026-11-17T09:21:23.695572Z",
+        "raw_file": "36d35196bbfa62d4e2c7504f6af208e5f8c3f6583ff405de161b1d77872925bb.relay.raw",
+        "payload_file": "bb15e2a4751f6f4f02e422c7f6ff692e54d662785b394448b67434042a41a7dc.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2015-06-12"
+    },
+    {
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000318154.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000318154.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000318154.json",
+        "transport_sha256": "39f55c68dbf6399c49901c0fd7a33949b16dbbc3d13bc29b86daab4edb829c8b",
+        "sha256": "bc14d74fcc5cb7a8c3f192062edb45f3cd4443e7005997a818567e4ea56c2a8f",
+        "size": 157673,
+        "transport_size": 157829,
+        "retrieved_at": "2026-11-17T09:13:20.108733Z",
+        "raw_file": "39f55c68dbf6399c49901c0fd7a33949b16dbbc3d13bc29b86daab4edb829c8b.relay.raw",
+        "payload_file": "bc14d74fcc5cb7a8c3f192062edb45f3cd4443e7005997a818567e4ea56c2a8f.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2018-06-18"
+    },
+    {
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000813672.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000813672.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000813672.json",
+        "transport_sha256": "79c9ccd2926f94b854e1fb1ebe5779895bffe6ff2ce9d0a9b9ae6de12031a233",
+        "sha256": "4a518d639575f0216a0d3977e44d528ec6c893abeb58bedc1a4c0b5a05c089e2",
+        "size": 157473,
+        "transport_size": 157629,
+        "retrieved_at": "2026-11-17T09:21:26.727185Z",
+        "raw_file": "79c9ccd2926f94b854e1fb1ebe5779895bffe6ff2ce9d0a9b9ae6de12031a233.relay.raw",
+        "payload_file": "4a518d639575f0216a0d3977e44d528ec6c893abeb58bedc1a4c0b5a05c089e2.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2020-01-10"
+    },
+    {
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001535527.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001535527.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001535527.json",
+        "transport_sha256": "8f148daa317026367fdfc8b2133f49e5e11640fefa5124d6b8a2176dd6eb5150",
+        "sha256": "588e64c4dcbda0f2070f0ec90ea1f619685b9f64054de6397c2c88fa8e7c9cf7",
+        "size": 156776,
+        "transport_size": 156932,
+        "retrieved_at": "2026-11-17T09:21:29.782043Z",
+        "raw_file": "8f148daa317026367fdfc8b2133f49e5e11640fefa5124d6b8a2176dd6eb5150.relay.raw",
+        "payload_file": "588e64c4dcbda0f2070f0ec90ea1f619685b9f64054de6397c2c88fa8e7c9cf7.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2021-01-12"
+    },
+    {
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001057352.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001057352.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001057352.json",
+        "transport_sha256": "3b74ceebf30a8aba89694b9e14cfc31d0f4907b140d5a2cc38cbff36b4ae31e2",
+        "sha256": "d34823a0769a3d83cd378d9f7e7c50f0427275003a5b332919b0f72c4af8f474",
+        "size": 163932,
+        "transport_size": 164088,
+        "retrieved_at": "2026-11-17T09:14:21.796817Z",
+        "raw_file": "3b74ceebf30a8aba89694b9e14cfc31d0f4907b140d5a2cc38cbff36b4ae31e2.relay.raw",
+        "payload_file": "d34823a0769a3d83cd378d9f7e7c50f0427275003a5b332919b0f72c4af8f474.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2011-06-10"
+    },
+    {
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001058290.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001058290.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001058290.json",
+        "transport_sha256": "12350f040239debf401af097f20a031f32ec6fd7a49f8459be1bf894df5e2583",
+        "sha256": "8f0bf24450bfe7735e67abbe598a943eb1b64f06774e4eb82c100230c31d370b",
+        "size": 161428,
+        "transport_size": 161584,
+        "retrieved_at": "2026-11-17T09:21:32.963344Z",
+        "raw_file": "12350f040239debf401af097f20a031f32ec6fd7a49f8459be1bf894df5e2583.relay.raw",
+        "payload_file": "8f0bf24450bfe7735e67abbe598a943eb1b64f06774e4eb82c100230c31d370b.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2021-11-26"
+    },
+    {
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001561550.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001561550.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001561550.json",
+        "transport_sha256": "477df61943b76b3d09caaeb28e3888added56cc4ceceed546a5e35edde22e893",
+        "sha256": "b2a5e4cf475a297fc034b8cf1748f36c7b06aeaa3b4ff79f736b42734336f980",
+        "size": 156705,
+        "transport_size": 156861,
+        "retrieved_at": "2026-11-17T09:21:36.224133Z",
+        "raw_file": "477df61943b76b3d09caaeb28e3888added56cc4ceceed546a5e35edde22e893.relay.raw",
+        "payload_file": "b2a5e4cf475a297fc034b8cf1748f36c7b06aeaa3b4ff79f736b42734336f980.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2023-06-01"
+    },
+    {
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000935703.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000935703.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000935703.json",
+        "transport_sha256": "3711f908ecf250e8cbd900bb9829b0b3de74035c48a4fe2bfb0353d0533aafe5",
+        "sha256": "8ae8c87fba61f5c8f759cf03edc1c30cb20c7762a89b41d996a3c6022ff7d93e",
+        "size": 163561,
+        "transport_size": 163717,
+        "retrieved_at": "2026-11-17T09:14:37.472536Z",
+        "raw_file": "3711f908ecf250e8cbd900bb9829b0b3de74035c48a4fe2bfb0353d0533aafe5.relay.raw",
+        "payload_file": "8ae8c87fba61f5c8f759cf03edc1c30cb20c7762a89b41d996a3c6022ff7d93e.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2018-02-05"
+    },
+    {
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001093557.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001093557.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001093557.json",
+        "transport_sha256": "1d8446a021602ea2bc3eff09785fe1d83ba5cc4862c9bb0f6a7e9e6484862d07",
+        "sha256": "e99baa1f991db126ceb1485831520b1712a51a4e893645a88b266bbb87d0285a",
+        "size": 159985,
+        "transport_size": 160141,
+        "retrieved_at": "2026-11-17T09:14:31.116705Z",
+        "raw_file": "1d8446a021602ea2bc3eff09785fe1d83ba5cc4862c9bb0f6a7e9e6484862d07.relay.raw",
+        "payload_file": "e99baa1f991db126ceb1485831520b1712a51a4e893645a88b266bbb87d0285a.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2019-02-15"
+    },
+    {
+      "symbol": "EA",
+      "cik": "0000712515",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000712515.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000712515.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000712515.json",
+        "transport_sha256": "e2de42b23deb9e8ed78d32960a59f7a11f084417ab5dc0185133fea3a85a2861",
+        "sha256": "c287fdc8377e37304fb828a93da30dc454be42a8fab6af24a4aae4e0af48b2c9",
+        "size": 157839,
+        "transport_size": 157995,
+        "retrieved_at": "2026-11-17T09:14:43.507518Z",
+        "raw_file": "e2de42b23deb9e8ed78d32960a59f7a11f084417ab5dc0185133fea3a85a2861.relay.raw",
+        "payload_file": "c287fdc8377e37304fb828a93da30dc454be42a8fab6af24a4aae4e0af48b2c9.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2020-10-09"
+    },
+    {
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001262039.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001262039.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001262039.json",
+        "transport_sha256": "098c1db6b95460193356615b7f947254c3a56db836f32cb5c005ae0181a6034c",
+        "sha256": "f237a165343d8d26f57186613cdf2adea9d5a9b3a3794ea86370630fe7569885",
+        "size": 156890,
+        "transport_size": 157046,
+        "retrieved_at": "2026-11-17T09:21:39.152328Z",
+        "raw_file": "098c1db6b95460193356615b7f947254c3a56db836f32cb5c005ae0181a6034c.relay.raw",
+        "payload_file": "f237a165343d8d26f57186613cdf2adea9d5a9b3a3794ea86370630fe7569885.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2018-02-05"
+    },
+    {
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000874716.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000874716.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000874716.json",
+        "transport_sha256": "bc2d4eba401cf3a3aa4aca458ecc93b09bc30d36e6e485f9aa64701f9a840b75",
+        "sha256": "18b93da381ea3fd466a407908db5ee2bddd9896ad5cf4f6437384f2af10a0603",
+        "size": 154411,
+        "transport_size": 154567,
+        "retrieved_at": "2026-11-17T09:15:05.375852Z",
+        "raw_file": "bc2d4eba401cf3a3aa4aca458ecc93b09bc30d36e6e485f9aa64701f9a840b75.relay.raw",
+        "payload_file": "18b93da381ea3fd466a407908db5ee2bddd9896ad5cf4f6437384f2af10a0603.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2015-02-17"
+    },
+    {
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000896878.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000896878.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000896878.json",
+        "transport_sha256": "2771091c8b001e1567a9a1dac138200d5a311765db64f7652a19a5afc29c10c8",
+        "sha256": "19b2e120c9773c1b1f9bad08ba8e3ae8f355ff2140591b462fc5495f2fea6e43",
+        "size": 171452,
+        "transport_size": 171608,
+        "retrieved_at": "2026-11-17T09:21:42.226615Z",
+        "raw_file": "2771091c8b001e1567a9a1dac138200d5a311765db64f7652a19a5afc29c10c8.relay.raw",
+        "payload_file": "19b2e120c9773c1b1f9bad08ba8e3ae8f355ff2140591b462fc5495f2fea6e43.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2020-09-03"
+    },
+    {
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001397187.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001397187.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001397187.json",
+        "transport_sha256": "0563a14fc2d61378334f90c43d505233aafe61cfa27981108db66fd7c190bd48",
+        "sha256": "0b6aea893f8bfe53865dea6f3fed3410f41094eefd3b3c0262f2302285b3231e",
+        "size": 172202,
+        "transport_size": 172358,
+        "retrieved_at": "2026-11-17T09:15:33.055627Z",
+        "raw_file": "0563a14fc2d61378334f90c43d505233aafe61cfa27981108db66fd7c190bd48.relay.raw",
+        "payload_file": "0b6aea893f8bfe53865dea6f3fed3410f41094eefd3b3c0262f2302285b3231e.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2013-02-11"
+    },
+    {
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001441816.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001441816.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001441816.json",
+        "transport_sha256": "91cfd8072c46c4e6d81222158364ed556e48985362972feb30a3f25e38cbb940",
+        "sha256": "06f0579418bf244d084c56a9b7c56f94ddd6890f886c9fe43f62f663c55b4a32",
+        "size": 161977,
+        "transport_size": 162133,
+        "retrieved_at": "2026-11-17T09:21:45.434815Z",
+        "raw_file": "91cfd8072c46c4e6d81222158364ed556e48985362972feb30a3f25e38cbb940.relay.raw",
+        "payload_file": "06f0579418bf244d084c56a9b7c56f94ddd6890f886c9fe43f62f663c55b4a32.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2019-06-19"
+    },
+    {
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000898173.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000898173.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000898173.json",
+        "transport_sha256": "cb6a1e070b7c023e13abeda14c96bf2c0157d2a4429c75460513de9f21e415d2",
+        "sha256": "11fc6fd59227f04ffa67f6e4360417084b5e48cb552d5bcefa502405c7231a56",
+        "size": 161761,
+        "transport_size": 161917,
+        "retrieved_at": "2026-11-17T09:16:13.549835Z",
+        "raw_file": "cb6a1e070b7c023e13abeda14c96bf2c0157d2a4429c75460513de9f21e415d2.relay.raw",
+        "payload_file": "11fc6fd59227f04ffa67f6e4360417084b5e48cb552d5bcefa502405c7231a56.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2018-02-05"
+    },
+    {
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000883241.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000883241.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000883241.json",
+        "transport_sha256": "bbe4ba2f0bf35fcdcd0ef86aaad5ac3bd446617f326ce30d35d67d3ecd4cba32",
+        "sha256": "256842a48494f97b839cb81163075cbb2f8a4f72bf55a73f8159f067dffdd5f9",
+        "size": 160173,
+        "transport_size": 160329,
+        "retrieved_at": "2026-11-17T09:21:51.568575Z",
+        "raw_file": "bbe4ba2f0bf35fcdcd0ef86aaad5ac3bd446617f326ce30d35d67d3ecd4cba32.relay.raw",
+        "payload_file": "256842a48494f97b839cb81163075cbb2f8a4f72bf55a73f8159f067dffdd5f9.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2015-09-01"
+    },
+    {
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001442145.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001442145.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001442145.json",
+        "transport_sha256": "17ef39ea0961f589e0ccd865df4f99b316df40d8a5a6ccfddc868daf26ad988e",
+        "sha256": "4f04a60d7f03dff7d5d65c4c0126f7a980f8df5ab132983df582504956fb0563",
+        "size": 156533,
+        "transport_size": 156689,
+        "retrieved_at": "2026-11-17T09:17:07.987751Z",
+        "raw_file": "17ef39ea0961f589e0ccd865df4f99b316df40d8a5a6ccfddc868daf26ad988e.relay.raw",
+        "payload_file": "4f04a60d7f03dff7d5d65c4c0126f7a980f8df5ab132983df582504956fb0563.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2015-12-30"
+    },
+    {
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0000875320.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0000875320.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0000875320.json",
+        "transport_sha256": "4ddf22f31e944b5a01aeda8f6e3cf111697e194fc56b8b0f2ed95d6c0a7346ba",
+        "sha256": "aa656b2de511be3b8e09165632f5e036e0346739764b7f684b18fcdd67b51702",
+        "size": 158731,
+        "transport_size": 158887,
+        "retrieved_at": "2026-11-17T09:17:11.340295Z",
+        "raw_file": "4ddf22f31e944b5a01aeda8f6e3cf111697e194fc56b8b0f2ed95d6c0a7346ba.relay.raw",
+        "payload_file": "aa656b2de511be3b8e09165632f5e036e0346739764b7f684b18fcdd67b51702.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2020-06-03"
+    },
+    {
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "provenance": {
+        "url": "https://data.sec.gov/submissions/CIK0001713683.json",
+        "canonical_url": "https://data.sec.gov/submissions/CIK0001713683.json",
+        "transport": "r.jina.ai",
+        "transport_url": "https://r.jina.ai/http://data.sec.gov/submissions/CIK0001713683.json",
+        "transport_sha256": "5fc799ec780d728372aba7e512f8486eab8afd9eb91333a8fec5bd6ba81b9f3b",
+        "sha256": "d02bbb19dfcf443e8f296e14757567a8bc9f95c72154b43f5ae14279a9310834",
+        "size": 142914,
+        "transport_size": 143070,
+        "retrieved_at": "2026-11-17T09:21:54.523913Z",
+        "raw_file": "5fc799ec780d728372aba7e512f8486eab8afd9eb91333a8fec5bd6ba81b9f3b.relay.raw",
+        "payload_file": "d02bbb19dfcf443e8f296e14757567a8bc9f95c72154b43f5ae14279a9310834.payload",
+        "source_representation": "relay_json_extract",
+        "raw_sec_bytes_archived": false
+      },
+      "earliest_recent_filing_date": "2017-08-25"
+    }
+  ],
+  "filing_dispositions": [
+    {
+      "cik": "0001093557",
+      "accession": "0001093557-25-000004",
+      "accepted_at": "2025-01-13T12:31:58.000Z",
+      "filing_date": "2025-01-13",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "dxcm-20250113.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000004/0001093557-25-000004.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000004/0001093557-25-000004.txt",
+      "symbol": "DXCM",
+      "disposition": "PRELIMINARY_PRIOR_ONLY",
+      "archive_sha256": "695e320738fc709ab992740cee275c08139da8262ac2dba7c682315b25e126e4",
+      "rationale": "Preliminary release belongs to the subsequent final-quarter release cluster and cannot add a separate fit event."
+    },
+    {
+      "cik": "0000712515",
+      "accession": "0000712515-25-000007",
+      "accepted_at": "2025-01-22T21:06:05.000Z",
+      "filing_date": "2025-01-22",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "ea-20250122.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000007/0000712515-25-000007.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/712515/000071251525000007/0000712515-25-000007.txt",
+      "symbol": "EA",
+      "disposition": "PRELIMINARY_PRIOR_ONLY",
+      "archive_sha256": "f104ce96b4620b946ce20a9c85920c902777d9bfb5fccbfbf33e3b82cf1d44ad",
+      "rationale": "Preliminary release belongs to the subsequent final-quarter release cluster and cannot add a separate fit event. January 22 revises annual net bookings, not the annual GAAP revenue bounds used for this feature."
+    },
+    {
+      "cik": "0000874716",
+      "accession": "0001104659-25-008331",
+      "accepted_at": "2025-02-03T11:30:47.000Z",
+      "filing_date": "2025-02-03",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "tm255269d1_8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925008331/0001104659-25-008331.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/874716/000110465925008331/0001104659-25-008331.txt",
+      "symbol": "IDXX",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "5afb27077bf8f664634a54867f153ec561f1e85eabb155ef3b5d36fd6d26baa7",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000318154",
+      "accession": "0000318154-25-000005",
+      "accepted_at": "2025-02-04T21:05:22.000Z",
+      "filing_date": "2025-02-04",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "amgn-20250204.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/0000318154-25-000005.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/318154/000031815425000005/0000318154-25-000005.txt",
+      "symbol": "AMGN",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "79bab48b0e6cf6f685ff14647e7a4d6b04830e8e7031e5170017aab2d7edc11e",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000712515",
+      "accession": "0000712515-25-000010",
+      "accepted_at": "2025-02-04T21:06:14.000Z",
+      "filing_date": "2025-02-04",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "ea-20250131.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/0000712515-25-000010.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/712515/000071251525000010/0000712515-25-000010.txt",
+      "symbol": "EA",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "1fe1f87f8593278e561199cf18da80b631011102f8ce90db503b827beca283ad",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001058290",
+      "accession": "0001058290-25-000007",
+      "accepted_at": "2025-02-05T21:05:30.000Z",
+      "filing_date": "2025-02-05",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "ctsh-20250205.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000007/0001058290-25-000007.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1058290/000105829025000007/0001058290-25-000007.txt",
+      "symbol": "CTSH",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "ce808654543701d8c3fb550b032b0c85282a9061a4afa3429f9765c302f80b80",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000898173",
+      "accession": "0000898173-25-000005",
+      "accepted_at": "2025-02-05T21:31:22.000Z",
+      "filing_date": "2025-02-05",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "orly-20250205x8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000005/0000898173-25-000005.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/898173/000089817325000005/0000898173-25-000005.txt",
+      "symbol": "ORLY",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "923534c82e88447ec0ba0ccaa3e56a9acd3bbbddfe5726a627bd84cfc10f847d",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001262039",
+      "accession": "0001262039-25-000007",
+      "accepted_at": "2025-02-06T21:09:58.000Z",
+      "filing_date": "2025-02-06",
+      "items": [
+        "2.02",
+        "5.02",
+        "9.01"
+      ],
+      "primary_document": "ftnt-20250204.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/0001262039-25-000007.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1262039/000126203925000007/0001262039-25-000007.txt",
+      "symbol": "FTNT",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "f30c9d5438dfb2380b49aaa42b9db197872244e00fd4b0cc2678dbcfcbf8a725",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000875320",
+      "accession": "0000875320-25-000029",
+      "accepted_at": "2025-02-10T21:08:20.000Z",
+      "filing_date": "2025-02-10",
+      "items": [
+        "2.02",
+        "5.02",
+        "9.01"
+      ],
+      "primary_document": "vrtx-20250204.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000029/0000875320-25-000029.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/875320/000087532025000029/0000875320-25-000029.txt",
+      "symbol": "VRTX",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "b57c11460e917ac31a166474ee7aaa825f9f85d9dcb1571a580ceae976251dba",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001561550",
+      "accession": "0001561550-25-000017",
+      "accepted_at": "2025-02-13T12:09:55.000Z",
+      "filing_date": "2025-02-13",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "ddog-20250213.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000017/0001561550-25-000017.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1561550/000156155025000017/0001561550-25-000017.txt",
+      "symbol": "DDOG",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "ce2bef8756885a2c3f500df4fe3d4fa854c00d772c0c6fa49a40adc751673310",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001093557",
+      "accession": "0001093557-25-000029",
+      "accepted_at": "2025-02-13T21:03:33.000Z",
+      "filing_date": "2025-02-13",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "dxcm-20250213.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/0001093557-25-000029.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000029/0001093557-25-000029.txt",
+      "symbol": "DXCM",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000813672",
+      "accession": "0000813672-25-000016",
+      "accepted_at": "2025-02-18T21:04:08.000Z",
+      "filing_date": "2025-02-18",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "cdns-20250218.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/0000813672-25-000016.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/813672/000081367225000016/0000813672-25-000016.txt",
+      "symbol": "CDNS",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "37d3783353fbb0fde283b1b493b92fc33deb1a369fd5df859c99674787aa597e",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001057352",
+      "accession": "0001057352-25-000004",
+      "accepted_at": "2025-02-18T21:08:23.000Z",
+      "filing_date": "2025-02-18",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "csgp-20250218.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000004/0001057352-25-000004.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1057352/000105735225000004/0001057352-25-000004.txt",
+      "symbol": "CSGP",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "2608788201fa4f3e6c974ce4cf60650e87663f532cba10ca235638997951c96a",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000896878",
+      "accession": "0000896878-25-000013",
+      "accepted_at": "2025-02-25T21:01:56.000Z",
+      "filing_date": "2025-02-25",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "intu-20250225.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/0000896878-25-000013.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/896878/000089687825000013/0000896878-25-000013.txt",
+      "symbol": "INTU",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001442145",
+      "accession": "0001437749-25-005158",
+      "accepted_at": "2025-02-26T12:21:49.000Z",
+      "filing_date": "2025-02-26",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "vrsk20240723_8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925005158/0001437749-25-005158.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1442145/000143774925005158/0001437749-25-005158.txt",
+      "symbol": "VRSK",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "e35b7edb9f5e40ee8e332bcc46794e930ef2c726230873888df5cf270a758a98",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000883241",
+      "accession": "0001193125-25-036798",
+      "accepted_at": "2025-02-26T21:31:40.000Z",
+      "filing_date": "2025-02-26",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "d921264d8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/0001193125-25-036798.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/883241/000119312525036798/0001193125-25-036798.txt",
+      "symbol": "SNPS",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000769397",
+      "accession": "0000769397-25-000013",
+      "accepted_at": "2025-02-27T21:34:02.000Z",
+      "filing_date": "2025-02-27",
+      "items": [
+        "2.02",
+        "2.05",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "adsk-20250226.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000013/0000769397-25-000013.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/769397/000076939725000013/0000769397-25-000013.txt",
+      "symbol": "ADSK",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "8988c3389403074fd7f92fbe74b2b78054c55ccefeccdf54e185f34411dee37d",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001535527",
+      "accession": "0001535527-25-000005",
+      "accepted_at": "2025-03-04T21:11:41.000Z",
+      "filing_date": "2025-03-04",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "crwd-20250304.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/0001535527-25-000005.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1535527/000153552725000005/0001535527-25-000005.txt",
+      "symbol": "CRWD",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "3a4690489c34bb16da3f3dbd4ae8093114e162f85fb0795fef2859c3504c1f13",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001713683",
+      "accession": "0001713683-25-000025",
+      "accepted_at": "2025-03-05T21:06:30.000Z",
+      "filing_date": "2025-03-05",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "zs-20250305.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/0001713683-25-000025.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1713683/000171368325000025/0001713683-25-000025.txt",
+      "symbol": "ZS",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001441816",
+      "accession": "0001441816-25-000046",
+      "accepted_at": "2025-03-05T21:07:02.000Z",
+      "filing_date": "2025-03-05",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "mdb-20250305.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/0001441816-25-000046.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1441816/000144181625000046/0001441816-25-000046.txt",
+      "symbol": "MDB",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "0aff05ef8f429840af8d8cf776a6eae0c38c794ed222aee4a67bb1cef415d216",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000935703",
+      "accession": "0000935703-25-000012",
+      "accepted_at": "2025-03-26T10:32:08.000Z",
+      "filing_date": "2025-03-26",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "dltr-20250326.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/0000935703-25-000012.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/935703/000093570325000012/0000935703-25-000012.txt",
+      "symbol": "DLTR",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "b652eebf14454d7442b18b33102b98be850bb2822980a850f298778ea19e846c",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001397187",
+      "accession": "0001397187-25-000012",
+      "accepted_at": "2025-03-27T20:10:00.000Z",
+      "filing_date": "2025-03-27",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "lulu-20250327.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/0001397187-25-000012.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1397187/000139718725000012/0001397187-25-000012.txt",
+      "symbol": "LULU",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "ad3db85a433ca59a72f7e216f7fb8ca0c44ecac5fb6f67d61ca2af930ba0681b",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0000898173",
+      "accession": "0000898173-25-000026",
+      "accepted_at": "2025-04-23T20:34:01.000Z",
+      "filing_date": "2025-04-23",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "orly-20250423x8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/0000898173-25-000026.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/898173/000089817325000026/0000898173-25-000026.txt",
+      "symbol": "ORLY",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "b04b6d25e10ea1c67abefcf53657ef74795c19b7ecb5c54567b294e8b6f18eb1",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000813672",
+      "accession": "0000813672-25-000046",
+      "accepted_at": "2025-04-28T20:03:44.000Z",
+      "filing_date": "2025-04-28",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "cdns-20250428.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/0000813672-25-000046.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/813672/000081367225000046/0000813672-25-000046.txt",
+      "symbol": "CDNS",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "54a0ef9782e2c98f1735e8b2bf724ee82153add3c2cf80045d42efe4be1c814a",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001057352",
+      "accession": "0001057352-25-000063",
+      "accepted_at": "2025-04-29T20:34:45.000Z",
+      "filing_date": "2025-04-29",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "csgp-20250429.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000063/0001057352-25-000063.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1057352/000105735225000063/0001057352-25-000063.txt",
+      "symbol": "CSGP",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "d8c244fa4c49cc9e465c358a0df7b70eb6e61909da3c71549a162ee10729358d",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001058290",
+      "accession": "0001058290-25-000124",
+      "accepted_at": "2025-04-30T20:02:39.000Z",
+      "filing_date": "2025-04-30",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "ctsh-20250430.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/0001058290-25-000124.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1058290/000105829025000124/0001058290-25-000124.txt",
+      "symbol": "CTSH",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "2b0d9ec5a65712fd44bb308391f09269d4f7310d02b7c5d2d9f8f29886da82f0",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000874716",
+      "accession": "0001104659-25-042955",
+      "accepted_at": "2025-05-01T10:30:23.000Z",
+      "filing_date": "2025-05-01",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "tm2513742d1_8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/0001104659-25-042955.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/874716/000110465925042955/0001104659-25-042955.txt",
+      "symbol": "IDXX",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "20960f04860bae90364b1ba43fe479549f471120f81463118c26a4635a0ecf6f",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001093557",
+      "accession": "0001093557-25-000111",
+      "accepted_at": "2025-05-01T20:03:07.000Z",
+      "filing_date": "2025-05-01",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "dxcm-20250501.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/0001093557-25-000111.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000111/0001093557-25-000111.txt",
+      "symbol": "DXCM",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "3733b3be7c1ac868ad4a9e6c2aa41935cd92611499f36c341b44bf577e820bbd",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000318154",
+      "accession": "0000318154-25-000018",
+      "accepted_at": "2025-05-01T20:04:20.000Z",
+      "filing_date": "2025-05-01",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "amgn-20250501.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/0000318154-25-000018.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/318154/000031815425000018/0000318154-25-000018.txt",
+      "symbol": "AMGN",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "eee0a2203f03debf15fb0c9cb9ec899f6ea8b3ead63cb3c892870375074d4169",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000875320",
+      "accession": "0000875320-25-000171",
+      "accepted_at": "2025-05-05T20:10:03.000Z",
+      "filing_date": "2025-05-05",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "vrtx-20250505.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/0000875320-25-000171.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/875320/000087532025000171/0000875320-25-000171.txt",
+      "symbol": "VRTX",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "d97d57e06aab63e20cee81e271010b7937d893c4cf758e596baeeca27b88f751",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001561550",
+      "accession": "0001561550-25-000118",
+      "accepted_at": "2025-05-06T11:45:15.000Z",
+      "filing_date": "2025-05-06",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "ddog-20250506.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/0001561550-25-000118.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1561550/000156155025000118/0001561550-25-000118.txt",
+      "symbol": "DDOG",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "b2b388341315ba7f385e1005a8dfcb47b79373b68b629632dd4334cd4d3e967d",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000712515",
+      "accession": "0000712515-25-000017",
+      "accepted_at": "2025-05-06T20:08:16.000Z",
+      "filing_date": "2025-05-06",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "ea-20250501.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000017/0000712515-25-000017.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/712515/000071251525000017/0000712515-25-000017.txt",
+      "symbol": "EA",
+      "disposition": "FISCAL_YEAR_INITIATION",
+      "archive_sha256": "c297226fee74b7152e38f850ba2f05b84f158ec5a554aae5ed419baea7808aee",
+      "rationale": "No earlier active same-fiscal-period consolidated USD range verified in the reviewed original sources; prior-year outlooks cannot supply the prior."
+    },
+    {
+      "cik": "0001535527",
+      "accession": "0001104659-25-045244",
+      "accepted_at": "2025-05-07T10:03:11.000Z",
+      "filing_date": "2025-05-07",
+      "items": [
+        "2.02",
+        "2.05",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "tm2514190d1_8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/0001104659-25-045244.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1535527/000110465925045244/0001104659-25-045244.txt",
+      "symbol": "CRWD",
+      "disposition": "NON_EARNINGS_RESTRUCTURING",
+      "archive_sha256": "487df30471071c70d4cca5680325abae12ca7f419ba20c3fcc00922ddca124f8",
+      "rationale": "Restructuring announcement with a guidance reaffirmation; not an additional original quarterly earnings event."
+    },
+    {
+      "cik": "0001442145",
+      "accession": "0001437749-25-014906",
+      "accepted_at": "2025-05-07T11:18:20.000Z",
+      "filing_date": "2025-05-07",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "vrsk20250125_8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/0001437749-25-014906.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1442145/000143774925014906/0001437749-25-014906.txt",
+      "symbol": "VRSK",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "604b493a142d4d9917b2d0ffeea847625f92a8499227f02200eeedbf426abdfc",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001262039",
+      "accession": "0001262039-25-000014",
+      "accepted_at": "2025-05-07T20:11:27.000Z",
+      "filing_date": "2025-05-07",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "ftnt-20250507.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/0001262039-25-000014.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1262039/000126203925000014/0001262039-25-000014.txt",
+      "symbol": "FTNT",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "590963306f5fa49236a50a19847306e27063ce33955d30e983168eccd8dc072d",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000769397",
+      "accession": "0000769397-25-000067",
+      "accepted_at": "2025-05-22T20:01:42.000Z",
+      "filing_date": "2025-05-22",
+      "items": [
+        "2.02",
+        "5.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "adsk-20250522.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/0000769397-25-000067.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/769397/000076939725000067/0000769397-25-000067.txt",
+      "symbol": "ADSK",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "bee3e3603ab8c34560fb74a49446fbafc9e51efd57270c560fcc580abfb4c83b",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000896878",
+      "accession": "0000896878-25-000020",
+      "accepted_at": "2025-05-22T20:02:36.000Z",
+      "filing_date": "2025-05-22",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "intu-20250522.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/0000896878-25-000020.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/896878/000089687825000020/0000896878-25-000020.txt",
+      "symbol": "INTU",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "4390d96cc6aa3fcdd7548551b8d4192300257a418fa7ec3f382f033045ffd521",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000883241",
+      "accession": "0001193125-25-129525",
+      "accepted_at": "2025-05-28T20:39:49.000Z",
+      "filing_date": "2025-05-28",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "d815632d8k.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/0001193125-25-129525.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/883241/000119312525129525/0001193125-25-129525.txt",
+      "symbol": "SNPS",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "cf83765afd171aa3aa73f7e15ed069393dacf2b254408ea9d0cfe44d6c65e1cb",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001713683",
+      "accession": "0001713683-25-000078",
+      "accepted_at": "2025-05-29T20:08:58.000Z",
+      "filing_date": "2025-05-29",
+      "items": [
+        "2.02",
+        "5.02",
+        "9.01"
+      ],
+      "primary_document": "zs-20250526.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/0001713683-25-000078.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1713683/000171368325000078/0001713683-25-000078.txt",
+      "symbol": "ZS",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "8b8988061d8f27893728f48d909f556857ebdca17816a27a98f78111357ea64d",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001535527",
+      "accession": "0001535527-25-000017",
+      "accepted_at": "2025-06-03T20:06:56.000Z",
+      "filing_date": "2025-06-03",
+      "items": [
+        "2.02",
+        "8.01",
+        "9.01"
+      ],
+      "primary_document": "crwd-20250603.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/0001535527-25-000017.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1535527/000153552725000017/0001535527-25-000017.txt",
+      "symbol": "CRWD",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "f73c5aa5eb7488d3c740d4670af7c6cf47f4569caa6347c2248fe1a1b3e160bb",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0000935703",
+      "accession": "0000935703-25-000024",
+      "accepted_at": "2025-06-04T10:31:30.000Z",
+      "filing_date": "2025-06-04",
+      "items": [
+        "2.02",
+        "7.01",
+        "9.01"
+      ],
+      "primary_document": "dltr-20250604.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/0000935703-25-000024.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/935703/000093570325000024/0000935703-25-000024.txt",
+      "symbol": "DLTR",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "7b88219f0f9bf6e6e132ec494a30156efedc5e631d641388c9d8e9b61c5d65b3",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001441816",
+      "accession": "0001441816-25-000116",
+      "accepted_at": "2025-06-04T20:03:49.000Z",
+      "filing_date": "2025-06-04",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "mdb-20250604.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/0001441816-25-000116.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1441816/000144181625000116/0001441816-25-000116.txt",
+      "symbol": "MDB",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "388d85a10aa9ad6175916cd857080167e78008efbc61313fff9918c95840343c",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    },
+    {
+      "cik": "0001397187",
+      "accession": "0001397187-25-000026",
+      "accepted_at": "2025-06-05T20:10:27.000Z",
+      "filing_date": "2025-06-05",
+      "items": [
+        "2.02",
+        "9.01"
+      ],
+      "primary_document": "lulu-20250605.htm",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/0001397187-25-000026.txt",
+      "mirror_url": "https://edgar-mirror.sec-api.io/1397187/000139718725000026/0001397187-25-000026.txt",
+      "symbol": "LULU",
+      "disposition": "PAIR_REVIEWED",
+      "archive_sha256": "db8287b02200c54a8bd80b58f36d19f37f99b6f35efbde5804632235122bedf6",
+      "rationale": "One separately dated comparable annual revenue pair; source masks determine eligibility."
+    }
+  ],
+  "initiation_lookback": {
+    "purpose": "Check late-2024 and early-2025 interim and conference disclosures before treating fiscal-year initiations as missing priors.",
+    "additional_archives": [
+      {
+        "symbol": "ADSK",
+        "cik": "0000769397",
+        "accession": "0000769397-24-000175",
+        "accepted_at": "2024-11-26T21:05:55.000Z",
+        "filing_date": "2024-11-26",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000175/0000769397-24-000175.txt",
+        "archive_sha256": "4ffa7ad12a0052dfd7bfabdb1ea7f3c581a8b109a4e95114a94ac97c6c732e64"
+      },
+      {
+        "symbol": "ADSK",
+        "cik": "0000769397",
+        "accession": "0000769397-25-000006",
+        "accepted_at": "2025-01-21T21:05:02.000Z",
+        "filing_date": "2025-01-21",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000006/0000769397-25-000006.txt",
+        "archive_sha256": "f47c17de60e3ea0e8377bd80dd876d86fd9ab9ddb5c2f926c77b4efcdd349479"
+      },
+      {
+        "symbol": "CRWD",
+        "cik": "0001535527",
+        "accession": "0001104659-24-128515",
+        "accepted_at": "2024-12-13T22:15:31.000Z",
+        "filing_date": "2024-12-13",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465924128515/0001104659-24-128515.txt",
+        "archive_sha256": "be41341c0e99a13ce00c7b6202c77ec5dfaeef46f4e00130cbd9f2307a13fd85"
+      },
+      {
+        "symbol": "CRWD",
+        "cik": "0001535527",
+        "accession": "0001535527-24-000024",
+        "accepted_at": "2024-11-26T21:07:01.000Z",
+        "filing_date": "2024-11-26",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/0001535527-24-000024.txt",
+        "archive_sha256": "fa97a110caa7ab429c437dab33fb3484f7ecd34300df8a84ff2ea8682411b7f9"
+      },
+      {
+        "symbol": "DDOG",
+        "cik": "0001561550",
+        "accession": "0001193125-24-277122",
+        "accepted_at": "2024-12-12T21:38:25.000Z",
+        "filing_date": "2024-12-12",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000119312524277122/0001193125-24-277122.txt",
+        "archive_sha256": "8422581069b6956d9977ec9a10bf70fed9b5f74c0db53cae95286791ef6a4d2d"
+      },
+      {
+        "symbol": "DDOG",
+        "cik": "0001561550",
+        "accession": "0001561550-24-000171",
+        "accepted_at": "2024-11-07T12:09:14.000Z",
+        "filing_date": "2024-11-07",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000171/0001561550-24-000171.txt",
+        "archive_sha256": "955648cfc73e7f3a1f9ddc557f893cc9280e1f53f5f6ac028369d96013411fd7"
+      },
+      {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-24-000044",
+        "accepted_at": "2024-11-04T21:17:05.000Z",
+        "filing_date": "2024-11-04",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000044/0000935703-24-000044.txt",
+        "archive_sha256": "f758f818190d92b7acd55fc0d9c6b2170c89ed621a2b050fe4c9b18dc9033342"
+      },
+      {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-24-000047",
+        "accepted_at": "2024-11-13T21:25:23.000Z",
+        "filing_date": "2024-11-13",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000047/0000935703-24-000047.txt",
+        "archive_sha256": "1f94bc74759be9e366033d59e746e350661a61dcb05fb9b5af59be3457e460ab"
+      },
+      {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-24-000053",
+        "accepted_at": "2024-11-21T21:07:37.000Z",
+        "filing_date": "2024-11-21",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000053/0000935703-24-000053.txt",
+        "archive_sha256": "d75a7a2c8b4d1c8571c701f4b1c7b77c8332656ea6d4fb7b06f9a772f33a5583"
+      },
+      {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-24-000063",
+        "accepted_at": "2024-12-19T12:30:55.000Z",
+        "filing_date": "2024-12-19",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000063/0000935703-24-000063.txt",
+        "archive_sha256": "cc85aca15ff88ea4f117231c3d6a3e37a876645273162d01ecc60c6223ff7dd5"
+      },
+      {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-25-000007",
+        "accepted_at": "2025-02-28T13:00:55.000Z",
+        "filing_date": "2025-02-28",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000007/0000935703-25-000007.txt",
+        "archive_sha256": "3cb80868935d9ed214acf1aa4c81a6b1ffb6f167227c924d3a9898491e34d236"
+      },
+      {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-25-000009",
+        "accepted_at": "2025-03-05T11:31:10.000Z",
+        "filing_date": "2025-03-05",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000009/0000935703-25-000009.txt",
+        "archive_sha256": "a48144aa2f4aea6721aee9c36d2a5f04abd78673255b6253843395bd0d3a65d4"
+      },
+      {
+        "symbol": "EA",
+        "cik": "0000712515",
+        "accession": "0000712515-25-000013",
+        "accepted_at": "2025-02-05T21:17:29.000Z",
+        "filing_date": "2025-02-05",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000013/0000712515-25-000013.txt",
+        "archive_sha256": "54fe7a557b1fe17637ef95a0207fcbeb4c6209ae4d2c1555d621c1157de55d4b"
+      },
+      {
+        "symbol": "FTNT",
+        "cik": "0001262039",
+        "accession": "0001262039-24-000040",
+        "accepted_at": "2024-11-07T21:10:36.000Z",
+        "filing_date": "2024-11-07",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000040/0001262039-24-000040.txt",
+        "archive_sha256": "e47a0bb0d77996ffa830569100cd0b69179864159c13430c7ebb6ce81d4cd9c3"
+      },
+      {
+        "symbol": "IDXX",
+        "cik": "0000874716",
+        "accession": "0000874716-24-000148",
+        "accepted_at": "2024-12-09T12:32:51.000Z",
+        "filing_date": "2024-12-09",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000087471624000148/0000874716-24-000148.txt",
+        "archive_sha256": "9b7dea7f76342e31105a1f8a25b5a4a6782fa4fad53e88d204faea0753da5aa5"
+      },
+      {
+        "symbol": "IDXX",
+        "cik": "0000874716",
+        "accession": "0001104659-24-121326",
+        "accepted_at": "2024-11-21T12:32:11.000Z",
+        "filing_date": "2024-11-21",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924121326/0001104659-24-121326.txt",
+        "archive_sha256": "b65951680fe4c1883a07df5b4aac38d22ce45570b148004f5fef04ea66ba5c7e"
+      },
+      {
+        "symbol": "LULU",
+        "cik": "0001397187",
+        "accession": "0001397187-25-000004",
+        "accepted_at": "2025-01-13T21:11:38.000Z",
+        "filing_date": "2025-01-13",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/0001397187-25-000004.txt",
+        "archive_sha256": "b1af054b91e27e8f527dac91ac60369ae5407e1c8280c57ddcd2ff0771d0dcf7"
+      },
+      {
+        "symbol": "MDB",
+        "cik": "0001441816",
+        "accession": "0001441816-24-000257",
+        "accepted_at": "2024-12-09T21:10:26.000Z",
+        "filing_date": "2024-12-09",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/0001441816-24-000257.txt",
+        "archive_sha256": "120dc6303495565e92ac08304e85d363a530de8f6f499c3624142cfcc930c290"
+      },
+      {
+        "symbol": "MDB",
+        "cik": "0001441816",
+        "accession": "0001441816-25-000040",
+        "accepted_at": "2025-02-24T14:03:04.000Z",
+        "filing_date": "2025-02-24",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000040/0001441816-25-000040.txt",
+        "archive_sha256": "73d54bda2346502b010933b12b32b509a72c14dfd73c90a22215e20285d386de"
+      },
+      {
+        "symbol": "ORLY",
+        "cik": "0000898173",
+        "accession": "0000898173-24-000046",
+        "accepted_at": "2024-11-22T21:37:15.000Z",
+        "filing_date": "2024-11-22",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000046/0000898173-24-000046.txt",
+        "archive_sha256": "8eaccc091867c548303f370d3bd13e67f3e3863db43c11f18256be7859b7cb57"
+      },
+      {
+        "symbol": "ORLY",
+        "cik": "0000898173",
+        "accession": "0000898173-25-000003",
+        "accepted_at": "2025-01-02T21:32:00.000Z",
+        "filing_date": "2025-01-02",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000003/0000898173-25-000003.txt",
+        "archive_sha256": "cfe36cacdee688a7eaa2a4df1abf5eec0974e1510ee300ab32a3ac3dd1da44c2"
+      },
+      {
+        "symbol": "VRTX",
+        "cik": "0000875320",
+        "accession": "0000875320-24-000231",
+        "accepted_at": "2024-12-20T20:51:45.000Z",
+        "filing_date": "2024-12-20",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000231/0000875320-24-000231.txt",
+        "archive_sha256": "3ab9e189034fff5b6130a3c070d46d8813b5401b8322cb240a68d96aec3fc693"
+      }
+    ],
+    "findings": "Reviewed original packets did not establish extra same-fiscal-period revenue pairs. Older fiscal-year ranges, pipeline updates, governance notices and quarter-only ranges do not supply the missing annual prior.",
+    "additional_primary_references": [
+      {
+        "symbol": "VRTX",
+        "url": "https://investors.vrtx.com/static-files/cd0eada6-1f8b-418e-bc2a-88e66c2a23b6",
+        "publication_date": "2025-01-13",
+        "representation": "public Reader text extraction of issuer PDF",
+        "representation_sha256": "7f2f0265075f12c56d46ba55e41f1eac75917bae82d3576d37c5d556dc3a9c33",
+        "finding": "Financial slide labels its revenue outlook 2024E and references November 4, 2024 guidance. No matching numeric FY2025 outlook was located."
+      },
+      {
+        "symbol": "VRTX",
+        "url": "https://investors.vrtx.com/news-releases/news-release-details/vertex-provides-pipeline-and-business-updates-advance-upcoming-0",
+        "publication_date": "2025-01-12",
+        "finding": "Pipeline and business update; no matching numeric annual FY2025 revenue bounds located."
+      }
+    ]
+  },
+  "candidate_events": [
+    {
+      "event_id": "ea-0000712515-25-000010",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-03-31",
+      "prior": {
+        "symbol": "EA",
+        "cik": "0000712515",
+        "accession": "0000712515-24-000045",
+        "source_date": "2024-10-29",
+        "accepted_at": "2024-10-29T20:06:07.000Z",
+        "availability_proxy": "2024-10-29T20:08:07+00:00",
+        "range_usd_millions": [
+          7400,
+          7700
+        ],
+        "archive_sha256": "ef1893098ed75859dfe67e4b099411fcd349999c1c59bf987671913749898f34",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/earningspressrelease2024_1.htm",
+        "range_line_index": 57,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/ea-20241028.htm"
+      },
+      "current": {
+        "symbol": "EA",
+        "cik": "0000712515",
+        "accession": "0000712515-25-000010",
+        "source_date": "2025-02-04",
+        "accepted_at": "2025-02-04T21:06:14.000Z",
+        "availability_proxy": "2025-02-04T21:08:14+00:00",
+        "range_usd_millions": [
+          7250,
+          7400
+        ],
+        "archive_sha256": "1fe1f87f8593278e561199cf18da80b631011102f8ce90db503b827beca283ad",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/earningspressrelease2025_0.htm",
+        "range_line_index": 58,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/ea-20250131.htm",
+        "source_time": "2025-02-04T21:06:14.000Z"
+      },
+      "reaction_session": "2025-02-05",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-05T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-05T14:15:00+00:00",
+      "revision_fraction": -0.0298013245033113,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000712515",
+          "accession": "0000712515-25-000007",
+          "accepted_at": "2025-01-22T21:06:05.000Z",
+          "filing_date": "2025-01-22",
+          "items": [
+            "2.02",
+            "9.01"
+          ],
+          "primary_document": "ea-20250122.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000007/0000712515-25-000007.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/712515/000071251525000007/0000712515-25-000007.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "ea-0000712515-25-000010",
+        "cover_sha256": "7e15485b51bd22af12ef208efdc8840197982ed1d6cdc0e7c8ada608e8f92d0f",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value",
+            "symbol": "EA",
+            "exchange": "NASDAQ Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/ea-20250131.htm"
+      }
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000029",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000004",
+        "source_date": "2025-01-13",
+        "accepted_at": "2025-01-13T12:31:58.000Z",
+        "availability_proxy": "2025-01-13T12:33:58+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "695e320738fc709ab992740cee275c08139da8262ac2dba7c682315b25e126e4",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000004/dxcm991_1132025.htm",
+        "range_line_index": 3,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000004/dxcm-20250113.htm"
+      },
+      "current": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000029",
+        "source_date": "2025-02-13",
+        "accepted_at": "2025-02-13T21:03:33.000Z",
+        "availability_proxy": "2025-02-13T21:05:33+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+        "range_line_index": 9,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm",
+        "source_time": "2025-02-13T21:03:33.000Z"
+      },
+      "reaction_session": "2025-02-14",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-14T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-14T14:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "dxcm-0001093557-25-000029",
+        "cover_sha256": "72c76ce1143315931a9267fc0df4caac24ebca449896d1020c1708f2b97c8ae9",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value Per Share",
+            "symbol": "DXCM",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm"
+      }
+    },
+    {
+      "event_id": "intu-0000896878-25-000013",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-24-000051",
+        "source_date": "2024-11-21",
+        "accepted_at": "2024-11-21T21:07:42.000Z",
+        "availability_proxy": "2024-11-21T21:09:42+00:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "archive_sha256": "b73663a7ec1b0ffaaef12a3a12612d0e12af34ed013f42f1d7c8155c5ab4e97b",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/fy25q1earningspressrelease.htm",
+        "range_line_index": 43,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/intu-20241121.htm"
+      },
+      "current": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-25-000013",
+        "source_date": "2025-02-25",
+        "accepted_at": "2025-02-25T21:01:56.000Z",
+        "availability_proxy": "2025-02-25T21:03:56+00:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+        "range_line_index": 44,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm",
+        "source_time": "2025-02-25T21:01:56.000Z"
+      },
+      "reaction_session": "2025-02-26",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-26T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-26T14:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "intu-0000896878-25-000013",
+        "cover_sha256": "dc9087e83b80759d080503ee9cdf2e287f0fd14c135c5703d7e3cc197aac4ef9",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value",
+            "symbol": "INTU",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm"
+      }
+    },
+    {
+      "event_id": "snps-0001193125-25-036798",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-10-31",
+      "prior": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-24-270723",
+        "source_date": "2024-12-04",
+        "accepted_at": "2024-12-04T21:30:54.000Z",
+        "availability_proxy": "2024-12-04T21:32:54+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "d1834d5c8cd51b94ac4e1d2f651ff4fab01b487894313621ffbd629d8a830f02",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524270723/d868165dex991.htm",
+        "range_line_index": 76,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524270723/d868165d8k.htm"
+      },
+      "current": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-25-036798",
+        "source_date": "2025-02-26",
+        "accepted_at": "2025-02-26T21:31:40.000Z",
+        "availability_proxy": "2025-02-26T21:33:40+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+        "range_line_index": 67,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm",
+        "source_time": "2025-02-26T21:31:40.000Z"
+      },
+      "reaction_session": "2025-02-27",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-27T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-27T14:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "snps-0001193125-25-036798",
+        "cover_sha256": "7355394dfdc9d10245b2fda48631fd0f6a89cc6b2250bccc3b44bd41817dbf3b",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock (par value of $0.01 per share)",
+            "symbol": "SNPS",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm"
+      }
+    },
+    {
+      "event_id": "zs-0001713683-25-000025",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-24-000143",
+        "source_date": "2024-12-02",
+        "accepted_at": "2024-12-02T21:08:35.000Z",
+        "availability_proxy": "2024-12-02T21:10:35+00:00",
+        "range_usd_millions": [
+          2623,
+          2643
+        ],
+        "archive_sha256": "b86f2af69fae8eb200d173cd2089671172d227a52cb70d222072af642da97e1f",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-20241202.htm"
+      },
+      "current": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-25-000025",
+        "source_date": "2025-03-05",
+        "accepted_at": "2025-03-05T21:06:30.000Z",
+        "availability_proxy": "2025-03-05T21:08:30+00:00",
+        "range_usd_millions": [
+          2640,
+          2654
+        ],
+        "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm",
+        "source_time": "2025-03-05T21:06:30.000Z"
+      },
+      "reaction_session": "2025-03-06",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-03-06T14:30:00+00:00",
+      "feature_cutoff_at": "2025-03-06T14:15:00+00:00",
+      "revision_fraction": 0.005317128750474742,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "zs-0001713683-25-000025",
+        "cover_sha256": "0b221e42755332419ceee6cf29274f46223d3cc2865dadef82f9df678f4a7457",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value",
+            "symbol": "ZS",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm"
+      }
+    },
+    {
+      "event_id": "orly-0000898173-25-000026",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "ORLY",
+        "cik": "0000898173",
+        "accession": "0000898173-25-000005",
+        "source_date": "2025-02-05",
+        "accepted_at": "2025-02-05T21:31:22.000Z",
+        "availability_proxy": "2025-02-05T21:33:22+00:00",
+        "range_usd_millions": [
+          17400,
+          17700
+        ],
+        "archive_sha256": "923534c82e88447ec0ba0ccaa3e56a9acd3bbbddfe5726a627bd84cfc10f847d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000005/orly-20250205xex99d1.htm",
+        "range_line_index": 48,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000005/orly-20250205x8k.htm"
+      },
+      "current": {
+        "symbol": "ORLY",
+        "cik": "0000898173",
+        "accession": "0000898173-25-000026",
+        "source_date": "2025-04-23",
+        "accepted_at": "2025-04-23T20:34:01.000Z",
+        "availability_proxy": "2025-04-23T20:36:01+00:00",
+        "range_usd_millions": [
+          17400,
+          17700
+        ],
+        "archive_sha256": "b04b6d25e10ea1c67abefcf53657ef74795c19b7ecb5c54567b294e8b6f18eb1",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423xex99d1.htm",
+        "range_line_index": 40,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423x8k.htm",
+        "source_time": "2025-04-23T20:34:01.000Z"
+      },
+      "reaction_session": "2025-04-24",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-04-24T13:30:00+00:00",
+      "feature_cutoff_at": "2025-04-24T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000898173",
+          "accession": "0000898173-25-000010",
+          "accepted_at": "2025-03-13T20:32:12.000Z",
+          "filing_date": "2025-03-13",
+          "items": [
+            "7.01",
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "orly-20250312x8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000010/0000898173-25-000010.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/898173/000089817325000010/0000898173-25-000010.txt"
+        },
+        {
+          "cik": "0000898173",
+          "accession": "0000898173-25-000023",
+          "accepted_at": "2025-04-01T20:32:36.000Z",
+          "filing_date": "2025-04-01",
+          "items": [
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "orly-20250401x8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000023/0000898173-25-000023.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/898173/000089817325000023/0000898173-25-000023.txt"
+        },
+        {
+          "cik": "0000898173",
+          "accession": "0001104659-25-030592",
+          "accepted_at": "2025-04-01T20:33:39.000Z",
+          "filing_date": "2025-04-01",
+          "items": [
+            "1.01",
+            "2.03",
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "tm2510899d1_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000110465925030592/0001104659-25-030592.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/898173/000110465925030592/0001104659-25-030592.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "orly-0000898173-25-000026",
+        "cover_sha256": "1390bca9414a58d9bca3be177a3a3308ea92eef0bfe3f879e873c6b2f26383b9",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock",
+            "symbol": "ORLY",
+            "exchange": "The NASDAQ Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423x8k.htm"
+      }
+    },
+    {
+      "event_id": "cdns-0000813672-25-000046",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "CDNS",
+        "cik": "0000813672",
+        "accession": "0000813672-25-000016",
+        "source_date": "2025-02-18",
+        "accepted_at": "2025-02-18T21:04:08.000Z",
+        "availability_proxy": "2025-02-18T21:06:08+00:00",
+        "range_usd_millions": [
+          5140,
+          5220
+        ],
+        "archive_sha256": "37d3783353fbb0fde283b1b493b92fc33deb1a369fd5df859c99674787aa597e",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/cdns2182025ex9901.htm",
+        "range_line_index": 13,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/cdns-20250218.htm"
+      },
+      "current": {
+        "symbol": "CDNS",
+        "cik": "0000813672",
+        "accession": "0000813672-25-000046",
+        "source_date": "2025-04-28",
+        "accepted_at": "2025-04-28T20:03:44.000Z",
+        "availability_proxy": "2025-04-28T20:05:44+00:00",
+        "range_usd_millions": [
+          5150,
+          5230
+        ],
+        "archive_sha256": "54a0ef9782e2c98f1735e8b2bf724ee82153add3c2cf80045d42efe4be1c814a",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+        "range_line_index": 8,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns-20250428.htm",
+        "source_time": "2025-04-28T20:03:44.000Z"
+      },
+      "reaction_session": "2025-04-29",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-04-29T13:30:00+00:00",
+      "feature_cutoff_at": "2025-04-29T13:15:00+00:00",
+      "revision_fraction": 0.0019305019305020377,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "cdns-0000813672-25-000046",
+        "cover_sha256": "2224a61e4e72d53628b675e3ba98a54a8e40925eed77cc0e22f8ce01b298dbe5",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value per share",
+            "symbol": "CDNS",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns-20250428.htm"
+      }
+    },
+    {
+      "event_id": "csgp-0001057352-25-000063",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "CSGP",
+        "cik": "0001057352",
+        "accession": "0001057352-25-000004",
+        "source_date": "2025-02-18",
+        "accepted_at": "2025-02-18T21:08:23.000Z",
+        "availability_proxy": "2025-02-18T21:10:23+00:00",
+        "range_usd_millions": [
+          2985,
+          3015
+        ],
+        "archive_sha256": "2608788201fa4f3e6c974ce4cf60650e87663f532cba10ca235638997951c96a",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000004/investorpresentation_4q2.htm",
+        "range_line_index": 2,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000004/csgp-20250218.htm"
+      },
+      "current": {
+        "symbol": "CSGP",
+        "cik": "0001057352",
+        "accession": "0001057352-25-000063",
+        "source_date": "2025-04-29",
+        "accepted_at": "2025-04-29T20:34:45.000Z",
+        "availability_proxy": "2025-04-29T20:36:45+00:00",
+        "range_usd_millions": [
+          3115,
+          3155
+        ],
+        "archive_sha256": "d8c244fa4c49cc9e465c358a0df7b70eb6e61909da3c71549a162ee10729358d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000063/q12025earningspressrelease.htm",
+        "range_line_index": 27,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000063/csgp-20250429.htm",
+        "source_time": "2025-04-29T20:34:45.000Z"
+      },
+      "reaction_session": "2025-04-30",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-04-30T13:30:00+00:00",
+      "feature_cutoff_at": "2025-04-30T13:15:00+00:00",
+      "revision_fraction": 0.04499999999999993,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001057352",
+          "accession": "0001193125-25-042465",
+          "accepted_at": "2025-02-28T21:04:05.000Z",
+          "filing_date": "2025-02-28",
+          "items": [
+            "2.01",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "d899523d8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312525042465/0001193125-25-042465.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1057352/000119312525042465/0001193125-25-042465.txt"
+        },
+        {
+          "cik": "0001057352",
+          "accession": "0001193125-25-074119",
+          "accepted_at": "2025-04-07T12:59:47.000Z",
+          "filing_date": "2025-04-07",
+          "items": [
+            "1.01",
+            "5.02",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "d937923d8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312525074119/0001193125-25-074119.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1057352/000119312525074119/0001193125-25-074119.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "csgp-0001057352-25-000063",
+        "cover_sha256": "5a87eb905a7cc8b1b2adeb6588b90137d847deee04269a8b066880b2a37c8dad",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock ($0.01 par value)",
+            "symbol": "CSGP",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000063/csgp-20250429.htm"
+      }
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000124",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "CTSH",
+        "cik": "0001058290",
+        "accession": "0001058290-25-000007",
+        "source_date": "2025-02-05",
+        "accepted_at": "2025-02-05T21:05:30.000Z",
+        "availability_proxy": "2025-02-05T21:07:30+00:00",
+        "range_usd_millions": [
+          20300,
+          20800
+        ],
+        "archive_sha256": "ce808654543701d8c3fb550b032b0c85282a9061a4afa3429f9765c302f80b80",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000007/exhibit99312312024.htm",
+        "range_line_index": 15,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000007/ctsh-20250205.htm"
+      },
+      "current": {
+        "symbol": "CTSH",
+        "cik": "0001058290",
+        "accession": "0001058290-25-000124",
+        "source_date": "2025-04-30",
+        "accepted_at": "2025-04-30T20:02:39.000Z",
+        "availability_proxy": "2025-04-30T20:04:39+00:00",
+        "range_usd_millions": [
+          20500,
+          21000
+        ],
+        "archive_sha256": "2b0d9ec5a65712fd44bb308391f09269d4f7310d02b7c5d2d9f8f29886da82f0",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/exhibit9933312025.htm",
+        "range_line_index": 13,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/ctsh-20250430.htm",
+        "source_time": "2025-04-30T20:02:39.000Z"
+      },
+      "reaction_session": "2025-05-01",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-01T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-01T13:15:00+00:00",
+      "revision_fraction": 0.009732360097323589,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001058290",
+          "accession": "0001058290-25-000112",
+          "accepted_at": "2025-03-25T12:02:00.000Z",
+          "filing_date": "2025-03-25",
+          "items": [
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "ctsh-20250324.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000112/0001058290-25-000112.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1058290/000105829025000112/0001058290-25-000112.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "ctsh-0001058290-25-000124",
+        "cover_sha256": "fd1d3d84128d376aad65f9e4407dd50b4b3797c726facc6d0ce5922767e0805c",
+        "listed_securities": [
+          {
+            "security_class": "Class A Common Stock,$0.01 par value per share",
+            "symbol": "CTSH",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/ctsh-20250430.htm"
+      }
+    },
+    {
+      "event_id": "idxx-0001104659-25-042955",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "IDXX",
+        "cik": "0000874716",
+        "accession": "0001104659-25-008331",
+        "source_date": "2025-02-03",
+        "accepted_at": "2025-02-03T11:30:47.000Z",
+        "availability_proxy": "2025-02-03T11:32:47+00:00",
+        "range_usd_millions": [
+          4055,
+          4170
+        ],
+        "archive_sha256": "5afb27077bf8f664634a54867f153ec561f1e85eabb155ef3b5d36fd6d26baa7",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925008331/tm255269d1_ex99-1.htm",
+        "range_line_index": 9,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925008331/tm255269d1_8k.htm"
+      },
+      "current": {
+        "symbol": "IDXX",
+        "cik": "0000874716",
+        "accession": "0001104659-25-042955",
+        "source_date": "2025-05-01",
+        "accepted_at": "2025-05-01T10:30:23.000Z",
+        "availability_proxy": "2025-05-01T10:32:23+00:00",
+        "range_usd_millions": [
+          4095,
+          4210
+        ],
+        "archive_sha256": "20960f04860bae90364b1ba43fe479549f471120f81463118c26a4635a0ecf6f",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_ex99-1.htm",
+        "range_line_index": 11,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_8k.htm",
+        "source_time": "2025-05-01T10:30:23.000Z"
+      },
+      "reaction_session": "2025-05-01",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-05-01T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-01T13:15:00+00:00",
+      "revision_fraction": 0.009726443768997006,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "idxx-0001104659-25-042955",
+        "cover_sha256": "8ea433efaef6b5941e05b4aefb26608e55719c638a0cb45af7a21f9b4924e23b",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.10 par value per share",
+            "symbol": "IDXX",
+            "exchange": "NASDAQ Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_8k.htm"
+      }
+    },
+    {
+      "event_id": "amgn-0000318154-25-000018",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "AMGN",
+        "cik": "0000318154",
+        "accession": "0000318154-25-000005",
+        "source_date": "2025-02-04",
+        "accepted_at": "2025-02-04T21:05:22.000Z",
+        "availability_proxy": "2025-02-04T21:07:22+00:00",
+        "range_usd_millions": [
+          34300,
+          35700
+        ],
+        "archive_sha256": "79bab48b0e6cf6f685ff14647e7a4d6b04830e8e7031e5170017aab2d7edc11e",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20241231earningsrelea.htm",
+        "range_line_index": 248,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20250204.htm"
+      },
+      "current": {
+        "symbol": "AMGN",
+        "cik": "0000318154",
+        "accession": "0000318154-25-000018",
+        "source_date": "2025-05-01",
+        "accepted_at": "2025-05-01T20:04:20.000Z",
+        "availability_proxy": "2025-05-01T20:06:20+00:00",
+        "range_usd_millions": [
+          34300,
+          35700
+        ],
+        "archive_sha256": "eee0a2203f03debf15fb0c9cb9ec899f6ea8b3ead63cb3c892870375074d4169",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250331earningsrelea.htm",
+        "range_line_index": 170,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250501.htm",
+        "source_time": "2025-05-01T20:04:20.000Z"
+      },
+      "reaction_session": "2025-05-02",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-02T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-02T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "amgn-0000318154-25-000018",
+        "cover_sha256": "6c9c30bba0256f3a84242d5ee87f1a7de8707484167e4bd56f82c923617dcfa1",
+        "listed_securities": [
+          {
+            "security_class": "Common stock, $0.0001 par value",
+            "symbol": "AMGN",
+            "exchange": "The Nasdaq Global Select Market"
+          },
+          {
+            "security_class": "2.000% Senior Notes due 2026",
+            "symbol": "AMGN26",
+            "exchange": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250501.htm"
+      }
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000111",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000029",
+        "source_date": "2025-02-13",
+        "accepted_at": "2025-02-13T21:03:33.000Z",
+        "availability_proxy": "2025-02-13T21:05:33+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+        "range_line_index": 9,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm"
+      },
+      "current": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000111",
+        "source_date": "2025-05-01",
+        "accepted_at": "2025-05-01T20:03:07.000Z",
+        "availability_proxy": "2025-05-01T20:05:07+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "3733b3be7c1ac868ad4a9e6c2aa41935cd92611499f36c341b44bf577e820bbd",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm03312025-exhibit991.htm",
+        "range_line_index": 14,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm-20250501.htm",
+        "source_time": "2025-05-01T20:03:07.000Z"
+      },
+      "reaction_session": "2025-05-02",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-02T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-02T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001093557",
+          "accession": "0001093557-25-000047",
+          "accepted_at": "2025-03-07T21:30:19.000Z",
+          "filing_date": "2025-03-07",
+          "items": [
+            "7.01",
+            "8.01"
+          ],
+          "primary_document": "dxcm-20250304.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000047/0001093557-25-000047.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000047/0001093557-25-000047.txt"
+        },
+        {
+          "cik": "0001093557",
+          "accession": "0001093557-25-000050",
+          "accepted_at": "2025-03-10T12:31:23.000Z",
+          "filing_date": "2025-03-10",
+          "items": [
+            "5.02",
+            "7.01"
+          ],
+          "primary_document": "dxcm-20250306.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000050/0001093557-25-000050.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000050/0001093557-25-000050.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "dxcm-0001093557-25-000111",
+        "cover_sha256": "502522a0e19f691c018b4db28dd2c2a085bf918a40c1e2ac4843b0b328f37790",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value Per Share",
+            "symbol": "DXCM",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm-20250501.htm"
+      }
+    },
+    {
+      "event_id": "ddog-0001561550-25-000118",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "DDOG",
+        "cik": "0001561550",
+        "accession": "0001561550-25-000017",
+        "source_date": "2025-02-13",
+        "accepted_at": "2025-02-13T12:09:55.000Z",
+        "availability_proxy": "2025-02-13T12:11:55+00:00",
+        "range_usd_millions": [
+          3175,
+          3195
+        ],
+        "archive_sha256": "ce2bef8756885a2c3f500df4fe3d4fa854c00d772c0c6fa49a40adc751673310",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000017/ex-991x20241231x8k.htm",
+        "range_line_index": 33,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000017/ddog-20250213.htm"
+      },
+      "current": {
+        "symbol": "DDOG",
+        "cik": "0001561550",
+        "accession": "0001561550-25-000118",
+        "source_date": "2025-05-06",
+        "accepted_at": "2025-05-06T11:45:15.000Z",
+        "availability_proxy": "2025-05-06T11:47:15+00:00",
+        "range_usd_millions": [
+          3215,
+          3235
+        ],
+        "archive_sha256": "b2b388341315ba7f385e1005a8dfcb47b79373b68b629632dd4334cd4d3e967d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ex-991x20250331x8k.htm",
+        "range_line_index": 29,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ddog-20250506.htm",
+        "source_time": "2025-05-06T11:45:15.000Z"
+      },
+      "reaction_session": "2025-05-06",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-05-06T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-06T13:15:00+00:00",
+      "revision_fraction": 0.012558869701726927,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "ddog-0001561550-25-000118",
+        "cover_sha256": "979bff636cb673a99d8fdc31fa7d6cb2f5115a7ca6eea166bc6c579db99557e9",
+        "listed_securities": [
+          {
+            "security_class": "Class A Common Stock, par value $0.00001 per share",
+            "symbol": "DDOG",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ddog-20250506.htm"
+      }
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000171",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "VRTX",
+        "cik": "0000875320",
+        "accession": "0000875320-25-000029",
+        "source_date": "2025-02-10",
+        "accepted_at": "2025-02-10T21:08:20.000Z",
+        "availability_proxy": "2025-02-10T21:10:20+00:00",
+        "range_usd_millions": [
+          11750,
+          12000
+        ],
+        "archive_sha256": "b57c11460e917ac31a166474ee7aaa825f9f85d9dcb1571a580ceae976251dba",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000029/ex-991_q42024.htm",
+        "range_line_index": 2,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000029/vrtx-20250204.htm"
+      },
+      "current": {
+        "symbol": "VRTX",
+        "cik": "0000875320",
+        "accession": "0000875320-25-000171",
+        "source_date": "2025-05-05",
+        "accepted_at": "2025-05-05T20:10:03.000Z",
+        "availability_proxy": "2025-05-05T20:12:03+00:00",
+        "range_usd_millions": [
+          11850,
+          12000
+        ],
+        "archive_sha256": "d97d57e06aab63e20cee81e271010b7937d893c4cf758e596baeeca27b88f751",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/ex-991_q12025.htm",
+        "range_line_index": 2,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/vrtx-20250505.htm",
+        "source_time": "2025-05-05T20:10:03.000Z"
+      },
+      "reaction_session": "2025-05-06",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-06T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-06T13:15:00+00:00",
+      "revision_fraction": 0.004210526315789442,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000875320",
+          "accession": "0000875320-25-000156",
+          "accepted_at": "2025-03-28T20:08:01.000Z",
+          "filing_date": "2025-03-28",
+          "items": [
+            "8.01"
+          ],
+          "primary_document": "vrtx-20250328.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000156/0000875320-25-000156.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/875320/000087532025000156/0000875320-25-000156.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "vrtx-0000875320-25-000171",
+        "cover_sha256": "b84465c3669349fc6b6a78c0ea4029c8fa8f67a6da94b41cb5ecd01bc148186c",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 Par Value Per Share",
+            "symbol": "VRTX",
+            "exchange": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/vrtx-20250505.htm"
+      }
+    },
+    {
+      "event_id": "vrsk-0001437749-25-014906",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "VRSK",
+        "cik": "0001442145",
+        "accession": "0001437749-25-005158",
+        "source_date": "2025-02-26",
+        "accepted_at": "2025-02-26T12:21:49.000Z",
+        "availability_proxy": "2025-02-26T12:23:49+00:00",
+        "range_usd_millions": [
+          3030,
+          3080
+        ],
+        "archive_sha256": "e35b7edb9f5e40ee8e332bcc46794e930ef2c726230873888df5cf270a758a98",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925005158/ex_702488.htm",
+        "range_line_index": 248,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925005158/vrsk20240723_8k.htm"
+      },
+      "current": {
+        "symbol": "VRSK",
+        "cik": "0001442145",
+        "accession": "0001437749-25-014906",
+        "source_date": "2025-05-07",
+        "accepted_at": "2025-05-07T11:18:20.000Z",
+        "availability_proxy": "2025-05-07T11:20:20+00:00",
+        "range_usd_millions": [
+          3030,
+          3080
+        ],
+        "archive_sha256": "604b493a142d4d9917b2d0ffeea847625f92a8499227f02200eeedbf426abdfc",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/ex_770468.htm",
+        "range_line_index": 200,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/vrsk20250125_8k.htm",
+        "source_time": "2025-05-07T11:18:20.000Z"
+      },
+      "reaction_session": "2025-05-07",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-05-07T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-07T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001442145",
+          "accession": "0001193125-25-051943",
+          "accepted_at": "2025-03-11T20:07:46.000Z",
+          "filing_date": "2025-03-11",
+          "items": [
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "d934103d8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525051943/0001193125-25-051943.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1442145/000119312525051943/0001193125-25-051943.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "vrsk-0001437749-25-014906",
+        "cover_sha256": "5e16f9091cfabe728be3643a2497a41982540b03ee52bfb9f1131db5c245b2c2",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock",
+            "symbol": "VRSK",
+            "exchange": "NASDAQ"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/vrsk20250125_8k.htm"
+      }
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000014",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "FTNT",
+        "cik": "0001262039",
+        "accession": "0001262039-25-000007",
+        "source_date": "2025-02-06",
+        "accepted_at": "2025-02-06T21:09:58.000Z",
+        "availability_proxy": "2025-02-06T21:11:58+00:00",
+        "range_usd_millions": [
+          6650,
+          6850
+        ],
+        "archive_sha256": "f30c9d5438dfb2380b49aaa42b9db197872244e00fd4b0cc2678dbcfcbf8a725",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/ftntq4-2024ex991.htm",
+        "range_line_index": 50,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/ftnt-20250204.htm"
+      },
+      "current": {
+        "symbol": "FTNT",
+        "cik": "0001262039",
+        "accession": "0001262039-25-000014",
+        "source_date": "2025-05-07",
+        "accepted_at": "2025-05-07T20:11:27.000Z",
+        "availability_proxy": "2025-05-07T20:13:27+00:00",
+        "range_usd_millions": [
+          6650,
+          6850
+        ],
+        "archive_sha256": "590963306f5fa49236a50a19847306e27063ce33955d30e983168eccd8dc072d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftntq1-2025ex991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftnt-20250507.htm",
+        "source_time": "2025-05-07T20:11:27.000Z"
+      },
+      "reaction_session": "2025-05-08",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-08T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-08T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "ftnt-0001262039-25-000014",
+        "cover_sha256": "e919bd749de20bacc0159d53c34ce627ddb40996b939e37bad926d7da8e90278",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value",
+            "symbol": "FTNT",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftnt-20250507.htm"
+      }
+    },
+    {
+      "event_id": "adsk-0000769397-25-000067",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "ADSK",
+        "cik": "0000769397",
+        "accession": "0000769397-25-000013",
+        "source_date": "2025-02-27",
+        "accepted_at": "2025-02-27T21:34:02.000Z",
+        "availability_proxy": "2025-02-27T21:36:02+00:00",
+        "range_usd_millions": [
+          6895,
+          6965
+        ],
+        "archive_sha256": "8988c3389403074fd7f92fbe74b2b78054c55ccefeccdf54e185f34411dee37d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000013/q425pressrelease.htm",
+        "range_line_index": 99,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000013/adsk-20250226.htm"
+      },
+      "current": {
+        "symbol": "ADSK",
+        "cik": "0000769397",
+        "accession": "0000769397-25-000067",
+        "source_date": "2025-05-22",
+        "accepted_at": "2025-05-22T20:01:42.000Z",
+        "availability_proxy": "2025-05-22T20:03:42+00:00",
+        "range_usd_millions": [
+          6925,
+          6995
+        ],
+        "archive_sha256": "bee3e3603ab8c34560fb74a49446fbafc9e51efd57270c560fcc580abfb4c83b",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/q126pressrelease.htm",
+        "range_line_index": 55,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/adsk-20250522.htm",
+        "source_time": "2025-05-22T20:01:42.000Z"
+      },
+      "reaction_session": "2025-05-23",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-23T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-23T13:15:00+00:00",
+      "revision_fraction": 0.0043290043290042934,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000769397",
+          "accession": "0001213900-25-028145",
+          "accepted_at": "2025-04-02T21:16:05.000Z",
+          "filing_date": "2025-04-02",
+          "items": [
+            "5.02",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "ea0236951-8k_autodesk.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000121390025028145/0001213900-25-028145.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/769397/000121390025028145/0001213900-25-028145.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "adsk-0000769397-25-000067",
+        "cover_sha256": "367feeea45ff6fdd3fdd83a9b8231c1e417df20df2072457a481e88baa45199c",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, par value $0.01 per share",
+            "symbol": "ADSK",
+            "exchange": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/adsk-20250522.htm"
+      }
+    },
+    {
+      "event_id": "intu-0000896878-25-000020",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-25-000013",
+        "source_date": "2025-02-25",
+        "accepted_at": "2025-02-25T21:01:56.000Z",
+        "availability_proxy": "2025-02-25T21:03:56+00:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+        "range_line_index": 44,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm"
+      },
+      "current": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-25-000020",
+        "source_date": "2025-05-22",
+        "accepted_at": "2025-05-22T20:02:36.000Z",
+        "availability_proxy": "2025-05-22T20:04:36+00:00",
+        "range_usd_millions": [
+          18723,
+          18760
+        ],
+        "archive_sha256": "4390d96cc6aa3fcdd7548551b8d4192300257a418fa7ec3f382f033045ffd521",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/fy25q3earningspressrelease.htm",
+        "range_line_index": 50,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/intu-20250522.htm",
+        "source_time": "2025-05-22T20:02:36.000Z"
+      },
+      "reaction_session": "2025-05-23",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-23T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-23T13:15:00+00:00",
+      "revision_fraction": 0.026734598844057267,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "intu-0000896878-25-000020",
+        "cover_sha256": "303063191e459945a3f42aac95a5fab6b3db54bcef1dbee2c90005930eeb6553",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value",
+            "symbol": "INTU",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/intu-20250522.htm"
+      }
+    },
+    {
+      "event_id": "snps-0001193125-25-129525",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-10-31",
+      "prior": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-25-036798",
+        "source_date": "2025-02-26",
+        "accepted_at": "2025-02-26T21:31:40.000Z",
+        "availability_proxy": "2025-02-26T21:33:40+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+        "range_line_index": 67,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm"
+      },
+      "current": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-25-129525",
+        "source_date": "2025-05-28",
+        "accepted_at": "2025-05-28T20:39:49.000Z",
+        "availability_proxy": "2025-05-28T20:41:49+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "cf83765afd171aa3aa73f7e15ed069393dacf2b254408ea9d0cfe44d6c65e1cb",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632dex991.htm",
+        "range_line_index": 65,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632d8k.htm",
+        "source_time": "2025-05-28T20:39:49.000Z"
+      },
+      "reaction_session": "2025-05-29",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-29T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-29T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000883241",
+          "accession": "0001140361-25-006323",
+          "accepted_at": "2025-02-27T22:11:00.000Z",
+          "filing_date": "2025-02-27",
+          "items": [
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "ny20044174x2_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125006323/0001140361-25-006323.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/883241/000114036125006323/0001140361-25-006323.txt"
+        },
+        {
+          "cik": "0000883241",
+          "accession": "0001140361-25-009060",
+          "accepted_at": "2025-03-17T20:30:50.000Z",
+          "filing_date": "2025-03-17",
+          "items": [
+            "1.01",
+            "2.03",
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "ny20044174x9_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125009060/0001140361-25-009060.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/883241/000114036125009060/0001140361-25-009060.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "snps-0001193125-25-129525",
+        "cover_sha256": "a7968edf5b05ad7cc5c0467ce655aea6270f1c7198ff2bef504b76131942ceb3",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock(par value of $0.01 per share)",
+            "symbol": "SNPS",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632d8k.htm"
+      }
+    },
+    {
+      "event_id": "zs-0001713683-25-000078",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-25-000025",
+        "source_date": "2025-03-05",
+        "accepted_at": "2025-03-05T21:06:30.000Z",
+        "availability_proxy": "2025-03-05T21:08:30+00:00",
+        "range_usd_millions": [
+          2640,
+          2654
+        ],
+        "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm"
+      },
+      "current": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-25-000078",
+        "source_date": "2025-05-29",
+        "accepted_at": "2025-05-29T20:08:58.000Z",
+        "availability_proxy": "2025-05-29T20:10:58+00:00",
+        "range_usd_millions": [
+          2659,
+          2661
+        ],
+        "archive_sha256": "8b8988061d8f27893728f48d909f556857ebdca17816a27a98f78111357ea64d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+        "range_line_index": 37,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm",
+        "source_time": "2025-05-29T20:08:58.000Z"
+      },
+      "reaction_session": "2025-05-30",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-30T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-30T13:15:00+00:00",
+      "revision_fraction": 0.004911220249338877,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "zs-0001713683-25-000078",
+        "cover_sha256": "13b407b8419498da899645aa3033dc599276a93f9bcf22c967edb9f5ba54922c",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value",
+            "symbol": "ZS",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm"
+      }
+    },
+    {
+      "event_id": "crwd-0001535527-25-000017",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "CRWD",
+        "cik": "0001535527",
+        "accession": "0001535527-25-000005",
+        "source_date": "2025-03-04",
+        "accepted_at": "2025-03-04T21:11:41.000Z",
+        "availability_proxy": "2025-03-04T21:13:41+00:00",
+        "range_usd_millions": [
+          4743.5,
+          4805.5
+        ],
+        "archive_sha256": "3a4690489c34bb16da3f3dbd4ae8093114e162f85fb0795fef2859c3504c1f13",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+        "range_line_index": 49,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304.htm"
+      },
+      "current": {
+        "symbol": "CRWD",
+        "cik": "0001535527",
+        "accession": "0001535527-25-000017",
+        "source_date": "2025-06-03",
+        "accepted_at": "2025-06-03T20:06:56.000Z",
+        "availability_proxy": "2025-06-03T20:08:56+00:00",
+        "range_usd_millions": [
+          4743.5,
+          4805.5
+        ],
+        "archive_sha256": "f73c5aa5eb7488d3c740d4670af7c6cf47f4569caa6347c2248fe1a1b3e160bb",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+        "range_line_index": 41,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm",
+        "source_time": "2025-06-03T20:06:56.000Z"
+      },
+      "reaction_session": "2025-06-04",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-06-04T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-04T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001535527",
+          "accession": "0001104659-25-045244",
+          "accepted_at": "2025-05-07T10:03:11.000Z",
+          "filing_date": "2025-05-07",
+          "items": [
+            "2.02",
+            "2.05",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "tm2514190d1_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/0001104659-25-045244.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1535527/000110465925045244/0001104659-25-045244.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "crwd-0001535527-25-000017",
+        "cover_sha256": "2fd5e308cf1c9aaf176d803a366722e4b4bcf9cbbf19feb67e3ec06a9b8c8ea3",
+        "listed_securities": [
+          {
+            "security_class": "Class A common stock, $0.0005 par value",
+            "symbol": "CRWD",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm"
+      }
+    },
+    {
+      "event_id": "dltr-0000935703-25-000024",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-25-000012",
+        "source_date": "2025-03-26",
+        "accepted_at": "2025-03-26T10:32:08.000Z",
+        "availability_proxy": "2025-03-26T10:34:08+00:00",
+        "range_usd_millions": [
+          18500,
+          19100
+        ],
+        "archive_sha256": "b652eebf14454d7442b18b33102b98be850bb2822980a850f298778ea19e846c",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/ex991q4-24earningspressrel.htm",
+        "range_line_index": 6,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/dltr-20250326.htm"
+      },
+      "current": {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-25-000024",
+        "source_date": "2025-06-04",
+        "accepted_at": "2025-06-04T10:31:30.000Z",
+        "availability_proxy": "2025-06-04T10:33:30+00:00",
+        "range_usd_millions": [
+          18500,
+          19100
+        ],
+        "archive_sha256": "7b88219f0f9bf6e6e132ec494a30156efedc5e631d641388c9d8e9b61c5d65b3",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/ex991q1-25earningspressrel.htm",
+        "range_line_index": 8,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/dltr-20250604.htm",
+        "source_time": "2025-06-04T10:31:30.000Z"
+      },
+      "reaction_session": "2025-06-04",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-06-04T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-04T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000935703",
+          "accession": "0000935703-25-000019",
+          "accepted_at": "2025-05-21T10:21:12.000Z",
+          "filing_date": "2025-05-21",
+          "items": [
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "dltr-20250521.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000019/0000935703-25-000019.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/935703/000093570325000019/0000935703-25-000019.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "dltr-0000935703-25-000024",
+        "cover_sha256": "20d6d85d7feb3193d81dac29606961363f2f56553cd7aad7ad1926d23332fcec",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, par value $0.01 per share",
+            "symbol": "DLTR",
+            "exchange": "NASDAQ Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/dltr-20250604.htm"
+      }
+    },
+    {
+      "event_id": "mdb-0001441816-25-000116",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "MDB",
+        "cik": "0001441816",
+        "accession": "0001441816-25-000046",
+        "source_date": "2025-03-05",
+        "accepted_at": "2025-03-05T21:07:02.000Z",
+        "availability_proxy": "2025-03-05T21:09:02+00:00",
+        "range_usd_millions": [
+          2240,
+          2280
+        ],
+        "archive_sha256": "0aff05ef8f429840af8d8cf776a6eae0c38c794ed222aee4a67bb1cef415d216",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-20250305.htm"
+      },
+      "current": {
+        "symbol": "MDB",
+        "cik": "0001441816",
+        "accession": "0001441816-25-000116",
+        "source_date": "2025-06-04",
+        "accepted_at": "2025-06-04T20:03:49.000Z",
+        "availability_proxy": "2025-06-04T20:05:49+00:00",
+        "range_usd_millions": [
+          2250,
+          2290
+        ],
+        "archive_sha256": "388d85a10aa9ad6175916cd857080167e78008efbc61313fff9918c95840343c",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+        "range_line_index": 27,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm",
+        "source_time": "2025-06-04T20:03:49.000Z"
+      },
+      "reaction_session": "2025-06-05",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-06-05T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-05T13:15:00+00:00",
+      "revision_fraction": 0.004424778761061843,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001441816",
+          "accession": "0001441816-25-000089",
+          "accepted_at": "2025-04-28T12:33:18.000Z",
+          "filing_date": "2025-04-28",
+          "items": [
+            "5.02",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "mdb-20250428.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000089/0001441816-25-000089.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1441816/000144181625000089/0001441816-25-000089.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "mdb-0001441816-25-000116",
+        "cover_sha256": "1aeeedb0f563528ed89d5bd56e4cd43c04ab35ae7535463fcc26d469e6a36716",
+        "listed_securities": [
+          {
+            "security_class": "Class A Common Stock, par value $0.001 per share",
+            "symbol": "MDB",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm"
+      }
+    },
+    {
+      "event_id": "lulu-0001397187-25-000026",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2026-02-01",
+      "prior": {
+        "symbol": "LULU",
+        "cik": "0001397187",
+        "accession": "0001397187-25-000012",
+        "source_date": "2025-03-27",
+        "accepted_at": "2025-03-27T20:10:00.000Z",
+        "availability_proxy": "2025-03-27T20:12:00+00:00",
+        "range_usd_millions": [
+          11150,
+          11300
+        ],
+        "archive_sha256": "ad3db85a433ca59a72f7e216f7fb8ca0c44ecac5fb6f67d61ca2af930ba0681b",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+        "range_line_index": 45,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250327.htm"
+      },
+      "current": {
+        "symbol": "LULU",
+        "cik": "0001397187",
+        "accession": "0001397187-25-000026",
+        "source_date": "2025-06-05",
+        "accepted_at": "2025-06-05T20:10:27.000Z",
+        "availability_proxy": "2025-06-05T20:12:27+00:00",
+        "range_usd_millions": [
+          11150,
+          11300
+        ],
+        "archive_sha256": "db8287b02200c54a8bd80b58f36d19f37f99b6f35efbde5804632235122bedf6",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+        "range_line_index": 21,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm",
+        "source_time": "2025-06-05T20:10:27.000Z"
+      },
+      "reaction_session": "2025-06-06",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-06-06T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-06T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "lulu-0001397187-25-000026",
+        "cover_sha256": "3736fc9da609c9c0b28183c70b26f6f5f441f15d713998b2d2b00ecbf48824a7",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, par value $0.005 per share",
+            "symbol": "LULU",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm"
+      }
+    }
+  ],
+  "guidance_candidates": [
+    {
+      "event_id": "ea-0000712515-25-000010",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-03-31",
+      "prior": {
+        "symbol": "EA",
+        "cik": "0000712515",
+        "accession": "0000712515-24-000045",
+        "source_date": "2024-10-29",
+        "accepted_at": "2024-10-29T20:06:07.000Z",
+        "availability_proxy": "2024-10-29T20:08:07+00:00",
+        "range_usd_millions": [
+          7400,
+          7700
+        ],
+        "archive_sha256": "ef1893098ed75859dfe67e4b099411fcd349999c1c59bf987671913749898f34",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/earningspressrelease2024_1.htm",
+        "range_line_index": 57,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/ea-20241028.htm"
+      },
+      "current": {
+        "symbol": "EA",
+        "cik": "0000712515",
+        "accession": "0000712515-25-000010",
+        "source_date": "2025-02-04",
+        "accepted_at": "2025-02-04T21:06:14.000Z",
+        "availability_proxy": "2025-02-04T21:08:14+00:00",
+        "range_usd_millions": [
+          7250,
+          7400
+        ],
+        "archive_sha256": "1fe1f87f8593278e561199cf18da80b631011102f8ce90db503b827beca283ad",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/earningspressrelease2025_0.htm",
+        "range_line_index": 58,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/ea-20250131.htm",
+        "source_time": "2025-02-04T21:06:14.000Z"
+      },
+      "reaction_session": "2025-02-05",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-05T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-05T14:15:00+00:00",
+      "revision_fraction": -0.0298013245033113,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000712515",
+          "accession": "0000712515-25-000007",
+          "accepted_at": "2025-01-22T21:06:05.000Z",
+          "filing_date": "2025-01-22",
+          "items": [
+            "2.02",
+            "9.01"
+          ],
+          "primary_document": "ea-20250122.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000007/0000712515-25-000007.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/712515/000071251525000007/0000712515-25-000007.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "ea-0000712515-25-000010",
+        "cover_sha256": "7e15485b51bd22af12ef208efdc8840197982ed1d6cdc0e7c8ada608e8f92d0f",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value",
+            "symbol": "EA",
+            "exchange": "NASDAQ Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/ea-20250131.htm"
+      }
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000029",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000004",
+        "source_date": "2025-01-13",
+        "accepted_at": "2025-01-13T12:31:58.000Z",
+        "availability_proxy": "2025-01-13T12:33:58+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "695e320738fc709ab992740cee275c08139da8262ac2dba7c682315b25e126e4",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000004/dxcm991_1132025.htm",
+        "range_line_index": 3,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000004/dxcm-20250113.htm"
+      },
+      "current": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000029",
+        "source_date": "2025-02-13",
+        "accepted_at": "2025-02-13T21:03:33.000Z",
+        "availability_proxy": "2025-02-13T21:05:33+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+        "range_line_index": 9,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm",
+        "source_time": "2025-02-13T21:03:33.000Z"
+      },
+      "reaction_session": "2025-02-14",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-14T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-14T14:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "dxcm-0001093557-25-000029",
+        "cover_sha256": "72c76ce1143315931a9267fc0df4caac24ebca449896d1020c1708f2b97c8ae9",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value Per Share",
+            "symbol": "DXCM",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm"
+      }
+    },
+    {
+      "event_id": "intu-0000896878-25-000013",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-24-000051",
+        "source_date": "2024-11-21",
+        "accepted_at": "2024-11-21T21:07:42.000Z",
+        "availability_proxy": "2024-11-21T21:09:42+00:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "archive_sha256": "b73663a7ec1b0ffaaef12a3a12612d0e12af34ed013f42f1d7c8155c5ab4e97b",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/fy25q1earningspressrelease.htm",
+        "range_line_index": 43,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/intu-20241121.htm"
+      },
+      "current": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-25-000013",
+        "source_date": "2025-02-25",
+        "accepted_at": "2025-02-25T21:01:56.000Z",
+        "availability_proxy": "2025-02-25T21:03:56+00:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+        "range_line_index": 44,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm",
+        "source_time": "2025-02-25T21:01:56.000Z"
+      },
+      "reaction_session": "2025-02-26",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-26T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-26T14:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "intu-0000896878-25-000013",
+        "cover_sha256": "dc9087e83b80759d080503ee9cdf2e287f0fd14c135c5703d7e3cc197aac4ef9",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value",
+            "symbol": "INTU",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm"
+      }
+    },
+    {
+      "event_id": "snps-0001193125-25-036798",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-10-31",
+      "prior": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-24-270723",
+        "source_date": "2024-12-04",
+        "accepted_at": "2024-12-04T21:30:54.000Z",
+        "availability_proxy": "2024-12-04T21:32:54+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "d1834d5c8cd51b94ac4e1d2f651ff4fab01b487894313621ffbd629d8a830f02",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524270723/d868165dex991.htm",
+        "range_line_index": 76,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524270723/d868165d8k.htm"
+      },
+      "current": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-25-036798",
+        "source_date": "2025-02-26",
+        "accepted_at": "2025-02-26T21:31:40.000Z",
+        "availability_proxy": "2025-02-26T21:33:40+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+        "range_line_index": 67,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm",
+        "source_time": "2025-02-26T21:31:40.000Z"
+      },
+      "reaction_session": "2025-02-27",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-02-27T14:30:00+00:00",
+      "feature_cutoff_at": "2025-02-27T14:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "snps-0001193125-25-036798",
+        "cover_sha256": "7355394dfdc9d10245b2fda48631fd0f6a89cc6b2250bccc3b44bd41817dbf3b",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock (par value of $0.01 per share)",
+            "symbol": "SNPS",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm"
+      }
+    },
+    {
+      "event_id": "zs-0001713683-25-000025",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-24-000143",
+        "source_date": "2024-12-02",
+        "accepted_at": "2024-12-02T21:08:35.000Z",
+        "availability_proxy": "2024-12-02T21:10:35+00:00",
+        "range_usd_millions": [
+          2623,
+          2643
+        ],
+        "archive_sha256": "b86f2af69fae8eb200d173cd2089671172d227a52cb70d222072af642da97e1f",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-20241202.htm"
+      },
+      "current": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-25-000025",
+        "source_date": "2025-03-05",
+        "accepted_at": "2025-03-05T21:06:30.000Z",
+        "availability_proxy": "2025-03-05T21:08:30+00:00",
+        "range_usd_millions": [
+          2640,
+          2654
+        ],
+        "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm",
+        "source_time": "2025-03-05T21:06:30.000Z"
+      },
+      "reaction_session": "2025-03-06",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-03-06T14:30:00+00:00",
+      "feature_cutoff_at": "2025-03-06T14:15:00+00:00",
+      "revision_fraction": 0.005317128750474742,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "zs-0001713683-25-000025",
+        "cover_sha256": "0b221e42755332419ceee6cf29274f46223d3cc2865dadef82f9df678f4a7457",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value",
+            "symbol": "ZS",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm"
+      }
+    },
+    {
+      "event_id": "orly-0000898173-25-000026",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "ORLY",
+        "cik": "0000898173",
+        "accession": "0000898173-25-000005",
+        "source_date": "2025-02-05",
+        "accepted_at": "2025-02-05T21:31:22.000Z",
+        "availability_proxy": "2025-02-05T21:33:22+00:00",
+        "range_usd_millions": [
+          17400,
+          17700
+        ],
+        "archive_sha256": "923534c82e88447ec0ba0ccaa3e56a9acd3bbbddfe5726a627bd84cfc10f847d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000005/orly-20250205xex99d1.htm",
+        "range_line_index": 48,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000005/orly-20250205x8k.htm"
+      },
+      "current": {
+        "symbol": "ORLY",
+        "cik": "0000898173",
+        "accession": "0000898173-25-000026",
+        "source_date": "2025-04-23",
+        "accepted_at": "2025-04-23T20:34:01.000Z",
+        "availability_proxy": "2025-04-23T20:36:01+00:00",
+        "range_usd_millions": [
+          17400,
+          17700
+        ],
+        "archive_sha256": "b04b6d25e10ea1c67abefcf53657ef74795c19b7ecb5c54567b294e8b6f18eb1",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423xex99d1.htm",
+        "range_line_index": 40,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423x8k.htm",
+        "source_time": "2025-04-23T20:34:01.000Z"
+      },
+      "reaction_session": "2025-04-24",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-04-24T13:30:00+00:00",
+      "feature_cutoff_at": "2025-04-24T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000898173",
+          "accession": "0000898173-25-000010",
+          "accepted_at": "2025-03-13T20:32:12.000Z",
+          "filing_date": "2025-03-13",
+          "items": [
+            "7.01",
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "orly-20250312x8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000010/0000898173-25-000010.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/898173/000089817325000010/0000898173-25-000010.txt"
+        },
+        {
+          "cik": "0000898173",
+          "accession": "0000898173-25-000023",
+          "accepted_at": "2025-04-01T20:32:36.000Z",
+          "filing_date": "2025-04-01",
+          "items": [
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "orly-20250401x8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000023/0000898173-25-000023.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/898173/000089817325000023/0000898173-25-000023.txt"
+        },
+        {
+          "cik": "0000898173",
+          "accession": "0001104659-25-030592",
+          "accepted_at": "2025-04-01T20:33:39.000Z",
+          "filing_date": "2025-04-01",
+          "items": [
+            "1.01",
+            "2.03",
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "tm2510899d1_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000110465925030592/0001104659-25-030592.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/898173/000110465925030592/0001104659-25-030592.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "orly-0000898173-25-000026",
+        "cover_sha256": "1390bca9414a58d9bca3be177a3a3308ea92eef0bfe3f879e873c6b2f26383b9",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock",
+            "symbol": "ORLY",
+            "exchange": "The NASDAQ Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423x8k.htm"
+      }
+    },
+    {
+      "event_id": "cdns-0000813672-25-000046",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "CDNS",
+        "cik": "0000813672",
+        "accession": "0000813672-25-000016",
+        "source_date": "2025-02-18",
+        "accepted_at": "2025-02-18T21:04:08.000Z",
+        "availability_proxy": "2025-02-18T21:06:08+00:00",
+        "range_usd_millions": [
+          5140,
+          5220
+        ],
+        "archive_sha256": "37d3783353fbb0fde283b1b493b92fc33deb1a369fd5df859c99674787aa597e",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/cdns2182025ex9901.htm",
+        "range_line_index": 13,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/cdns-20250218.htm"
+      },
+      "current": {
+        "symbol": "CDNS",
+        "cik": "0000813672",
+        "accession": "0000813672-25-000046",
+        "source_date": "2025-04-28",
+        "accepted_at": "2025-04-28T20:03:44.000Z",
+        "availability_proxy": "2025-04-28T20:05:44+00:00",
+        "range_usd_millions": [
+          5150,
+          5230
+        ],
+        "archive_sha256": "54a0ef9782e2c98f1735e8b2bf724ee82153add3c2cf80045d42efe4be1c814a",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+        "range_line_index": 8,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns-20250428.htm",
+        "source_time": "2025-04-28T20:03:44.000Z"
+      },
+      "reaction_session": "2025-04-29",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-04-29T13:30:00+00:00",
+      "feature_cutoff_at": "2025-04-29T13:15:00+00:00",
+      "revision_fraction": 0.0019305019305020377,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "cdns-0000813672-25-000046",
+        "cover_sha256": "2224a61e4e72d53628b675e3ba98a54a8e40925eed77cc0e22f8ce01b298dbe5",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value per share",
+            "symbol": "CDNS",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns-20250428.htm"
+      }
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000124",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "CTSH",
+        "cik": "0001058290",
+        "accession": "0001058290-25-000007",
+        "source_date": "2025-02-05",
+        "accepted_at": "2025-02-05T21:05:30.000Z",
+        "availability_proxy": "2025-02-05T21:07:30+00:00",
+        "range_usd_millions": [
+          20300,
+          20800
+        ],
+        "archive_sha256": "ce808654543701d8c3fb550b032b0c85282a9061a4afa3429f9765c302f80b80",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000007/exhibit99312312024.htm",
+        "range_line_index": 15,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000007/ctsh-20250205.htm"
+      },
+      "current": {
+        "symbol": "CTSH",
+        "cik": "0001058290",
+        "accession": "0001058290-25-000124",
+        "source_date": "2025-04-30",
+        "accepted_at": "2025-04-30T20:02:39.000Z",
+        "availability_proxy": "2025-04-30T20:04:39+00:00",
+        "range_usd_millions": [
+          20500,
+          21000
+        ],
+        "archive_sha256": "2b0d9ec5a65712fd44bb308391f09269d4f7310d02b7c5d2d9f8f29886da82f0",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/exhibit9933312025.htm",
+        "range_line_index": 13,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/ctsh-20250430.htm",
+        "source_time": "2025-04-30T20:02:39.000Z"
+      },
+      "reaction_session": "2025-05-01",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-01T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-01T13:15:00+00:00",
+      "revision_fraction": 0.009732360097323589,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001058290",
+          "accession": "0001058290-25-000112",
+          "accepted_at": "2025-03-25T12:02:00.000Z",
+          "filing_date": "2025-03-25",
+          "items": [
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "ctsh-20250324.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000112/0001058290-25-000112.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1058290/000105829025000112/0001058290-25-000112.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "ctsh-0001058290-25-000124",
+        "cover_sha256": "fd1d3d84128d376aad65f9e4407dd50b4b3797c726facc6d0ce5922767e0805c",
+        "listed_securities": [
+          {
+            "security_class": "Class A Common Stock,$0.01 par value per share",
+            "symbol": "CTSH",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/ctsh-20250430.htm"
+      }
+    },
+    {
+      "event_id": "idxx-0001104659-25-042955",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "IDXX",
+        "cik": "0000874716",
+        "accession": "0001104659-25-008331",
+        "source_date": "2025-02-03",
+        "accepted_at": "2025-02-03T11:30:47.000Z",
+        "availability_proxy": "2025-02-03T11:32:47+00:00",
+        "range_usd_millions": [
+          4055,
+          4170
+        ],
+        "archive_sha256": "5afb27077bf8f664634a54867f153ec561f1e85eabb155ef3b5d36fd6d26baa7",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925008331/tm255269d1_ex99-1.htm",
+        "range_line_index": 9,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925008331/tm255269d1_8k.htm"
+      },
+      "current": {
+        "symbol": "IDXX",
+        "cik": "0000874716",
+        "accession": "0001104659-25-042955",
+        "source_date": "2025-05-01",
+        "accepted_at": "2025-05-01T10:30:23.000Z",
+        "availability_proxy": "2025-05-01T10:32:23+00:00",
+        "range_usd_millions": [
+          4095,
+          4210
+        ],
+        "archive_sha256": "20960f04860bae90364b1ba43fe479549f471120f81463118c26a4635a0ecf6f",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_ex99-1.htm",
+        "range_line_index": 11,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_8k.htm",
+        "source_time": "2025-05-01T10:30:23.000Z"
+      },
+      "reaction_session": "2025-05-01",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-05-01T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-01T13:15:00+00:00",
+      "revision_fraction": 0.009726443768997006,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "idxx-0001104659-25-042955",
+        "cover_sha256": "8ea433efaef6b5941e05b4aefb26608e55719c638a0cb45af7a21f9b4924e23b",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.10 par value per share",
+            "symbol": "IDXX",
+            "exchange": "NASDAQ Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_8k.htm"
+      }
+    },
+    {
+      "event_id": "amgn-0000318154-25-000018",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "AMGN",
+        "cik": "0000318154",
+        "accession": "0000318154-25-000005",
+        "source_date": "2025-02-04",
+        "accepted_at": "2025-02-04T21:05:22.000Z",
+        "availability_proxy": "2025-02-04T21:07:22+00:00",
+        "range_usd_millions": [
+          34300,
+          35700
+        ],
+        "archive_sha256": "79bab48b0e6cf6f685ff14647e7a4d6b04830e8e7031e5170017aab2d7edc11e",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20241231earningsrelea.htm",
+        "range_line_index": 248,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20250204.htm"
+      },
+      "current": {
+        "symbol": "AMGN",
+        "cik": "0000318154",
+        "accession": "0000318154-25-000018",
+        "source_date": "2025-05-01",
+        "accepted_at": "2025-05-01T20:04:20.000Z",
+        "availability_proxy": "2025-05-01T20:06:20+00:00",
+        "range_usd_millions": [
+          34300,
+          35700
+        ],
+        "archive_sha256": "eee0a2203f03debf15fb0c9cb9ec899f6ea8b3ead63cb3c892870375074d4169",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250331earningsrelea.htm",
+        "range_line_index": 170,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250501.htm",
+        "source_time": "2025-05-01T20:04:20.000Z"
+      },
+      "reaction_session": "2025-05-02",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-02T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-02T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "amgn-0000318154-25-000018",
+        "cover_sha256": "6c9c30bba0256f3a84242d5ee87f1a7de8707484167e4bd56f82c923617dcfa1",
+        "listed_securities": [
+          {
+            "security_class": "Common stock, $0.0001 par value",
+            "symbol": "AMGN",
+            "exchange": "The Nasdaq Global Select Market"
+          },
+          {
+            "security_class": "2.000% Senior Notes due 2026",
+            "symbol": "AMGN26",
+            "exchange": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250501.htm"
+      }
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000111",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000029",
+        "source_date": "2025-02-13",
+        "accepted_at": "2025-02-13T21:03:33.000Z",
+        "availability_proxy": "2025-02-13T21:05:33+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+        "range_line_index": 9,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm"
+      },
+      "current": {
+        "symbol": "DXCM",
+        "cik": "0001093557",
+        "accession": "0001093557-25-000111",
+        "source_date": "2025-05-01",
+        "accepted_at": "2025-05-01T20:03:07.000Z",
+        "availability_proxy": "2025-05-01T20:05:07+00:00",
+        "range_usd_millions": [
+          4600,
+          4600
+        ],
+        "archive_sha256": "3733b3be7c1ac868ad4a9e6c2aa41935cd92611499f36c341b44bf577e820bbd",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm03312025-exhibit991.htm",
+        "range_line_index": 14,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm-20250501.htm",
+        "source_time": "2025-05-01T20:03:07.000Z"
+      },
+      "reaction_session": "2025-05-02",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-02T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-02T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001093557",
+          "accession": "0001093557-25-000047",
+          "accepted_at": "2025-03-07T21:30:19.000Z",
+          "filing_date": "2025-03-07",
+          "items": [
+            "7.01",
+            "8.01"
+          ],
+          "primary_document": "dxcm-20250304.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000047/0001093557-25-000047.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000047/0001093557-25-000047.txt"
+        },
+        {
+          "cik": "0001093557",
+          "accession": "0001093557-25-000050",
+          "accepted_at": "2025-03-10T12:31:23.000Z",
+          "filing_date": "2025-03-10",
+          "items": [
+            "5.02",
+            "7.01"
+          ],
+          "primary_document": "dxcm-20250306.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000050/0001093557-25-000050.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1093557/000109355725000050/0001093557-25-000050.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "dxcm-0001093557-25-000111",
+        "cover_sha256": "502522a0e19f691c018b4db28dd2c2a085bf918a40c1e2ac4843b0b328f37790",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value Per Share",
+            "symbol": "DXCM",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm-20250501.htm"
+      }
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000171",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "VRTX",
+        "cik": "0000875320",
+        "accession": "0000875320-25-000029",
+        "source_date": "2025-02-10",
+        "accepted_at": "2025-02-10T21:08:20.000Z",
+        "availability_proxy": "2025-02-10T21:10:20+00:00",
+        "range_usd_millions": [
+          11750,
+          12000
+        ],
+        "archive_sha256": "b57c11460e917ac31a166474ee7aaa825f9f85d9dcb1571a580ceae976251dba",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000029/ex-991_q42024.htm",
+        "range_line_index": 2,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000029/vrtx-20250204.htm"
+      },
+      "current": {
+        "symbol": "VRTX",
+        "cik": "0000875320",
+        "accession": "0000875320-25-000171",
+        "source_date": "2025-05-05",
+        "accepted_at": "2025-05-05T20:10:03.000Z",
+        "availability_proxy": "2025-05-05T20:12:03+00:00",
+        "range_usd_millions": [
+          11850,
+          12000
+        ],
+        "archive_sha256": "d97d57e06aab63e20cee81e271010b7937d893c4cf758e596baeeca27b88f751",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/ex-991_q12025.htm",
+        "range_line_index": 2,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/vrtx-20250505.htm",
+        "source_time": "2025-05-05T20:10:03.000Z"
+      },
+      "reaction_session": "2025-05-06",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-06T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-06T13:15:00+00:00",
+      "revision_fraction": 0.004210526315789442,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000875320",
+          "accession": "0000875320-25-000156",
+          "accepted_at": "2025-03-28T20:08:01.000Z",
+          "filing_date": "2025-03-28",
+          "items": [
+            "8.01"
+          ],
+          "primary_document": "vrtx-20250328.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000156/0000875320-25-000156.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/875320/000087532025000156/0000875320-25-000156.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "vrtx-0000875320-25-000171",
+        "cover_sha256": "b84465c3669349fc6b6a78c0ea4029c8fa8f67a6da94b41cb5ecd01bc148186c",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 Par Value Per Share",
+            "symbol": "VRTX",
+            "exchange": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/vrtx-20250505.htm"
+      }
+    },
+    {
+      "event_id": "vrsk-0001437749-25-014906",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "VRSK",
+        "cik": "0001442145",
+        "accession": "0001437749-25-005158",
+        "source_date": "2025-02-26",
+        "accepted_at": "2025-02-26T12:21:49.000Z",
+        "availability_proxy": "2025-02-26T12:23:49+00:00",
+        "range_usd_millions": [
+          3030,
+          3080
+        ],
+        "archive_sha256": "e35b7edb9f5e40ee8e332bcc46794e930ef2c726230873888df5cf270a758a98",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925005158/ex_702488.htm",
+        "range_line_index": 248,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925005158/vrsk20240723_8k.htm"
+      },
+      "current": {
+        "symbol": "VRSK",
+        "cik": "0001442145",
+        "accession": "0001437749-25-014906",
+        "source_date": "2025-05-07",
+        "accepted_at": "2025-05-07T11:18:20.000Z",
+        "availability_proxy": "2025-05-07T11:20:20+00:00",
+        "range_usd_millions": [
+          3030,
+          3080
+        ],
+        "archive_sha256": "604b493a142d4d9917b2d0ffeea847625f92a8499227f02200eeedbf426abdfc",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/ex_770468.htm",
+        "range_line_index": 200,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/vrsk20250125_8k.htm",
+        "source_time": "2025-05-07T11:18:20.000Z"
+      },
+      "reaction_session": "2025-05-07",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-05-07T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-07T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001442145",
+          "accession": "0001193125-25-051943",
+          "accepted_at": "2025-03-11T20:07:46.000Z",
+          "filing_date": "2025-03-11",
+          "items": [
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "d934103d8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525051943/0001193125-25-051943.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1442145/000119312525051943/0001193125-25-051943.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "vrsk-0001437749-25-014906",
+        "cover_sha256": "5e16f9091cfabe728be3643a2497a41982540b03ee52bfb9f1131db5c245b2c2",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock",
+            "symbol": "VRSK",
+            "exchange": "NASDAQ"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/vrsk20250125_8k.htm"
+      }
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000014",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "prior": {
+        "symbol": "FTNT",
+        "cik": "0001262039",
+        "accession": "0001262039-25-000007",
+        "source_date": "2025-02-06",
+        "accepted_at": "2025-02-06T21:09:58.000Z",
+        "availability_proxy": "2025-02-06T21:11:58+00:00",
+        "range_usd_millions": [
+          6650,
+          6850
+        ],
+        "archive_sha256": "f30c9d5438dfb2380b49aaa42b9db197872244e00fd4b0cc2678dbcfcbf8a725",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/ftntq4-2024ex991.htm",
+        "range_line_index": 50,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/ftnt-20250204.htm"
+      },
+      "current": {
+        "symbol": "FTNT",
+        "cik": "0001262039",
+        "accession": "0001262039-25-000014",
+        "source_date": "2025-05-07",
+        "accepted_at": "2025-05-07T20:11:27.000Z",
+        "availability_proxy": "2025-05-07T20:13:27+00:00",
+        "range_usd_millions": [
+          6650,
+          6850
+        ],
+        "archive_sha256": "590963306f5fa49236a50a19847306e27063ce33955d30e983168eccd8dc072d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftntq1-2025ex991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftnt-20250507.htm",
+        "source_time": "2025-05-07T20:11:27.000Z"
+      },
+      "reaction_session": "2025-05-08",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-08T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-08T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "ftnt-0001262039-25-000014",
+        "cover_sha256": "e919bd749de20bacc0159d53c34ce627ddb40996b939e37bad926d7da8e90278",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value",
+            "symbol": "FTNT",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftnt-20250507.htm"
+      }
+    },
+    {
+      "event_id": "adsk-0000769397-25-000067",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "ADSK",
+        "cik": "0000769397",
+        "accession": "0000769397-25-000013",
+        "source_date": "2025-02-27",
+        "accepted_at": "2025-02-27T21:34:02.000Z",
+        "availability_proxy": "2025-02-27T21:36:02+00:00",
+        "range_usd_millions": [
+          6895,
+          6965
+        ],
+        "archive_sha256": "8988c3389403074fd7f92fbe74b2b78054c55ccefeccdf54e185f34411dee37d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000013/q425pressrelease.htm",
+        "range_line_index": 99,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000013/adsk-20250226.htm"
+      },
+      "current": {
+        "symbol": "ADSK",
+        "cik": "0000769397",
+        "accession": "0000769397-25-000067",
+        "source_date": "2025-05-22",
+        "accepted_at": "2025-05-22T20:01:42.000Z",
+        "availability_proxy": "2025-05-22T20:03:42+00:00",
+        "range_usd_millions": [
+          6925,
+          6995
+        ],
+        "archive_sha256": "bee3e3603ab8c34560fb74a49446fbafc9e51efd57270c560fcc580abfb4c83b",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/q126pressrelease.htm",
+        "range_line_index": 55,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/adsk-20250522.htm",
+        "source_time": "2025-05-22T20:01:42.000Z"
+      },
+      "reaction_session": "2025-05-23",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-23T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-23T13:15:00+00:00",
+      "revision_fraction": 0.0043290043290042934,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000769397",
+          "accession": "0001213900-25-028145",
+          "accepted_at": "2025-04-02T21:16:05.000Z",
+          "filing_date": "2025-04-02",
+          "items": [
+            "5.02",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "ea0236951-8k_autodesk.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000121390025028145/0001213900-25-028145.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/769397/000121390025028145/0001213900-25-028145.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "adsk-0000769397-25-000067",
+        "cover_sha256": "367feeea45ff6fdd3fdd83a9b8231c1e417df20df2072457a481e88baa45199c",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, par value $0.01 per share",
+            "symbol": "ADSK",
+            "exchange": "The Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/adsk-20250522.htm"
+      }
+    },
+    {
+      "event_id": "intu-0000896878-25-000020",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-25-000013",
+        "source_date": "2025-02-25",
+        "accepted_at": "2025-02-25T21:01:56.000Z",
+        "availability_proxy": "2025-02-25T21:03:56+00:00",
+        "range_usd_millions": [
+          18160,
+          18347
+        ],
+        "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+        "range_line_index": 44,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm"
+      },
+      "current": {
+        "symbol": "INTU",
+        "cik": "0000896878",
+        "accession": "0000896878-25-000020",
+        "source_date": "2025-05-22",
+        "accepted_at": "2025-05-22T20:02:36.000Z",
+        "availability_proxy": "2025-05-22T20:04:36+00:00",
+        "range_usd_millions": [
+          18723,
+          18760
+        ],
+        "archive_sha256": "4390d96cc6aa3fcdd7548551b8d4192300257a418fa7ec3f382f033045ffd521",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/fy25q3earningspressrelease.htm",
+        "range_line_index": 50,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/intu-20250522.htm",
+        "source_time": "2025-05-22T20:02:36.000Z"
+      },
+      "reaction_session": "2025-05-23",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-23T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-23T13:15:00+00:00",
+      "revision_fraction": 0.026734598844057267,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "intu-0000896878-25-000020",
+        "cover_sha256": "303063191e459945a3f42aac95a5fab6b3db54bcef1dbee2c90005930eeb6553",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.01 par value",
+            "symbol": "INTU",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/intu-20250522.htm"
+      }
+    },
+    {
+      "event_id": "snps-0001193125-25-129525",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-10-31",
+      "prior": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-25-036798",
+        "source_date": "2025-02-26",
+        "accepted_at": "2025-02-26T21:31:40.000Z",
+        "availability_proxy": "2025-02-26T21:33:40+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+        "range_line_index": 67,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm"
+      },
+      "current": {
+        "symbol": "SNPS",
+        "cik": "0000883241",
+        "accession": "0001193125-25-129525",
+        "source_date": "2025-05-28",
+        "accepted_at": "2025-05-28T20:39:49.000Z",
+        "availability_proxy": "2025-05-28T20:41:49+00:00",
+        "range_usd_millions": [
+          6745,
+          6805
+        ],
+        "archive_sha256": "cf83765afd171aa3aa73f7e15ed069393dacf2b254408ea9d0cfe44d6c65e1cb",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632dex991.htm",
+        "range_line_index": 65,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632d8k.htm",
+        "source_time": "2025-05-28T20:39:49.000Z"
+      },
+      "reaction_session": "2025-05-29",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-29T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-29T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000883241",
+          "accession": "0001140361-25-006323",
+          "accepted_at": "2025-02-27T22:11:00.000Z",
+          "filing_date": "2025-02-27",
+          "items": [
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "ny20044174x2_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125006323/0001140361-25-006323.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/883241/000114036125006323/0001140361-25-006323.txt"
+        },
+        {
+          "cik": "0000883241",
+          "accession": "0001140361-25-009060",
+          "accepted_at": "2025-03-17T20:30:50.000Z",
+          "filing_date": "2025-03-17",
+          "items": [
+            "1.01",
+            "2.03",
+            "8.01",
+            "9.01"
+          ],
+          "primary_document": "ny20044174x9_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125009060/0001140361-25-009060.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/883241/000114036125009060/0001140361-25-009060.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "snps-0001193125-25-129525",
+        "cover_sha256": "a7968edf5b05ad7cc5c0467ce655aea6270f1c7198ff2bef504b76131942ceb3",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock(par value of $0.01 per share)",
+            "symbol": "SNPS",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632d8k.htm"
+      }
+    },
+    {
+      "event_id": "zs-0001713683-25-000078",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "prior": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-25-000025",
+        "source_date": "2025-03-05",
+        "accepted_at": "2025-03-05T21:06:30.000Z",
+        "availability_proxy": "2025-03-05T21:08:30+00:00",
+        "range_usd_millions": [
+          2640,
+          2654
+        ],
+        "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm"
+      },
+      "current": {
+        "symbol": "ZS",
+        "cik": "0001713683",
+        "accession": "0001713683-25-000078",
+        "source_date": "2025-05-29",
+        "accepted_at": "2025-05-29T20:08:58.000Z",
+        "availability_proxy": "2025-05-29T20:10:58+00:00",
+        "range_usd_millions": [
+          2659,
+          2661
+        ],
+        "archive_sha256": "8b8988061d8f27893728f48d909f556857ebdca17816a27a98f78111357ea64d",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+        "range_line_index": 37,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm",
+        "source_time": "2025-05-29T20:08:58.000Z"
+      },
+      "reaction_session": "2025-05-30",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-05-30T13:30:00+00:00",
+      "feature_cutoff_at": "2025-05-30T13:15:00+00:00",
+      "revision_fraction": 0.004911220249338877,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "zs-0001713683-25-000078",
+        "cover_sha256": "13b407b8419498da899645aa3033dc599276a93f9bcf22c967edb9f5ba54922c",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, $0.001 Par Value",
+            "symbol": "ZS",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm"
+      }
+    },
+    {
+      "event_id": "crwd-0001535527-25-000017",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "CRWD",
+        "cik": "0001535527",
+        "accession": "0001535527-25-000005",
+        "source_date": "2025-03-04",
+        "accepted_at": "2025-03-04T21:11:41.000Z",
+        "availability_proxy": "2025-03-04T21:13:41+00:00",
+        "range_usd_millions": [
+          4743.5,
+          4805.5
+        ],
+        "archive_sha256": "3a4690489c34bb16da3f3dbd4ae8093114e162f85fb0795fef2859c3504c1f13",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+        "range_line_index": 49,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304.htm"
+      },
+      "current": {
+        "symbol": "CRWD",
+        "cik": "0001535527",
+        "accession": "0001535527-25-000017",
+        "source_date": "2025-06-03",
+        "accepted_at": "2025-06-03T20:06:56.000Z",
+        "availability_proxy": "2025-06-03T20:08:56+00:00",
+        "range_usd_millions": [
+          4743.5,
+          4805.5
+        ],
+        "archive_sha256": "f73c5aa5eb7488d3c740d4670af7c6cf47f4569caa6347c2248fe1a1b3e160bb",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+        "range_line_index": 41,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm",
+        "source_time": "2025-06-03T20:06:56.000Z"
+      },
+      "reaction_session": "2025-06-04",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-06-04T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-04T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001535527",
+          "accession": "0001104659-25-045244",
+          "accepted_at": "2025-05-07T10:03:11.000Z",
+          "filing_date": "2025-05-07",
+          "items": [
+            "2.02",
+            "2.05",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "tm2514190d1_8k.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/0001104659-25-045244.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1535527/000110465925045244/0001104659-25-045244.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "crwd-0001535527-25-000017",
+        "cover_sha256": "2fd5e308cf1c9aaf176d803a366722e4b4bcf9cbbf19feb67e3ec06a9b8c8ea3",
+        "listed_securities": [
+          {
+            "security_class": "Class A common stock, $0.0005 par value",
+            "symbol": "CRWD",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm"
+      }
+    },
+    {
+      "event_id": "dltr-0000935703-25-000024",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-25-000012",
+        "source_date": "2025-03-26",
+        "accepted_at": "2025-03-26T10:32:08.000Z",
+        "availability_proxy": "2025-03-26T10:34:08+00:00",
+        "range_usd_millions": [
+          18500,
+          19100
+        ],
+        "archive_sha256": "b652eebf14454d7442b18b33102b98be850bb2822980a850f298778ea19e846c",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/ex991q4-24earningspressrel.htm",
+        "range_line_index": 6,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/dltr-20250326.htm"
+      },
+      "current": {
+        "symbol": "DLTR",
+        "cik": "0000935703",
+        "accession": "0000935703-25-000024",
+        "source_date": "2025-06-04",
+        "accepted_at": "2025-06-04T10:31:30.000Z",
+        "availability_proxy": "2025-06-04T10:33:30+00:00",
+        "range_usd_millions": [
+          18500,
+          19100
+        ],
+        "archive_sha256": "7b88219f0f9bf6e6e132ec494a30156efedc5e631d641388c9d8e9b61c5d65b3",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/ex991q1-25earningspressrel.htm",
+        "range_line_index": 8,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/dltr-20250604.htm",
+        "source_time": "2025-06-04T10:31:30.000Z"
+      },
+      "reaction_session": "2025-06-04",
+      "release_timing": "premarket",
+      "scheduled_open_at": "2025-06-04T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-04T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [
+        {
+          "cik": "0000935703",
+          "accession": "0000935703-25-000019",
+          "accepted_at": "2025-05-21T10:21:12.000Z",
+          "filing_date": "2025-05-21",
+          "items": [
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "dltr-20250521.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000019/0000935703-25-000019.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/935703/000093570325000019/0000935703-25-000019.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "dltr-0000935703-25-000024",
+        "cover_sha256": "20d6d85d7feb3193d81dac29606961363f2f56553cd7aad7ad1926d23332fcec",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, par value $0.01 per share",
+            "symbol": "DLTR",
+            "exchange": "NASDAQ Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/dltr-20250604.htm"
+      }
+    },
+    {
+      "event_id": "mdb-0001441816-25-000116",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "prior": {
+        "symbol": "MDB",
+        "cik": "0001441816",
+        "accession": "0001441816-25-000046",
+        "source_date": "2025-03-05",
+        "accepted_at": "2025-03-05T21:07:02.000Z",
+        "availability_proxy": "2025-03-05T21:09:02+00:00",
+        "range_usd_millions": [
+          2240,
+          2280
+        ],
+        "archive_sha256": "0aff05ef8f429840af8d8cf776a6eae0c38c794ed222aee4a67bb1cef415d216",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+        "range_line_index": 30,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-20250305.htm"
+      },
+      "current": {
+        "symbol": "MDB",
+        "cik": "0001441816",
+        "accession": "0001441816-25-000116",
+        "source_date": "2025-06-04",
+        "accepted_at": "2025-06-04T20:03:49.000Z",
+        "availability_proxy": "2025-06-04T20:05:49+00:00",
+        "range_usd_millions": [
+          2250,
+          2290
+        ],
+        "archive_sha256": "388d85a10aa9ad6175916cd857080167e78008efbc61313fff9918c95840343c",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+        "range_line_index": 27,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm",
+        "source_time": "2025-06-04T20:03:49.000Z"
+      },
+      "reaction_session": "2025-06-05",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-06-05T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-05T13:15:00+00:00",
+      "revision_fraction": 0.004424778761061843,
+      "intervening_filing_leads": [
+        {
+          "cik": "0001441816",
+          "accession": "0001441816-25-000089",
+          "accepted_at": "2025-04-28T12:33:18.000Z",
+          "filing_date": "2025-04-28",
+          "items": [
+            "5.02",
+            "7.01",
+            "9.01"
+          ],
+          "primary_document": "mdb-20250428.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000089/0001441816-25-000089.txt",
+          "mirror_url": "https://edgar-mirror.sec-api.io/1441816/000144181625000089/0001441816-25-000089.txt"
+        }
+      ],
+      "listing_evidence": {
+        "event_id": "mdb-0001441816-25-000116",
+        "cover_sha256": "1aeeedb0f563528ed89d5bd56e4cd43c04ab35ae7535463fcc26d469e6a36716",
+        "listed_securities": [
+          {
+            "security_class": "Class A Common Stock, par value $0.001 per share",
+            "symbol": "MDB",
+            "exchange": "The Nasdaq Stock Market LLC"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm"
+      }
+    },
+    {
+      "event_id": "lulu-0001397187-25-000026",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2026-02-01",
+      "prior": {
+        "symbol": "LULU",
+        "cik": "0001397187",
+        "accession": "0001397187-25-000012",
+        "source_date": "2025-03-27",
+        "accepted_at": "2025-03-27T20:10:00.000Z",
+        "availability_proxy": "2025-03-27T20:12:00+00:00",
+        "range_usd_millions": [
+          11150,
+          11300
+        ],
+        "archive_sha256": "ad3db85a433ca59a72f7e216f7fb8ca0c44ecac5fb6f67d61ca2af930ba0681b",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+        "range_line_index": 45,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250327.htm"
+      },
+      "current": {
+        "symbol": "LULU",
+        "cik": "0001397187",
+        "accession": "0001397187-25-000026",
+        "source_date": "2025-06-05",
+        "accepted_at": "2025-06-05T20:10:27.000Z",
+        "availability_proxy": "2025-06-05T20:12:27+00:00",
+        "range_usd_millions": [
+          11150,
+          11300
+        ],
+        "archive_sha256": "db8287b02200c54a8bd80b58f36d19f37f99b6f35efbde5804632235122bedf6",
+        "release_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+        "range_line_index": 21,
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm",
+        "source_time": "2025-06-05T20:10:27.000Z"
+      },
+      "reaction_session": "2025-06-06",
+      "release_timing": "after_hours",
+      "scheduled_open_at": "2025-06-06T13:30:00+00:00",
+      "feature_cutoff_at": "2025-06-06T13:15:00+00:00",
+      "revision_fraction": 0.0,
+      "intervening_filing_leads": [],
+      "listing_evidence": {
+        "event_id": "lulu-0001397187-25-000026",
+        "cover_sha256": "3736fc9da609c9c0b28183c70b26f6f5f441f15d713998b2d2b00ecbf48824a7",
+        "listed_securities": [
+          {
+            "security_class": "Common Stock, par value $0.005 per share",
+            "symbol": "LULU",
+            "exchange": "Nasdaq Global Select Market"
+          }
+        ],
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm"
+      }
+    }
+  ],
+  "summary": {
+    "discovered_filings": 43,
+    "dispositions": {
+      "PRELIMINARY_PRIOR_ONLY": 2,
+      "FISCAL_YEAR_INITIATION": 16,
+      "PAIR_REVIEWED": 24,
+      "NON_EARNINGS_RESTRUCTURING": 1
+    },
+    "candidate_events": 24,
+    "hard_excluded": 2,
+    "soft_caveat_only": 4,
+    "clean_source_upper_bound": 18,
+    "all_defined_source_upper_bound": 22,
+    "optimistic_clean_upper_bound_if_DDOG_scope_comparable": 19,
+    "minimum_required_common_fit_rows": 20
+  },
+  "limitations": [
+    "This is a source-reviewed subset of the fixed historical frame, not exhaustive coverage of all public issuer communications.",
+    "Dated cover evidence verifies disclosed symbol and venue; raw warmup official openings, common price basis and closing labels have not been acquired or cleared.",
+    "Source-eligible counts are upper bounds for these reviewed candidate rows; later market-quality checks can only reduce them."
+  ]
+}

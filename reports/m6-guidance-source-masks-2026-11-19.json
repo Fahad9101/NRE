@@ -1,0 +1,3465 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-19",
+  "protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "status": "SOURCE_MASKS_FIXED_BEFORE_CLOSING_OUTCOMES",
+  "taxonomy": {
+    "hard_exclusions": {
+      "material_strategic_transaction": "Acquisition, disposal, merger, buyout or restructuring announcement that changes consolidated scope or announces a material strategic transaction",
+      "ceo_succession_or_material_workforce_reduction": "Chief executive succession or material workforce reduction announcement",
+      "material_legal_or_regulatory_action": "New material litigation, criminal plea, export restriction or regulatory action",
+      "unresolved_common_share_basis": "Split, reverse split, spinoff or other price-basis event with unresolved common share basis",
+      "duplicate_preliminary_earnings_or_guidance": "A separate preliminary earnings or guidance disclosure in the observation window that duplicates or supersedes the economic event",
+      "unresolved_source_or_material_scope": "Unknown provenance or unresolved material comparability is a hard exclusion, per the registered source-quality freeze rule."
+    },
+    "soft_caveats": {
+      "routine_share_repurchase_authorization": "Routine share-repurchase authorization announced in the observation window",
+      "routine_dividend_initiation_or_change": "Routine dividend initiation or change announced in the observation window",
+      "minor_board_or_officer_appointment": "Minor board or officer appointment announced in the observation window, excluding chief executive succession"
+    }
+  },
+  "scope": "24 reviewed warmup pairs plus the exact 58 frozen held candidates. Hard scope comparisons also inspect the complete prior/current interval; competing-catalyst masks use prior close inclusive to feature cutoff exclusive.",
+  "limitations": "This draft records event-level catalyst decisions from the named written evidence. Periodic 10-Q/10-K entries identified in regulatory_window_filings are metadata leads, not certifications that every statement in those filings was independently audited. This is a source mask review, not a corporate-action/share-basis clearance or price-label clearance. Missing findings do not establish comprehensive all-news coverage.",
+  "events": [
+    {
+      "event_id": "ea-0000712515-25-000010",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-03-31",
+      "observation_window": {
+        "start_inclusive": "2025-02-04T21:00:00+00:00",
+        "end_exclusive": "2025-02-05T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "January 22 updates annual net bookings and quarterly GAAP revenue, without replacing or withdrawing annual GAAP revenue bounds from October 29. February 4 is one candidate for this quarter cluster. Its planned $1 billion ASR uses existing $5 billion authority. It does not announce new or increased authorization, so it supplies no registered soft mask. The $0.19 dividend repeats the prior amount.",
+      "sample": "warmup",
+      "reaction_session": "2025-02-05",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/earningspressrelease2024_1.htm",
+          "accession": "0000712515-24-000045",
+          "archive_sha256": "ef1893098ed75859dfe67e4b099411fcd349999c1c59bf987671913749898f34",
+          "range_line_index": 57
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/earningspressrelease2025_0.htm",
+          "accession": "0000712515-25-000010",
+          "archive_sha256": "1fe1f87f8593278e561199cf18da80b631011102f8ce90db503b827beca283ad",
+          "range_line_index": 58
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000007/0000712515-25-000007.txt",
+          "accession": "0000712515-25-000007",
+          "archive_sha256": "f104ce96b4620b946ce20a9c85920c902777d9bfb5fccbfbf33e3b82cf1d44ad"
+        }
+      ]
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000029",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-02-13T21:00:00+00:00",
+        "end_exclusive": "2025-02-14T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "January 13 supplies the prior FY2025 point forecast, with one fit candidate for the preliminary/regular fiscal-quarter cluster.",
+      "sample": "warmup",
+      "reaction_session": "2025-02-14",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000004/dxcm991_1132025.htm",
+          "accession": "0001093557-25-000004",
+          "archive_sha256": "695e320738fc709ab992740cee275c08139da8262ac2dba7c682315b25e126e4",
+          "range_line_index": 3
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+          "accession": "0001093557-25-000029",
+          "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+          "range_line_index": 9
+        }
+      ]
+    },
+    {
+      "event_id": "intu-0000896878-25-000013",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "observation_window": {
+        "start_inclusive": "2025-02-25T21:00:00+00:00",
+        "end_exclusive": "2025-02-26T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The $1.04 quarterly dividend repeats the prior sequential amount. The reported year-over-year increase is not a newly announced sequential increase. Historical repurchases and remaining authority announce no new authorization.",
+      "sample": "warmup",
+      "reaction_session": "2025-02-26",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/fy25q1earningspressrelease.htm",
+          "accession": "0000896878-24-000051",
+          "archive_sha256": "b73663a7ec1b0ffaaef12a3a12612d0e12af34ed013f42f1d7c8155c5ab4e97b",
+          "range_line_index": 43
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+          "accession": "0000896878-25-000013",
+          "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+          "range_line_index": 44
+        }
+      ]
+    },
+    {
+      "event_id": "snps-0001193125-25-036798",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-10-31",
+      "observation_window": {
+        "start_inclusive": "2025-02-26T21:00:00+00:00",
+        "end_exclusive": "2025-02-27T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "Both inputs already use the fiscal year ending October 31, 2025 and the same fiscal-calendar change. Ansys remained pending.",
+      "sample": "warmup",
+      "reaction_session": "2025-02-27",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524270723/d868165dex991.htm",
+          "accession": "0001193125-24-270723",
+          "archive_sha256": "d1834d5c8cd51b94ac4e1d2f651ff4fab01b487894313621ffbd629d8a830f02",
+          "range_line_index": 76
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+          "accession": "0001193125-25-036798",
+          "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+          "range_line_index": 67
+        }
+      ]
+    },
+    {
+      "event_id": "zs-0001713683-25-000025",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "observation_window": {
+        "start_inclusive": "2025-03-05T21:00:00+00:00",
+        "end_exclusive": "2025-03-06T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "December 2 is the latest reviewed independently dated FY2025 numeric outlook before the March update. No registered hard/soft catalyst was identified in the current source.",
+      "sample": "warmup",
+      "reaction_session": "2025-03-06",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+          "accession": "0001713683-24-000143",
+          "archive_sha256": "b86f2af69fae8eb200d173cd2089671172d227a52cb70d222072af642da97e1f",
+          "range_line_index": 30
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+          "accession": "0001713683-25-000025",
+          "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+          "range_line_index": 30
+        }
+      ]
+    },
+    {
+      "event_id": "orly-0000898173-25-000026",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-04-23T20:00:00+00:00",
+        "end_exclusive": "2025-04-24T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The March 13 split announcement, April 1 credit agreement and April 1 earnings scheduling precede the observation window and do not replace annual revenue guidance. The split was expected in June, outside the April anchor/open comparison. Prior and current annual revenue bounds are identical.",
+      "sample": "warmup",
+      "reaction_session": "2025-04-24",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000005/orly-20250205xex99d1.htm",
+          "accession": "0000898173-25-000005",
+          "archive_sha256": "923534c82e88447ec0ba0ccaa3e56a9acd3bbbddfe5726a627bd84cfc10f847d",
+          "range_line_index": 48
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423xex99d1.htm",
+          "accession": "0000898173-25-000026",
+          "archive_sha256": "b04b6d25e10ea1c67abefcf53657ef74795c19b7ecb5c54567b294e8b6f18eb1",
+          "range_line_index": 40
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000010/0000898173-25-000010.txt",
+          "accession": "0000898173-25-000010",
+          "archive_sha256": "8d07e91ea1051c42d6be90a617e60eb215bc296b7a5c4d1450e8a818ae30fbf8"
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000023/0000898173-25-000023.txt",
+          "accession": "0000898173-25-000023",
+          "archive_sha256": "3aa96840e47c207a491411fd8d5ab39be4aedf0a563cb7d61a66eb53a9f503fd"
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000110465925030592/0001104659-25-030592.txt",
+          "accession": "0001104659-25-030592",
+          "archive_sha256": "5c747593cd5a3ed3c0d0bc8064b546ed06f740649660213aa81544ac5d25eae6"
+        }
+      ]
+    },
+    {
+      "event_id": "cdns-0000813672-25-000046",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-04-28T20:00:00+00:00",
+        "end_exclusive": "2025-04-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The original earnings release provides the full-year consolidated USD range. Reviewed current earnings/CFO exhibits supply no newly announced registered hard/soft category.",
+      "sample": "warmup",
+      "reaction_session": "2025-04-29",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000016/cdns2182025ex9901.htm",
+          "accession": "0000813672-25-000016",
+          "archive_sha256": "37d3783353fbb0fde283b1b493b92fc33deb1a369fd5df859c99674787aa597e",
+          "range_line_index": 13
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+          "accession": "0000813672-25-000046",
+          "archive_sha256": "54a0ef9782e2c98f1735e8b2bf724ee82153add3c2cf80045d42efe4be1c814a",
+          "range_line_index": 8
+        }
+      ]
+    },
+    {
+      "event_id": "csgp-0001057352-25-000063",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-04-29T20:00:00+00:00",
+        "end_exclusive": "2025-04-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "material_strategic_transaction"
+      ],
+      "soft_caveats": [],
+      "clean_source_eligible": false,
+      "all_defined_source_eligible": false,
+      "listing_cover_verified": true,
+      "rationale": "Matterport closed February 28 between the February 18 and April 29 guidance inputs. The April release includes Matterport in consolidated operations and the new outlook. The annual guidance inputs fail the same-scope requirement. April 7 board refresh/support agreements precede the catalyst window and do not remove this independent scope failure.",
+      "sample": "warmup",
+      "reaction_session": "2025-04-30",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000004/investorpresentation_4q2.htm",
+          "accession": "0001057352-25-000004",
+          "archive_sha256": "2608788201fa4f3e6c974ce4cf60650e87663f532cba10ca235638997951c96a",
+          "range_line_index": 2
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000063/q12025earningspressrelease.htm",
+          "accession": "0001057352-25-000063",
+          "archive_sha256": "d8c244fa4c49cc9e465c358a0df7b70eb6e61909da3c71549a162ee10729358d",
+          "range_line_index": 27
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312525042465/0001193125-25-042465.txt",
+          "accession": "0001193125-25-042465",
+          "archive_sha256": "e14fb9a7a3cf5009761b0d853ba7902f47f3331f3af1fc233cf77aa6a6553fe1"
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312525074119/0001193125-25-074119.txt",
+          "accession": "0001193125-25-074119",
+          "archive_sha256": "9f6a91bb042f5c34ed3443519183e6d4324df35a07e916e654417f8748122b12"
+        }
+      ]
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000124",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-04-30T20:00:00+00:00",
+        "end_exclusive": "2025-05-01T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The March 25 Investor Day and $2 billion authorization increase precede the observation window. The current release reports executed repurchases and remaining authority. Its $0.31 dividend repeats the prior amount. Belcan and Thirdera were already included in both FY2025 inputs.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-01",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000007/exhibit99312312024.htm",
+          "accession": "0001058290-25-000007",
+          "archive_sha256": "ce808654543701d8c3fb550b032b0c85282a9061a4afa3429f9765c302f80b80",
+          "range_line_index": 15
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/exhibit9933312025.htm",
+          "accession": "0001058290-25-000124",
+          "archive_sha256": "2b0d9ec5a65712fd44bb308391f09269d4f7310d02b7c5d2d9f8f29886da82f0",
+          "range_line_index": 13
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000112/0001058290-25-000112.txt",
+          "accession": "0001058290-25-000112",
+          "archive_sha256": "5941a0340c127775adcd16c3983e41d8721a54a9c0dc264aa46e7d1708a1e811"
+        }
+      ]
+    },
+    {
+      "event_id": "idxx-0001104659-25-042955",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-04-30T20:00:00+00:00",
+        "end_exclusive": "2025-05-01T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "Use reported consolidated USD revenue, whose range is revised for currency changes. Unchanged organic growth guidance does not invalidate this reported-currency revision. The planned repurchases repeat the February annual outlook.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-01",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925008331/tm255269d1_ex99-1.htm",
+          "accession": "0001104659-25-008331",
+          "archive_sha256": "5afb27077bf8f664634a54867f153ec561f1e85eabb155ef3b5d36fd6d26baa7",
+          "range_line_index": 9
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_ex99-1.htm",
+          "accession": "0001104659-25-042955",
+          "archive_sha256": "20960f04860bae90364b1ba43fe479549f471120f81463118c26a4635a0ecf6f",
+          "range_line_index": 11
+        }
+      ]
+    },
+    {
+      "event_id": "amgn-0000318154-25-000018",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-01T20:00:00+00:00",
+        "end_exclusive": "2025-05-02T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The current release repeats the FY2025 revenue range. Dividend/repurchase passages reference the previously declared dividend and annual plan, without new authority in the window.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-02",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000005/amgn-20241231earningsrelea.htm",
+          "accession": "0000318154-25-000005",
+          "archive_sha256": "79bab48b0e6cf6f685ff14647e7a4d6b04830e8e7031e5170017aab2d7edc11e",
+          "range_line_index": 248
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250331earningsrelea.htm",
+          "accession": "0000318154-25-000018",
+          "archive_sha256": "eee0a2203f03debf15fb0c9cb9ec899f6ea8b3ead63cb3c892870375074d4169",
+          "range_line_index": 170
+        }
+      ]
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000111",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-01T20:00:00+00:00",
+        "end_exclusive": "2025-05-02T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "clean_source_eligible": false,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "March 7 supplier/regulatory disclosure and March 10 board appointment precede the May observation window and do not replace annual revenue. May 1 announces new $750 million repurchase authority and supplies the registered soft mask.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-02",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+          "accession": "0001093557-25-000029",
+          "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208",
+          "range_line_index": 9
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm03312025-exhibit991.htm",
+          "accession": "0001093557-25-000111",
+          "archive_sha256": "3733b3be7c1ac868ad4a9e6c2aa41935cd92611499f36c341b44bf577e820bbd",
+          "range_line_index": 14
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000047/0001093557-25-000047.txt",
+          "accession": "0001093557-25-000047",
+          "archive_sha256": "36524407ea127d7de8abe54d513901bf4af6681247646ad165975a5398678d1b"
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000050/0001093557-25-000050.txt",
+          "accession": "0001093557-25-000050",
+          "archive_sha256": "c1076f012d3451cdbc1fda75fdd7fc0a0264d712d79f898b75cdecfb0e470d54"
+        }
+      ]
+    },
+    {
+      "event_id": "ddog-0001561550-25-000118",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-05T20:00:00+00:00",
+        "end_exclusive": "2025-05-06T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "clean_source_eligible": false,
+      "all_defined_source_eligible": false,
+      "listing_cover_verified": true,
+      "rationale": "The May 6 release states it acquired Eppo and Metaplane after the February 13 prior outlook. Reviewed original sources do not reconcile annual guidance to a common consolidation basis, so unresolved scope is a hard failure under the fixed rule. Eppo was announced May 5 and Metaplane April 23. This exclusion concerns the full prior/current scope interval, independently of the shorter catalyst window.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-06",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000017/ex-991x20241231x8k.htm",
+          "accession": "0001561550-25-000017",
+          "archive_sha256": "ce2bef8756885a2c3f500df4fe3d4fa854c00d772c0c6fa49a40adc751673310",
+          "range_line_index": 33
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000118/ex-991x20250331x8k.htm",
+          "accession": "0001561550-25-000118",
+          "archive_sha256": "b2b388341315ba7f385e1005a8dfcb47b79373b68b629632dd4334cd4d3e967d",
+          "range_line_index": 29
+        },
+        {
+          "role": "acquisition_original_release",
+          "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-acquires-eppo-expand-its-ai-product-analytics/",
+          "published_date": "2025-05-05"
+        },
+        {
+          "role": "acquisition_original_release",
+          "url": "https://investors.datadoghq.com/news-releases/news-release-details/datadog-brings-observability-data-teams-acquiring-metaplane",
+          "published_at": "2025-04-23T08:00:00-04:00"
+        }
+      ]
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000171",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-05T20:00:00+00:00",
+        "end_exclusive": "2025-05-06T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The March 28 VX-264 clinical update and expected impairment precede the observation window and do not replace annual total-revenue guidance. February/May guidance both include ALYFTREK, CASGEVY and JOURNAVX.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-06",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000029/ex-991_q42024.htm",
+          "accession": "0000875320-25-000029",
+          "archive_sha256": "b57c11460e917ac31a166474ee7aaa825f9f85d9dcb1571a580ceae976251dba",
+          "range_line_index": 2
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/ex-991_q12025.htm",
+          "accession": "0000875320-25-000171",
+          "archive_sha256": "d97d57e06aab63e20cee81e271010b7937d893c4cf758e596baeeca27b88f751",
+          "range_line_index": 2
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000156/0000875320-25-000156.txt",
+          "accession": "0000875320-25-000156",
+          "archive_sha256": "31282eac059de495906e9799890ca4256a098ec517cd77c5d12a4dce04c32b1d"
+        }
+      ]
+    },
+    {
+      "event_id": "vrsk-0001437749-25-014906",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-06T20:00:00+00:00",
+        "end_exclusive": "2025-05-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "March 11 note issuance precedes the observation window without revising annual revenue. The $0.45 dividend repeats the previous amount. Q1 ASR initiation and April completion do not establish new authorization in the May observation window.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-07",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925005158/ex_702488.htm",
+          "accession": "0001437749-25-005158",
+          "archive_sha256": "e35b7edb9f5e40ee8e332bcc46794e930ef2c726230873888df5cf270a758a98",
+          "range_line_index": 248
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/ex_770468.htm",
+          "accession": "0001437749-25-014906",
+          "archive_sha256": "604b493a142d4d9917b2d0ffeea847625f92a8499227f02200eeedbf426abdfc",
+          "range_line_index": 200
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312525051943/0001193125-25-051943.txt",
+          "accession": "0001193125-25-051943",
+          "archive_sha256": "def75e40653ebc2b0b6d79eb314efed5c4e2bba1c387c240c153a5eec1438d83"
+        }
+      ]
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000014",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-12-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-07T20:00:00+00:00",
+        "end_exclusive": "2025-05-08T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "Reviewed current earnings source supplies no newly announced registered hard/soft category. Existing acquisitions were already included in both annual guidance inputs.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-08",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000007/ftntq4-2024ex991.htm",
+          "accession": "0001262039-25-000007",
+          "archive_sha256": "f30c9d5438dfb2380b49aaa42b9db197872244e00fd4b0cc2678dbcfcbf8a725",
+          "range_line_index": 50
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftntq1-2025ex991.htm",
+          "accession": "0001262039-25-000014",
+          "archive_sha256": "590963306f5fa49236a50a19847306e27063ce33955d30e983168eccd8dc072d",
+          "range_line_index": 30
+        }
+      ]
+    },
+    {
+      "event_id": "adsk-0000769397-25-000067",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-22T20:00:00+00:00",
+        "end_exclusive": "2025-05-23T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "April 2 board announcement precedes the observation window. Reviewed May earnings exhibit supplies no newly announced registered hard/soft category.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-23",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000013/q425pressrelease.htm",
+          "accession": "0000769397-25-000013",
+          "archive_sha256": "8988c3389403074fd7f92fbe74b2b78054c55ccefeccdf54e185f34411dee37d",
+          "range_line_index": 99
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/q126pressrelease.htm",
+          "accession": "0000769397-25-000067",
+          "archive_sha256": "bee3e3603ab8c34560fb74a49446fbafc9e51efd57270c560fcc580abfb4c83b",
+          "range_line_index": 55
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000121390025028145/0001213900-25-028145.txt",
+          "accession": "0001213900-25-028145",
+          "archive_sha256": "2b49ca58c89e23804a634ac6254436ed4d6c27948cb0bdad550f0349d022588e"
+        }
+      ]
+    },
+    {
+      "event_id": "intu-0000896878-25-000020",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-22T20:00:00+00:00",
+        "end_exclusive": "2025-05-23T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The $1.04 quarterly dividend repeats the prior sequential amount. The reported year-over-year increase is not a newly announced sequential increase. Historical repurchases and remaining authority announce no new authorization.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-23",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+          "accession": "0000896878-25-000013",
+          "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2",
+          "range_line_index": 44
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/fy25q3earningspressrelease.htm",
+          "accession": "0000896878-25-000020",
+          "archive_sha256": "4390d96cc6aa3fcdd7548551b8d4192300257a418fa7ec3f382f033045ffd521",
+          "range_line_index": 50
+        }
+      ]
+    },
+    {
+      "event_id": "snps-0001193125-25-129525",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-10-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-28T20:00:00+00:00",
+        "end_exclusive": "2025-05-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "Both inputs already use the fiscal year ending October 31, 2025 and the same fiscal-calendar change. Ansys remained pending. May 29 BIS letter statement/guidance suspension was publicly issued at 13:13 ET, after the 09:15 ET cutoff. Under the registered observation window it supplies no pre-cutoff mask.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-29",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+          "accession": "0001193125-25-036798",
+          "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99",
+          "range_line_index": 67
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632dex991.htm",
+          "accession": "0001193125-25-129525",
+          "archive_sha256": "cf83765afd171aa3aa73f7e15ed069393dacf2b254408ea9d0cfe44d6c65e1cb",
+          "range_line_index": 65
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125006323/0001140361-25-006323.txt",
+          "accession": "0001140361-25-006323",
+          "archive_sha256": "05599eab4768131987396527e89ac4c359c8b7f908ad197ccab69613f8fdb735"
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125009060/0001140361-25-009060.txt",
+          "accession": "0001140361-25-009060",
+          "archive_sha256": "e6accb35434f7759b32f6ede3ae3d7b69156d07e8c77559f2cabba683d081e00"
+        },
+        {
+          "role": "later_disclosure_outside_mask_window",
+          "url": "https://www.prnewswire.com/news-releases/synopsys-issues-statement-in-connection-with-bis-letter-302468694.html",
+          "published_at": "2025-05-29T13:13:00-04:00"
+        }
+      ]
+    },
+    {
+      "event_id": "zs-0001713683-25-000078",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2025-07-31",
+      "observation_window": {
+        "start_inclusive": "2025-05-29T20:00:00+00:00",
+        "end_exclusive": "2025-05-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "minor_board_or_officer_appointment"
+      ],
+      "clean_source_eligible": false,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The May 29 source contemporaneously announces a CFO appointment in EX-99.2 and a board/EVP appointment in EX-99.1, supplying the non-CEO appointment soft mask. Red Canary was announced May 27, before the observation window, and expected August completion was after the guided FY2025 July 31 end.",
+      "sample": "warmup",
+      "reaction_session": "2025-05-30",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+          "accession": "0001713683-25-000025",
+          "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2",
+          "range_line_index": 30
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+          "accession": "0001713683-25-000078",
+          "archive_sha256": "8b8988061d8f27893728f48d909f556857ebdca17816a27a98f78111357ea64d",
+          "range_line_index": 37
+        },
+        {
+          "role": "contemporaneous_officer_appointment",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_992.htm",
+          "accession": "0001713683-25-000078",
+          "archive_sha256": "8b8988061d8f27893728f48d909f556857ebdca17816a27a98f78111357ea64d"
+        }
+      ]
+    },
+    {
+      "event_id": "crwd-0001535527-25-000017",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "observation_window": {
+        "start_inclusive": "2025-06-03T20:00:00+00:00",
+        "end_exclusive": "2025-06-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "clean_source_eligible": false,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "May 7 reaffirms March 4 annual guidance by reference. The restructuring announcement precedes the June observation window, so retain it in the prior chain without a June catalyst mask. June 3 newly authorizes repurchases of up to $1 billion and supplies the registered soft mask.",
+      "sample": "warmup",
+      "reaction_session": "2025-06-04",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+          "accession": "0001535527-25-000005",
+          "archive_sha256": "3a4690489c34bb16da3f3dbd4ae8093114e162f85fb0795fef2859c3504c1f13",
+          "range_line_index": 49
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+          "accession": "0001535527-25-000017",
+          "archive_sha256": "f73c5aa5eb7488d3c740d4670af7c6cf47f4569caa6347c2248fe1a1b3e160bb",
+          "range_line_index": 41
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/0001104659-25-045244.txt",
+          "accession": "0001104659-25-045244",
+          "archive_sha256": "487df30471071c70d4cca5680325abae12ca7f419ba20c3fcc00922ddca124f8"
+        }
+      ]
+    },
+    {
+      "event_id": "dltr-0000935703-25-000024",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2026-01-31",
+      "observation_window": {
+        "start_inclusive": "2025-06-03T20:00:00+00:00",
+        "end_exclusive": "2025-06-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "Both annual ranges explicitly cover continuing operations excluding Family Dollar. May 21 only announces earnings scheduling. Family Dollar remained a discontinued operation with sale pending at the current release.",
+      "sample": "warmup",
+      "reaction_session": "2025-06-04",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/ex991q4-24earningspressrel.htm",
+          "accession": "0000935703-25-000012",
+          "archive_sha256": "b652eebf14454d7442b18b33102b98be850bb2822980a850f298778ea19e846c",
+          "range_line_index": 6
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/ex991q1-25earningspressrel.htm",
+          "accession": "0000935703-25-000024",
+          "archive_sha256": "7b88219f0f9bf6e6e132ec494a30156efedc5e631d641388c9d8e9b61c5d65b3",
+          "range_line_index": 8
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000019/0000935703-25-000019.txt",
+          "accession": "0000935703-25-000019",
+          "archive_sha256": "9420274c8105ba130e3d82266985c457e62ecf938dbcefe2eef01a7bde0e3d69"
+        }
+      ]
+    },
+    {
+      "event_id": "mdb-0001441816-25-000116",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "fiscal_year": "FY2026",
+      "fiscal_year_end": "2026-01-31",
+      "observation_window": {
+        "start_inclusive": "2025-06-04T20:00:00+00:00",
+        "end_exclusive": "2025-06-05T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "clean_source_eligible": false,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "April 28 CFO appointment was announced before the June observation window, despite its May 27 effective date. Repeating it is not a new appointment announcement. The June release newly adds $800 million to prior $200 million repurchase authority and supplies the registered soft mask.",
+      "sample": "warmup",
+      "reaction_session": "2025-06-05",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+          "accession": "0001441816-25-000046",
+          "archive_sha256": "0aff05ef8f429840af8d8cf776a6eae0c38c794ed222aee4a67bb1cef415d216",
+          "range_line_index": 30
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+          "accession": "0001441816-25-000116",
+          "archive_sha256": "388d85a10aa9ad6175916cd857080167e78008efbc61313fff9918c95840343c",
+          "range_line_index": 27
+        },
+        {
+          "role": "intervening_original_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000089/0001441816-25-000089.txt",
+          "accession": "0001441816-25-000089",
+          "archive_sha256": "6eb98d714b24cf7c9a8c81381c8d71c050ec9c01cf848104a3eb3e1428d6a3ff"
+        }
+      ]
+    },
+    {
+      "event_id": "lulu-0001397187-25-000026",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "fiscal_year": "FY2025",
+      "fiscal_year_end": "2026-02-01",
+      "observation_window": {
+        "start_inclusive": "2025-06-05T20:00:00+00:00",
+        "end_exclusive": "2025-06-06T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "clean_source_eligible": true,
+      "all_defined_source_eligible": true,
+      "listing_cover_verified": true,
+      "rationale": "The original sources give identical FY2025 consolidated USD revenue bounds. Reviewed current source supplies no newly announced registered hard/soft category.",
+      "sample": "warmup",
+      "reaction_session": "2025-06-06",
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+          "accession": "0001397187-25-000012",
+          "archive_sha256": "ad3db85a433ca59a72f7e216f7fb8ca0c44ecac5fb6f67d61ca2af930ba0681b",
+          "range_line_index": 45
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+          "accession": "0001397187-25-000026",
+          "archive_sha256": "db8287b02200c54a8bd80b58f36d19f37f99b6f35efbde5804632235122bedf6",
+          "range_line_index": 21
+        }
+      ]
+    },
+    {
+      "event_id": "csgp-0001057352-25-000095",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "reaction_session": "2025-07-23",
+      "observation_window": {
+        "start_inclusive": "2025-07-22T20:00:00+00:00",
+        "end_exclusive": "2025-07-23T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000095/q22025earningspressrelease.htm",
+          "accepted_at": "2025-07-22T20:12:35.000Z",
+          "archive_sha256": "0c6a64e8f081dd37da3134d2c22a6d859a39496619a09dfdfb3e076c5e7a1cf9",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001057352-25-000095",
+          "accepted_at": "2025-07-22T20:12:35.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000095/csgp-20250722.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "orly-0000898173-25-000046",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "reaction_session": "2025-07-24",
+      "observation_window": {
+        "start_inclusive": "2025-07-23T20:00:00+00:00",
+        "end_exclusive": "2025-07-24T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000046/orly-20250723xex99d1.htm",
+          "accepted_at": "2025-07-23T20:34:11.000Z",
+          "archive_sha256": "d1ecc1d6f7ba17e674f4a08964f79508d14f23df03ff1031e3fb77c5c54af1d7",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000898173-25-000046",
+          "accepted_at": "2025-07-23T20:34:11.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000046/orly-20250723x8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ea-0000712515-25-000027",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "reaction_session": "2025-07-30",
+      "observation_window": {
+        "start_inclusive": "2025-07-29T20:00:00+00:00",
+        "end_exclusive": "2025-07-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000027/earningspressrelease2025_0.htm",
+          "accepted_at": "2025-07-29T20:07:23.000Z",
+          "archive_sha256": "0c656174ea6b9fe276f7646787951efcca4505ed845273388d47ba31ed9a9df4",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000712515-25-000027",
+          "accepted_at": "2025-07-29T20:07:23.000Z",
+          "form": "8-K",
+          "items": "2.02,8.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000027/ea-20250725.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000266",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "reaction_session": "2025-07-31",
+      "observation_window": {
+        "start_inclusive": "2025-07-30T20:00:00+00:00",
+        "end_exclusive": "2025-07-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000266/exhibit9936302025.htm",
+          "accepted_at": "2025-07-30T20:03:44.000Z",
+          "archive_sha256": "f464a3e08620d61af21eb661ccf9ddfeffaee5e1ac047a7687383f1139e1f2db",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001058290-25-000267",
+          "accepted_at": "2025-07-30T21:34:46.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000267/ctsh-20250630.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001058290-25-000266",
+          "accepted_at": "2025-07-30T20:03:44.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000266/ctsh-20250730.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "idxx-0001104659-25-073304",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "reaction_session": "2025-08-04",
+      "observation_window": {
+        "start_inclusive": "2025-08-01T20:00:00+00:00",
+        "end_exclusive": "2025-08-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925073304/tm2522386d1_ex99-1.htm",
+          "accepted_at": "2025-08-04T10:30:59.000Z",
+          "archive_sha256": "bb22bd715c6c0e03db9eaf3464dfe0f67bd838192e2aeb6dc47d22aef4c81bc1",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001104659-25-073304",
+          "accepted_at": "2025-08-04T10:30:59.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925073304/tm2522386d1_8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "amgn-0000318154-25-000054",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "reaction_session": "2025-08-06",
+      "observation_window": {
+        "start_inclusive": "2025-08-05T20:00:00+00:00",
+        "end_exclusive": "2025-08-06T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000054/amgn-20250630earningsrelea.htm",
+          "accepted_at": "2025-08-05T20:03:34.000Z",
+          "archive_sha256": "16f9fe594b75d452789c1179975091d10213f0c40db4bfe85b3494650f877658",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000318154-25-000056",
+          "accepted_at": "2025-08-05T23:13:42.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000056/amgn-20250630.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000318154-25-000054",
+          "accepted_at": "2025-08-05T20:03:34.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000054/amgn-20250805.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ddog-0001561550-25-000216",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "reaction_session": "2025-08-07",
+      "observation_window": {
+        "start_inclusive": "2025-08-06T20:00:00+00:00",
+        "end_exclusive": "2025-08-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ex-991x20250630x8k.htm",
+          "accepted_at": "2025-08-07T11:06:09.000Z",
+          "archive_sha256": "4e1117984d354dcf1194fedfbe4c83e130cc8e37cac03db9edf2dd1556110b70",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001561550-25-000216",
+          "accepted_at": "2025-08-07T11:06:09.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ddog-20250807.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000025",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "reaction_session": "2025-08-07",
+      "observation_window": {
+        "start_inclusive": "2025-08-06T20:00:00+00:00",
+        "end_exclusive": "2025-08-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000025/ftntq2-2025ex991.htm",
+          "accepted_at": "2025-08-06T20:11:37.000Z",
+          "archive_sha256": "2024fffde5e615fb65283926ef157fd5f96791a8777313b1552bff9715c2e6f6",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001262039-25-000025",
+          "accepted_at": "2025-08-06T20:11:37.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000025/ftnt-20250806.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "mdb-0001441816-25-000176",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "reaction_session": "2025-08-27",
+      "observation_window": {
+        "start_inclusive": "2025-08-26T20:00:00+00:00",
+        "end_exclusive": "2025-08-27T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+          "accepted_at": "2025-08-26T20:08:32.000Z",
+          "archive_sha256": "28350a6594baa68051969aa52b760d20dd49d69b514a2c198cdf49094cb1d8dd",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001441816-25-000176",
+          "accepted_at": "2025-08-26T20:08:32.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-20250826.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "crwd-0001535527-25-000023",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "reaction_session": "2025-08-28",
+      "observation_window": {
+        "start_inclusive": "2025-08-27T20:00:00+00:00",
+        "end_exclusive": "2025-08-28T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "material_strategic_transaction"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+          "accepted_at": "2025-08-27T20:11:24.000Z",
+          "archive_sha256": "9652d4746cbaf40309a1ac8d846d98d45f7678210dd188e5d720f2f80aff2815",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-onum/",
+          "role": "original_issuer_transaction_announcement",
+          "published_at": "2025-08-27T16:05:00-04:00"
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/crowdstrike-agrees-acquire-onum-supercharge-falcon-next-gen-siem-2025-08-27",
+          "role": "wire_publication_timestamp",
+          "published_at": "2025-08-27T16:05:00-04:00"
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001535527-25-000025",
+          "accepted_at": "2025-08-28T01:43:28.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000025/crwd-20250731.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001535527-25-000023",
+          "accepted_at": "2025-08-27T20:11:24.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20250827.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "The separate Onum acquisition announcement was published August 27, 2025 at 16:05 New York, after the 16:00 regular close and before the August 28 feature cutoff. The earnings release repeats the newly announced transaction.",
+      "sample": "held"
+    },
+    {
+      "event_id": "adsk-0000769397-25-000114",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "reaction_session": "2025-08-29",
+      "observation_window": {
+        "start_inclusive": "2025-08-28T20:00:00+00:00",
+        "end_exclusive": "2025-08-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000114/q226pressrelease.htm",
+          "accepted_at": "2025-08-28T20:03:53.000Z",
+          "archive_sha256": "ee1abab26a09ee166136a56444cef548ab97539791cca084d2de6d05eb90f2e2",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000769397-25-000114",
+          "accepted_at": "2025-08-28T20:03:53.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000114/adsk-20250828.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dltr-0000935703-25-000060",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "reaction_session": "2025-09-03",
+      "observation_window": {
+        "start_inclusive": "2025-09-02T20:00:00+00:00",
+        "end_exclusive": "2025-09-03T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000060/ex991q2-25earningspressrel.htm",
+          "accepted_at": "2025-09-03T10:32:16.000Z",
+          "archive_sha256": "f88e3b80eab93db2b98e741132875b0cb5cb9b8a9163e06e66515962b169b524",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000041/0000935703-25-000041.txt",
+          "role": "earlier_disclosure_outside_window",
+          "accepted_at": "2025-07-09T21:17:32.000Z",
+          "archive_sha256": "78683a02907b12eb7dd7498f949bdc25fdab8feb79da141aa340111b1f8be550",
+          "note": "The July 9 repurchase replenishment was already publicly disclosed before the September 2 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000935703-25-000061",
+          "accepted_at": "2025-09-03T10:34:53.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000061/dltr-20250802.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000935703-25-000060",
+          "accepted_at": "2025-09-03T10:32:16.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000060/dltr-20250903.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. The July 9 repurchase replenishment was already publicly disclosed before the September 2 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "lulu-0001397187-25-000038",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "reaction_session": "2025-09-05",
+      "observation_window": {
+        "start_inclusive": "2025-09-04T20:00:00+00:00",
+        "end_exclusive": "2025-09-05T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+          "accepted_at": "2025-09-04T20:10:29.000Z",
+          "archive_sha256": "3b1dfb274a676513a5a4e5754a4109ea36f09847c1d0033fb88b48f1f6bd1270",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001397187-25-000039",
+          "accepted_at": "2025-09-04T20:12:44.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000039/lulu-20250803.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001397187-25-000038",
+          "accepted_at": "2025-09-04T20:10:29.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250904.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "orly-0000898173-25-000055",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "reaction_session": "2025-10-23",
+      "observation_window": {
+        "start_inclusive": "2025-10-22T20:00:00+00:00",
+        "end_exclusive": "2025-10-23T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000055/orly-20251022xex99d1.htm",
+          "accepted_at": "2025-10-22T20:32:27.000Z",
+          "archive_sha256": "c54e1aee6484a8bdc45817dbc37a1f61ebd9eea29224776b3f6cb542b95feb4a",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000898173-25-000055",
+          "accepted_at": "2025-10-22T20:32:27.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000055/orly-20251022x8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "cdns-0000813672-25-000144",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "reaction_session": "2025-10-28",
+      "observation_window": {
+        "start_inclusive": "2025-10-27T20:00:00+00:00",
+        "end_exclusive": "2025-10-28T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000144/cdns10272025ex9901.htm",
+          "accepted_at": "2025-10-27T20:03:04.000Z",
+          "archive_sha256": "8b173e8fe32e65646b04f04588564df35ae51b2c6b62f65a0e54e65ec2f2aea8",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000813672-25-000144",
+          "accepted_at": "2025-10-27T20:03:04.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000144/cdns-20251027.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000338",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "reaction_session": "2025-10-29",
+      "observation_window": {
+        "start_inclusive": "2025-10-28T20:00:00+00:00",
+        "end_exclusive": "2025-10-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000338/exhibit9939302025.htm",
+          "accepted_at": "2025-10-29T10:32:26.000Z",
+          "archive_sha256": "fb29071770ae2be9e2da8e40f7afe5603e1ec1f80f7e4e03ab5901c947b354c0",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001058290-25-000338",
+          "accepted_at": "2025-10-29T10:32:26.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000338/ctsh-20251029.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000278",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "reaction_session": "2025-10-31",
+      "observation_window": {
+        "start_inclusive": "2025-10-30T20:00:00+00:00",
+        "end_exclusive": "2025-10-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000278/dxcm09302025-exhibit991.htm",
+          "accepted_at": "2025-10-30T20:02:39.000Z",
+          "archive_sha256": "6795666df846a5aa882b3fc60d473bf7beef52ecc7c3a11a855af11618dfab78",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001093557-25-000280",
+          "accepted_at": "2025-10-30T21:19:54.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000280/dxcm-20250930.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001093557-25-000278",
+          "accepted_at": "2025-10-30T20:02:39.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000278/dxcm-20251030.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "idxx-0001104659-25-105185",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "reaction_session": "2025-11-03",
+      "observation_window": {
+        "start_inclusive": "2025-10-31T20:00:00+00:00",
+        "end_exclusive": "2025-11-03T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925105185/tm2530045d1_ex99-1.htm",
+          "accepted_at": "2025-11-03T11:34:17.000Z",
+          "archive_sha256": "5e4759d5e2eab757f253c9cb29cd62bdea9a075f799c039e6b7037958c952f68",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001104659-25-105185",
+          "accepted_at": "2025-11-03T11:34:17.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925105185/tm2530045d1_8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000230",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "reaction_session": "2025-11-04",
+      "observation_window": {
+        "start_inclusive": "2025-11-03T21:00:00+00:00",
+        "end_exclusive": "2025-11-04T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000230/ex-991_q32025.htm",
+          "accepted_at": "2025-11-03T21:06:19.000Z",
+          "archive_sha256": "6250715a6954e0d929179471b66f2694340aae734c9649cd337e117c2e1b71ef",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000875320-25-000230",
+          "accepted_at": "2025-11-03T21:06:19.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000230/vrtx-20251103.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "amgn-0000318154-25-000070",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "reaction_session": "2025-11-05",
+      "observation_window": {
+        "start_inclusive": "2025-11-04T21:00:00+00:00",
+        "end_exclusive": "2025-11-05T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20250930earningsrelea.htm",
+          "accepted_at": "2025-11-04T21:04:18.000Z",
+          "archive_sha256": "9b9327e454bc3822454ed0564b4e6e2c483306710059bb9a76f2d08eddbb283b",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000318154-25-000072",
+          "accepted_at": "2025-11-04T23:59:36.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000072/amgn-20250930.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000318154-25-000070",
+          "accepted_at": "2025-11-04T21:04:18.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20251104.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ddog-0001561550-25-000310",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "reaction_session": "2025-11-06",
+      "observation_window": {
+        "start_inclusive": "2025-11-05T21:00:00+00:00",
+        "end_exclusive": "2025-11-06T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000310/ex-991x20250930x8k.htm",
+          "accepted_at": "2025-11-06T12:07:06.000Z",
+          "archive_sha256": "3977ec703c1409f95b38a28e9dbc10f877c1237626519b2a2d1d0d9a8387659a",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000272/ddog-20250911.htm",
+          "role": "earlier_disclosure_outside_window",
+          "accepted_at": "2025-09-11T20:31:53.000Z",
+          "note": "Ami Vora board appointment was first disclosed September 11, before the November 5 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001561550-25-000310",
+          "accepted_at": "2025-11-06T12:07:06.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000310/ddog-20251106.htm",
+          "content_review": "current_earnings_packet"
+        },
+        {
+          "accession": "0001561550-25-000305",
+          "accepted_at": "2025-11-05T21:01:31.000Z",
+          "form": "4",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000305/xslF345X05/wk-form4_1762376488.xml",
+          "content_review": "metadata_lead"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. Ami Vora board appointment was first disclosed September 11, before the November 5 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000036",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "reaction_session": "2025-11-06",
+      "observation_window": {
+        "start_inclusive": "2025-11-05T21:00:00+00:00",
+        "end_exclusive": "2025-11-06T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000036/ftntq3-2025ex991.htm",
+          "accepted_at": "2025-11-05T21:09:42.000Z",
+          "archive_sha256": "8fb697f85dc1d2538d18d939d2d6ec1fc498429c1aea15e903af8a4b7b4d3390",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001262039-25-000036",
+          "accepted_at": "2025-11-05T21:09:42.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000036/ftnt-20251105.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "adsk-0000769397-25-000126",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "reaction_session": "2025-11-26",
+      "observation_window": {
+        "start_inclusive": "2025-11-25T21:00:00+00:00",
+        "end_exclusive": "2025-11-26T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+          "accepted_at": "2025-11-25T21:03:21.000Z",
+          "archive_sha256": "dcc1278bfa19fcd12a480b6e3536f63e3f5036ab7e8f12ec9449fe0e0884c492",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000769397-25-000126",
+          "accepted_at": "2025-11-25T21:03:21.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/adsk-20251125.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "zs-0001713683-25-000203",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "reaction_session": "2025-11-26",
+      "observation_window": {
+        "start_inclusive": "2025-11-25T21:00:00+00:00",
+        "end_exclusive": "2025-11-26T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000203/zs-10312025_991.htm",
+          "accepted_at": "2025-11-25T21:07:49.000Z",
+          "archive_sha256": "c82593bff6f523d94a8a5cd438c0713df6212fa5cb1abb97092955817a482639",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001713683-25-000205",
+          "accepted_at": "2025-11-25T21:13:20.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000205/zs-20251031.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001713683-25-000203",
+          "accepted_at": "2025-11-25T21:07:49.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000203/zs-20251125.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "mdb-0001628280-25-054425",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "reaction_session": "2025-12-02",
+      "observation_window": {
+        "start_inclusive": "2025-12-01T21:00:00+00:00",
+        "end_exclusive": "2025-12-02T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+          "accepted_at": "2025-12-01T21:06:57.000Z",
+          "archive_sha256": "b038700a08684bae4ea347451eb5c312cf5aef3c1a92f73356f1f7482c47ca99",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025047941/0001628280-25-047941.txt",
+          "role": "earlier_disclosure_outside_window",
+          "accepted_at": "2025-11-03T13:31:10.000Z",
+          "archive_sha256": "633621813951bd967a60e31162ab04f5fb5d92dbd6c265f126251eb8dfbfcca1",
+          "note": "The CEO transition was explicitly announced November 3 and effective November 10, before the December 1 observation window."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/mdb-20251201.htm",
+          "role": "same_window_amendment_review",
+          "accepted_at": "2025-12-02T01:27:29.000Z",
+          "note": "Corrects one historical customer-count typo from 5,564 to 2,564, explicitly makes no other changes, and supplies no separate preliminary earnings or guidance event."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001628280-25-054569",
+          "accepted_at": "2025-12-02T01:27:29.000Z",
+          "form": "8-K/A",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/mdb-20251201.htm",
+          "content_review": "reviewed_typographic_correction"
+        },
+        {
+          "accession": "0001628280-25-054425",
+          "accepted_at": "2025-12-01T21:06:57.000Z",
+          "form": "8-K",
+          "items": "2.02",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-20251201.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. The CEO transition was explicitly announced November 3 and effective November 10, before the December 1 observation window.",
+      "sample": "held"
+    },
+    {
+      "event_id": "crwd-0001535527-25-000030",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "reaction_session": "2025-12-03",
+      "observation_window": {
+        "start_inclusive": "2025-12-02T21:00:00+00:00",
+        "end_exclusive": "2025-12-03T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+          "accepted_at": "2025-12-02T21:11:13.000Z",
+          "archive_sha256": "1fa7694a9ebf611d83c7c873fb265891075f8845a6854bef89c1ee7763abdf89",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-acquire-pangea-secure-every-layer-enterprise-ai",
+          "role": "earlier_disclosure_outside_window",
+          "note": "Pangea transaction was announced September 16, before the December 2 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001535527-25-000033",
+          "accepted_at": "2025-12-03T02:47:01.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000033/crwd-20251031.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001535527-25-000030",
+          "accepted_at": "2025-12-02T21:11:13.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. Pangea transaction was announced September 16, before the December 2 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dltr-0000935703-25-000104",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "reaction_session": "2025-12-03",
+      "observation_window": {
+        "start_inclusive": "2025-12-02T21:00:00+00:00",
+        "end_exclusive": "2025-12-03T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000104/ex991q3-25earningspressrel.htm",
+          "accepted_at": "2025-12-03T11:30:30.000Z",
+          "archive_sha256": "be8db5a296702b875337a707a4e242fd60100c743184326240832b857b6f10a3",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000935703-25-000105",
+          "accepted_at": "2025-12-03T11:31:51.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000105/dltr-20251101.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000935703-25-000104",
+          "accepted_at": "2025-12-03T11:30:30.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000104/dltr-20251203.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000025",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "reaction_session": "2026-02-13",
+      "observation_window": {
+        "start_inclusive": "2026-02-12T21:00:00+00:00",
+        "end_exclusive": "2026-02-13T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000025/dxcm12312025-exhibit991.htm",
+          "accepted_at": "2026-02-12T21:03:42.000Z",
+          "archive_sha256": "70e0f3ce6b1a78d2a06aef71335c95c403d3dda01734e0840ecd1c612a71cdd9",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001093557-26-000027",
+          "accepted_at": "2026-02-12T22:20:56.000Z",
+          "form": "10-K",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000027/dxcm-20251231.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001093557-26-000025",
+          "accepted_at": "2026-02-12T21:03:42.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000025/dxcm-20260212.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "snps-0001193125-26-071601",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "reaction_session": "2026-02-26",
+      "observation_window": {
+        "start_inclusive": "2026-02-25T21:00:00+00:00",
+        "end_exclusive": "2026-02-26T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312526071601/d921168dex991.htm",
+          "accepted_at": "2026-02-25T21:15:34.000Z",
+          "archive_sha256": "565885ff4ae122da6e84223d7f62037785c7d8dd04561f1e5f65f38d6786621b",
+          "exhibit_packet_reviewed": true,
+          "cached_line_indices": [
+            22,
+            23,
+            34,
+            35
+          ]
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000883241-26-000014",
+          "accepted_at": "2026-02-25T21:33:52.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000088324126000014/snps-20260131.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001193125-26-071601",
+          "accepted_at": "2026-02-25T21:15:34.000Z",
+          "form": "8-K",
+          "items": "2.02,8.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312526071601/d921168d8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "The February 25 original release explicitly announces today a replenishment of the existing stock repurchase program to $2.0 billion. This is within the overnight observation window and matches the registered routine repurchase caveat.",
+      "sample": "held"
+    },
+    {
+      "event_id": "intu-0000896878-26-000012",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "reaction_session": "2026-02-27",
+      "observation_window": {
+        "start_inclusive": "2026-02-26T21:00:00+00:00",
+        "end_exclusive": "2026-02-27T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000012/fy26q2earningspressrelease.htm",
+          "accepted_at": "2026-02-26T21:02:55.000Z",
+          "archive_sha256": "cc5de71335b0eed6f707de2379119c062e756d1fe6bd3bbe146e240431746695",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000046/intu-20251120.htm",
+          "role": "earlier_disclosure_outside_window",
+          "note": "February dividend of $1.20 repeats the $1.20 per-share dividend previously announced November 20. The stated 15% rise is year over year, rather than a newly raised quarterly dividend."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000896878-26-000014",
+          "accepted_at": "2026-02-26T21:10:27.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000014/intu-20260131.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000896878-26-000012",
+          "accepted_at": "2026-02-26T21:02:55.000Z",
+          "form": "8-K",
+          "items": "2.02,8.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000012/intu-20260226.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. February dividend of $1.20 repeats the $1.20 per-share dividend previously announced November 20. The stated 15% rise is year over year, rather than a newly raised quarterly dividend.",
+      "sample": "held"
+    },
+    {
+      "event_id": "zs-0001713683-26-000047",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "reaction_session": "2026-02-27",
+      "observation_window": {
+        "start_inclusive": "2026-02-26T21:00:00+00:00",
+        "end_exclusive": "2026-02-27T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000047/zs-01312026_991.htm",
+          "accepted_at": "2026-02-26T21:07:54.000Z",
+          "archive_sha256": "89730c9cfd0e8ee2dc660a9b37ada69775ffdccc372727e66d871002ff6b444d",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.zscaler.com/press/zscaler-acquires-squarex",
+          "role": "earlier_disclosure_outside_window",
+          "note": "SquareX transaction was announced February 5, before the February 26 close."
+        },
+        {
+          "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-appoints-sunil-frida-chief-marketing-officer-drive-next",
+          "role": "earlier_disclosure_outside_window",
+          "note": "Sunil Frida appointment was announced January 5, before the February 26 close."
+        },
+        {
+          "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-appoints-dr-swamy-kocherlakota-executive-vice-president",
+          "role": "earlier_disclosure_outside_window",
+          "note": "Swamy Kocherlakota appointment was announced January 12, before the February 26 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001713683-26-000048",
+          "accepted_at": "2026-02-26T21:09:33.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000048/zs-20260131.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001713683-26-000047",
+          "accepted_at": "2026-02-26T21:07:54.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000047/zs-20260226.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. SquareX transaction was announced February 5, before the February 26 close. Sunil Frida appointment was announced January 5, before the February 26 close. Swamy Kocherlakota appointment was announced January 12, before the February 26 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "cdns-0000813672-26-000044",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "reaction_session": "2026-04-28",
+      "observation_window": {
+        "start_inclusive": "2026-04-27T20:00:00+00:00",
+        "end_exclusive": "2026-04-28T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000044/cdns04272026ex9901.htm",
+          "accepted_at": "2026-04-27T20:03:41.000Z",
+          "archive_sha256": "f8c61628fc22827e666549b087994930240ff722138c5336985d331687c06148",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000813672-26-000044",
+          "accepted_at": "2026-04-27T20:03:41.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000044/cdns-20260427.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ctsh-0001058290-26-000015",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "reaction_session": "2026-04-29",
+      "observation_window": {
+        "start_inclusive": "2026-04-28T20:00:00+00:00",
+        "end_exclusive": "2026-04-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "ceo_succession_or_material_workforce_reduction"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000015/exhibit9933312026.htm",
+          "accepted_at": "2026-04-29T10:49:51.000Z",
+          "archive_sha256": "873d5d05d105d5b990f7e606e8cfe1fea0e539352cb0327eb1970f41ff105f72",
+          "exhibit_packet_reviewed": true,
+          "cached_line_indices": [
+            26,
+            35,
+            36
+          ]
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001058290-26-000016",
+          "accepted_at": "2026-04-29T12:15:01.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000016/ctsh-20260331.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001058290-26-000015",
+          "accepted_at": "2026-04-29T10:49:51.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000015/ctsh-20260429.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "The April 29 release explicitly says Project Leap was announced today. It expects $230-320 million of program costs, including $200-270 million of employee severance and personnel costs. This is a newly announced material workforce restructuring within the registered window.",
+      "sample": "held"
+    },
+    {
+      "event_id": "vrsk-0001437749-26-013728",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "reaction_session": "2026-04-29",
+      "observation_window": {
+        "start_inclusive": "2026-04-28T20:00:00+00:00",
+        "end_exclusive": "2026-04-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013728/ex_926417.htm",
+          "accepted_at": "2026-04-29T11:16:12.000Z",
+          "archive_sha256": "0e527e5aa89f78fd0872df19a8617de2090df3c24a6d1dd53d3f9347fc14c92f",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001437749-26-013729",
+          "accepted_at": "2026-04-29T11:18:20.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013729/vrsk20260331_10q.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001437749-26-013728",
+          "accepted_at": "2026-04-29T11:16:12.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013728/vrsk20260227_8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "orly-0000898173-26-000024",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "reaction_session": "2026-04-30",
+      "observation_window": {
+        "start_inclusive": "2026-04-29T20:00:00+00:00",
+        "end_exclusive": "2026-04-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000024/orly-20260429xex99d1.htm",
+          "accepted_at": "2026-04-29T20:35:09.000Z",
+          "archive_sha256": "847083fa497735f1f88c0d3fc3093bb730431a6fa1ee7314113e31df00f06638",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000898173-26-000024",
+          "accepted_at": "2026-04-29T20:35:09.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000024/orly-20260429x8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "amgn-0000318154-26-000054",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "reaction_session": "2026-05-01",
+      "observation_window": {
+        "start_inclusive": "2026-04-30T20:00:00+00:00",
+        "end_exclusive": "2026-05-01T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000054/amgn-20260331earningsrelea.htm",
+          "accepted_at": "2026-04-30T20:03:26.000Z",
+          "archive_sha256": "7fc734f297fe99c738429aca6492b7f67acd4cde8b82ccf0aed4f0c761c0a68b",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://public-inspection.federalregister.gov/2026-08455.pdf",
+          "role": "earlier_disclosure_outside_window",
+          "note": "Official TAVNEOS withdrawal proposal was filed for public inspection April 29 at 08:45, before the April 30 16:00 anchor close. The release repeats this prior regulatory action."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000318154-26-000057",
+          "accepted_at": "2026-04-30T23:04:10.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000057/amgn-20260331.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000318154-26-000054",
+          "accepted_at": "2026-04-30T20:03:26.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000054/amgn-20260430.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. Official TAVNEOS withdrawal proposal was filed for public inspection April 29 at 08:45, before the April 30 16:00 anchor close. The release repeats this prior regulatory action.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000072",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "reaction_session": "2026-05-01",
+      "observation_window": {
+        "start_inclusive": "2026-04-30T20:00:00+00:00",
+        "end_exclusive": "2026-05-01T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000072/dxcm3312026-exhibit991.htm",
+          "accepted_at": "2026-04-30T20:02:43.000Z",
+          "archive_sha256": "90261117beef43e4087d8bc48ede4a577d9eee81cab21783bd86cce757b3cf80",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001093557-26-000073",
+          "accepted_at": "2026-04-30T21:20:54.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000073/dxcm-20260331.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001093557-26-000072",
+          "accepted_at": "2026-04-30T20:02:43.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000072/dxcm-20260430.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "idxx-0001104659-26-055203",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "reaction_session": "2026-05-05",
+      "observation_window": {
+        "start_inclusive": "2026-05-04T20:00:00+00:00",
+        "end_exclusive": "2026-05-05T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926055203/tm2613510d1_ex99-1.htm",
+          "accepted_at": "2026-05-05T10:31:53.000Z",
+          "archive_sha256": "c6d02ce208856531921fd643cfc7bcc1394c39fdd56d959a9a3b3b6e3f6327f6",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001104659-26-055203",
+          "accepted_at": "2026-05-05T10:31:53.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926055203/tm2613510d1_8k.htm",
+          "content_review": "current_earnings_packet"
+        },
+        {
+          "accession": "0000874716-26-000069",
+          "accepted_at": "2026-05-04T21:00:10.000Z",
+          "form": "4",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000087471626000069/xslF345X06/wk-form4_1777928406.xml",
+          "content_review": "metadata_lead"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "vrtx-0000875320-26-000171",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "reaction_session": "2026-05-05",
+      "observation_window": {
+        "start_inclusive": "2026-05-04T20:00:00+00:00",
+        "end_exclusive": "2026-05-05T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000171/ex-991_q12026.htm",
+          "accepted_at": "2026-05-04T20:05:36.000Z",
+          "archive_sha256": "8e7a568936345904efae1366f0381a77386a0c83fe4b6c6323bf520916171448",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000875320-26-000171",
+          "accepted_at": "2026-05-04T20:05:36.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000171/vrtx-20260504.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ddog-0001628280-26-031677",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "reaction_session": "2026-05-07",
+      "observation_window": {
+        "start_inclusive": "2026-05-06T20:00:00+00:00",
+        "end_exclusive": "2026-05-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026031677/ex-991x20260331x8k.htm",
+          "accepted_at": "2026-05-07T11:05:30.000Z",
+          "archive_sha256": "35ecc3487eb69aca90f0a2adb2b57e4f01aa3f9d150f6d6ff5b8d817adc90784",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026013236/ddog-20260226.htm",
+          "role": "earlier_disclosure_outside_window",
+          "accepted_at": "2026-03-02T21:20:28.000Z",
+          "note": "Dominic Phillips board appointment was disclosed March 2, before the May 6 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001628280-26-031677",
+          "accepted_at": "2026-05-07T11:05:30.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026031677/ddog-20260507.htm",
+          "content_review": "current_earnings_packet"
+        },
+        {
+          "accession": "0001561550-26-000127",
+          "accepted_at": "2026-05-06T20:02:16.000Z",
+          "form": "4",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155026000127/xslF345X06/wk-form4_1778097730.xml",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001561550-26-000126",
+          "accepted_at": "2026-05-06T20:02:05.000Z",
+          "form": "4",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155026000126/xslF345X06/wk-form4_1778097719.xml",
+          "content_review": "metadata_lead"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. Dominic Phillips board appointment was disclosed March 2, before the May 6 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ftnt-0001262039-26-000010",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "reaction_session": "2026-05-07",
+      "observation_window": {
+        "start_inclusive": "2026-05-06T20:00:00+00:00",
+        "end_exclusive": "2026-05-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000010/ftntq1-2026ex991.htm",
+          "accepted_at": "2026-05-06T20:10:29.000Z",
+          "archive_sha256": "e9fcc790272c2e36dab88ebbfcb1e5822fc584bfeaefc666fa0de73eb979848a",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001262039-26-000010",
+          "accepted_at": "2026-05-06T20:10:29.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000010/ftnt-20260506.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "zs-0001713683-26-000095",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "reaction_session": "2026-05-27",
+      "observation_window": {
+        "start_inclusive": "2026-05-26T20:00:00+00:00",
+        "end_exclusive": "2026-05-27T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000095/zs-04302026_991.htm",
+          "accepted_at": "2026-05-26T20:08:28.000Z",
+          "archive_sha256": "408521cdfb7edbc88afeb3862563f0b1e462dcf2270d34b5648f9695f04caa16",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.zscaler.com/press/ai-announcement",
+          "role": "earlier_disclosure_outside_window",
+          "note": "Symmetry Systems transaction was announced May 21, before the May 26 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001713683-26-000096",
+          "accepted_at": "2026-05-26T20:09:52.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000096/zs-20260430.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001713683-26-000095",
+          "accepted_at": "2026-05-26T20:08:28.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000095/zs-20260526.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. Symmetry Systems transaction was announced May 21, before the May 26 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dltr-0000935703-26-000064",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "reaction_session": "2026-05-28",
+      "observation_window": {
+        "start_inclusive": "2026-05-27T20:00:00+00:00",
+        "end_exclusive": "2026-05-28T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000064/ex991q1-26earningspressrel.htm",
+          "accepted_at": "2026-05-28T10:31:08.000Z",
+          "archive_sha256": "12ec261d2f07d223d59dcc871ae3352aafafa03d87297e75403f2719a6c9424b",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000935703-26-000065",
+          "accepted_at": "2026-05-28T10:33:35.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000065/dltr-20260502.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000935703-26-000064",
+          "accepted_at": "2026-05-28T10:31:08.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000064/dltr-20260528.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "mdb-0001628280-26-038798",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "reaction_session": "2026-05-29",
+      "observation_window": {
+        "start_inclusive": "2026-05-28T20:00:00+00:00",
+        "end_exclusive": "2026-05-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+          "accepted_at": "2026-05-28T20:06:39.000Z",
+          "archive_sha256": "9cfc03307303bd6ce70e764da86f3df8bed7a44a11ce5edcd36c58ca81bfba61",
+          "exhibit_packet_reviewed": true,
+          "cached_line_indices": [
+            19,
+            21
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026039150/mdb-20260430.htm",
+          "role": "later_filing_clarifies_acquisition_date",
+          "note": "Closed May 8, 2026; this filing is outside the event feature window and does not backdate availability."
+        },
+        {
+          "url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-appoints-ryan-mac-ban-as-chief-revenue-officer-to-support-next-phase-of-growth",
+          "role": "earlier_officer_announcement",
+          "note": "Appointment effective April 27, 2026."
+        },
+        {
+          "url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-expands-product-leadership-to-accelerate-growth-and-innovation",
+          "role": "earlier_product_officer_announcement",
+          "published_at": "2026-04-22",
+          "note": "Pablo Stern and Ben Cefalo appointments predate the observation window."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001628280-26-038798",
+          "accepted_at": "2026-05-28T20:06:39.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-20260528.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "The May 28 earnings release discloses the completed Clarity Business Solutions acquisition. The May 29 Form 10-Q dates closing May 8 and says Clarity is consolidated from the acquisition date. No independently dated earlier written issuer announcement for the Clarity transaction was located. The first-public timing and comparability of the old and new consolidated forecast are unresolved, so this row is withheld under the registered provenance/scope rule. The same earnings summary also names officer appointments, with earlier announcements verified for Ryan Mac Ban and the product officers, but not independently for Doug Bowers.",
+      "sample": "held"
+    },
+    {
+      "event_id": "lulu-0001397187-26-000077",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "reaction_session": "2026-06-05",
+      "observation_window": {
+        "start_inclusive": "2026-06-04T20:00:00+00:00",
+        "end_exclusive": "2026-06-05T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+          "accepted_at": "2026-06-04T20:09:31.000Z",
+          "archive_sha256": "1d4754097180d96b0f1a99acc3f718d8bcf04082cccc0a361679120083d3a263",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000121390026061531/0001213900-26-061531.txt",
+          "role": "earlier_disclosure_outside_window",
+          "accepted_at": "2026-05-27T20:30:16.000Z",
+          "archive_sha256": "bedb08fb8da941f490dd2209320e4e4026875f69ea943b26e7e3311d386ae3f0",
+          "note": "The May 26 cooperation agreement and proposed board changes were disclosed May 27, before the June 4 close."
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000121390026065492/ea0281698-13.htm",
+          "role": "same_window_proxy_supplement_review",
+          "accepted_at": "2026-06-05T11:35:42.000Z",
+          "note": "Repeats the previously disclosed May 26 cooperation agreement and conditional board appointments."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001213900-26-065492",
+          "accepted_at": "2026-06-05T11:35:42.000Z",
+          "form": "DEFA14A",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000121390026065492/ea0281698-13.htm",
+          "content_review": "reviewed_previous_cooperation_agreement_recap"
+        },
+        {
+          "accession": "0001397187-26-000078",
+          "accepted_at": "2026-06-04T20:11:33.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000078/lulu-20260503.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001397187-26-000077",
+          "accepted_at": "2026-06-04T20:09:31.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260604.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. The May 26 cooperation agreement and proposed board changes were disclosed May 27, before the June 4 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "cdns-0000813672-26-000089",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "reaction_session": "2026-07-28",
+      "observation_window": {
+        "start_inclusive": "2026-07-27T20:00:00+00:00",
+        "end_exclusive": "2026-07-28T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000089/cdns07272026ex9901.htm",
+          "accepted_at": "2026-07-27T20:03:05.000Z",
+          "archive_sha256": "70af51f3c88cbd61f08d52dccfd8e3f0ff1d19af66e67d9e7c8425e810ad8ada",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000813672-26-000089",
+          "accepted_at": "2026-07-27T20:03:05.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000089/cdns-20260727.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "vrsk-0001437749-26-024748",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "reaction_session": "2026-07-29",
+      "observation_window": {
+        "start_inclusive": "2026-07-28T20:00:00+00:00",
+        "end_exclusive": "2026-07-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "minor_board_or_officer_appointment"
+      ],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024748/ex_968691.htm",
+          "accepted_at": "2026-07-29T11:16:18.000Z",
+          "archive_sha256": "5bbf42ae03c32edba1e195ba907d409e33148953317339226641db385b4b3670",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526321243/d86289d8k.htm",
+          "role": "in_window_officer_appointment",
+          "accepted_at": "2026-07-28T21:10:37.000Z",
+          "note": "Item 5.02 paragraphs report an interim CIO appointment."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001437749-26-024749",
+          "accepted_at": "2026-07-29T11:17:42.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/vrsk20260630_10q.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001437749-26-024748",
+          "accepted_at": "2026-07-29T11:16:18.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024748/vrsk20260526_8k.htm",
+          "content_review": "current_earnings_packet"
+        },
+        {
+          "accession": "0001193125-26-321243",
+          "accepted_at": "2026-07-28T21:10:37.000Z",
+          "form": "8-K",
+          "items": "5.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000119312526321243/d86289d8k.htm",
+          "content_review": "reviewed_officer_appointment"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "An additional 8-K accepted July 28 at 17:10:37 New York reports Nick Daffan will transition from CIO to strategic adviser and current CTO Jeff Negrete will serve as interim CIO. This appointment falls inside the overnight window and involves no CEO succession. The earnings recap of an earlier-quarter ASR is not a new authorization.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ftnt-0001262039-26-000018",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "reaction_session": "2026-07-30",
+      "observation_window": {
+        "start_inclusive": "2026-07-29T20:00:00+00:00",
+        "end_exclusive": "2026-07-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000018/ftntq2-2026ex991.htm",
+          "accepted_at": "2026-07-29T20:08:34.000Z",
+          "archive_sha256": "2a5e07c6bd6cd26a6b41bc07972aad151b23cc6809efdf4aae7066ff93cf122f",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001262039-26-000018",
+          "accepted_at": "2026-07-29T20:08:34.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000018/ftnt-20260729.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "orly-0000898173-26-000042",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "reaction_session": "2026-07-30",
+      "observation_window": {
+        "start_inclusive": "2026-07-29T20:00:00+00:00",
+        "end_exclusive": "2026-07-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000042/orly-20260729xex99d1.htm",
+          "accepted_at": "2026-07-29T20:38:23.000Z",
+          "archive_sha256": "bca12beedd87a205c41869774637e9210241e69dcadc7055b6a20d408d96e156",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000898173-26-000042",
+          "accepted_at": "2026-07-29T20:38:23.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000042/orly-20260729x8k.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000142",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "reaction_session": "2026-07-31",
+      "observation_window": {
+        "start_inclusive": "2026-07-30T20:00:00+00:00",
+        "end_exclusive": "2026-07-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm06302026-exhibit991.htm",
+          "accepted_at": "2026-07-30T20:03:41.000Z",
+          "archive_sha256": "944e0d411e2fac10f04c9daa73b47421099f7f0e1bf5120970929d21f5dfbe8b",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001093557-26-000143",
+          "accepted_at": "2026-07-30T21:21:16.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000143/dxcm-20260630.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001093557-26-000142",
+          "accepted_at": "2026-07-30T20:03:41.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm-20260730.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "idxx-0001104659-26-090033",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "reaction_session": "2026-08-04",
+      "observation_window": {
+        "start_inclusive": "2026-08-03T20:00:00+00:00",
+        "end_exclusive": "2026-08-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926090033/tm2622041d1_ex99-1.htm",
+          "accepted_at": "2026-08-04T10:32:59.000Z",
+          "archive_sha256": "4d0a6eaec19e5f91ff99a5db9cb7968ed3a881946cd7151e455397c9b3f090ff",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001104659-26-090033",
+          "accepted_at": "2026-08-04T10:32:59.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926090033/tm2622041d1_8k.htm",
+          "content_review": "current_earnings_packet"
+        },
+        {
+          "accession": "0000874716-26-000117",
+          "accepted_at": "2026-08-03T21:00:08.000Z",
+          "form": "4",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/874716/000087471626000117/xslF345X06/wk-form4_1785790805.xml",
+          "content_review": "metadata_lead"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "vrtx-0000875320-26-000256",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "reaction_session": "2026-08-04",
+      "observation_window": {
+        "start_inclusive": "2026-08-03T20:00:00+00:00",
+        "end_exclusive": "2026-08-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+          "accepted_at": "2026-08-03T20:09:43.000Z",
+          "archive_sha256": "04f6befb4263aeef4866421ffdf1c2aa8500f174be121cdf63f8a757cc15c511",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000119312526296710/0001193125-26-296710.txt",
+          "role": "earlier_disclosure_outside_window",
+          "accepted_at": "2026-07-07T01:55:41.000Z",
+          "archive_sha256": "b8c1785d78e9cdb16eef9fb12c1ab7212c8e17a929c360f59460f1280faa1ae2",
+          "note": "The Crinetics transaction was publicly disclosed in July, before the August 3 observation window."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000875320-26-000256",
+          "accepted_at": "2026-08-03T20:09:43.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/vrtx-20260803.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. The Crinetics transaction was publicly disclosed in July, before the August 3 observation window.",
+      "sample": "held"
+    },
+    {
+      "event_id": "amgn-0000318154-26-000124",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "reaction_session": "2026-08-05",
+      "observation_window": {
+        "start_inclusive": "2026-08-04T20:00:00+00:00",
+        "end_exclusive": "2026-08-05T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000124/amgn-20260630earningsrelea.htm",
+          "accepted_at": "2026-08-04T20:03:16.000Z",
+          "archive_sha256": "9b9d1c9323bf677b6315a1ccaf65369cc98e929007a3cb8b36136ba56d9a3967",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000318154-26-000126",
+          "accepted_at": "2026-08-04T22:29:07.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000126/amgn-20260630.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000318154-26-000124",
+          "accepted_at": "2026-08-04T20:03:16.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000124/amgn-20260804.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "ddog-0001628280-26-053829",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "reaction_session": "2026-08-06",
+      "observation_window": {
+        "start_inclusive": "2026-08-05T20:00:00+00:00",
+        "end_exclusive": "2026-08-06T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026053829/ex-991x20260630x8k.htm",
+          "accepted_at": "2026-08-06T11:07:37.000Z",
+          "archive_sha256": "dc490bdb49fbce9790f8a9af50d94719f4e7f55cbc79ece9af48b6bf2c98f2db",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.datadoghq.com/about/latest-news/press-releases/datadog-acquires-adaptive-ml-to-accelerate-its-investment-in-ai-research-and-development/",
+          "role": "earlier_disclosure_outside_window",
+          "note": "Adaptive ML acquisition was publicly announced June 30, before the August 5 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001628280-26-053829",
+          "accepted_at": "2026-08-06T11:07:37.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026053829/ddog-20260806.htm",
+          "content_review": "current_earnings_packet"
+        },
+        {
+          "accession": "0001950047-26-007705",
+          "accepted_at": "2026-08-05T20:25:26.000Z",
+          "form": "144",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1561550/000195004726007705/xsl144X01/primary_doc.xml",
+          "content_review": "metadata_lead"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. Adaptive ML acquisition was publicly announced June 30, before the August 5 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "crwd-0001535527-26-000029",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "reaction_session": "2026-08-27",
+      "observation_window": {
+        "start_inclusive": "2026-08-26T20:00:00+00:00",
+        "end_exclusive": "2026-08-27T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+          "accepted_at": "2026-08-26T20:07:02.000Z",
+          "archive_sha256": "a4662761a99a1b2ecef5b2879bbb797d11e9ce4b9cc744f12b75a0a913f05fd8",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-and-schwarz-digits-expand-strategic-partnership-to-deliver-sovereign-cybersecurity-across-europe/",
+          "role": "earlier_disclosure_outside_window",
+          "note": "XM Cyber asset transaction was announced July 16, before the August 26 close."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001535527-26-000031",
+          "accepted_at": "2026-08-27T01:03:35.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001535527-26-000029",
+          "accepted_at": "2026-08-26T20:07:02.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst. XM Cyber asset transaction was announced July 16, before the August 26 close.",
+      "sample": "held"
+    },
+    {
+      "event_id": "dltr-0000935703-26-000108",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "reaction_session": "2026-08-27",
+      "observation_window": {
+        "start_inclusive": "2026-08-26T20:00:00+00:00",
+        "end_exclusive": "2026-08-27T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/ex991q2-26earningspressrel.htm",
+          "accepted_at": "2026-08-27T10:31:24.000Z",
+          "archive_sha256": "841f4c1041f61c605c799e32c4d38c458d87364001ac5f721b2dd1a7ba1a6723",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0000935703-26-000109",
+          "accepted_at": "2026-08-27T10:35:11.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000109/dltr-20260801.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0000935703-26-000108",
+          "accepted_at": "2026-08-27T10:31:24.000Z",
+          "form": "8-K",
+          "items": "2.02,7.01,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/dltr-20260827.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "mdb-0001628280-26-059794",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "reaction_session": "2026-09-02",
+      "observation_window": {
+        "start_inclusive": "2026-09-01T20:00:00+00:00",
+        "end_exclusive": "2026-09-02T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+          "accepted_at": "2026-09-01T20:07:56.000Z",
+          "archive_sha256": "4d53d296f256810dba9a1e10e0f51a15e159cb904ef537e9db862bfa492ccb64",
+          "exhibit_packet_reviewed": true
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001628280-26-059830",
+          "accepted_at": "2026-09-01T20:14:50.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001628280-26-059794",
+          "accepted_at": "2026-09-01T20:07:56.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-20260901.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    },
+    {
+      "event_id": "lulu-0001397187-26-000126",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "reaction_session": "2026-09-04",
+      "observation_window": {
+        "start_inclusive": "2026-09-03T20:00:00+00:00",
+        "end_exclusive": "2026-09-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+          "accepted_at": "2026-09-03T20:07:59.000Z",
+          "archive_sha256": "70990f3daaeab38b1306e26ceff9f03d4b5fdd9fe2037104b1333d26e1675859",
+          "exhibit_packet_reviewed": true
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000119312526382473/primary_doc.xml",
+          "role": "same_window_13d_amendment_review",
+          "accepted_at": "2026-09-04T01:15:47.000Z",
+          "archive_sha256": "fb36dcf49295416e0b161bf89744656d571aa5aa8f9fd5ecb014967887bbdc31",
+          "note": "Amends holdings and a shareholder prepaid variable forward/pledge; expressly states unchanged investment thesis. No new registered issuer transaction, CEO/workforce action, dividend, buyback or officer appointment."
+        }
+      ],
+      "regulatory_window_filings": [
+        {
+          "accession": "0001193125-26-382473",
+          "accepted_at": "2026-09-04T01:15:47.000Z",
+          "form": "SCHEDULE 13D/A",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000119312526382473/xslSCHEDULE_13D_X02/primary_doc.xml",
+          "content_review": "reviewed_shareholder_financing_update"
+        },
+        {
+          "accession": "0001397187-26-000127",
+          "accepted_at": "2026-09-03T20:10:09.000Z",
+          "form": "10-Q",
+          "items": "",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+          "content_review": "metadata_lead"
+        },
+        {
+          "accession": "0001397187-26-000126",
+          "accepted_at": "2026-09-03T20:07:59.000Z",
+          "form": "8-K",
+          "items": "2.02,9.01",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260903.htm",
+          "content_review": "current_earnings_packet"
+        }
+      ],
+      "interim_window_filings": [],
+      "rationale": "No new registered hard catalyst or soft source caveat identified in the reviewed current earnings packet and the source chronology. Repeated quarterly operating, investment, repurchase activity and existing-dividend commentary do not establish a newly announced registered catalyst.",
+      "sample": "held"
+    }
+  ],
+  "summary": {
+    "warmup": {
+      "candidate_events": 24,
+      "hard_excluded": 2,
+      "soft_caveat_only": 4,
+      "clean_source_upper_bound": 18,
+      "all_defined_source_upper_bound": 22,
+      "optimistic_clean_upper_bound_if_DDOG_scope_comparable": 19,
+      "minimum_required_common_fit_rows": 20
+    },
+    "held": {
+      "events": 58,
+      "hard_excluded_rows": 3,
+      "soft_only_rows": 2,
+      "no_registered_mask_identified": 53,
+      "hard_reasons": {
+        "material_strategic_transaction": 1,
+        "ceo_succession_or_material_workforce_reduction": 1,
+        "unresolved_source_or_material_scope": 1
+      },
+      "soft_reasons": {
+        "routine_share_repurchase_authorization": 1,
+        "minor_board_or_officer_appointment": 1
+      }
+    }
+  },
+  "closing_outcome_requests": 0,
+  "model_runs": 0
+}
