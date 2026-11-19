@@ -1,0 +1,331 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-19",
+  "code_commit": "4f0b3eb96e7bb645900794f6966c48a6888fd7ab",
+  "run_id": 44102104068,
+  "run_number": 2,
+  "job_id": 134104553902,
+  "attempt": 1,
+  "run_url": "https://github.com/Fahad9101/NRE/actions/runs/44102104068",
+  "conclusion": "success",
+  "evidence_path": "reports/m6-guidance-expanded-evidence-2026-11-17.json",
+  "evidence_canonical_sha256": "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5",
+  "output": {
+    "dispositions": {
+      "verified_open": 58
+    },
+    "events": [
+      {
+        "reaction_session": "2025-07-23",
+        "status": "verified_open",
+        "symbol": "CSGP"
+      },
+      {
+        "reaction_session": "2025-07-24",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "reaction_session": "2025-07-30",
+        "status": "verified_open",
+        "symbol": "EA"
+      },
+      {
+        "reaction_session": "2025-07-31",
+        "status": "verified_open",
+        "symbol": "CTSH"
+      },
+      {
+        "reaction_session": "2025-08-04",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "reaction_session": "2025-08-06",
+        "status": "verified_open",
+        "symbol": "AMGN"
+      },
+      {
+        "reaction_session": "2025-08-07",
+        "status": "verified_open",
+        "symbol": "DDOG"
+      },
+      {
+        "reaction_session": "2025-08-07",
+        "status": "verified_open",
+        "symbol": "FTNT"
+      },
+      {
+        "reaction_session": "2025-08-27",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "reaction_session": "2025-08-28",
+        "status": "verified_open",
+        "symbol": "CRWD"
+      },
+      {
+        "reaction_session": "2025-08-29",
+        "status": "verified_open",
+        "symbol": "ADSK"
+      },
+      {
+        "reaction_session": "2025-09-03",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "reaction_session": "2025-09-05",
+        "status": "verified_open",
+        "symbol": "LULU"
+      },
+      {
+        "reaction_session": "2025-10-23",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "reaction_session": "2025-10-28",
+        "status": "verified_open",
+        "symbol": "CDNS"
+      },
+      {
+        "reaction_session": "2025-10-29",
+        "status": "verified_open",
+        "symbol": "CTSH"
+      },
+      {
+        "reaction_session": "2025-10-31",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "reaction_session": "2025-11-03",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "reaction_session": "2025-11-04",
+        "status": "verified_open",
+        "symbol": "VRTX"
+      },
+      {
+        "reaction_session": "2025-11-05",
+        "status": "verified_open",
+        "symbol": "AMGN"
+      },
+      {
+        "reaction_session": "2025-11-06",
+        "status": "verified_open",
+        "symbol": "DDOG"
+      },
+      {
+        "reaction_session": "2025-11-06",
+        "status": "verified_open",
+        "symbol": "FTNT"
+      },
+      {
+        "reaction_session": "2025-11-26",
+        "status": "verified_open",
+        "symbol": "ADSK"
+      },
+      {
+        "reaction_session": "2025-11-26",
+        "status": "verified_open",
+        "symbol": "ZS"
+      },
+      {
+        "reaction_session": "2025-12-02",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "reaction_session": "2025-12-03",
+        "status": "verified_open",
+        "symbol": "CRWD"
+      },
+      {
+        "reaction_session": "2025-12-03",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "reaction_session": "2026-02-13",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "reaction_session": "2026-02-26",
+        "status": "verified_open",
+        "symbol": "SNPS"
+      },
+      {
+        "reaction_session": "2026-02-27",
+        "status": "verified_open",
+        "symbol": "INTU"
+      },
+      {
+        "reaction_session": "2026-02-27",
+        "status": "verified_open",
+        "symbol": "ZS"
+      },
+      {
+        "reaction_session": "2026-04-28",
+        "status": "verified_open",
+        "symbol": "CDNS"
+      },
+      {
+        "reaction_session": "2026-04-29",
+        "status": "verified_open",
+        "symbol": "CTSH"
+      },
+      {
+        "reaction_session": "2026-04-29",
+        "status": "verified_open",
+        "symbol": "VRSK"
+      },
+      {
+        "reaction_session": "2026-04-30",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "reaction_session": "2026-05-01",
+        "status": "verified_open",
+        "symbol": "AMGN"
+      },
+      {
+        "reaction_session": "2026-05-01",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "reaction_session": "2026-05-05",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "reaction_session": "2026-05-05",
+        "status": "verified_open",
+        "symbol": "VRTX"
+      },
+      {
+        "reaction_session": "2026-05-07",
+        "status": "verified_open",
+        "symbol": "DDOG"
+      },
+      {
+        "reaction_session": "2026-05-07",
+        "status": "verified_open",
+        "symbol": "FTNT"
+      },
+      {
+        "reaction_session": "2026-05-27",
+        "status": "verified_open",
+        "symbol": "ZS"
+      },
+      {
+        "reaction_session": "2026-05-28",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "reaction_session": "2026-05-29",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "reaction_session": "2026-06-05",
+        "status": "verified_open",
+        "symbol": "LULU"
+      },
+      {
+        "reaction_session": "2026-07-28",
+        "status": "verified_open",
+        "symbol": "CDNS"
+      },
+      {
+        "reaction_session": "2026-07-29",
+        "status": "verified_open",
+        "symbol": "VRSK"
+      },
+      {
+        "reaction_session": "2026-07-30",
+        "status": "verified_open",
+        "symbol": "FTNT"
+      },
+      {
+        "reaction_session": "2026-07-30",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "reaction_session": "2026-07-31",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "reaction_session": "2026-08-04",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "reaction_session": "2026-08-04",
+        "status": "verified_open",
+        "symbol": "VRTX"
+      },
+      {
+        "reaction_session": "2026-08-05",
+        "status": "verified_open",
+        "symbol": "AMGN"
+      },
+      {
+        "reaction_session": "2026-08-06",
+        "status": "verified_open",
+        "symbol": "DDOG"
+      },
+      {
+        "reaction_session": "2026-08-27",
+        "status": "verified_open",
+        "symbol": "CRWD"
+      },
+      {
+        "reaction_session": "2026-08-27",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "reaction_session": "2026-09-02",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "reaction_session": "2026-09-04",
+        "status": "verified_open",
+        "symbol": "LULU"
+      }
+    ],
+    "guidance_evidence_sha256": "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5",
+    "matched": 58,
+    "requests": 70,
+    "schema_version": 1,
+    "scope": "guidance_expanded_official_open_coverage",
+    "screened": 58
+  },
+  "support": {
+    "issuers": 20,
+    "sessions": 46,
+    "held_blocks": {
+      "2025-H2": 27,
+      "2026-H1": 18,
+      "2026-Q3": 13
+    },
+    "guidance_signs": {
+      "raise": 40,
+      "unchanged": 14,
+      "cut": 4
+    },
+    "cut_issuers": 2
+  }
+}

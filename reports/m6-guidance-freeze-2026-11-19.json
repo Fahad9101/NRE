@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "protocol_path": "config/m6-guidance-protocol.json",
+  "canonical_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "registered_on": "2026-11-19",
+  "base_commit": "4f0b3eb96e7bb645900794f6966c48a6888fd7ab",
+  "authorization_words": [
+    "Do the next",
+    "resume"
+  ],
+  "scope": "Register one retrospective guidance-versus-opening-gap development comparison and bind the existing raw opening evidence.",
+  "prior_exposure": "Guidance ranges, revisions, opening-only data and earlier M6 context and revenue comparison results were available. New reaction-session closing labels have not been acquired for this comparison.",
+  "fit_floor_choice": "Twenty common earlier fit rows and ten issuers for the four-parameter ridge challenger. The source-based warmup estimate is about 24 candidates before quality attrition. This choice precedes close labels and supersedes no earlier study protocol.",
+  "execution_status": "PRE_REGISTERED_PENDING_WARMUP_AND_LABEL_MANIFESTS",
+  "model_runs": 0
+}
