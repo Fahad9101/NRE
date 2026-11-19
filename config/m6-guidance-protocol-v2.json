@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "protocol_id": "nre-m6-annual-guidance-development",
+  "version": 2,
+  "registered_on": "2026-11-19",
+  "purpose": "One retrospective development comparison of annual revenue guidance revisions against the opening-gap baseline. Register the design before acquiring reaction-session closing outcomes.",
+  "input_canonical_sha256": {
+    "config/m6-guidance-frame.json": "7e82f0d84a313f4052e4a206da912d2fa40096f1748ec843d1106db619eeb23f",
+    "reports/m6-guidance-expanded-evidence-2026-11-17.json": "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5",
+    "reports/m6-guidance-expanded-raw-openings-2026-11-19.json": "5e5f897368fda5ba109358f8bd08e25ae3906c6a96791c7798fd6c08dcbdb735",
+    "config/m2-merged-calendar-2024-2026.json": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5",
+    "reports/m6-guidance-pilot-evidence-2026-11-17.json": "c8d7e2eea92f2e50cf0aa0c961f88514bb8a0221d3da39eeae1b8940fea28c22",
+    "config/m2-step3-combined-events.json": "83f2d6574ab29dff6c5380c061e36fbe38479c8ecb75b9d2f82ee1f4af4dc1d6",
+    "config/m5-phase1b-cohort-spec.json": "73b0399e8b0e359cf4fc1b2e3d85e4e848b3f27bf6689508064160c61b16c623",
+    "config/m6-guidance-protocol.json": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+    "reports/m6-guidance-freeze-2026-11-19.json": "7cbd2ee4496425ecdd2dfb3caf3687f0eddf4388d2db06fbfe1b13c90a3d92a0",
+    "reports/m6-guidance-warmup-evidence-2026-11-19.json": "562d85fa8215e7cd7c0d88d2ad1481728314db7bd36948c5fff7b2d5bb30e505",
+    "reports/m6-guidance-source-masks-2026-11-19.json": "22cbc0a1977f65a52c7ebfd5cbcdd39c8c05fb6b59dcc616b9247c44136c091c",
+    "reports/m6-guidance-preparation-freeze-2026-11-19.json": "0bdd4f0c71a639db1774cb8f75e3e88c7158d2f3c41092a2098cb9b229474268",
+    "reports/m6-guidance-preparation-result-2026-11-19.json": "b357d6f55e06f1838ddf52307e1760cd6406152411f469e2171ece3d33258ad0",
+    "reports/m6-guidance-earlier-evidence-2026-11-19.json": "cfceca4d91c449dea24837b168c5ed429cd572463bd4fa1e5cbbdfe9bef5652d",
+    "reports/m6-guidance-earlier-source-masks-2026-11-19.json": "76070b3195f0663d532264eb27427b21f22bcc110e38ea8e05e76d6be50ee685"
+  },
+  "frame": "config/m6-guidance-frame.json",
+  "held_evidence": "reports/m6-guidance-expanded-evidence-2026-11-17.json",
+  "raw_opening_result": "reports/m6-guidance-expanded-raw-openings-2026-11-19.json",
+  "calendar": "config/m2-merged-calendar-2024-2026.json",
+  "held_rows_before_label_screen": 58,
+  "warmup": {
+    "reaction_sessions": [
+      "2024-07-01",
+      "2025-06-30"
+    ],
+    "issuer_rule": "Use only the 20 CIKs in the frozen held evidence. Enumerate every original Item 2.02 earnings release in the warmup window, record every disposition, and deduplicate economic releases before reading market outcomes. A preliminary release may supply the prior numeric outlook but does not create an additional fit event for the same fiscal-quarter release cluster.",
+    "feature_rule": "Apply the same same-fiscal-period consolidated USD revenue revision, source priority, active-prior reconciliation, timestamp, listing and competing-catalyst rules used for the held evidence. Fiscal-year initiations without a still-active comparable earlier outlook are missing. Independently dated explicit reaffirmations have a zero revision.",
+    "lock_rule": "Commit a complete warmup event and disposition manifest with source digests before requesting any warmup or held reaction-session closing outcomes. Verify raw first-minute official openings on every eligible warmup event. The warmup cannot be enlarged after outcomes are read.",
+    "minimum_common_fit_rows": 20,
+    "minimum_common_fit_issuers": 10,
+    "reason_for_fit_floor": "The separately versioned one-year warmup retains the original engineering minima of 20 common fit rows and 10 issuer clusters for the fixed four-parameter ridge model. The dates extend only because the original half-year had 18 clean source rows before outcomes. No power claim follows from these minima."
+  },
+  "folds": [
+    {
+      "test_block": "2025-H2",
+      "test_sessions": [
+        "2025-07-01",
+        "2025-12-31"
+      ],
+      "fit_blocks": [
+        "warmup"
+      ]
+    },
+    {
+      "test_block": "2026-H1",
+      "test_sessions": [
+        "2026-01-01",
+        "2026-06-30"
+      ],
+      "fit_blocks": [
+        "warmup",
+        "2025-H2"
+      ]
+    },
+    {
+      "test_block": "2026-Q3",
+      "test_sessions": [
+        "2026-07-01",
+        "2026-09-30"
+      ],
+      "fit_blocks": [
+        "warmup",
+        "2025-H2",
+        "2026-H1"
+      ]
+    }
+  ],
+  "clocks": {
+    "revenue_feature_lead_minutes": 15,
+    "availability": "Require both the latest effective prior outlook and the current outlook strictly before scheduled open minus 15 minutes. Prior numeric evidence and intervening reaffirmations must precede the current release. The committed SEC proxy is acceptance plus two minutes, floored at the recorded filing date in New York. Exclude SEC acceptances at or after 17:30 New York and unresolved differences between the true first-public session and the recorded reaction session.",
+    "opening": "Use the first minute of the scheduled opening session. Require a unique uncorrected official-open Q on the historically verified listing venue and tape, with explicit historical symbol as-of. Reject missing, conflicting or corrected official-opening records.",
+    "fit_target_maturity": "Treat each prior fit close label as available at its scheduled regular close plus five minutes. Require maturity strictly before the earliest feature cutoff in the full held block, including rows later excluded. Keep each reaction session and economic event cluster whole."
+  },
+  "price_labels": {
+    "provider": "Existing Alpaca Basic historical SIP connection. Keep all requests historical and within the registered event and anchor sessions.",
+    "fields": "For each frozen event use the official opening Q trade, prior regular-session close from a raw unadjusted SIP daily bar, and reaction-session regular close from the same raw daily-bar series. Verify historical symbol, session and price basis across the prior close and opening.",
+    "corporate_actions": "Check splits, reverse splits, spinoffs, dividends and other share-basis changes affecting the prior-close to reaction-session comparison. Withhold unresolved or inconsistent price bases. Record the same quality disposition in both model arms.",
+    "daily_close_rule": "Require exactly one finite positive raw daily bar for the named calendar session and validate its date and regular-session semantics. Reject ambiguous revisions or provider disagreement. The close is a retrospective provider reference.",
+    "missingness": "Missing, nonfinite or nonpositive prices and nonfinite or economically invalid returns at or below minus one exclude the event from both arms. Exclude a zero opening gap from both arms. Retain counts and reasons.",
+    "acquisition_lock": "Before fitting, create a hash-only acquisition manifest binding protocol, code, event and feature digests, provider request hashes, label commitments, quality dispositions and close maturity times. Persist no raw prices or event-level returns in GitHub. Keep labels private for the one run and bind the aggregate output to their commitments."
+  },
+  "target": "Let g = O / Pprev - 1 and y = C / Pprev - 1 on a common share basis. Predict the sign-adjusted open-to-close fade z = -sign(g) * ((1 + y) / (1 + g) - 1). Positive z denotes a fade of the opening gap.",
+  "feature": {
+    "raw_revision": "r = ((new_low + new_high) / (old_low + old_high)) - 1. A directly stated point is represented as equal lower and upper bounds. Require finite ordered nonnegative amounts and strictly positive prior midpoint for the same fiscal period, currency and consolidated accounting scope.",
+    "transformation": "Add exactly one column h = -sign(g) * asinh(r). The sign aligns a higher revenue outlook with the fade response after an up or down opening. Apply the fixed transform without fitting clipping thresholds.",
+    "scope_changes": "Withhold intervals whose guidance ranges incorporate differing acquisition, disposal, discontinued-operation or revenue-recognition bases unless original evidence explicitly establishes comparability. Record the disposition before market outcomes. Exclude one-sided annual bounds and product-only or percentage-only outlooks."
+  },
+  "models": {
+    "baseline_columns": [
+      "abs(g)",
+      "sign(g)"
+    ],
+    "challenger_columns": [
+      "abs(g)",
+      "sign(g)",
+      "-sign(g) * asinh(r)"
+    ],
+    "ridge_penalty": 1,
+    "fit": "Use the existing M4 population standardization and near-zero variance check, computed only on identical eligible earlier fit rows. Drop constant columns and fit the existing ridge solve with an unpenalized intercept. Refit once per registered chronological fold. Fix all settings across both registered quality variants.",
+    "constant_guidance_column": "If the training guidance column is constant or the model fit fails, mark that fold insufficient. A dropped guidance column cannot count as evidence of improvement."
+  },
+  "quality_variants": {
+    "clean_window": "Primary. Use the frozen 58-event membership after deterministic timing, share-basis, source and provider label checks, then mask the three registered soft-source caveats. Apply the same mask to warmup and earlier held fit rows. No outcomes may determine catalyst or source exclusions.",
+    "all_defined": "Sensitivity on the same frozen 58-event universe. Retain otherwise valid rows carrying the three registered soft-source caveats. Hard failures in timing, source identity, scope or price basis remain exclusions. Apply each variant to its own common fit and test rows in both arms. Withheld events from the earlier coverage ledger remain outside both variants."
+  },
+  "source_quality": {
+    "observation_window": "Review original written issuer and regulatory disclosures from the preceding regular-session close through the feature cutoff, with inclusive start and exclusive end. For price-basis changes, review every effective corporate action between the anchor and reaction session. Source rules use public timestamps and content only.",
+    "hard_catalysts": [
+      "Acquisition, disposal, merger, buyout or restructuring announcement that changes consolidated scope or announces a material strategic transaction",
+      "Chief executive succession or material workforce reduction announcement",
+      "New material litigation, criminal plea, export restriction or regulatory action",
+      "Split, reverse split, spinoff or other price-basis event with unresolved common share basis",
+      "A separate preliminary earnings or guidance disclosure in the observation window that duplicates or supersedes the economic event"
+    ],
+    "soft_source_caveats": [
+      "Routine share-repurchase authorization announced in the observation window",
+      "Routine dividend initiation or change announced in the observation window",
+      "Minor board or officer appointment announced in the observation window, excluding chief executive succession"
+    ],
+    "freeze_rule": "Before requesting any reaction-session closing labels, commit one hard/soft disposition and its source evidence for every warmup and held candidate. Unknown provenance or unresolved material comparability is a hard exclusion. Neither the raw price level, the opening gap direction nor a close return may determine these source masks. A new exclusion category requires a new protocol version before scoring."
+  },
+  "metric": "Pool paired squared errors across every scored held event. Improvement is baseline squared error minus challenger squared error. Relative MSE reduction divides mean improvement by strictly positive baseline MSE. Equal-weight events, and report per-fold loss sums and pair membership digests.",
+  "bootstrap": {
+    "replicates": 5000,
+    "seeds": {
+      "issuer": 640001,
+      "reaction_session": 640002
+    },
+    "rule": "Hold fitted out-of-fold predictions fixed. Resample complete CIK clusters and complete reaction-session clusters separately using the existing M4 percentile bootstrap. Use the outer endpoints of the two 99 percent intervals as the primary envelope."
+  },
+  "gates": {
+    "paired_rows": 40,
+    "issuers": 15,
+    "sessions": 20,
+    "up_gaps": 10,
+    "down_gaps": 10,
+    "pairs_per_fold": 10,
+    "folds_with_minimum_pairs": 2,
+    "relative_mse_reduction": 0.05,
+    "guidance_signs": "Retain at least one raise and one cut after label screening and report unchanged revisions separately. No claims for a cut subgroup from four cuts across two issuers."
+  },
+  "decision_rule": "Stop with insufficient support if any chronological fold fails the fit row, issuer or guidance-variation floor, or the pooled clean sample fails a held support floor. Otherwise require clean relative MSE reduction of at least five percent, a strictly positive lower 99 percent envelope endpoint, and nonnegative mean improvement in the all-defined sensitivity. A pass qualifies only scoping an untouched validation study. A failure closes this registered comparison.",
+  "reporting": "Publish only aggregate fit/test attrition, CIK/session/block/gap-sign/revision-sign support, baseline and challenger loss, fixed-forecast cluster intervals, membership digests and hash-only label commitments. State the limited cut support, purposive source-review subset, unconfirmed issuer coverage, reconstructed clocks and previously viewed development results.",
+  "execution": {
+    "allowed_runs": 1,
+    "attempt_rule": "Require clean committed code and frozen protocol, warmup manifest and acquisition manifest hashes before scoring. Create the attempt record exclusively before either model is fit. A partial failure consumes the logged attempt and requires an explicit versioned incident record. Never overwrite the attempt or select a revised design from observed results.",
+    "current_stage": "RE_REGISTERED_PENDING_RAW_WARMUP_OPENINGS_AND_LABEL_MANIFESTS",
+    "outcome_exposure": "The first protocol stopped at source support with 18 clean training rows and zero scoring attempts. The longer training window was fixed before any reaction-session closing outcomes were requested for this study. Guidance ranges, issuer qualification, source masks, 58 held official-opening coverage results, and earlier unrelated M6 development results were already known. The added training overlaps issuer qualification and partly predates roster publication.",
+    "boundary": "Retrospective development only. The 45 unconfirmed issuers remain outside this fixed comparison. Any later confirmation requires a separate untouched cohort and precision plan. The prospective 2027 study remains on hold."
+  },
+  "implementation_sha256_git_lf": {
+    "nre/m4_models.py": "8562502005cb58394005e15d192401461257b5cf97cc9d3e03d7a7d231a5b931",
+    "nre/m4_protocol.py": "52422e459b0835ad0e55e8b73cd91d868d61891b8e85db2daf4decfd8293d101",
+    "nre/m4_metrics.py": "a37fcfdd5fb61e268e63cbaa2976f700f44afb1dc7df1553327a1fe1b43b7237",
+    "nre/m6_context.py": "da765385a6e04916f2f3387152f894cdfcc5802940230b54562663c3bb5f1bc5",
+    "nre/m6_guidance_protocol.py": "65f194ba2abc99e19c3b7e35929b80ca625caca6ac00ec195f5a07e5ef35f8d7",
+    "nre/m6_guidance_readiness.py": "074cc7235ea2874b830b33431ea5a5a9af6380e73dd94f6bbe908c4e16f1e94e",
+    "nre/m6_guidance_revision.py": "2f93d30a5f4eb9ef2a0741b8e6d143c022a329d84dd799ea344fa295702fcef1"
+  },
+  "lineage": {
+    "parent_protocol": "config/m6-guidance-protocol.json",
+    "parent_protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+    "parent_source_decision": "reports/m6-guidance-preparation-result-2026-11-19.json",
+    "parent_commit": "86bae0e86526fe9ebddcc82e74af1ed09ed02d1e",
+    "parent_scoring_attempts": 0,
+    "closing_outcome_requests_before_revision": 0,
+    "revision_reason": "Source-only training support failed in v1; add a fixed earlier half-year without changing held events, source taxonomy, feature, models, gates, bootstrap or one-run limit.",
+    "frame_override": "Only warmup dates are overridden by this version. Preserve the original frame and its source pins; its calendar-2024 issuer qualification and November roster publication overlap the added retrospective training.",
+    "interpretation": "Retrospective development only. Selection and reconstructed availability clocks prevent claims of a contemporaneous July 2024 universe or independent validation.",
+    "issuer_prior_clock": "An original issuer release with a verified publication timestamp uses a conservative one-minute buffer. Date-only original priors use next New York midnight as the availability upper bound. Never fabricate SEC acceptance timestamps."
+  },
+  "source_preparation": {
+    "earlier_evidence": "reports/m6-guidance-earlier-evidence-2026-11-19.json",
+    "earlier_source_masks": "reports/m6-guidance-earlier-source-masks-2026-11-19.json"
+  }
+}

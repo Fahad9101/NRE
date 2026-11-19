@@ -1,0 +1,140 @@
+{
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "parent_protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "parent_source_decision": "STOP_INSUFFICIENT_SOURCE_SUPPORT",
+  "source_support": {
+    "clean_window": {
+      "warmup": {
+        "rows": 44,
+        "issuers": 20,
+        "sessions": 37
+      },
+      "warmup_exclusions": {
+        "hard_source_exclusion": 9,
+        "soft_source_caveat": 8
+      },
+      "held": {
+        "rows": 53,
+        "issuers": 19,
+        "sessions": 42
+      },
+      "held_exclusions": {
+        "hard_source_exclusion": 3,
+        "soft_source_caveat": 2
+      },
+      "folds": [
+        {
+          "test_block": "2025-H2",
+          "source_eligible_fit": {
+            "rows": 44,
+            "issuers": 20,
+            "sessions": 37
+          },
+          "source_eligible_test": {
+            "rows": 26,
+            "issuers": 17,
+            "sessions": 22
+          },
+          "fit_floor_possible": true
+        },
+        {
+          "test_block": "2026-H1",
+          "source_eligible_fit": {
+            "rows": 70,
+            "issuers": 20,
+            "sessions": 59
+          },
+          "source_eligible_test": {
+            "rows": 15,
+            "issuers": 13,
+            "sessions": 11
+          },
+          "fit_floor_possible": true
+        },
+        {
+          "test_block": "2026-Q3",
+          "source_eligible_fit": {
+            "rows": 85,
+            "issuers": 20,
+            "sessions": 70
+          },
+          "source_eligible_test": {
+            "rows": 12,
+            "issuers": 12,
+            "sessions": 9
+          },
+          "fit_floor_possible": true
+        }
+      ],
+      "source_support_possible": true
+    },
+    "all_defined": {
+      "warmup": {
+        "rows": 52,
+        "issuers": 20,
+        "sessions": 43
+      },
+      "warmup_exclusions": {
+        "hard_source_exclusion": 9
+      },
+      "held": {
+        "rows": 55,
+        "issuers": 20,
+        "sessions": 44
+      },
+      "held_exclusions": {
+        "hard_source_exclusion": 3
+      },
+      "folds": [
+        {
+          "test_block": "2025-H2",
+          "source_eligible_fit": {
+            "rows": 52,
+            "issuers": 20,
+            "sessions": 43
+          },
+          "source_eligible_test": {
+            "rows": 26,
+            "issuers": 17,
+            "sessions": 22
+          },
+          "fit_floor_possible": true
+        },
+        {
+          "test_block": "2026-H1",
+          "source_eligible_fit": {
+            "rows": 78,
+            "issuers": 20,
+            "sessions": 65
+          },
+          "source_eligible_test": {
+            "rows": 16,
+            "issuers": 14,
+            "sessions": 12
+          },
+          "fit_floor_possible": true
+        },
+        {
+          "test_block": "2026-Q3",
+          "source_eligible_fit": {
+            "rows": 94,
+            "issuers": 20,
+            "sessions": 77
+          },
+          "source_eligible_test": {
+            "rows": 13,
+            "issuers": 13,
+            "sessions": 10
+          },
+          "fit_floor_possible": true
+        }
+      ],
+      "source_support_possible": true
+    }
+  },
+  "raw_held_opening_coverage_passed": true,
+  "count_semantics": "Source-eligible upper bounds before raw earlier/warmup openings, price basis, mature labels and training feature-variation checks.",
+  "decision": "READY_FOR_RAW_WARMUP_OPENINGS",
+  "closing_outcome_requests": 0,
+  "model_runs": 0
+}

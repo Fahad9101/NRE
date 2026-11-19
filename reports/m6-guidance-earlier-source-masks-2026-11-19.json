@@ -1,0 +1,1489 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-19",
+  "parent_protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "status": "EARLIER_SOURCE_MASKS_FIXED_BEFORE_CLOSING_OUTCOMES",
+  "taxonomy": {
+    "hard_exclusions": {
+      "material_strategic_transaction": "Acquisition, disposal, merger, buyout or restructuring announcement that changes consolidated scope or announces a material strategic transaction",
+      "ceo_succession_or_material_workforce_reduction": "Chief executive succession or material workforce reduction announcement",
+      "material_legal_or_regulatory_action": "New material litigation, criminal plea, export restriction or regulatory action",
+      "unresolved_common_share_basis": "Split, reverse split, spinoff or other price-basis event with unresolved common share basis",
+      "duplicate_preliminary_earnings_or_guidance": "A separate preliminary earnings or guidance disclosure in the observation window that duplicates or supersedes the economic event",
+      "unresolved_source_or_material_scope": "Unknown provenance or unresolved material comparability is a hard exclusion, per the registered source-quality freeze rule."
+    },
+    "soft_caveats": {
+      "routine_share_repurchase_authorization": "Routine share-repurchase authorization announced in the observation window",
+      "routine_dividend_initiation_or_change": "Routine dividend initiation or change announced in the observation window",
+      "minor_board_or_officer_appointment": "Minor board or officer appointment announced in the observation window, excluding chief executive succession"
+    }
+  },
+  "scope": "Only additional 2024 H2 earnings pairs. Inherit all 24 original warmup and 58 held source dispositions byte-for-byte through canonical source pins.",
+  "events": [
+    {
+      "event_id": "cdns-0000813672-24-000150",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "reaction_session": "2024-07-23",
+      "observation_window": {
+        "start_inclusive": "2024-07-22T20:00:00+00:00",
+        "end_exclusive": "2024-07-23T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000083/cdns04222024ex9901.htm",
+          "archive_sha256": "52affbeb6936b32aede44715f4f16043aaca538cea8410cb9f8ae1f1b810c364",
+          "range_line_index": 19,
+          "accession": "0000813672-24-000083"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000150/cdns07222024ex9901.htm",
+          "archive_sha256": "267b9ceffaaeaf056203fbee50558d3917fe5ee963a22e068f7a5b3cb5791c4e",
+          "range_line_index": 19,
+          "accession": "0000813672-24-000150"
+        },
+        {
+          "accession": "0000813672-24-000125",
+          "accepted_at": "2024-06-03T13:16:39.000Z",
+          "archive_sha256": "8f2bdfda3829fd8d844d55fb0582491a5cc36c173959ef3eaba284dcfb079d54",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000125/0000813672-24-000125.txt",
+          "role": "beta_cae_completion_financing"
+        },
+        {
+          "role": "original_prior_scope_exclusion",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000083/cfocommentary04222024ex9902.htm",
+          "archive_sha256": "52affbeb6936b32aede44715f4f16043aaca538cea8410cb9f8ae1f1b810c364",
+          "line_index": 9
+        },
+        {
+          "role": "original_current_scope_inclusion",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000150/cfocommentary07222024ex9902.htm",
+          "archive_sha256": "267b9ceffaaeaf056203fbee50558d3917fe5ee963a22e068f7a5b3cb5791c4e",
+          "line_index": 7
+        },
+        {
+          "accession": "0000813672-24-000091",
+          "accepted_at": "2024-04-23T21:17:10.000Z",
+          "archive_sha256": "be84e52a1f303b2dd485660f06020486a1ea3325d96026cb27591215f0c3f754",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000091/0000813672-24-000091.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000813672-24-000100",
+          "accepted_at": "2024-05-06T20:31:14.000Z",
+          "archive_sha256": "a8aa6024e1fc955223dfa87fd3d03a18236aeeb74cbe8bc7a1d6df355b8bffd3",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000100/0000813672-24-000100.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000813672-24-000125",
+          "accepted_at": "2024-06-03T13:16:39.000Z",
+          "archive_sha256": "8f2bdfda3829fd8d844d55fb0582491a5cc36c173959ef3eaba284dcfb079d54",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000125/0000813672-24-000125.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "April original CFO commentary explicitly excludes pending BETA CAE. July CFO commentary includes $40 million from BETA CAE in the annual revenue midpoint after its completion. These directly stated consolidated bounds have different scope; subtracting an estimated component would change the registered feature."
+    },
+    {
+      "event_id": "csgp-0001193125-24-182891",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "reaction_session": "2024-07-24",
+      "observation_window": {
+        "start_inclusive": "2024-07-23T20:00:00+00:00",
+        "end_exclusive": "2024-07-24T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312524107185/d827733dex991.htm",
+          "archive_sha256": "23302f3623b10998191e8c904845a6b97c037c0a718aa55eed994964cbb6d929",
+          "range_line_index": 83,
+          "accession": "0001193125-24-107185"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312524182891/d856482dex991.htm",
+          "archive_sha256": "617f3db9b1e0963ffd017001e84d0159635a60fe4dcbe30083854aa8ae7f3a8d",
+          "range_line_index": 89,
+          "accession": "0001193125-24-182891"
+        },
+        {
+          "accession": "0001193125-24-151700",
+          "accepted_at": "2024-05-31T20:01:34.000Z",
+          "archive_sha256": "2d335861c868aadf71d070961102a58f92eb18213d7bf25cf0a6c2acf39f985c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312524151700/0001193125-24-151700.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001057352-24-000074",
+          "accepted_at": "2024-06-07T20:39:44.000Z",
+          "archive_sha256": "c48b241c8d2f1e51e5b36a5203260e48aeecf50486030e2b275d532308e2d729",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735224000074/0001057352-24-000074.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001057352-24-000077",
+          "accepted_at": "2024-06-18T20:20:55.000Z",
+          "archive_sha256": "37c08f152dde5d21babc6da4722ac98f9b07cc5c2bb11511d99b850ce5a32bb7",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735224000077/0001057352-24-000077.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001057352-24-000084",
+          "accepted_at": "2024-07-11T20:09:34.000Z",
+          "archive_sha256": "2d5c39a71f0ce350ddfd4a7c16febc8bce473e1784e668ca2affdb08d0ab8cd0",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735224000084/0001057352-24-000084.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "Matterport remained a pending acquisition during both 2024 outlooks; its 2025 closing is outside this pair. The CFO and accounting/IR appointments were announced June 18 and July 11, outside both current observation windows. OnTheMarket consolidation predates the 2024 priors. No new registered mask identified in the reviewed current packet."
+    },
+    {
+      "event_id": "orly-0000898173-24-000032",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "reaction_session": "2024-07-25",
+      "observation_window": {
+        "start_inclusive": "2024-07-24T20:00:00+00:00",
+        "end_exclusive": "2024-07-25T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000019/orly-20240424xex99d1.htm",
+          "archive_sha256": "b68c92f8feffe398f762dab8140eb571febab3b8c647d591ee81c34821ae3227",
+          "range_line_index": 42,
+          "accession": "0000898173-24-000019",
+          "accepted_at": "2024-04-24T20:32:01.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000032/orly-20240724xex99d1.htm",
+          "archive_sha256": "28a8790186b03c9cbb9c0bc3d359ada2f75e9d17649e1227597b0ec9930a8f9a",
+          "range_line_index": 47,
+          "accession": "0000898173-24-000032",
+          "accepted_at": "2024-07-24T20:30:48.000Z"
+        }
+      ],
+      "rationale": "Same-fiscal-period consolidated annual revenue bounds verified in the original earnings packets. No new registered hard catalyst or soft source caveat identified in the current packet and reviewed intervening filing chronology."
+    },
+    {
+      "event_id": "dxcm-0001093557-24-000143",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "reaction_session": "2024-07-26",
+      "observation_window": {
+        "start_inclusive": "2024-07-25T20:00:00+00:00",
+        "end_exclusive": "2024-07-26T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000078/dxcmq1202499-1_3312024.htm",
+          "archive_sha256": "4dc300292e7bd6d9cdb243b5f25e61abaca6fada1df33fbbea49fcef8ee5f214",
+          "range_line_index": 16,
+          "accession": "0001093557-24-000078"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000143/dxcmq2202499-1_6302024.htm",
+          "archive_sha256": "59235a54270d5075d3df65ad0998ea6ee08cb19dc51f7f8186d432b6c0168e14",
+          "range_line_index": 16,
+          "accession": "0001093557-24-000143"
+        },
+        {
+          "accession": "0001093557-24-000101",
+          "accepted_at": "2024-05-24T20:12:45.000Z",
+          "archive_sha256": "4004b56a5342b002224ef4633a1085883758de3db48ef6ba3417c13b359adc04",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000101/0001093557-24-000101.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "The July 25 original release announces new $750 million share repurchase authority, giving the registered soft mask. The annual consolidated revenue range is distinct from the organic-growth percentage; both April and July explain the same historical non-CGM exclusions."
+    },
+    {
+      "event_id": "ea-0000712515-24-000027",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "reaction_session": "2024-07-31",
+      "observation_window": {
+        "start_inclusive": "2024-07-30T20:00:00+00:00",
+        "end_exclusive": "2024-07-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000013/earningspressrelease2024_5.htm",
+          "archive_sha256": "7a6a30b839b56d2ea3047d77de97b4e16a0759694353f3b4444ff3e850360286",
+          "range_line_index": 83,
+          "accession": "0000712515-24-000013"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000027/earningspressrelease2024_0.htm",
+          "archive_sha256": "f9e324e7ab9db5f26d6edfd3c56aa350ccb7ec990281ae433b78b35381e31dbc",
+          "range_line_index": 55,
+          "accession": "0000712515-24-000027"
+        },
+        {
+          "accession": "0000712515-24-000016",
+          "accepted_at": "2024-05-16T20:06:51.000Z",
+          "archive_sha256": "ad63c90872b55108e3989b331ce765472f449e14695f3720374619ca9f38d0ea",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000016/0000712515-24-000016.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "July explicitly reiterates May FY2025 GAAP revenue bounds. The $0.19 quarterly dividend repeats the prior amount; repurchases use the program announced in May. Neither creates a new authorization or dividend-change mask."
+    },
+    {
+      "event_id": "vrsk-0001437749-24-023984",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "reaction_session": "2024-07-31",
+      "observation_window": {
+        "start_inclusive": "2024-07-30T20:00:00+00:00",
+        "end_exclusive": "2024-07-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924014063/ex_631742.htm",
+          "archive_sha256": "8229e20272ea81e00a64c90b2c6526bad1f056bf0bc9396ad1c964242589cb91",
+          "range_line_index": 165,
+          "accession": "0001437749-24-014063",
+          "accepted_at": "2024-05-01T11:17:18.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924023984/ex_687125.htm",
+          "archive_sha256": "fdaa564ad1baa97286bc97b3810829d53803a9e0249ba6bf457a65cfa554e503",
+          "range_line_index": 265,
+          "accession": "0001437749-24-023984",
+          "accepted_at": "2024-07-31T11:16:43.000Z"
+        }
+      ],
+      "rationale": "The current release explicitly keeps the annual revenue range unchanged. Its 39-cent dividend matches the immediately preceding quarter; the 15% wording compares to 2023, not a new sequential increase. The ASR was executed under existing authorization and does not announce additional authority. June 5 interim filing concerns debt issuance."
+    },
+    {
+      "event_id": "ctsh-0001058290-24-000241",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "reaction_session": "2024-08-01",
+      "observation_window": {
+        "start_inclusive": "2024-07-31T20:00:00+00:00",
+        "end_exclusive": "2024-08-01T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000115/exhibit9913312024.htm",
+          "archive_sha256": "bc301c80584ec18c37d92a8287e6cd0b10ffb815d121fd673053a1fdbd8ff8c4",
+          "range_line_index": 35,
+          "accession": "0001058290-24-000115"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000241/exhibit9916302024.htm",
+          "archive_sha256": "d43b2af7884bf49fc32ab371855e661548033b4507a18be21ab95340773b351a",
+          "range_line_index": 34,
+          "accession": "0001058290-24-000241"
+        },
+        {
+          "accession": "0001058290-24-000198",
+          "accepted_at": "2024-06-07T20:42:32.000Z",
+          "archive_sha256": "5d96b5004dcb923fa2abf44bd01757f47b12e689468dea5411394d8218464224",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000198/0001058290-24-000198.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001058290-24-000204",
+          "accepted_at": "2024-06-10T11:05:23.000Z",
+          "archive_sha256": "533ab9efa0c2a157412910f42c9d198f2a96b075deb01c3ceb7cbfd012a9557c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000204/0001058290-24-000204.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001058290-24-000227",
+          "accepted_at": "2024-07-09T10:22:08.000Z",
+          "archive_sha256": "f156d9465a50f6ae0cab08bdbcad1ba7be9286f308d3da58e0f7d7266c17d66b",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000227/0001058290-24-000227.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001058290-24-000229",
+          "accepted_at": "2024-07-11T21:12:56.000Z",
+          "archive_sha256": "b81095f20f62c55b98bfcda6a50d87bdf1f051a6db16cad1285e0ec422844433",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000229/0001058290-24-000229.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "Both May and July outlooks exclude the pending Belcan acquisition, which was announced June 10 before this observation window. Existing Thirdera contribution is already in the May outlook. The current July range is the consolidated USD range, not its constant-currency growth percentage."
+    },
+    {
+      "event_id": "vrtx-0000875320-24-000193",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "reaction_session": "2024-08-02",
+      "observation_window": {
+        "start_inclusive": "2024-08-01T20:00:00+00:00",
+        "end_exclusive": "2024-08-02T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000137/ex-991_q12024.htm",
+          "archive_sha256": "45b6b96447ccb1cef3512ef3a18f41cbb2ccecabaac2f99e41ca1758aff7644e",
+          "range_line_index": 18,
+          "accession": "0000875320-24-000137",
+          "accepted_at": "2024-05-06T20:03:09.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000193/ex-991_q22024.htm",
+          "archive_sha256": "3bdcae5c75ee07ffafff26a2d13ae2b600981c2edfc07da218e42191fb845c3a",
+          "range_line_index": 18,
+          "accession": "0000875320-24-000193",
+          "accepted_at": "2024-08-01T20:05:43.000Z"
+        }
+      ],
+      "rationale": "Alpine was acquired May 20 between the May 6 numeric prior and August 1 current range. June 27 updates acquisition expense accounting but does not explicitly reaffirm or reconcile consolidated revenue-guidance scope. Reviewed original sources do not establish comparable old/new consolidation basis; withhold under the fixed scope rule."
+    },
+    {
+      "event_id": "idxx-0001104659-24-086074",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "reaction_session": "2024-08-06",
+      "observation_window": {
+        "start_inclusive": "2024-08-05T20:00:00+00:00",
+        "end_exclusive": "2024-08-06T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924055201/tm2413183d1_ex99-1.htm",
+          "archive_sha256": "5738af6cac35cda44ef1622fab74cf5198303e2bbd48c8d399dc7f47ff79a3e8",
+          "range_line_index": 17,
+          "accession": "0001104659-24-055201",
+          "accepted_at": "2024-05-01T10:30:44.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924086074/tm2420913d1_ex99-1.htm",
+          "archive_sha256": "0e3997f8536236b4c22147825de16ae99aa2ded46e303b18322f9866fab81e82",
+          "range_line_index": 17,
+          "accession": "0001104659-24-086074",
+          "accepted_at": "2024-08-06T10:30:36.000Z"
+        }
+      ],
+      "rationale": "Both outlooks are consolidated FY2024 revenue. The current release increases an accrual for an already ongoing royalty-contract litigation matter relating to 2004-2017 and describes its prior established accrual. An updated earnings accrual does not itself establish a newly filed material lawsuit or new regulatory action under the fixed taxonomy. No additional registered in-window catalyst identified."
+    },
+    {
+      "event_id": "amgn-0000318154-24-000033",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "reaction_session": "2024-08-07",
+      "observation_window": {
+        "start_inclusive": "2024-08-06T20:00:00+00:00",
+        "end_exclusive": "2024-08-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000018/amgn-20240331earningsrelea.htm",
+          "archive_sha256": "99c79444ab2066066b336c69d050dea98324997448141d049c7ff4ce26240031",
+          "range_line_index": 160,
+          "accession": "0000318154-24-000018"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000033/amgn-20240630earningsrelea.htm",
+          "archive_sha256": "69337733f15d4d9afbf06e2293df46d4a0993440d8860d1488162ba8b6c5d041",
+          "range_line_index": 162,
+          "accession": "0000318154-24-000033"
+        },
+        {
+          "role": "regulatory_first_public_timing_unresolved",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000033/amgn-20240630earningsrelea.htm",
+          "archive_sha256": "69337733f15d4d9afbf06e2293df46d4a0993440d8860d1488162ba8b6c5d041",
+          "line_index": 218
+        },
+        {
+          "accession": "0001193125-24-153221",
+          "accepted_at": "2024-06-03T21:17:35.000Z",
+          "archive_sha256": "2785f88d5ad3659cb948931782c8c60006772c4562ba069e3bd434cdbf265efa",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000119312524153221/0001193125-24-153221.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "The August 6 original packet describes an AMG 193 FDA orphan designation in August without an exact earlier first-public date. This designation alone is not treated as a proven material approval or adverse regulatory action: both first-public timing and potential materiality of the new oncology-program regulatory disclosure remain unresolved. The source is conservatively withheld under the existing unresolved-provenance rule. Older approvals and the July TEZSPIRE designation do not independently create a new in-window mask."
+    },
+    {
+      "event_id": "ftnt-0001262039-24-000032",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "reaction_session": "2024-08-07",
+      "observation_window": {
+        "start_inclusive": "2024-08-06T20:00:00+00:00",
+        "end_exclusive": "2024-08-07T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000017/ftntq1-2024ex991.htm",
+          "archive_sha256": "af8914bb03f833fa962ace0891b7736ab1910d97ecdda653327b03674b41310b",
+          "range_line_index": 32,
+          "accession": "0001262039-24-000017",
+          "accepted_at": "2024-05-02T20:09:48.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000032/ftntq2-2024ex991.htm",
+          "archive_sha256": "cdd00dbfa1c7361cbf36de8e64006b0c388190005dec081a186630213aa61e61",
+          "range_line_index": 34,
+          "accession": "0001262039-24-000032",
+          "accepted_at": "2024-08-06T20:07:39.000Z"
+        },
+        {
+          "role": "other_in_window_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000034/0001262039-24-000034.txt",
+          "accession": "0001262039-24-000034",
+          "accepted_at": "2024-08-07T01:57:49.000Z",
+          "archive_sha256": "4731bb0e4077ad58fcbe54126f69beb300e04452137ed718890afbcff53b37c5"
+        },
+        {
+          "url": "https://investor.fortinet.com/news-releases/news-release-details/fortinet-completes-acquisition-lacework",
+          "role": "original_issuer_acquisition_release",
+          "published_at": "2024-08-02T09:00:00-04:00",
+          "transaction_effective_date": "2024-08-01"
+        },
+        {
+          "url": "https://investor.fortinet.com/news-releases/news-release-details/fortinet-strengthens-its-top-tier-unified-sase-solution/",
+          "role": "original_issuer_acquisition_release",
+          "published_at": "2024-08-06T09:00:00-04:00",
+          "transaction_effective_date": "2024-08-05"
+        }
+      ],
+      "rationale": "Lacework closed August 1 and Next DLP closed August 5, between the May 2 prior and August 6 current forecast. Original issuer announcements precede the current release, but reviewed sources do not reconcile old/new consolidated guidance to a common basis. The August 7 amendment changes non-GAAP EPS only, repeats the revenue range, and was published after the August 7 feature cutoff."
+    },
+    {
+      "event_id": "ddog-0001561550-24-000109",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "reaction_session": "2024-08-08",
+      "observation_window": {
+        "start_inclusive": "2024-08-07T20:00:00+00:00",
+        "end_exclusive": "2024-08-08T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000048/ex-991x20240331x8k.htm",
+          "archive_sha256": "5041b69f3709e92257e56bb13e35a95b4f594c5149df2f760b101525762ea008",
+          "range_line_index": 31,
+          "accession": "0001561550-24-000048"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000109/ex-991x20240630x8k.htm",
+          "archive_sha256": "5d562e794eb551b9509b38f28ff15585674683c6a9f2e9829dd920d89a92bacb",
+          "range_line_index": 39,
+          "accession": "0001561550-24-000109"
+        },
+        {
+          "accession": "0001561550-24-000071",
+          "accepted_at": "2024-06-06T20:55:41.000Z",
+          "archive_sha256": "aaf1bc6305d2159b640f86b09716992bdbbd57f7bf65acdb818876e84879b0e3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000071/0001561550-24-000071.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "The dated consolidated USD annual ranges refer to the same FY2024 and no newer numerical annual outlook or new registered catalyst was identified in the reviewed current-report chronology. Quarterly ranges and performance highlights do not replace the annual prior."
+    },
+    {
+      "event_id": "snps-0001193125-24-204450",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "reaction_session": "2024-08-22",
+      "observation_window": {
+        "start_inclusive": "2024-08-21T20:00:00+00:00",
+        "end_exclusive": "2024-08-22T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524145001/d740550dex991.htm",
+          "archive_sha256": "3a3aabc844a052b3798a720a83433783e63ceebe5856a2877bf6d707372fa65a",
+          "range_line_index": 68,
+          "accession": "0001193125-24-145001",
+          "accepted_at": "2024-05-22T20:31:56.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524204450/d878807dex991.htm",
+          "archive_sha256": "15077261ef49401aac8ab2f96c38978f071f32bacbc2190dbcec0fd40995122f",
+          "range_line_index": 69,
+          "accession": "0001193125-24-204450",
+          "accepted_at": "2024-08-21T20:31:52.000Z"
+        }
+      ],
+      "rationale": "May 22 and August 21 explicitly present all financial targets on a continuing-operations basis excluding Software Integrity. The same FY2024 annual scope is therefore established in both original releases. The Ansys transaction was announced in January and remains expected to close in 2025; July 12 regulatory notification neither closes it nor changes the FY2024 revenue scope. Actual FY2024 end is November 2, as stated in both releases; October 31 is presentation shorthand."
+    },
+    {
+      "event_id": "crwd-0001535527-24-000017",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "reaction_session": "2024-08-29",
+      "observation_window": {
+        "start_inclusive": "2024-08-28T20:00:00+00:00",
+        "end_exclusive": "2024-08-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000011/crwd-20240604xex991.htm",
+          "archive_sha256": "a563baa723b90ea69e9e986ec154a0607ec72178d057f36c6211195ca3738e01",
+          "range_line_index": 36,
+          "accession": "0001535527-24-000011"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+          "archive_sha256": "87c1fb35dbbd5bd8e28d0045f17747f8b8204da711901db449c17c1bf5f065c0",
+          "range_line_index": 30,
+          "accession": "0001535527-24-000017"
+        },
+        {
+          "accession": "0001104659-24-073944",
+          "accepted_at": "2024-06-21T20:18:23.000Z",
+          "archive_sha256": "2474593b45965ab892554dca7c9b74a7b0db05054252d5f4b8e6b9ddd900da6e",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465924073944/0001104659-24-073944.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001104659-24-081571",
+          "accepted_at": "2024-07-22T21:27:44.000Z",
+          "archive_sha256": "640dd9858da6abbc2cd15e3335157f0d51e7b49cfaa90e5bac9708073eba9e83",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465924081571/0001104659-24-081571.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "July 19 outage and subsequent July 22 filing precede the August observation window. The July filing does not replace the June annual numeric outlook. The current revenue update includes customer incentives; no new registered in-window acquisition, CEO change or litigation announcement was identified in the reviewed current packet."
+    },
+    {
+      "event_id": "adsk-0000769397-24-000147",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "reaction_session": "2024-08-30",
+      "observation_window": {
+        "start_inclusive": "2024-08-29T20:00:00+00:00",
+        "end_exclusive": "2024-08-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000095/q125pressrelease.htm",
+          "archive_sha256": "2b2a1eb7ee4b394947d6d2c9a0420c0ecd5e626f9f53ce6e3eba946e9911e5f2",
+          "range_line_index": 70,
+          "accession": "0000769397-24-000095"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000147/q225pressrelease.htm",
+          "archive_sha256": "ac6b7e782ca392bf80a7ebedced486105ae290b445a240dcdbd44d3df9b3db0a",
+          "range_line_index": 72,
+          "accession": "0000769397-24-000147"
+        },
+        {
+          "url": "https://www.bgf.co.uk/posts/news/exit-datum360/",
+          "archive_sha256": "0edb51fa9dac43fd2dadecefa50466b11ff3b4e1f7a2e4fb0dabdd22170fc7c6",
+          "role": "seller_original_acquisition_disclosure",
+          "representation": "original public participant HTML"
+        },
+        {
+          "accession": "0001213900-24-062270",
+          "accepted_at": "2024-07-17T23:14:34.000Z",
+          "archive_sha256": "27522fe132497e300f2519d6b688a83cb69016b479beaaab327d6d9931725e3e",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000121390024062270/0001213900-24-062270.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "Datum360 was acquired June 24, after the June 11 prior outlook and before the August update. The reviewed original outlooks do not explicitly reconcile the old and new consolidated revenue basis. This is an unresolved prior/current scope failure, not a new transaction in the shorter overnight catalyst window."
+    },
+    {
+      "event_id": "lulu-0001397187-24-000033",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "reaction_session": "2024-08-30",
+      "observation_window": {
+        "start_inclusive": "2024-08-29T20:00:00+00:00",
+        "end_exclusive": "2024-08-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000023/lulu-20240428xex991.htm",
+          "archive_sha256": "ceb50b488f648bb3573fc845ffcd145c0ec58823a5922c14e73c5b2720010df3",
+          "range_line_index": 33,
+          "accession": "0001397187-24-000023",
+          "accepted_at": "2024-06-05T20:10:16.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+          "archive_sha256": "8e9e8086aaaf1312abda6320b0b7665e60a39b79648c1665462d729229e9ecee",
+          "range_line_index": 30,
+          "accession": "0001397187-24-000033",
+          "accepted_at": "2024-08-29T20:13:03.000Z"
+        }
+      ],
+      "rationale": "Same-fiscal-period consolidated annual revenue bounds verified in the original earnings packets. No new registered hard catalyst or soft source caveat identified in the current packet and reviewed intervening filing chronology."
+    },
+    {
+      "event_id": "mdb-0001441816-24-000185",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "reaction_session": "2024-08-30",
+      "observation_window": {
+        "start_inclusive": "2024-08-29T20:00:00+00:00",
+        "end_exclusive": "2024-08-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000108/mdb-43024xex991xrelease.htm",
+          "archive_sha256": "97fe18d55929430f05b91a5afccfe22c450a3b3cdddffb00f7ea603d216b399e",
+          "range_line_index": 24,
+          "accession": "0001441816-24-000108",
+          "accepted_at": "2024-05-30T20:14:59.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+          "archive_sha256": "9f9ccf0f11edf9d0822d2cf9969c82e95d0ee13bcaa838954806523f435a47d4",
+          "range_line_index": 24,
+          "accession": "0001441816-24-000185",
+          "accepted_at": "2024-08-29T20:10:13.000Z"
+        }
+      ],
+      "rationale": "Same-fiscal-period consolidated annual revenue bounds verified in the original earnings packets. No new registered hard catalyst or soft source caveat identified in the current packet and reviewed intervening filing chronology."
+    },
+    {
+      "event_id": "dltr-0000935703-24-000039",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "reaction_session": "2024-09-04",
+      "observation_window": {
+        "start_inclusive": "2024-09-03T20:00:00+00:00",
+        "end_exclusive": "2024-09-04T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000026/ex991q1-24earningspr.htm",
+          "archive_sha256": "09b1d512ce0bfc6c41840bbcca446a7be8fedcd5a554621b8e005dc2428c7820",
+          "range_line_index": 70,
+          "accession": "0000935703-24-000026"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm",
+          "archive_sha256": "d2914e6578a26da3bc0057ee7ee13339ecd7b47ba823496e57d3212ff5be9098",
+          "range_line_index": 75,
+          "accession": "0000935703-24-000039"
+        },
+        {
+          "url": "https://corporate.dollartree.com/news-media/press-releases/detail/267/dollar-tree-inc-completes-transaction-for-170-99-cents",
+          "archive_sha256": "a3ea777ca800e0d3c097b480e7307c65d7381376c04e2c50782f4090c1a70eb7",
+          "role": "earlier_original_lease_acquisition",
+          "representation": "original public participant HTML"
+        },
+        {
+          "accession": "0000935703-24-000031",
+          "accepted_at": "2024-06-24T20:36:09.000Z",
+          "archive_sha256": "d3971e352e589a031be5d122c5d7d51590f269ec99639c85a0427205bde18392",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000031/0000935703-24-000031.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000935703-24-000033",
+          "accepted_at": "2024-07-09T20:13:41.000Z",
+          "archive_sha256": "b6e30f0a683b92ca85f69e186cc37fd382507fedf12c4e2b636b338dcb66599f",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000033/0000935703-24-000033.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000935703-24-000036",
+          "accepted_at": "2024-08-21T20:07:26.000Z",
+          "archive_sha256": "d9928d00d4c57aaec27a086090a7b26877ea8b2076ec1e90a9c1cdd52a520a75",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000036/0000935703-24-000036.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "The 99 Cents lease/IP transactions completed in May before the June 5 prior; subsequent openings and conversion costs do not add a new corporate entity. The September actuarial reserve reflects development of existing general-liability claims, rather than a newly announced named material litigation. Family Dollar strategic review and closure plans predate the observation window."
+    },
+    {
+      "event_id": "csgp-0001057352-24-000122",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "reaction_session": "2024-10-23",
+      "observation_window": {
+        "start_inclusive": "2024-10-22T20:00:00+00:00",
+        "end_exclusive": "2024-10-23T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312524182891/d856482dex991.htm",
+          "archive_sha256": "617f3db9b1e0963ffd017001e84d0159635a60fe4dcbe30083854aa8ae7f3a8d",
+          "range_line_index": 89,
+          "accession": "0001193125-24-182891"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735224000122/q32024earningspressrelease.htm",
+          "archive_sha256": "493ed1dff3283c598e811f65fc1dc59782d303b9d09b9b13f7a869f2ca3b20ce",
+          "range_line_index": 24,
+          "accession": "0001057352-24-000122"
+        }
+      ],
+      "rationale": "Matterport remained a pending acquisition during both 2024 outlooks; its 2025 closing is outside this pair. The CFO and accounting/IR appointments were announced June 18 and July 11, outside both current observation windows. OnTheMarket consolidation predates the 2024 priors. No new registered mask identified in the reviewed current packet."
+    },
+    {
+      "event_id": "orly-0000898173-24-000040",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "reaction_session": "2024-10-24",
+      "observation_window": {
+        "start_inclusive": "2024-10-23T20:00:00+00:00",
+        "end_exclusive": "2024-10-24T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000032/orly-20240724xex99d1.htm",
+          "archive_sha256": "28a8790186b03c9cbb9c0bc3d359ada2f75e9d17649e1227597b0ec9930a8f9a",
+          "range_line_index": 47,
+          "accession": "0000898173-24-000032",
+          "accepted_at": "2024-07-24T20:30:48.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000040/orly-20241023xex99d1.htm",
+          "archive_sha256": "e98919428fcab4d92de552c7f3a670a0409bb476b7f43bc77950cd78ba371e16",
+          "range_line_index": 47,
+          "accession": "0000898173-24-000040",
+          "accepted_at": "2024-10-23T20:32:01.000Z"
+        }
+      ],
+      "rationale": "Same-fiscal-period consolidated annual revenue bounds verified in the original earnings packets. No new registered hard catalyst or soft source caveat identified in the current packet and reviewed intervening filing chronology."
+    },
+    {
+      "event_id": "dxcm-0001093557-24-000179",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "reaction_session": "2024-10-25",
+      "observation_window": {
+        "start_inclusive": "2024-10-24T20:00:00+00:00",
+        "end_exclusive": "2024-10-25T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000143/dxcmq2202499-1_6302024.htm",
+          "archive_sha256": "59235a54270d5075d3df65ad0998ea6ee08cb19dc51f7f8186d432b6c0168e14",
+          "range_line_index": 16,
+          "accession": "0001093557-24-000143"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000179/dxcmq3202499-1_9302024.htm",
+          "archive_sha256": "879adfc444146378d1cfca515195e3eb9fd7561b815638a5a1bf0aee7b5dd1e1",
+          "range_line_index": 16,
+          "accession": "0001093557-24-000179"
+        }
+      ],
+      "rationale": "The October release executes the July repurchase program rather than announcing new authority. It announces CCO retirement and the existing CEO assuming commercial leadership during a search, without a newly appointed replacement or CEO succession. The fixed taxonomy is not expanded to officer departures or duty changes."
+    },
+    {
+      "event_id": "cdns-0000813672-24-000188",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "reaction_session": "2024-10-29",
+      "observation_window": {
+        "start_inclusive": "2024-10-28T20:00:00+00:00",
+        "end_exclusive": "2024-10-29T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000150/cdns07222024ex9901.htm",
+          "archive_sha256": "267b9ceffaaeaf056203fbee50558d3917fe5ee963a22e068f7a5b3cb5791c4e",
+          "range_line_index": 19,
+          "accession": "0000813672-24-000150"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000188/cdns10282024ex9901.htm",
+          "archive_sha256": "c0b761eb9e3b6da33e4c56ce3c7a81b049e025242cb8683010928ab0d42c2fe3",
+          "range_line_index": 20,
+          "accession": "0000813672-24-000188"
+        },
+        {
+          "accession": "0000813672-24-000162",
+          "accepted_at": "2024-08-14T23:31:42.000Z",
+          "archive_sha256": "deabc40c14982f5a06802ed35fabae0793b243e1ab1ec0c3ca458dcca9f56494",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000162/0000813672-24-000162.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001193125-24-213398",
+          "accepted_at": "2024-09-05T00:56:52.000Z",
+          "archive_sha256": "dcc277f05137e1422d746d1183be4171b2275e8c4958428c7cdc134a0ce4042b",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000119312524213398/0001193125-24-213398.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0001193125-24-216701",
+          "accepted_at": "2024-09-10T21:19:01.000Z",
+          "archive_sha256": "35d4789a3a1507ad0cecfcf1c5e4a49e1730bf2e69ea566795f25159f3ca3c01",
+          "url": "https://www.sec.gov/Archives/edgar/data/813672/000119312524216701/0001193125-24-216701.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "July and October consolidated outlooks both follow completed BETA CAE consolidation. The April 23 amendment corrects only the characterization of first-quarter bookings; it does not revise annual revenue bounds. Quarter-specific share repurchase plans use existing authority, rather than a new authorization."
+    },
+    {
+      "event_id": "ea-0000712515-24-000045",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "reaction_session": "2024-10-30",
+      "observation_window": {
+        "start_inclusive": "2024-10-29T20:00:00+00:00",
+        "end_exclusive": "2024-10-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000027/earningspressrelease2024_0.htm",
+          "archive_sha256": "f9e324e7ab9db5f26d6edfd3c56aa350ccb7ec990281ae433b78b35381e31dbc",
+          "range_line_index": 55,
+          "accession": "0000712515-24-000027"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/earningspressrelease2024_1.htm",
+          "archive_sha256": "ef1893098ed75859dfe67e4b099411fcd349999c1c59bf987671913749898f34",
+          "range_line_index": 57,
+          "accession": "0000712515-24-000045"
+        },
+        {
+          "url": "https://www.ea.com/news/investor-day-2024?isLocalized=true",
+          "archive_sha256": "d69db4d59adf586ea707afdbe35101550dd531a61fb194050bef61bc5f3b349d",
+          "role": "interim_investor_day_metric_check",
+          "representation": "original public participant HTML"
+        },
+        {
+          "accession": "0000712515-24-000040",
+          "accepted_at": "2024-08-02T21:34:47.000Z",
+          "archive_sha256": "669037852c7f2f9c0940cdf7d4e6ba17d75362ba73160b9f404e45f65e7f22b3",
+          "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000040/0000712515-24-000040.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "September 17 Investor Day describes progress toward the high end of net bookings guidance, not a replacement annual GAAP revenue range. July GAAP revenue remains the numeric prior to October. The quarterly dividend is unchanged and repurchases use the existing authorization."
+    },
+    {
+      "event_id": "vrsk-0001437749-24-032535",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "reaction_session": "2024-10-30",
+      "observation_window": {
+        "start_inclusive": "2024-10-29T20:00:00+00:00",
+        "end_exclusive": "2024-10-30T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924023984/ex_687125.htm",
+          "archive_sha256": "fdaa564ad1baa97286bc97b3810829d53803a9e0249ba6bf457a65cfa554e503",
+          "range_line_index": 265,
+          "accession": "0001437749-24-023984",
+          "accepted_at": "2024-07-31T11:16:43.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924032535/ex_716872.htm",
+          "archive_sha256": "f592fa27095ab9cb677f4730ff506d8631c956cbc5eb8d16a6c10f58dca1d5a2",
+          "range_line_index": 265,
+          "accession": "0001437749-24-032535",
+          "accepted_at": "2024-10-30T11:17:09.000Z"
+        }
+      ],
+      "rationale": "The current release explicitly keeps the annual revenue range unchanged. Its 39-cent dividend repeats the prior quarter and its $400 million ASR is execution under existing authority; neither establishes a new registered soft caveat."
+    },
+    {
+      "event_id": "amgn-0000318154-24-000042",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "reaction_session": "2024-10-31",
+      "observation_window": {
+        "start_inclusive": "2024-10-30T20:00:00+00:00",
+        "end_exclusive": "2024-10-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000033/amgn-20240630earningsrelea.htm",
+          "archive_sha256": "69337733f15d4d9afbf06e2293df46d4a0993440d8860d1488162ba8b6c5d041",
+          "range_line_index": 162,
+          "accession": "0000318154-24-000033"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000042/amgn-20240930earningsrelea.htm",
+          "archive_sha256": "71692179328230a3c209e6279a1e1d597adfc28dd0e427240810d08e9f1bf086",
+          "range_line_index": 163,
+          "accession": "0000318154-24-000042"
+        },
+        {
+          "role": "original_reporter_direct_issuer_statement",
+          "url": "https://firstwordpharma.com/story/5904702",
+          "publication_date": "2024-10-18",
+          "title": "FDA pushes Lumakras colorectal cancer decision to early 2025",
+          "byline": "Anna Bratulic",
+          "verification": "Public primary-page extraction read through web tool; original reporter explicitly identifies an Amgen spokesperson confirming the review extension directly to FirstWord. Direct Python HTML retrieval failed expired TLS certificate; no certificate bypass or claim to original HTML-byte archival.",
+          "published_date": "2024-10-18",
+          "representation": "web-tool primary-page extraction, not original HTML bytes"
+        }
+      ],
+      "rationale": "The current packet repeats the LUMAKRAS PDUFA extension from October 17 to January 17. FirstWord published its own original dated report October 18, explicitly identifying an Amgen spokesperson confirming the extension directly to FirstWord. This provides primary reporting before the October 30 regular-close anchor. Other product approvals in the packet occurred in earlier months. No new registered in-window mask identified in the reviewed chronology."
+    },
+    {
+      "event_id": "ctsh-0001058290-24-000325",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "reaction_session": "2024-10-31",
+      "observation_window": {
+        "start_inclusive": "2024-10-30T20:00:00+00:00",
+        "end_exclusive": "2024-10-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://news.cognizant.com/2024-08-27-Cognizant-Completes-Acquisition-of-Belcan",
+          "archive_sha256": "b0f017947e475887808ba7ff756acdcd646186f8dff74c480141727e811eb8b8",
+          "range_line_index": 102
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000325/exhibit9919302024.htm",
+          "archive_sha256": "0434c477c3216195bbcd513670d26ede5c83b0b122ad1a6872b32ba54c0de2bf",
+          "range_line_index": 36,
+          "accession": "0001058290-24-000325"
+        },
+        {
+          "accession": "0001058290-24-000310",
+          "accepted_at": "2024-09-10T20:53:41.000Z",
+          "archive_sha256": "7affaf59dbf382f85bb1d6939d19aecb5e74215e8757a9b1a4d67a2ba4ab4889",
+          "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000310/0001058290-24-000310.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "The latest active prior is the issuer August 27, 08:00 EDT completion release, which explicitly updates annual revenue to $19.5-19.8 billion including Belcan. October narrows it to $19.7-19.8 billion on the same consolidation basis. The original HTML timestamp plus one-minute buffer supplies availability; no SEC acceptance is fabricated."
+    },
+    {
+      "event_id": "idxx-0001104659-24-112826",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "reaction_session": "2024-10-31",
+      "observation_window": {
+        "start_inclusive": "2024-10-30T20:00:00+00:00",
+        "end_exclusive": "2024-10-31T13:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924086074/tm2420913d1_ex99-1.htm",
+          "archive_sha256": "0e3997f8536236b4c22147825de16ae99aa2ded46e303b18322f9866fab81e82",
+          "range_line_index": 17,
+          "accession": "0001104659-24-086074",
+          "accepted_at": "2024-08-06T10:30:36.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924112826/tm2427157d1_ex99-1.htm",
+          "archive_sha256": "f70108beef3761a36755c6b74a54b2efa9e1c1f872895f15cd24bd3809a7e37c",
+          "range_line_index": 15,
+          "accession": "0001104659-24-112826",
+          "accepted_at": "2024-10-31T10:30:57.000Z"
+        },
+        {
+          "url": "https://www.idexx.com/media/filer_public/55/c4/55c4a4f0-21a1-4181-9fec-ebebbdb1627b/2024-08-15-idexx-investor-day.pdf",
+          "role": "intervening_issuer_investor_presentation",
+          "published_date": "2024-08-15",
+          "finding": "References August 6 guidance midpoint; no replacement annual USD range located."
+        }
+      ],
+      "rationale": "Both outlooks are consolidated FY2024 revenue. October repeats the litigation accrual disclosed in August. The August 15 investor presentation labels its 2024E charts as based on the August 6 outlook rather than supplying a replacement numeric range."
+    },
+    {
+      "event_id": "vrtx-0000875320-24-000221",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "reaction_session": "2024-11-05",
+      "observation_window": {
+        "start_inclusive": "2024-11-04T21:00:00+00:00",
+        "end_exclusive": "2024-11-05T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000193/ex-991_q22024.htm",
+          "archive_sha256": "3bdcae5c75ee07ffafff26a2d13ae2b600981c2edfc07da218e42191fb845c3a",
+          "range_line_index": 18,
+          "accession": "0000875320-24-000193",
+          "accepted_at": "2024-08-01T20:05:43.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000221/ex-991_q32024.htm",
+          "archive_sha256": "6048dc5bbc22e912ead06b3a502e95ea792461818db0f0cd29282334dec92930",
+          "range_line_index": 18,
+          "accession": "0000875320-24-000221",
+          "accepted_at": "2024-11-04T21:02:42.000Z"
+        }
+      ],
+      "rationale": "Both numeric revenue inputs follow the May 20 Alpine acquisition. The November release raises the same FY2024 product-revenue range and recaps pipeline and regulatory progress; no new registered in-window transaction or regulatory restriction identified."
+    },
+    {
+      "event_id": "ddog-0001561550-24-000171",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "reaction_session": "2024-11-07",
+      "observation_window": {
+        "start_inclusive": "2024-11-06T21:00:00+00:00",
+        "end_exclusive": "2024-11-07T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000109/ex-991x20240630x8k.htm",
+          "archive_sha256": "5d562e794eb551b9509b38f28ff15585674683c6a9f2e9829dd920d89a92bacb",
+          "range_line_index": 39,
+          "accession": "0001561550-24-000109"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000171/ex-991x20240930x8k.htm",
+          "archive_sha256": "955648cfc73e7f3a1f9ddc557f893cc9280e1f53f5f6ac028369d96013411fd7",
+          "range_line_index": 30,
+          "accession": "0001561550-24-000171"
+        }
+      ],
+      "rationale": "The dated consolidated USD annual ranges refer to the same FY2024 and no newer numerical annual outlook or new registered catalyst was identified in the reviewed current-report chronology. Quarterly ranges and performance highlights do not replace the annual prior."
+    },
+    {
+      "event_id": "ftnt-0001262039-24-000040",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "reaction_session": "2024-11-08",
+      "observation_window": {
+        "start_inclusive": "2024-11-07T21:00:00+00:00",
+        "end_exclusive": "2024-11-08T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000032/ftntq2-2024ex991.htm",
+          "archive_sha256": "cdd00dbfa1c7361cbf36de8e64006b0c388190005dec081a186630213aa61e61",
+          "range_line_index": 34,
+          "accession": "0001262039-24-000032",
+          "accepted_at": "2024-08-06T20:07:39.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000040/ftntq3-2024ex991.htm",
+          "archive_sha256": "e47a0bb0d77996ffa830569100cd0b69179864159c13430c7ebb6ce81d4cd9c3",
+          "range_line_index": 36,
+          "accession": "0001262039-24-000040",
+          "accepted_at": "2024-11-07T21:10:36.000Z"
+        }
+      ],
+      "rationale": "November 7 announces an additional $1 billion repurchase authorization approved in October; no earlier independently dated announcement was located in the reviewed issuer/filing sources. Both revenue inputs follow the August 1/5 acquisitions. The August 7 amendment explicitly changes non-GAAP EPS only and repeats the August 6 revenue bounds. Expense exclusions for litigation settlements do not by themselves establish a newly announced material lawsuit, criminal plea or regulatory action; no extra source category is introduced."
+    },
+    {
+      "event_id": "intu-0000896878-24-000051",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "reaction_session": "2024-11-22",
+      "observation_window": {
+        "start_inclusive": "2024-11-21T21:00:00+00:00",
+        "end_exclusive": "2024-11-22T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://investors.intuit.com/news-events/press-releases/detail/1215/intuit-hosts-investor-day-reaffirms-first-quarter-and-fiscal-2025-guidance",
+          "archive_sha256": "de2deaacebe62fe5b6b848c17f26fbb95a9de54942ac31365a54182fb35276c3",
+          "range_line_index": 174,
+          "published_at": "2024-09-26T09:00:00-04:00",
+          "source_kind": "issuer_release"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/fy25q1earningspressrelease.htm",
+          "archive_sha256": "b73663a7ec1b0ffaaef12a3a12612d0e12af34ed013f42f1d7c8155c5ab4e97b",
+          "range_line_index": 53,
+          "accession": "0000896878-24-000051",
+          "accepted_at": "2024-11-21T21:07:42.000Z"
+        },
+        {
+          "url": "https://investors.intuit.com/_assets/_72a1ff17f78cf94b7c664c20b3fcf44d/intuit/news/2024-09-26_Intuit_Hosts_Investor_Day_Reaffirms_First_Quarter__1215.pdf",
+          "role": "intervening_explicit_reaffirmation",
+          "published_date": "2024-09-26",
+          "range_usd_millions": [
+            18160,
+            18347
+          ],
+          "finding": "Reaffirms unchanged August 22 FY2025 annual revenue range."
+        }
+      ],
+      "rationale": "September 26 Investor Day expressly reaffirms the FY2025 revenue range originally issued August 22; the numeric bounds are unchanged. The November release repeats the existing $1.04 quarterly dividend and existing repurchase authority. The restructuring was announced in July, and November 4 officer appointments precede the observation window."
+    },
+    {
+      "event_id": "adsk-0000769397-24-000175",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "reaction_session": "2024-11-27",
+      "observation_window": {
+        "start_inclusive": "2024-11-26T21:00:00+00:00",
+        "end_exclusive": "2024-11-27T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "minor_board_or_officer_appointment"
+      ],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000147/q225pressrelease.htm",
+          "archive_sha256": "ac6b7e782ca392bf80a7ebedced486105ae290b445a240dcdbd44d3df9b3db0a",
+          "range_line_index": 72,
+          "accession": "0000769397-24-000147"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000175/q325pressrelease.htm",
+          "archive_sha256": "4ffa7ad12a0052dfd7bfabdb1ea7f3c581a8b109a4e95114a94ac97c6c732e64",
+          "range_line_index": 73,
+          "accession": "0000769397-24-000175"
+        },
+        {
+          "role": "contemporaneous_cfo_appointment",
+          "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000175/autodeskcfoappointmentrele.htm",
+          "archive_sha256": "4ffa7ad12a0052dfd7bfabdb1ea7f3c581a8b109a4e95114a94ac97c6c732e64"
+        }
+      ],
+      "rationale": "November 26 packet explicitly announces Janesh Moorjani as incoming CFO, effective December 16. This is the registered non-CEO appointment caveat. Earlier Datum360 acquisition precedes the August numeric prior, so does not independently break this pair."
+    },
+    {
+      "event_id": "crwd-0001535527-24-000024",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "reaction_session": "2024-11-27",
+      "observation_window": {
+        "start_inclusive": "2024-11-26T21:00:00+00:00",
+        "end_exclusive": "2024-11-27T14:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+          "archive_sha256": "87c1fb35dbbd5bd8e28d0045f17747f8b8204da711901db449c17c1bf5f065c0",
+          "range_line_index": 30,
+          "accession": "0001535527-24-000017"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+          "archive_sha256": "fa97a110caa7ab429c437dab33fb3484f7ecd34300df8a84ff2ea8682411b7f9",
+          "range_line_index": 39,
+          "accession": "0001535527-24-000024"
+        },
+        {
+          "role": "earlier_original_acquisition_announcement",
+          "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-acquires-adaptive-shield-and-integrates-saas-protection/",
+          "publication_date": "2024-11-06"
+        }
+      ],
+      "rationale": "The November earnings packet confirms acquired Adaptive Shield, announced November 6 after the August prior outlook. The reviewed original packet does not establish comparable prior/current consolidated revenue scope, so the pair is withheld. The transaction announcement itself predates the November observation window."
+    },
+    {
+      "event_id": "zs-0001713683-24-000143",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "reaction_session": "2024-12-03",
+      "observation_window": {
+        "start_inclusive": "2024-12-02T21:00:00+00:00",
+        "end_exclusive": "2024-12-03T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000097/zs-07312024_991.htm",
+          "archive_sha256": "c4f4a75b1aacccc64275c2990581d49e1b07325abaf69b5c04599fb796e680eb",
+          "range_line_index": 43,
+          "accession": "0001713683-24-000097",
+          "accepted_at": "2024-09-03T20:07:11.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+          "archive_sha256": "b86f2af69fae8eb200d173cd2089671172d227a52cb70d222072af642da97e1f",
+          "range_line_index": 34,
+          "accession": "0001713683-24-000143",
+          "accepted_at": "2024-12-02T21:08:35.000Z"
+        },
+        {
+          "role": "other_in_window_filing",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000147/0001713683-24-000147.txt",
+          "accession": "0001713683-24-000147",
+          "accepted_at": "2024-12-02T22:25:59.000Z",
+          "archive_sha256": "1f510e5c3aeb0cca7363a7b87958d2246fae39f1856f38c943a76c31e698fbed"
+        },
+        {
+          "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-appoints-security-industry-veteran-adam-geller-chief",
+          "role": "earlier_issuer_officer_announcement",
+          "published_date": "2024-09-30",
+          "finding": "Adam Geller appointment publicly announced outside the December observation window."
+        }
+      ],
+      "rationale": "The Adam Geller CPO appointment recapped in December was announced in an independently dated September 30 original issuer release, outside the observation window. December 2 discloses incumbent CFO retirement and a search, but no successor or interim appointment, so the fixed appointment caveat is not expanded to a retirement. Both numeric inputs guide FY2025 revenue."
+    },
+    {
+      "event_id": "dltr-0000935703-24-000057",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "reaction_session": "2024-12-04",
+      "observation_window": {
+        "start_inclusive": "2024-12-03T21:00:00+00:00",
+        "end_exclusive": "2024-12-04T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [],
+      "evidence": [
+        {
+          "role": "prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm",
+          "archive_sha256": "d2914e6578a26da3bc0057ee7ee13339ecd7b47ba823496e57d3212ff5be9098",
+          "range_line_index": 75,
+          "accession": "0000935703-24-000039"
+        },
+        {
+          "role": "current",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm",
+          "archive_sha256": "0a27c107b50d0dfca004c2611ea5751e7a5b0b4bea3caa5180b3737da9aaf694",
+          "range_line_index": 72,
+          "accession": "0000935703-24-000057"
+        },
+        {
+          "accession": "0000935703-24-000044",
+          "accepted_at": "2024-11-04T21:17:05.000Z",
+          "archive_sha256": "f758f818190d92b7acd55fc0d9c6b2170c89ed621a2b050fe4c9b18dc9033342",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000044/0000935703-24-000044.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000935703-24-000047",
+          "accepted_at": "2024-11-13T21:25:23.000Z",
+          "archive_sha256": "1f94bc74759be9e366033d59e746e350661a61dcb05fb9b5af59be3457e460ab",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000047/0000935703-24-000047.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000935703-24-000049",
+          "accepted_at": "2024-11-15T21:11:25.000Z",
+          "archive_sha256": "74887bdb4cd40304637c10445cfc5fc7f5a40501c3e19f42395b0eedbfb40e85",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000049/0000935703-24-000049.txt",
+          "role": "intervening_original_filing"
+        },
+        {
+          "accession": "0000935703-24-000053",
+          "accepted_at": "2024-11-21T21:07:37.000Z",
+          "archive_sha256": "d75a7a2c8b4d1c8571c701f4b1c7b77c8332656ea6d4fb7b06f9a772f33a5583",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000053/0000935703-24-000053.txt",
+          "role": "intervening_original_filing"
+        }
+      ],
+      "rationale": "November 4 CEO succession and November 13 executive appointments precede the December window. November 4 reiterates third-quarter outlook, not the annual consolidated sales bounds. December 4 earnings announces CFO departure and a search, without a replacement appointment; that is outside the fixed appointment caveat. The second December 4 8-K was accepted after the feature cutoff and is not backdated."
+    },
+    {
+      "event_id": "lulu-0001397187-24-000040",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "reaction_session": "2024-12-06",
+      "observation_window": {
+        "start_inclusive": "2024-12-05T21:00:00+00:00",
+        "end_exclusive": "2024-12-06T14:15:00+00:00"
+      },
+      "hard_exclusions": [
+        "unresolved_source_or_material_scope"
+      ],
+      "soft_caveats": [
+        "routine_share_repurchase_authorization"
+      ],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+          "archive_sha256": "8e9e8086aaaf1312abda6320b0b7665e60a39b79648c1665462d729229e9ecee",
+          "range_line_index": 30,
+          "accession": "0001397187-24-000033",
+          "accepted_at": "2024-08-29T20:13:03.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm",
+          "archive_sha256": "c3755623f7fcbca9366ed4380089a99ee514a7207239d446c1a7c6ac24efff57",
+          "range_line_index": 34,
+          "accession": "0001397187-24-000040",
+          "accepted_at": "2024-12-05T21:11:50.000Z"
+        }
+      ],
+      "rationale": "The December original exhibit states Mexico retail operations were acquired September 10 and includes 14 acquired company-operated stores; this changes consolidation from the August 29 prior. Reviewed originals do not explicitly establish comparable old/new revenue-guidance scope. The same release newly announces an additional $1 billion repurchase authorization approved December 3."
+    },
+    {
+      "event_id": "mdb-0001441816-24-000257",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "reaction_session": "2024-12-10",
+      "observation_window": {
+        "start_inclusive": "2024-12-09T21:00:00+00:00",
+        "end_exclusive": "2024-12-10T14:15:00+00:00"
+      },
+      "hard_exclusions": [],
+      "soft_caveats": [
+        "minor_board_or_officer_appointment"
+      ],
+      "evidence": [
+        {
+          "role": "numeric_prior",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+          "archive_sha256": "9f9ccf0f11edf9d0822d2cf9969c82e95d0ee13bcaa838954806523f435a47d4",
+          "range_line_index": 24,
+          "accession": "0001441816-24-000185",
+          "accepted_at": "2024-08-29T20:10:13.000Z"
+        },
+        {
+          "role": "original_current_earnings_release",
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+          "archive_sha256": "120dc6303495565e92ac08304e85d363a530de8f6f499c3624142cfcc930c290",
+          "range_line_index": 29,
+          "accession": "0001441816-24-000257",
+          "accepted_at": "2024-12-09T21:10:26.000Z"
+        }
+      ],
+      "rationale": "The December 9 release names Serge Tanjga as prospective interim CFO following the announced January 31 departure of the COO/CFO. This is a non-CEO officer appointment in the observation window. The October 16 convertible-note redemption notice and November bylaws amendment do not replace the annual revenue outlook."
+    }
+  ],
+  "summary": {
+    "original_earnings_filings": 40,
+    "filing_dispositions": {
+      "PAIR_REVIEWED": 37,
+      "FISCAL_YEAR_INITIATION": 3
+    },
+    "candidate_pairs": 37,
+    "hard_excluded": 7,
+    "soft_only": 4,
+    "clean_source_upper_bound": 26,
+    "all_defined_source_upper_bound": 30
+  },
+  "closing_outcome_requests": 0,
+  "model_runs": 0
+}

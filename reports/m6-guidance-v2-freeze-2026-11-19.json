@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-19",
+  "protocol": "config/m6-guidance-protocol-v2.json",
+  "canonical_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "parent_protocol_sha256": "9aab2dbb0e56d2e484081df701c9951780ff30feae3b3644dd4b017d7be47d77",
+  "parent_commit": "86bae0e86526fe9ebddcc82e74af1ed09ed02d1e",
+  "stage": "SOURCE_ONLY_REVISED_REGISTRATION",
+  "closing_outcome_requests": 0,
+  "model_runs": 0
+}
