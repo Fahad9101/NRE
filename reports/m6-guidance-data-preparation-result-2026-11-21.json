@@ -1,0 +1,3667 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-21",
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "execution": {
+    "run_id": 44940040789,
+    "run_number": 1,
+    "head_sha": "1808a035522a62c5685efa8cad09cace96b45db1",
+    "workflow": ".github/workflows/m6-guidance-v2-preparation.yml",
+    "conclusion": "success",
+    "url": "https://github.com/Fahad9101/NRE/actions/runs/44940040789",
+    "jobs": {
+      "warmup_opening": 136955012668,
+      "price_basis": 136955012484
+    }
+  },
+  "ci": {
+    "run_id": 44940007953,
+    "run_number": 294,
+    "conclusion": "success",
+    "url": "https://github.com/Fahad9101/NRE/actions/runs/44940007953"
+  },
+  "warmup_openings": {
+    "clean_matched": 44,
+    "clean_screened": 44,
+    "closing_outcome_requests": 0,
+    "cohort_sha256": "febd387f738615b3a0350b9df91158ef29f4e883999e73eb9aaa98a41bc363b8",
+    "dispositions": {
+      "verified_open": 52
+    },
+    "events": [
+      {
+        "cik": "0001057352",
+        "clean_window": true,
+        "event_id": "csgp-0001193125-24-182891",
+        "opening_commitment_sha256": "99b513aa71a229eb516a07ad77443f36efe2d082ebf025f0a7d36d21805d7110",
+        "provider_request_sha256": [
+          "46fe9488572ebb6ac3a5d5883407aaeef3198bd8e524245849129b7253d5a00b"
+        ],
+        "provider_response_sha256": [
+          "599ef7a62b0dd0cd78132a9f679acb6862fbb9e984f2e47ae1c283c1a7d7f493"
+        ],
+        "reaction_session": "2024-07-24",
+        "status": "verified_open",
+        "symbol": "CSGP"
+      },
+      {
+        "cik": "0000898173",
+        "clean_window": true,
+        "event_id": "orly-0000898173-24-000032",
+        "opening_commitment_sha256": "2bfc68f4545e5a02619bc25d8fb82d6ecb1bca407b0a6cfbb9a02caf7e071ad9",
+        "provider_request_sha256": [
+          "1b01aeac2b440500f27fd20cead9064bd03f12349786f50a55035c5ca1baff52"
+        ],
+        "provider_response_sha256": [
+          "2834830b276c2f4c367a2b60d7a4a2a8415bbede7a96608473fe2fbff6aecd20"
+        ],
+        "reaction_session": "2024-07-25",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "cik": "0001093557",
+        "clean_window": false,
+        "event_id": "dxcm-0001093557-24-000143",
+        "opening_commitment_sha256": "27d6e0aac5a80db78c4d4a36c074b79f631c9d00e37cc9eae42ada28963cbaf9",
+        "provider_request_sha256": [
+          "623503807b08bb8ff2618c62bb4f4ac5632434579775fd7fe727c94899e3d5de",
+          "2692d8c05176e1e5879cbfa9384b436f67b513a3b8582a910d9f2706a4ef7c1e"
+        ],
+        "provider_response_sha256": [
+          "0ea10c41032f91e6cfefbf00239f72743be4c7a66336c475f64538313e50e87e",
+          "dfce0636ecef0c2e1b5e35bba1ca0cf31530a61f71334f71f74f33b51224badc"
+        ],
+        "reaction_session": "2024-07-26",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "cik": "0000712515",
+        "clean_window": true,
+        "event_id": "ea-0000712515-24-000027",
+        "opening_commitment_sha256": "aa5d71aa3c9aa5232401157ca0799060c294958147631a8370f46e5394208188",
+        "provider_request_sha256": [
+          "694bbb511fa2c85e556588a2e7f29da552c29419cc75905d10d152fc7dac83d9"
+        ],
+        "provider_response_sha256": [
+          "3ff65ce96e9889b38bc1eff43e716ccf5550eb90aa7db4c92bdd7cbec70029c3"
+        ],
+        "reaction_session": "2024-07-31",
+        "status": "verified_open",
+        "symbol": "EA"
+      },
+      {
+        "cik": "0001442145",
+        "clean_window": true,
+        "event_id": "vrsk-0001437749-24-023984",
+        "opening_commitment_sha256": "73837d1234d4f7a0b5b6fc6fa275b1cef7486dd1e3c6bde55f444f2799c21be7",
+        "provider_request_sha256": [
+          "e413bb8a5071eff30b1adacb0ff8711e2adc817ead3ae3a3f055d458bbaa2257"
+        ],
+        "provider_response_sha256": [
+          "1e0188bd823d741f0cf23f19fb89f68758bf3ef2db3bb7ea8d72583a20f8ca07"
+        ],
+        "reaction_session": "2024-07-31",
+        "status": "verified_open",
+        "symbol": "VRSK"
+      },
+      {
+        "cik": "0001058290",
+        "clean_window": true,
+        "event_id": "ctsh-0001058290-24-000241",
+        "opening_commitment_sha256": "be0df54330521827578080d283199cab225d1fffb18c729fa319a71de7afa655",
+        "provider_request_sha256": [
+          "a7c74f42769b27feb936cab3fd7d124de432b5bfaf02714d3b189abd3220afac"
+        ],
+        "provider_response_sha256": [
+          "79891c24c96b8ad3ab1dd8db2bcb934670f9ee1c9c77866d8023f0f2e7b06990"
+        ],
+        "reaction_session": "2024-08-01",
+        "status": "verified_open",
+        "symbol": "CTSH"
+      },
+      {
+        "cik": "0000874716",
+        "clean_window": true,
+        "event_id": "idxx-0001104659-24-086074",
+        "opening_commitment_sha256": "bf4956fbb7cbfb9471c397f6ab48cdd98efecafc87661eb0399f025966f1a3a4",
+        "provider_request_sha256": [
+          "66a570deefe3d2ee3d35a5dff55c786582c5ce54fd82349982f2b808f13e80f4"
+        ],
+        "provider_response_sha256": [
+          "344a3a0948ca5291399d749a684e47b435849b8594a435a3efb480116b6a3cb2"
+        ],
+        "reaction_session": "2024-08-06",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "cik": "0001561550",
+        "clean_window": true,
+        "event_id": "ddog-0001561550-24-000109",
+        "opening_commitment_sha256": "50be46ca94d5f2dad809d958c0aba4517441244af952c8a3b3ae24741c6f1075",
+        "provider_request_sha256": [
+          "de97bbc005a8c1ce6518ee8a6f2af19486cf27a833ffa60b23c79badefbde695"
+        ],
+        "provider_response_sha256": [
+          "84beb195b6a38a3395b5707924e56f500e8d5917eaa95d66da23bd4be4922bb4"
+        ],
+        "reaction_session": "2024-08-08",
+        "status": "verified_open",
+        "symbol": "DDOG"
+      },
+      {
+        "cik": "0000883241",
+        "clean_window": true,
+        "event_id": "snps-0001193125-24-204450",
+        "opening_commitment_sha256": "fa500bf0e4e6c4b1e788f4d4b961acc076095ea86b05ee6403ef183e0cd46ecf",
+        "provider_request_sha256": [
+          "54776fd93bb967e798139bf470f35ea6f47cbfb9d838e65f9d83c40564d995fd"
+        ],
+        "provider_response_sha256": [
+          "d6aed665d9094554497861d3712c484641531c1323608039fe1be7c4cf7e2ac6"
+        ],
+        "reaction_session": "2024-08-22",
+        "status": "verified_open",
+        "symbol": "SNPS"
+      },
+      {
+        "cik": "0001535527",
+        "clean_window": true,
+        "event_id": "crwd-0001535527-24-000017",
+        "opening_commitment_sha256": "0a5a44987114375cb4adda8cbc2e44bfa2f31f888a0b8cf6a07c55e39d296a88",
+        "provider_request_sha256": [
+          "f87a94768e39ca771b72fc8d766d09b685862a8bf20f3190ea1114deab6306d3"
+        ],
+        "provider_response_sha256": [
+          "d247d02464abcbfeba4d212adca74e0f9d6ca5895034e0558671c12c719bae69"
+        ],
+        "reaction_session": "2024-08-29",
+        "status": "verified_open",
+        "symbol": "CRWD"
+      },
+      {
+        "cik": "0001397187",
+        "clean_window": true,
+        "event_id": "lulu-0001397187-24-000033",
+        "opening_commitment_sha256": "3fed93de8b97eda860fc3467e1f0b8c83cf63866e5ed337f8060ec922de3c57f",
+        "provider_request_sha256": [
+          "c1039547de38cdd246faff4fab0b4296feeede0f4046f8efc3c046db0aa2d68a"
+        ],
+        "provider_response_sha256": [
+          "8ada16dd1711e8a8c38b8610800f8beff2d0ee786b09da0e1a5a6612f397eb4b"
+        ],
+        "reaction_session": "2024-08-30",
+        "status": "verified_open",
+        "symbol": "LULU"
+      },
+      {
+        "cik": "0001441816",
+        "clean_window": true,
+        "event_id": "mdb-0001441816-24-000185",
+        "opening_commitment_sha256": "cd17a388e2e2ff03a518545f5d44dc77ea692a0afc1cabff012beb51069e481d",
+        "provider_request_sha256": [
+          "4f324c16971a7896813ab61c46b2be087b14b827de3e7888efa0e8caa433ba52"
+        ],
+        "provider_response_sha256": [
+          "84dbbbceeb133066e4d2ade9c7642bf2d7e1846039fab563032770aadd6befd4"
+        ],
+        "reaction_session": "2024-08-30",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "cik": "0000935703",
+        "clean_window": true,
+        "event_id": "dltr-0000935703-24-000039",
+        "opening_commitment_sha256": "51fd14e93cb74e48c1cf86a473b58de8e3cfda30444d3efe777579b05accf61d",
+        "provider_request_sha256": [
+          "6fa43f90326ab886af5352b4e8122b7d1af021a0308e17ba2f86f26b0d45ebda"
+        ],
+        "provider_response_sha256": [
+          "a6c5d1fbb9c57da12aab10da335b533c38da3a0c60cd0c9e9f7aa952fa347409"
+        ],
+        "reaction_session": "2024-09-04",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "cik": "0001057352",
+        "clean_window": true,
+        "event_id": "csgp-0001057352-24-000122",
+        "opening_commitment_sha256": "a666e5523ff1db1b33393bb93ab3acc272c44f718f9bb9e190cc10f9829f5d9e",
+        "provider_request_sha256": [
+          "2ec16ac1743fc5baf9fd58b8570e3632b9f50372c60f97cc601de4e3f46ce03d"
+        ],
+        "provider_response_sha256": [
+          "804fbc6f3568ca4deb7dd7a37d1f12cae32394a74f821ec300089daf699d8d53"
+        ],
+        "reaction_session": "2024-10-23",
+        "status": "verified_open",
+        "symbol": "CSGP"
+      },
+      {
+        "cik": "0000898173",
+        "clean_window": true,
+        "event_id": "orly-0000898173-24-000040",
+        "opening_commitment_sha256": "4b5cffa9a1dfd62e0f29e4a948b515b0d237b265a95ce7c589910893c8aeb287",
+        "provider_request_sha256": [
+          "8cb9c2e5454d624ae5f84ffe4676273e30b6c6c0d800902e7302250860718f65"
+        ],
+        "provider_response_sha256": [
+          "102c07cad6ff2ce99ea56c89c72bd969ea45417644b13891545b82b778fdefd0"
+        ],
+        "reaction_session": "2024-10-24",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "cik": "0001093557",
+        "clean_window": true,
+        "event_id": "dxcm-0001093557-24-000179",
+        "opening_commitment_sha256": "3350f68dcde36f0fa52a32bea3f039b69790ca408add4dd59cb63ffa09483fd1",
+        "provider_request_sha256": [
+          "b7c126a14efde0c4558c0b52b13916b52424bf595ecc7488f2c4c01ee07eed72"
+        ],
+        "provider_response_sha256": [
+          "cea06152083e99ff3139ac71cebec90f5d6c1b1d28fc18dad2a734fec8f99930"
+        ],
+        "reaction_session": "2024-10-25",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "cik": "0000813672",
+        "clean_window": true,
+        "event_id": "cdns-0000813672-24-000188",
+        "opening_commitment_sha256": "df78c5f535da4bd3abad6bb500d0c1d465a23f3b99d2577fa42c835ddc0c4071",
+        "provider_request_sha256": [
+          "a0617f1be9ffd0a330e998f0a84d6e67059f3e7e3e366d903261cdead5f9b741"
+        ],
+        "provider_response_sha256": [
+          "e5f68b3c2591f4af0c06ab15646ea2350f85f1348f37d5a82c1b8f5eca7791f1"
+        ],
+        "reaction_session": "2024-10-29",
+        "status": "verified_open",
+        "symbol": "CDNS"
+      },
+      {
+        "cik": "0000712515",
+        "clean_window": true,
+        "event_id": "ea-0000712515-24-000045",
+        "opening_commitment_sha256": "7dc041d2e5af03facd772d908ea9ca6ba46c68dd0b0b9e3469629a1a3327284b",
+        "provider_request_sha256": [
+          "55450b5246ab90962ebe9589909fd15098e62eb60c30f25a18bf1fd645e1b23c"
+        ],
+        "provider_response_sha256": [
+          "8f8d191bf56fbdb7c01b05ed0c4ed26c1f2ecf108969865e608653f33e98cd47"
+        ],
+        "reaction_session": "2024-10-30",
+        "status": "verified_open",
+        "symbol": "EA"
+      },
+      {
+        "cik": "0001442145",
+        "clean_window": true,
+        "event_id": "vrsk-0001437749-24-032535",
+        "opening_commitment_sha256": "84139bcb48134690479b94d825803c6ed957ae625df548643f41c8646fd6d729",
+        "provider_request_sha256": [
+          "5e764fc943ca8a4cc678b3feb5123cd962238323d1b9ffa3c389f52c32fc6885"
+        ],
+        "provider_response_sha256": [
+          "7c404a17227ac2233ef67564cb010446d9e1976e5c708f6c2828aa067a8794ce"
+        ],
+        "reaction_session": "2024-10-30",
+        "status": "verified_open",
+        "symbol": "VRSK"
+      },
+      {
+        "cik": "0000318154",
+        "clean_window": true,
+        "event_id": "amgn-0000318154-24-000042",
+        "opening_commitment_sha256": "5a9d466ba3726874a3ca2ba0944a0963dfa7573133a9a9639c470cd82c82ac11",
+        "provider_request_sha256": [
+          "47b36e86f446ec95109dcf8130ef63da74b109a8b37b8d67654f985c8b869778"
+        ],
+        "provider_response_sha256": [
+          "0a269ab573cd8f1919fedf425ef4218e9afead8bd0d89bb6742fe7d5bea5eac6"
+        ],
+        "reaction_session": "2024-10-31",
+        "status": "verified_open",
+        "symbol": "AMGN"
+      },
+      {
+        "cik": "0001058290",
+        "clean_window": true,
+        "event_id": "ctsh-0001058290-24-000325",
+        "opening_commitment_sha256": "8d9a2b16c93ef6968a14add7dcaee6d1291ff6dedda323d708986a596619fe6d",
+        "provider_request_sha256": [
+          "a98cbbd336447d595b359f52b423b09b6b38e0f2818f3b099b4a39f78057bc34"
+        ],
+        "provider_response_sha256": [
+          "a3e5099fc0e9213c3d018224ae336cbe32473ae205a432ba4658c01bd30ce519"
+        ],
+        "reaction_session": "2024-10-31",
+        "status": "verified_open",
+        "symbol": "CTSH"
+      },
+      {
+        "cik": "0000874716",
+        "clean_window": true,
+        "event_id": "idxx-0001104659-24-112826",
+        "opening_commitment_sha256": "6f22167c002f5203d1115f0048c0ea21533d0cac4c4be440cfebadb2695a5898",
+        "provider_request_sha256": [
+          "c2525012e544519b37c6251ba4b4146958d2a298ce852a25953b3e7698da5a6d"
+        ],
+        "provider_response_sha256": [
+          "feb3ea4bbd12450a68d1a056aaaca5a549ab0b44d8f9b1304b02540d60648559"
+        ],
+        "reaction_session": "2024-10-31",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "cik": "0000875320",
+        "clean_window": true,
+        "event_id": "vrtx-0000875320-24-000221",
+        "opening_commitment_sha256": "96d15038d641cfe20c91b27adb29a5c80788f59e94297188809f397115138b74",
+        "provider_request_sha256": [
+          "97c6d42eae9c176aac9fbef599e9bc8e77b914f550c152c592a56dd5d402b3c7"
+        ],
+        "provider_response_sha256": [
+          "b64b72f245f8969b994bb376fb21c2cfd6d3a64efee1022f6394de238ee8d84d"
+        ],
+        "reaction_session": "2024-11-05",
+        "status": "verified_open",
+        "symbol": "VRTX"
+      },
+      {
+        "cik": "0001561550",
+        "clean_window": true,
+        "event_id": "ddog-0001561550-24-000171",
+        "opening_commitment_sha256": "2674916d0560a52e593888ff91eca1aa194450a705c3fe0cfed2f35d4a6c568f",
+        "provider_request_sha256": [
+          "9cd9bbf8a8fee5ff3bdb3f1da6dbd8fbac9450346d2ae9b6e93d0d8c293ea7f7"
+        ],
+        "provider_response_sha256": [
+          "caa5d258369fc8afb8886a733ce3e077ada0516ddb6b7d10843d23ede8b622d2"
+        ],
+        "reaction_session": "2024-11-07",
+        "status": "verified_open",
+        "symbol": "DDOG"
+      },
+      {
+        "cik": "0001262039",
+        "clean_window": false,
+        "event_id": "ftnt-0001262039-24-000040",
+        "opening_commitment_sha256": "e7eb4e86f0ec4a1a40099bbded3fe0f92d5a67bde06a8671f8d027516503ec0c",
+        "provider_request_sha256": [
+          "609818b9813752020a46dafe23bd21593bf35dbe4a5e8a6e111d0f7c45124223"
+        ],
+        "provider_response_sha256": [
+          "36133cd19621a281d844075f30adccc1a86e1921e1f15059c4712b8e31d2f865"
+        ],
+        "reaction_session": "2024-11-08",
+        "status": "verified_open",
+        "symbol": "FTNT"
+      },
+      {
+        "cik": "0000896878",
+        "clean_window": true,
+        "event_id": "intu-0000896878-24-000051",
+        "opening_commitment_sha256": "e3a3108d07798325d5631c5e849714583c2a869d7a55ae7b6af2749e7518db29",
+        "provider_request_sha256": [
+          "388d099112fdf42cb7218e1d1ca686e9891af654ae88977609aa0222da737036"
+        ],
+        "provider_response_sha256": [
+          "c43ed1bf9852dd99daa8a0e2a76d4c1df58c24b66676f83532c3bd3b910e923c"
+        ],
+        "reaction_session": "2024-11-22",
+        "status": "verified_open",
+        "symbol": "INTU"
+      },
+      {
+        "cik": "0000769397",
+        "clean_window": false,
+        "event_id": "adsk-0000769397-24-000175",
+        "opening_commitment_sha256": "b0bcc43637c1d94b8a9a6d775273f3ab18bf5aab02ef8d5588d2cb6d8f0ddccc",
+        "provider_request_sha256": [
+          "d2a08306e0589d91d13b020882a5e45d8cb872989d90df7777a4cc009b7bfdd8"
+        ],
+        "provider_response_sha256": [
+          "85802bf1ddc2c7fd4596ac649836f79664a3086ad8af6483e7ed5b73b1764d1b"
+        ],
+        "reaction_session": "2024-11-27",
+        "status": "verified_open",
+        "symbol": "ADSK"
+      },
+      {
+        "cik": "0001713683",
+        "clean_window": true,
+        "event_id": "zs-0001713683-24-000143",
+        "opening_commitment_sha256": "ab2d2acfa0da40645da88c2829471bb693f19808843e283d86bcb4b230259107",
+        "provider_request_sha256": [
+          "eb03ad19223d26156c3cdcbde9d04989aca6b02f5b5f22408a620e3744933f49",
+          "205984dc3d2ceb25a6e1581fa4701753736acca157057a591144dc6e251541ee"
+        ],
+        "provider_response_sha256": [
+          "09d37fa547fb47ca2ad3bb40d9d60787a9e124a3312bf1cfd61430ee1314cbb4",
+          "a3ec4176801b9427d8cca2e48cd2dbe40b674fa3be280836278b984d611f78ab"
+        ],
+        "reaction_session": "2024-12-03",
+        "status": "verified_open",
+        "symbol": "ZS"
+      },
+      {
+        "cik": "0000935703",
+        "clean_window": true,
+        "event_id": "dltr-0000935703-24-000057",
+        "opening_commitment_sha256": "455d00cade06463948c0435f599304062cdfb6eb60675f1e19bed0a3a7e01091",
+        "provider_request_sha256": [
+          "2db3a007f4e9d81fb11c00bb3179f676f97df670e1232c21ddb8bb0e67e8afc9"
+        ],
+        "provider_response_sha256": [
+          "01f2801eac6eb711aaa254c158467c92cea1452328d9475fc066e411c88d9eac"
+        ],
+        "reaction_session": "2024-12-04",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "cik": "0001441816",
+        "clean_window": false,
+        "event_id": "mdb-0001441816-24-000257",
+        "opening_commitment_sha256": "8f2c1d401f55c68c8d75ec1f879e7ffac077499ed9ab80507c9ddf8dad8a378a",
+        "provider_request_sha256": [
+          "a6aa021e3bfe07674272abce2a3b21d984c294912aeadaaf3801a580b856577b"
+        ],
+        "provider_response_sha256": [
+          "594cb7b4ebe1f554ff2a7d7b9617d191eccbab2fd179743ab3e6400ebc1eb29c"
+        ],
+        "reaction_session": "2024-12-10",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "cik": "0000712515",
+        "clean_window": true,
+        "event_id": "ea-0000712515-25-000010",
+        "opening_commitment_sha256": "8bdba6a2985746501cb8375451163855b1e28730f2a178a0e83cc8f5134cb0d0",
+        "provider_request_sha256": [
+          "b643a7ef151308d1c9d88ecccfe5d9b87bb5162c2bd6106b5c14e61558691f8d"
+        ],
+        "provider_response_sha256": [
+          "51fab14aed359065b336bf11282d007869cb73e6c42caf7f5d98afe84a6c1ae3"
+        ],
+        "reaction_session": "2025-02-05",
+        "status": "verified_open",
+        "symbol": "EA"
+      },
+      {
+        "cik": "0001093557",
+        "clean_window": true,
+        "event_id": "dxcm-0001093557-25-000029",
+        "opening_commitment_sha256": "de04bf43b2fc83c659307f07a83268ecfa669de41210701007face1d119a4546",
+        "provider_request_sha256": [
+          "2d2d5ba7e0acce964816b74d5277943f1e01ffc631d1c64bb50be4ab0514d76b"
+        ],
+        "provider_response_sha256": [
+          "11a607f77371db511a017f84413bf78fda69387f37a9e97a74d78dd429095133"
+        ],
+        "reaction_session": "2025-02-14",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "cik": "0000896878",
+        "clean_window": true,
+        "event_id": "intu-0000896878-25-000013",
+        "opening_commitment_sha256": "145aef569a81807cde581b75437ef930390a325f477dbc9244f31c0708fd9335",
+        "provider_request_sha256": [
+          "bb7b95054e4cb9ae6fa2b6a0364f3d882a841010a4b885f44436738a15e2af19"
+        ],
+        "provider_response_sha256": [
+          "2b5b3234cc5145e7cdae2e341c8de788271c60e21e50a2aee4b9f5dd18370b11"
+        ],
+        "reaction_session": "2025-02-26",
+        "status": "verified_open",
+        "symbol": "INTU"
+      },
+      {
+        "cik": "0000883241",
+        "clean_window": true,
+        "event_id": "snps-0001193125-25-036798",
+        "opening_commitment_sha256": "2ec097ec4a7f2b33969d24dc75ed78fd4cb3d3978a9aad1765661042af4c26b6",
+        "provider_request_sha256": [
+          "a3e915a76c2d52e8f407ba61cb2034842d3e02a914df0959014d9c562426881a"
+        ],
+        "provider_response_sha256": [
+          "d99f89b97aa41c134b27c77e412ff8160f01714a34bdf36261a0009c7e9cd7d7"
+        ],
+        "reaction_session": "2025-02-27",
+        "status": "verified_open",
+        "symbol": "SNPS"
+      },
+      {
+        "cik": "0001713683",
+        "clean_window": true,
+        "event_id": "zs-0001713683-25-000025",
+        "opening_commitment_sha256": "cf859d91fec170fd2d5479616511fcda9403bf294dde8cd9951de01348a17ff9",
+        "provider_request_sha256": [
+          "0a43ca7b94e405610ab405ebf34a73066c58d635d29378de85afb5027bbb90bd"
+        ],
+        "provider_response_sha256": [
+          "aa3c1b382c97d9d3215d9955547f6a249889a0dd4f307a0ec259f4fabdfc47df"
+        ],
+        "reaction_session": "2025-03-06",
+        "status": "verified_open",
+        "symbol": "ZS"
+      },
+      {
+        "cik": "0000898173",
+        "clean_window": true,
+        "event_id": "orly-0000898173-25-000026",
+        "opening_commitment_sha256": "a50c3280fe62979c168c081c624bdb870cdc8fc62a6ce5476932307d83152add",
+        "provider_request_sha256": [
+          "0812b60c4e94bb9134479bdc6d2964f509b96b98919933b2c3bb8bcdcfff023a"
+        ],
+        "provider_response_sha256": [
+          "2ca11e227db2e46a7f1bd7f6d8b8b266d7a3c3bc3dbd687a95716fdbd2f2a6c2"
+        ],
+        "reaction_session": "2025-04-24",
+        "status": "verified_open",
+        "symbol": "ORLY"
+      },
+      {
+        "cik": "0000813672",
+        "clean_window": true,
+        "event_id": "cdns-0000813672-25-000046",
+        "opening_commitment_sha256": "28ac6856227178a0f8657b084801b15046edc4e87823ff2e4f82ef5eb73965ae",
+        "provider_request_sha256": [
+          "587ba74b5628659a005927c02bf60d1e3fc390bef41ae65d9ac68b1021f32c49"
+        ],
+        "provider_response_sha256": [
+          "24d07915ee5f3207b7fac69595b8d5ae8ed07ff1ce726649ecac751693ba4c9b"
+        ],
+        "reaction_session": "2025-04-29",
+        "status": "verified_open",
+        "symbol": "CDNS"
+      },
+      {
+        "cik": "0001058290",
+        "clean_window": true,
+        "event_id": "ctsh-0001058290-25-000124",
+        "opening_commitment_sha256": "646c41555d958fa5a0c4e4ab8d67e58e75753a7dec6054e5eb5baee24212388a",
+        "provider_request_sha256": [
+          "7ccb1e4207ad451101abecbb766f26d764ba32fd82e1875e60277821d27cbd69"
+        ],
+        "provider_response_sha256": [
+          "47de569431ff1c32601964c3ec436d0545eafa4fbe68431005ab9f6ee4620431"
+        ],
+        "reaction_session": "2025-05-01",
+        "status": "verified_open",
+        "symbol": "CTSH"
+      },
+      {
+        "cik": "0000874716",
+        "clean_window": true,
+        "event_id": "idxx-0001104659-25-042955",
+        "opening_commitment_sha256": "3752c41407487d2e4f217701b526c6bc591bb29e840f594692a85746764b6201",
+        "provider_request_sha256": [
+          "7f4be580d59040fe56cff4c60caca623b7c0e361e5507d6dca5418ed2581160b"
+        ],
+        "provider_response_sha256": [
+          "99fd2dcbdd314afba50771145ed5be6660a3c00352d1d23ea042b2d70b353a3d"
+        ],
+        "reaction_session": "2025-05-01",
+        "status": "verified_open",
+        "symbol": "IDXX"
+      },
+      {
+        "cik": "0000318154",
+        "clean_window": true,
+        "event_id": "amgn-0000318154-25-000018",
+        "opening_commitment_sha256": "8d0cca69f26067fc025eaf1bdb05cbcba1ebbc8b34c029c3cc0797f683da6dfb",
+        "provider_request_sha256": [
+          "cec55cb9fce9e98d575fefb47503a169ccf20b76b217074afd44d5ef252244ce"
+        ],
+        "provider_response_sha256": [
+          "b627a343dea4e1110ca7fa4421ae591ab4b44346fcfe4987cdc4870a9afc1d58"
+        ],
+        "reaction_session": "2025-05-02",
+        "status": "verified_open",
+        "symbol": "AMGN"
+      },
+      {
+        "cik": "0001093557",
+        "clean_window": false,
+        "event_id": "dxcm-0001093557-25-000111",
+        "opening_commitment_sha256": "b72152704b07c4be815fa44239c4e4ef95d9bc3b73e15348e5cb143867768542",
+        "provider_request_sha256": [
+          "5001a84d139a8d7941922c68c5aeeebe362cd18aaf506acfbdee7f0c35e97f49"
+        ],
+        "provider_response_sha256": [
+          "81019549abaaaaf714fcc1f27482006f82cecb961909c41b510a107341ca6f0d"
+        ],
+        "reaction_session": "2025-05-02",
+        "status": "verified_open",
+        "symbol": "DXCM"
+      },
+      {
+        "cik": "0000875320",
+        "clean_window": true,
+        "event_id": "vrtx-0000875320-25-000171",
+        "opening_commitment_sha256": "fbd58b7f399d4616476faa967ef15bf3260ea013b97b00dd29154977dade068b",
+        "provider_request_sha256": [
+          "3260daf88d927da7760d6cc5af89417c00c7bf96a091cb3b0861c27052769d8e"
+        ],
+        "provider_response_sha256": [
+          "46c485c67bbec3cdc7f43b0965ef1237bbebd4d250b4bdac25469d391bb6f966"
+        ],
+        "reaction_session": "2025-05-06",
+        "status": "verified_open",
+        "symbol": "VRTX"
+      },
+      {
+        "cik": "0001442145",
+        "clean_window": true,
+        "event_id": "vrsk-0001437749-25-014906",
+        "opening_commitment_sha256": "602435ef41fdcb46281b6bdd0606afe2c1df99091f0856c0b615f96fd596a7fe",
+        "provider_request_sha256": [
+          "dd6234d19d4eb4bd89301184d5c10ff85f728b3de08babe201e1132ea16168ed"
+        ],
+        "provider_response_sha256": [
+          "aba20399424cae64c49b46d51605ef67bbb2376b39c435b657830ee1aef0957e"
+        ],
+        "reaction_session": "2025-05-07",
+        "status": "verified_open",
+        "symbol": "VRSK"
+      },
+      {
+        "cik": "0001262039",
+        "clean_window": true,
+        "event_id": "ftnt-0001262039-25-000014",
+        "opening_commitment_sha256": "8d57e4534a2bb08fd9b0d5bc6388f28332870a4562aa82a8ebfc4ff6cda83a59",
+        "provider_request_sha256": [
+          "66fbfbbbf955283f9fc6a46cb4c4b16afe5cd1f203c139b1358fbdedaf303dd8"
+        ],
+        "provider_response_sha256": [
+          "3b9c427f33a251ae7331e7addebd1dcf31e3a7771fad8a8fd344034ec48e4022"
+        ],
+        "reaction_session": "2025-05-08",
+        "status": "verified_open",
+        "symbol": "FTNT"
+      },
+      {
+        "cik": "0000769397",
+        "clean_window": true,
+        "event_id": "adsk-0000769397-25-000067",
+        "opening_commitment_sha256": "b97c6d037fba533d6d1907d6f8fd809e1e076d446ca75312735ef2280f7717b9",
+        "provider_request_sha256": [
+          "ebf4ba79de0da21e48b7aa51e272fea33dfa043c725b2d560f90d3e7bfc87972"
+        ],
+        "provider_response_sha256": [
+          "5183081b33516cab6f5c1136c303edbd494722a953f29b38c32b20022597b670"
+        ],
+        "reaction_session": "2025-05-23",
+        "status": "verified_open",
+        "symbol": "ADSK"
+      },
+      {
+        "cik": "0000896878",
+        "clean_window": true,
+        "event_id": "intu-0000896878-25-000020",
+        "opening_commitment_sha256": "019ca7703f8cfbd3ee2d5196ede861c9539f06c3dc139245e19e46a05d64861c",
+        "provider_request_sha256": [
+          "895ef010978676b1435030ce4b2b06d4c2776d441dd328e011b68e94960b6a34"
+        ],
+        "provider_response_sha256": [
+          "4123328aa869f6e8dda1ec5aa756967564a87bcea0f9426a779dbfda7c41efb9"
+        ],
+        "reaction_session": "2025-05-23",
+        "status": "verified_open",
+        "symbol": "INTU"
+      },
+      {
+        "cik": "0000883241",
+        "clean_window": true,
+        "event_id": "snps-0001193125-25-129525",
+        "opening_commitment_sha256": "e259d5224dda193c07f211cb552754085cedff30f30a4f49df14267140f31c91",
+        "provider_request_sha256": [
+          "cc59bd738147cc8b0a95bd594e55eb3e8ce33a44dea69d2dac60ec8f8e60e6dd"
+        ],
+        "provider_response_sha256": [
+          "c178946d2b5942b9ab4ba7c0f7a8c47c97fdc0e9c53b1957bca6069179c201a9"
+        ],
+        "reaction_session": "2025-05-29",
+        "status": "verified_open",
+        "symbol": "SNPS"
+      },
+      {
+        "cik": "0001713683",
+        "clean_window": false,
+        "event_id": "zs-0001713683-25-000078",
+        "opening_commitment_sha256": "df4ed639fe957594eedd0b5c3aa72ba824679c6d80b498f12348512021df942d",
+        "provider_request_sha256": [
+          "470c15e817271f73b72c888e72e0590bdb74423d6cec38a00dd0389a092e085d"
+        ],
+        "provider_response_sha256": [
+          "b1b1185d453374fefba886e03e1f8a2d7dfee6cb1964393fbcc2ceadc87d609e"
+        ],
+        "reaction_session": "2025-05-30",
+        "status": "verified_open",
+        "symbol": "ZS"
+      },
+      {
+        "cik": "0001535527",
+        "clean_window": false,
+        "event_id": "crwd-0001535527-25-000017",
+        "opening_commitment_sha256": "95ff19684bcafb865b8d4fae8fa39a609fcbce820285381ac368447d908f7891",
+        "provider_request_sha256": [
+          "7f8450623edeb98d229de7d65919be0373f786d08967dc7170a88e4e7eeb6b80",
+          "152e47cc37c2c9c8bcced46018e46e39c92f71d396ebfa9c9fc74d80cdac6fe4",
+          "b2a5ef00640371cbf4cd06625cb9d54cbc1483b9a69b0202b4bcc97dfa3afb04"
+        ],
+        "provider_response_sha256": [
+          "8de85b1f63dcc0fa3328a5e0ed29174779be547661cd8766a762d6a95d86fdda",
+          "9bbf62a79d43f7853d897228aaeb1879d604e8267e32f4a277aa9804974581be",
+          "1d07f488ce03f098c1580bab42a6e6ecd793a84140d2d559bd5fb6cffafa240d"
+        ],
+        "reaction_session": "2025-06-04",
+        "status": "verified_open",
+        "symbol": "CRWD"
+      },
+      {
+        "cik": "0000935703",
+        "clean_window": true,
+        "event_id": "dltr-0000935703-25-000024",
+        "opening_commitment_sha256": "6c3441b98ef6528c3a3cc70a416458819b1aa2bdb172a73ee9580f0062e0603d",
+        "provider_request_sha256": [
+          "04738a06c26ac04e0c96b863b00ae98a95b4b7c0fe1a9e5034b9ecb695d6ad76"
+        ],
+        "provider_response_sha256": [
+          "5a60a2f846b9ba51da8d09dc8a49afd3455b4a3720e113ef30dadf1dab40c0b1"
+        ],
+        "reaction_session": "2025-06-04",
+        "status": "verified_open",
+        "symbol": "DLTR"
+      },
+      {
+        "cik": "0001441816",
+        "clean_window": false,
+        "event_id": "mdb-0001441816-25-000116",
+        "opening_commitment_sha256": "61cb1224ed9d82cb991ab7cc28eeb9b34b2f9647abf13957b484a45f44b31897",
+        "provider_request_sha256": [
+          "65153426dfa9eed5ed2845d8f79841ee40b8a943c04dc6afbe870b536b430bd2"
+        ],
+        "provider_response_sha256": [
+          "f585653c3e6e702681387d89f6216dd7e24cdd8684ded05a4cadf9c187b29b2b"
+        ],
+        "reaction_session": "2025-06-05",
+        "status": "verified_open",
+        "symbol": "MDB"
+      },
+      {
+        "cik": "0001397187",
+        "clean_window": true,
+        "event_id": "lulu-0001397187-25-000026",
+        "opening_commitment_sha256": "e099390e3dcd71a60f9240a734568c37ad247bbf9e7e84700c144ca55908ed61",
+        "provider_request_sha256": [
+          "2f9f71b25cd4562b7657dd603d9a425dd143018ed902f40b3244969a2123d210",
+          "2dec4458b7d4c2e53bf6fd7c8db825b685ce3a6823749ab027809ab9d98f98d0"
+        ],
+        "provider_response_sha256": [
+          "a7ebf712f7b4b0fff6a2409814bd926e636a903f963f470938423740e42302ca",
+          "4f3a45e548c0bfdde3d79f927e9f84396fcc2166981cb1e7e92ac1d24f61dc2f"
+        ],
+        "reaction_session": "2025-06-06",
+        "status": "verified_open",
+        "symbol": "LULU"
+      }
+    ],
+    "implementation_sha256_git_lf": {
+      "nre/calendar.py": "dcbed800d2a3c7fa7d4b2a16e6fe5c1b1f022842920752df799a2585c2dbb7ce",
+      "nre/core.py": "8d937295bd54ba29ecc390aa99016de7e5eb473debcfcf6f073b8a4853926fa6",
+      "nre/event_acquire.py": "7993c23f2696002e5b98994778d6bc0e5144f45fca8801687a87ed339c9cd0fc",
+      "nre/m4_metrics.py": "a37fcfdd5fb61e268e63cbaa2976f700f44afb1dc7df1553327a1fe1b43b7237",
+      "nre/m4_models.py": "8562502005cb58394005e15d192401461257b5cf97cc9d3e03d7a7d231a5b931",
+      "nre/m4_protocol.py": "52422e459b0835ad0e55e8b73cd91d868d61891b8e85db2daf4decfd8293d101",
+      "nre/m6_context.py": "da765385a6e04916f2f3387152f894cdfcc5802940230b54562663c3bb5f1bc5",
+      "nre/m6_guidance_protocol.py": "65f194ba2abc99e19c3b7e35929b80ca625caca6ac00ec195f5a07e5ef35f8d7",
+      "nre/m6_guidance_readiness.py": "074cc7235ea2874b830b33431ea5a5a9af6380e73dd94f6bbe908c4e16f1e94e",
+      "nre/m6_guidance_revision.py": "2f93d30a5f4eb9ef2a0741b8e6d143c022a329d84dd799ea344fa295702fcef1",
+      "nre/m6_guidance_warmup_opening.py": "2a6fc529a4e0ee4da46918cfd75b4eb593452a2cb2e1a268354f1acc95a13073",
+      "nre/m6_historical_opening.py": "43ac55eb77414fdcad5c47a0217c67624bf727bd01476a893081fd47347cbe0f"
+    },
+    "matched": 52,
+    "model_runs": 0,
+    "opening_commitment_scheme": "nre-guidance-v2-official-opening-v1",
+    "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+    "requests": 57,
+    "schema_version": 1,
+    "scope": "guidance_v2_training_official_open_coverage",
+    "screened": 52,
+    "source_canonical_sha256": {
+      "reports/m6-guidance-earlier-evidence-2026-11-19.json": "cfceca4d91c449dea24837b168c5ed429cd572463bd4fa1e5cbbdfe9bef5652d",
+      "reports/m6-guidance-earlier-source-masks-2026-11-19.json": "76070b3195f0663d532264eb27427b21f22bcc110e38ea8e05e76d6be50ee685",
+      "reports/m6-guidance-source-masks-2026-11-19.json": "22cbc0a1977f65a52c7ebfd5cbcdd39c8c05fb6b59dcc616b9247c44136c091c",
+      "reports/m6-guidance-warmup-evidence-2026-11-19.json": "562d85fa8215e7cd7c0d88d2ad1481728314db7bd36948c5fff7b2d5bb30e505"
+    }
+  },
+  "price_basis": {
+    "anchor_commitment_scheme": "nre-guidance-v2-raw-prior-anchor-v1",
+    "anchor_provider_http_status": null,
+    "closing_outcome_requests": 0,
+    "cohort_sha256": "3739c346a7cab2dcdc8f321ae3355f2e514328394f2f410a69b8ee263cf92a7d",
+    "corporate_action_inventory": {
+      "actions": [
+        {
+          "ex_date": "2024-02-15",
+          "id_sha256": "ef925b8172c70a02a5823cc430e5d3f8133da4ddddf7e925bb8725f0cb2a7033",
+          "process_date": "2024-03-07",
+          "record_sha256": "649d6b1bc3d2ec6589b0b803e78c5086417e273db4b17e0ba9b5ec88d00711c2",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-05-16",
+          "id_sha256": "e8dc292f37b2b2aefd2dfa304b8c556d57bcdd4129d21885b1bc8b9784f332ec",
+          "process_date": "2024-06-07",
+          "record_sha256": "48bb0100590759dfadfb2fa91e4f73eb100986a68717ecaa020e4c25f70c40fb",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-08-16",
+          "id_sha256": "f3bf1b14abe22c71be8458e0499c76a5e8ebe7bf38858d2160eec6e89f2f2785",
+          "process_date": "2024-09-06",
+          "record_sha256": "27668dfd86d44263f90c3b0dd0ec069f849c2fe4d47218510c57db989dc7d828",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-11-18",
+          "id_sha256": "b1c8e3a9a28a008ad3d5182f0188967f8e1069d6651290482e2a86026ef26efe",
+          "process_date": "2024-12-09",
+          "record_sha256": "5b4580d84f1bc4685bb5a076a0ccfa567539c48051c17fb60f4f65eb8bd9a1b4",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-02-14",
+          "id_sha256": "5ae5d8997ddce7230f854c95183079d57ed3cf9cf52584dce456a9665119eff6",
+          "process_date": "2025-03-07",
+          "record_sha256": "062f6700999bc9ae103e0e05f01d67034821596462d7dc6371cafbbaa4eca78a",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-05-16",
+          "id_sha256": "ae0881832a0315bc5050372b20ddae581a73cb6b9f99786a047d284f9390ba63",
+          "process_date": "2025-06-06",
+          "record_sha256": "483e88c04518ba4588d53f37a72fab731f99d03feee0b51ff48cf36d5d920b65",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-08-22",
+          "id_sha256": "0ac2376ee6c4425ff1d9126c78c2fbab0f0e9278edf8e240732922f3e9faee6d",
+          "process_date": "2025-09-12",
+          "record_sha256": "7334617fd4e0a1e1054ec1563063bd91b0466a85fa80b7a5b3d9f079c6aa9422",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-11-21",
+          "id_sha256": "b672b8687e5a92318b23a97ee5af60872f59a6c67c45e6a01c23bda199027982",
+          "process_date": "2025-12-12",
+          "record_sha256": "41502a0f392ef3c4ac5ce9553cb5efd3682879c98a9d809b998de1697b959a0f",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-02-13",
+          "id_sha256": "b3e9490a7ff933ce795d20c5d1ec54be150063b4c256b6562644b89768e3f589",
+          "process_date": "2026-03-06",
+          "record_sha256": "59e2ae1d570dd79f817ae567a486dc48b5457c2ca67eec36527018b9ef8f89d5",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-05-15",
+          "id_sha256": "1d2975353d7dee2f0fa17baf1795c0b815518de69e1c40508843d4aae7876c3f",
+          "process_date": "2026-06-05",
+          "record_sha256": "0956bba6b37024470ef0ff5b2c69b8871cfbab2cddf2d95f78aecfdeb7a25bef",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-08-21",
+          "id_sha256": "7e319a0d11c4b9614ded74b5325da3488cc98180349ebf1ef4b9886c73fe249b",
+          "process_date": "2026-09-11",
+          "record_sha256": "09c8f946a2a62c897e5cc6c923b5179efe6e7eb22480cdc38a453d446303008f",
+          "symbols": [
+            "AMGN"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-02-16",
+          "id_sha256": "4780001603347f7cb48cc45a60505d4a75c4ecc53922f327a5e21602e2598bcd",
+          "process_date": "2024-02-28",
+          "record_sha256": "725fede7a15a4ee6d78d1d5e45d96a432e67e9a9b2ff668ab3bbc35c140ea04b",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-05-17",
+          "id_sha256": "c715d5a702ab5770a6c1be47d800b42c0d7ae5d826f4b922ed831c0a966feef6",
+          "process_date": "2024-05-29",
+          "record_sha256": "1bcba2c262fbb5789d92fdc7066afd5e91770fb7317512854a7e3982c84315f4",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-08-20",
+          "id_sha256": "107d13bce7abcd83797fcc00ec1efd7d5e78ef1424d83b506f6d6d0f5c8f091d",
+          "process_date": "2024-08-28",
+          "record_sha256": "eee09998507ad68c7fe65624c471391c704fa84f49748c0c21744f45bf881d94",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-11-19",
+          "id_sha256": "079f16dd53664f8fe3b5d502b2366a75121b481c23fea3576ed80edd0e52a495",
+          "process_date": "2024-11-27",
+          "record_sha256": "87fb728045c6e1d2ba1be2472feaa2799f3fd639f0ee2409bf39fc07d7661f70",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-02-18",
+          "id_sha256": "ef0d7e2360e8aa0563390f21e7008c752cd0daa1ea90cfcf5cb31aeed4f866ae",
+          "process_date": "2025-02-26",
+          "record_sha256": "50f4823327f6ee2f6be47f98c46bb8892555c956e609a698192c18f0854bc20e",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-05-19",
+          "id_sha256": "d391c2e851380ddd271f6034418d64e09c8b93364909ce1332ef6d68d4327f5b",
+          "process_date": "2025-05-28",
+          "record_sha256": "3b82b34ae6f8f9e8d49ebc8d413ec0c1d08ed147885d218b129558f2b2cbd2e2",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-08-18",
+          "id_sha256": "3bbfb52fd9638d52dace7d29b5d4ad45ec000ff109be97a7a35ca101eb173801",
+          "process_date": "2025-08-26",
+          "record_sha256": "b7c07369025fd718f3ff850e2d675b69faab0fb6430029fa60c5802f61d2112f",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-11-18",
+          "id_sha256": "2ff981659692680f4d2d399d20fe61bb2d9dd4ceb8ca409e19caf7b1b7bd6c25",
+          "process_date": "2025-11-26",
+          "record_sha256": "30738d28dd9c2ab22baf2c44e0155dda8d27b8d87586bd68f05065bd65c92787",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-02-18",
+          "id_sha256": "dbb6b57e965ea34a8472eda652f10b7bf00578de27b92deec79830e980468993",
+          "process_date": "2026-02-26",
+          "record_sha256": "569969008e2339dfd3d74206025aa5ebfd0b407cbf547a3bb23dfd1fd60dcd89",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-05-18",
+          "id_sha256": "0e33594516143c3a3ff954b5d6f9c7d6325776180096f23e9c23c873a2209b89",
+          "process_date": "2026-05-27",
+          "record_sha256": "3b3296af254a3d7571442acca4c0daf92b0b44f21dbc40fcadbca8f2b28d7106",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-08-18",
+          "id_sha256": "96b489670dcf00d9bc1a6c724d3bc7cbb81180f0551d954173aef2a8c9094d29",
+          "process_date": "2026-08-25",
+          "record_sha256": "68c90c31760b63c77d05059e33e889cd4cb16bf2c25756296f407f28e0aa883e",
+          "symbols": [
+            "CTSH"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-02-27",
+          "id_sha256": "5cb96ea6c06a469443c6370168ac9cfd1fc0fba9d7d0d5ecf50e66e3b3645f8e",
+          "process_date": "2024-03-20",
+          "record_sha256": "b6faf3c2510094254fdef017ea45feb5e2c887d331bf89edda8d110b0a8f9785",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-05-29",
+          "id_sha256": "1cccaf73ea08e9970db5079e28b75989582229b12bf8bf47dbddf776a3b953c0",
+          "process_date": "2024-06-20",
+          "record_sha256": "e87e392980df62dfe50f0cd9fa991f8ef16b93c8c559b0658d8b1e9d797907e5",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-08-28",
+          "id_sha256": "2ba6de08e54abe0023c29bdf92232591d4d250c60fffc3fd83a6da50a36cdd1d",
+          "process_date": "2024-09-18",
+          "record_sha256": "3098d87f63604fc30dcffee6678fa07b121c4f3d10cb40d7ac8b1006db196fe2",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-11-27",
+          "id_sha256": "a631df2d4d399b9a84b73bb4a7f9301c6af00d1dae6ca3d736512ef6386dfe79",
+          "process_date": "2024-12-18",
+          "record_sha256": "f742a70ba5e1d21816337506d0e7179919ebfb9d6ed05b296b5e1df105f13253",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-02-26",
+          "id_sha256": "4118e6e040487ffe04e26c2d3a705e8066f527216b56145b67aa5db6fa80f48b",
+          "process_date": "2025-03-19",
+          "record_sha256": "abf41a4daffa8ab36103cfa061de706cd25bce669934cb779f35d5f47077f43d",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-05-28",
+          "id_sha256": "8a6244e39ec943a05a46a5823babfc0ea125faf1075a7d6c7da2512547746e49",
+          "process_date": "2025-06-18",
+          "record_sha256": "b17fc5f188e884c6d7d1b07e6a9b723a3bf1f1ab62503f9e2f5bcd227b699b47",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-08-27",
+          "id_sha256": "967241c7313e46b36b8cbe217b960f63cf2f1f01c2c1c0bbdb73cef38333f84e",
+          "process_date": "2025-09-17",
+          "record_sha256": "0c12355aa988716e0b1513becf1b671bd28d483ac5e18305b1033c7ac47b815c",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-12-03",
+          "id_sha256": "8a22a0d308866173180933eae117d75fe138855eb25a24e51a75d36df7d5a209",
+          "process_date": "2025-12-23",
+          "record_sha256": "f3d6017cdd7a3a7bf4ef49bfa1b24993c048c808c18a1c6c72cc01fcde5d8db9",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-02-25",
+          "id_sha256": "390dbfa75c3c9f6616423085f008d93b10ab58bf76ac477a3be449e7170d88e8",
+          "process_date": "2026-03-18",
+          "record_sha256": "9a9af6f82c45197c6ac8ca90a2e60ebb9465b2156ad57a7aedf87af4dc1559e5",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-05-27",
+          "id_sha256": "eaeb9227a7af9ece4251a9063df850159afa389ade2b3496de320df70fd9f74b",
+          "process_date": "2026-06-17",
+          "record_sha256": "40e5f9a89ed9217e52a812e0027442c5aadcc70cb48d40689ddedd46956bee7b",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-01-09",
+          "id_sha256": "b4fb342d1777d41f9ed8df3d43b9c62c65f6201402bd2a805fecaab5e7541c83",
+          "process_date": "2024-01-18",
+          "record_sha256": "2d70eea5c6b0f473e2605e7f16c26b81cac0bc088dcd001e42327081e5503949",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-04-09",
+          "id_sha256": "7b74b094c33d988ed8804fd6f033888eaca67c9a82bceab7ac5e1b9baedef07c",
+          "process_date": "2024-04-18",
+          "record_sha256": "201289277150950bd938edf1835a40ebd0911c987e3a21868284e793f5e4f111",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-07-10",
+          "id_sha256": "e205f4fd22bd85491030a88334f5ed9e5b56029ff89b70dc7807d0ae515f5fb2",
+          "process_date": "2024-07-18",
+          "record_sha256": "daaab2d24fb440394728ccfdd9fdabeb8bb08a508a38e0bdb8692eb610e6e2e4",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-10-10",
+          "id_sha256": "0976408219c54a6a06c9ec33c2a0442a1da0e019beaef97dfe7cd62304a7cf8a",
+          "process_date": "2024-10-18",
+          "record_sha256": "abaf3671dc2507d336af5b4e78eb5fcda86dd1f28a89913047e42e8546bf27c9",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-01-10",
+          "id_sha256": "56ba355098970cda4e2db9beaf98306b8297a694a6ca5833338556184ea4063d",
+          "process_date": "2025-01-17",
+          "record_sha256": "b4517c1826050e8ae2ffa8a352195e5f9318fc4fea3fc2790772397fb0c0f1ad",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-04-10",
+          "id_sha256": "be90ead86bc0f5a7a8ce8c4d3f917ae241c83ccbdf9ff652070affb4c779dc75",
+          "process_date": "2025-04-21",
+          "record_sha256": "73319e18f4b7e55a759722e2d91dfbb04848e5264c0d2b1451408eb16b8ba51d",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-07-10",
+          "id_sha256": "64bd544b9ccaaaf2986f5aa690943da294ec03fa6f6ad45d76616cfaf82fe485",
+          "process_date": "2025-07-18",
+          "record_sha256": "fd43ef414c8837f323f8b4ced891658e927851d18a8e0ba7c7b0807a78307be7",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-10-09",
+          "id_sha256": "e67a78fabc25af8ae3d3243395185241716ba762720a685b8e3127e0164c1e5b",
+          "process_date": "2025-10-17",
+          "record_sha256": "90d503b743e81ad0d71ff12736b9717cd735b9a562e32e246265301777c9b113",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-01-09",
+          "id_sha256": "fa4483f16f16fbd0512b591b9db0178c5255d9db49d1a0164f6aed20caec75ab",
+          "process_date": "2026-01-16",
+          "record_sha256": "65a77245ed686e33205d8d5041d0388565e87e6c8502a1d1d53e6c4719ef2bf5",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-04-09",
+          "id_sha256": "aa957bc827df035c56fb82d7e80110a26f85b3ff7b35ac008a6bff3998d7aae9",
+          "process_date": "2026-04-17",
+          "record_sha256": "7c336e79ff1abe1b9a945c0930df40d6e6cd6b9877fa82e0724959b0fbeb5ab9",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-07-09",
+          "id_sha256": "acf8f0445ab472fb3f372e5e6e8020e740121ccc06c06c821e3a1e781d645692",
+          "process_date": "2026-07-17",
+          "record_sha256": "fe03446102286b362ef91f444f1dba2ae62120ef95df28b85bbadbbe5195d383",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-10-08",
+          "id_sha256": "f54e98a94055359f038a51f706ff266d4f4f9c9893509d5eb60c7b4f45af8236",
+          "process_date": "2026-10-16",
+          "record_sha256": "cb0498d8a4e56eb0c9366286d1a312e979284e961542aa77f5dd2ced21c89b7a",
+          "symbols": [
+            "INTU"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-03-14",
+          "id_sha256": "027ca88c9c8a40dafbce817558736bbb97af3dea51e9086e08bb8d87e7c77111",
+          "process_date": "2024-03-29",
+          "record_sha256": "d4e363ecc8065457940cf8847de3ecb8ffb3fa0b634139c8156868ffe076a1f6",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-06-14",
+          "id_sha256": "5736e4d4ef9b1d05b38e7bd9e27ae2590b8966f0f5e1be77308928802a459f79",
+          "process_date": "2024-06-28",
+          "record_sha256": "c2d27765b35c87e2fb3970ed142e967419ba6671212c104b87c0d42e831c06a0",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-09-13",
+          "id_sha256": "2262e62639ee3b753d808fdcc1b43e29135b0c6e7e2d85fd06806271d2c9d2c7",
+          "process_date": "2024-09-30",
+          "record_sha256": "29777aa1667f6b7a0bec9ce99415b916a4a8d4e2462fbe7cd8e973cac1396a26",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2024-12-13",
+          "id_sha256": "bc36d37685041483ca20be119417fa27a16b48e0f66196b811313cb4ba04de00",
+          "process_date": "2024-12-31",
+          "record_sha256": "3399cc07d131bbeb7c1ec28a169aa92c36ba6ca0af81bbce6a35fd391ff35883",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-03-14",
+          "id_sha256": "a2e7fb318ddac340cf18cd4e132b482b5e83c82676f98e0e4efbe0ad322d8515",
+          "process_date": "2025-03-31",
+          "record_sha256": "4d2a861635c7178510b73747036bd887c69cda45737711fcb132d53191582ebb",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-06-13",
+          "id_sha256": "3867fa0d72a1811b452d3117ca0581d786b228f8e925e469a9c516d09f72f3af",
+          "process_date": "2025-06-30",
+          "record_sha256": "786d14614629e74137fcca4c79560bb1d859aa5e32a556b995f3a4b9dd5e050e",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-09-15",
+          "id_sha256": "992ed977eac03b09bc9c85e9fc57765b18aa7df87e4e4e348e6a2d8a1034a369",
+          "process_date": "2025-09-30",
+          "record_sha256": "a6e6ba7061e13761864f934fda28e8cfb1dbc0ba393bcbec4c6ff0d8574a3ff1",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2025-12-15",
+          "id_sha256": "c014f8ca4697f662587ad49c23973534b7635db6a9b1c1305d4b835e5fbcdd5a",
+          "process_date": "2025-12-31",
+          "record_sha256": "a2834eb0b021215d6fe87068e0852149763169944ba9beb3e14c5f2a137f9264",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-03-13",
+          "id_sha256": "ffd40f470c6fbdb330dee5840747d95775a7506a7529d43c3e37ca7b59de3834",
+          "process_date": "2026-03-31",
+          "record_sha256": "ab0d26a32e29fa0d6d4410a7a4cd80b683bfbad117b7d408aa0d16ea264e9ede",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-06-15",
+          "id_sha256": "4a057f3b06085b8e5ef8f37a941dedd9d8bae74e0bf75855b3df3129615025ef",
+          "process_date": "2026-06-30",
+          "record_sha256": "1a7302d5a79c6189cc0763f75ca3a76d09d76738d6cf840d4c4f1c9387593e2d",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "ex_date": "2026-09-15",
+          "id_sha256": "c3c4430de6cd0db4d7c080ebf42eeb533253f03048ecf568a71a4d323a504314",
+          "process_date": "2026-09-30",
+          "record_sha256": "0cbb753ba3194c024dd1fea3f92610679baf2034c5990b671e360ac181479d36",
+          "symbols": [
+            "VRSK"
+          ],
+          "type": "cash_dividends"
+        },
+        {
+          "effective_date": "2026-08-04",
+          "id_sha256": "18301c446227eb09bf2558d8833a80ad06a7f70b21ab9627780de496ac8a4810",
+          "process_date": "2026-08-05",
+          "record_sha256": "651b8154f2a63055ccc82c32b574938a6fd9add2d9c7a5b8b7227b700f2a4502",
+          "symbols": [
+            "EA"
+          ],
+          "type": "cash_mergers"
+        },
+        {
+          "ex_date": "2026-07-02",
+          "id_sha256": "dbf6ce337aa00ce9b0f03158e54a543dc641ac5afadc1ef19552859e35416141",
+          "process_date": "2026-07-02",
+          "record_sha256": "622ecc87a92de7a1e61053485e19b8e2c8e4e1841ad83292f264d18401750201",
+          "symbols": [
+            "CRWD"
+          ],
+          "type": "forward_splits"
+        },
+        {
+          "ex_date": "2025-06-10",
+          "id_sha256": "24eaf1b986d666285c36411d621afc9d107852a5cd85b38979dcbf9e5531c922",
+          "process_date": "2025-06-10",
+          "record_sha256": "f0a6e47b5e9b546f1176070189ea5e71d6df9d8ed16bb37e4825c372e0464d3d",
+          "symbols": [
+            "ORLY"
+          ],
+          "type": "forward_splits"
+        },
+        {
+          "effective_date": "2025-07-18",
+          "id_sha256": "a6854fbbaaad612c79ca16acc52373c27732f0a184603afb711e36b8cd540ebc",
+          "process_date": "2025-07-18",
+          "record_sha256": "31b932d17209da043dc51776e609cdc0505b1b1153d2e58ab177d15fa8342a0d",
+          "symbols": [
+            "SNPS"
+          ],
+          "type": "stock_and_cash_mergers"
+        },
+        {
+          "effective_date": "2025-02-28",
+          "id_sha256": "87f4ad3f211d7244b37999ed5254e26ba515bf139e41b0cd2b9cd847f0f7ce65",
+          "process_date": "2025-02-28",
+          "record_sha256": "2324167980a7c62511d3d8eeb652fdd873efe877f800dc4a6648c86dde17afee",
+          "symbols": [
+            "CSGP"
+          ],
+          "type": "stock_and_cash_mergers"
+        }
+      ],
+      "http_status": null,
+      "query": {
+        "data_quality": "all",
+        "end": "2026-11-21",
+        "limit": 1000,
+        "region": "all",
+        "sort": "asc",
+        "start": "2024-01-01",
+        "symbols": "ADSK,AMGN,CDNS,CRWD,CSGP,CTSH,DDOG,DLTR,DXCM,EA,FTNT,IDXX,INTU,LULU,MDB,ORLY,SNPS,VRSK,VRTX,ZS"
+      },
+      "receipts": [
+        {
+          "request_sha256": "67523e2dce495b10a658e7a59dcb52ba17e25315ede999b50b4e5189878f6ffd",
+          "response_sha256": "7de18de058c32c6b43820700bf559122c8de9f9a106d1ea68d672f45ab661482"
+        }
+      ],
+      "status": "complete_paginated_inventory",
+      "unresolved_symbols": []
+    },
+    "dispositions": {
+      "provider_basis_checks_passed": 107
+    },
+    "events": [
+      {
+        "anchor_commitment_sha256": "eb9b602d66ae3e5d7e32c8a49176c819928d927feee3be06b6421f3ad24bea9e",
+        "anchor_receipts": [
+          {
+            "request_sha256": "97e4beb373d3e1f24c5a42b8abe278d0f369b86f0cc9e8ecf34722850ab51e05",
+            "response_sha256": "a5089a062fe7c6eee89221b5898c2a74f6cde7e21b51fa49020abe855a6a86d5"
+          }
+        ],
+        "anchor_session": "2024-07-23",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001057352",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "csgp-0001193125-24-182891",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-07-24",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CSGP"
+      },
+      {
+        "anchor_commitment_sha256": "7cbd939621f7947e22a919f536818198cc45bbebe25f9a4f19bfbc9a3a211b19",
+        "anchor_receipts": [
+          {
+            "request_sha256": "1f4e15cedd81444a5da77a737ed2d6a92c2b91366defe8d43f964a4d66e27682",
+            "response_sha256": "eaff8bba73013b5cc3486d7eed798bc4a4dc4a13fa981ffb4ec9043f2cf51285"
+          }
+        ],
+        "anchor_session": "2024-07-24",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-24-000032",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-07-25",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "4786bffadc4a9120fe4c8aa49a636f6af5daa637ccd3befc7fc71a880bd94ba6",
+        "anchor_receipts": [
+          {
+            "request_sha256": "b36f6fe68e4bbec24141bdd35579d57792d3337c839fb1112e805186fef39271",
+            "response_sha256": "aa9140b16782ab28e748e53c9ac3699d8b33ba7500d6ace0636212cc6c887b48"
+          }
+        ],
+        "anchor_session": "2024-07-25",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-24-000143",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-07-26",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "c9ddfbcb6fe4f34a133b90bd743cd9a052c6db238ae9f991dc1c9de6da2c6e61",
+        "anchor_receipts": [
+          {
+            "request_sha256": "caa891e8ae76dbd052c1c367779a890a91787100397876e389489ec03789eaa1",
+            "response_sha256": "9b2119c340df8ac22a15c77f21424eb4714338b365d331aa657402a18e65b15d"
+          }
+        ],
+        "anchor_session": "2024-07-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000712515",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ea-0000712515-24-000027",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-07-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "EA"
+      },
+      {
+        "anchor_commitment_sha256": "e4c83909efd323732023bdf26468a52acc2b3da1405ce29c9b9319cebde5fd7a",
+        "anchor_receipts": [
+          {
+            "request_sha256": "302dce2adb4b7bf5b717dd28a440de2469dfa86cdc51ea5ec0d87c3f32f3ec8e",
+            "response_sha256": "cbe8005caec41daf42dca821d65a51b6b6cac3387be818c98fba9acacf280c9d"
+          }
+        ],
+        "anchor_session": "2024-07-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001442145",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrsk-0001437749-24-023984",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-07-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "VRSK"
+      },
+      {
+        "anchor_commitment_sha256": "02e782cb45ae53e62c20e67449639571f000830bf13a8d3ddec9bec1d9f9822c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "dbc25a878af142c3bf1543348201cc6a4b12f34ef5c493a948718a1033773ea1",
+            "response_sha256": "70228fe192a9ba90893defc754806f139b317bdf9f045f61b2a19512ec860855"
+          }
+        ],
+        "anchor_session": "2024-07-31",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001058290",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ctsh-0001058290-24-000241",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-01",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CTSH"
+      },
+      {
+        "anchor_commitment_sha256": "e895339bb67c944120fca0fec794cdf123cfa2d8368746820078e313c4c381d1",
+        "anchor_receipts": [
+          {
+            "request_sha256": "c51ad93d4e7e295fa1901ffbd266af3742879edbbfa7bcd3b01b9d9e5b67ce2e",
+            "response_sha256": "5857c65ebb769a96e00477c3f6b6c1b85a00b6de1ce7c4aba6fc5bc69a06013a"
+          }
+        ],
+        "anchor_session": "2024-08-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-24-086074",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "edbbfe8d1dca2bdf5f5a2f3c44e46c575450742762c8ba6dc7df3162c4c7023b",
+        "anchor_receipts": [
+          {
+            "request_sha256": "dbf513842f566a4de00f18cfb02c50758895d4e15e10087db374b693ff4cc089",
+            "response_sha256": "d715d827eb0ecc0bd2d64eef3d78a6736283102e36016d5d8d25e63946b62e4c"
+          }
+        ],
+        "anchor_session": "2024-08-07",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001561550",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ddog-0001561550-24-000109",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-08",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DDOG"
+      },
+      {
+        "anchor_commitment_sha256": "82b84fe05ca970aeb74fa4fc97b80cdec6e8d72773361f3964ab03ec844b5f37",
+        "anchor_receipts": [
+          {
+            "request_sha256": "575831024afaf7e8152657db69aac80fb023d1828bf825b6f2b9b6d6f360ff4d",
+            "response_sha256": "71038e0a7ecfe42840ae4c28b38345d5fe390d11e2fd7ad191cf681e8e9aaabd"
+          }
+        ],
+        "anchor_session": "2024-08-21",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000883241",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "snps-0001193125-24-204450",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-22",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "SNPS"
+      },
+      {
+        "anchor_commitment_sha256": "366105f2951bca2cf13eb8ff23ec987dc47f3d5013bf4cbe1773718a0ffecbc0",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d7222459b1b2dfd0eb6a7d8c1f8cbf3d55c66b82f1f18838ea1bf16e4499edb1",
+            "response_sha256": "18743121418525cf86d9ca684db6604776ec9e7acb1093e68a6a90dd1f95d68d"
+          }
+        ],
+        "anchor_session": "2024-08-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001535527",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "crwd-0001535527-24-000017",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CRWD"
+      },
+      {
+        "anchor_commitment_sha256": "a4bbea54771bdaf24050bb349b3d7d37c73c2f576ff7f67e21da19c5c1385980",
+        "anchor_receipts": [
+          {
+            "request_sha256": "adb50de62b6530a6b1e1c9631aa6aa3a448353e1cdf4ed911fd1029c5d4ceb4f",
+            "response_sha256": "ce12891ad06943c2a09f015c5b02441492cc97f8e2f87a2ed5a1f66905a920f6"
+          }
+        ],
+        "anchor_session": "2024-08-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001397187",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "lulu-0001397187-24-000033",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "LULU"
+      },
+      {
+        "anchor_commitment_sha256": "9a184bfa46917b6cc18b1c4e7ab956c0d06085295bc49bb5bd6ff4f9d1419480",
+        "anchor_receipts": [
+          {
+            "request_sha256": "eff62f91364ede469dbada842cd38d7cf2e96f44c8d039fdccfc96ebc67c57de",
+            "response_sha256": "70dfa77b4f4543da38f1f1562addf5b7ee24550801f3d2fd4a1be31bd78c12e5"
+          }
+        ],
+        "anchor_session": "2024-08-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001441816",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "mdb-0001441816-24-000185",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-08-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "MDB"
+      },
+      {
+        "anchor_commitment_sha256": "419562794115d37cabcc4eeda3a1e52ed8533b151470086b1964bbb8aee4aff5",
+        "anchor_receipts": [
+          {
+            "request_sha256": "85d2c92d178ad8c9bc64f0c784892d75262529a4c6a185ff385fb58d6500b376",
+            "response_sha256": "651b4723c2ba20fb33ebe875f7d2ed8a226dbe0c98742f95ec82da6de8cfe35c"
+          }
+        ],
+        "anchor_session": "2024-09-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-24-000039",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-09-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "6fbb24c6e554ba8c28ac572f00943a8d70c4253f7d286e7a1aef88f655df1398",
+        "anchor_receipts": [
+          {
+            "request_sha256": "4401d0b55aa929cd94f8e2a248e009bca0835126d268b546d4b0180da98d1e9d",
+            "response_sha256": "4d41c3fa96df88b06c14fc30db82183cda906e4025658914bfeb490cea2c55ad"
+          }
+        ],
+        "anchor_session": "2024-10-22",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001057352",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "csgp-0001057352-24-000122",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-23",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CSGP"
+      },
+      {
+        "anchor_commitment_sha256": "90c0afa4354bddd860d290befd9872d7e331ef110a402fe11ed3b239a74b52f4",
+        "anchor_receipts": [
+          {
+            "request_sha256": "0e881c5b9a810163323544a594c8295cd1d4c3f788273f1f6720debabae30f39",
+            "response_sha256": "af0ca49736f7b429a5b13046f90a513ab24aa4334d35027b7746ab2a80f982b4"
+          }
+        ],
+        "anchor_session": "2024-10-23",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-24-000040",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-24",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "7f04a752cd450ad65f312354368796efc1acc01a618cbbe357612a0cbefe42f3",
+        "anchor_receipts": [
+          {
+            "request_sha256": "7a5f96efac9952354eb375b16977802f82c0c631bfa3e8aeaf63c5b90d35e3cc",
+            "response_sha256": "07849b024ac1b057524142aa432faa00aeeb840643488ee6bbf20dc73c855389"
+          }
+        ],
+        "anchor_session": "2024-10-24",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-24-000179",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-25",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "642fc2966d44017c9def4f51c5a64a96d0a6b364cb13dc829570857fed574bd3",
+        "anchor_receipts": [
+          {
+            "request_sha256": "3819f9200655683204978a5f20b499b1551d2d03cdc4aa8ae3c3ac39ba9c828c",
+            "response_sha256": "afe1d234ef21a7c58e5155c4e5c758a8790e29043a99ec87992e8729231ec80d"
+          }
+        ],
+        "anchor_session": "2024-10-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000813672",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "cdns-0000813672-24-000188",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CDNS"
+      },
+      {
+        "anchor_commitment_sha256": "85f7ea55a0a5af3e9e313925b7e600dae0b1fb6e8db340608243b0db249e27b4",
+        "anchor_receipts": [
+          {
+            "request_sha256": "edbe1d780487f7d526a04f0c49d577f709b91286aaf61174414929e66068c4f0",
+            "response_sha256": "babe3240bb72bf25558a56c8d9e96c67253f7799d01be2a965093ea71563448f"
+          }
+        ],
+        "anchor_session": "2024-10-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000712515",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ea-0000712515-24-000045",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "EA"
+      },
+      {
+        "anchor_commitment_sha256": "721b2be98bcff9d5ae26016e589651514d79688bc52b50519b8c256c0145255d",
+        "anchor_receipts": [
+          {
+            "request_sha256": "e68f20e7fec77c982f6051d2e15de48b66d2403cd25b10aa229d10e62610c0c2",
+            "response_sha256": "07ad73957f8fcc1024fea5b318c5f845b493e960c2d202db2faab5b3d9761d93"
+          }
+        ],
+        "anchor_session": "2024-10-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001442145",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrsk-0001437749-24-032535",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "VRSK"
+      },
+      {
+        "anchor_commitment_sha256": "6dcc8897f115d4ee9b644e447f1b2a6a27578f30486761750a9ae6982fad72d6",
+        "anchor_receipts": [
+          {
+            "request_sha256": "1a81d72175b71c95914b16a0f71d51574fb7e4660c16113ac76cbc0b60ed6291",
+            "response_sha256": "063834e0d218322aa8fece72952d39fe035657268293a5bc497085a1696d7bbb"
+          }
+        ],
+        "anchor_session": "2024-10-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000318154",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "amgn-0000318154-24-000042",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "AMGN"
+      },
+      {
+        "anchor_commitment_sha256": "8939b1ff09a748b0b3656b765f1ec8ef20426a5ef25315846196d77f3843ff44",
+        "anchor_receipts": [
+          {
+            "request_sha256": "e5517b134fa3ba9e35c15c376efd7252cc521132ae5e9fbb29eb3b57e4e5b14e",
+            "response_sha256": "9ff92b3c8aada046ff2e76ed190de41aa9827c459e9a0537c89ce5f9c3d3571e"
+          }
+        ],
+        "anchor_session": "2024-10-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001058290",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ctsh-0001058290-24-000325",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CTSH"
+      },
+      {
+        "anchor_commitment_sha256": "55bc96d46e947e347d28f9b122f8ddb260cc92f2e93bd4c8628549de249e572b",
+        "anchor_receipts": [
+          {
+            "request_sha256": "7c6369021bb1b606807786017ff7a078ae2c266c0a26c4abc9ce38aa314c818f",
+            "response_sha256": "83029e6fb34da8eea25e8ee6d08a1146533b94bda92233670f7e77a00127768a"
+          }
+        ],
+        "anchor_session": "2024-10-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-24-112826",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-10-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "55043e8fb48b81e01cf32516ad6cd2d08938fa8f0eec6a052566127dc26d8766",
+        "anchor_receipts": [
+          {
+            "request_sha256": "c9230343e75f24226e579c3aa7dbf82a066942fd52abbba5fdf96409ba655f1e",
+            "response_sha256": "5b3bf9778e001e3752bb0ec3902bff4e04b73859c1a637756eed3856329f64a0"
+          }
+        ],
+        "anchor_session": "2024-11-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000875320",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrtx-0000875320-24-000221",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-11-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "VRTX"
+      },
+      {
+        "anchor_commitment_sha256": "a55c6cbf9c420621d816fbf014fa9ec32387d8ba21ddfbc0c6206404721b11e0",
+        "anchor_receipts": [
+          {
+            "request_sha256": "ff87661110b72dc9291d97fa693f42c51b2cd3bc02be149b989f45d94937b5b2",
+            "response_sha256": "552a18e1fdedfc818abdd56212645e181d8f142ea4f8c60c7943fee80cc4f892"
+          }
+        ],
+        "anchor_session": "2024-11-06",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001561550",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ddog-0001561550-24-000171",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-11-07",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DDOG"
+      },
+      {
+        "anchor_commitment_sha256": "3de823f03cbbbef9bf3acd9092ac50559b99c92fd590e072aa2c9c0128cf022c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "eedd4eebaa2d1ca229c22eb329a772800809cb4f5be4ed7fdfbc5706994d3ceb",
+            "response_sha256": "106900c669a0ba23f2f43182683d62e3987ef75985f85d19c6133520c598aa44"
+          }
+        ],
+        "anchor_session": "2024-11-07",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001262039",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ftnt-0001262039-24-000040",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-11-08",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "FTNT"
+      },
+      {
+        "anchor_commitment_sha256": "6fe73d3a4a6c9197afa54c8a509c0dd4c1ada721c41c12ec750d6948bf02425e",
+        "anchor_receipts": [
+          {
+            "request_sha256": "e83825a27a48fe2a0e9d10d0725eedbe0ee764b61edcce9784b65da5cd200635",
+            "response_sha256": "2f54be3b69368621311cef19698014b139a674c46cf08bedfc098811ce85a48b"
+          }
+        ],
+        "anchor_session": "2024-11-21",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000896878",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "intu-0000896878-24-000051",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-11-22",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "INTU"
+      },
+      {
+        "anchor_commitment_sha256": "a5ae13b2dc759ec94f3b2fd7e87eb30845a66ebdd6e93942dbf431a1ac3a49c7",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d62cea4fdd3e0480537d0e4d4529a86a00840242361fdc4f73cbfd102c05058a",
+            "response_sha256": "4da501b96ef6a74dd4f0085dd075965d243a9cfded875336f793bbbc552aab49"
+          }
+        ],
+        "anchor_session": "2024-11-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000769397",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "adsk-0000769397-24-000175",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-11-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ADSK"
+      },
+      {
+        "anchor_commitment_sha256": "df0efaef8e546c678d9cc711f730622a40a1bbfbaa7ea49c20a02be50a2a863b",
+        "anchor_receipts": [
+          {
+            "request_sha256": "dd34660f3e86e0fb91000e3a9348e926001a256dd4cf9abaa1e6b7177cdfe4b3",
+            "response_sha256": "3f12ddb2a9fa22e9cbdcea3f8a5baac0d84e17c7088c93b23878bef07faf6db3"
+          }
+        ],
+        "anchor_session": "2024-12-02",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001713683",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "zs-0001713683-24-000143",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-12-03",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ZS"
+      },
+      {
+        "anchor_commitment_sha256": "8f0ecae7341e03785e8249cc737e5c491d15f9f0bef5ca8863b76af1e2c4fa02",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d82037536f221d39d9c5dee93372162fbf164d9c271db5de42b3645578dae2d2",
+            "response_sha256": "2cf664b4827fa1beb2878182556ba192c261c9ad7a08f057f418838e8513c942"
+          }
+        ],
+        "anchor_session": "2024-12-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-24-000057",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-12-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "f40ca2df2b462a734a3b01313a52c107b263e254e5a1cf7cdc48ce0d0dd24cdb",
+        "anchor_receipts": [
+          {
+            "request_sha256": "f7e2d3b64982982b651b28a3c25f87100ae5293c2123b14cfc0707efdb51cdf2",
+            "response_sha256": "52f3834306fc0b672b8b7e12a02fe9526123a4f70515967dfaf2c56f9c4f661e"
+          }
+        ],
+        "anchor_session": "2024-12-09",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001441816",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "mdb-0001441816-24-000257",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2024-12-10",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "MDB"
+      },
+      {
+        "anchor_commitment_sha256": "21675827367945456eb19eba8ab3de22908f2e1b86c32d15a1a0f177542415c0",
+        "anchor_receipts": [
+          {
+            "request_sha256": "38d4db2045742cebe22d1a55b4442871c500b0cf1cbd847076882c5aa0d8dc49",
+            "response_sha256": "12794c2ab64edd214aedbff8f96df05d7ed62cecc034b94e268a5cca04e285ca"
+          }
+        ],
+        "anchor_session": "2025-02-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000712515",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ea-0000712515-25-000010",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-02-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "EA"
+      },
+      {
+        "anchor_commitment_sha256": "8797ea9ed698aabded4e087808c9bc6fa72917906add54727418b7eb95afc486",
+        "anchor_receipts": [
+          {
+            "request_sha256": "bffeacb1f50e0c1be3b2725f2c401954a1927a8872e60146d18e303d6a249ef8",
+            "response_sha256": "a867f69761a15e0570bbd96e6616c5741672d45a63bb2fd6a28574e945220dd8"
+          }
+        ],
+        "anchor_session": "2025-02-13",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-25-000029",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-02-14",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "82bc3e657a6c0264be7e48441228cfe7bea1329ac061d975e7d2efb8ea904a43",
+        "anchor_receipts": [
+          {
+            "request_sha256": "8a96956864499b1aa2f40662b09c11b77e65cfaa9d8dc7eaaa29ba2947958f93",
+            "response_sha256": "05ff11c0e9edf16149a6b1d4f9ecfce02def8c79364b252c2aa42f0371293b90"
+          }
+        ],
+        "anchor_session": "2025-02-25",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000896878",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "intu-0000896878-25-000013",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-02-26",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "INTU"
+      },
+      {
+        "anchor_commitment_sha256": "06ecf440d7d07ecf9f6b475ed440a41a69d4a1b00c00383370b7853e9c658ebe",
+        "anchor_receipts": [
+          {
+            "request_sha256": "2b8719e9872a0bab694df03838d427335dfca5440624057c768250258d73e271",
+            "response_sha256": "cb6cc9334ef9d6a9757934661dd59066def4ed7b88c699bacb1877243f55e311"
+          }
+        ],
+        "anchor_session": "2025-02-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000883241",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "snps-0001193125-25-036798",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-02-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "SNPS"
+      },
+      {
+        "anchor_commitment_sha256": "b5758d05e61aed803f7c1b93dbe14bb7e12c3cd048f99652f6252322cdede93c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "fe41dae0c9a4b8bf171ee5d7ee85f67ed11630ea7901735247cc648f4ed75e5e",
+            "response_sha256": "b9ead4ed2a5f53965e05ae1bdbdd024a59c3f4522ad19af7be672f89f2aae114"
+          }
+        ],
+        "anchor_session": "2025-03-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001713683",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "zs-0001713683-25-000025",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-03-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ZS"
+      },
+      {
+        "anchor_commitment_sha256": "5f200ab60765c64caa4145b2bad344d126f784c3b7644bc3e0945b93142a64bb",
+        "anchor_receipts": [
+          {
+            "request_sha256": "9e2ba706c4672e79e74b66359bcec33a8896cdd8ad73ca350ef334291efbe536",
+            "response_sha256": "07052b5beee188535924e0bf6a5c88a648619e4f50eba3207db52ff93365eedf"
+          }
+        ],
+        "anchor_session": "2025-04-23",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-25-000026",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-04-24",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "cd487ff841639e9a8b1e72fefe99b18bc1bc668c3adfcb55510895774b4ff545",
+        "anchor_receipts": [
+          {
+            "request_sha256": "2ae357a3ca286aa0deb8a5a2a74e4047bd0c2f2c8e8fe34f0d16422c51723a53",
+            "response_sha256": "7e7cd5bb02a9bca0089f21ae563a05064ba2ae94fe137f2c521478141849bb88"
+          }
+        ],
+        "anchor_session": "2025-04-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000813672",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "cdns-0000813672-25-000046",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-04-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CDNS"
+      },
+      {
+        "anchor_commitment_sha256": "416a4cee3efda8a755c5066c64adcffda9888df06128f9a04533b7655051dfc0",
+        "anchor_receipts": [
+          {
+            "request_sha256": "a202e8877c44adf15a2c342fb704b77105ff20d54f3078236787a37f6dc7e1cb",
+            "response_sha256": "d0c53d8303686b226fdc759905d2d833cdf6ab1311e222bf0ea3ca7162e88abc"
+          }
+        ],
+        "anchor_session": "2025-04-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001058290",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ctsh-0001058290-25-000124",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-01",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CTSH"
+      },
+      {
+        "anchor_commitment_sha256": "69f161a57bdfacb446291dcd9211577146ec8ed83c7427b843b3ea399d0d71fe",
+        "anchor_receipts": [
+          {
+            "request_sha256": "1b2e4d9fc7e409c9dfbe2f989a31357758b1e2a748084cc87d8bb143b608a3f4",
+            "response_sha256": "6c57ae48d96a66ef91df314c3dc5ee96534ee22171b247dde8d00510cae36e9a"
+          }
+        ],
+        "anchor_session": "2025-04-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-25-042955",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-01",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "bf122f5d3e77ecb205d4bee71c1f94d0c17b5b1bdde787ded11d4c04d40f4d0c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "ed898509d2d170c483c40cecb512d4e2407c9046be8bb4fb9293e1470a8bbf5f",
+            "response_sha256": "f35d5458d83b6a8dc997cdb21f26bb1c06c938041a9b994f3629b6bc70bc0869"
+          }
+        ],
+        "anchor_session": "2025-05-01",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000318154",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "amgn-0000318154-25-000018",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-02",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "AMGN"
+      },
+      {
+        "anchor_commitment_sha256": "e490ad199b39c3ef3475200e27c8db4336faf4c62ec67f69b723fb7694146a67",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d06c0f762195d02504749d1ca5523ca77761a3c15fbe79715f770d339f2767f0",
+            "response_sha256": "8653f92b4f68a3fc35da7c703a9905b122c8fec974324af4fe49dc577ae9b96f"
+          }
+        ],
+        "anchor_session": "2025-05-01",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-25-000111",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-02",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "02ebdb670c91f4b8c2e39276ebd2a2106edad9ffa20bc115652db407a2392d50",
+        "anchor_receipts": [
+          {
+            "request_sha256": "24c581550ff2b8ee0348efa8ca995b1ecc2b96b65470f78e7f138bafe9128e9b",
+            "response_sha256": "be3eec1547dbc69acfa4a0d5791d84087ae04906749187796cc2da279afe0ddb"
+          }
+        ],
+        "anchor_session": "2025-05-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000875320",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrtx-0000875320-25-000171",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "VRTX"
+      },
+      {
+        "anchor_commitment_sha256": "2018c1e9d7161d683382e3f2f497b6c4a090ee1b331c3f60d16a83150d1e2c36",
+        "anchor_receipts": [
+          {
+            "request_sha256": "67b3ac41297791215ddbe7047a2a463ab325dad80de8ef1edc9744564f51dfe8",
+            "response_sha256": "244a318559aa608af7836c4899ed4ca112f5df1a8f4c6e78bb7de51869527782"
+          }
+        ],
+        "anchor_session": "2025-05-06",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001442145",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrsk-0001437749-25-014906",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-07",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "VRSK"
+      },
+      {
+        "anchor_commitment_sha256": "fdf758b0820b1566208a8eaa374dc409b7d30c11d1aa14adc3e980f87ce71d8d",
+        "anchor_receipts": [
+          {
+            "request_sha256": "4d36e440cf7fea344e04199ef5aae777e68c54dcc6494b2d5ea661aecb1165a3",
+            "response_sha256": "9cb7d6955c48523f182a82c14ebff04cd8426b5eb6b153cc2960863fc6d7f89e"
+          }
+        ],
+        "anchor_session": "2025-05-07",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001262039",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ftnt-0001262039-25-000014",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-08",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "FTNT"
+      },
+      {
+        "anchor_commitment_sha256": "05e67415bccc38d2b5e930758f1887221fb168158d0782bb68a3e575602048fb",
+        "anchor_receipts": [
+          {
+            "request_sha256": "aea557cc30357398141dbcc4cad252eda1143cedc47d7eac59b52f15492431b7",
+            "response_sha256": "8b64f3802600d926b79acfd641eb1bd5ea586ce21315bc3780594e77f8a1160c"
+          }
+        ],
+        "anchor_session": "2025-05-22",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000769397",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "adsk-0000769397-25-000067",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-23",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ADSK"
+      },
+      {
+        "anchor_commitment_sha256": "f5d528c239825af69356c719e2b78dcfcb9ee7656f2691c064f11c22721d7e12",
+        "anchor_receipts": [
+          {
+            "request_sha256": "ff3de073422a066727060a263a8fc7017638b0389093df20323beef9c3af3066",
+            "response_sha256": "7d0e0382f4bbff63c52eb9f5512411d59db11e5626959a2ab1aa45f27e43040c"
+          }
+        ],
+        "anchor_session": "2025-05-22",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000896878",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "intu-0000896878-25-000020",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-23",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "INTU"
+      },
+      {
+        "anchor_commitment_sha256": "b8814f0bd617f208eb86853b270fe30db028cf4758e788cea3b41358e67daa7c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "1df4e81633d65234f7b8fa7628918766829f120c313c23752600b36c2e1d74c8",
+            "response_sha256": "9c912cbc524dc1d14ab0a0c1730c12e3b15757be09aece0a1281d2dd417fddcf"
+          }
+        ],
+        "anchor_session": "2025-05-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000883241",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "snps-0001193125-25-129525",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "SNPS"
+      },
+      {
+        "anchor_commitment_sha256": "f80a4905bd2bb23bea3a0bbc7591b5b7111a4600c82d29a95051e20fdbead350",
+        "anchor_receipts": [
+          {
+            "request_sha256": "52e5069c8228fd688a4963b702abfb59a5b22bbc1bdbe039d9d7e303ac13a9b9",
+            "response_sha256": "9f817289d0bd1be8c3d214345b3e3dfdcf456e1a6e1ef95ec17bbc8d7377de2f"
+          }
+        ],
+        "anchor_session": "2025-05-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001713683",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "zs-0001713683-25-000078",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-05-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "ZS"
+      },
+      {
+        "anchor_commitment_sha256": "c7e2884e83159ac9bfc5c7bcff49c0c8efc4ea55f18345294bd81f69aa46951b",
+        "anchor_receipts": [
+          {
+            "request_sha256": "49420fb4c40c86d0f783f56c376b346b422217cf2ea1d4bdb89262338ee758a1",
+            "response_sha256": "51c746a0b0ae7bb4d5e0f6cc803be1af3a096bead5eddb20432c91bbb672a3fe"
+          }
+        ],
+        "anchor_session": "2025-06-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001535527",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "crwd-0001535527-25-000017",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-06-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "CRWD"
+      },
+      {
+        "anchor_commitment_sha256": "8ae86480ebd1087880529c362a6efa7071a57abf7e9d65785d7281136d2510ff",
+        "anchor_receipts": [
+          {
+            "request_sha256": "634dfed27e21e6548c89304b9d11e0155ba7b381be98fd3f1b128349362af385",
+            "response_sha256": "e3ed59b5e399615d57f5cdc26e99765a40599b87a28b0fefe982405c19d3c86b"
+          }
+        ],
+        "anchor_session": "2025-06-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-25-000024",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-06-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "d05fc13c244ee4f64f3a8b4f03c7263942f84aa99cd087691c5994e3ba3798ed",
+        "anchor_receipts": [
+          {
+            "request_sha256": "39099cdb67ac81cdbbe7bf48fa64737b8d19998cc337bb3d0a6eb2c42a38cd96",
+            "response_sha256": "5e8c41d1dee331f5e58df5f83a7602b5840132d8d9f8d55862494c62bd4c5bd4"
+          }
+        ],
+        "anchor_session": "2025-06-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001441816",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "mdb-0001441816-25-000116",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-06-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "MDB"
+      },
+      {
+        "anchor_commitment_sha256": "3d51758704ed71ea7489fe69e090a9027bc1b17b4f10dbfd8f71777cc6207b58",
+        "anchor_receipts": [
+          {
+            "request_sha256": "2f46bc499f35cefe597bd284190d801a75382b54b6fae19b6be1c42e1f4b208d",
+            "response_sha256": "2bc37a6f7c691d25ad678119c1a609a7cd63e8d9f95bdcc507c9f5670238b657"
+          }
+        ],
+        "anchor_session": "2025-06-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001397187",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "lulu-0001397187-25-000026",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-06-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "warmup",
+        "symbol": "LULU"
+      },
+      {
+        "anchor_commitment_sha256": "7c65ffa31fae6055333f6f712c099c127bca2263a8082ae2b50bc2149811e1a0",
+        "anchor_receipts": [
+          {
+            "request_sha256": "a43bc4ecf30361e89812d1d7998af32d65db2e2824aed8dc3c5863453c49f199",
+            "response_sha256": "9d6c34fec5df0a503e42426df322098f704868d4e0bd18c1a6d001a8c9e9a127"
+          }
+        ],
+        "anchor_session": "2025-07-22",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001057352",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "csgp-0001057352-25-000095",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-07-23",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CSGP"
+      },
+      {
+        "anchor_commitment_sha256": "5e28f43e788a62a2d95100a34667f4e4e4c38d84c3f879213d71bd6276eeb0e9",
+        "anchor_receipts": [
+          {
+            "request_sha256": "8e5408d27658ac85bdf756a6563f77872f372d1536e35fe304c90c60475e8a0d",
+            "response_sha256": "3833bc705b7548b3774a0cb087ae35c4dbc9376d532bebdf528ad0f4a8363de2"
+          }
+        ],
+        "anchor_session": "2025-07-23",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-25-000046",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-07-24",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "6e55c14b87d604a78928463296286e27348ad3531820c147ea0cb1dbe6d63a6d",
+        "anchor_receipts": [
+          {
+            "request_sha256": "06d7e7ea2e3db4b0c26a9d0c5c46b8d643f41aa33277fcda3ac0d43edb443098",
+            "response_sha256": "dc726013cb0779fc442abad7468e56e09039e86784e34ab272ad4a5957873044"
+          }
+        ],
+        "anchor_session": "2025-07-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000712515",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ea-0000712515-25-000027",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-07-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "EA"
+      },
+      {
+        "anchor_commitment_sha256": "fa87705ce7380fba3b846ce41cbcadde4e8751edd03a3a0b48f3ecf54c0dd14d",
+        "anchor_receipts": [
+          {
+            "request_sha256": "2b1dec8b0b66761442cb4cc3169103a0e3b8dbeb0f2c6c7e631850564dfa5ae6",
+            "response_sha256": "6665b18c28a805f6cd6623ff5544bf5cbb324655081ad758c1cd927988517c9c"
+          }
+        ],
+        "anchor_session": "2025-07-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001058290",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ctsh-0001058290-25-000266",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-07-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CTSH"
+      },
+      {
+        "anchor_commitment_sha256": "0bb6f6223df0b8cfa303aef394ef8152b0b966ded108dccb2f7e6bd73a3c3ebc",
+        "anchor_receipts": [
+          {
+            "request_sha256": "4f0c5ffe3edda7c42d77a3cb1b7568d2ff6085d7e4b03be15e244297e0bfed6e",
+            "response_sha256": "900656a4f24880265d40502b71d9f743e9f9ca7abc61e12816f52a70e98dc8e4"
+          }
+        ],
+        "anchor_session": "2025-08-01",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-25-073304",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-08-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "2eeea621ea52f00150153a17b8e3239076fe940431bcbe0bd89148cdc7f9ee09",
+        "anchor_receipts": [
+          {
+            "request_sha256": "5751a03ab5430dde02aac527fc770dbbddc7f817f0c925fb817748f6d07752b2",
+            "response_sha256": "9cc374beabffff654eff13e780446a774fa6cdc759717ef00379000b857bbb91"
+          }
+        ],
+        "anchor_session": "2025-08-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000318154",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "amgn-0000318154-25-000054",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-08-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "AMGN"
+      },
+      {
+        "anchor_commitment_sha256": "f4dc9d7d3cd77fdc87dfbe463d72a07c744ab23da8812435e2b3e308325c4cbe",
+        "anchor_receipts": [
+          {
+            "request_sha256": "65a2b75f812b492f679bfcba940eff8543930e860b5959ec0f5fe3ee9cfd16e7",
+            "response_sha256": "d988e8eca1f10b745450510eb22252ca4cebd554c430628d4cd030df624dbcf2"
+          }
+        ],
+        "anchor_session": "2025-08-06",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001561550",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ddog-0001561550-25-000216",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-08-07",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DDOG"
+      },
+      {
+        "anchor_commitment_sha256": "8fb540224c82cd262f048bd0440bd9cd0743b13ec8517338529a84d57a38f133",
+        "anchor_receipts": [
+          {
+            "request_sha256": "c5735e278b41ecd2f5418d65fd4291d273cb6e2277cb873cb08cab24771d54f7",
+            "response_sha256": "60ea804dfd0af11b32310880b3860639356ca054b7efb1ace5f43510aab87ae3"
+          }
+        ],
+        "anchor_session": "2025-08-06",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001262039",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ftnt-0001262039-25-000025",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-08-07",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "FTNT"
+      },
+      {
+        "anchor_commitment_sha256": "bdf9769f0553be7bbc6964012216be16a08f73512870c2c46e1873e6fc1407f3",
+        "anchor_receipts": [
+          {
+            "request_sha256": "b7a4dbcc2c1ac3b7217e2d9c6c9937accebccc3b19f6250dbbd74b85ada4eaf0",
+            "response_sha256": "b7a88aaf621166913ffc5035bd0cb2cf5189fcd3031308b59117f30d98be7c32"
+          }
+        ],
+        "anchor_session": "2025-08-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001441816",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "mdb-0001441816-25-000176",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-08-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "MDB"
+      },
+      {
+        "anchor_commitment_sha256": "9f8708778e3c79075773414eb9b9ae701beb81b1a24c66dcb03ff611be476f0b",
+        "anchor_receipts": [
+          {
+            "request_sha256": "16c5fda34c80cdd1c64a7a57bfbe899234d1e15e930db5a19d8159d9714724f2",
+            "response_sha256": "55ea23ea194dd953d35a33859ab2a6404d855e2863639ed2134c19fcd33b34e5"
+          }
+        ],
+        "anchor_session": "2025-08-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000769397",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "adsk-0000769397-25-000114",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-08-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ADSK"
+      },
+      {
+        "anchor_commitment_sha256": "3d5a02c1a0ee56e4b4719549c05af32ddf08736da932bf21d6e374f30ff998f8",
+        "anchor_receipts": [
+          {
+            "request_sha256": "ec65a87ae738947a3e9fe8e64de40e81a9e4eeb246968da2f10215702325e5bb",
+            "response_sha256": "8a67235e8d5ece58b29c0544e6fa7f3f6cb3ccf9db1076e609e47984978cfb8a"
+          }
+        ],
+        "anchor_session": "2025-09-02",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-25-000060",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-09-03",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "2f6dd29a3dc2ada2e75721a375eea82931a952e4b76bd11408d42e767dac25f8",
+        "anchor_receipts": [
+          {
+            "request_sha256": "b4dc9355fc7bdba156d4e9ca26cbf890202ebe76ec245fcb7954197d6021fba0",
+            "response_sha256": "57df08260803686ed8ea54d6e7876f12ef27b076288fd6e45f194b91671c97ba"
+          }
+        ],
+        "anchor_session": "2025-09-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001397187",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "lulu-0001397187-25-000038",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-09-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "LULU"
+      },
+      {
+        "anchor_commitment_sha256": "8718442176345d132ff2508a4badea2d08228021bb5bfc13b0eac4dfe2fb1e4e",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d3f31232fdfb61b0e6231bab3fdddbb94ab7353f27d769872d16b2bb51d03f57",
+            "response_sha256": "832b0ac0479f95d04416a94ff012f26bac29413e5329220555abe9f5ad0fe805"
+          }
+        ],
+        "anchor_session": "2025-10-22",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-25-000055",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-10-23",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "91e0b4f32fb1499990dfc81684632ff5b33dda06433d4fb2504961dd61c658ea",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d08158dbceccda137d210be391b4ace9330db446b4c8d0455cdedcff52be77e0",
+            "response_sha256": "76c17a7065b3feab3dc5f8e39bfa3d38c193f43b350055660ee3edd7807e7ce9"
+          }
+        ],
+        "anchor_session": "2025-10-27",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000813672",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "cdns-0000813672-25-000144",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-10-28",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CDNS"
+      },
+      {
+        "anchor_commitment_sha256": "a99fd6b42c5096a260d85b1879786a6c41d1edc331f99ca1699b937e7ae703a7",
+        "anchor_receipts": [
+          {
+            "request_sha256": "82e64eeb22b4e1f7864672d322d0fc1309fdc9f8af7c17926595fed40ef3d31f",
+            "response_sha256": "6439293e1c37aabf653e886cca74a023de049d89de641879ab8fcd56642ad468"
+          }
+        ],
+        "anchor_session": "2025-10-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001058290",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ctsh-0001058290-25-000338",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-10-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CTSH"
+      },
+      {
+        "anchor_commitment_sha256": "154bc4d13ece93d540f1efe98b0b4d5bee681ac59e3417200f3c8f71cc6e9652",
+        "anchor_receipts": [
+          {
+            "request_sha256": "639c184780975e63f89dec906791008c1b7fa79c2b446cf9b849844061780d2c",
+            "response_sha256": "69d552612ba4002d68d0db0b27f6b8a38591a8bc7e9b2c72ddee349219afc510"
+          }
+        ],
+        "anchor_session": "2025-10-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-25-000278",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-10-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "fb3e9b11f7e8cfdeb7e25b99446664dfef59c8125005773478c9cb1a19c7e1dc",
+        "anchor_receipts": [
+          {
+            "request_sha256": "648702859d659f1850eb324603341950f29c197a40eb9807c425a873fddeebd0",
+            "response_sha256": "ee83ea7c693b3d22bc4ace0a5dd1c0be2fdd53da4e472139d6c6fbb3b1dd13ea"
+          }
+        ],
+        "anchor_session": "2025-10-31",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-25-105185",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-03",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "415ace9189f4ef430fe28177f2835d3e90eba243c6411a588598cb2ec3442f0a",
+        "anchor_receipts": [
+          {
+            "request_sha256": "639c261930baf2b550ae4afab1415000377d6c5178c1e91c0b4c38d9dfde2921",
+            "response_sha256": "94d97e7b359964a34a7256acac12afd42241c342b2540b5efb87599e3a4b45a0"
+          }
+        ],
+        "anchor_session": "2025-11-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000875320",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrtx-0000875320-25-000230",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "VRTX"
+      },
+      {
+        "anchor_commitment_sha256": "eeb691970f6d099a94cf8caa7847e9c2b46d7e385d9b04fb24e0b204d9170990",
+        "anchor_receipts": [
+          {
+            "request_sha256": "7037997192c57ad332a4f36d45c394dbf4e5e168e4fc8ea182e9ca5c5d478a9a",
+            "response_sha256": "dfab850e8e4bef7e0d2ed70737ea1ee13362085b8b32a831aaa6774948f252d9"
+          }
+        ],
+        "anchor_session": "2025-11-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000318154",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "amgn-0000318154-25-000070",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "AMGN"
+      },
+      {
+        "anchor_commitment_sha256": "81b3901c8e58890552bcf238b292082a67316c00e2f03957be33a5f6dd6458c9",
+        "anchor_receipts": [
+          {
+            "request_sha256": "ef295d5c0f9744622448110e4ae565b328dcf51be90a653c74afbce0df0228f7",
+            "response_sha256": "9f7927da1ac90e201acb0b8fa0f4429fa6c4c480583e284f6468a1e05ada8443"
+          }
+        ],
+        "anchor_session": "2025-11-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001561550",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ddog-0001561550-25-000310",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DDOG"
+      },
+      {
+        "anchor_commitment_sha256": "d743611d831672288cd043d31500ba0900d2496ca0793c10a9f16f49176fe628",
+        "anchor_receipts": [
+          {
+            "request_sha256": "b7f93a7ba1eca8a3af2b8151291ad4017de1a015f8d113a0f298305b1856dd11",
+            "response_sha256": "69cb9fb7af86ce31ad4a9364346fc667aedc54df766fbc0e8e0cddd5bfc95691"
+          }
+        ],
+        "anchor_session": "2025-11-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001262039",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ftnt-0001262039-25-000036",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "FTNT"
+      },
+      {
+        "anchor_commitment_sha256": "795e1c4d587f988f0aec076a1ae17091850a3a44f9fde84835bbb4fc9b028ca5",
+        "anchor_receipts": [
+          {
+            "request_sha256": "07bec49032f2d8dbdea2d1dd2e28a3203312c9ba271a6d3651a211de3cbb1f89",
+            "response_sha256": "4f3abe643b915ba0ac8bf6f84cd258a4b394794d6b1af638d98aed4396ed3375"
+          }
+        ],
+        "anchor_session": "2025-11-25",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000769397",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "adsk-0000769397-25-000126",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-26",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ADSK"
+      },
+      {
+        "anchor_commitment_sha256": "16b3169e015fe8466612691bcf71be0561bb41090a87f81576223fe3946d0717",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d8d447993273b23c18609fbc9fadbad37cfeb4649879919bf7da0604facf7053",
+            "response_sha256": "4be232ffb6df8f0194326fe4ce5626d08df9cb4a63d6b4933c771380c2f763d5"
+          }
+        ],
+        "anchor_session": "2025-11-25",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001713683",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "zs-0001713683-25-000203",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-11-26",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ZS"
+      },
+      {
+        "anchor_commitment_sha256": "9e2711a46a0fb6ba157625ebcce0eb74161ca78ec6648ce8cad281f78838d153",
+        "anchor_receipts": [
+          {
+            "request_sha256": "5864c45651dc16b0b2b81ca354d2dfe9457d261af83cb06856fc4c9a88d065d0",
+            "response_sha256": "f358cf13a41f120e70900a60d8e1f54b5dc1d7cb2d34ac7a40d30e1379e47ae2"
+          }
+        ],
+        "anchor_session": "2025-12-01",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001441816",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "mdb-0001628280-25-054425",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-12-02",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "MDB"
+      },
+      {
+        "anchor_commitment_sha256": "554869019cc6b6be2fa51b62f3df4ea252f9c4aba54a09007f7bbe1cc7b13580",
+        "anchor_receipts": [
+          {
+            "request_sha256": "1bc3f4b8565050938833237575256d850710789ae3d73ed819d6fa9ee6480e08",
+            "response_sha256": "465f147f2d48239d0955720eb69c698f107f566995309f6a9ca6b69dc4f19fe8"
+          }
+        ],
+        "anchor_session": "2025-12-02",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001535527",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "crwd-0001535527-25-000030",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-12-03",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CRWD"
+      },
+      {
+        "anchor_commitment_sha256": "85e5f1c4076b26c84505af28815d971d47a5da01de0fc335253b372953daa846",
+        "anchor_receipts": [
+          {
+            "request_sha256": "5f9707bad1cdd0a2174d7aac99e87dccefaa02c15873a6409114d4cec5fb5898",
+            "response_sha256": "30a5d8593370def8deb29bc4ccc24285b06c6726d7e5ba82d8e42c7f8fbbe060"
+          }
+        ],
+        "anchor_session": "2025-12-02",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-25-000104",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2025-12-03",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "31d52eb83cab7b98b8e9c25b7082941b7678ea8d79041a2a2c40b5c6cc5a6119",
+        "anchor_receipts": [
+          {
+            "request_sha256": "fc441fca71c21b3c79db0f7b0e1793782b37f97b6a13c9c47e8d8d1f845e75e7",
+            "response_sha256": "c14c98affa6adfb37931b0f66d6c69fa34ff2c8aedaefc364ed78b4d22796389"
+          }
+        ],
+        "anchor_session": "2026-02-12",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-26-000025",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-02-13",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "900f1f5aff4607c0ffa0e1fe427766fc703fde2eb91aaa4e0e0c276f628a0cf5",
+        "anchor_receipts": [
+          {
+            "request_sha256": "81b3dbe82e1227de9189ebc2cb25ca49cd6ec550d53612656fbf8dfae57e1b2e",
+            "response_sha256": "c3028825cf38a8bf8937249954e0922bd4ea88445886787cc9dc7b80616282b1"
+          }
+        ],
+        "anchor_session": "2026-02-25",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000883241",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "snps-0001193125-26-071601",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-02-26",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "SNPS"
+      },
+      {
+        "anchor_commitment_sha256": "a60d05dfc642e8bfa3300261e17a753d143226c0db7475666269a7e91fb7db40",
+        "anchor_receipts": [
+          {
+            "request_sha256": "3843f69592d04d126347b1a56229286ba77158bb81af2f81b891dafff83b73b4",
+            "response_sha256": "74fa7bcec7fdd84c7f2775d703ba7f0c3b8abb1d41e7c18e15c1552d3b198d7d"
+          }
+        ],
+        "anchor_session": "2026-02-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000896878",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "intu-0000896878-26-000012",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-02-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "INTU"
+      },
+      {
+        "anchor_commitment_sha256": "f40dec05ce8407690202a1947e93c93078f269c430327b0db9a91abccecf1bda",
+        "anchor_receipts": [
+          {
+            "request_sha256": "424a7965a0c6ec44027f9f3bf1b4aa5bb11a092ede805f97fe4fe9be8ad38e07",
+            "response_sha256": "192d706879ba1c857b452a2f5dbcf721ae7b1a2dd892c52abaf930e4f0755005"
+          }
+        ],
+        "anchor_session": "2026-02-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001713683",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "zs-0001713683-26-000047",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-02-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ZS"
+      },
+      {
+        "anchor_commitment_sha256": "606370de54584d656a37ce62276ef3e46518d5294e80ec60a7eb64616bf9869e",
+        "anchor_receipts": [
+          {
+            "request_sha256": "6f61f8d8a4c457fbe936365d780dcbe351213e026e9babf0722ea137bbc0a756",
+            "response_sha256": "6f52f5b69a1b81682972a18b8c6165fa8b26bd896bc6157a30c37cb34c64eec2"
+          }
+        ],
+        "anchor_session": "2026-04-27",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000813672",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "cdns-0000813672-26-000044",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-04-28",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CDNS"
+      },
+      {
+        "anchor_commitment_sha256": "057a67ae41d73c4d28358dbed0cda2f5b5d45fa1b4d4031899bdfc5036712d90",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d5554ac8441b76d59b15c8e8d11026b1c2ef9f2d4d4014379cae4136a71a724a",
+            "response_sha256": "b758e937450b353691faa6b3169173908df659544165812c09969f323f2171ae"
+          }
+        ],
+        "anchor_session": "2026-04-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001442145",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrsk-0001437749-26-013728",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-04-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "VRSK"
+      },
+      {
+        "anchor_commitment_sha256": "5cda5c8d19f35eef277c147f500b3fef4eff858f72cc36f969801edc5b787a6a",
+        "anchor_receipts": [
+          {
+            "request_sha256": "96fc933cd60c091968ab6bfe85a61dfc9717ae62e93858ded99f5c96216d8694",
+            "response_sha256": "f70f25d8396aa7520ea6db9ca73ef4ce16c114c1f346355302b72b0dad68942e"
+          }
+        ],
+        "anchor_session": "2026-04-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-26-000024",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-04-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "f982f1a4b9cfed7281a641be60939bad3928f4f39cf935e916636f8a066cd2ae",
+        "anchor_receipts": [
+          {
+            "request_sha256": "5e39fc2cd33864e122c93e944a354238e23abb13bfb1dece0c3cc098b88ba4bf",
+            "response_sha256": "b4beb364778db566b34de8684adfa6b8399d73226e81352116339fa2479886bb"
+          }
+        ],
+        "anchor_session": "2026-04-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000318154",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "amgn-0000318154-26-000054",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-01",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "AMGN"
+      },
+      {
+        "anchor_commitment_sha256": "264218dbf8f975216ac9b8b0a1facf0a484e63720d81ab54bf809999885870cb",
+        "anchor_receipts": [
+          {
+            "request_sha256": "e5bfb8c1f6c391f342fe833259d2edd15037fe996a495fc3cf4cc3ee428bba8d",
+            "response_sha256": "99c2a616d2d9fb16c5ef8763082310da5051174811e0368ff1c05db03ad7a53e"
+          }
+        ],
+        "anchor_session": "2026-04-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-26-000072",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-01",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "de9a05ce92b1b1804105756219dbaf1a75947d58056a861b91afc7f917f5a2d2",
+        "anchor_receipts": [
+          {
+            "request_sha256": "05baf9a2e77208d80f6205eac11d0a80ef14ba7a4985c26899d799ad0665c609",
+            "response_sha256": "e46280a5e5dda8010643886ef1a699fdcde8f76f397266495fd6d4677e3624cd"
+          }
+        ],
+        "anchor_session": "2026-05-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-26-055203",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "0f5735fe35362578eac8ca5a5f155f49f5b709c3df421b9f3ca9bcdab0b3d035",
+        "anchor_receipts": [
+          {
+            "request_sha256": "9928bc4bd727c78e37170bb36866179ef68d67e8f920dfbf0cbd7e1cac0c443a",
+            "response_sha256": "d98ac3c74062da837536d14ded72679403c768100b6a9b2bbf05ae0585e9b0ba"
+          }
+        ],
+        "anchor_session": "2026-05-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000875320",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrtx-0000875320-26-000171",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "VRTX"
+      },
+      {
+        "anchor_commitment_sha256": "d3c0579345bd60f28d1290948438c8660fe29a07768dc368d14243acfbe80ba2",
+        "anchor_receipts": [
+          {
+            "request_sha256": "7e488819416e24365ad89d5c533642edf27e8163efdb0ef637379c342ebda040",
+            "response_sha256": "3216048abcb6d1f5eb1890b179572d46f61fa15e23aadc006d673bf6e20b5ea4"
+          }
+        ],
+        "anchor_session": "2026-05-06",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001561550",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ddog-0001628280-26-031677",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-07",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DDOG"
+      },
+      {
+        "anchor_commitment_sha256": "ecb710653ed880ebe547b0020339ee16fc6823f9cf568a372cd6db985702e577",
+        "anchor_receipts": [
+          {
+            "request_sha256": "83435479335329128de1b7d21c936ed67b09c76377782eec22ff6dfe9706ec46",
+            "response_sha256": "7485f36997107cc3b9accbc97e9564d67bb2c8e665dd3b582f4e89dcf3ba87fb"
+          }
+        ],
+        "anchor_session": "2026-05-06",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001262039",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ftnt-0001262039-26-000010",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-07",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "FTNT"
+      },
+      {
+        "anchor_commitment_sha256": "ae548d91db18aec4a63bc29feb7eefe8ed89be60bc17083d496ca2ee697c5fcd",
+        "anchor_receipts": [
+          {
+            "request_sha256": "d3469469a58531337ef412971f8d3d88cc533a77ae93866dbe4480d042007137",
+            "response_sha256": "24cbf0507444b8f66d2b60bff0021c001f6db38a61861c55f64306678eca2faf"
+          }
+        ],
+        "anchor_session": "2026-05-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001713683",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "zs-0001713683-26-000095",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ZS"
+      },
+      {
+        "anchor_commitment_sha256": "2345985ad3b8660faca46b1d5f74aae5b25f336ffb7dcdb19fe89856d4a2493c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "836bf8cf013826bd10a22a31546cd53992e70405afe522a6fe1d450b0e5b4c35",
+            "response_sha256": "a94f53e2987ddd2390ce2a94c0896e97b7d88ff07be7c350d21cfcbb85fae136"
+          }
+        ],
+        "anchor_session": "2026-05-27",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-26-000064",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-05-28",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "ddb224c3417782871ed12ef49ab5f5710ae297182959b82a584d31b570d3ecac",
+        "anchor_receipts": [
+          {
+            "request_sha256": "9d449d4b7d7df4c8e5045e52a4d52cda9a169cf0e2c541308596b6775098a174",
+            "response_sha256": "c65f7fe80befe45ff03183e68148fea6cf24d02f90d465d371d5a2e44bb0a963"
+          }
+        ],
+        "anchor_session": "2026-06-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001397187",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "lulu-0001397187-26-000077",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-06-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "LULU"
+      },
+      {
+        "anchor_commitment_sha256": "74470a94c44780f0a8af7bd48ecbb03287de2e3af64249f1534eca9dceebab35",
+        "anchor_receipts": [
+          {
+            "request_sha256": "a284857fff05788b75f3bfe4e0fd8b137699d012880cdead4b3e88cf658a922a",
+            "response_sha256": "adfe55aedee84946fbac7de33f70ad7dfe0b4de312fac92f21593dbbe210ad4c"
+          }
+        ],
+        "anchor_session": "2026-07-27",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000813672",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "cdns-0000813672-26-000089",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-07-28",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CDNS"
+      },
+      {
+        "anchor_commitment_sha256": "8493abdefe5cfa3689f9effb6ee92dfcec3321e6fdd6a4530b311f7e3b11f12a",
+        "anchor_receipts": [
+          {
+            "request_sha256": "94d9dead557b9bf66d12529d60456e36e8851e3205d64af7d1a98711dde1dd94",
+            "response_sha256": "3426a74f24bf84fae6cdd0a63a682582c8fbaf055edba4f68dda4045a7d4573f"
+          }
+        ],
+        "anchor_session": "2026-07-28",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001442145",
+        "clean_window": false,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrsk-0001437749-26-024748",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-07-29",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "VRSK"
+      },
+      {
+        "anchor_commitment_sha256": "d48e2cbc3315d9dc0093432595fe3b340386eb2d25f473f20040873550522a4a",
+        "anchor_receipts": [
+          {
+            "request_sha256": "a49f8dc0fb62795596a85a420423468766fbc8efae655fb9d962b48dc293a7d0",
+            "response_sha256": "ba0da83fade88d5e6f0e563e7ece7819a81026bb160a657437e4f57b0516c6ef"
+          }
+        ],
+        "anchor_session": "2026-07-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001262039",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ftnt-0001262039-26-000018",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-07-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "FTNT"
+      },
+      {
+        "anchor_commitment_sha256": "3baacc9477b45d3537995fa33f7c123f4b6b0c590c3ced4cc4764af699e7230f",
+        "anchor_receipts": [
+          {
+            "request_sha256": "4e32e71144780865d04c1e96c865e35551c881b87e19c512214fc477a4e3b781",
+            "response_sha256": "544ea817fcfcea43ba542f351d9b633e2c30c3f556128a124c117c111c2a1cc6"
+          }
+        ],
+        "anchor_session": "2026-07-29",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000898173",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "orly-0000898173-26-000042",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-07-30",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "ORLY"
+      },
+      {
+        "anchor_commitment_sha256": "73ebf83fcd1d90cebd93595678c8138b8004c8ded7f47df2afd0c9f083c69d81",
+        "anchor_receipts": [
+          {
+            "request_sha256": "9e4fd4a5ccb89ad09bce5e353a5caaf4b8e1264c03912569ac3fb87d6c95dee4",
+            "response_sha256": "e2115e51440404fe5df6201384236c98d234dd58cdcfa2b3e7007f24b9d7c692"
+          }
+        ],
+        "anchor_session": "2026-07-30",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001093557",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dxcm-0001093557-26-000142",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-07-31",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DXCM"
+      },
+      {
+        "anchor_commitment_sha256": "88e0afd7c460adf7bf632690d4d4e7f80cb1e531d296bc2b96c21b8f668f9827",
+        "anchor_receipts": [
+          {
+            "request_sha256": "4ab4c0230cf5eab39a15fd88e39235c9e91863e47e3f36cab1704ad8a7f32f6e",
+            "response_sha256": "f1b9eeefe9f18b55e83f885f7f5e8b46213701da899a27a8b45c3ab8e215927a"
+          }
+        ],
+        "anchor_session": "2026-08-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000874716",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "idxx-0001104659-26-090033",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-08-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "IDXX"
+      },
+      {
+        "anchor_commitment_sha256": "0e45220cf7e286ddf5e0a7c9310b860ecb98c706c386d7257595ad51bbf7bab1",
+        "anchor_receipts": [
+          {
+            "request_sha256": "f4a6677f08b0c02a55e8a1076d22ffedbf953720ff29c891c6916cfab04e2436",
+            "response_sha256": "b9c3c7c0d5e927c329e58a3c1e63538696e622c9e19ed3c257366a3ca2991083"
+          }
+        ],
+        "anchor_session": "2026-08-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000875320",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "vrtx-0000875320-26-000256",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-08-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "VRTX"
+      },
+      {
+        "anchor_commitment_sha256": "6f23ae97f774569388073d041b2463ca59113242a5267e7ddb1decc5b5c29b7b",
+        "anchor_receipts": [
+          {
+            "request_sha256": "3ec3443237d0a1515c23ac2168d831c4b8b7b5697e7ca107a7b2c6e8cf01d334",
+            "response_sha256": "f6ce8d5241b4631bc2ab8bd6a417d21a5e86cf847b8693929bc056f9b3efcf87"
+          }
+        ],
+        "anchor_session": "2026-08-04",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000318154",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "amgn-0000318154-26-000124",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-08-05",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "AMGN"
+      },
+      {
+        "anchor_commitment_sha256": "4dd281c2866d3629da6cc052565c178502da52cc689cc80cbb018ab53569b261",
+        "anchor_receipts": [
+          {
+            "request_sha256": "4a8be4e46ba6a9eecc12b28e963ad5247be6d50a6525f7a92ffe343ca9087aaf",
+            "response_sha256": "c2916f945b16cda3d59d58935355225a5f3cfcdc006a0ef610e1e7b662342b8f"
+          }
+        ],
+        "anchor_session": "2026-08-05",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001561550",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "ddog-0001628280-26-053829",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-08-06",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DDOG"
+      },
+      {
+        "anchor_commitment_sha256": "e70c00e824997d20e9ee9944ee3e29b6617543fe9ff2d59e3b14ba6e7abadfd5",
+        "anchor_receipts": [
+          {
+            "request_sha256": "238fcd9afcc84d56758909b4dff20c67f40b3a5ca0f0efa4ddd77cd4e8e45d59",
+            "response_sha256": "6d51ce90e7c4a475d044c6e9b43968d92ea6ff51a582090c1f100e1ec9d120eb"
+          }
+        ],
+        "anchor_session": "2026-08-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001535527",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "crwd-0001535527-26-000029",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-08-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "CRWD"
+      },
+      {
+        "anchor_commitment_sha256": "ed215e63ceb2764af37a366dddd3cb263eacbf9a2d03ad63f0e130796cf3b29c",
+        "anchor_receipts": [
+          {
+            "request_sha256": "1c284c9245680292588049cd6404ad28f51b54ec891ae1db5a994da1ce63af1c",
+            "response_sha256": "ce9c5c100f6e330f2b18fce02f34379a07cef809ef05ef9d275292d300c91d1e"
+          }
+        ],
+        "anchor_session": "2026-08-26",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0000935703",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "dltr-0000935703-26-000108",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-08-27",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "DLTR"
+      },
+      {
+        "anchor_commitment_sha256": "d4c960e6b29bb51b6573c1c599d0eaca74a7773f200f5743f3d162e32235f2f2",
+        "anchor_receipts": [
+          {
+            "request_sha256": "7b36e8541b40ed68c8728feec6f377cfede709abcd7a9814d80779f53785e72b",
+            "response_sha256": "a3cdead15b1f0a0364ad72bc91c7a0d98b48bfd8cb30818cf90cbf1f0f4f902e"
+          }
+        ],
+        "anchor_session": "2026-09-01",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001441816",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "mdb-0001628280-26-059794",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-09-02",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "MDB"
+      },
+      {
+        "anchor_commitment_sha256": "71ed0a4296b754f2458cd03301126acb79578a30e2e5de8c382faa105ca25faf",
+        "anchor_receipts": [
+          {
+            "request_sha256": "a9f21d83028d74e09fef74f57346117c4ab7739134b4047a9815d9ee833c016e",
+            "response_sha256": "3d376ae6ddbd7a60e0f5181cc27a24c4f3165eb2a2ba324e2d7de36372720a14"
+          }
+        ],
+        "anchor_session": "2026-09-03",
+        "anchor_status": "verified_raw_anchor",
+        "cik": "0001397187",
+        "clean_window": true,
+        "corporate_action_status": "no_observed_action_in_bridge",
+        "event_id": "lulu-0001397187-26-000126",
+        "intersecting_action_sha256": [],
+        "reaction_session": "2026-09-04",
+        "status": "provider_basis_checks_passed",
+        "subset": "held",
+        "symbol": "LULU"
+      }
+    ],
+    "implementation_sha256_git_lf": {
+      "nre/calendar.py": "dcbed800d2a3c7fa7d4b2a16e6fe5c1b1f022842920752df799a2585c2dbb7ce",
+      "nre/core.py": "8d937295bd54ba29ecc390aa99016de7e5eb473debcfcf6f073b8a4853926fa6",
+      "nre/event_acquire.py": "7993c23f2696002e5b98994778d6bc0e5144f45fca8801687a87ed339c9cd0fc",
+      "nre/m4_metrics.py": "a37fcfdd5fb61e268e63cbaa2976f700f44afb1dc7df1553327a1fe1b43b7237",
+      "nre/m4_models.py": "8562502005cb58394005e15d192401461257b5cf97cc9d3e03d7a7d231a5b931",
+      "nre/m4_protocol.py": "52422e459b0835ad0e55e8b73cd91d868d61891b8e85db2daf4decfd8293d101",
+      "nre/m6_context.py": "da765385a6e04916f2f3387152f894cdfcc5802940230b54562663c3bb5f1bc5",
+      "nre/m6_guidance_price_basis.py": "48fa813c98fe14510d010b991d2aff4a03a83f135dd46bec895bd8a4bff85a38",
+      "nre/m6_guidance_protocol.py": "65f194ba2abc99e19c3b7e35929b80ca625caca6ac00ec195f5a07e5ef35f8d7",
+      "nre/m6_guidance_readiness.py": "074cc7235ea2874b830b33431ea5a5a9af6380e73dd94f6bbe908c4e16f1e94e",
+      "nre/m6_guidance_revision.py": "2f93d30a5f4eb9ef2a0741b8e6d143c022a329d84dd799ea344fa295702fcef1",
+      "nre/m6_guidance_warmup_opening.py": "2a6fc529a4e0ee4da46918cfd75b4eb593452a2cb2e1a268354f1acc95a13073",
+      "nre/m6_historical_opening.py": "43ac55eb77414fdcad5c47a0217c67624bf727bd01476a893081fd47347cbe0f"
+    },
+    "limitations": [
+      "CA inventory is retrospective provider evidence, not a guarantee against late corrections or missing announcements.",
+      "Daily anchor close is the last eligible consolidated SIP price, not an exchange official closing-auction print.",
+      "These checks do not clear exhaustive periodic-report content, reaction closing labels, label maturity, or model feature variation."
+    ],
+    "model_runs": 0,
+    "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+    "reaction_session_bar_requests": 0,
+    "requests": 108,
+    "schema_version": 1,
+    "scope": "guidance_v2_prior_anchor_and_action_basis",
+    "screened": 107,
+    "source_canonical_sha256": {
+      "config/m2-merged-calendar-2024-2026.json": "ce4533e742c905052f4a4f2796032133360161cab46267561ca12dad1d2375a5",
+      "reports/m6-guidance-earlier-evidence-2026-11-19.json": "cfceca4d91c449dea24837b168c5ed429cd572463bd4fa1e5cbbdfe9bef5652d",
+      "reports/m6-guidance-earlier-source-masks-2026-11-19.json": "76070b3195f0663d532264eb27427b21f22bcc110e38ea8e05e76d6be50ee685",
+      "reports/m6-guidance-expanded-evidence-2026-11-17.json": "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5",
+      "reports/m6-guidance-source-masks-2026-11-19.json": "22cbc0a1977f65a52c7ebfd5cbcdd39c8c05fb6b59dcc616b9247c44136c091c",
+      "reports/m6-guidance-warmup-evidence-2026-11-19.json": "562d85fa8215e7cd7c0d88d2ad1481728314db7bd36948c5fff7b2d5bb30e505"
+    }
+  },
+  "closing_outcome_requests": 0,
+  "model_runs": 0,
+  "next_stage": "PERIODIC_SOURCE_REVIEW_AND_HASH_ONLY_LABEL_ACQUISITION_PREPARATION",
+  "limitations": [
+    "Provider evidence is retrospective and subject to missing records or later corrections.",
+    "These checks do not complete periodic-report content review, closing-label acquisition, label maturity, fit feature variation, or the registered scoring attempt."
+  ]
+}
