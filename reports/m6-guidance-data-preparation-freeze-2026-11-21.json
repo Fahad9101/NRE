@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-11-21",
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "registration_commit": "da1eac586463a730a0f9ccefa0645c14708b5668",
+  "scope": "Training official-opening checks plus prior-session raw-anchor and corporate-action metadata checks. No reaction-day closing bars or model fitting.",
+  "warmup_cohort_sha256": "febd387f738615b3a0350b9df91158ef29f4e883999e73eb9aaa98a41bc363b8",
+  "basis_cohort_sha256": "3739c346a7cab2dcdc8f321ae3355f2e514328394f2f410a69b8ee263cf92a7d",
+  "warmup_events": 52,
+  "basis_events": 107,
+  "corporate_action_process_inventory": [
+    "2024-01-01",
+    "2026-11-21"
+  ],
+  "implementation_sha256_git_lf": {
+    "nre/calendar.py": "dcbed800d2a3c7fa7d4b2a16e6fe5c1b1f022842920752df799a2585c2dbb7ce",
+    "nre/core.py": "8d937295bd54ba29ecc390aa99016de7e5eb473debcfcf6f073b8a4853926fa6",
+    "nre/event_acquire.py": "7993c23f2696002e5b98994778d6bc0e5144f45fca8801687a87ed339c9cd0fc",
+    "nre/m4_metrics.py": "a37fcfdd5fb61e268e63cbaa2976f700f44afb1dc7df1553327a1fe1b43b7237",
+    "nre/m4_models.py": "8562502005cb58394005e15d192401461257b5cf97cc9d3e03d7a7d231a5b931",
+    "nre/m4_protocol.py": "52422e459b0835ad0e55e8b73cd91d868d61891b8e85db2daf4decfd8293d101",
+    "nre/m6_context.py": "da765385a6e04916f2f3387152f894cdfcc5802940230b54562663c3bb5f1bc5",
+    "nre/m6_guidance_protocol.py": "65f194ba2abc99e19c3b7e35929b80ca625caca6ac00ec195f5a07e5ef35f8d7",
+    "nre/m6_guidance_readiness.py": "074cc7235ea2874b830b33431ea5a5a9af6380e73dd94f6bbe908c4e16f1e94e",
+    "nre/m6_guidance_revision.py": "2f93d30a5f4eb9ef2a0741b8e6d143c022a329d84dd799ea344fa295702fcef1",
+    "nre/m6_guidance_warmup_opening.py": "2a6fc529a4e0ee4da46918cfd75b4eb593452a2cb2e1a268354f1acc95a13073",
+    "nre/m6_historical_opening.py": "43ac55eb77414fdcad5c47a0217c67624bf727bd01476a893081fd47347cbe0f",
+    "nre/m6_guidance_price_basis.py": "48fa813c98fe14510d010b991d2aff4a03a83f135dd46bec895bd8a4bff85a38",
+    ".github/workflows/m6-guidance-v2-preparation.yml": "0d2d96628c8c3488a386cdc42ac31b076af0749ac5dde74644605c1cedf482fd"
+  },
+  "closing_outcome_requests": 0,
+  "model_runs": 0,
+  "canonical_input_sha256": {
+    "reports/m6-guidance-price-basis-sources-2026-11-21.json": "0c5027c8ab71045ce16682b73eae900c9e5aff302e6a213727f7a3ee51c78617"
+  }
+}

@@ -1,0 +1,3500 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-21",
+  "scope": "Source corroboration for the fixed M6 guidance v2 training and held overnight price intervals; no bars, trades or market outcomes requested.",
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "source_membership_sha256": "d0e1ddf49060c5556c12f1a8966ad9ae0e782097c268906d8dfa3c9dd32dbb35",
+  "source_input_canonical_sha256": {
+    "reports/m6-guidance-warmup-evidence-2026-11-19.json": "562d85fa8215e7cd7c0d88d2ad1481728314db7bd36948c5fff7b2d5bb30e505",
+    "reports/m6-guidance-earlier-evidence-2026-11-19.json": "cfceca4d91c449dea24837b168c5ed429cd572463bd4fa1e5cbbdfe9bef5652d",
+    "reports/m6-guidance-expanded-evidence-2026-11-17.json": "2c9d8b217e91cde36dae59e565a5e12cec326e158433abd7ff09673b5d1a06e5"
+  },
+  "membership": {
+    "warmup": 52,
+    "held": 55,
+    "total": 107,
+    "issuers": 20
+  },
+  "reviewed_action_intersections": 0,
+  "known_forward_splits": [
+    {
+      "action_id": "ORLY-2025-forward-split",
+      "symbol": "ORLY",
+      "type": "forward_stock_split",
+      "ratio_new": 15,
+      "ratio_old": 1,
+      "record_date": "2025-06-02",
+      "distribution_date_after_close": "2025-06-09",
+      "first_split_adjusted_session": "2025-06-10",
+      "primary_sources": [
+        {
+          "url": "https://corporate.oreillyauto.com/wp-content/uploads/2025/07/2025-IRS-Form-8937.pdf",
+          "sha256": "245ba08ebd6dbfb875dbf957dbee9cdd2f26f218a11bc441a299b7009596e9d0",
+          "representation": "original issuer PDF, IRS Form8937",
+          "location": "PartII items14-16"
+        }
+      ],
+      "rationale": "The distribution date is June9 after close; trading on the new share basis begins June10. The change is outside every reviewed ORLY anchor-to-open interval."
+    },
+    {
+      "action_id": "CRWD-2026-forward-split",
+      "symbol": "CRWD",
+      "type": "forward_stock_split",
+      "ratio_new": 4,
+      "ratio_old": 1,
+      "record_date": "2026-06-25",
+      "distribution_date_after_close": "2026-07-01",
+      "first_split_adjusted_session": "2026-07-02",
+      "primary_sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+          "archive_sha256": "a4662761a99a1b2ecef5b2879bbb797d11e9ce4b9cc744f12b75a0a913f05fd8",
+          "representation": "original earnings exhibit within complete retrieved SEC submission",
+          "line_index": 424
+        },
+        {
+          "url": "https://crowdstrike.gcs-web.com/static-files/f774ef12-cf94-48bf-ace2-c7f3dcf8ec97",
+          "representation": "issuer timeline reviewed through web extraction; direct original PDF transport returned403",
+          "transport_sha256": null
+        }
+      ],
+      "rationale": "The issuer timeline identifies July2 as the ex-split session; the original August filing confirms distribution after July1 close. The change is outside every reviewed CRWD anchor-to-open interval."
+    }
+  ],
+  "dividend_declaration_corroboration": {
+    "covered_events": 24,
+    "symbols": [
+      "AMGN",
+      "CTSH",
+      "EA",
+      "INTU",
+      "VRSK"
+    ],
+    "record_dates_are_not_exchange_ex_dates": true
+  },
+  "events": [
+    {
+      "event_id": "csgp-0001193125-24-182891",
+      "sample": "warmup",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "anchor_session": "2024-07-23",
+      "reaction_session": "2024-07-24",
+      "price_interval": {
+        "start_anchor_close": "2024-07-23T20:00:00+00:00",
+        "end_reaction_open": "2024-07-24T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312524182891/d856482d8k.htm",
+        "cover_sha256": "b5fc6c9f6ade71fe38b70b5d006b418b9288a8fa57c89dbc058e3d0fd7ed7914",
+        "symbol": "CSGP",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1057352/000119312524182891/d856482dex991.htm",
+        "archive_sha256": "617f3db9b1e0963ffd017001e84d0159635a60fe4dcbe30083854aa8ae7f3a8d"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-24-000032",
+      "sample": "warmup",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2024-07-24",
+      "reaction_session": "2024-07-25",
+      "price_interval": {
+        "start_anchor_close": "2024-07-24T20:00:00+00:00",
+        "end_reaction_open": "2024-07-25T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000032/orly-20240724x8k.htm",
+        "cover_sha256": "5133a6526d71280f3f830932066085b7b0786ba06b9f37ce2877a922dbe23d7b",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000032/orly-20240724xex99d1.htm",
+        "archive_sha256": "28a8790186b03c9cbb9c0bc3d359ada2f75e9d17649e1227597b0ec9930a8f9a"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-24-000143",
+      "sample": "warmup",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2024-07-25",
+      "reaction_session": "2024-07-26",
+      "price_interval": {
+        "start_anchor_close": "2024-07-25T20:00:00+00:00",
+        "end_reaction_open": "2024-07-26T13:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000143/dxcm-20240725.htm",
+        "cover_sha256": "21703aac8279833a943bfb31f3276ecf24089586adb29fc472b3247fc41079ad",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000143/dxcmq2202499-1_6302024.htm",
+        "archive_sha256": "59235a54270d5075d3df65ad0998ea6ee08cb19dc51f7f8186d432b6c0168e14"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ea-0000712515-24-000027",
+      "sample": "warmup",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "anchor_session": "2024-07-30",
+      "reaction_session": "2024-07-31",
+      "price_interval": {
+        "start_anchor_close": "2024-07-30T20:00:00+00:00",
+        "end_reaction_open": "2024-07-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000027/ea-20240729.htm",
+        "cover_sha256": "197b3e69e8ac3166f70216c449e1a542e0bb0c90ad58ff960336e8c802313999",
+        "symbol": "EA",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000027/earningspressrelease2024_0.htm",
+        "archive_sha256": "f9e324e7ab9db5f26d6edfd3c56aa350ccb7ec990281ae433b78b35381e31dbc"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-08-28",
+          "payable_date_as_stated": "2024-09-18",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000027/earningspressrelease2024_0.htm",
+            "archive_sha256": "f9e324e7ab9db5f26d6edfd3c56aa350ccb7ec990281ae433b78b35381e31dbc",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 18
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrsk-0001437749-24-023984",
+      "sample": "warmup",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "anchor_session": "2024-07-30",
+      "reaction_session": "2024-07-31",
+      "price_interval": {
+        "start_anchor_close": "2024-07-30T20:00:00+00:00",
+        "end_reaction_open": "2024-07-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924023984/vrsk20240612_8k.htm",
+        "cover_sha256": "dd7c4865942c4a21c9c877f061fc431a53c5b4c138ad23f8cfdddc34175a09a4",
+        "symbol": "VRSK",
+        "exchange": "NASDAQ",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924023984/ex_687125.htm",
+        "archive_sha256": "fdaa564ad1baa97286bc97b3810829d53803a9e0249ba6bf457a65cfa554e503"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-09-15",
+          "payable_date_as_stated": "2024-09-30",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924023984/ex_687125.htm",
+            "archive_sha256": "fdaa564ad1baa97286bc97b3810829d53803a9e0249ba6bf457a65cfa554e503",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 256
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ctsh-0001058290-24-000241",
+      "sample": "warmup",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "anchor_session": "2024-07-31",
+      "reaction_session": "2024-08-01",
+      "price_interval": {
+        "start_anchor_close": "2024-07-31T20:00:00+00:00",
+        "end_reaction_open": "2024-08-01T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000241/ctsh-20240731.htm",
+        "cover_sha256": "d2c0bc2844f04eece1327747bb713a24fa1ccaf06be65467a8488e8bedf0f0c8",
+        "symbol": "CTSH",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000241/exhibit9916302024.htm",
+        "archive_sha256": "d43b2af7884bf49fc32ab371855e661548033b4507a18be21ab95340773b351a"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-08-20",
+          "payable_date_as_stated": "2024-08-28",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000241/exhibit9916302024.htm",
+            "archive_sha256": "d43b2af7884bf49fc32ab371855e661548033b4507a18be21ab95340773b351a",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 30
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-24-086074",
+      "sample": "warmup",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2024-08-05",
+      "reaction_session": "2024-08-06",
+      "price_interval": {
+        "start_anchor_close": "2024-08-05T20:00:00+00:00",
+        "end_reaction_open": "2024-08-06T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924086074/tm2420913d1_8k.htm",
+        "cover_sha256": "834ddd962276bd0f13a2e2c96cc6a16039ac0808ad4bb302946cb8906c989802",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924086074/tm2420913d1_ex99-1.htm",
+        "archive_sha256": "0e3997f8536236b4c22147825de16ae99aa2ded46e303b18322f9866fab81e82"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ddog-0001561550-24-000109",
+      "sample": "warmup",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "anchor_session": "2024-08-07",
+      "reaction_session": "2024-08-08",
+      "price_interval": {
+        "start_anchor_close": "2024-08-07T20:00:00+00:00",
+        "end_reaction_open": "2024-08-08T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000109/ddog-20240808.htm",
+        "cover_sha256": "efedbb9cea73ac14c7a65b05aac7865e55b8a018651811e22823e80ad83eda6b",
+        "symbol": "DDOG",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000109/ex-991x20240630x8k.htm",
+        "archive_sha256": "5d562e794eb551b9509b38f28ff15585674683c6a9f2e9829dd920d89a92bacb"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "snps-0001193125-24-204450",
+      "sample": "warmup",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "anchor_session": "2024-08-21",
+      "reaction_session": "2024-08-22",
+      "price_interval": {
+        "start_anchor_close": "2024-08-21T20:00:00+00:00",
+        "end_reaction_open": "2024-08-22T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524204450/d878807d8k.htm",
+        "cover_sha256": "4de48e7be934e3c41c917a691003d2ed12023f656a9954d9d5842b6c5cfd2bc8",
+        "symbol": "SNPS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312524204450/d878807dex991.htm",
+        "archive_sha256": "15077261ef49401aac8ab2f96c38978f071f32bacbc2190dbcec0fd40995122f"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "crwd-0001535527-24-000017",
+      "sample": "warmup",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "anchor_session": "2024-08-28",
+      "reaction_session": "2024-08-29",
+      "price_interval": {
+        "start_anchor_close": "2024-08-28T20:00:00+00:00",
+        "end_reaction_open": "2024-08-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828.htm",
+        "cover_sha256": "4dcf14249839f7747d5d62fd3cd6cd2364af5a9211af07d7087565866f7402bb",
+        "symbol": "CRWD",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+        "archive_sha256": "87c1fb35dbbd5bd8e28d0045f17747f8b8204da711901db449c17c1bf5f065c0"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "CRWD-2026-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "lulu-0001397187-24-000033",
+      "sample": "warmup",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "anchor_session": "2024-08-29",
+      "reaction_session": "2024-08-30",
+      "price_interval": {
+        "start_anchor_close": "2024-08-29T20:00:00+00:00",
+        "end_reaction_open": "2024-08-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240829.htm",
+        "cover_sha256": "486d61346e8927bf5e059dd903307824d39f76ef0cba9d9eb29f42842067a5a0",
+        "symbol": "LULU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+        "archive_sha256": "8e9e8086aaaf1312abda6320b0b7665e60a39b79648c1665462d729229e9ecee"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "mdb-0001441816-24-000185",
+      "sample": "warmup",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "anchor_session": "2024-08-29",
+      "reaction_session": "2024-08-30",
+      "price_interval": {
+        "start_anchor_close": "2024-08-29T20:00:00+00:00",
+        "end_reaction_open": "2024-08-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-20240829.htm",
+        "cover_sha256": "0787fe9f102bb99dd533eed4a8cd669ffbdfc0d9eb8868125f71aa0dd47fea4b",
+        "symbol": "MDB",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+        "archive_sha256": "9f9ccf0f11edf9d0822d2cf9969c82e95d0ee13bcaa838954806523f435a47d4"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-24-000039",
+      "sample": "warmup",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2024-09-03",
+      "reaction_session": "2024-09-04",
+      "price_interval": {
+        "start_anchor_close": "2024-09-03T20:00:00+00:00",
+        "end_reaction_open": "2024-09-04T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/dltr-20240904.htm",
+        "cover_sha256": "244fc8a1081f36952e2af05ae6b09b7ccef7db72c94f9d681b6b7380f56478c3",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm",
+        "archive_sha256": "d2914e6578a26da3bc0057ee7ee13339ecd7b47ba823496e57d3212ff5be9098"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "csgp-0001057352-24-000122",
+      "sample": "warmup",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "anchor_session": "2024-10-22",
+      "reaction_session": "2024-10-23",
+      "price_interval": {
+        "start_anchor_close": "2024-10-22T20:00:00+00:00",
+        "end_reaction_open": "2024-10-23T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735224000122/csgp-20241022.htm",
+        "cover_sha256": "30fffa7f5f90ed8cff132a3716463c4834b4ecebc6cd3e9c1e74a5daec792ca1",
+        "symbol": "CSGP",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735224000122/q32024earningspressrelease.htm",
+        "archive_sha256": "493ed1dff3283c598e811f65fc1dc59782d303b9d09b9b13f7a869f2ca3b20ce"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-24-000040",
+      "sample": "warmup",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2024-10-23",
+      "reaction_session": "2024-10-24",
+      "price_interval": {
+        "start_anchor_close": "2024-10-23T20:00:00+00:00",
+        "end_reaction_open": "2024-10-24T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000040/orly-20241023x8k.htm",
+        "cover_sha256": "b60cefd9a1aa9243cddc471b7f8a2ef3a6acc4f2859aca1da89cfa31088f2821",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817324000040/orly-20241023xex99d1.htm",
+        "archive_sha256": "e98919428fcab4d92de552c7f3a670a0409bb476b7f43bc77950cd78ba371e16"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-24-000179",
+      "sample": "warmup",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2024-10-24",
+      "reaction_session": "2024-10-25",
+      "price_interval": {
+        "start_anchor_close": "2024-10-24T20:00:00+00:00",
+        "end_reaction_open": "2024-10-25T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000179/dxcm-20241024.htm",
+        "cover_sha256": "92751ac7a0018c7573ca101d179d49f7037db8c3209668f4a0fba3aa7487d6f2",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355724000179/dxcmq3202499-1_9302024.htm",
+        "archive_sha256": "879adfc444146378d1cfca515195e3eb9fd7561b815638a5a1bf0aee7b5dd1e1"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "cdns-0000813672-24-000188",
+      "sample": "warmup",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "anchor_session": "2024-10-28",
+      "reaction_session": "2024-10-29",
+      "price_interval": {
+        "start_anchor_close": "2024-10-28T20:00:00+00:00",
+        "end_reaction_open": "2024-10-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000188/cdns-20241028.htm",
+        "cover_sha256": "99ede534bb3f271a329635dbe45f9085925a8a055e45c2bd4a1ded8496e3777b",
+        "symbol": "CDNS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367224000188/cdns10282024ex9901.htm",
+        "archive_sha256": "c0b761eb9e3b6da33e4c56ce3c7a81b049e025242cb8683010928ab0d42c2fe3"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ea-0000712515-24-000045",
+      "sample": "warmup",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "anchor_session": "2024-10-29",
+      "reaction_session": "2024-10-30",
+      "price_interval": {
+        "start_anchor_close": "2024-10-29T20:00:00+00:00",
+        "end_reaction_open": "2024-10-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/ea-20241028.htm",
+        "cover_sha256": "d2f3203515232ce8ff7122ab8e69fe9cb229599bd5c0e91af56b238e746de1d8",
+        "symbol": "EA",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/earningspressrelease2024_1.htm",
+        "archive_sha256": "ef1893098ed75859dfe67e4b099411fcd349999c1c59bf987671913749898f34"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-11-27",
+          "payable_date_as_stated": "2024-12-18",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251524000045/earningspressrelease2024_1.htm",
+            "archive_sha256": "ef1893098ed75859dfe67e4b099411fcd349999c1c59bf987671913749898f34",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 19
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrsk-0001437749-24-032535",
+      "sample": "warmup",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "anchor_session": "2024-10-29",
+      "reaction_session": "2024-10-30",
+      "price_interval": {
+        "start_anchor_close": "2024-10-29T20:00:00+00:00",
+        "end_reaction_open": "2024-10-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924032535/vrsk20240820_8k.htm",
+        "cover_sha256": "b204f308c9bc9e1ecc66fe10d3817c51aa50a1566c537add9d85404a53d0fb89",
+        "symbol": "VRSK",
+        "exchange": "NASDAQ",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924032535/ex_716872.htm",
+        "archive_sha256": "f592fa27095ab9cb677f4730ff506d8631c956cbc5eb8d16a6c10f58dca1d5a2"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-12-13",
+          "payable_date_as_stated": "2024-12-31",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774924032535/ex_716872.htm",
+            "archive_sha256": "f592fa27095ab9cb677f4730ff506d8631c956cbc5eb8d16a6c10f58dca1d5a2",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 256
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "amgn-0000318154-24-000042",
+      "sample": "warmup",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "anchor_session": "2024-10-30",
+      "reaction_session": "2024-10-31",
+      "price_interval": {
+        "start_anchor_close": "2024-10-30T20:00:00+00:00",
+        "end_reaction_open": "2024-10-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000042/amgn-20241030.htm",
+        "cover_sha256": "6d1c60b119e66224767b3425ce8fe61e28bc1ba3e587fae736104648df017f17",
+        "symbol": "AMGN",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815424000042/amgn-20240930earningsrelea.htm",
+        "archive_sha256": "71692179328230a3c209e6279a1e1d597adfc28dd0e427240810d08e9f1bf086"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-11-18",
+          "payable_date_as_stated": "2024-12-09",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.amgen.com/newsroom/press-releases/2024/10/amgen-announces-2024-fourth-quarter-dividend",
+            "sha256": "eaf275134c21dd1e4046e0ed89fe37dfd4b1f7ba752cde49c87ca6a72c6b94e7",
+            "representation": "original issuer HTML",
+            "line_index": 205
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ctsh-0001058290-24-000325",
+      "sample": "warmup",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "anchor_session": "2024-10-30",
+      "reaction_session": "2024-10-31",
+      "price_interval": {
+        "start_anchor_close": "2024-10-30T20:00:00+00:00",
+        "end_reaction_open": "2024-10-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000325/ctsh-20241030.htm",
+        "cover_sha256": "d22a83dbccb592f66db681301c2ca7f7a2e35a34ce1ed7583fe684124637dcae",
+        "symbol": "CTSH",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000325/exhibit9919302024.htm",
+        "archive_sha256": "0434c477c3216195bbcd513670d26ede5c83b0b122ad1a6872b32ba54c0de2bf"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2024-11-19",
+          "payable_date_as_stated": "2024-11-27",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000325/exhibit9919302024.htm",
+            "archive_sha256": "0434c477c3216195bbcd513670d26ede5c83b0b122ad1a6872b32ba54c0de2bf",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 32
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-24-112826",
+      "sample": "warmup",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2024-10-30",
+      "reaction_session": "2024-10-31",
+      "price_interval": {
+        "start_anchor_close": "2024-10-30T20:00:00+00:00",
+        "end_reaction_open": "2024-10-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924112826/tm2427157d1_8k.htm",
+        "cover_sha256": "e3e6643f4627b1895910e157bf22b41ee6096507430f6de9817c31474328a3e5",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465924112826/tm2427157d1_ex99-1.htm",
+        "archive_sha256": "f70108beef3761a36755c6b74a54b2efa9e1c1f872895f15cd24bd3809a7e37c"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrtx-0000875320-24-000221",
+      "sample": "warmup",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "anchor_session": "2024-11-04",
+      "reaction_session": "2024-11-05",
+      "price_interval": {
+        "start_anchor_close": "2024-11-04T21:00:00+00:00",
+        "end_reaction_open": "2024-11-05T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000221/vrtx-20241104.htm",
+        "cover_sha256": "d8c08b1393129f8019a75c7c99e2b2692db478244e305c32029c44d71e502be4",
+        "symbol": "VRTX",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532024000221/ex-991_q32024.htm",
+        "archive_sha256": "6048dc5bbc22e912ead06b3a502e95ea792461818db0f0cd29282334dec92930"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ddog-0001561550-24-000171",
+      "sample": "warmup",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "anchor_session": "2024-11-06",
+      "reaction_session": "2024-11-07",
+      "price_interval": {
+        "start_anchor_close": "2024-11-06T21:00:00+00:00",
+        "end_reaction_open": "2024-11-07T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000171/ddog-20241107.htm",
+        "cover_sha256": "459dda5e3e93c6275d9309d0b716b1a9bf3a8cb21661d5d03315059e17c15e6e",
+        "symbol": "DDOG",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000171/ex-991x20240930x8k.htm",
+        "archive_sha256": "955648cfc73e7f3a1f9ddc557f893cc9280e1f53f5f6ac028369d96013411fd7"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ftnt-0001262039-24-000040",
+      "sample": "warmup",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "anchor_session": "2024-11-07",
+      "reaction_session": "2024-11-08",
+      "price_interval": {
+        "start_anchor_close": "2024-11-07T21:00:00+00:00",
+        "end_reaction_open": "2024-11-08T14:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000040/ftnt-20241107.htm",
+        "cover_sha256": "25e8c702c21c03799b50e0d51af3a3cff378c241a2e172a82011e6960b7ff883",
+        "symbol": "FTNT",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203924000040/ftntq3-2024ex991.htm",
+        "archive_sha256": "e47a0bb0d77996ffa830569100cd0b69179864159c13430c7ebb6ce81d4cd9c3"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "intu-0000896878-24-000051",
+      "sample": "warmup",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "anchor_session": "2024-11-21",
+      "reaction_session": "2024-11-22",
+      "price_interval": {
+        "start_anchor_close": "2024-11-21T21:00:00+00:00",
+        "end_reaction_open": "2024-11-22T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/intu-20241121.htm",
+        "cover_sha256": "20ab6ec6d13c5b3788a4ba8873766ddc6861cdc0f96363837183082fffd17a3e",
+        "symbol": "INTU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000051/fy25q1earningspressrelease.htm",
+        "archive_sha256": "b73663a7ec1b0ffaaef12a3a12612d0e12af34ed013f42f1d7c8155c5ab4e97b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-01-09",
+          "payable_date_as_stated": "2025-01-17",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://edgar-mirror.sec-api.io/896878/000089687824000051/intu-20241121.htm",
+            "sha256": "c1298963950781ccb4b7bbd05454263d65c511dccd6267d89beb19221904743c",
+            "representation": "original SEC cover HTML retrieved through public mirror",
+            "line_index": 35
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "adsk-0000769397-24-000175",
+      "sample": "warmup",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "anchor_session": "2024-11-26",
+      "reaction_session": "2024-11-27",
+      "price_interval": {
+        "start_anchor_close": "2024-11-26T21:00:00+00:00",
+        "end_reaction_open": "2024-11-27T14:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000175/adsk-20241125.htm",
+        "cover_sha256": "2d4853a183d5337a62c48ef11621a394eea1d0075a3c05580ea7a09824b50315",
+        "symbol": "ADSK",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939724000175/q325pressrelease.htm",
+        "archive_sha256": "4ffa7ad12a0052dfd7bfabdb1ea7f3c581a8b109a4e95114a94ac97c6c732e64"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "zs-0001713683-24-000143",
+      "sample": "warmup",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "anchor_session": "2024-12-02",
+      "reaction_session": "2024-12-03",
+      "price_interval": {
+        "start_anchor_close": "2024-12-02T21:00:00+00:00",
+        "end_reaction_open": "2024-12-03T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-20241202.htm",
+        "cover_sha256": "f57e4a741c9fbd3cdefe74965bbfb79b15c19331f4d199fe0b4f76b6637fe125",
+        "symbol": "ZS",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+        "archive_sha256": "b86f2af69fae8eb200d173cd2089671172d227a52cb70d222072af642da97e1f"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-24-000057",
+      "sample": "warmup",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2024-12-03",
+      "reaction_session": "2024-12-04",
+      "price_interval": {
+        "start_anchor_close": "2024-12-03T21:00:00+00:00",
+        "end_reaction_open": "2024-12-04T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/dltr-20241204.htm",
+        "cover_sha256": "0434e897990d633477cee1393696f63275570d13dfb3b173be3468be296b63cc",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm",
+        "archive_sha256": "0a27c107b50d0dfca004c2611ea5751e7a5b0b4bea3caa5180b3737da9aaf694"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "mdb-0001441816-24-000257",
+      "sample": "warmup",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "anchor_session": "2024-12-09",
+      "reaction_session": "2024-12-10",
+      "price_interval": {
+        "start_anchor_close": "2024-12-09T21:00:00+00:00",
+        "end_reaction_open": "2024-12-10T14:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-20241209.htm",
+        "cover_sha256": "571d495e3b05da426ea340d0a284bc9b63a512cc7faffb6bce38a810d2e68a23",
+        "symbol": "MDB",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+        "archive_sha256": "120dc6303495565e92ac08304e85d363a530de8f6f499c3624142cfcc930c290"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ea-0000712515-25-000010",
+      "sample": "warmup",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "anchor_session": "2025-02-04",
+      "reaction_session": "2025-02-05",
+      "price_interval": {
+        "start_anchor_close": "2025-02-04T21:00:00+00:00",
+        "end_reaction_open": "2025-02-05T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/ea-20250131.htm",
+        "cover_sha256": "7e15485b51bd22af12ef208efdc8840197982ed1d6cdc0e7c8ada608e8f92d0f",
+        "symbol": "EA",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/earningspressrelease2025_0.htm",
+        "archive_sha256": "1fe1f87f8593278e561199cf18da80b631011102f8ce90db503b827beca283ad"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-02-26",
+          "payable_date_as_stated": "2025-03-19",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000010/earningspressrelease2025_0.htm",
+            "archive_sha256": "1fe1f87f8593278e561199cf18da80b631011102f8ce90db503b827beca283ad",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 21
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000029",
+      "sample": "warmup",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2025-02-13",
+      "reaction_session": "2025-02-14",
+      "price_interval": {
+        "start_anchor_close": "2025-02-13T21:00:00+00:00",
+        "end_reaction_open": "2025-02-14T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm-20250213.htm",
+        "cover_sha256": "72c76ce1143315931a9267fc0df4caac24ebca449896d1020c1708f2b97c8ae9",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000029/dxcm12312024-exhibit991.htm",
+        "archive_sha256": "d3b56996f9c88ce49aa5ef81e1a489a730ba84ba2d157f38f401289343017208"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "intu-0000896878-25-000013",
+      "sample": "warmup",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "anchor_session": "2025-02-25",
+      "reaction_session": "2025-02-26",
+      "price_interval": {
+        "start_anchor_close": "2025-02-25T21:00:00+00:00",
+        "end_reaction_open": "2025-02-26T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/intu-20250225.htm",
+        "cover_sha256": "dc9087e83b80759d080503ee9cdf2e287f0fd14c135c5703d7e3cc197aac4ef9",
+        "symbol": "INTU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000013/fy25q2earningspressrelease.htm",
+        "archive_sha256": "84c91fa7315a44762718ea416fd22d0c34f9091ae050139693dc4c76dbe332d2"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-04-10",
+          "payable_date_as_stated": "2025-04-18",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://edgar-mirror.sec-api.io/896878/000089687825000013/intu-20250225.htm",
+            "sha256": "dc9087e83b80759d080503ee9cdf2e287f0fd14c135c5703d7e3cc197aac4ef9",
+            "representation": "original SEC cover HTML retrieved through public mirror",
+            "line_index": 35
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "snps-0001193125-25-036798",
+      "sample": "warmup",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "anchor_session": "2025-02-26",
+      "reaction_session": "2025-02-27",
+      "price_interval": {
+        "start_anchor_close": "2025-02-26T21:00:00+00:00",
+        "end_reaction_open": "2025-02-27T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264d8k.htm",
+        "cover_sha256": "7355394dfdc9d10245b2fda48631fd0f6a89cc6b2250bccc3b44bd41817dbf3b",
+        "symbol": "SNPS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525036798/d921264dex991.htm",
+        "archive_sha256": "54442117097614ef9476bbc90721d78de3de9847eced528d386b498e253a1f99"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "zs-0001713683-25-000025",
+      "sample": "warmup",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "anchor_session": "2025-03-05",
+      "reaction_session": "2025-03-06",
+      "price_interval": {
+        "start_anchor_close": "2025-03-05T21:00:00+00:00",
+        "end_reaction_open": "2025-03-06T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-20250305.htm",
+        "cover_sha256": "0b221e42755332419ceee6cf29274f46223d3cc2865dadef82f9df678f4a7457",
+        "symbol": "ZS",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+        "archive_sha256": "c53b8da7a0592c2dabad316d0e3ce66e976c40f33d3d46c5af65b86622fe3bb2"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-25-000026",
+      "sample": "warmup",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2025-04-23",
+      "reaction_session": "2025-04-24",
+      "price_interval": {
+        "start_anchor_close": "2025-04-23T20:00:00+00:00",
+        "end_reaction_open": "2025-04-24T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423x8k.htm",
+        "cover_sha256": "1390bca9414a58d9bca3be177a3a3308ea92eef0bfe3f879e873c6b2f26383b9",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000026/orly-20250423xex99d1.htm",
+        "archive_sha256": "b04b6d25e10ea1c67abefcf53657ef74795c19b7ecb5c54567b294e8b6f18eb1"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "cdns-0000813672-25-000046",
+      "sample": "warmup",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "anchor_session": "2025-04-28",
+      "reaction_session": "2025-04-29",
+      "price_interval": {
+        "start_anchor_close": "2025-04-28T20:00:00+00:00",
+        "end_reaction_open": "2025-04-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns-20250428.htm",
+        "cover_sha256": "2224a61e4e72d53628b675e3ba98a54a8e40925eed77cc0e22f8ce01b298dbe5",
+        "symbol": "CDNS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000046/cdns4282025ex9901.htm",
+        "archive_sha256": "54a0ef9782e2c98f1735e8b2bf724ee82153add3c2cf80045d42efe4be1c814a"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000124",
+      "sample": "warmup",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "anchor_session": "2025-04-30",
+      "reaction_session": "2025-05-01",
+      "price_interval": {
+        "start_anchor_close": "2025-04-30T20:00:00+00:00",
+        "end_reaction_open": "2025-05-01T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/ctsh-20250430.htm",
+        "cover_sha256": "fd1d3d84128d376aad65f9e4407dd50b4b3797c726facc6d0ce5922767e0805c",
+        "symbol": "CTSH",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/exhibit9933312025.htm",
+        "archive_sha256": "2b0d9ec5a65712fd44bb308391f09269d4f7310d02b7c5d2d9f8f29886da82f0"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-05-19",
+          "payable_date_as_stated": "2025-05-28",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000124/exhibit9913312025.htm",
+            "archive_sha256": "2b0d9ec5a65712fd44bb308391f09269d4f7310d02b7c5d2d9f8f29886da82f0",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 34
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-25-042955",
+      "sample": "warmup",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2025-04-30",
+      "reaction_session": "2025-05-01",
+      "price_interval": {
+        "start_anchor_close": "2025-04-30T20:00:00+00:00",
+        "end_reaction_open": "2025-05-01T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_8k.htm",
+        "cover_sha256": "8ea433efaef6b5941e05b4aefb26608e55719c638a0cb45af7a21f9b4924e23b",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925042955/tm2513742d1_ex99-1.htm",
+        "archive_sha256": "20960f04860bae90364b1ba43fe479549f471120f81463118c26a4635a0ecf6f"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "amgn-0000318154-25-000018",
+      "sample": "warmup",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "anchor_session": "2025-05-01",
+      "reaction_session": "2025-05-02",
+      "price_interval": {
+        "start_anchor_close": "2025-05-01T20:00:00+00:00",
+        "end_reaction_open": "2025-05-02T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250501.htm",
+        "cover_sha256": "6c9c30bba0256f3a84242d5ee87f1a7de8707484167e4bd56f82c923617dcfa1",
+        "symbol": "AMGN",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000018/amgn-20250331earningsrelea.htm",
+        "archive_sha256": "eee0a2203f03debf15fb0c9cb9ec899f6ea8b3ead63cb3c892870375074d4169"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-05-16",
+          "payable_date_as_stated": "2025-06-06",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.amgen.com/newsroom/press-releases/2025/03/amgen-announces-2025-second-quarter-dividend",
+            "sha256": "c9a36df19383f89fc6fb28fe729ac4e1ead6961d5b0d1b047b7dd7c87f008c27",
+            "representation": "original issuer HTML",
+            "line_index": 205
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000111",
+      "sample": "warmup",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2025-05-01",
+      "reaction_session": "2025-05-02",
+      "price_interval": {
+        "start_anchor_close": "2025-05-01T20:00:00+00:00",
+        "end_reaction_open": "2025-05-02T13:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm-20250501.htm",
+        "cover_sha256": "502522a0e19f691c018b4db28dd2c2a085bf918a40c1e2ac4843b0b328f37790",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000111/dxcm03312025-exhibit991.htm",
+        "archive_sha256": "3733b3be7c1ac868ad4a9e6c2aa41935cd92611499f36c341b44bf577e820bbd"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000171",
+      "sample": "warmup",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "anchor_session": "2025-05-05",
+      "reaction_session": "2025-05-06",
+      "price_interval": {
+        "start_anchor_close": "2025-05-05T20:00:00+00:00",
+        "end_reaction_open": "2025-05-06T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/vrtx-20250505.htm",
+        "cover_sha256": "b84465c3669349fc6b6a78c0ea4029c8fa8f67a6da94b41cb5ecd01bc148186c",
+        "symbol": "VRTX",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000171/ex-991_q12025.htm",
+        "archive_sha256": "d97d57e06aab63e20cee81e271010b7937d893c4cf758e596baeeca27b88f751"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrsk-0001437749-25-014906",
+      "sample": "warmup",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "anchor_session": "2025-05-06",
+      "reaction_session": "2025-05-07",
+      "price_interval": {
+        "start_anchor_close": "2025-05-06T20:00:00+00:00",
+        "end_reaction_open": "2025-05-07T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/vrsk20250125_8k.htm",
+        "cover_sha256": "5e16f9091cfabe728be3643a2497a41982540b03ee52bfb9f1131db5c245b2c2",
+        "symbol": "VRSK",
+        "exchange": "NASDAQ",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/ex_770468.htm",
+        "archive_sha256": "604b493a142d4d9917b2d0ffeea847625f92a8499227f02200eeedbf426abdfc"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-06-13",
+          "payable_date_as_stated": "2025-06-30",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774925014906/ex_770468.htm",
+            "archive_sha256": "604b493a142d4d9917b2d0ffeea847625f92a8499227f02200eeedbf426abdfc",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 193
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000014",
+      "sample": "warmup",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "anchor_session": "2025-05-07",
+      "reaction_session": "2025-05-08",
+      "price_interval": {
+        "start_anchor_close": "2025-05-07T20:00:00+00:00",
+        "end_reaction_open": "2025-05-08T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftnt-20250507.htm",
+        "cover_sha256": "e919bd749de20bacc0159d53c34ce627ddb40996b939e37bad926d7da8e90278",
+        "symbol": "FTNT",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000014/ftntq1-2025ex991.htm",
+        "archive_sha256": "590963306f5fa49236a50a19847306e27063ce33955d30e983168eccd8dc072d"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "adsk-0000769397-25-000067",
+      "sample": "warmup",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "anchor_session": "2025-05-22",
+      "reaction_session": "2025-05-23",
+      "price_interval": {
+        "start_anchor_close": "2025-05-22T20:00:00+00:00",
+        "end_reaction_open": "2025-05-23T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/adsk-20250522.htm",
+        "cover_sha256": "367feeea45ff6fdd3fdd83a9b8231c1e417df20df2072457a481e88baa45199c",
+        "symbol": "ADSK",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000067/q126pressrelease.htm",
+        "archive_sha256": "bee3e3603ab8c34560fb74a49446fbafc9e51efd57270c560fcc580abfb4c83b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "intu-0000896878-25-000020",
+      "sample": "warmup",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "anchor_session": "2025-05-22",
+      "reaction_session": "2025-05-23",
+      "price_interval": {
+        "start_anchor_close": "2025-05-22T20:00:00+00:00",
+        "end_reaction_open": "2025-05-23T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/intu-20250522.htm",
+        "cover_sha256": "303063191e459945a3f42aac95a5fab6b3db54bcef1dbee2c90005930eeb6553",
+        "symbol": "INTU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000020/fy25q3earningspressrelease.htm",
+        "archive_sha256": "4390d96cc6aa3fcdd7548551b8d4192300257a418fa7ec3f382f033045ffd521"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-07-10",
+          "payable_date_as_stated": "2025-07-18",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://edgar-mirror.sec-api.io/896878/000089687825000020/intu-20250522.htm",
+            "sha256": "303063191e459945a3f42aac95a5fab6b3db54bcef1dbee2c90005930eeb6553",
+            "representation": "original SEC cover HTML retrieved through public mirror",
+            "line_index": 35
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "snps-0001193125-25-129525",
+      "sample": "warmup",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "anchor_session": "2025-05-28",
+      "reaction_session": "2025-05-29",
+      "price_interval": {
+        "start_anchor_close": "2025-05-28T20:00:00+00:00",
+        "end_reaction_open": "2025-05-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632d8k.htm",
+        "cover_sha256": "a7968edf5b05ad7cc5c0467ce655aea6270f1c7198ff2bef504b76131942ceb3",
+        "symbol": "SNPS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525129525/d815632dex991.htm",
+        "archive_sha256": "cf83765afd171aa3aa73f7e15ed069393dacf2b254408ea9d0cfe44d6c65e1cb"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "zs-0001713683-25-000078",
+      "sample": "warmup",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "anchor_session": "2025-05-29",
+      "reaction_session": "2025-05-30",
+      "price_interval": {
+        "start_anchor_close": "2025-05-29T20:00:00+00:00",
+        "end_reaction_open": "2025-05-30T13:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm",
+        "cover_sha256": "13b407b8419498da899645aa3033dc599276a93f9bcf22c967edb9f5ba54922c",
+        "symbol": "ZS",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+        "archive_sha256": "8b8988061d8f27893728f48d909f556857ebdca17816a27a98f78111357ea64d"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "crwd-0001535527-25-000017",
+      "sample": "warmup",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "anchor_session": "2025-06-03",
+      "reaction_session": "2025-06-04",
+      "price_interval": {
+        "start_anchor_close": "2025-06-03T20:00:00+00:00",
+        "end_reaction_open": "2025-06-04T13:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm",
+        "cover_sha256": "2fd5e308cf1c9aaf176d803a366722e4b4bcf9cbbf19feb67e3ec06a9b8c8ea3",
+        "symbol": "CRWD",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+        "archive_sha256": "f73c5aa5eb7488d3c740d4670af7c6cf47f4569caa6347c2248fe1a1b3e160bb"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "CRWD-2026-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-25-000024",
+      "sample": "warmup",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2025-06-03",
+      "reaction_session": "2025-06-04",
+      "price_interval": {
+        "start_anchor_close": "2025-06-03T20:00:00+00:00",
+        "end_reaction_open": "2025-06-04T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/dltr-20250604.htm",
+        "cover_sha256": "20d6d85d7feb3193d81dac29606961363f2f56553cd7aad7ad1926d23332fcec",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/ex991q1-25earningspressrel.htm",
+        "archive_sha256": "7b88219f0f9bf6e6e132ec494a30156efedc5e631d641388c9d8e9b61c5d65b3"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "mdb-0001441816-25-000116",
+      "sample": "warmup",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "anchor_session": "2025-06-04",
+      "reaction_session": "2025-06-05",
+      "price_interval": {
+        "start_anchor_close": "2025-06-04T20:00:00+00:00",
+        "end_reaction_open": "2025-06-05T13:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm",
+        "cover_sha256": "1aeeedb0f563528ed89d5bd56e4cd43c04ab35ae7535463fcc26d469e6a36716",
+        "symbol": "MDB",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+        "archive_sha256": "388d85a10aa9ad6175916cd857080167e78008efbc61313fff9918c95840343c"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "lulu-0001397187-25-000026",
+      "sample": "warmup",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "anchor_session": "2025-06-05",
+      "reaction_session": "2025-06-06",
+      "price_interval": {
+        "start_anchor_close": "2025-06-05T20:00:00+00:00",
+        "end_reaction_open": "2025-06-06T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm",
+        "cover_sha256": "3736fc9da609c9c0b28183c70b26f6f5f441f15d713998b2d2b00ecbf48824a7",
+        "symbol": "LULU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+        "archive_sha256": "db8287b02200c54a8bd80b58f36d19f37f99b6f35efbde5804632235122bedf6"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "csgp-0001057352-25-000095",
+      "sample": "held",
+      "symbol": "CSGP",
+      "cik": "0001057352",
+      "anchor_session": "2025-07-22",
+      "reaction_session": "2025-07-23",
+      "price_interval": {
+        "start_anchor_close": "2025-07-22T20:00:00+00:00",
+        "end_reaction_open": "2025-07-23T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000095/csgp-20250722.htm",
+        "cover_sha256": "7935b255d237c5daa3b82bf331da1f65d73d7fb2958eae29e4c161b0c78ffc07",
+        "symbol": "CSGP",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1057352/000105735225000095/q22025earningspressrelease.htm",
+        "archive_sha256": "0c6a64e8f081dd37da3134d2c22a6d859a39496619a09dfdfb3e076c5e7a1cf9"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-25-000046",
+      "sample": "held",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2025-07-23",
+      "reaction_session": "2025-07-24",
+      "price_interval": {
+        "start_anchor_close": "2025-07-23T20:00:00+00:00",
+        "end_reaction_open": "2025-07-24T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000046/orly-20250723x8k.htm",
+        "cover_sha256": "17579beb3a7f9c187f7db93c19cf04568dce56687e104087421c38d863b7d3db",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000046/orly-20250723xex99d1.htm",
+        "archive_sha256": "d1ecc1d6f7ba17e674f4a08964f79508d14f23df03ff1031e3fb77c5c54af1d7"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ea-0000712515-25-000027",
+      "sample": "held",
+      "symbol": "EA",
+      "cik": "0000712515",
+      "anchor_session": "2025-07-29",
+      "reaction_session": "2025-07-30",
+      "price_interval": {
+        "start_anchor_close": "2025-07-29T20:00:00+00:00",
+        "end_reaction_open": "2025-07-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000027/ea-20250725.htm",
+        "cover_sha256": "c3e76ad4694af818d0b3f14f6d60eb3c7e3fe4720145cf425c5e14632ba2579a",
+        "symbol": "EA",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000027/earningspressrelease2025_0.htm",
+        "archive_sha256": "0c656174ea6b9fe276f7646787951efcca4505ed845273388d47ba31ed9a9df4"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-08-27",
+          "payable_date_as_stated": "2025-09-17",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/712515/000071251525000027/earningspressrelease2025_0.htm",
+            "archive_sha256": "0c656174ea6b9fe276f7646787951efcca4505ed845273388d47ba31ed9a9df4",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 18
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000266",
+      "sample": "held",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "anchor_session": "2025-07-30",
+      "reaction_session": "2025-07-31",
+      "price_interval": {
+        "start_anchor_close": "2025-07-30T20:00:00+00:00",
+        "end_reaction_open": "2025-07-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000266/ctsh-20250730.htm",
+        "cover_sha256": "b724244b7551179cc1d0e972e47c3e5526909862b0d9152c70a9642d41ea5899",
+        "symbol": "CTSH",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000266/exhibit9936302025.htm",
+        "archive_sha256": "f464a3e08620d61af21eb661ccf9ddfeffaee5e1ac047a7687383f1139e1f2db"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-08-18",
+          "payable_date_as_stated": "2025-08-26",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000266/exhibit9916302025.htm",
+            "archive_sha256": "f464a3e08620d61af21eb661ccf9ddfeffaee5e1ac047a7687383f1139e1f2db",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 34
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-25-073304",
+      "sample": "held",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2025-08-01",
+      "reaction_session": "2025-08-04",
+      "price_interval": {
+        "start_anchor_close": "2025-08-01T20:00:00+00:00",
+        "end_reaction_open": "2025-08-04T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925073304/tm2522386d1_8k.htm",
+        "cover_sha256": "bd1aad938f3b6a008c30006d442f7b40b23d2f0e96e7982bd055596664b32152",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925073304/tm2522386d1_ex99-1.htm",
+        "archive_sha256": "bb22bd715c6c0e03db9eaf3464dfe0f67bd838192e2aeb6dc47d22aef4c81bc1"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "amgn-0000318154-25-000054",
+      "sample": "held",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "anchor_session": "2025-08-05",
+      "reaction_session": "2025-08-06",
+      "price_interval": {
+        "start_anchor_close": "2025-08-05T20:00:00+00:00",
+        "end_reaction_open": "2025-08-06T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000054/amgn-20250805.htm",
+        "cover_sha256": "3da4c3ff623300ff19cf9193e4979b5defcf76a58bae17761514693b880cb08a",
+        "symbol": "AMGN",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000054/amgn-20250630earningsrelea.htm",
+        "archive_sha256": "16f9fe594b75d452789c1179975091d10213f0c40db4bfe85b3494650f877658"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-08-22",
+          "payable_date_as_stated": "2025-09-12",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.amgen.com/newsroom/press-releases/2025/08/amgen-announces-2025-third-quarter-dividend",
+            "sha256": "6e70684b297538f757655c241c607b15ff55b9ffdefcf6463c7a541c327322b7",
+            "representation": "original issuer HTML",
+            "line_index": 205
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ddog-0001561550-25-000216",
+      "sample": "held",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "anchor_session": "2025-08-06",
+      "reaction_session": "2025-08-07",
+      "price_interval": {
+        "start_anchor_close": "2025-08-06T20:00:00+00:00",
+        "end_reaction_open": "2025-08-07T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ddog-20250807.htm",
+        "cover_sha256": "d50b381218d89fb9bad0c3ccae5f5da00375e97c6866ae4cc00b266fc2fd0624",
+        "symbol": "DDOG",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000216/ex-991x20250630x8k.htm",
+        "archive_sha256": "4e1117984d354dcf1194fedfbe4c83e130cc8e37cac03db9edf2dd1556110b70"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000025",
+      "sample": "held",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "anchor_session": "2025-08-06",
+      "reaction_session": "2025-08-07",
+      "price_interval": {
+        "start_anchor_close": "2025-08-06T20:00:00+00:00",
+        "end_reaction_open": "2025-08-07T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000025/ftnt-20250806.htm",
+        "cover_sha256": "0aeff8467c2de33d05818c61b9a1b6a1d7309c0968f3d30a53686171319acaf2",
+        "symbol": "FTNT",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000025/ftntq2-2025ex991.htm",
+        "archive_sha256": "2024fffde5e615fb65283926ef157fd5f96791a8777313b1552bff9715c2e6f6"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "mdb-0001441816-25-000176",
+      "sample": "held",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "anchor_session": "2025-08-26",
+      "reaction_session": "2025-08-27",
+      "price_interval": {
+        "start_anchor_close": "2025-08-26T20:00:00+00:00",
+        "end_reaction_open": "2025-08-27T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-20250826.htm",
+        "cover_sha256": "d0000989ed49211e3b480e559e60084d436b5524d99e11ea926ac238224ab1cc",
+        "symbol": "MDB",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+        "archive_sha256": "28350a6594baa68051969aa52b760d20dd49d69b514a2c198cdf49094cb1d8dd"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "adsk-0000769397-25-000114",
+      "sample": "held",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "anchor_session": "2025-08-28",
+      "reaction_session": "2025-08-29",
+      "price_interval": {
+        "start_anchor_close": "2025-08-28T20:00:00+00:00",
+        "end_reaction_open": "2025-08-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000114/adsk-20250828.htm",
+        "cover_sha256": "9dcb9d2e93646f356c4e3f06b43175024e363f0c94be781ab4b2ee44a446837e",
+        "symbol": "ADSK",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000114/q226pressrelease.htm",
+        "archive_sha256": "ee1abab26a09ee166136a56444cef548ab97539791cca084d2de6d05eb90f2e2"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-25-000060",
+      "sample": "held",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2025-09-02",
+      "reaction_session": "2025-09-03",
+      "price_interval": {
+        "start_anchor_close": "2025-09-02T20:00:00+00:00",
+        "end_reaction_open": "2025-09-03T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000060/dltr-20250903.htm",
+        "cover_sha256": "78bbc137025d44652c36ce32bf5e8d610c9b1d3c7fe3fed5fba7185a804218c6",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000060/ex991q2-25earningspressrel.htm",
+        "archive_sha256": "f88e3b80eab93db2b98e741132875b0cb5cb9b8a9163e06e66515962b169b524"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "lulu-0001397187-25-000038",
+      "sample": "held",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "anchor_session": "2025-09-04",
+      "reaction_session": "2025-09-05",
+      "price_interval": {
+        "start_anchor_close": "2025-09-04T20:00:00+00:00",
+        "end_reaction_open": "2025-09-05T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250904.htm",
+        "cover_sha256": "eb95b6261df3352d2041e13f2a0841fd530045495f581706b7fe76a483636f43",
+        "symbol": "LULU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+        "archive_sha256": "3b1dfb274a676513a5a4e5754a4109ea36f09847c1d0033fb88b48f1f6bd1270"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-25-000055",
+      "sample": "held",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2025-10-22",
+      "reaction_session": "2025-10-23",
+      "price_interval": {
+        "start_anchor_close": "2025-10-22T20:00:00+00:00",
+        "end_reaction_open": "2025-10-23T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000055/orly-20251022x8k.htm",
+        "cover_sha256": "ab7725951864374aba229086e6d40a5c1a7e634d9311a728be217e997c08f6c3",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817325000055/orly-20251022xex99d1.htm",
+        "archive_sha256": "c54e1aee6484a8bdc45817dbc37a1f61ebd9eea29224776b3f6cb542b95feb4a"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "cdns-0000813672-25-000144",
+      "sample": "held",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "anchor_session": "2025-10-27",
+      "reaction_session": "2025-10-28",
+      "price_interval": {
+        "start_anchor_close": "2025-10-27T20:00:00+00:00",
+        "end_reaction_open": "2025-10-28T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000144/cdns-20251027.htm",
+        "cover_sha256": "e537bcc4ff750923ad45b87ea223d78682ced2c05dbf5d46891e903d0e233a00",
+        "symbol": "CDNS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367225000144/cdns10272025ex9901.htm",
+        "archive_sha256": "8b173e8fe32e65646b04f04588564df35ae51b2c6b62f65a0e54e65ec2f2aea8"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ctsh-0001058290-25-000338",
+      "sample": "held",
+      "symbol": "CTSH",
+      "cik": "0001058290",
+      "anchor_session": "2025-10-28",
+      "reaction_session": "2025-10-29",
+      "price_interval": {
+        "start_anchor_close": "2025-10-28T20:00:00+00:00",
+        "end_reaction_open": "2025-10-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000338/ctsh-20251029.htm",
+        "cover_sha256": "5bfaf8d6bf9728d811717d193271e7307a93f31c9c3ec0dfd87c407c1548c417",
+        "symbol": "CTSH",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000338/exhibit9939302025.htm",
+        "archive_sha256": "fb29071770ae2be9e2da8e40f7afe5603e1ec1f80f7e4e03ab5901c947b354c0"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-11-18",
+          "payable_date_as_stated": "2025-11-26",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829025000338/exhibit9919302025.htm",
+            "archive_sha256": "fb29071770ae2be9e2da8e40f7afe5603e1ec1f80f7e4e03ab5901c947b354c0",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 34
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-25-000278",
+      "sample": "held",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2025-10-30",
+      "reaction_session": "2025-10-31",
+      "price_interval": {
+        "start_anchor_close": "2025-10-30T20:00:00+00:00",
+        "end_reaction_open": "2025-10-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000278/dxcm-20251030.htm",
+        "cover_sha256": "dbed1ff4b9cc7e1d2eafaefa62e4fd3ee4c79e5a7c13d2844d91fc7d87c6cefd",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355725000278/dxcm09302025-exhibit991.htm",
+        "archive_sha256": "6795666df846a5aa882b3fc60d473bf7beef52ecc7c3a11a855af11618dfab78"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-25-105185",
+      "sample": "held",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2025-10-31",
+      "reaction_session": "2025-11-03",
+      "price_interval": {
+        "start_anchor_close": "2025-10-31T20:00:00+00:00",
+        "end_reaction_open": "2025-11-03T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925105185/tm2530045d1_8k.htm",
+        "cover_sha256": "9ac8f23a72c625f8f621b2e8c4113b120fd0def9b89bc24be0149f5ad579bfe9",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465925105185/tm2530045d1_ex99-1.htm",
+        "archive_sha256": "5e4759d5e2eab757f253c9cb29cd62bdea9a075f799c039e6b7037958c952f68"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrtx-0000875320-25-000230",
+      "sample": "held",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "anchor_session": "2025-11-03",
+      "reaction_session": "2025-11-04",
+      "price_interval": {
+        "start_anchor_close": "2025-11-03T21:00:00+00:00",
+        "end_reaction_open": "2025-11-04T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000230/vrtx-20251103.htm",
+        "cover_sha256": "b7b2fd7e06e4324d4b3c10589955500e68b860989779db4824af170125b979e9",
+        "symbol": "VRTX",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532025000230/ex-991_q32025.htm",
+        "archive_sha256": "6250715a6954e0d929179471b66f2694340aae734c9649cd337e117c2e1b71ef"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "amgn-0000318154-25-000070",
+      "sample": "held",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "anchor_session": "2025-11-04",
+      "reaction_session": "2025-11-05",
+      "price_interval": {
+        "start_anchor_close": "2025-11-04T21:00:00+00:00",
+        "end_reaction_open": "2025-11-05T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20251104.htm",
+        "cover_sha256": "4787d8d4f41b7905062937dc15ef06a04cccb966a2be505674df17ad13bad857",
+        "symbol": "AMGN",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815425000070/amgn-20250930earningsrelea.htm",
+        "archive_sha256": "9b9327e454bc3822454ed0564b4e6e2c483306710059bb9a76f2d08eddbb283b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2025-11-21",
+          "payable_date_as_stated": "2025-12-12",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.amgen.com/newsroom/press-releases/2025/10/amgen-announces-2025-fourth-quarter-dividend",
+            "sha256": "4c2965e8fa35e7e621a30226c26f502bfba80f3ce7217e3ed470f6e6f59b7ff0",
+            "representation": "original issuer HTML",
+            "line_index": 205
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ddog-0001561550-25-000310",
+      "sample": "held",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "price_interval": {
+        "start_anchor_close": "2025-11-05T21:00:00+00:00",
+        "end_reaction_open": "2025-11-06T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000310/ddog-20251106.htm",
+        "cover_sha256": "76a81646f5059dc491a03b938c95d532918221599b587136f0c6144d4724e061",
+        "symbol": "DDOG",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155025000310/ex-991x20250930x8k.htm",
+        "archive_sha256": "3977ec703c1409f95b38a28e9dbc10f877c1237626519b2a2d1d0d9a8387659a"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ftnt-0001262039-25-000036",
+      "sample": "held",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "anchor_session": "2025-11-05",
+      "reaction_session": "2025-11-06",
+      "price_interval": {
+        "start_anchor_close": "2025-11-05T21:00:00+00:00",
+        "end_reaction_open": "2025-11-06T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000036/ftnt-20251105.htm",
+        "cover_sha256": "f4ac0a2a7b656767992094a74ae548f05a6b2975b2354a6ab1953b2f3df04fab",
+        "symbol": "FTNT",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203925000036/ftntq3-2025ex991.htm",
+        "archive_sha256": "8fb697f85dc1d2538d18d939d2d6ec1fc498429c1aea15e903af8a4b7b4d3390"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "adsk-0000769397-25-000126",
+      "sample": "held",
+      "symbol": "ADSK",
+      "cik": "0000769397",
+      "anchor_session": "2025-11-25",
+      "reaction_session": "2025-11-26",
+      "price_interval": {
+        "start_anchor_close": "2025-11-25T21:00:00+00:00",
+        "end_reaction_open": "2025-11-26T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/adsk-20251125.htm",
+        "cover_sha256": "bba7768f437f434690777b8b4463b28f19d12027dbd81ca265926113e4833084",
+        "symbol": "ADSK",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000126/q326pressrelease.htm",
+        "archive_sha256": "dcc1278bfa19fcd12a480b6e3536f63e3f5036ab7e8f12ec9449fe0e0884c492"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "zs-0001713683-25-000203",
+      "sample": "held",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "anchor_session": "2025-11-25",
+      "reaction_session": "2025-11-26",
+      "price_interval": {
+        "start_anchor_close": "2025-11-25T21:00:00+00:00",
+        "end_reaction_open": "2025-11-26T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000203/zs-20251125.htm",
+        "cover_sha256": "b11a5852316338233dd4429a5cd8d30ba2029035685ae0e85edf4c4cf5c54e53",
+        "symbol": "ZS",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000203/zs-10312025_991.htm",
+        "archive_sha256": "c82593bff6f523d94a8a5cd438c0713df6212fa5cb1abb97092955817a482639"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "mdb-0001628280-25-054425",
+      "sample": "held",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "anchor_session": "2025-12-01",
+      "reaction_session": "2025-12-02",
+      "price_interval": {
+        "start_anchor_close": "2025-12-01T21:00:00+00:00",
+        "end_reaction_open": "2025-12-02T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-20251201.htm",
+        "cover_sha256": "fc80a7f49c7d552877a2873ff35998b8dca9464b73b4104199a258c6ee59db40",
+        "symbol": "MDB",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+        "archive_sha256": "b038700a08684bae4ea347451eb5c312cf5aef3c1a92f73356f1f7482c47ca99"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "crwd-0001535527-25-000030",
+      "sample": "held",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "anchor_session": "2025-12-02",
+      "reaction_session": "2025-12-03",
+      "price_interval": {
+        "start_anchor_close": "2025-12-02T21:00:00+00:00",
+        "end_reaction_open": "2025-12-03T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202.htm",
+        "cover_sha256": "24c36ace5a477c268eed98a735cfd17cce8cd92e587ceacf522e5a03f53a0e75",
+        "symbol": "CRWD",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+        "archive_sha256": "1fa7694a9ebf611d83c7c873fb265891075f8845a6854bef89c1ee7763abdf89"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "CRWD-2026-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-25-000104",
+      "sample": "held",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2025-12-02",
+      "reaction_session": "2025-12-03",
+      "price_interval": {
+        "start_anchor_close": "2025-12-02T21:00:00+00:00",
+        "end_reaction_open": "2025-12-03T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000104/dltr-20251203.htm",
+        "cover_sha256": "190a5849b51a1f0aa314504bb1e4bf904054596ecea56ceb01cf029321974129",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000104/ex991q3-25earningspressrel.htm",
+        "archive_sha256": "be8db5a296702b875337a707a4e242fd60100c743184326240832b857b6f10a3"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000025",
+      "sample": "held",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2026-02-12",
+      "reaction_session": "2026-02-13",
+      "price_interval": {
+        "start_anchor_close": "2026-02-12T21:00:00+00:00",
+        "end_reaction_open": "2026-02-13T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000025/dxcm-20260212.htm",
+        "cover_sha256": "ccd8f79fa55465992774e86e3bbcfdec5a46f0a51bce5fd81706e21ec890218e",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000025/dxcm12312025-exhibit991.htm",
+        "archive_sha256": "70e0f3ce6b1a78d2a06aef71335c95c403d3dda01734e0840ecd1c612a71cdd9"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "snps-0001193125-26-071601",
+      "sample": "held",
+      "symbol": "SNPS",
+      "cik": "0000883241",
+      "anchor_session": "2026-02-25",
+      "reaction_session": "2026-02-26",
+      "price_interval": {
+        "start_anchor_close": "2026-02-25T21:00:00+00:00",
+        "end_reaction_open": "2026-02-26T14:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/883241/000119312526071601/d921168d8k.htm",
+        "cover_sha256": "ca0573a1befc0355bba70a4a00db9da01f69a0f356009f2124af53f746c036a7",
+        "symbol": "SNPS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312526071601/d921168dex991.htm",
+        "archive_sha256": "565885ff4ae122da6e84223d7f62037785c7d8dd04561f1e5f65f38d6786621b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "intu-0000896878-26-000012",
+      "sample": "held",
+      "symbol": "INTU",
+      "cik": "0000896878",
+      "anchor_session": "2026-02-26",
+      "reaction_session": "2026-02-27",
+      "price_interval": {
+        "start_anchor_close": "2026-02-26T21:00:00+00:00",
+        "end_reaction_open": "2026-02-27T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000012/intu-20260226.htm",
+        "cover_sha256": "fc724d8bb8e40ac8c359be11af4bd05917e17a9fbdc49e1efcce8cb21d57b054",
+        "symbol": "INTU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000012/fy26q2earningspressrelease.htm",
+        "archive_sha256": "cc5de71335b0eed6f707de2379119c062e756d1fe6bd3bbe146e240431746695"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2026-04-09",
+          "payable_date_as_stated": "2026-04-17",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://edgar-mirror.sec-api.io/896878/000089687826000012/intu-20260226.htm",
+            "sha256": "fc724d8bb8e40ac8c359be11af4bd05917e17a9fbdc49e1efcce8cb21d57b054",
+            "representation": "original SEC cover HTML retrieved through public mirror",
+            "line_index": 35
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "zs-0001713683-26-000047",
+      "sample": "held",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "anchor_session": "2026-02-26",
+      "reaction_session": "2026-02-27",
+      "price_interval": {
+        "start_anchor_close": "2026-02-26T21:00:00+00:00",
+        "end_reaction_open": "2026-02-27T14:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000047/zs-20260226.htm",
+        "cover_sha256": "ba5595a85d1cc07bbb2ce813e6996119e2323c06353c3fd27cf2d23b4994507e",
+        "symbol": "ZS",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000047/zs-01312026_991.htm",
+        "archive_sha256": "89730c9cfd0e8ee2dc660a9b37ada69775ffdccc372727e66d871002ff6b444d"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "cdns-0000813672-26-000044",
+      "sample": "held",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "anchor_session": "2026-04-27",
+      "reaction_session": "2026-04-28",
+      "price_interval": {
+        "start_anchor_close": "2026-04-27T20:00:00+00:00",
+        "end_reaction_open": "2026-04-28T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000044/cdns-20260427.htm",
+        "cover_sha256": "6c1a6f3687a4cbc8847633b912a54085450408acc645109603436001ad519be0",
+        "symbol": "CDNS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000044/cdns04272026ex9901.htm",
+        "archive_sha256": "f8c61628fc22827e666549b087994930240ff722138c5336985d331687c06148"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrsk-0001437749-26-013728",
+      "sample": "held",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "anchor_session": "2026-04-28",
+      "reaction_session": "2026-04-29",
+      "price_interval": {
+        "start_anchor_close": "2026-04-28T20:00:00+00:00",
+        "end_reaction_open": "2026-04-29T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013728/vrsk20260227_8k.htm",
+        "cover_sha256": "52763714002b6f8b90357592a23abfcff28a977af1d7c0b8379927b381c1a0e1",
+        "symbol": "VRSK",
+        "exchange": "NASDAQ",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013728/ex_926417.htm",
+        "archive_sha256": "0e527e5aa89f78fd0872df19a8617de2090df3c24a6d1dd53d3f9347fc14c92f"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2026-06-15",
+          "payable_date_as_stated": "2026-06-30",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013728/ex_926417.htm",
+            "archive_sha256": "0e527e5aa89f78fd0872df19a8617de2090df3c24a6d1dd53d3f9347fc14c92f",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 259
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-26-000024",
+      "sample": "held",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2026-04-29",
+      "reaction_session": "2026-04-30",
+      "price_interval": {
+        "start_anchor_close": "2026-04-29T20:00:00+00:00",
+        "end_reaction_open": "2026-04-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000024/orly-20260429x8k.htm",
+        "cover_sha256": "e611b4f7109dcbdf1c756f0e582413a99805a3922326010c084931216aefb793",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000024/orly-20260429xex99d1.htm",
+        "archive_sha256": "847083fa497735f1f88c0d3fc3093bb730431a6fa1ee7314113e31df00f06638"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "amgn-0000318154-26-000054",
+      "sample": "held",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "anchor_session": "2026-04-30",
+      "reaction_session": "2026-05-01",
+      "price_interval": {
+        "start_anchor_close": "2026-04-30T20:00:00+00:00",
+        "end_reaction_open": "2026-05-01T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000054/amgn-20260430.htm",
+        "cover_sha256": "beaed6438275c831c7588613935b8d0fbb0a8c958e31c2c8fe0771af744704fd",
+        "symbol": "AMGN",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000054/amgn-20260331earningsrelea.htm",
+        "archive_sha256": "7fc734f297fe99c738429aca6492b7f67acd4cde8b82ccf0aed4f0c761c0a68b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2026-05-15",
+          "payable_date_as_stated": "2026-06-05",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.amgen.com/newsroom/press-releases/2026/03/amgen-announces-2026-second-quarter-dividend",
+            "sha256": "451f108e5563782966a29cf6918f0f015a49218c226c8960454286dbde98a652",
+            "representation": "original issuer HTML",
+            "line_index": 205
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000072",
+      "sample": "held",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2026-04-30",
+      "reaction_session": "2026-05-01",
+      "price_interval": {
+        "start_anchor_close": "2026-04-30T20:00:00+00:00",
+        "end_reaction_open": "2026-05-01T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000072/dxcm-20260430.htm",
+        "cover_sha256": "d6375aa93be9eec6d757bc781c38fd43a319e35fb80f474d787a374205b815e3",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000072/dxcm3312026-exhibit991.htm",
+        "archive_sha256": "90261117beef43e4087d8bc48ede4a577d9eee81cab21783bd86cce757b3cf80"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-26-055203",
+      "sample": "held",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2026-05-04",
+      "reaction_session": "2026-05-05",
+      "price_interval": {
+        "start_anchor_close": "2026-05-04T20:00:00+00:00",
+        "end_reaction_open": "2026-05-05T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926055203/tm2613510d1_8k.htm",
+        "cover_sha256": "81dcae5bb37c9f0fa139b97658ef304f1c09f0d2c396d202d70e04a16a579a4b",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926055203/tm2613510d1_ex99-1.htm",
+        "archive_sha256": "c6d02ce208856531921fd643cfc7bcc1394c39fdd56d959a9a3b3b6e3f6327f6"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrtx-0000875320-26-000171",
+      "sample": "held",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "anchor_session": "2026-05-04",
+      "reaction_session": "2026-05-05",
+      "price_interval": {
+        "start_anchor_close": "2026-05-04T20:00:00+00:00",
+        "end_reaction_open": "2026-05-05T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000171/vrtx-20260504.htm",
+        "cover_sha256": "bae307802254496f1f162dfd26ad40c32762ac7c79b1d6364ad53ca6714e1bfc",
+        "symbol": "VRTX",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000171/ex-991_q12026.htm",
+        "archive_sha256": "8e7a568936345904efae1366f0381a77386a0c83fe4b6c6323bf520916171448"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ddog-0001628280-26-031677",
+      "sample": "held",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "anchor_session": "2026-05-06",
+      "reaction_session": "2026-05-07",
+      "price_interval": {
+        "start_anchor_close": "2026-05-06T20:00:00+00:00",
+        "end_reaction_open": "2026-05-07T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026031677/ddog-20260507.htm",
+        "cover_sha256": "38579eb36d2ddc51aa1b4c3881baa24e906c93693527628aa6b1716d20e4f9a2",
+        "symbol": "DDOG",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026031677/ex-991x20260331x8k.htm",
+        "archive_sha256": "35ecc3487eb69aca90f0a2adb2b57e4f01aa3f9d150f6d6ff5b8d817adc90784"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ftnt-0001262039-26-000010",
+      "sample": "held",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "anchor_session": "2026-05-06",
+      "reaction_session": "2026-05-07",
+      "price_interval": {
+        "start_anchor_close": "2026-05-06T20:00:00+00:00",
+        "end_reaction_open": "2026-05-07T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000010/ftnt-20260506.htm",
+        "cover_sha256": "0c3424d27ad8cdc57ec9ed3712a5907340bb0af3a2ac9b690b84019237db85f9",
+        "symbol": "FTNT",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000010/ftntq1-2026ex991.htm",
+        "archive_sha256": "e9fcc790272c2e36dab88ebbfcb1e5822fc584bfeaefc666fa0de73eb979848a"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "zs-0001713683-26-000095",
+      "sample": "held",
+      "symbol": "ZS",
+      "cik": "0001713683",
+      "anchor_session": "2026-05-26",
+      "reaction_session": "2026-05-27",
+      "price_interval": {
+        "start_anchor_close": "2026-05-26T20:00:00+00:00",
+        "end_reaction_open": "2026-05-27T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000095/zs-20260526.htm",
+        "cover_sha256": "8c6117ba86140e8382327cf6b71340de4b3b4376f5f971629dae142dc44adcd3",
+        "symbol": "ZS",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000095/zs-04302026_991.htm",
+        "archive_sha256": "408521cdfb7edbc88afeb3862563f0b1e462dcf2270d34b5648f9695f04caa16"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-26-000064",
+      "sample": "held",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2026-05-27",
+      "reaction_session": "2026-05-28",
+      "price_interval": {
+        "start_anchor_close": "2026-05-27T20:00:00+00:00",
+        "end_reaction_open": "2026-05-28T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000064/dltr-20260528.htm",
+        "cover_sha256": "3ebfccefe740bc49a723a22070e90704e5252af01c49681948da4918ca806d48",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000064/ex991q1-26earningspressrel.htm",
+        "archive_sha256": "12ec261d2f07d223d59dcc871ae3352aafafa03d87297e75403f2719a6c9424b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "lulu-0001397187-26-000077",
+      "sample": "held",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "anchor_session": "2026-06-04",
+      "reaction_session": "2026-06-05",
+      "price_interval": {
+        "start_anchor_close": "2026-06-04T20:00:00+00:00",
+        "end_reaction_open": "2026-06-05T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260604.htm",
+        "cover_sha256": "4d0404a52dd94f476fc55a1e3b3b90f2926cb2e792566ebb607eaf2dda0bb340",
+        "symbol": "LULU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+        "archive_sha256": "1d4754097180d96b0f1a99acc3f718d8bcf04082cccc0a361679120083d3a263"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "cdns-0000813672-26-000089",
+      "sample": "held",
+      "symbol": "CDNS",
+      "cik": "0000813672",
+      "anchor_session": "2026-07-27",
+      "reaction_session": "2026-07-28",
+      "price_interval": {
+        "start_anchor_close": "2026-07-27T20:00:00+00:00",
+        "end_reaction_open": "2026-07-28T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000089/cdns-20260727.htm",
+        "cover_sha256": "c30ed807a0ad41bbae8803b27f32042ce93e16763f874c79d640e8ffb713cfb9",
+        "symbol": "CDNS",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/813672/000081367226000089/cdns07272026ex9901.htm",
+        "archive_sha256": "70af51f3c88cbd61f08d52dccfd8e3f0ff1d19af66e67d9e7c8425e810ad8ada"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrsk-0001437749-26-024748",
+      "sample": "held",
+      "symbol": "VRSK",
+      "cik": "0001442145",
+      "anchor_session": "2026-07-28",
+      "reaction_session": "2026-07-29",
+      "price_interval": {
+        "start_anchor_close": "2026-07-28T20:00:00+00:00",
+        "end_reaction_open": "2026-07-29T13:30:00+00:00"
+      },
+      "quality_variant": "all_defined_only",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024748/vrsk20260526_8k.htm",
+        "cover_sha256": "3088a40d2b05dcf8b69869ca22f10c18efcd15dcac1863247f69e9b2c94e645a",
+        "symbol": "VRSK",
+        "exchange": "NASDAQ",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024748/ex_968691.htm",
+        "archive_sha256": "5bbf42ae03c32edba1e195ba907d409e33148953317339226641db385b4b3670"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2026-09-15",
+          "payable_date_as_stated": "2026-09-30",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024748/ex_968691.htm",
+            "archive_sha256": "5bbf42ae03c32edba1e195ba907d409e33148953317339226641db385b4b3670",
+            "representation": "original earnings exhibit within complete retrieved SEC submission",
+            "line_index": 430
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ftnt-0001262039-26-000018",
+      "sample": "held",
+      "symbol": "FTNT",
+      "cik": "0001262039",
+      "anchor_session": "2026-07-29",
+      "reaction_session": "2026-07-30",
+      "price_interval": {
+        "start_anchor_close": "2026-07-29T20:00:00+00:00",
+        "end_reaction_open": "2026-07-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000018/ftnt-20260729.htm",
+        "cover_sha256": "8af984cb3c990880d2a3f615103b07b07fdd304261b837eea8adf7b8647f3122",
+        "symbol": "FTNT",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000018/ftntq2-2026ex991.htm",
+        "archive_sha256": "2a5e07c6bd6cd26a6b41bc07972aad151b23cc6809efdf4aae7066ff93cf122f"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "orly-0000898173-26-000042",
+      "sample": "held",
+      "symbol": "ORLY",
+      "cik": "0000898173",
+      "anchor_session": "2026-07-29",
+      "reaction_session": "2026-07-30",
+      "price_interval": {
+        "start_anchor_close": "2026-07-29T20:00:00+00:00",
+        "end_reaction_open": "2026-07-30T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000042/orly-20260729x8k.htm",
+        "cover_sha256": "587260fd7ea08b9ca3f16dea67c81c42b81dca2c18adbc0a91d7158466599e0e",
+        "symbol": "ORLY",
+        "exchange": "The NASDAQ Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000042/orly-20260729xex99d1.htm",
+        "archive_sha256": "bca12beedd87a205c41869774637e9210241e69dcadc7055b6a20d408d96e156"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "ORLY-2025-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dxcm-0001093557-26-000142",
+      "sample": "held",
+      "symbol": "DXCM",
+      "cik": "0001093557",
+      "anchor_session": "2026-07-30",
+      "reaction_session": "2026-07-31",
+      "price_interval": {
+        "start_anchor_close": "2026-07-30T20:00:00+00:00",
+        "end_reaction_open": "2026-07-31T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm-20260730.htm",
+        "cover_sha256": "c06525884fe7558d4a904af3662e2e9924c41dc02022b65a42e79ae67a3de352",
+        "symbol": "DXCM",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm06302026-exhibit991.htm",
+        "archive_sha256": "944e0d411e2fac10f04c9daa73b47421099f7f0e1bf5120970929d21f5dfbe8b"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "idxx-0001104659-26-090033",
+      "sample": "held",
+      "symbol": "IDXX",
+      "cik": "0000874716",
+      "anchor_session": "2026-08-03",
+      "reaction_session": "2026-08-04",
+      "price_interval": {
+        "start_anchor_close": "2026-08-03T20:00:00+00:00",
+        "end_reaction_open": "2026-08-04T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926090033/tm2622041d1_8k.htm",
+        "cover_sha256": "f60f84049cb3060c65897bcd0ef85db88912676f09fb6dc75c1d62761363f3c8",
+        "symbol": "IDXX",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/874716/000110465926090033/tm2622041d1_ex99-1.htm",
+        "archive_sha256": "4d0a6eaec19e5f91ff99a5db9cb7968ed3a881946cd7151e455397c9b3f090ff"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "vrtx-0000875320-26-000256",
+      "sample": "held",
+      "symbol": "VRTX",
+      "cik": "0000875320",
+      "anchor_session": "2026-08-03",
+      "reaction_session": "2026-08-04",
+      "price_interval": {
+        "start_anchor_close": "2026-08-03T20:00:00+00:00",
+        "end_reaction_open": "2026-08-04T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/vrtx-20260803.htm",
+        "cover_sha256": "2470cfb277cad8592cedd5c615a94b8df51074997cf14bd96e9158f40853a09c",
+        "symbol": "VRTX",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+        "archive_sha256": "04f6befb4263aeef4866421ffdf1c2aa8500f174be121cdf63f8a757cc15c511"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "amgn-0000318154-26-000124",
+      "sample": "held",
+      "symbol": "AMGN",
+      "cik": "0000318154",
+      "anchor_session": "2026-08-04",
+      "reaction_session": "2026-08-05",
+      "price_interval": {
+        "start_anchor_close": "2026-08-04T20:00:00+00:00",
+        "end_reaction_open": "2026-08-05T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000124/amgn-20260804.htm",
+        "cover_sha256": "e9718cceb4e504893ec56306b0f6d6b010ed3bcb69cc4bd50825c09a92a9542d",
+        "symbol": "AMGN",
+        "exchange": "The Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/318154/000031815426000124/amgn-20260630earningsrelea.htm",
+        "archive_sha256": "9b9d1c9323bf677b6315a1ccaf65369cc98e929007a3cb8b36136ba56d9a3967"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [
+        {
+          "type": "regular_cash_dividend_declaration",
+          "record_date_as_stated": "2026-08-21",
+          "payable_date_as_stated": "2026-09-11",
+          "ex_date": null,
+          "ex_date_verified": false,
+          "primary_source": {
+            "url": "https://www.amgen.com/newsroom/press-releases/2026/07/amgen-announces-2026-third-quarter-dividend",
+            "sha256": "635240f26b16f48de00b489956e4dcb41ac1cf8a34f794cd5dcd6c5acc80865e",
+            "representation": "original issuer HTML",
+            "line_index": 205
+          },
+          "rationale": "The stated record and payment dates are after this reaction session. They corroborate the regular declaration schedule but are not substituted for exchange ex-dates or exhaustive corporate-action coverage."
+        }
+      ],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "ddog-0001628280-26-053829",
+      "sample": "held",
+      "symbol": "DDOG",
+      "cik": "0001561550",
+      "anchor_session": "2026-08-05",
+      "reaction_session": "2026-08-06",
+      "price_interval": {
+        "start_anchor_close": "2026-08-05T20:00:00+00:00",
+        "end_reaction_open": "2026-08-06T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026053829/ddog-20260806.htm",
+        "cover_sha256": "4580b253288fcec3d7f8170af112e783d2c5a26aa260019742bb50119a7bf9e9",
+        "symbol": "DDOG",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1561550/000162828026053829/ex-991x20260630x8k.htm",
+        "archive_sha256": "dc490bdb49fbce9790f8a9af50d94719f4e7f55cbc79ece9af48b6bf2c98f2db"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "crwd-0001535527-26-000029",
+      "sample": "held",
+      "symbol": "CRWD",
+      "cik": "0001535527",
+      "anchor_session": "2026-08-26",
+      "reaction_session": "2026-08-27",
+      "price_interval": {
+        "start_anchor_close": "2026-08-26T20:00:00+00:00",
+        "end_reaction_open": "2026-08-27T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826.htm",
+        "cover_sha256": "4ea048ac9106b4cf9063dc5842c7c37b46b3a53e22df579b0c67c84fff383b29",
+        "symbol": "CRWD",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+        "archive_sha256": "a4662761a99a1b2ecef5b2879bbb797d11e9ce4b9cc744f12b75a0a913f05fd8"
+      },
+      "known_split_checks": [
+        {
+          "action_id": "CRWD-2026-forward-split",
+          "intersects_price_interval": false
+        }
+      ],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "dltr-0000935703-26-000108",
+      "sample": "held",
+      "symbol": "DLTR",
+      "cik": "0000935703",
+      "anchor_session": "2026-08-26",
+      "reaction_session": "2026-08-27",
+      "price_interval": {
+        "start_anchor_close": "2026-08-26T20:00:00+00:00",
+        "end_reaction_open": "2026-08-27T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/dltr-20260827.htm",
+        "cover_sha256": "5d9f05cbf7e1357fe3021d479a77ee0c4b40856da6af98f8540fd1426d97e4fd",
+        "symbol": "DLTR",
+        "exchange": "NASDAQ Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/ex991q2-26earningspressrel.htm",
+        "archive_sha256": "841f4c1041f61c605c799e32c4d38c458d87364001ac5f721b2dd1a7ba1a6723"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "mdb-0001628280-26-059794",
+      "sample": "held",
+      "symbol": "MDB",
+      "cik": "0001441816",
+      "anchor_session": "2026-09-01",
+      "reaction_session": "2026-09-02",
+      "price_interval": {
+        "start_anchor_close": "2026-09-01T20:00:00+00:00",
+        "end_reaction_open": "2026-09-02T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-20260901.htm",
+        "cover_sha256": "eb5ee04ed19b18036a2a88df1f3fcf3d1f693d87812e786b2bdde36586f5297b",
+        "symbol": "MDB",
+        "exchange": "The Nasdaq Stock Market LLC",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+        "archive_sha256": "4d53d296f256810dba9a1e10e0f51a15e159cb904ef537e9db862bfa492ccb64"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    },
+    {
+      "event_id": "lulu-0001397187-26-000126",
+      "sample": "held",
+      "symbol": "LULU",
+      "cik": "0001397187",
+      "anchor_session": "2026-09-03",
+      "reaction_session": "2026-09-04",
+      "price_interval": {
+        "start_anchor_close": "2026-09-03T20:00:00+00:00",
+        "end_reaction_open": "2026-09-04T13:30:00+00:00"
+      },
+      "quality_variant": "clean_and_all_defined",
+      "dated_listing_source": {
+        "cover_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260903.htm",
+        "cover_sha256": "7f06d5aab7f17c75f24829b14ece93a87af604938f6d24a12222d9c90443abf3",
+        "symbol": "LULU",
+        "exchange": "Nasdaq Global Select Market",
+        "scope": "Dated event filing cover; not independent proof of continuous overnight symbol/share-basis history."
+      },
+      "current_earnings_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+        "archive_sha256": "70990f3daaeab38b1306e26ceff9f03d4b5fdd9fe2037104b1333d26e1675859"
+      },
+      "known_split_checks": [],
+      "regular_dividend_declarations": [],
+      "source_status": "NO_REVIEWED_ACTION_INTERSECTION_IDENTIFIED_CORPORATE_ACTION_COVERAGE_PENDING",
+      "price_basis_cleared": false
+    }
+  ],
+  "coverage_limitations": [
+    "This report does not prove absence of corporate actions. Complete provider/exchange corporate-action coverage, pagination and entitlement checks remain pending.",
+    "No event is marked price-basis-cleared by this source report. Raw unadjusted anchor-price and official-opening consistency must be checked separately under the registered protocol.",
+    "Original earnings packets and selected declaration/split notices were reviewed. This is not an exhaustive search of every original issuer, exchange or regulatory notice.",
+    "Cash dividend record/payment dates are preserved as stated; no ex-date is inferred from a record date, especially a nonbusiness-day record date.",
+    "Dated event filing covers establish reported symbol and listing venue at that filing; they do not alone prove uninterrupted overnight identifier or class continuity.",
+    "The CRWD issuer split timeline was readable through web extraction but direct PDF retrieval returned403. The original SEC earnings packet separately corroborates the after-close distribution date.",
+    "No price, event return, forecast or target label is included; the source review made no market-data calls."
+  ],
+  "closing_outcome_requests": 0,
+  "model_runs": 0,
+  "market_data_requests_by_this_review": 0
+}

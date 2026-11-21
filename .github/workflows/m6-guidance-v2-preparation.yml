@@ -1,0 +1,47 @@
+name: M6 guidance v2 opening and price-basis preparation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preparation:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        check: [warmup_opening, price_basis]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify protocol and implementation pins before requests
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from nre.core import canonical, digest
+          from nre.m6_guidance_revision import check_revision
+          seal = json.loads(Path('reports/m6-guidance-data-preparation-freeze-2026-11-21.json').read_text())
+          assert check_revision()['protocol_sha256'] == seal['protocol_sha256']
+          for path, expected in seal['implementation_sha256_git_lf'].items():
+              assert digest(Path(path).read_bytes().replace(b'\r\n', b'\n')) == expected, path
+          for path, expected in seal['canonical_input_sha256'].items():
+              assert digest(canonical(json.loads(Path(path).read_text()))) == expected, path
+          PY
+      - name: Run bounded historical preparation without closing outcomes
+        env:
+          CHECK: ${{ matrix.check }}
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: |
+          case "$CHECK" in
+            warmup_opening) python -m nre.m6_guidance_warmup_opening ;;
+            price_basis) python -m nre.m6_guidance_price_basis ;;
+            *) exit 2 ;;
+          esac
