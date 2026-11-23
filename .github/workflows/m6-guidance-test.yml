@@ -1,0 +1,82 @@
+name: M6 single registered guidance comparison
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: Acquire sealed commitments or consume the sole scoring attempt
+        required: true
+        type: choice
+        options: [acquire, score]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nre-guidance-v2-final-comparison
+  cancel-in-progress: false
+
+jobs:
+  execute:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen execution inputs before requests
+        run: python -c "from nre.m6_guidance_acquire import locked_inputs; locked_inputs()"
+      - name: Exclusively claim the single attempt before scoring
+        if: inputs.stage == 'score'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64, json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from nre.core import canonical, digest
+          from nre.m5_phase1b_audit import load
+          from nre.m6_guidance_acquire import ACQUISITION, ATTEMPT, CONFIG
+          assert os.environ['GITHUB_REPOSITORY'] == 'Fahad9101/NRE'
+          config, acquired = load(Path(CONFIG)), load(Path(ACQUISITION))
+          claim = {'attempt_id': 'guidance-v2-001', 'state': 'STARTED',
+                   'started_at': datetime.now(timezone.utc).isoformat(),
+                   'protocol_sha256': config['protocol_sha256'],
+                   'execution_configuration_sha256': digest(canonical(config)),
+                   'acquisition_sha256': digest(canonical(acquired)),
+                   'execution_commit': os.environ['GITHUB_SHA'],
+                   'workflow_run_id': int(os.environ['GITHUB_RUN_ID'])}
+          content = json.dumps(claim, indent=2) + '\n'
+          body = json.dumps({'message': 'Claim sole guidance v2 scoring attempt',
+                             'content': base64.b64encode(content.encode()).decode(), 'branch': 'main'}).encode()
+          request = Request('https://api.github.com/repos/Fahad9101/NRE/contents/' + ATTEMPT,
+                            data=body, method='PUT', headers={
+                                'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
+                                'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json'})
+          # Omit sha deliberately: an existing claim, including on a job rerun, must fail.
+          with urlopen(request, timeout=30) as response:
+              assert response.status == 201
+              committed = json.load(response)
+          destination = Path(os.environ['RUNNER_TEMP']) / 'guidance-attempt.json'
+          destination.write_text(content)
+          with open(os.environ['GITHUB_ENV'], 'a') as environment:
+              environment.write('GUIDANCE_ATTEMPT_FILE=' + str(destination) + '\n')
+          print(json.dumps({'attempt_id': claim['attempt_id'], 'claim_commit': committed['commit']['sha']}))
+          PY
+      - name: Acquire hashes or execute the registered comparison privately
+        env:
+          GUIDANCE_STAGE: ${{ inputs.stage }}
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+        run: |
+          case "$GUIDANCE_STAGE" in
+            acquire) python -m nre.m6_guidance_acquire acquire ;;
+            score) python -m nre.m6_guidance_acquire score ;;
+            *) exit 2 ;;
+          esac

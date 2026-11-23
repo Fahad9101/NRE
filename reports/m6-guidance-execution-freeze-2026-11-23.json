@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "frozen_on": "2026-11-23",
+  "configuration": "config/m6-guidance-execution-v2.json",
+  "canonical_sha256": "13757679a941d4995df351ec94ec77c68b6dd61fc21ee5041449a9bd16706848",
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "source_review_sha256": "11a0751ae90e51137b409c2e0b083651a495991b51092be1749567b1c9ad6a82",
+  "closing_outcome_requests": 0,
+  "model_runs": 0
+}
