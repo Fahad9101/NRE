@@ -1,0 +1,10 @@
+{
+  "attempt_id": "guidance-v2-001",
+  "state": "STARTED",
+  "started_at": "2026-11-23T12:53:55.043750+00:00",
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "execution_configuration_sha256": "13757679a941d4995df351ec94ec77c68b6dd61fc21ee5041449a9bd16706848",
+  "acquisition_sha256": "f0a2d365704f0ff790f893ac27b6d3e89a2b90c6af0f49d5d685594ff334b4f1",
+  "execution_commit": "eb7b3fb8d70eaccdbb7486f67f9c1462be69a7d1",
+  "workflow_run_id": 45178617120
+}
