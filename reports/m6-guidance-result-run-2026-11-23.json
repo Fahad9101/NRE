@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-23",
+  "workflow_run_id": 45178617120,
+  "workflow_run_number": 2,
+  "job_id": 137706295364,
+  "conclusion": "success",
+  "url": "https://github.com/Fahad9101/NRE/actions/runs/45178617120",
+  "execution_commit": "eb7b3fb8d70eaccdbb7486f67f9c1462be69a7d1",
+  "claim_commit": "ce27ec229a5094f92762e05db66dd85147c702da",
+  "attempt": "reports/m6-guidance-attempt-v2-001.json",
+  "attempt_canonical_sha256": "d7da2cb04701ae03604491dd114b472081bbcd40db9cdfdd18ab9caf540c8a4a",
+  "acquisition": "reports/m6-guidance-acquisition-2026-11-23.json",
+  "acquisition_canonical_sha256": "f0a2d365704f0ff790f893ac27b6d3e89a2b90c6af0f49d5d685594ff334b4f1",
+  "result": "reports/m6-guidance-result-2026-11-23.json",
+  "result_canonical_sha256": "110329de8284bc58af3d4ced193d95e6ba84cbcdf4293eb1785038ec382dd004",
+  "scoring_attempts": 1,
+  "decision": "STOP_DEVELOPMENT_GATE_NOT_MET"
+}

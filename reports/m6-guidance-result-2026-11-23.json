@@ -1,0 +1,323 @@
+{
+  "acquisition_sha256": "f0a2d365704f0ff790f893ac27b6d3e89a2b90c6af0f49d5d685594ff334b4f1",
+  "attempt_sha256": "d7da2cb04701ae03604491dd114b472081bbcd40db9cdfdd18ab9caf540c8a4a",
+  "closing_outcome_requests": 104,
+  "comparison": {
+    "decision": "STOP_DEVELOPMENT_GATE_NOT_MET",
+    "interpretation": "Retrospective development comparison; a pass qualifies only fresh-study scoping.",
+    "reports": {
+      "all_defined": {
+        "folds": [
+          {
+            "baseline_squared_error_sum": 0.045586556238172954,
+            "challenger_squared_error_sum": 0.045350512045841083,
+            "dropped_column_indexes": {
+              "baseline": [],
+              "challenger": []
+            },
+            "eligible_test_support": {
+              "issuers": 16,
+              "rows": 25,
+              "sessions": 22
+            },
+            "first_full_block_feature_cutoff": "2025-07-23T13:15:00+00:00",
+            "fit_exclusions": {
+              "hard_source_exclusion": 1,
+              "label_unavailable": 1
+            },
+            "fit_membership_sha256": "0768d9485aadd92b537e012a97884fc14408db6f36d18daecb7c0e46fed2ed12",
+            "fit_support": {
+              "issuers": 20,
+              "rows": 50,
+              "sessions": 42
+            },
+            "pair_membership_sha256": "b6407ae6ea4d5f4eed9fc504d04afa61f6bca916aeb519565bb566ece5bcc5df",
+            "paired_rows": 25,
+            "status": "scored",
+            "test_block": "2025-H2",
+            "test_exclusions": {
+              "hard_source_exclusion": 2
+            },
+            "test_membership_sha256": "b6407ae6ea4d5f4eed9fc504d04afa61f6bca916aeb519565bb566ece5bcc5df"
+          },
+          {
+            "baseline_squared_error_sum": 0.019504293891442294,
+            "challenger_squared_error_sum": 0.020566703178690467,
+            "dropped_column_indexes": {
+              "baseline": [],
+              "challenger": []
+            },
+            "eligible_test_support": {
+              "issuers": 14,
+              "rows": 15,
+              "sessions": 12
+            },
+            "first_full_block_feature_cutoff": "2026-02-13T14:15:00+00:00",
+            "fit_exclusions": {
+              "hard_source_exclusion": 3,
+              "label_unavailable": 1
+            },
+            "fit_membership_sha256": "6ce7cff99f6b83b56e3f19df5e2a872c4839d680cdac807f430d6acc149ef1dd",
+            "fit_support": {
+              "issuers": 20,
+              "rows": 75,
+              "sessions": 64
+            },
+            "pair_membership_sha256": "015e17136a51ce0a0b9b86448341c539e93f255dc7d67901038bd73da0dbcd1b",
+            "paired_rows": 15,
+            "status": "scored",
+            "test_block": "2026-H1",
+            "test_exclusions": {
+              "hard_source_exclusion": 3
+            },
+            "test_membership_sha256": "015e17136a51ce0a0b9b86448341c539e93f255dc7d67901038bd73da0dbcd1b"
+          },
+          {
+            "baseline_squared_error_sum": 0.027903786653282487,
+            "challenger_squared_error_sum": 0.02781412650890087,
+            "dropped_column_indexes": {
+              "baseline": [],
+              "challenger": []
+            },
+            "eligible_test_support": {
+              "issuers": 13,
+              "rows": 13,
+              "sessions": 10
+            },
+            "first_full_block_feature_cutoff": "2026-07-28T13:15:00+00:00",
+            "fit_exclusions": {
+              "hard_source_exclusion": 6,
+              "label_unavailable": 1
+            },
+            "fit_membership_sha256": "bb4864af7709630967347dd9fa2fe0190f501f14c73061d41b5c8f15224a0d97",
+            "fit_support": {
+              "issuers": 20,
+              "rows": 90,
+              "sessions": 76
+            },
+            "pair_membership_sha256": "13a888be79a6f91e97ad700e85725c4b0840c2ab6b5deda0287ff0b5a096a8f3",
+            "paired_rows": 13,
+            "status": "scored",
+            "test_block": "2026-Q3",
+            "test_exclusions": {},
+            "test_membership_sha256": "13a888be79a6f91e97ad700e85725c4b0840c2ab6b5deda0287ff0b5a096a8f3"
+          }
+        ],
+        "summary": {
+          "baseline_mse": 0.0017546157883565612,
+          "challenger_mse": 0.0017685158817628758,
+          "cluster_bootstrap": {
+            "issuer": {
+              "clusters": 20,
+              "estimate": -0.000013900093406314756,
+              "events": 53,
+              "intervals": {
+                "0.99": [
+                  -0.00008466096342452235,
+                  0.00006644496542475399
+                ]
+              },
+              "replicates": 5000,
+              "seed": 640001
+            },
+            "reaction_session": {
+              "clusters": 44,
+              "estimate": -0.000013900093406314756,
+              "events": 53,
+              "intervals": {
+                "0.99": [
+                  -0.00008331190420432051,
+                  0.00006719896455295078
+                ]
+              },
+              "replicates": 5000,
+              "seed": 640002
+            }
+          },
+          "counts": {
+            "cuts": 3,
+            "down_gaps": 24,
+            "folds_with_minimum_pairs": 3,
+            "issuers": 20,
+            "paired_rows": 53,
+            "raises": 36,
+            "sessions": 44,
+            "unchanged": 14,
+            "up_gaps": 29
+          },
+          "interval_99": [
+            -0.00008466096342452235,
+            0.00006719896455295078
+          ],
+          "mean_improvement": -0.000013900093406314756,
+          "pair_membership_sha256": "5150bec518e54400489aa90b6f3ade927566ce62f0174265aa3ac8d04e72908f",
+          "relative_mse_reduction": -0.007922015462618231
+        }
+      },
+      "clean_window": {
+        "folds": [
+          {
+            "baseline_squared_error_sum": 0.0480765955177195,
+            "challenger_squared_error_sum": 0.04801939728668499,
+            "dropped_column_indexes": {
+              "baseline": [],
+              "challenger": []
+            },
+            "eligible_test_support": {
+              "issuers": 16,
+              "rows": 25,
+              "sessions": 22
+            },
+            "first_full_block_feature_cutoff": "2025-07-23T13:15:00+00:00",
+            "fit_exclusions": {
+              "hard_source_exclusion": 1,
+              "label_unavailable": 1,
+              "soft_source_caveat": 8
+            },
+            "fit_membership_sha256": "2c02d4c7f1d22ea60ce23610c39ada679b6ca5818eabf0db93861e29036f08ff",
+            "fit_support": {
+              "issuers": 19,
+              "rows": 42,
+              "sessions": 36
+            },
+            "pair_membership_sha256": "b6407ae6ea4d5f4eed9fc504d04afa61f6bca916aeb519565bb566ece5bcc5df",
+            "paired_rows": 25,
+            "status": "scored",
+            "test_block": "2025-H2",
+            "test_exclusions": {
+              "hard_source_exclusion": 2
+            },
+            "test_membership_sha256": "b6407ae6ea4d5f4eed9fc504d04afa61f6bca916aeb519565bb566ece5bcc5df"
+          },
+          {
+            "baseline_squared_error_sum": 0.018502489159954432,
+            "challenger_squared_error_sum": 0.02139420717029541,
+            "dropped_column_indexes": {
+              "baseline": [],
+              "challenger": []
+            },
+            "eligible_test_support": {
+              "issuers": 13,
+              "rows": 14,
+              "sessions": 11
+            },
+            "first_full_block_feature_cutoff": "2026-02-13T14:15:00+00:00",
+            "fit_exclusions": {
+              "hard_source_exclusion": 3,
+              "label_unavailable": 1,
+              "soft_source_caveat": 8
+            },
+            "fit_membership_sha256": "33e1f83dd2dc84e6c5d021fd3a0680ce0a15fe6558c54efb030f89edc72bde79",
+            "fit_support": {
+              "issuers": 20,
+              "rows": 67,
+              "sessions": 58
+            },
+            "pair_membership_sha256": "ee21dc0e38d75dbfbad5b94b515e29974a6c569a504077b4a5ad205712515423",
+            "paired_rows": 14,
+            "status": "scored",
+            "test_block": "2026-H1",
+            "test_exclusions": {
+              "hard_source_exclusion": 3,
+              "soft_source_caveat": 1
+            },
+            "test_membership_sha256": "ee21dc0e38d75dbfbad5b94b515e29974a6c569a504077b4a5ad205712515423"
+          },
+          {
+            "baseline_squared_error_sum": 0.02673551835174869,
+            "challenger_squared_error_sum": 0.026592669117123973,
+            "dropped_column_indexes": {
+              "baseline": [],
+              "challenger": []
+            },
+            "eligible_test_support": {
+              "issuers": 12,
+              "rows": 12,
+              "sessions": 9
+            },
+            "first_full_block_feature_cutoff": "2026-07-28T13:15:00+00:00",
+            "fit_exclusions": {
+              "hard_source_exclusion": 6,
+              "label_unavailable": 1,
+              "soft_source_caveat": 9
+            },
+            "fit_membership_sha256": "9defecaf5619e834a1a8d23876e5ea4909a31291b81353bb539fa1a8b1820655",
+            "fit_support": {
+              "issuers": 20,
+              "rows": 81,
+              "sessions": 69
+            },
+            "pair_membership_sha256": "dd10e599564480c694ed3ab0eee3d4bb70cc3dcae8212e01407f64999a698b1c",
+            "paired_rows": 12,
+            "status": "scored",
+            "test_block": "2026-Q3",
+            "test_exclusions": {
+              "soft_source_caveat": 1
+            },
+            "test_membership_sha256": "dd10e599564480c694ed3ab0eee3d4bb70cc3dcae8212e01407f64999a698b1c"
+          }
+        ],
+        "summary": {
+          "baseline_mse": 0.0018296980986161298,
+          "challenger_mse": 0.0018824759524334192,
+          "cluster_bootstrap": {
+            "issuer": {
+              "clusters": 19,
+              "estimate": -0.00005277785381728922,
+              "events": 51,
+              "intervals": {
+                "0.99": [
+                  -0.00020599864850454015,
+                  0.00007933277869114117
+                ]
+              },
+              "replicates": 5000,
+              "seed": 640001
+            },
+            "reaction_session": {
+              "clusters": 42,
+              "estimate": -0.00005277785381728922,
+              "events": 51,
+              "intervals": {
+                "0.99": [
+                  -0.00019691439229782489,
+                  0.00008642727701464206
+                ]
+              },
+              "replicates": 5000,
+              "seed": 640002
+            }
+          },
+          "counts": {
+            "cuts": 3,
+            "down_gaps": 23,
+            "folds_with_minimum_pairs": 3,
+            "issuers": 19,
+            "paired_rows": 51,
+            "raises": 36,
+            "sessions": 42,
+            "unchanged": 12,
+            "up_gaps": 28
+          },
+          "interval_99": [
+            -0.00020599864850454015,
+            0.00008642727701464206
+          ],
+          "mean_improvement": -0.00005277785381728922,
+          "pair_membership_sha256": "4e69cbd9836bdb8436f8a13623280df2436c2a7d483e67ca25f31c749c945d89",
+          "relative_mse_reduction": -0.02884511595503494
+        }
+      }
+    },
+    "schema_version": 1
+  },
+  "execution_commit": "eb7b3fb8d70eaccdbb7486f67f9c1462be69a7d1",
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "provider_wire_changes": [],
+  "raw_prices_or_event_returns_published": false,
+  "reproduction_manifest_sha256": "f0a2d365704f0ff790f893ac27b6d3e89a2b90c6af0f49d5d685594ff334b4f1",
+  "schema_version": 1,
+  "scope": "guidance_v2_single_registered_comparison",
+  "scoring_attempts": 1,
+  "workflow_run_id": 45178617120
+}
