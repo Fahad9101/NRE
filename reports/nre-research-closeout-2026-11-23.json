@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "owner_authorized_research_track_closeout",
+  "decided_on": "2026-11-23",
+  "authorized_by": "Fahad9101 (project owner)",
+  "source": "Project owner message in the NRE Codex chat",
+  "exact_approval": "okay do the three recommendations",
+  "approved_recommendations": [
+    "Close the current research track with a negative finding: the tested approaches did not demonstrate the required predictive advantage.",
+    "Retain the repository, audited datasets/event definitions, code, tests, reports and Git history as reusable research assets.",
+    "Stop further development under the current approach and defer the engine, ranking, paper-trading and integration milestones."
+  ],
+  "research_track_status": "CLOSED_NEGATIVE_FINDING",
+  "development_status": "STOPPED_CURRENT_APPROACH",
+  "production_roadmap_status": "INCOMPLETE_DEFERRED",
+  "accepted_milestones_unchanged": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "deferred_work": {
+    "milestone_6_engine": "DEFERRED",
+    "milestone_6_fresh_validation": "DEFERRED",
+    "proposed_2027_study": "ON_HOLD",
+    "milestone_7_ranking": "DEFERRED",
+    "milestone_8_paper_trading": "DEFERRED",
+    "milestone_9_integration": "DEFERRED"
+  },
+  "preservation_anchor_commit": "89e10d9f40c793489a30a1cea0d51cda728d0c4f",
+  "repository": "Fahad9101/NRE",
+  "assets_retained": [
+    "config/",
+    "nre/",
+    "tests/",
+    "reports/",
+    "archive/",
+    "docs/",
+    "scripts/",
+    "Git history"
+  ],
+  "repository_settings_changed": false,
+  "workflows_changed": false,
+  "secrets_changed": false,
+  "prior_acceptances_and_frozen_records_changed": false,
+  "evidence_canonical_sha256": {
+    "config/m6-guidance-protocol-v2.json": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+    "reports/m6-guidance-attempt-v2-001.json": "d7da2cb04701ae03604491dd114b472081bbcd40db9cdfdd18ab9caf540c8a4a",
+    "reports/m6-guidance-result-2026-11-23.json": "110329de8284bc58af3d4ced193d95e6ba84cbcdf4293eb1785038ec382dd004",
+    "reports/m6-guidance-result-run-2026-11-23.json": "78ae4d06c46375896cbf5ca2a670235424cc5856c15ead00fcf2c86e8305e688"
+  },
+  "closeout_document": "docs/NRE-RESEARCH-CLOSEOUT.md",
+  "reopening_conditions": [
+    "Separate explicit owner decision to reopen research",
+    "Materially different hypothesis and untouched cohort",
+    "Success criteria fixed before outcomes"
+  ]
+}

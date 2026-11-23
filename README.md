@@ -1,8 +1,10 @@
 # NRE 1.0 — US News Reaction & Gap Opportunity Engine
 
-Independent research system for estimating conditional market reactions to corporate news and identifying potential underreaction or overreaction.
+Retained research system for estimating conditional market reactions to corporate news and investigating potential underreaction or overreaction.
 
 ## Project status
+
+**Current research track closed with a negative finding. Further development under the current NRE approach is stopped by owner decision on November 23, 2026.** The repository, audited event definitions, source evidence, code, tests, reports and Git history are retained as reusable research assets. [Owner-approved closeout](docs/NRE-RESEARCH-CLOSEOUT.md) · [Decision record](reports/nre-research-closeout-2026-11-23.json)
 
 The owner has accepted Milestones 1–5. NRE includes an audited earnings event dataset, reaction fingerprints and analogues, catalyst extraction, and chronological comparisons of baseline and advanced predictive models. The accepted model research established no predictive edge and promoted no advanced models.
 
@@ -13,10 +15,10 @@ The owner has accepted Milestones 1–5. NRE includes an audited earnings event 
 | 3 · News and catalyst intelligence | Accepted. [Acceptance](reports/m3-acceptance-declaration-2026-09-30.json) |
 | 4 · Baseline predictive models | Accepted. No predictor was distinguishable from the pooled base rate. [Acceptance](reports/m4-acceptance-declaration-2026-10-08.json) · [Report](docs/M4-REPORT.md) |
 | 5 · Advanced models | Accepted. The 43-event forward extension was opened once under the frozen protocol. Zero targets were promoted. [Acceptance](reports/m5-acceptance-declaration-2026-11-14.json) · [Report](docs/M5-REPORT.md) |
-| 6 · Reaction Gap Engine | Research closeout acknowledged. The engine is deferred and the proposed 2027 study is on hold. [Closeout](docs/M6-RESEARCH-CLOSEOUT.md) · [Owner acknowledgment](reports/m6-research-closeout-acknowledgment-2026-11-15.json) |
-| 7 · Real-Time Candidate Ranking | Pending a validated reaction-gap signal and engine. |
-| 8 · Paper-Trading Validation | Pending forward validation using realistic entries and slippage. |
-| 9 · Integration Contracts | Pending independent validation and documented handoffs to SOE, BOE and IEE. |
+| 6 · Reaction Gap Engine | Current research track closed. Engine build and fresh validation remain incomplete and deferred; the proposed 2027 study stays on hold. [Current closeout](docs/NRE-RESEARCH-CLOSEOUT.md) · [Earlier owner acknowledgment](reports/m6-research-closeout-acknowledgment-2026-11-15.json) |
+| 7 · Real-Time Candidate Ranking | Deferred by owner decision; no implementation work authorized under the closed approach. |
+| 8 · Paper-Trading Validation | Deferred by owner decision; no paper-trading work authorized under the closed approach. |
+| 9 · Integration Contracts | Deferred by owner decision; SOE, BOE and IEE integration remains unbuilt. |
 
 The single registered annual-guidance comparison is complete and failed its development gates. Adding the guidance-revision feature increased forecast MSE by 2.88% on 51 clean held events; its 99% uncertainty envelope crossed zero, and sensitivity error increased by 0.79%. The study used one exclusively logged scoring attempt after sealed acquisition commitments replayed unchanged. No model is promoted. The earlier quarterly-revenue comparison also failed to improve the baseline. The evidence supports stopping further engine development under the current approach and retaining the audited research record. The engine and remaining roadmap stay deferred; no additional subscription was used. [Guidance result and decision](docs/M6-GUIDANCE-RESULT.md) · [Quarterly-revenue result](docs/M6-REVENUE-RESULT.md)
 
