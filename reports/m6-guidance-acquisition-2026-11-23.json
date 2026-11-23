@@ -1,0 +1,2727 @@
+{
+  "aggregate_attrition": {
+    "hard_source_exclusion": 3,
+    "unusable_price_labels": 1
+  },
+  "basis_cohort_sha256": "3739c346a7cab2dcdc8f321ae3355f2e514328394f2f410a69b8ee263cf92a7d",
+  "closing_outcome_requests": 104,
+  "corporate_action_receipts": [
+    {
+      "request_sha256": "524433a6454f6e8808c46cfb28db42ee3fd5f43d80760fae0272235c6d1b10ef",
+      "response_sha256": "7de18de058c32c6b43820700bf559122c8de9f9a106d1ea68d672f45ab661482"
+    }
+  ],
+  "corporate_actions_sha256": "62ae82e3fd79ac8d96ed397dcb47bbce1cb0231cfedabee95f68fd65701ba6a5",
+  "dispositions": {
+    "labels_committed": 103,
+    "withheld": 4
+  },
+  "events": [
+    {
+      "anchor_session": "2024-07-23",
+      "cik": "0001057352",
+      "close_mature_at": "2024-07-24T20:05:00+00:00",
+      "event_id": "csgp-0001193125-24-182891",
+      "label_commitment_sha256": "339254e5cd343ba4dbddf31291ef7de1b39ac99a97afcf9b53be1a90e41e5274",
+      "reaction_session": "2024-07-24",
+      "receipts": [
+        {
+          "request_sha256": "46fe9488572ebb6ac3a5d5883407aaeef3198bd8e524245849129b7253d5a00b",
+          "response_sha256": "599ef7a62b0dd0cd78132a9f679acb6862fbb9e984f2e47ae1c283c1a7d7f493"
+        },
+        {
+          "request_sha256": "97e4beb373d3e1f24c5a42b8abe278d0f369b86f0cc9e8ecf34722850ab51e05",
+          "response_sha256": "a5089a062fe7c6eee89221b5898c2a74f6cde7e21b51fa49020abe855a6a86d5"
+        },
+        {
+          "request_sha256": "3dc72d051b7d09a07a77c33d031ab66fc0fdd07340379d0975b3b807cbf44b53",
+          "response_sha256": "f962f962cdd6ac62504b488a5b79813c1c197fe9643fc4545b5d611ac8b87e45"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CSGP"
+    },
+    {
+      "anchor_session": "2024-07-24",
+      "cik": "0000898173",
+      "close_mature_at": "2024-07-25T20:05:00+00:00",
+      "event_id": "orly-0000898173-24-000032",
+      "label_commitment_sha256": null,
+      "quality_state": "price_quality_withheld",
+      "reaction_session": "2024-07-25",
+      "receipts": [
+        {
+          "request_sha256": "1b01aeac2b440500f27fd20cead9064bd03f12349786f50a55035c5ca1baff52",
+          "response_sha256": "2834830b276c2f4c367a2b60d7a4a2a8415bbede7a96608473fe2fbff6aecd20"
+        },
+        {
+          "request_sha256": "1f4e15cedd81444a5da77a737ed2d6a92c2b91366defe8d43f964a4d66e27682",
+          "response_sha256": "eaff8bba73013b5cc3486d7eed798bc4a4dc4a13fa981ffb4ec9043f2cf51285"
+        },
+        {
+          "request_sha256": "f9b1046aef34e0fcb3d0946c46b3c1ba7b5b27b2af9aad8db4031b60e1098200",
+          "response_sha256": "a793d90713048953682ca41e3402d2936f877bd3dbdd3a5a63f4a3513d645480"
+        }
+      ],
+      "status": "withheld",
+      "subset": "warmup",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2024-07-25",
+      "cik": "0001093557",
+      "close_mature_at": "2024-07-26T20:05:00+00:00",
+      "event_id": "dxcm-0001093557-24-000143",
+      "label_commitment_sha256": "0be9232f737ba7e548a3fe5c02f901f86143fc267c3c55408286fbcdabf8f0b3",
+      "reaction_session": "2024-07-26",
+      "receipts": [
+        {
+          "request_sha256": "623503807b08bb8ff2618c62bb4f4ac5632434579775fd7fe727c94899e3d5de",
+          "response_sha256": "0ea10c41032f91e6cfefbf00239f72743be4c7a66336c475f64538313e50e87e"
+        },
+        {
+          "request_sha256": "2692d8c05176e1e5879cbfa9384b436f67b513a3b8582a910d9f2706a4ef7c1e",
+          "response_sha256": "dfce0636ecef0c2e1b5e35bba1ca0cf31530a61f71334f71f74f33b51224badc"
+        },
+        {
+          "request_sha256": "b36f6fe68e4bbec24141bdd35579d57792d3337c839fb1112e805186fef39271",
+          "response_sha256": "aa9140b16782ab28e748e53c9ac3699d8b33ba7500d6ace0636212cc6c887b48"
+        },
+        {
+          "request_sha256": "e3d4b5dbf3c202a0d431b7bc86ca295ad251252086c175844d7b012ac5809e87",
+          "response_sha256": "48af42223e9354544de1e50b877001a384055c7b009e1ff07749f38743538a65"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2024-07-30",
+      "cik": "0000712515",
+      "close_mature_at": "2024-07-31T20:05:00+00:00",
+      "event_id": "ea-0000712515-24-000027",
+      "label_commitment_sha256": "d589d8185d5fdd760d654d1a00cd1e2f855dc3d902ee9e27526cb8e478c50806",
+      "reaction_session": "2024-07-31",
+      "receipts": [
+        {
+          "request_sha256": "694bbb511fa2c85e556588a2e7f29da552c29419cc75905d10d152fc7dac83d9",
+          "response_sha256": "3ff65ce96e9889b38bc1eff43e716ccf5550eb90aa7db4c92bdd7cbec70029c3"
+        },
+        {
+          "request_sha256": "caa891e8ae76dbd052c1c367779a890a91787100397876e389489ec03789eaa1",
+          "response_sha256": "9b2119c340df8ac22a15c77f21424eb4714338b365d331aa657402a18e65b15d"
+        },
+        {
+          "request_sha256": "878ac899cb64db21ca2e26ad88e817b33fe653c213a25c2b0642070b88a2d11b",
+          "response_sha256": "7a224461a8c6a697a748221b636ca2995ed9cb6f2fc0cd93fe93c0dc73038820"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "EA"
+    },
+    {
+      "anchor_session": "2024-07-30",
+      "cik": "0001442145",
+      "close_mature_at": "2024-07-31T20:05:00+00:00",
+      "event_id": "vrsk-0001437749-24-023984",
+      "label_commitment_sha256": "476ae85f88cbbb37981bb38662b20599931afb6435389e991bada2272c35bc3d",
+      "reaction_session": "2024-07-31",
+      "receipts": [
+        {
+          "request_sha256": "e413bb8a5071eff30b1adacb0ff8711e2adc817ead3ae3a3f055d458bbaa2257",
+          "response_sha256": "1e0188bd823d741f0cf23f19fb89f68758bf3ef2db3bb7ea8d72583a20f8ca07"
+        },
+        {
+          "request_sha256": "302dce2adb4b7bf5b717dd28a440de2469dfa86cdc51ea5ec0d87c3f32f3ec8e",
+          "response_sha256": "cbe8005caec41daf42dca821d65a51b6b6cac3387be818c98fba9acacf280c9d"
+        },
+        {
+          "request_sha256": "cbda23036a64ce6b9b8035ed2b39be2ce84375d098f5b36170d9b5eeadb4c818",
+          "response_sha256": "b15dabfd33f561b17c3950fb5d162550066641d175ceafd039d3feb635373217"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "VRSK"
+    },
+    {
+      "anchor_session": "2024-07-31",
+      "cik": "0001058290",
+      "close_mature_at": "2024-08-01T20:05:00+00:00",
+      "event_id": "ctsh-0001058290-24-000241",
+      "label_commitment_sha256": "ac5c90db33063d58771a2930b53cbbc7481155611aa496618defc8117081600e",
+      "reaction_session": "2024-08-01",
+      "receipts": [
+        {
+          "request_sha256": "a7c74f42769b27feb936cab3fd7d124de432b5bfaf02714d3b189abd3220afac",
+          "response_sha256": "79891c24c96b8ad3ab1dd8db2bcb934670f9ee1c9c77866d8023f0f2e7b06990"
+        },
+        {
+          "request_sha256": "dbc25a878af142c3bf1543348201cc6a4b12f34ef5c493a948718a1033773ea1",
+          "response_sha256": "70228fe192a9ba90893defc754806f139b317bdf9f045f61b2a19512ec860855"
+        },
+        {
+          "request_sha256": "823707d94b1e88822ab955dfd6c3e3caf77c4d01e363a81c65f4cab067d18e23",
+          "response_sha256": "53cdde5df92581b6c9a8dd63a673eab11fef6b7545fa72e3f3d792942e8ee106"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CTSH"
+    },
+    {
+      "anchor_session": "2024-08-05",
+      "cik": "0000874716",
+      "close_mature_at": "2024-08-06T20:05:00+00:00",
+      "event_id": "idxx-0001104659-24-086074",
+      "label_commitment_sha256": "6ee075f69869469f4bfd7ebffe3cb0db897e9f2316fb039de27887cc4b6c38ad",
+      "reaction_session": "2024-08-06",
+      "receipts": [
+        {
+          "request_sha256": "66a570deefe3d2ee3d35a5dff55c786582c5ce54fd82349982f2b808f13e80f4",
+          "response_sha256": "344a3a0948ca5291399d749a684e47b435849b8594a435a3efb480116b6a3cb2"
+        },
+        {
+          "request_sha256": "c51ad93d4e7e295fa1901ffbd266af3742879edbbfa7bcd3b01b9d9e5b67ce2e",
+          "response_sha256": "5857c65ebb769a96e00477c3f6b6c1b85a00b6de1ce7c4aba6fc5bc69a06013a"
+        },
+        {
+          "request_sha256": "d66778df3929933c8f08a562bb91ebcfd01039ff7f81df03484cf98274cd1796",
+          "response_sha256": "170fc5cdfe3fb74b687154864e903d50b14d9479866236083fd209b1a506618a"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2024-08-07",
+      "cik": "0001561550",
+      "close_mature_at": "2024-08-08T20:05:00+00:00",
+      "event_id": "ddog-0001561550-24-000109",
+      "label_commitment_sha256": "ddee729974c96d3b6500a3a1f038d5a863a05f89fb1da500191ac2875e2cf845",
+      "reaction_session": "2024-08-08",
+      "receipts": [
+        {
+          "request_sha256": "de97bbc005a8c1ce6518ee8a6f2af19486cf27a833ffa60b23c79badefbde695",
+          "response_sha256": "84beb195b6a38a3395b5707924e56f500e8d5917eaa95d66da23bd4be4922bb4"
+        },
+        {
+          "request_sha256": "dbf513842f566a4de00f18cfb02c50758895d4e15e10087db374b693ff4cc089",
+          "response_sha256": "d715d827eb0ecc0bd2d64eef3d78a6736283102e36016d5d8d25e63946b62e4c"
+        },
+        {
+          "request_sha256": "bb6fa223da44c0b94f1efa04c210a6b861285037e9c61f6439bbc803f1f5fea5",
+          "response_sha256": "6967920590536f553e3d031eaa9fb38c1f07b5e22714e8cffdc540e986ac1472"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DDOG"
+    },
+    {
+      "anchor_session": "2024-08-21",
+      "cik": "0000883241",
+      "close_mature_at": "2024-08-22T20:05:00+00:00",
+      "event_id": "snps-0001193125-24-204450",
+      "label_commitment_sha256": "4e5e1c26811723a75ee40f8c60a313f88d34e5581801617fd71b7a28b69056be",
+      "reaction_session": "2024-08-22",
+      "receipts": [
+        {
+          "request_sha256": "54776fd93bb967e798139bf470f35ea6f47cbfb9d838e65f9d83c40564d995fd",
+          "response_sha256": "d6aed665d9094554497861d3712c484641531c1323608039fe1be7c4cf7e2ac6"
+        },
+        {
+          "request_sha256": "575831024afaf7e8152657db69aac80fb023d1828bf825b6f2b9b6d6f360ff4d",
+          "response_sha256": "71038e0a7ecfe42840ae4c28b38345d5fe390d11e2fd7ad191cf681e8e9aaabd"
+        },
+        {
+          "request_sha256": "e0e12515d4715d2caa2b7eba86e940b9c2dddbec3b5d716c47595c179f827202",
+          "response_sha256": "9478473b5854796f08ccb6e9ad68571d355ed2429798badab77bb664bc93ee3d"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "SNPS"
+    },
+    {
+      "anchor_session": "2024-08-28",
+      "cik": "0001535527",
+      "close_mature_at": "2024-08-29T20:05:00+00:00",
+      "event_id": "crwd-0001535527-24-000017",
+      "label_commitment_sha256": "e88c8f77c0cdaec6919cec9191036640f1cd092627846ae252e4f213ec58fb07",
+      "reaction_session": "2024-08-29",
+      "receipts": [
+        {
+          "request_sha256": "f87a94768e39ca771b72fc8d766d09b685862a8bf20f3190ea1114deab6306d3",
+          "response_sha256": "d247d02464abcbfeba4d212adca74e0f9d6ca5895034e0558671c12c719bae69"
+        },
+        {
+          "request_sha256": "d7222459b1b2dfd0eb6a7d8c1f8cbf3d55c66b82f1f18838ea1bf16e4499edb1",
+          "response_sha256": "18743121418525cf86d9ca684db6604776ec9e7acb1093e68a6a90dd1f95d68d"
+        },
+        {
+          "request_sha256": "75a850c08c36b41d919e38d3c42d8149e57e6c4f1818f4dfef482163c6d9e63c",
+          "response_sha256": "7a6901763425e35df1966116784759574b5ba4a04276d271a7115172806444bc"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CRWD"
+    },
+    {
+      "anchor_session": "2024-08-29",
+      "cik": "0001397187",
+      "close_mature_at": "2024-08-30T20:05:00+00:00",
+      "event_id": "lulu-0001397187-24-000033",
+      "label_commitment_sha256": "99a7d20cc7f006fa8765e78ce04c966e2dae30d38b785153b649256fac1c1aa2",
+      "reaction_session": "2024-08-30",
+      "receipts": [
+        {
+          "request_sha256": "c1039547de38cdd246faff4fab0b4296feeede0f4046f8efc3c046db0aa2d68a",
+          "response_sha256": "8ada16dd1711e8a8c38b8610800f8beff2d0ee786b09da0e1a5a6612f397eb4b"
+        },
+        {
+          "request_sha256": "adb50de62b6530a6b1e1c9631aa6aa3a448353e1cdf4ed911fd1029c5d4ceb4f",
+          "response_sha256": "ce12891ad06943c2a09f015c5b02441492cc97f8e2f87a2ed5a1f66905a920f6"
+        },
+        {
+          "request_sha256": "04226849209b57f849056964faa10ad9cc46fb81a77e5bddd9da45b41606eaab",
+          "response_sha256": "69213dcc67734f6fba758d9a8fb2f02c017a2c14a18013be720cf615a255192f"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "LULU"
+    },
+    {
+      "anchor_session": "2024-08-29",
+      "cik": "0001441816",
+      "close_mature_at": "2024-08-30T20:05:00+00:00",
+      "event_id": "mdb-0001441816-24-000185",
+      "label_commitment_sha256": "5e21aa8a20a3a8fd2f500323bed53343dfd3cedc677d35c35fee39e7d965b6f8",
+      "reaction_session": "2024-08-30",
+      "receipts": [
+        {
+          "request_sha256": "4f324c16971a7896813ab61c46b2be087b14b827de3e7888efa0e8caa433ba52",
+          "response_sha256": "84dbbbceeb133066e4d2ade9c7642bf2d7e1846039fab563032770aadd6befd4"
+        },
+        {
+          "request_sha256": "eff62f91364ede469dbada842cd38d7cf2e96f44c8d039fdccfc96ebc67c57de",
+          "response_sha256": "70dfa77b4f4543da38f1f1562addf5b7ee24550801f3d2fd4a1be31bd78c12e5"
+        },
+        {
+          "request_sha256": "70f80b786c50225c3c65f6be4916735922700a152809d33652adf9db0e68d9b9",
+          "response_sha256": "d62563a48f5f6bc3c116804271c9045761c0f68ee439d4524ef00f61b9fa5aa6"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "MDB"
+    },
+    {
+      "anchor_session": "2024-09-03",
+      "cik": "0000935703",
+      "close_mature_at": "2024-09-04T20:05:00+00:00",
+      "event_id": "dltr-0000935703-24-000039",
+      "label_commitment_sha256": "6a10162e3a6d5939107dd2518212599711f57fa972c3eb1093e8d327774d3691",
+      "reaction_session": "2024-09-04",
+      "receipts": [
+        {
+          "request_sha256": "6fa43f90326ab886af5352b4e8122b7d1af021a0308e17ba2f86f26b0d45ebda",
+          "response_sha256": "a6c5d1fbb9c57da12aab10da335b533c38da3a0c60cd0c9e9f7aa952fa347409"
+        },
+        {
+          "request_sha256": "85d2c92d178ad8c9bc64f0c784892d75262529a4c6a185ff385fb58d6500b376",
+          "response_sha256": "651b4723c2ba20fb33ebe875f7d2ed8a226dbe0c98742f95ec82da6de8cfe35c"
+        },
+        {
+          "request_sha256": "6e67b9163b3ad14a0558866db20a1e50122c362004dcb75bfb0c61113c4d52da",
+          "response_sha256": "8a4451d06fe0e2b1391abd637c8f5b78e5fd2ca055f909630f8d209745650d35"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2024-10-22",
+      "cik": "0001057352",
+      "close_mature_at": "2024-10-23T20:05:00+00:00",
+      "event_id": "csgp-0001057352-24-000122",
+      "label_commitment_sha256": "4568c6b66d6107a4f5356d970687d46dbe4144eb6c410de314c10af62a416086",
+      "reaction_session": "2024-10-23",
+      "receipts": [
+        {
+          "request_sha256": "2ec16ac1743fc5baf9fd58b8570e3632b9f50372c60f97cc601de4e3f46ce03d",
+          "response_sha256": "804fbc6f3568ca4deb7dd7a37d1f12cae32394a74f821ec300089daf699d8d53"
+        },
+        {
+          "request_sha256": "4401d0b55aa929cd94f8e2a248e009bca0835126d268b546d4b0180da98d1e9d",
+          "response_sha256": "4d41c3fa96df88b06c14fc30db82183cda906e4025658914bfeb490cea2c55ad"
+        },
+        {
+          "request_sha256": "a2562d368b9a6da43d6e5694a9bf80752f18ee3b124c21de23639307ada86e2c",
+          "response_sha256": "6b7a7b8f91dc678199f2116fce466f4ade36e2888b6287dc3cfa57dfd3980334"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CSGP"
+    },
+    {
+      "anchor_session": "2024-10-23",
+      "cik": "0000898173",
+      "close_mature_at": "2024-10-24T20:05:00+00:00",
+      "event_id": "orly-0000898173-24-000040",
+      "label_commitment_sha256": "9ed1ef55cf75bd0209cdc36c92a57f77e93cce9bbfc41f2f47c21387efe13b85",
+      "reaction_session": "2024-10-24",
+      "receipts": [
+        {
+          "request_sha256": "8cb9c2e5454d624ae5f84ffe4676273e30b6c6c0d800902e7302250860718f65",
+          "response_sha256": "102c07cad6ff2ce99ea56c89c72bd969ea45417644b13891545b82b778fdefd0"
+        },
+        {
+          "request_sha256": "0e881c5b9a810163323544a594c8295cd1d4c3f788273f1f6720debabae30f39",
+          "response_sha256": "af0ca49736f7b429a5b13046f90a513ab24aa4334d35027b7746ab2a80f982b4"
+        },
+        {
+          "request_sha256": "ee25a26b39aec4a83ab86ba1b2afa8a9d26b361008f3507603ba52cfe19af5c1",
+          "response_sha256": "802baeb4478c94df7924da898136aef515e11c86d20de5a67861a9420becb26c"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2024-10-24",
+      "cik": "0001093557",
+      "close_mature_at": "2024-10-25T20:05:00+00:00",
+      "event_id": "dxcm-0001093557-24-000179",
+      "label_commitment_sha256": "3c9a4d63599c8fb8d97e8a3bf7d599111d10d59ea87e7f6a66a2cf613bd23214",
+      "reaction_session": "2024-10-25",
+      "receipts": [
+        {
+          "request_sha256": "b7c126a14efde0c4558c0b52b13916b52424bf595ecc7488f2c4c01ee07eed72",
+          "response_sha256": "cea06152083e99ff3139ac71cebec90f5d6c1b1d28fc18dad2a734fec8f99930"
+        },
+        {
+          "request_sha256": "7a5f96efac9952354eb375b16977802f82c0c631bfa3e8aeaf63c5b90d35e3cc",
+          "response_sha256": "07849b024ac1b057524142aa432faa00aeeb840643488ee6bbf20dc73c855389"
+        },
+        {
+          "request_sha256": "44f77f8ada46ec3fefbbce14f319d88dc41a4ddafdb01e2760d335aaaf9f58e1",
+          "response_sha256": "64f54653474431509633eee19354302a7ccb691515754d631b825b9a8c8e6d01"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2024-10-28",
+      "cik": "0000813672",
+      "close_mature_at": "2024-10-29T20:05:00+00:00",
+      "event_id": "cdns-0000813672-24-000188",
+      "label_commitment_sha256": "d11c35959650940907a528cddde0c7cbd12dd73b21ab9894862cc957b031d322",
+      "reaction_session": "2024-10-29",
+      "receipts": [
+        {
+          "request_sha256": "a0617f1be9ffd0a330e998f0a84d6e67059f3e7e3e366d903261cdead5f9b741",
+          "response_sha256": "e5f68b3c2591f4af0c06ab15646ea2350f85f1348f37d5a82c1b8f5eca7791f1"
+        },
+        {
+          "request_sha256": "3819f9200655683204978a5f20b499b1551d2d03cdc4aa8ae3c3ac39ba9c828c",
+          "response_sha256": "afe1d234ef21a7c58e5155c4e5c758a8790e29043a99ec87992e8729231ec80d"
+        },
+        {
+          "request_sha256": "cb6e7ffda46e719e4e1eebe3b438f2a5ff85e5a27e59eed1b9ab26be8499d171",
+          "response_sha256": "72b20050b442956c865d78ea690c0706aa392e866608393027023bc538f76e19"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CDNS"
+    },
+    {
+      "anchor_session": "2024-10-29",
+      "cik": "0000712515",
+      "close_mature_at": "2024-10-30T20:05:00+00:00",
+      "event_id": "ea-0000712515-24-000045",
+      "label_commitment_sha256": "25c14dfd3d1e02c45d7daf94f6f33ff09d16832beb3dfa4df64448fe0a13ac07",
+      "reaction_session": "2024-10-30",
+      "receipts": [
+        {
+          "request_sha256": "55450b5246ab90962ebe9589909fd15098e62eb60c30f25a18bf1fd645e1b23c",
+          "response_sha256": "8f8d191bf56fbdb7c01b05ed0c4ed26c1f2ecf108969865e608653f33e98cd47"
+        },
+        {
+          "request_sha256": "edbe1d780487f7d526a04f0c49d577f709b91286aaf61174414929e66068c4f0",
+          "response_sha256": "babe3240bb72bf25558a56c8d9e96c67253f7799d01be2a965093ea71563448f"
+        },
+        {
+          "request_sha256": "5e926a4282af01c252b2f8e041488348a1e82e39e9b387226e62e74784295636",
+          "response_sha256": "a46edbcf5356013d88b37a158b651f4f5d01711fd002a2767a7fee7c61d64407"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "EA"
+    },
+    {
+      "anchor_session": "2024-10-29",
+      "cik": "0001442145",
+      "close_mature_at": "2024-10-30T20:05:00+00:00",
+      "event_id": "vrsk-0001437749-24-032535",
+      "label_commitment_sha256": "d9a1042cc556ebff9d6b154031795949d7d55abf91fa1ece0ece4539842e60c4",
+      "reaction_session": "2024-10-30",
+      "receipts": [
+        {
+          "request_sha256": "5e764fc943ca8a4cc678b3feb5123cd962238323d1b9ffa3c389f52c32fc6885",
+          "response_sha256": "7c404a17227ac2233ef67564cb010446d9e1976e5c708f6c2828aa067a8794ce"
+        },
+        {
+          "request_sha256": "e68f20e7fec77c982f6051d2e15de48b66d2403cd25b10aa229d10e62610c0c2",
+          "response_sha256": "07ad73957f8fcc1024fea5b318c5f845b493e960c2d202db2faab5b3d9761d93"
+        },
+        {
+          "request_sha256": "f0467adbc426a7ece27103b1fc7340dd422fdc31f104456b2fdec5424ca572b5",
+          "response_sha256": "7299ffdb073746b4aefc4902a53c4ebf6f0e2414b88839af78d2db7ce2aca57c"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "VRSK"
+    },
+    {
+      "anchor_session": "2024-10-30",
+      "cik": "0000318154",
+      "close_mature_at": "2024-10-31T20:05:00+00:00",
+      "event_id": "amgn-0000318154-24-000042",
+      "label_commitment_sha256": "d817597f36d39f77ca6768d173e01c17394f6fc10f2f27411e40afc340866ea1",
+      "reaction_session": "2024-10-31",
+      "receipts": [
+        {
+          "request_sha256": "47b36e86f446ec95109dcf8130ef63da74b109a8b37b8d67654f985c8b869778",
+          "response_sha256": "0a269ab573cd8f1919fedf425ef4218e9afead8bd0d89bb6742fe7d5bea5eac6"
+        },
+        {
+          "request_sha256": "1a81d72175b71c95914b16a0f71d51574fb7e4660c16113ac76cbc0b60ed6291",
+          "response_sha256": "063834e0d218322aa8fece72952d39fe035657268293a5bc497085a1696d7bbb"
+        },
+        {
+          "request_sha256": "268d67b01ea9b22e02df6bf244da50d73609333f5dfdc931f7244d6dbb64a9da",
+          "response_sha256": "9e2d26a08f9cb83d23012cd3e2d31c75524df4659f3b187ddee314222a1cea6f"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "AMGN"
+    },
+    {
+      "anchor_session": "2024-10-30",
+      "cik": "0001058290",
+      "close_mature_at": "2024-10-31T20:05:00+00:00",
+      "event_id": "ctsh-0001058290-24-000325",
+      "label_commitment_sha256": "96120ba2af98ab5f3301c8b2eb0490bd5470015b38a153a7984d72a5aad0dcab",
+      "reaction_session": "2024-10-31",
+      "receipts": [
+        {
+          "request_sha256": "a98cbbd336447d595b359f52b423b09b6b38e0f2818f3b099b4a39f78057bc34",
+          "response_sha256": "a3e5099fc0e9213c3d018224ae336cbe32473ae205a432ba4658c01bd30ce519"
+        },
+        {
+          "request_sha256": "e5517b134fa3ba9e35c15c376efd7252cc521132ae5e9fbb29eb3b57e4e5b14e",
+          "response_sha256": "9ff92b3c8aada046ff2e76ed190de41aa9827c459e9a0537c89ce5f9c3d3571e"
+        },
+        {
+          "request_sha256": "687f18e04541dc713505c843924541cfb152f0f9b91e49c5ff4ecc2a024c6b38",
+          "response_sha256": "92293124a1f21976e2f0c6e9059a5d016c13b51f26e817cef8585f4d1571171c"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CTSH"
+    },
+    {
+      "anchor_session": "2024-10-30",
+      "cik": "0000874716",
+      "close_mature_at": "2024-10-31T20:05:00+00:00",
+      "event_id": "idxx-0001104659-24-112826",
+      "label_commitment_sha256": "152fbe43d234e93149e2a178addc088ca2209f0f3d0c6f4591d624482fd56802",
+      "reaction_session": "2024-10-31",
+      "receipts": [
+        {
+          "request_sha256": "c2525012e544519b37c6251ba4b4146958d2a298ce852a25953b3e7698da5a6d",
+          "response_sha256": "feb3ea4bbd12450a68d1a056aaaca5a549ab0b44d8f9b1304b02540d60648559"
+        },
+        {
+          "request_sha256": "7c6369021bb1b606807786017ff7a078ae2c266c0a26c4abc9ce38aa314c818f",
+          "response_sha256": "83029e6fb34da8eea25e8ee6d08a1146533b94bda92233670f7e77a00127768a"
+        },
+        {
+          "request_sha256": "77c63b93f8d65d6ad99d6258b1388ed7ca8f877848cf399a435824f0aec9ed3b",
+          "response_sha256": "205584e8cd42e2abdb33560da97182a0fe25e36b2428a224cf5c6de8f8026bf7"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2024-11-04",
+      "cik": "0000875320",
+      "close_mature_at": "2024-11-05T21:05:00+00:00",
+      "event_id": "vrtx-0000875320-24-000221",
+      "label_commitment_sha256": "b6df8ed5c0b9c2e958aa58173719d215cbc54883576f08ddac339c8cd1d50455",
+      "reaction_session": "2024-11-05",
+      "receipts": [
+        {
+          "request_sha256": "97c6d42eae9c176aac9fbef599e9bc8e77b914f550c152c592a56dd5d402b3c7",
+          "response_sha256": "b64b72f245f8969b994bb376fb21c2cfd6d3a64efee1022f6394de238ee8d84d"
+        },
+        {
+          "request_sha256": "c9230343e75f24226e579c3aa7dbf82a066942fd52abbba5fdf96409ba655f1e",
+          "response_sha256": "5b3bf9778e001e3752bb0ec3902bff4e04b73859c1a637756eed3856329f64a0"
+        },
+        {
+          "request_sha256": "2be26f5921dae7f6082dd78c50aa66182334ce94a656e4038496413d452f5a41",
+          "response_sha256": "d801dc180fed877ae07b53e11dd784b82a87d3977d586758a8a6c69b29d719f2"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "VRTX"
+    },
+    {
+      "anchor_session": "2024-11-06",
+      "cik": "0001561550",
+      "close_mature_at": "2024-11-07T21:05:00+00:00",
+      "event_id": "ddog-0001561550-24-000171",
+      "label_commitment_sha256": "b6ab1b7d7c410db7a47cb09afe9adab8d84ca7a493ccc6f1be487acacc212889",
+      "reaction_session": "2024-11-07",
+      "receipts": [
+        {
+          "request_sha256": "9cd9bbf8a8fee5ff3bdb3f1da6dbd8fbac9450346d2ae9b6e93d0d8c293ea7f7",
+          "response_sha256": "caa5d258369fc8afb8886a733ce3e077ada0516ddb6b7d10843d23ede8b622d2"
+        },
+        {
+          "request_sha256": "ff87661110b72dc9291d97fa693f42c51b2cd3bc02be149b989f45d94937b5b2",
+          "response_sha256": "552a18e1fdedfc818abdd56212645e181d8f142ea4f8c60c7943fee80cc4f892"
+        },
+        {
+          "request_sha256": "865450010f1811a5980c23f5faa10288f79e356c8ddcc7d6d785ede4cc0b5850",
+          "response_sha256": "0988b8613270faed78f8f8d6bef8140bdf4022dbd9fb089556c51d1f61667995"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DDOG"
+    },
+    {
+      "anchor_session": "2024-11-07",
+      "cik": "0001262039",
+      "close_mature_at": "2024-11-08T21:05:00+00:00",
+      "event_id": "ftnt-0001262039-24-000040",
+      "label_commitment_sha256": "f13a1f8b7f4739ee6091ace5cdaeba41d1233424088c63699ce61e1cde6d6cbc",
+      "reaction_session": "2024-11-08",
+      "receipts": [
+        {
+          "request_sha256": "609818b9813752020a46dafe23bd21593bf35dbe4a5e8a6e111d0f7c45124223",
+          "response_sha256": "36133cd19621a281d844075f30adccc1a86e1921e1f15059c4712b8e31d2f865"
+        },
+        {
+          "request_sha256": "eedd4eebaa2d1ca229c22eb329a772800809cb4f5be4ed7fdfbc5706994d3ceb",
+          "response_sha256": "106900c669a0ba23f2f43182683d62e3987ef75985f85d19c6133520c598aa44"
+        },
+        {
+          "request_sha256": "f82f36d76332699b418a11abf2ffcf3a58fd37b1680124888643a5b6937466ca",
+          "response_sha256": "355a70e4b659f49ce19cee3d7a1ed7d67c629e31fb844050ead5a358d53be144"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "FTNT"
+    },
+    {
+      "anchor_session": "2024-11-21",
+      "cik": "0000896878",
+      "close_mature_at": "2024-11-22T21:05:00+00:00",
+      "event_id": "intu-0000896878-24-000051",
+      "label_commitment_sha256": "be054642a6f4af5dfd88a6b34ed06b76aaa861663f12e91d047df0efc29b33dc",
+      "reaction_session": "2024-11-22",
+      "receipts": [
+        {
+          "request_sha256": "388d099112fdf42cb7218e1d1ca686e9891af654ae88977609aa0222da737036",
+          "response_sha256": "c43ed1bf9852dd99daa8a0e2a76d4c1df58c24b66676f83532c3bd3b910e923c"
+        },
+        {
+          "request_sha256": "e83825a27a48fe2a0e9d10d0725eedbe0ee764b61edcce9784b65da5cd200635",
+          "response_sha256": "2f54be3b69368621311cef19698014b139a674c46cf08bedfc098811ce85a48b"
+        },
+        {
+          "request_sha256": "fb69e156b5a05d00a369523c5ff92bce173f61a727e4a3e02e2366a83000ed10",
+          "response_sha256": "8cc198766748d20a9be68e91aca17e901744c3c69753fcce9c7b81f300c45843"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "INTU"
+    },
+    {
+      "anchor_session": "2024-11-26",
+      "cik": "0000769397",
+      "close_mature_at": "2024-11-27T21:05:00+00:00",
+      "event_id": "adsk-0000769397-24-000175",
+      "label_commitment_sha256": "2a5aae21caba8168b7f2240e894028752bacc413134d968648c738a87c1b8f47",
+      "reaction_session": "2024-11-27",
+      "receipts": [
+        {
+          "request_sha256": "d2a08306e0589d91d13b020882a5e45d8cb872989d90df7777a4cc009b7bfdd8",
+          "response_sha256": "85802bf1ddc2c7fd4596ac649836f79664a3086ad8af6483e7ed5b73b1764d1b"
+        },
+        {
+          "request_sha256": "d62cea4fdd3e0480537d0e4d4529a86a00840242361fdc4f73cbfd102c05058a",
+          "response_sha256": "4da501b96ef6a74dd4f0085dd075965d243a9cfded875336f793bbbc552aab49"
+        },
+        {
+          "request_sha256": "b564555997cab788c627fc964a8561d04fa5cb1ae6872f60d73384942d961e28",
+          "response_sha256": "fc735c711eda1c6ea8de1e1728d060dcc4ee8fb1cd1f6d343249f400d4e3a70d"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ADSK"
+    },
+    {
+      "anchor_session": "2024-12-02",
+      "cik": "0001713683",
+      "close_mature_at": "2024-12-03T21:05:00+00:00",
+      "event_id": "zs-0001713683-24-000143",
+      "label_commitment_sha256": "797d444191e47cdc78147da36aae84ba2decedf181cfcd90c62335bc4eb0a860",
+      "reaction_session": "2024-12-03",
+      "receipts": [
+        {
+          "request_sha256": "eb03ad19223d26156c3cdcbde9d04989aca6b02f5b5f22408a620e3744933f49",
+          "response_sha256": "09d37fa547fb47ca2ad3bb40d9d60787a9e124a3312bf1cfd61430ee1314cbb4"
+        },
+        {
+          "request_sha256": "205984dc3d2ceb25a6e1581fa4701753736acca157057a591144dc6e251541ee",
+          "response_sha256": "a3ec4176801b9427d8cca2e48cd2dbe40b674fa3be280836278b984d611f78ab"
+        },
+        {
+          "request_sha256": "dd34660f3e86e0fb91000e3a9348e926001a256dd4cf9abaa1e6b7177cdfe4b3",
+          "response_sha256": "3f12ddb2a9fa22e9cbdcea3f8a5baac0d84e17c7088c93b23878bef07faf6db3"
+        },
+        {
+          "request_sha256": "38d498300b800556649711da72eb82c762654ed10d3f307891d9b67294fed251",
+          "response_sha256": "146e1e609c637adc47b71c089b05f644ec71675b4179e7c8036e413df1f3ed5e"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ZS"
+    },
+    {
+      "anchor_session": "2024-12-03",
+      "cik": "0000935703",
+      "close_mature_at": "2024-12-04T21:05:00+00:00",
+      "event_id": "dltr-0000935703-24-000057",
+      "label_commitment_sha256": "302c3ad285cd3c8dee3627d379738c484cd7c70f9d884f80259620bfa31e812b",
+      "reaction_session": "2024-12-04",
+      "receipts": [
+        {
+          "request_sha256": "2db3a007f4e9d81fb11c00bb3179f676f97df670e1232c21ddb8bb0e67e8afc9",
+          "response_sha256": "01f2801eac6eb711aaa254c158467c92cea1452328d9475fc066e411c88d9eac"
+        },
+        {
+          "request_sha256": "d82037536f221d39d9c5dee93372162fbf164d9c271db5de42b3645578dae2d2",
+          "response_sha256": "2cf664b4827fa1beb2878182556ba192c261c9ad7a08f057f418838e8513c942"
+        },
+        {
+          "request_sha256": "076543f53fabe1b36a8f7a819a88d90038e8b946d191ea8c5b01055061d8359b",
+          "response_sha256": "5e2288b9d706cc122ca67707ac1eda86a2007c6d447c8931d7bbc09d9ef88427"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2024-12-09",
+      "cik": "0001441816",
+      "close_mature_at": "2024-12-10T21:05:00+00:00",
+      "event_id": "mdb-0001441816-24-000257",
+      "label_commitment_sha256": "b6dd51aba8965c0e5eb19b1e9f2d5e1f57fe6c18dc11f1b3be45bb8ca1231bf8",
+      "reaction_session": "2024-12-10",
+      "receipts": [
+        {
+          "request_sha256": "a6aa021e3bfe07674272abce2a3b21d984c294912aeadaaf3801a580b856577b",
+          "response_sha256": "594cb7b4ebe1f554ff2a7d7b9617d191eccbab2fd179743ab3e6400ebc1eb29c"
+        },
+        {
+          "request_sha256": "f7e2d3b64982982b651b28a3c25f87100ae5293c2123b14cfc0707efdb51cdf2",
+          "response_sha256": "52f3834306fc0b672b8b7e12a02fe9526123a4f70515967dfaf2c56f9c4f661e"
+        },
+        {
+          "request_sha256": "d8d442b5c3ccef58f895389cb9fc2e2f427f3bc2a7d94b8f192d73019276a351",
+          "response_sha256": "076831ceffe455f4df7159eeb44921d074db9df757676a1f8b08b92c54b64394"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "MDB"
+    },
+    {
+      "anchor_session": "2025-02-04",
+      "cik": "0000712515",
+      "close_mature_at": "2025-02-05T21:05:00+00:00",
+      "event_id": "ea-0000712515-25-000010",
+      "label_commitment_sha256": "080857c8180241302a562bcc0c924de31b82ee3ff66699acc4ee20516902b0d5",
+      "reaction_session": "2025-02-05",
+      "receipts": [
+        {
+          "request_sha256": "b643a7ef151308d1c9d88ecccfe5d9b87bb5162c2bd6106b5c14e61558691f8d",
+          "response_sha256": "51fab14aed359065b336bf11282d007869cb73e6c42caf7f5d98afe84a6c1ae3"
+        },
+        {
+          "request_sha256": "38d4db2045742cebe22d1a55b4442871c500b0cf1cbd847076882c5aa0d8dc49",
+          "response_sha256": "12794c2ab64edd214aedbff8f96df05d7ed62cecc034b94e268a5cca04e285ca"
+        },
+        {
+          "request_sha256": "cb42230479b6adebfe50988979dfb961a885e880d329a61973ea7fadd0374fff",
+          "response_sha256": "d656c07ab142adf2676d15b856f76ba718415c07a4c7e69a830dfeb1cd5cadbc"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "EA"
+    },
+    {
+      "anchor_session": "2025-02-13",
+      "cik": "0001093557",
+      "close_mature_at": "2025-02-14T21:05:00+00:00",
+      "event_id": "dxcm-0001093557-25-000029",
+      "label_commitment_sha256": "5c114dfab5991dec0b0fe38ebdbda5dbf825205e14247cc0ecb9179977ae23b1",
+      "reaction_session": "2025-02-14",
+      "receipts": [
+        {
+          "request_sha256": "2d2d5ba7e0acce964816b74d5277943f1e01ffc631d1c64bb50be4ab0514d76b",
+          "response_sha256": "11a607f77371db511a017f84413bf78fda69387f37a9e97a74d78dd429095133"
+        },
+        {
+          "request_sha256": "bffeacb1f50e0c1be3b2725f2c401954a1927a8872e60146d18e303d6a249ef8",
+          "response_sha256": "a867f69761a15e0570bbd96e6616c5741672d45a63bb2fd6a28574e945220dd8"
+        },
+        {
+          "request_sha256": "239a73619ee2cb1050a941fd0893d7abac375f4631426edde86772300d8f9d06",
+          "response_sha256": "2f8b23ae8de0e24d81801d83793e47c96add6c0e044ea3f4289a0a36dec1f445"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2025-02-25",
+      "cik": "0000896878",
+      "close_mature_at": "2025-02-26T21:05:00+00:00",
+      "event_id": "intu-0000896878-25-000013",
+      "label_commitment_sha256": "c190207c02aac182f6d7850848d42abd5043f6058b5bb97138d4ddac810b35fe",
+      "reaction_session": "2025-02-26",
+      "receipts": [
+        {
+          "request_sha256": "bb7b95054e4cb9ae6fa2b6a0364f3d882a841010a4b885f44436738a15e2af19",
+          "response_sha256": "2b5b3234cc5145e7cdae2e341c8de788271c60e21e50a2aee4b9f5dd18370b11"
+        },
+        {
+          "request_sha256": "8a96956864499b1aa2f40662b09c11b77e65cfaa9d8dc7eaaa29ba2947958f93",
+          "response_sha256": "05ff11c0e9edf16149a6b1d4f9ecfce02def8c79364b252c2aa42f0371293b90"
+        },
+        {
+          "request_sha256": "44ae9733461b2dd8c5fc4fdf88b08ad9f3cc7294ed56cceb93e6790668945ba5",
+          "response_sha256": "084971cde0c7a906cab78d8785e3b3a0ca71ff2d8e4fb703910d4ab66a212fbc"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "INTU"
+    },
+    {
+      "anchor_session": "2025-02-26",
+      "cik": "0000883241",
+      "close_mature_at": "2025-02-27T21:05:00+00:00",
+      "event_id": "snps-0001193125-25-036798",
+      "label_commitment_sha256": "97963c0e3960d83f1e659b9a35bc41c9efdeda73b5e4c0e38571a137b1fdb62d",
+      "reaction_session": "2025-02-27",
+      "receipts": [
+        {
+          "request_sha256": "a3e915a76c2d52e8f407ba61cb2034842d3e02a914df0959014d9c562426881a",
+          "response_sha256": "d99f89b97aa41c134b27c77e412ff8160f01714a34bdf36261a0009c7e9cd7d7"
+        },
+        {
+          "request_sha256": "2b8719e9872a0bab694df03838d427335dfca5440624057c768250258d73e271",
+          "response_sha256": "cb6cc9334ef9d6a9757934661dd59066def4ed7b88c699bacb1877243f55e311"
+        },
+        {
+          "request_sha256": "9b4dc203eb02376ff184ec3cf6e96bd8268e0424f0d6442cf43e816d8aa4ae1a",
+          "response_sha256": "9f5099f961f845856cbddb8d9cd9dce906487940e4af8d20763e0376713cb3a0"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "SNPS"
+    },
+    {
+      "anchor_session": "2025-03-05",
+      "cik": "0001713683",
+      "close_mature_at": "2025-03-06T21:05:00+00:00",
+      "event_id": "zs-0001713683-25-000025",
+      "label_commitment_sha256": "d12a9a540465486388b293db4eea053ee43b42c9ca641c8e2b933833c7c968ec",
+      "reaction_session": "2025-03-06",
+      "receipts": [
+        {
+          "request_sha256": "0a43ca7b94e405610ab405ebf34a73066c58d635d29378de85afb5027bbb90bd",
+          "response_sha256": "aa3c1b382c97d9d3215d9955547f6a249889a0dd4f307a0ec259f4fabdfc47df"
+        },
+        {
+          "request_sha256": "fe41dae0c9a4b8bf171ee5d7ee85f67ed11630ea7901735247cc648f4ed75e5e",
+          "response_sha256": "b9ead4ed2a5f53965e05ae1bdbdd024a59c3f4522ad19af7be672f89f2aae114"
+        },
+        {
+          "request_sha256": "a42c41b3372691bb54cfdfe698d2c4ef189cd07ab2cebc3614fd6f7e6b86f430",
+          "response_sha256": "6930326d361536e0018fd984dac7be5a1511554b13f71b1be9ec429ff5b8b7ee"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ZS"
+    },
+    {
+      "anchor_session": "2025-04-23",
+      "cik": "0000898173",
+      "close_mature_at": "2025-04-24T20:05:00+00:00",
+      "event_id": "orly-0000898173-25-000026",
+      "label_commitment_sha256": "b2552c91fbf0f8532978deeb2e7a3f3ba3a0d298bbb89891408db6830364fa66",
+      "reaction_session": "2025-04-24",
+      "receipts": [
+        {
+          "request_sha256": "0812b60c4e94bb9134479bdc6d2964f509b96b98919933b2c3bb8bcdcfff023a",
+          "response_sha256": "2ca11e227db2e46a7f1bd7f6d8b8b266d7a3c3bc3dbd687a95716fdbd2f2a6c2"
+        },
+        {
+          "request_sha256": "9e2ba706c4672e79e74b66359bcec33a8896cdd8ad73ca350ef334291efbe536",
+          "response_sha256": "07052b5beee188535924e0bf6a5c88a648619e4f50eba3207db52ff93365eedf"
+        },
+        {
+          "request_sha256": "4704c989dea9fef412966e50746563e820655539853d04baa3ab5421c4459417",
+          "response_sha256": "d771be9ad3b0b316c58b29b3ab48573ccc86a0592fd9453da96d177a2f8886e1"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2025-04-28",
+      "cik": "0000813672",
+      "close_mature_at": "2025-04-29T20:05:00+00:00",
+      "event_id": "cdns-0000813672-25-000046",
+      "label_commitment_sha256": "d8cdf8dffd4152f8b3a13fc99d0807b90082db1368d3783420f7ae1845701e4d",
+      "reaction_session": "2025-04-29",
+      "receipts": [
+        {
+          "request_sha256": "587ba74b5628659a005927c02bf60d1e3fc390bef41ae65d9ac68b1021f32c49",
+          "response_sha256": "24d07915ee5f3207b7fac69595b8d5ae8ed07ff1ce726649ecac751693ba4c9b"
+        },
+        {
+          "request_sha256": "2ae357a3ca286aa0deb8a5a2a74e4047bd0c2f2c8e8fe34f0d16422c51723a53",
+          "response_sha256": "7e7cd5bb02a9bca0089f21ae563a05064ba2ae94fe137f2c521478141849bb88"
+        },
+        {
+          "request_sha256": "6c8cfbc5fbb624b7bc1695552b59f3a5b78c5cf1c135c2ce58869b3d524f139b",
+          "response_sha256": "00b4757464b80cf79f22e56010837ad3b1c1f7f59e981131598db75271bf0647"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CDNS"
+    },
+    {
+      "anchor_session": "2025-04-30",
+      "cik": "0001058290",
+      "close_mature_at": "2025-05-01T20:05:00+00:00",
+      "event_id": "ctsh-0001058290-25-000124",
+      "label_commitment_sha256": "da511efff78fd97144112cd70eeae223f0a690f5fe7a7ac87f9a237056f11a0f",
+      "reaction_session": "2025-05-01",
+      "receipts": [
+        {
+          "request_sha256": "7ccb1e4207ad451101abecbb766f26d764ba32fd82e1875e60277821d27cbd69",
+          "response_sha256": "47de569431ff1c32601964c3ec436d0545eafa4fbe68431005ab9f6ee4620431"
+        },
+        {
+          "request_sha256": "a202e8877c44adf15a2c342fb704b77105ff20d54f3078236787a37f6dc7e1cb",
+          "response_sha256": "d0c53d8303686b226fdc759905d2d833cdf6ab1311e222bf0ea3ca7162e88abc"
+        },
+        {
+          "request_sha256": "94b310e38c3a1c7e8f8b854cce1c142e827b10141cc2c5dd6dbf8c9984e32e22",
+          "response_sha256": "c939978fab936316cee3485b7dafe960815c427104a35a349d2f39962baa1cae"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "CTSH"
+    },
+    {
+      "anchor_session": "2025-04-30",
+      "cik": "0000874716",
+      "close_mature_at": "2025-05-01T20:05:00+00:00",
+      "event_id": "idxx-0001104659-25-042955",
+      "label_commitment_sha256": "0c13cefb38212020ca8ab8f71d7aedf6039a6ba26ca56b02a62ab8b939bcf696",
+      "reaction_session": "2025-05-01",
+      "receipts": [
+        {
+          "request_sha256": "7f4be580d59040fe56cff4c60caca623b7c0e361e5507d6dca5418ed2581160b",
+          "response_sha256": "99fd2dcbdd314afba50771145ed5be6660a3c00352d1d23ea042b2d70b353a3d"
+        },
+        {
+          "request_sha256": "1b2e4d9fc7e409c9dfbe2f989a31357758b1e2a748084cc87d8bb143b608a3f4",
+          "response_sha256": "6c57ae48d96a66ef91df314c3dc5ee96534ee22171b247dde8d00510cae36e9a"
+        },
+        {
+          "request_sha256": "19951d0c7027fbfb975babc5b6a2e88d3a2059c9f755ce52d3c53532323a91dd",
+          "response_sha256": "18114ecb4af38d5a9ef20d7e822138451da3e4da7b4a23672c93a52dfad56bb8"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2025-05-01",
+      "cik": "0000318154",
+      "close_mature_at": "2025-05-02T20:05:00+00:00",
+      "event_id": "amgn-0000318154-25-000018",
+      "label_commitment_sha256": "a1ea25c233dfec74916b6c5ad71c2abce27915aa0023f987a526b27d5df687f8",
+      "reaction_session": "2025-05-02",
+      "receipts": [
+        {
+          "request_sha256": "cec55cb9fce9e98d575fefb47503a169ccf20b76b217074afd44d5ef252244ce",
+          "response_sha256": "b627a343dea4e1110ca7fa4421ae591ab4b44346fcfe4987cdc4870a9afc1d58"
+        },
+        {
+          "request_sha256": "ed898509d2d170c483c40cecb512d4e2407c9046be8bb4fb9293e1470a8bbf5f",
+          "response_sha256": "f35d5458d83b6a8dc997cdb21f26bb1c06c938041a9b994f3629b6bc70bc0869"
+        },
+        {
+          "request_sha256": "1dbfc77015f08ccef31ebd7d7e48502248c649a61656b1e455c8722587d57685",
+          "response_sha256": "1ba9ee65aae07f76bf8700218d803528383db03eb2c5f9f41595fdd3349bc5fe"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "AMGN"
+    },
+    {
+      "anchor_session": "2025-05-01",
+      "cik": "0001093557",
+      "close_mature_at": "2025-05-02T20:05:00+00:00",
+      "event_id": "dxcm-0001093557-25-000111",
+      "label_commitment_sha256": "1af101d6811b54bb4388c1210ea6a4d6e34e728b1d7f065e85ade25929f2d582",
+      "reaction_session": "2025-05-02",
+      "receipts": [
+        {
+          "request_sha256": "5001a84d139a8d7941922c68c5aeeebe362cd18aaf506acfbdee7f0c35e97f49",
+          "response_sha256": "81019549abaaaaf714fcc1f27482006f82cecb961909c41b510a107341ca6f0d"
+        },
+        {
+          "request_sha256": "d06c0f762195d02504749d1ca5523ca77761a3c15fbe79715f770d339f2767f0",
+          "response_sha256": "8653f92b4f68a3fc35da7c703a9905b122c8fec974324af4fe49dc577ae9b96f"
+        },
+        {
+          "request_sha256": "d250c7a170c8b4ee4d9b7a53ad1acbae30f5b2e8a4f05bc8165015af87238255",
+          "response_sha256": "0f92ac01c6a275bdfbd58a4c4d9bf7fe9255c4961fcd603525659c2bac4bbfb4"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2025-05-05",
+      "cik": "0000875320",
+      "close_mature_at": "2025-05-06T20:05:00+00:00",
+      "event_id": "vrtx-0000875320-25-000171",
+      "label_commitment_sha256": "c172fb15146625423782a665bada50353cd10e3bd1654ef95badbb9a9e3ebfd1",
+      "reaction_session": "2025-05-06",
+      "receipts": [
+        {
+          "request_sha256": "3260daf88d927da7760d6cc5af89417c00c7bf96a091cb3b0861c27052769d8e",
+          "response_sha256": "46c485c67bbec3cdc7f43b0965ef1237bbebd4d250b4bdac25469d391bb6f966"
+        },
+        {
+          "request_sha256": "24c581550ff2b8ee0348efa8ca995b1ecc2b96b65470f78e7f138bafe9128e9b",
+          "response_sha256": "be3eec1547dbc69acfa4a0d5791d84087ae04906749187796cc2da279afe0ddb"
+        },
+        {
+          "request_sha256": "c00bf5f0d3341d48de4bc663735f6ca00e6c579542485d5053ceb0d98a45bf6f",
+          "response_sha256": "747a37cf76fb8a4ace6120ca19dfb7cb2a77b29504b1a273d1cbc163a78f1841"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "VRTX"
+    },
+    {
+      "anchor_session": "2025-05-06",
+      "cik": "0001442145",
+      "close_mature_at": "2025-05-07T20:05:00+00:00",
+      "event_id": "vrsk-0001437749-25-014906",
+      "label_commitment_sha256": "9174726c50191fdb133d301995780bf7ffc1f993e3ccdff44896d419fdb6970a",
+      "reaction_session": "2025-05-07",
+      "receipts": [
+        {
+          "request_sha256": "dd6234d19d4eb4bd89301184d5c10ff85f728b3de08babe201e1132ea16168ed",
+          "response_sha256": "aba20399424cae64c49b46d51605ef67bbb2376b39c435b657830ee1aef0957e"
+        },
+        {
+          "request_sha256": "67b3ac41297791215ddbe7047a2a463ab325dad80de8ef1edc9744564f51dfe8",
+          "response_sha256": "244a318559aa608af7836c4899ed4ca112f5df1a8f4c6e78bb7de51869527782"
+        },
+        {
+          "request_sha256": "7a142685b78a8e3c568aa25a3a566c13e43f7f1592dd9bd66bb213d6058a7e47",
+          "response_sha256": "49c6dfd93a30baf31e9c5c6f84ef39ddfc06d0dc15b23199d7759a6f160821ab"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "VRSK"
+    },
+    {
+      "anchor_session": "2025-05-07",
+      "cik": "0001262039",
+      "close_mature_at": "2025-05-08T20:05:00+00:00",
+      "event_id": "ftnt-0001262039-25-000014",
+      "label_commitment_sha256": "2af5b496b6040468e3d3c5427798a363d924e53c8d25809c2c20d6d695da73ff",
+      "reaction_session": "2025-05-08",
+      "receipts": [
+        {
+          "request_sha256": "66fbfbbbf955283f9fc6a46cb4c4b16afe5cd1f203c139b1358fbdedaf303dd8",
+          "response_sha256": "3b9c427f33a251ae7331e7addebd1dcf31e3a7771fad8a8fd344034ec48e4022"
+        },
+        {
+          "request_sha256": "4d36e440cf7fea344e04199ef5aae777e68c54dcc6494b2d5ea661aecb1165a3",
+          "response_sha256": "9cb7d6955c48523f182a82c14ebff04cd8426b5eb6b153cc2960863fc6d7f89e"
+        },
+        {
+          "request_sha256": "c08493cc665ad41916190c6d4a7a1d76ab4641a05547a1c0835f262c0dae255c",
+          "response_sha256": "77c6650f56fe295558b5666e0f9b668df4f7cd99824cb254a8559de0e0a82c94"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "FTNT"
+    },
+    {
+      "anchor_session": "2025-05-22",
+      "cik": "0000769397",
+      "close_mature_at": "2025-05-23T20:05:00+00:00",
+      "event_id": "adsk-0000769397-25-000067",
+      "label_commitment_sha256": "e5a72b61f94af82a36a079a4422693ac8484c4c4098086f59e26f3130ebb5b71",
+      "reaction_session": "2025-05-23",
+      "receipts": [
+        {
+          "request_sha256": "ebf4ba79de0da21e48b7aa51e272fea33dfa043c725b2d560f90d3e7bfc87972",
+          "response_sha256": "5183081b33516cab6f5c1136c303edbd494722a953f29b38c32b20022597b670"
+        },
+        {
+          "request_sha256": "aea557cc30357398141dbcc4cad252eda1143cedc47d7eac59b52f15492431b7",
+          "response_sha256": "8b64f3802600d926b79acfd641eb1bd5ea586ce21315bc3780594e77f8a1160c"
+        },
+        {
+          "request_sha256": "991d047b845f07a57e9199c73b6e77584e1b9340149e0dd4a0e7392ed5e2d2fc",
+          "response_sha256": "476a2630dd5446d81f1ed3c3824405ed7d1141fdada215f86d63ae348478011d"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ADSK"
+    },
+    {
+      "anchor_session": "2025-05-22",
+      "cik": "0000896878",
+      "close_mature_at": "2025-05-23T20:05:00+00:00",
+      "event_id": "intu-0000896878-25-000020",
+      "label_commitment_sha256": "04ef1d2c6d2caa7fd6c74cf7df5339c9f2acb80ded9467de26d0ecd58f7b0302",
+      "reaction_session": "2025-05-23",
+      "receipts": [
+        {
+          "request_sha256": "895ef010978676b1435030ce4b2b06d4c2776d441dd328e011b68e94960b6a34",
+          "response_sha256": "4123328aa869f6e8dda1ec5aa756967564a87bcea0f9426a779dbfda7c41efb9"
+        },
+        {
+          "request_sha256": "ff3de073422a066727060a263a8fc7017638b0389093df20323beef9c3af3066",
+          "response_sha256": "7d0e0382f4bbff63c52eb9f5512411d59db11e5626959a2ab1aa45f27e43040c"
+        },
+        {
+          "request_sha256": "6d299f411e936f6d85565e19e8d6337414aea774d209a33054dc681387a65869",
+          "response_sha256": "aad8655eddaa8979aab27e12d83898c0b7fd21c9327e7a8b4bcee39786494c32"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "INTU"
+    },
+    {
+      "anchor_session": "2025-05-28",
+      "cik": "0000883241",
+      "close_mature_at": "2025-05-29T20:05:00+00:00",
+      "event_id": "snps-0001193125-25-129525",
+      "label_commitment_sha256": "6569b860d4810f25d6d1f7dbabbcac4166132adfd77c9f49dd3dbba7e990279c",
+      "reaction_session": "2025-05-29",
+      "receipts": [
+        {
+          "request_sha256": "cc59bd738147cc8b0a95bd594e55eb3e8ce33a44dea69d2dac60ec8f8e60e6dd",
+          "response_sha256": "c178946d2b5942b9ab4ba7c0f7a8c47c97fdc0e9c53b1957bca6069179c201a9"
+        },
+        {
+          "request_sha256": "1df4e81633d65234f7b8fa7628918766829f120c313c23752600b36c2e1d74c8",
+          "response_sha256": "9c912cbc524dc1d14ab0a0c1730c12e3b15757be09aece0a1281d2dd417fddcf"
+        },
+        {
+          "request_sha256": "32b14e50102e1ed740d031ac02b628507d1def8568b959359ba51f4ea2c4198b",
+          "response_sha256": "eda8743cefc34545df62dbf38038db91dfa52b9305c7137dc002be0b66b44828"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "SNPS"
+    },
+    {
+      "anchor_session": "2025-05-29",
+      "cik": "0001713683",
+      "close_mature_at": "2025-05-30T20:05:00+00:00",
+      "event_id": "zs-0001713683-25-000078",
+      "label_commitment_sha256": "2ad2bd713f046695a8d0e607bd7539572afbfbbfbcf07de8f6e9afcca68ae16d",
+      "reaction_session": "2025-05-30",
+      "receipts": [
+        {
+          "request_sha256": "470c15e817271f73b72c888e72e0590bdb74423d6cec38a00dd0389a092e085d",
+          "response_sha256": "b1b1185d453374fefba886e03e1f8a2d7dfee6cb1964393fbcc2ceadc87d609e"
+        },
+        {
+          "request_sha256": "52e5069c8228fd688a4963b702abfb59a5b22bbc1bdbe039d9d7e303ac13a9b9",
+          "response_sha256": "9f817289d0bd1be8c3d214345b3e3dfdcf456e1a6e1ef95ec17bbc8d7377de2f"
+        },
+        {
+          "request_sha256": "8d57dbe25b54b67b656b2d0dc78f621d71e438d8a15fb525c39f04e08c8bcc12",
+          "response_sha256": "d7a7006f17c44365275370e67629beb7e956a2132209629e4c69186cd1c99f2b"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "ZS"
+    },
+    {
+      "anchor_session": "2025-06-03",
+      "cik": "0001535527",
+      "close_mature_at": "2025-06-04T20:05:00+00:00",
+      "event_id": "crwd-0001535527-25-000017",
+      "label_commitment_sha256": null,
+      "quality_state": "source_withheld",
+      "reaction_session": "2025-06-04",
+      "receipts": [],
+      "status": "withheld",
+      "subset": "warmup",
+      "symbol": "CRWD"
+    },
+    {
+      "anchor_session": "2025-06-03",
+      "cik": "0000935703",
+      "close_mature_at": "2025-06-04T20:05:00+00:00",
+      "event_id": "dltr-0000935703-25-000024",
+      "label_commitment_sha256": "81bb0d979b3d996539f3c2e162fc97cfdfaddd5aecbf7d44259c85f48080461c",
+      "reaction_session": "2025-06-04",
+      "receipts": [
+        {
+          "request_sha256": "04738a06c26ac04e0c96b863b00ae98a95b4b7c0fe1a9e5034b9ecb695d6ad76",
+          "response_sha256": "5a60a2f846b9ba51da8d09dc8a49afd3455b4a3720e113ef30dadf1dab40c0b1"
+        },
+        {
+          "request_sha256": "634dfed27e21e6548c89304b9d11e0155ba7b381be98fd3f1b128349362af385",
+          "response_sha256": "e3ed59b5e399615d57f5cdc26e99765a40599b87a28b0fefe982405c19d3c86b"
+        },
+        {
+          "request_sha256": "63ebd81576a3b6b862c095c0731a7a201329df6db3268e6fb64db3eadd736159",
+          "response_sha256": "14ccda2350af9669f727ee806080b6720d02b673714977cc7b06f2a74df283fe"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2025-06-04",
+      "cik": "0001441816",
+      "close_mature_at": "2025-06-05T20:05:00+00:00",
+      "event_id": "mdb-0001441816-25-000116",
+      "label_commitment_sha256": "515b4ab0997f28f48fe427eb63520f7ffd8895902efafde50dbaedae87235461",
+      "reaction_session": "2025-06-05",
+      "receipts": [
+        {
+          "request_sha256": "65153426dfa9eed5ed2845d8f79841ee40b8a943c04dc6afbe870b536b430bd2",
+          "response_sha256": "f585653c3e6e702681387d89f6216dd7e24cdd8684ded05a4cadf9c187b29b2b"
+        },
+        {
+          "request_sha256": "39099cdb67ac81cdbbe7bf48fa64737b8d19998cc337bb3d0a6eb2c42a38cd96",
+          "response_sha256": "5e8c41d1dee331f5e58df5f83a7602b5840132d8d9f8d55862494c62bd4c5bd4"
+        },
+        {
+          "request_sha256": "e957e479a8d1a2c5f3bab6169591c147c4b6623dfd6942764081c6ba53dd6eef",
+          "response_sha256": "c334374481c330a38bb7bf7996453a3aa722afd5b72bdd221cc04b3f18f988d6"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "MDB"
+    },
+    {
+      "anchor_session": "2025-06-05",
+      "cik": "0001397187",
+      "close_mature_at": "2025-06-06T20:05:00+00:00",
+      "event_id": "lulu-0001397187-25-000026",
+      "label_commitment_sha256": "d0bab37978f781460dc7812c80ef4dcc186386d3095845e6b216bdaff34c736a",
+      "reaction_session": "2025-06-06",
+      "receipts": [
+        {
+          "request_sha256": "2f9f71b25cd4562b7657dd603d9a425dd143018ed902f40b3244969a2123d210",
+          "response_sha256": "a7ebf712f7b4b0fff6a2409814bd926e636a903f963f470938423740e42302ca"
+        },
+        {
+          "request_sha256": "2dec4458b7d4c2e53bf6fd7c8db825b685ce3a6823749ab027809ab9d98f98d0",
+          "response_sha256": "4f3a45e548c0bfdde3d79f927e9f84396fcc2166981cb1e7e92ac1d24f61dc2f"
+        },
+        {
+          "request_sha256": "2f46bc499f35cefe597bd284190d801a75382b54b6fae19b6be1c42e1f4b208d",
+          "response_sha256": "2bc37a6f7c691d25ad678119c1a609a7cd63e8d9f95bdcc507c9f5670238b657"
+        },
+        {
+          "request_sha256": "48500024dcfb410fbe7dcf887ebf7b02ec27b5890ae1e087ba6451eb352077b5",
+          "response_sha256": "43a81369f668557b6c12d9690bd69a90811459522a656548b5577f70c684828b"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "warmup",
+      "symbol": "LULU"
+    },
+    {
+      "anchor_session": "2025-07-22",
+      "cik": "0001057352",
+      "close_mature_at": "2025-07-23T20:05:00+00:00",
+      "event_id": "csgp-0001057352-25-000095",
+      "label_commitment_sha256": "f3f75af5c01e022a0752f69ae321d3e2921a0ef904d0813ac9d2893e731edb9b",
+      "reaction_session": "2025-07-23",
+      "receipts": [
+        {
+          "request_sha256": "cd831643835104c198433c06808a746aa5d0822a5d5f3b36ff83826d2cdcb66d",
+          "response_sha256": "e63222c857744c15439233dd25707f9431975ea67ac8130b73086536edb9be62"
+        },
+        {
+          "request_sha256": "a43bc4ecf30361e89812d1d7998af32d65db2e2824aed8dc3c5863453c49f199",
+          "response_sha256": "9d6c34fec5df0a503e42426df322098f704868d4e0bd18c1a6d001a8c9e9a127"
+        },
+        {
+          "request_sha256": "d0b7f967bbdfed4e0c571285f8134c6b0b874f4434710ed567bd795afa078d04",
+          "response_sha256": "42b39ad8d70d66452fe4ebc3ac8f0f14942215b7b711e0a5fbf47254c3d315db"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CSGP"
+    },
+    {
+      "anchor_session": "2025-07-23",
+      "cik": "0000898173",
+      "close_mature_at": "2025-07-24T20:05:00+00:00",
+      "event_id": "orly-0000898173-25-000046",
+      "label_commitment_sha256": "fc6be68b1c2f8885cc17cc62c63fee1bbea90630d256b2847f10502e38729fee",
+      "reaction_session": "2025-07-24",
+      "receipts": [
+        {
+          "request_sha256": "dd8a4d9f9b24ab4be41e9f934e9b3543841768c63f6fcdd6c5564779b5ee4392",
+          "response_sha256": "a6fbf453b5ea7beb3ac6d801a161e6eedb54b3415429801f7fc0160e102007ff"
+        },
+        {
+          "request_sha256": "8e5408d27658ac85bdf756a6563f77872f372d1536e35fe304c90c60475e8a0d",
+          "response_sha256": "3833bc705b7548b3774a0cb087ae35c4dbc9376d532bebdf528ad0f4a8363de2"
+        },
+        {
+          "request_sha256": "61e5d582f9d3d027476c16738fb4f48a7e39257e504cf0388883f6e65bc46562",
+          "response_sha256": "aac3d039dd1209a476ae322777aa7d0ec9ce26cf9ce159d5a494c48e8af0cd44"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2025-07-29",
+      "cik": "0000712515",
+      "close_mature_at": "2025-07-30T20:05:00+00:00",
+      "event_id": "ea-0000712515-25-000027",
+      "label_commitment_sha256": "0db8ec95eaa8576491bc31daeea0f43395e64f0b3918b3817ca4ce8addc73e14",
+      "reaction_session": "2025-07-30",
+      "receipts": [
+        {
+          "request_sha256": "ff9bc258f82d30f109fbfb47dc2506820baad27483cfc80c299c4a9668ff3dbc",
+          "response_sha256": "7ed9f9710f112e77cc42273a972ac468c33b5901893d95445b0b3956e16723d8"
+        },
+        {
+          "request_sha256": "06d7e7ea2e3db4b0c26a9d0c5c46b8d643f41aa33277fcda3ac0d43edb443098",
+          "response_sha256": "dc726013cb0779fc442abad7468e56e09039e86784e34ab272ad4a5957873044"
+        },
+        {
+          "request_sha256": "499cd55c56b70808ca931e60c14d32fa83ea19a11e2cd336f9af10d9e0a0e18f",
+          "response_sha256": "0df528d3161f31f2e69591bcd464abfb26bb398e5a32bfbd6a89a77abd958fc0"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "EA"
+    },
+    {
+      "anchor_session": "2025-07-30",
+      "cik": "0001058290",
+      "close_mature_at": "2025-07-31T20:05:00+00:00",
+      "event_id": "ctsh-0001058290-25-000266",
+      "label_commitment_sha256": "a935679f57d65eafa434910fa7ca9e2dd8dd7aec75f472570ef8fb361443bc1e",
+      "reaction_session": "2025-07-31",
+      "receipts": [
+        {
+          "request_sha256": "e65bbd60e80c94b5b628bca623ce7d891b6a2f342d99e06cb4d552f95771fa31",
+          "response_sha256": "9eb35b235fdf910d5c386944485cf9d6e90a6d8cd3506d6299ae8a65b669cf60"
+        },
+        {
+          "request_sha256": "2b1dec8b0b66761442cb4cc3169103a0e3b8dbeb0f2c6c7e631850564dfa5ae6",
+          "response_sha256": "6665b18c28a805f6cd6623ff5544bf5cbb324655081ad758c1cd927988517c9c"
+        },
+        {
+          "request_sha256": "3981caa0862908e9aa11a0e4bae7bfd2dcb0102d02811096576a499139d98bbf",
+          "response_sha256": "4b6d3e9070817948f00344ec4ec5aa74c8131d83ace786f16d518f99b3641d13"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CTSH"
+    },
+    {
+      "anchor_session": "2025-08-01",
+      "cik": "0000874716",
+      "close_mature_at": "2025-08-04T20:05:00+00:00",
+      "event_id": "idxx-0001104659-25-073304",
+      "label_commitment_sha256": "64309f85972b53c91edde8fe909eeb22a7ea31d5d95d0f6f8ec357d639e52e3b",
+      "reaction_session": "2025-08-04",
+      "receipts": [
+        {
+          "request_sha256": "3dc9310dff8f569a5326a5bdf8e95bad04083327b21489bee27a1009d6d4f37a",
+          "response_sha256": "febc32367d29ddb817fc07c1f2a2cdec44caa0051d40521174b9905fe9d5bd61"
+        },
+        {
+          "request_sha256": "4f0c5ffe3edda7c42d77a3cb1b7568d2ff6085d7e4b03be15e244297e0bfed6e",
+          "response_sha256": "900656a4f24880265d40502b71d9f743e9f9ca7abc61e12816f52a70e98dc8e4"
+        },
+        {
+          "request_sha256": "2363c5747d724fcbe8d54303a54ef15c247e2c3892c544825ef911c827f4a9aa",
+          "response_sha256": "06e5a3f5480e3b0400733d70295a7402425c29b67de53c0ed60a757a4500fac9"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2025-08-05",
+      "cik": "0000318154",
+      "close_mature_at": "2025-08-06T20:05:00+00:00",
+      "event_id": "amgn-0000318154-25-000054",
+      "label_commitment_sha256": "7e6ef88c1819b7d2d9deccfc03e8ab0fbb28af2bd2be9f233fcd00106e2fddfd",
+      "reaction_session": "2025-08-06",
+      "receipts": [
+        {
+          "request_sha256": "50dfe787cb8bbd381524e2ee8b173b6dffe9bbf5625eb655463b258ca89fa790",
+          "response_sha256": "3264e5c8b545d6c1ed26b6262d645a3f445646f561ac838684502beb781fb7e9"
+        },
+        {
+          "request_sha256": "5751a03ab5430dde02aac527fc770dbbddc7f817f0c925fb817748f6d07752b2",
+          "response_sha256": "9cc374beabffff654eff13e780446a774fa6cdc759717ef00379000b857bbb91"
+        },
+        {
+          "request_sha256": "78fa2c8115cca96f6c62fff45aad6a99f793fbbe227065dcb0a2e3470ebaa387",
+          "response_sha256": "50cab39ccce00ef7a7c5219d8755060022b54f393ad4002db190226b52d56c3e"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "AMGN"
+    },
+    {
+      "anchor_session": "2025-08-06",
+      "cik": "0001561550",
+      "close_mature_at": "2025-08-07T20:05:00+00:00",
+      "event_id": "ddog-0001561550-25-000216",
+      "label_commitment_sha256": "2ddc4edede7eff472a18bb9cdcaf88fe73eab5eb0c85d99673b25db19087aaab",
+      "reaction_session": "2025-08-07",
+      "receipts": [
+        {
+          "request_sha256": "c10650862fdf1b8f07643a92d58e226977618e740f27c316a8677707320b662e",
+          "response_sha256": "6a468b3532fe03635316131524a20826ae23c74dafdb6f60a37ce31b7d45feba"
+        },
+        {
+          "request_sha256": "65a2b75f812b492f679bfcba940eff8543930e860b5959ec0f5fe3ee9cfd16e7",
+          "response_sha256": "d988e8eca1f10b745450510eb22252ca4cebd554c430628d4cd030df624dbcf2"
+        },
+        {
+          "request_sha256": "8d370c7774e40b200cb9aeea07d84951a080c7cd2132eca52ea2f829abc837b9",
+          "response_sha256": "efd14df80bd74ca92b14ade0f779146974a67e24333eaee15b2512ed8e7abce2"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DDOG"
+    },
+    {
+      "anchor_session": "2025-08-06",
+      "cik": "0001262039",
+      "close_mature_at": "2025-08-07T20:05:00+00:00",
+      "event_id": "ftnt-0001262039-25-000025",
+      "label_commitment_sha256": "9216e4413d807f09e7369d5fd539fefa733ca43e31db5d14f163e8b506ce3ed8",
+      "reaction_session": "2025-08-07",
+      "receipts": [
+        {
+          "request_sha256": "7a772d92607562d8d30addecd1f111482b0927d2deb7f3b855cdf64a285c7e4a",
+          "response_sha256": "2c3bf8205efdeac20cd6e40a829adcc2fec1a89c5c512fb07cddb127894b5f5d"
+        },
+        {
+          "request_sha256": "25bca7dce99834b81e266870f4226f3653e6df77ae0774edabfbf4b51ab848c9",
+          "response_sha256": "896bcf4492713519437f48cb43ec25e385bdc9b626d54f5056f2c59162634a4e"
+        },
+        {
+          "request_sha256": "c5735e278b41ecd2f5418d65fd4291d273cb6e2277cb873cb08cab24771d54f7",
+          "response_sha256": "60ea804dfd0af11b32310880b3860639356ca054b7efb1ace5f43510aab87ae3"
+        },
+        {
+          "request_sha256": "7b76b0840f8e68b69df5624d60440b7dd5a42a77eca5a98d13f05653868fb960",
+          "response_sha256": "52c898a1f0b7f1d03cb06abaa9b0d8d50e661c8281607c28f34d4c00873dcc66"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "FTNT"
+    },
+    {
+      "anchor_session": "2025-08-26",
+      "cik": "0001441816",
+      "close_mature_at": "2025-08-27T20:05:00+00:00",
+      "event_id": "mdb-0001441816-25-000176",
+      "label_commitment_sha256": "45c10066170c055d5aed12a65790888d76a76c76c1d462c12a6654525472436b",
+      "reaction_session": "2025-08-27",
+      "receipts": [
+        {
+          "request_sha256": "3a23df694826cb8f1ca39dc8834bbeb5c373da2474c82bb63eb563ed67c5d848",
+          "response_sha256": "b9aadcb316c9920eb4cbcde8f82e07a0df88c6f9648a8e51e507c9bbd0e5e226"
+        },
+        {
+          "request_sha256": "75af4a125c0626d98979e11cc3dcca99b911d259c7b6512bd5ef32c344fa1822",
+          "response_sha256": "933a855e7c773e64a41ff6b91e478d5ed3e5f5c474e75046f41654308434490d"
+        },
+        {
+          "request_sha256": "b7a4dbcc2c1ac3b7217e2d9c6c9937accebccc3b19f6250dbbd74b85ada4eaf0",
+          "response_sha256": "b7a88aaf621166913ffc5035bd0cb2cf5189fcd3031308b59117f30d98be7c32"
+        },
+        {
+          "request_sha256": "f1950348345d6e2df6b323a04798301ac29eff411d4fa96494c25109c8b29784",
+          "response_sha256": "a9e507ec975601902de6694850283f456447cae8d2f25dc49bfaff6f861f2647"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "MDB"
+    },
+    {
+      "anchor_session": "2025-08-28",
+      "cik": "0000769397",
+      "close_mature_at": "2025-08-29T20:05:00+00:00",
+      "event_id": "adsk-0000769397-25-000114",
+      "label_commitment_sha256": "03834c673931d861b16c1099de130b7dc935789f5804c96b8760ffb7c8b11b6c",
+      "reaction_session": "2025-08-29",
+      "receipts": [
+        {
+          "request_sha256": "1f338f216193080a585153eeaca0f7e52ddf7c09b5a2c5e35df2c37b7225c336",
+          "response_sha256": "cba1b49648be001e878afc6d48a0d3ba08dfe74b0421145f6ac27e84aed8818a"
+        },
+        {
+          "request_sha256": "16c5fda34c80cdd1c64a7a57bfbe899234d1e15e930db5a19d8159d9714724f2",
+          "response_sha256": "55ea23ea194dd953d35a33859ab2a6404d855e2863639ed2134c19fcd33b34e5"
+        },
+        {
+          "request_sha256": "91ae60c180369f2c4fd75f96a91b4d892667ecacffa5d425ece5f86f727583a8",
+          "response_sha256": "1a10d0c9012f1de3eec0934d0659bda78910209cdd64b1053a35d5d6d72956c1"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ADSK"
+    },
+    {
+      "anchor_session": "2025-09-02",
+      "cik": "0000935703",
+      "close_mature_at": "2025-09-03T20:05:00+00:00",
+      "event_id": "dltr-0000935703-25-000060",
+      "label_commitment_sha256": "9fadb6667202b64a36e1416630df6094eb91f0e1c4db38d7496ed03bd6b9e3b3",
+      "reaction_session": "2025-09-03",
+      "receipts": [
+        {
+          "request_sha256": "a8b97a83222676d221b51feaa8ff63ac05e25968684b27d9c9efca2e1bbae64c",
+          "response_sha256": "f3fcb36ef2bdba700a27379da2131412e5d698d9fde0769cb9881fdb5e785e21"
+        },
+        {
+          "request_sha256": "ec65a87ae738947a3e9fe8e64de40e81a9e4eeb246968da2f10215702325e5bb",
+          "response_sha256": "8a67235e8d5ece58b29c0544e6fa7f3f6cb3ccf9db1076e609e47984978cfb8a"
+        },
+        {
+          "request_sha256": "08431ec3bf8dee1d123b458cade080d0c234a483455ecf405bcce70096164b7b",
+          "response_sha256": "78e0e32cc3d579b3ba12328db56bf540eaa7a364805743fe1c12082445a478f9"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2025-09-04",
+      "cik": "0001397187",
+      "close_mature_at": "2025-09-05T20:05:00+00:00",
+      "event_id": "lulu-0001397187-25-000038",
+      "label_commitment_sha256": "b9f8818982a2f926b2241031815b82dc6bcaa1c85e39f128d0d0b08ae38e1080",
+      "reaction_session": "2025-09-05",
+      "receipts": [
+        {
+          "request_sha256": "ef4820331e1411d28d8eddf77c0dcdae4783850fd447dc3bddafaf3f6bbe6980",
+          "response_sha256": "28992eebd41c710326063a79223e5d793b423c6c40594d5a228721788eb56214"
+        },
+        {
+          "request_sha256": "a052243b5fdff5023a7c5ffc1f60c37227766bab8992ed12a33524e115fae779",
+          "response_sha256": "9c6a388962aebd31fdc671f71316ebea4747f27e0238b8b846c765d74bf47910"
+        },
+        {
+          "request_sha256": "2d0c5b4adcb6fe48f9f8e0f0f456e3b12d45cf2212c498a7615e617d475e8e39",
+          "response_sha256": "2e8b26170ace07bdb309c0b227731e2ef2356b441d0e8e5d3ebbeb3b564460eb"
+        },
+        {
+          "request_sha256": "b4dc9355fc7bdba156d4e9ca26cbf890202ebe76ec245fcb7954197d6021fba0",
+          "response_sha256": "57df08260803686ed8ea54d6e7876f12ef27b076288fd6e45f194b91671c97ba"
+        },
+        {
+          "request_sha256": "1e45c8c995180e3175bf15a446e0c4eda7a2eadf739c7811b9744b8e254da54f",
+          "response_sha256": "55017d04261f21596ee0fbeebbe608a7f4dce7df486ed6a09c58527cf7da75ed"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "LULU"
+    },
+    {
+      "anchor_session": "2025-10-22",
+      "cik": "0000898173",
+      "close_mature_at": "2025-10-23T20:05:00+00:00",
+      "event_id": "orly-0000898173-25-000055",
+      "label_commitment_sha256": "191ae7a191030c9bbe1e8a1c90b2b1524869fa6973a6dfdd635bcc5850e4eb1b",
+      "reaction_session": "2025-10-23",
+      "receipts": [
+        {
+          "request_sha256": "43f41908e83ce0e49bf2adfa652500f763dba2576f042cdadf7310acc23f849b",
+          "response_sha256": "456c05ec1a9b421063b5e570c6df68660c1b295844775bd22c3ce25ee82fb447"
+        },
+        {
+          "request_sha256": "d3f31232fdfb61b0e6231bab3fdddbb94ab7353f27d769872d16b2bb51d03f57",
+          "response_sha256": "832b0ac0479f95d04416a94ff012f26bac29413e5329220555abe9f5ad0fe805"
+        },
+        {
+          "request_sha256": "01e625c6ba6cf0046b26cd948a597d89f9affa928df6b0710f37770cced7b0b2",
+          "response_sha256": "33d9c9caee3ad6f0494538ce68099b8fa51e5162e3688d1f84d9d2b74189f147"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2025-10-27",
+      "cik": "0000813672",
+      "close_mature_at": "2025-10-28T20:05:00+00:00",
+      "event_id": "cdns-0000813672-25-000144",
+      "label_commitment_sha256": "8e6d427698034508f73f84ac9cdc7060918a515a140e06c04c92ab0c439d08d2",
+      "reaction_session": "2025-10-28",
+      "receipts": [
+        {
+          "request_sha256": "2779fc57e4221bf22103e4a46907b2d1bf1d6cc8838ec37267ef6abab7268fd5",
+          "response_sha256": "7a2c54f970860dc32aeed8df521d2c202a69a78ad3170a2c28eb8adf3ccca27f"
+        },
+        {
+          "request_sha256": "d08158dbceccda137d210be391b4ace9330db446b4c8d0455cdedcff52be77e0",
+          "response_sha256": "76c17a7065b3feab3dc5f8e39bfa3d38c193f43b350055660ee3edd7807e7ce9"
+        },
+        {
+          "request_sha256": "6cec448640f1cbec95a5bb54fc1203815324d309f41b331f0c131e0665a81544",
+          "response_sha256": "b5b33ad8ce0f81ba8e078c92141571047d260c81e2f16a5c761b49e47aeed47e"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CDNS"
+    },
+    {
+      "anchor_session": "2025-10-28",
+      "cik": "0001058290",
+      "close_mature_at": "2025-10-29T20:05:00+00:00",
+      "event_id": "ctsh-0001058290-25-000338",
+      "label_commitment_sha256": "88c533f794c83c25f523298279b7a166a21f792fae320908cf5426906854b16d",
+      "reaction_session": "2025-10-29",
+      "receipts": [
+        {
+          "request_sha256": "26bce191e2fdaccb85f7a68fc4d057036e391fad53cbf8a81f3cc86027d1a496",
+          "response_sha256": "5c91249cd8fa5ff8b4ea91a2236516458e4b195cf4e017463f63245a5a0dae8a"
+        },
+        {
+          "request_sha256": "82e64eeb22b4e1f7864672d322d0fc1309fdc9f8af7c17926595fed40ef3d31f",
+          "response_sha256": "6439293e1c37aabf653e886cca74a023de049d89de641879ab8fcd56642ad468"
+        },
+        {
+          "request_sha256": "9fb0b7a7bd99449ee11091c505fd699f10f910968241094db08b9c135e002430",
+          "response_sha256": "be3702192a2dd6fb36ff10cb4c8120b2639055709a30565144d01fea16e107ea"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CTSH"
+    },
+    {
+      "anchor_session": "2025-10-30",
+      "cik": "0001093557",
+      "close_mature_at": "2025-10-31T20:05:00+00:00",
+      "event_id": "dxcm-0001093557-25-000278",
+      "label_commitment_sha256": "772fbcda56b9f3616a3024f8679c858c4c22165968d6dc095f834b40fb86797d",
+      "reaction_session": "2025-10-31",
+      "receipts": [
+        {
+          "request_sha256": "400e7fdd6f34a8e98b00854558286d77d2d8273902184a2502ad1649cc0c9bc2",
+          "response_sha256": "a0b27a08ff46743d4eab399d151a626384cee5ee88b7732bd3e25d29cb4ebef1"
+        },
+        {
+          "request_sha256": "639c184780975e63f89dec906791008c1b7fa79c2b446cf9b849844061780d2c",
+          "response_sha256": "69d552612ba4002d68d0db0b27f6b8a38591a8bc7e9b2c72ddee349219afc510"
+        },
+        {
+          "request_sha256": "3f5c074d2793b5dcb2d7fa6a4cf6b6064dd964d08b1deba6327d5dd49a04520f",
+          "response_sha256": "a839d294c01e7dfdcc7078b3d5aaa580e23902e57a002ba50b9c3ecb9339f2c5"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2025-10-31",
+      "cik": "0000874716",
+      "close_mature_at": "2025-11-03T21:05:00+00:00",
+      "event_id": "idxx-0001104659-25-105185",
+      "label_commitment_sha256": "1e4a5979f0e49768dae279ece7fa20272860a12acdcccf79e4b42e51328f2187",
+      "reaction_session": "2025-11-03",
+      "receipts": [
+        {
+          "request_sha256": "44558a0368ae86cf95b028fa3e220411c0585c14ac48dcfac99a9ed95fc08a78",
+          "response_sha256": "3ea979fdbba355d7c57e4af2090f12ddd7279979e633dc68d4f56ce7c3a78f10"
+        },
+        {
+          "request_sha256": "648702859d659f1850eb324603341950f29c197a40eb9807c425a873fddeebd0",
+          "response_sha256": "ee83ea7c693b3d22bc4ace0a5dd1c0be2fdd53da4e472139d6c6fbb3b1dd13ea"
+        },
+        {
+          "request_sha256": "2dd60a953dd783f84ed73a16692bbf8726fac0417905f7317e650d4978cf28a5",
+          "response_sha256": "ae7c279eaca5ddbb7a6d05ec7a2237426ee25fa3ad811fc984fd12476ee4c1c8"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2025-11-03",
+      "cik": "0000875320",
+      "close_mature_at": "2025-11-04T21:05:00+00:00",
+      "event_id": "vrtx-0000875320-25-000230",
+      "label_commitment_sha256": "79984053072fd8df521a4753ec15489ff576add472c2f2f84062d2ce682e1e34",
+      "reaction_session": "2025-11-04",
+      "receipts": [
+        {
+          "request_sha256": "d124b346ea5172f418fbd2aa6d77f6a70d25dccb0f3a0595ce8c84de25ec186f",
+          "response_sha256": "e4904b7f544296023d77d997ddba74858137b119b5e6e80450dc6c98bb138656"
+        },
+        {
+          "request_sha256": "639c261930baf2b550ae4afab1415000377d6c5178c1e91c0b4c38d9dfde2921",
+          "response_sha256": "94d97e7b359964a34a7256acac12afd42241c342b2540b5efb87599e3a4b45a0"
+        },
+        {
+          "request_sha256": "1ef92cced62a37debb146f792f5b2a07b8f8971f196213d3a069393d2b0aeef0",
+          "response_sha256": "ee347b9d582455cfe6a2ac48c7294b989594c43b8cb85d1fe1f24d73cda598e4"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "VRTX"
+    },
+    {
+      "anchor_session": "2025-11-04",
+      "cik": "0000318154",
+      "close_mature_at": "2025-11-05T21:05:00+00:00",
+      "event_id": "amgn-0000318154-25-000070",
+      "label_commitment_sha256": "1d81fad693dc466a17fc8ac0a8f2b1cc554efcaf5d6199f95d9ee7278aae3416",
+      "reaction_session": "2025-11-05",
+      "receipts": [
+        {
+          "request_sha256": "b91676a54c43f0459ba36878136acf0a616e4533f8b133eee9999a5fd6e6551f",
+          "response_sha256": "8301beef41ef97aae5d5c15336f99c24005d5ac54a5c3982ddc138fab13ae626"
+        },
+        {
+          "request_sha256": "7037997192c57ad332a4f36d45c394dbf4e5e168e4fc8ea182e9ca5c5d478a9a",
+          "response_sha256": "dfab850e8e4bef7e0d2ed70737ea1ee13362085b8b32a831aaa6774948f252d9"
+        },
+        {
+          "request_sha256": "994fc114730948952421b771334f941db52f29bc741f3bfefb2a5693eaecf038",
+          "response_sha256": "23a089ff5037d2c2d6beb18ea8d830ac6c25b0c2c9b8d47316f5bc10240c1c55"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "AMGN"
+    },
+    {
+      "anchor_session": "2025-11-05",
+      "cik": "0001561550",
+      "close_mature_at": "2025-11-06T21:05:00+00:00",
+      "event_id": "ddog-0001561550-25-000310",
+      "label_commitment_sha256": "58bdcc1400cad0518d29e890d8ceb33d295bf067a2eb0dce17402247f13897db",
+      "reaction_session": "2025-11-06",
+      "receipts": [
+        {
+          "request_sha256": "9ad6abaea438b50a587d467a3276622d04049c4ec81be491bf9a942031906377",
+          "response_sha256": "21b1f9c26fd403184fa502b9480e1cf492b854eefa5cfc0eb389f5035bf625ff"
+        },
+        {
+          "request_sha256": "659a52de57e8c734636bc813103fd73fe3aec799f78aa064147a3c38e0c3a6d6",
+          "response_sha256": "da07c8202584b9b0c9f62dbde0c28bb2c73a9663c57d49756c218a988798cda2"
+        },
+        {
+          "request_sha256": "ef295d5c0f9744622448110e4ae565b328dcf51be90a653c74afbce0df0228f7",
+          "response_sha256": "9f7927da1ac90e201acb0b8fa0f4429fa6c4c480583e284f6468a1e05ada8443"
+        },
+        {
+          "request_sha256": "040d999691f0a7e0e035d6b3274a30ece35c561a9918400491eeda27c0deb063",
+          "response_sha256": "37efb3db8d700cad251e7204d0eb57a9f1c74f285755cf1c623c72f93e56b454"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DDOG"
+    },
+    {
+      "anchor_session": "2025-11-05",
+      "cik": "0001262039",
+      "close_mature_at": "2025-11-06T21:05:00+00:00",
+      "event_id": "ftnt-0001262039-25-000036",
+      "label_commitment_sha256": "42f05d0b827c970199b5ab03280c6147d9c9b815baf25d500c198a5d35450dc2",
+      "reaction_session": "2025-11-06",
+      "receipts": [
+        {
+          "request_sha256": "ed1d2a1a911aeedbd0511e200db3b20d6a431230293369b18e767677f50acf80",
+          "response_sha256": "1a6551f6b9dd70ce43e6bc8afcd3f27d295387f76d0ae9faea8054bed5faae38"
+        },
+        {
+          "request_sha256": "b7f93a7ba1eca8a3af2b8151291ad4017de1a015f8d113a0f298305b1856dd11",
+          "response_sha256": "69cb9fb7af86ce31ad4a9364346fc667aedc54df766fbc0e8e0cddd5bfc95691"
+        },
+        {
+          "request_sha256": "116b6bb8cb5ffd5f6b5fb64c25b7639286a5f28f83ed37119854f1216d9dd762",
+          "response_sha256": "58b0fd0a13880a4a9c8907ae87b8349d22c5e056117864eb5357e6babed614e8"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "FTNT"
+    },
+    {
+      "anchor_session": "2025-11-25",
+      "cik": "0000769397",
+      "close_mature_at": "2025-11-26T21:05:00+00:00",
+      "event_id": "adsk-0000769397-25-000126",
+      "label_commitment_sha256": "6e3ed6238c4d7db342f627fbd1b64b9e9b502b55c03238c188f1506ce5be4ef7",
+      "reaction_session": "2025-11-26",
+      "receipts": [
+        {
+          "request_sha256": "9d9f2dc18c2b357f02c469157cb73f97923934036642af2ba73fc0d03d9d2050",
+          "response_sha256": "9287fb8645de7fb96b1fbdd949e0e8cf655380d17d4d36ab17ca87e51324c742"
+        },
+        {
+          "request_sha256": "07bec49032f2d8dbdea2d1dd2e28a3203312c9ba271a6d3651a211de3cbb1f89",
+          "response_sha256": "4f3abe643b915ba0ac8bf6f84cd258a4b394794d6b1af638d98aed4396ed3375"
+        },
+        {
+          "request_sha256": "971449dee4f7557127e8ee1c79aa596672a5546758b1bf964b452de5794cf36f",
+          "response_sha256": "1bcb8d24534365f8daacfe464e090244cec90d2b6f98ada51715d85660ed2a6d"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ADSK"
+    },
+    {
+      "anchor_session": "2025-11-25",
+      "cik": "0001713683",
+      "close_mature_at": "2025-11-26T21:05:00+00:00",
+      "event_id": "zs-0001713683-25-000203",
+      "label_commitment_sha256": null,
+      "quality_state": "source_withheld",
+      "reaction_session": "2025-11-26",
+      "receipts": [],
+      "status": "withheld",
+      "subset": "held",
+      "symbol": "ZS"
+    },
+    {
+      "anchor_session": "2025-12-01",
+      "cik": "0001441816",
+      "close_mature_at": "2025-12-02T21:05:00+00:00",
+      "event_id": "mdb-0001628280-25-054425",
+      "label_commitment_sha256": "c59f4f1a45bf1defdf95b577349bd13549d1a11b176d93c195bb9f8347291a69",
+      "reaction_session": "2025-12-02",
+      "receipts": [
+        {
+          "request_sha256": "8986e7d8e39051cd86a81e0f376256959dbd402ce2b1c98495da529786bd1134",
+          "response_sha256": "11a3e8f6ab327319b3914375cb5f25b3d4f01601805fa32759ae3eacb5090c93"
+        },
+        {
+          "request_sha256": "9a10fac879369887ff481b332986429a7013738f0cd3293d1d9cfc0836c5a225",
+          "response_sha256": "17662d9613418e0a0e688c8a10e1e3e99b265cf5d0d681421e6ee890baecaa8b"
+        },
+        {
+          "request_sha256": "5864c45651dc16b0b2b81ca354d2dfe9457d261af83cb06856fc4c9a88d065d0",
+          "response_sha256": "f358cf13a41f120e70900a60d8e1f54b5dc1d7cb2d34ac7a40d30e1379e47ae2"
+        },
+        {
+          "request_sha256": "d92eaac334a3e721c0ed2fa8a3977cdf4201b9eea5fe7f9bd81e1a088b4d686b",
+          "response_sha256": "ddca302ed851629994d73937dbc642cdc45c27138ba8fe615bbd928b7d7ed92d"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "MDB"
+    },
+    {
+      "anchor_session": "2025-12-02",
+      "cik": "0001535527",
+      "close_mature_at": "2025-12-03T21:05:00+00:00",
+      "event_id": "crwd-0001535527-25-000030",
+      "label_commitment_sha256": "0cd317b0c46a18dd700086fc345e1c77af3f64047738e23aa19146fbf6bf5a5f",
+      "reaction_session": "2025-12-03",
+      "receipts": [
+        {
+          "request_sha256": "2d4fec7d8977dc26b86c08a6dbc8d753718ab15d6b951626b4b7975c2b2ff5a8",
+          "response_sha256": "f2565ff31e144ff0f4141594dada92909d442a525d7adc9d66d8860b2f9e4236"
+        },
+        {
+          "request_sha256": "1bc3f4b8565050938833237575256d850710789ae3d73ed819d6fa9ee6480e08",
+          "response_sha256": "465f147f2d48239d0955720eb69c698f107f566995309f6a9ca6b69dc4f19fe8"
+        },
+        {
+          "request_sha256": "1c79cf4819a987dc6a93b3e6df8becc90dfd245205874db53ffdb98848ce7ee4",
+          "response_sha256": "1023165a5fa47d0fde87edf0865f863453499e86afc12a94336d0ca8dd928885"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CRWD"
+    },
+    {
+      "anchor_session": "2025-12-02",
+      "cik": "0000935703",
+      "close_mature_at": "2025-12-03T21:05:00+00:00",
+      "event_id": "dltr-0000935703-25-000104",
+      "label_commitment_sha256": "5cb9c9ca1a767c6ea7c72ec3b37fd6f56ba4d2620f70a3a84cbf36cfb6ebdd27",
+      "reaction_session": "2025-12-03",
+      "receipts": [
+        {
+          "request_sha256": "6795271840e9226307ad319214e8c18b3d398dcea75986dc0fa7c9a8950f8c6d",
+          "response_sha256": "47927b7588412a73c9b4c246406e182d6990f92eb4f56e5211d0d7cc024bc9e0"
+        },
+        {
+          "request_sha256": "5f9707bad1cdd0a2174d7aac99e87dccefaa02c15873a6409114d4cec5fb5898",
+          "response_sha256": "30a5d8593370def8deb29bc4ccc24285b06c6726d7e5ba82d8e42c7f8fbbe060"
+        },
+        {
+          "request_sha256": "5eabcb4d6a3f417b75abfdce61a263106b0483c541da1f36f244f1db209dc8d0",
+          "response_sha256": "73e061729541ce9f9f946d1b601a0c4af0a25c322daab42c566328140d91e250"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2026-02-12",
+      "cik": "0001093557",
+      "close_mature_at": "2026-02-13T21:05:00+00:00",
+      "event_id": "dxcm-0001093557-26-000025",
+      "label_commitment_sha256": "72c74c79b149e92197f2927504ba3082cb2c3371ee4fd0cb1f0d1970553199d9",
+      "reaction_session": "2026-02-13",
+      "receipts": [
+        {
+          "request_sha256": "527fd387c8988d000fcc6eb927b2d7f5924f58e3009d707664d720deed65b26a",
+          "response_sha256": "f20536c0021d7dac63b3953482c392aeae8ed855cd2fbd8df79f6c2b13d9bdeb"
+        },
+        {
+          "request_sha256": "fc441fca71c21b3c79db0f7b0e1793782b37f97b6a13c9c47e8d8d1f845e75e7",
+          "response_sha256": "c14c98affa6adfb37931b0f66d6c69fa34ff2c8aedaefc364ed78b4d22796389"
+        },
+        {
+          "request_sha256": "461f416685660da9f1ca9b9b656ee8ba529f631b7094056872862b4ac00b15c8",
+          "response_sha256": "6130bdec90ed566cdff30d9b11334674aa347f7cb40abca2d628c4a9a2b5f207"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2026-02-25",
+      "cik": "0000883241",
+      "close_mature_at": "2026-02-26T21:05:00+00:00",
+      "event_id": "snps-0001193125-26-071601",
+      "label_commitment_sha256": "047a0093054ec1553ee6622be433baff10a9392f29ec9e67e441290175f17f43",
+      "reaction_session": "2026-02-26",
+      "receipts": [
+        {
+          "request_sha256": "008b33881524957800d306e254435c4f61b2626cddfac4f122f7e6929a7fd04b",
+          "response_sha256": "bbc9ef511ccc4786e2d04fd10b552357e36a0131831da22df9ab9ee30a984d87"
+        },
+        {
+          "request_sha256": "81b3dbe82e1227de9189ebc2cb25ca49cd6ec550d53612656fbf8dfae57e1b2e",
+          "response_sha256": "c3028825cf38a8bf8937249954e0922bd4ea88445886787cc9dc7b80616282b1"
+        },
+        {
+          "request_sha256": "96b18fb4e71c26a3a5b60f2b3c6c241ff091ba92b60be53b84c6304accd3cddd",
+          "response_sha256": "a77472d50107d73c575368fab18dd36a522dcfa3550b3062a5996e51447bee32"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "SNPS"
+    },
+    {
+      "anchor_session": "2026-02-26",
+      "cik": "0000896878",
+      "close_mature_at": "2026-02-27T21:05:00+00:00",
+      "event_id": "intu-0000896878-26-000012",
+      "label_commitment_sha256": "e4f9ad8403da6dc62b9623a9122f69759d33d36ba794af3195e248cf02116f8d",
+      "reaction_session": "2026-02-27",
+      "receipts": [
+        {
+          "request_sha256": "0ec608c2b387325f50793e56642705077ef0db10c59e99131416cd98e114b0a3",
+          "response_sha256": "98f3a7f08a00caaf6b1720499e324faf13b81c912c9d65a5a302c36d7ba89be1"
+        },
+        {
+          "request_sha256": "3843f69592d04d126347b1a56229286ba77158bb81af2f81b891dafff83b73b4",
+          "response_sha256": "74fa7bcec7fdd84c7f2775d703ba7f0c3b8abb1d41e7c18e15c1552d3b198d7d"
+        },
+        {
+          "request_sha256": "d8b9987577fda9e9d5075255bdf64d2d598497c77892b76ba50fbbe6320b2637",
+          "response_sha256": "c5c0523a6c88f3aa38e4ca937c3ccccc7b83d71bd6f271dcae7633c34f75d52e"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "INTU"
+    },
+    {
+      "anchor_session": "2026-02-26",
+      "cik": "0001713683",
+      "close_mature_at": "2026-02-27T21:05:00+00:00",
+      "event_id": "zs-0001713683-26-000047",
+      "label_commitment_sha256": null,
+      "quality_state": "source_withheld",
+      "reaction_session": "2026-02-27",
+      "receipts": [],
+      "status": "withheld",
+      "subset": "held",
+      "symbol": "ZS"
+    },
+    {
+      "anchor_session": "2026-04-27",
+      "cik": "0000813672",
+      "close_mature_at": "2026-04-28T20:05:00+00:00",
+      "event_id": "cdns-0000813672-26-000044",
+      "label_commitment_sha256": "a1fbf033eac104c523a9436d248533879f08f59b6906b96d675473ec0cca20ef",
+      "reaction_session": "2026-04-28",
+      "receipts": [
+        {
+          "request_sha256": "ea4944b7a315d5936468b874fe5f6b08b5a4c25cf7520e1a0daeb8f6fd7fcf24",
+          "response_sha256": "c7932b1b5e65ad99c5a9ffd1b3d5e7e46bc96c5e1b4f307cd55db1fbf544c83d"
+        },
+        {
+          "request_sha256": "6f61f8d8a4c457fbe936365d780dcbe351213e026e9babf0722ea137bbc0a756",
+          "response_sha256": "6f52f5b69a1b81682972a18b8c6165fa8b26bd896bc6157a30c37cb34c64eec2"
+        },
+        {
+          "request_sha256": "99cb1f36809f23c2c502c6ad152b7c8d5f52354d4aae5425a1727ccb6cd52817",
+          "response_sha256": "fe8f29df9dd4b3356abc50e64edb38fc97b9da986fba90140efbad63d36f0725"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CDNS"
+    },
+    {
+      "anchor_session": "2026-04-28",
+      "cik": "0001442145",
+      "close_mature_at": "2026-04-29T20:05:00+00:00",
+      "event_id": "vrsk-0001437749-26-013728",
+      "label_commitment_sha256": "511aacf8616d40d9d08ff32067ec29070fbe9dd19c6cfa04a864334232fc42fa",
+      "reaction_session": "2026-04-29",
+      "receipts": [
+        {
+          "request_sha256": "75cd08fb8fa8f3db15e302ae9567f421d73e76bef79441b89836afbccef0c016",
+          "response_sha256": "a6a7a9befa34a4ff7a791f173b1ee400f449bc5bb235874f432480f9d8108e3d"
+        },
+        {
+          "request_sha256": "d5554ac8441b76d59b15c8e8d11026b1c2ef9f2d4d4014379cae4136a71a724a",
+          "response_sha256": "b758e937450b353691faa6b3169173908df659544165812c09969f323f2171ae"
+        },
+        {
+          "request_sha256": "26ce49e998b7dfa951021348d254d5b238786fb27ac57f30428c5c8c697f9443",
+          "response_sha256": "b24ed899021b16d4bfd110083749ebe25e25351d75ad73a9140e17302758d956"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "VRSK"
+    },
+    {
+      "anchor_session": "2026-04-29",
+      "cik": "0000898173",
+      "close_mature_at": "2026-04-30T20:05:00+00:00",
+      "event_id": "orly-0000898173-26-000024",
+      "label_commitment_sha256": "1775c4129bd2f6ba5a272e1eb788540a2820eae434540ae4bed1dc4dd4ef18b3",
+      "reaction_session": "2026-04-30",
+      "receipts": [
+        {
+          "request_sha256": "51e9cca18f1388817c17dbdc2c81555a82553f85156f7d7cd5903eabbf379be0",
+          "response_sha256": "1cf52950cd412b7a58803323e73fd27ba8eab96ac5d82248a4b67f893cc9c9bb"
+        },
+        {
+          "request_sha256": "96fc933cd60c091968ab6bfe85a61dfc9717ae62e93858ded99f5c96216d8694",
+          "response_sha256": "f70f25d8396aa7520ea6db9ca73ef4ce16c114c1f346355302b72b0dad68942e"
+        },
+        {
+          "request_sha256": "c45de5743214530773230cf0a098e9879c5fb74c8be0abb9ace88a7126c2d7cc",
+          "response_sha256": "cb76966561a3b5ebe1e68542f90349c2ea20a175c96e13e20c6e74766e4d849b"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2026-04-30",
+      "cik": "0000318154",
+      "close_mature_at": "2026-05-01T20:05:00+00:00",
+      "event_id": "amgn-0000318154-26-000054",
+      "label_commitment_sha256": "7b213b3d2e2667d313d5de1bd85188589fac446d059663dd0c328af5b9112d2a",
+      "reaction_session": "2026-05-01",
+      "receipts": [
+        {
+          "request_sha256": "25ea4c2cc7a44465e34b8f7b08d97a4e9ac6b67535494e0999d5dad858c56a54",
+          "response_sha256": "289ed409b967f5cae5687e22b3d23354970fb8a7aee1a3eeb295acf7569ea677"
+        },
+        {
+          "request_sha256": "5e39fc2cd33864e122c93e944a354238e23abb13bfb1dece0c3cc098b88ba4bf",
+          "response_sha256": "b4beb364778db566b34de8684adfa6b8399d73226e81352116339fa2479886bb"
+        },
+        {
+          "request_sha256": "7a84f024cdb89bfbc185273b3e1725b41ba57c720a528cdf627fd671501c68ac",
+          "response_sha256": "e69da96f9797e203cbab1d6507d2502cde5e90cbeefd0118a74581f706dc828f"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "AMGN"
+    },
+    {
+      "anchor_session": "2026-04-30",
+      "cik": "0001093557",
+      "close_mature_at": "2026-05-01T20:05:00+00:00",
+      "event_id": "dxcm-0001093557-26-000072",
+      "label_commitment_sha256": "db3f49c381144fcf5f1542bc802f8b1343d7cf704b20472ddd6367ea9d41e622",
+      "reaction_session": "2026-05-01",
+      "receipts": [
+        {
+          "request_sha256": "0fd14ff4542835f333cf986202862a3f914606d023b0c49858905647ccc09b02",
+          "response_sha256": "c50e081b80664e130262706c86c6f4dceb6c0eba7f729fb608ce8a69d337dfd4"
+        },
+        {
+          "request_sha256": "e5bfb8c1f6c391f342fe833259d2edd15037fe996a495fc3cf4cc3ee428bba8d",
+          "response_sha256": "99c2a616d2d9fb16c5ef8763082310da5051174811e0368ff1c05db03ad7a53e"
+        },
+        {
+          "request_sha256": "28274d4233417d43c1c1041e5f4d53f802481c7e000d0c24b2f437c980ebd059",
+          "response_sha256": "47e2f5e620320e68684613556a29840d8374c2cdaf9723e122165e3396aed6be"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2026-05-04",
+      "cik": "0000874716",
+      "close_mature_at": "2026-05-05T20:05:00+00:00",
+      "event_id": "idxx-0001104659-26-055203",
+      "label_commitment_sha256": "0f46a6aa05f1377e0434db5323d74d9122b44dbf96c2b75c83be185a27f8cedb",
+      "reaction_session": "2026-05-05",
+      "receipts": [
+        {
+          "request_sha256": "3a406cfd6bde96ade9f3f859143ff578ff704d12d7105d2b0d8146026ffdca2a",
+          "response_sha256": "7cab29e86dfcbef7e8534bd91a9728d8eea313328dece7ef6628b79f0844be38"
+        },
+        {
+          "request_sha256": "05baf9a2e77208d80f6205eac11d0a80ef14ba7a4985c26899d799ad0665c609",
+          "response_sha256": "e46280a5e5dda8010643886ef1a699fdcde8f76f397266495fd6d4677e3624cd"
+        },
+        {
+          "request_sha256": "f84322e032b8dfb63173406d5eef8234de5bd1f2336d51c1aefd7717593d990d",
+          "response_sha256": "8f81ab590211d687d2bb9badc2f6bb50cc59b2c74c26985687e2169ebdb821b0"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2026-05-04",
+      "cik": "0000875320",
+      "close_mature_at": "2026-05-05T20:05:00+00:00",
+      "event_id": "vrtx-0000875320-26-000171",
+      "label_commitment_sha256": "cdd4d946cba1544d55b1b4287b5807e268ee72b3b0db10f5ef57903ceec4b737",
+      "reaction_session": "2026-05-05",
+      "receipts": [
+        {
+          "request_sha256": "55b0e0f117e585daf1eccef39ec5bb09735efa4c83d1460be38c1dc37597e386",
+          "response_sha256": "b984eb60a609cc2ea5431d6916a3f0534043c05a401adf69fcea736d15c83276"
+        },
+        {
+          "request_sha256": "9928bc4bd727c78e37170bb36866179ef68d67e8f920dfbf0cbd7e1cac0c443a",
+          "response_sha256": "d98ac3c74062da837536d14ded72679403c768100b6a9b2bbf05ae0585e9b0ba"
+        },
+        {
+          "request_sha256": "61719993d7c929b1046c1cf6e2bd56469ef29f3149445b2f0aac6e7f5f5db895",
+          "response_sha256": "d93f40e3c30945776cfe0e36af794368c3249e89134d0410f4c8f51b17ead563"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "VRTX"
+    },
+    {
+      "anchor_session": "2026-05-06",
+      "cik": "0001561550",
+      "close_mature_at": "2026-05-07T20:05:00+00:00",
+      "event_id": "ddog-0001628280-26-031677",
+      "label_commitment_sha256": "5b40a7c66e9177eb82171b7bd1459f573e17903326c639ddbb944ca2fea4a153",
+      "reaction_session": "2026-05-07",
+      "receipts": [
+        {
+          "request_sha256": "5d6bb6b3b22b6f8078c2fbe97df4a1ea2d2c9edd78e370254c9099b7b045e465",
+          "response_sha256": "23cf149c43a96b9e4377ece7dcd1a968f05cb082ccde898bde430c05749419d5"
+        },
+        {
+          "request_sha256": "a11781ccbd4b57f132180093cd2fabbbd507a0409217e6e2a880555597469a6a",
+          "response_sha256": "5e58c8dde92963b278b44179a97a82f3ac056a4db3a5452309f20358558cb9d8"
+        },
+        {
+          "request_sha256": "7e488819416e24365ad89d5c533642edf27e8163efdb0ef637379c342ebda040",
+          "response_sha256": "3216048abcb6d1f5eb1890b179572d46f61fa15e23aadc006d673bf6e20b5ea4"
+        },
+        {
+          "request_sha256": "172aa3afc6f60993fb347f3a76374fa54138c427fad9f4169cbece1c4341a264",
+          "response_sha256": "b538cbdf6d979cf41811fe941b42e574af037540f43926ccf530c81c1715f68f"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DDOG"
+    },
+    {
+      "anchor_session": "2026-05-06",
+      "cik": "0001262039",
+      "close_mature_at": "2026-05-07T20:05:00+00:00",
+      "event_id": "ftnt-0001262039-26-000010",
+      "label_commitment_sha256": "ffd584d4e839e598f60694c193fcd1b1d98b9a9f45b1d2fc92edb8b3ad3ede1c",
+      "reaction_session": "2026-05-07",
+      "receipts": [
+        {
+          "request_sha256": "631020d3669dd81f4ded580c7a109b6b74e5ae8ecb834a4fe6c05ea79c362191",
+          "response_sha256": "5b121f1297a162961dad264bd91aa26fb4afcd1c5b098b900c9565aba7ff5568"
+        },
+        {
+          "request_sha256": "83435479335329128de1b7d21c936ed67b09c76377782eec22ff6dfe9706ec46",
+          "response_sha256": "7485f36997107cc3b9accbc97e9564d67bb2c8e665dd3b582f4e89dcf3ba87fb"
+        },
+        {
+          "request_sha256": "495dd081458196931cf6cb4950f7c407f6b79f01a54cef99c5ff2f5e4f019137",
+          "response_sha256": "42cd00815dda5407d7c0b352968913bd60eade3880268da651dad22360b1762a"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "FTNT"
+    },
+    {
+      "anchor_session": "2026-05-26",
+      "cik": "0001713683",
+      "close_mature_at": "2026-05-27T20:05:00+00:00",
+      "event_id": "zs-0001713683-26-000095",
+      "label_commitment_sha256": "e0879f5913ab3afecc2233e00010142f91fd31a467a52239e5d9bec9ad1565ec",
+      "reaction_session": "2026-05-27",
+      "receipts": [
+        {
+          "request_sha256": "3c5d06a4cb8144eb11a3ebb03365574628e7a98dcbadb40582a1751cd0e62334",
+          "response_sha256": "c8575aa482e4696cde135906aa6d8b522905d1c6cd8eb2fa20a29b1385d4932f"
+        },
+        {
+          "request_sha256": "43ad8221512e274cf3b04d63de6063173bc7c440e9fbf71be6867797b1a733c6",
+          "response_sha256": "ab90d6a5353ff364d22ad1ac683da9100691d6a8eb95b9d85802578db1bf1b72"
+        },
+        {
+          "request_sha256": "d3469469a58531337ef412971f8d3d88cc533a77ae93866dbe4480d042007137",
+          "response_sha256": "24cbf0507444b8f66d2b60bff0021c001f6db38a61861c55f64306678eca2faf"
+        },
+        {
+          "request_sha256": "96cff2f02d97b49efb34781d0ef233f2b785964a03b306e9a2e29778d7f9955f",
+          "response_sha256": "d143a8c6142bd358ceac3a7ceeefbe069cf5a842faf023cf36907cb0de92f4bc"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ZS"
+    },
+    {
+      "anchor_session": "2026-05-27",
+      "cik": "0000935703",
+      "close_mature_at": "2026-05-28T20:05:00+00:00",
+      "event_id": "dltr-0000935703-26-000064",
+      "label_commitment_sha256": "c4c7a0a584cfa4573c4bb8c3f8bc431f730100ae1b831168c3a7be6a47ba7bc2",
+      "reaction_session": "2026-05-28",
+      "receipts": [
+        {
+          "request_sha256": "c50c6d99f18988438b40bf6d9e08a9ccc8cafb715ddc7b355758277c1cda17e7",
+          "response_sha256": "8f3d84d0caec742686d3bd5d1ce99bfe2ee2d156eb6bf52bd8b520d10edb0837"
+        },
+        {
+          "request_sha256": "836bf8cf013826bd10a22a31546cd53992e70405afe522a6fe1d450b0e5b4c35",
+          "response_sha256": "a94f53e2987ddd2390ce2a94c0896e97b7d88ff07be7c350d21cfcbb85fae136"
+        },
+        {
+          "request_sha256": "16ab183279c294aae8ae1d8adcd7e62369580d2aa690280387cd4db91aaff604",
+          "response_sha256": "3ade55adfa58ebd6a82dda694ca3272e491d80db7c455b7bce1ab29a5a9ee4f1"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2026-06-04",
+      "cik": "0001397187",
+      "close_mature_at": "2026-06-05T20:05:00+00:00",
+      "event_id": "lulu-0001397187-26-000077",
+      "label_commitment_sha256": "c5467c7886bf217bd4556e9858e7800f3cd48cb089068b628d3e76ea83834e9a",
+      "reaction_session": "2026-06-05",
+      "receipts": [
+        {
+          "request_sha256": "3c85b3e8624bed2e6052b0b20f967e75c1167bbe2cc7f340e4e5dec3349cba84",
+          "response_sha256": "e54b90fcef89044a4308c499fd7743c60d9fcb00c0031b42171863bd36311371"
+        },
+        {
+          "request_sha256": "9d449d4b7d7df4c8e5045e52a4d52cda9a169cf0e2c541308596b6775098a174",
+          "response_sha256": "c65f7fe80befe45ff03183e68148fea6cf24d02f90d465d371d5a2e44bb0a963"
+        },
+        {
+          "request_sha256": "5e8f851eddf3c3d55b923ec2dabdf10ceff703a35bff73c299de4a05d3a8455a",
+          "response_sha256": "00d60e5487aea6d21738303830a605921e49e0a5c4dc9c25392e21bfbbcd453c"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "LULU"
+    },
+    {
+      "anchor_session": "2026-07-27",
+      "cik": "0000813672",
+      "close_mature_at": "2026-07-28T20:05:00+00:00",
+      "event_id": "cdns-0000813672-26-000089",
+      "label_commitment_sha256": "dda7f20998542f38092c919bafd51117f2a9901c77773b86767e56e68591bb45",
+      "reaction_session": "2026-07-28",
+      "receipts": [
+        {
+          "request_sha256": "1e01273826b83965215a300cd6d4ee71eb7fc444a66a0c3bea2eedcba265b5db",
+          "response_sha256": "729980592ee0929865aa9e6352ed2022a5fff2fbda5628ed01d27bd5cb2d3c48"
+        },
+        {
+          "request_sha256": "a284857fff05788b75f3bfe4e0fd8b137699d012880cdead4b3e88cf658a922a",
+          "response_sha256": "adfe55aedee84946fbac7de33f70ad7dfe0b4de312fac92f21593dbbe210ad4c"
+        },
+        {
+          "request_sha256": "6a6d1823a9467c62b1642a80b83802a12f0fb490f19a05f3010a3e1bffa6dac9",
+          "response_sha256": "9b7e3f5cf3b793615f897134a23ffc0d9cecd008db5d5d512631085f97e635b2"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CDNS"
+    },
+    {
+      "anchor_session": "2026-07-28",
+      "cik": "0001442145",
+      "close_mature_at": "2026-07-29T20:05:00+00:00",
+      "event_id": "vrsk-0001437749-26-024748",
+      "label_commitment_sha256": "7170b14cf898a1585045649d0e51fdc91fcf0d35023e2dd719212dd0720e0d52",
+      "reaction_session": "2026-07-29",
+      "receipts": [
+        {
+          "request_sha256": "5dac39091a7e2052f543fb3693f6d7bb680507acdb5f20dbfa911c16e3852616",
+          "response_sha256": "b1454628428829f3b2b8dd09da16af7fcead4f46e2666ff76009fb62cc89f61f"
+        },
+        {
+          "request_sha256": "94d9dead557b9bf66d12529d60456e36e8851e3205d64af7d1a98711dde1dd94",
+          "response_sha256": "3426a74f24bf84fae6cdd0a63a682582c8fbaf055edba4f68dda4045a7d4573f"
+        },
+        {
+          "request_sha256": "ba0e98029119d3a50e33f45dcbd8f5798379a62ae07ff843dfaddeae2bc2c42f",
+          "response_sha256": "3ce214ff8e1a98ba3947ba151a983d0a9d176fcee964ff8469313a688ff6bd86"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "VRSK"
+    },
+    {
+      "anchor_session": "2026-07-29",
+      "cik": "0001262039",
+      "close_mature_at": "2026-07-30T20:05:00+00:00",
+      "event_id": "ftnt-0001262039-26-000018",
+      "label_commitment_sha256": "d7de304286c8e8252f84e89257cb0a2d0cb106dbaab91df6ff50e0ab7069c129",
+      "reaction_session": "2026-07-30",
+      "receipts": [
+        {
+          "request_sha256": "06873b8dc9bf64e1acecd45b7ff2787ae383223a652da9808c8cd21782e3a56a",
+          "response_sha256": "4a868d978d93faf3edff23de9ea8a0397fc765fac1acb9916c7c12d8e022a732"
+        },
+        {
+          "request_sha256": "a49f8dc0fb62795596a85a420423468766fbc8efae655fb9d962b48dc293a7d0",
+          "response_sha256": "ba0da83fade88d5e6f0e563e7ece7819a81026bb160a657437e4f57b0516c6ef"
+        },
+        {
+          "request_sha256": "5b21baf045f8f68a9775b434d63238712e5b6faf12c8c97409fa3020dbb0502a",
+          "response_sha256": "c559aef5b7e468cb2a05a4e256ff3fbee8763741dd6514764053a5c21b679ec4"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "FTNT"
+    },
+    {
+      "anchor_session": "2026-07-29",
+      "cik": "0000898173",
+      "close_mature_at": "2026-07-30T20:05:00+00:00",
+      "event_id": "orly-0000898173-26-000042",
+      "label_commitment_sha256": "1847b6188f273e1ffd0b0cb237b7f49a7468121af32fc9c18580c4d819fee726",
+      "reaction_session": "2026-07-30",
+      "receipts": [
+        {
+          "request_sha256": "78d932c912fd260ac90d5a19798f6836c2949119fd7d560351ecf4a466e184c4",
+          "response_sha256": "926c51a3735a05b4f0e3e083d71f85d757fbdcf5c57fa8552e7b9fe4960cf993"
+        },
+        {
+          "request_sha256": "4e32e71144780865d04c1e96c865e35551c881b87e19c512214fc477a4e3b781",
+          "response_sha256": "544ea817fcfcea43ba542f351d9b633e2c30c3f556128a124c117c111c2a1cc6"
+        },
+        {
+          "request_sha256": "a666fc582412a987b95d75459d3787ab8ce82f5e2a6c9e0cc30bd5507a266755",
+          "response_sha256": "fc1ae67331cfe862176d30e501622b98e591ffe2d86a1a6538357062e2a31d87"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "ORLY"
+    },
+    {
+      "anchor_session": "2026-07-30",
+      "cik": "0001093557",
+      "close_mature_at": "2026-07-31T20:05:00+00:00",
+      "event_id": "dxcm-0001093557-26-000142",
+      "label_commitment_sha256": "8ba98053068f9e00f09f9d96b2a196ffd041dac91c5afa70054ec6ee2bfe6ddd",
+      "reaction_session": "2026-07-31",
+      "receipts": [
+        {
+          "request_sha256": "1d1961a5c75b03e15d17d0177a20870bf68a1654dd16f50be853e014b72a1dc2",
+          "response_sha256": "0aae4bba46b7b1bc2533a37c0b814354e5fefdb04fb284b5ec25a9e6dd173bf0"
+        },
+        {
+          "request_sha256": "9e4fd4a5ccb89ad09bce5e353a5caaf4b8e1264c03912569ac3fb87d6c95dee4",
+          "response_sha256": "e2115e51440404fe5df6201384236c98d234dd58cdcfa2b3e7007f24b9d7c692"
+        },
+        {
+          "request_sha256": "5e78a7cfb8946b4794c6bae21ed90a051041d15f1f242e8aae8a263352d5501c",
+          "response_sha256": "00a9711e80f36bbbe534a333f9b2937bd7890f83749dbb4a63e78781f23923ae"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DXCM"
+    },
+    {
+      "anchor_session": "2026-08-03",
+      "cik": "0000874716",
+      "close_mature_at": "2026-08-04T20:05:00+00:00",
+      "event_id": "idxx-0001104659-26-090033",
+      "label_commitment_sha256": "9229cf2ff05a5da1b3cf695ec1395e47c081ebdce1298daec45afea71afc9fcd",
+      "reaction_session": "2026-08-04",
+      "receipts": [
+        {
+          "request_sha256": "510f124701affb3c372f1f5f78e59ca3c00c49ed5bfc5b7c8201e5a642adec9f",
+          "response_sha256": "9805e0871e0575674b7ecfe7e4ca263336c33396204eab7ce98b704228e0c9ad"
+        },
+        {
+          "request_sha256": "4ab4c0230cf5eab39a15fd88e39235c9e91863e47e3f36cab1704ad8a7f32f6e",
+          "response_sha256": "f1b9eeefe9f18b55e83f885f7f5e8b46213701da899a27a8b45c3ab8e215927a"
+        },
+        {
+          "request_sha256": "86534734b32a2c2ffca637789f6c38e05e2751bcc4bc4e690ec340334787adb4",
+          "response_sha256": "750a992d1a85aa21047c5fb76f57e01bf5a6904049e3e38a1685857b01172fd2"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "IDXX"
+    },
+    {
+      "anchor_session": "2026-08-03",
+      "cik": "0000875320",
+      "close_mature_at": "2026-08-04T20:05:00+00:00",
+      "event_id": "vrtx-0000875320-26-000256",
+      "label_commitment_sha256": "069e47735b9da3be572e407889d648efc60999825cde4f9483da9dd7ffb29349",
+      "reaction_session": "2026-08-04",
+      "receipts": [
+        {
+          "request_sha256": "db6f00c20fc01b264c95dc52ccf1b2daa8d4426a76e91ac682ae461f5767de21",
+          "response_sha256": "4d0391cd6f9024f6e01f43abf53193297f340b348d73b0590b8846b969d3bb4a"
+        },
+        {
+          "request_sha256": "f4a6677f08b0c02a55e8a1076d22ffedbf953720ff29c891c6916cfab04e2436",
+          "response_sha256": "b9c3c7c0d5e927c329e58a3c1e63538696e622c9e19ed3c257366a3ca2991083"
+        },
+        {
+          "request_sha256": "2bfb07efdde35aace610d5a7f476334f6f034eb4e63433ff75c02f4bdd2ad297",
+          "response_sha256": "b4c898f40bdd9e2f3ca24f2cd62b9b64fc56ab84e863d85672934ed30b00b6ec"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "VRTX"
+    },
+    {
+      "anchor_session": "2026-08-04",
+      "cik": "0000318154",
+      "close_mature_at": "2026-08-05T20:05:00+00:00",
+      "event_id": "amgn-0000318154-26-000124",
+      "label_commitment_sha256": "587e500a4956309925f6364756c9ae87b3d41f7805a958ad5fc0d9bde4ad0608",
+      "reaction_session": "2026-08-05",
+      "receipts": [
+        {
+          "request_sha256": "47734c3d4f03b9f6c3dad7607ea766b26061ff6e3be1766d4d316800856c67e5",
+          "response_sha256": "a9270e26776d6066a1cb8e4342eeddcaf0aee8fd2a07ef3aa9e575f7c8be0a4e"
+        },
+        {
+          "request_sha256": "3ec3443237d0a1515c23ac2168d831c4b8b7b5697e7ca107a7b2c6e8cf01d334",
+          "response_sha256": "f6ce8d5241b4631bc2ab8bd6a417d21a5e86cf847b8693929bc056f9b3efcf87"
+        },
+        {
+          "request_sha256": "9f54355e9a49af71c44c35cebec92bc494df6ddaf89da2a4289837adfc077486",
+          "response_sha256": "68fd96ccdf44f37bb2b7bab9bbd034861d71ae3da2dbc4ed7779d64b747f1fb1"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "AMGN"
+    },
+    {
+      "anchor_session": "2026-08-05",
+      "cik": "0001561550",
+      "close_mature_at": "2026-08-06T20:05:00+00:00",
+      "event_id": "ddog-0001628280-26-053829",
+      "label_commitment_sha256": "0eed75e2a4b5f3c94d1cfd0c0ec9569d3e70353d5f5aeff95bb2b3ab2b6ab569",
+      "reaction_session": "2026-08-06",
+      "receipts": [
+        {
+          "request_sha256": "1332e36f9c7b0986b8d2404b82c98885a8c6fe9d5eaa14997d62835672fe0c63",
+          "response_sha256": "4ca2c64dc21271896410d04b30e78795b676b96d6acb5e6ae9bb6e500248e8da"
+        },
+        {
+          "request_sha256": "e598f85b5ab0ffe36c7ee79fdee429b2c039b356f03e2c6d92acd0cf718a89bb",
+          "response_sha256": "e499e3b2f5b717e10e58fdb4870f5f6a13f63439f690f5fe24366a0c6410e179"
+        },
+        {
+          "request_sha256": "4a8be4e46ba6a9eecc12b28e963ad5247be6d50a6525f7a92ffe343ca9087aaf",
+          "response_sha256": "c2916f945b16cda3d59d58935355225a5f3cfcdc006a0ef610e1e7b662342b8f"
+        },
+        {
+          "request_sha256": "f4ac140303f2cdc5218560c9eae87ea6756053ba4bf020fccf43a0bfb1975e2b",
+          "response_sha256": "2986b4b01b99b0b3e203965165da9fdaff62d50dd86a967bcbefcb8440475cfc"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DDOG"
+    },
+    {
+      "anchor_session": "2026-08-26",
+      "cik": "0001535527",
+      "close_mature_at": "2026-08-27T20:05:00+00:00",
+      "event_id": "crwd-0001535527-26-000029",
+      "label_commitment_sha256": "86546f41825fdf84fab5c2a6d4ff80532fef7dd983cda700ab7d6ca27dd816c4",
+      "reaction_session": "2026-08-27",
+      "receipts": [
+        {
+          "request_sha256": "797a326b24f829b0196bbc87514c7f57947d284821a703715dcb6904e75f0912",
+          "response_sha256": "876d8f68e7cbfff9f414dfee9476aa1c1187eb43ad233d3adad24803b64d1e07"
+        },
+        {
+          "request_sha256": "17a0d084e023856b486508dc4d7d3d1d0a00cdff53d4647ff29ecd95cdfdd563",
+          "response_sha256": "e0091c7a1552901f4abc55b2e74299fc9924b397ce0918c4feb4913002b8891a"
+        },
+        {
+          "request_sha256": "238fcd9afcc84d56758909b4dff20c67f40b3a5ca0f0efa4ddd77cd4e8e45d59",
+          "response_sha256": "6d51ce90e7c4a475d044c6e9b43968d92ea6ff51a582090c1f100e1ec9d120eb"
+        },
+        {
+          "request_sha256": "434c3a612a022b9c57c7624f125b5318c040ca633d22776d62aa6ed21046cefe",
+          "response_sha256": "4e0e596e1c42dab51efacab0bed9044c23682be1305fc1757cf950745f2f77cd"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "CRWD"
+    },
+    {
+      "anchor_session": "2026-08-26",
+      "cik": "0000935703",
+      "close_mature_at": "2026-08-27T20:05:00+00:00",
+      "event_id": "dltr-0000935703-26-000108",
+      "label_commitment_sha256": "43e3da93d6111a2394a1678b2946c3df426bc88a6795939ea2e697dd8fd368d1",
+      "reaction_session": "2026-08-27",
+      "receipts": [
+        {
+          "request_sha256": "5c2105f89fbb8b46d2e5d6f16257bf73377d8b5e1b78714145aaec253e30d640",
+          "response_sha256": "00ca734be269f3ece6479da9f8eb014ff8b3ff4cfc0ded828522a949e93b3979"
+        },
+        {
+          "request_sha256": "1c284c9245680292588049cd6404ad28f51b54ec891ae1db5a994da1ce63af1c",
+          "response_sha256": "ce9c5c100f6e330f2b18fce02f34379a07cef809ef05ef9d275292d300c91d1e"
+        },
+        {
+          "request_sha256": "4a871919f4981027adb81e9090402c5bb7dc96d99a14d57b7489cd6b69a62c22",
+          "response_sha256": "2f8c23a0bb848255304fd45bf91cc8158df975120095f51b4ea65788bf792be6"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "DLTR"
+    },
+    {
+      "anchor_session": "2026-09-01",
+      "cik": "0001441816",
+      "close_mature_at": "2026-09-02T20:05:00+00:00",
+      "event_id": "mdb-0001628280-26-059794",
+      "label_commitment_sha256": "1ac49b4ef4fa818dcad389dfc0b87f26671f28e9626b54d035ea96fe95a49640",
+      "reaction_session": "2026-09-02",
+      "receipts": [
+        {
+          "request_sha256": "d3c4a3b3dd06aa13e4c49e95c5b37c4694358bdeebe66e3c60436e721744d463",
+          "response_sha256": "966dd981f8394440ff9986c11a64fac771eea72a7283aecb81efae56629a1426"
+        },
+        {
+          "request_sha256": "7b36e8541b40ed68c8728feec6f377cfede709abcd7a9814d80779f53785e72b",
+          "response_sha256": "a3cdead15b1f0a0364ad72bc91c7a0d98b48bfd8cb30818cf90cbf1f0f4f902e"
+        },
+        {
+          "request_sha256": "aa7cba47f2df65d5237592d62b9c95af348a32c816c9e1386f2ab8879ac6f798",
+          "response_sha256": "8f43f7d8336dcf72d21b1b44eee08fd51f698b0eb67a9009c6b1ddb3296502ef"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "MDB"
+    },
+    {
+      "anchor_session": "2026-09-03",
+      "cik": "0001397187",
+      "close_mature_at": "2026-09-04T20:05:00+00:00",
+      "event_id": "lulu-0001397187-26-000126",
+      "label_commitment_sha256": "4b7c66527615381668e3b26e459632db368cf0eec35273ea626cc3bec54a9eb4",
+      "reaction_session": "2026-09-04",
+      "receipts": [
+        {
+          "request_sha256": "aa063344a119945cb04623fd689f42162f11f3d64d3360f0ce5e2bbad604801d",
+          "response_sha256": "c0982c7f63c7832db406b00408802265669c70127427952ba295e2b73bdfe6cb"
+        },
+        {
+          "request_sha256": "09ab03a947b8808a009fd2ac9c9e7cb0d49d05fd7eed68c8b0ec62855c77f515",
+          "response_sha256": "d99c48512622358179db1375f2e49b62d3b6125a901caddc5a8400bbe6930d8d"
+        },
+        {
+          "request_sha256": "a9f21d83028d74e09fef74f57346117c4ab7739134b4047a9815d9ee833c016e",
+          "response_sha256": "3d376ae6ddbd7a60e0f5181cc27a24c4f3165eb2a2ba324e2d7de36372720a14"
+        },
+        {
+          "request_sha256": "e84ed96f993a0b3918e805dc054c5865a9f8268140963b7b6f2047f3f77c94e0",
+          "response_sha256": "bfa97225449523f98f31cd6a5a334e8426e0929c2fd23f75da3104be710fa9fd"
+        }
+      ],
+      "status": "labels_committed",
+      "subset": "held",
+      "symbol": "LULU"
+    }
+  ],
+  "execution_configuration_sha256": "13757679a941d4995df351ec94ec77c68b6dd61fc21ee5041449a9bd16706848",
+  "label_commitment_scheme": "nre-guidance-v2-private-labels-v1",
+  "labels_committed": 103,
+  "model_runs": 0,
+  "protocol_sha256": "d5152e432065fc830bc5078133bfdf15dde651f14f5a8505857c4d14b2353598",
+  "requests": 327,
+  "schema_version": 1,
+  "scope": "guidance_v2_hash_only_label_acquisition",
+  "screened": 107,
+  "source_review_sha256": "11a0751ae90e51137b409c2e0b083651a495991b51092be1749567b1c9ad6a82"
+}

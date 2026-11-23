@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-23",
+  "workflow_run_id": 45177816805,
+  "workflow_run_number": 1,
+  "job_id": 137703540677,
+  "execution_commit": "f7ac3e3421db95a7c37bbfeef6c887a4c30b3129",
+  "conclusion": "success",
+  "url": "https://github.com/Fahad9101/NRE/actions/runs/45177816805",
+  "manifest": "reports/m6-guidance-acquisition-2026-11-23.json",
+  "manifest_canonical_sha256": "f0a2d365704f0ff790f893ac27b6d3e89a2b90c6af0f49d5d685594ff334b4f1",
+  "execution_configuration_sha256": "13757679a941d4995df351ec94ec77c68b6dd61fc21ee5041449a9bd16706848",
+  "labels_committed": 103,
+  "closing_outcome_requests": 104,
+  "model_runs": 0,
+  "support": {
+    "clean_window": {
+      "warmup": 42,
+      "held": 51
+    },
+    "all_defined": {
+      "warmup": 50,
+      "held": 53
+    }
+  }
+}
